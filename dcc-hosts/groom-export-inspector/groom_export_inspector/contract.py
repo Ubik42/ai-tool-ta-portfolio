@@ -193,6 +193,7 @@ def _build_asset_facts(asset: Dict[str, Any], scene: Dict[str, Any], source_dcc:
             "namespace": asset.get("namespace"),
             "description": description,
             "scalp": scalp,
+            "groom": groom,
             "strands": strands,
             "export": export,
             "unreal": unreal,
@@ -207,6 +208,11 @@ def _strand_fact(strand: Dict[str, Any]) -> Dict[str, Any]:
         "rootUv": [float(root_uv[0]), float(root_uv[1])] if isinstance(root_uv, list) and len(root_uv) >= 2 else None,
         "guide": bool(strand.get("guide")),
         "width": float(strand.get("width", 0.0) or 0.0),
+        "groupId": strand.get("groupId"),
+        "groupName": str(strand.get("groupName", "")),
+        "materialSlot": str(strand.get("materialSlot", "")),
+        "node": strand.get("node"),
+        "pointCount": strand.get("pointCount"),
         "points": [
             [float(point[0]), float(point[1]), float(point[2])]
             for point in strand.get("points", [])

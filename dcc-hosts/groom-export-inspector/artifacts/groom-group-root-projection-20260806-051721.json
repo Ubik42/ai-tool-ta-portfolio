@@ -1,0 +1,875 @@
+{
+  "reportVersion": "groom-group-root-projection@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 05:17:21",
+  "evidenceLevel": "L3",
+  "l3Status": "maya_groom_group_root_projection_collected",
+  "mayaRuntime": {
+    "version": "2026",
+    "apiVersion": 20260302,
+    "batch": true
+  },
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\fixtures\\synthetic_groom_group_projection_scene.json",
+    "schema": "synthetic-groom-export-scene@0.1.0",
+    "intent": "Public synthetic groom group/root projection fixture for checking strand root projection, group coverage, guide coverage, material-slot routing and Alembic group payload flags."
+  },
+  "facts": {
+    "schema": "groom-group-root-projection-facts@0.1.0",
+    "sourceFactsSchema": "groom-export-input@0.1.0",
+    "scene": {
+      "sourceDcc": "Maya",
+      "unit": "centimeter",
+      "upAxis": "Y",
+      "timeUnit": "film",
+      "fps": null,
+      "playbackStart": 1000.0,
+      "playbackEnd": 1001.0,
+      "assetCount": 2,
+      "runtimeCollected": true
+    },
+    "assets": [
+      {
+        "assetId": "groom-hero-hair-001",
+        "assetLabel": "Hero Hair Approved Group Projection",
+        "ownerState": "approved",
+        "descriptionName": "xgen_hero_short_hair_grouped",
+        "groupProjectionVersion": "groom-group-root-projection@dcc-r59",
+        "rootProjectionTolerance": 0.035,
+        "groups": [
+          {
+            "id": 10,
+            "name": "fringe_left",
+            "materialSlot": "M_Hair_Front_Left",
+            "targetScalpSection": "head_scalp_left",
+            "uvBounds": [
+              0.2,
+              0.3,
+              0.53,
+              0.48
+            ],
+            "minStrands": 3,
+            "minGuides": 2,
+            "requiredGuideIds": [
+              "strand_001",
+              "strand_003"
+            ]
+          },
+          {
+            "id": 20,
+            "name": "fringe_right",
+            "materialSlot": "M_Hair_Front_Right",
+            "targetScalpSection": "head_scalp_right",
+            "uvBounds": [
+              0.56,
+              0.48,
+              0.82,
+              0.66
+            ],
+            "minStrands": 2,
+            "minGuides": 1,
+            "requiredGuideIds": [
+              "strand_004"
+            ]
+          },
+          {
+            "id": 30,
+            "name": "crown_fill",
+            "materialSlot": "M_Hair_Crown",
+            "targetScalpSection": "head_scalp_crown",
+            "uvBounds": [
+              0.45,
+              0.18,
+              0.62,
+              0.34
+            ],
+            "minStrands": 1,
+            "minGuides": 0,
+            "requiredGuideIds": []
+          }
+        ],
+        "sectionNames": [
+          "head_scalp_crown",
+          "head_scalp_left",
+          "head_scalp_right"
+        ],
+        "strandProjectionRows": [
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_001",
+            "index": 0,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_001_CRV",
+            "groupId": 10,
+            "groupName": "fringe_left",
+            "materialSlot": "M_Hair_Front_Left",
+            "guide": true,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              -0.5,
+              5.2,
+              -0.18
+            ],
+            "storedRootUv": [
+              0.25,
+              0.35
+            ],
+            "projectedRootUv": [
+              0.25,
+              0.35
+            ],
+            "rootProjectionDrift": 0.0,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Front_Left",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_002",
+            "index": 1,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_002_CRV",
+            "groupId": 10,
+            "groupName": "fringe_left",
+            "materialSlot": "M_Hair_Front_Left",
+            "guide": false,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              -0.28,
+              5.18,
+              -0.12
+            ],
+            "storedRootUv": [
+              0.36,
+              0.4
+            ],
+            "projectedRootUv": [
+              0.36,
+              0.4
+            ],
+            "rootProjectionDrift": 0.0,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Front_Left",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_003",
+            "index": 2,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_003_CRV",
+            "groupId": 10,
+            "groupName": "fringe_left",
+            "materialSlot": "M_Hair_Front_Left",
+            "guide": true,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              -0.05,
+              5.24,
+              -0.08
+            ],
+            "storedRootUv": [
+              0.475,
+              0.433
+            ],
+            "projectedRootUv": [
+              0.475,
+              0.4333
+            ],
+            "rootProjectionDrift": 0.0003,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Front_Left",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_004",
+            "index": 3,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_004_CRV",
+            "groupId": 20,
+            "groupName": "fringe_right",
+            "materialSlot": "M_Hair_Front_Right",
+            "guide": true,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              0.25,
+              5.19,
+              0.08
+            ],
+            "storedRootUv": [
+              0.625,
+              0.567
+            ],
+            "projectedRootUv": [
+              0.625,
+              0.5667
+            ],
+            "rootProjectionDrift": 0.0003,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Front_Right",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_005",
+            "index": 4,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_005_CRV",
+            "groupId": 20,
+            "groupName": "fringe_right",
+            "materialSlot": "M_Hair_Front_Right",
+            "guide": false,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              0.48,
+              5.2,
+              0.12
+            ],
+            "storedRootUv": [
+              0.74,
+              0.6
+            ],
+            "projectedRootUv": [
+              0.74,
+              0.6
+            ],
+            "rootProjectionDrift": 0.0,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Front_Right",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "strandId": "strand_006",
+            "index": 5,
+            "node": "|heroGroupHair:groom_hero_hair_001_GROOM|heroGroupHair:strand_006_CRV",
+            "groupId": 30,
+            "groupName": "crown_fill",
+            "materialSlot": "M_Hair_Crown",
+            "guide": false,
+            "pointCount": 3,
+            "rootWorldPosition": [
+              0.05,
+              4.96,
+              -0.28
+            ],
+            "storedRootUv": [
+              0.525,
+              0.267
+            ],
+            "projectedRootUv": [
+              0.525,
+              0.2667
+            ],
+            "rootProjectionDrift": 0.0003,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_Crown",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": true
+          }
+        ],
+        "groupCoverageRows": [
+          {
+            "assetId": "groom-hero-hair-001",
+            "groupId": 10,
+            "groupName": "fringe_left",
+            "materialSlot": "M_Hair_Front_Left",
+            "targetScalpSection": "head_scalp_left",
+            "targetSectionPresent": true,
+            "strandCount": 3,
+            "guideCount": 2,
+            "guideIds": [
+              "strand_001",
+              "strand_003"
+            ],
+            "minStrands": 3,
+            "minGuides": 2,
+            "requiredGuideIds": [
+              "strand_001",
+              "strand_003"
+            ],
+            "missingRequiredGuideIds": [],
+            "uvMatchedStrands": 3,
+            "projectionMatchedStrands": 3
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "groupId": 20,
+            "groupName": "fringe_right",
+            "materialSlot": "M_Hair_Front_Right",
+            "targetScalpSection": "head_scalp_right",
+            "targetSectionPresent": true,
+            "strandCount": 2,
+            "guideCount": 1,
+            "guideIds": [
+              "strand_004"
+            ],
+            "minStrands": 2,
+            "minGuides": 1,
+            "requiredGuideIds": [
+              "strand_004"
+            ],
+            "missingRequiredGuideIds": [],
+            "uvMatchedStrands": 2,
+            "projectionMatchedStrands": 2
+          },
+          {
+            "assetId": "groom-hero-hair-001",
+            "groupId": 30,
+            "groupName": "crown_fill",
+            "materialSlot": "M_Hair_Crown",
+            "targetScalpSection": "head_scalp_crown",
+            "targetSectionPresent": true,
+            "strandCount": 1,
+            "guideCount": 0,
+            "guideIds": [],
+            "minStrands": 1,
+            "minGuides": 0,
+            "requiredGuideIds": [],
+            "missingRequiredGuideIds": [],
+            "uvMatchedStrands": 1,
+            "projectionMatchedStrands": 1
+          }
+        ],
+        "export": {
+          "cachePath": "D:/public/ai_tool_ta/groom/hero_hair_grouped.abc",
+          "expectedExtension": ".abc",
+          "includeRootUV": true,
+          "includeStrandIds": true,
+          "includeGuideCurves": true,
+          "includeGroupIds": true,
+          "frameRange": [
+            1001,
+            1001
+          ]
+        },
+        "unreal": {
+          "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+          "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+          "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "materialSlot": "M_Hair_Front_Left",
+          "expectedMaterialSlots": [
+            "M_Hair_Front_Left",
+            "M_Hair_Front_Right",
+            "M_Hair_Crown"
+          ]
+        }
+      },
+      {
+        "assetId": "groom-hero-hair-tmp-002",
+        "assetLabel": "Hero Hair Temporary Projection",
+        "ownerState": "temporary",
+        "descriptionName": "TMP_xgen_hero_hair_projection",
+        "groupProjectionVersion": "draft",
+        "rootProjectionTolerance": 0.035,
+        "groups": [
+          {
+            "id": 90,
+            "name": "tmp_fringe",
+            "materialSlot": "M_Hair_TMP",
+            "targetScalpSection": "tmp_scalp_missing",
+            "uvBounds": [
+              0.1,
+              0.1,
+              0.45,
+              0.55
+            ],
+            "minStrands": 4,
+            "minGuides": 1,
+            "requiredGuideIds": [
+              "tmp_guide_A"
+            ]
+          }
+        ],
+        "sectionNames": [
+          "tmp_scalp_left"
+        ],
+        "strandProjectionRows": [
+          {
+            "assetId": "groom-hero-hair-tmp-002",
+            "strandId": "",
+            "index": 0,
+            "node": "|tmpGroupHair:groom_hero_hair_tmp_002_GROOM|tmpGroupHair:missing_id_002_CRV",
+            "groupId": null,
+            "groupName": "",
+            "materialSlot": "",
+            "guide": false,
+            "pointCount": 2,
+            "rootWorldPosition": [
+              0.1,
+              4.9,
+              0.0
+            ],
+            "storedRootUv": null,
+            "projectedRootUv": [
+              0.55,
+              0.5
+            ],
+            "rootProjectionDrift": null,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": false,
+            "groupUvMatched": false,
+            "groupMaterialSlot": null,
+            "materialSlotMatched": false,
+            "rootUvValid": false,
+            "projectionWithinTolerance": false
+          },
+          {
+            "assetId": "groom-hero-hair-tmp-002",
+            "strandId": "tmp_001",
+            "index": 1,
+            "node": "|tmpGroupHair:groom_hero_hair_tmp_002_GROOM|tmpGroupHair:tmp_001_CRV",
+            "groupId": 90,
+            "groupName": "tmp_fringe",
+            "materialSlot": "M_Hair_TMP",
+            "guide": false,
+            "pointCount": 2,
+            "rootWorldPosition": [
+              -0.65,
+              4.8,
+              0.0
+            ],
+            "storedRootUv": [
+              0.18,
+              0.44
+            ],
+            "projectedRootUv": [
+              0.175,
+              0.5
+            ],
+            "rootProjectionDrift": 0.06,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": true,
+            "groupMaterialSlot": "M_Hair_TMP",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": false
+          },
+          {
+            "assetId": "groom-hero-hair-tmp-002",
+            "strandId": "tmp_001",
+            "index": 2,
+            "node": "|tmpGroupHair:groom_hero_hair_tmp_002_GROOM|tmpGroupHair:tmp_001_CRV1",
+            "groupId": 91,
+            "groupName": "tmp_unknown",
+            "materialSlot": "M_Hair_Wrong",
+            "guide": false,
+            "pointCount": 2,
+            "rootWorldPosition": [
+              -0.25,
+              4.85,
+              0.0
+            ],
+            "storedRootUv": null,
+            "projectedRootUv": [
+              0.375,
+              0.5
+            ],
+            "rootProjectionDrift": null,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": false,
+            "groupUvMatched": false,
+            "groupMaterialSlot": null,
+            "materialSlotMatched": false,
+            "rootUvValid": false,
+            "projectionWithinTolerance": false
+          },
+          {
+            "assetId": "groom-hero-hair-tmp-002",
+            "strandId": "tmp_004",
+            "index": 3,
+            "node": "|tmpGroupHair:groom_hero_hair_tmp_002_GROOM|tmpGroupHair:tmp_004_CRV",
+            "groupId": 90,
+            "groupName": "tmp_fringe",
+            "materialSlot": "M_Hair_TMP",
+            "guide": false,
+            "pointCount": 2,
+            "rootWorldPosition": [
+              0.45,
+              4.82,
+              0.0
+            ],
+            "storedRootUv": [
+              0.55,
+              0.48
+            ],
+            "projectedRootUv": [
+              0.725,
+              0.5
+            ],
+            "rootProjectionDrift": 0.175,
+            "rootProjectionTolerance": 0.035,
+            "groupDeclared": true,
+            "groupUvMatched": false,
+            "groupMaterialSlot": "M_Hair_TMP",
+            "materialSlotMatched": true,
+            "rootUvValid": true,
+            "projectionWithinTolerance": false
+          }
+        ],
+        "groupCoverageRows": [
+          {
+            "assetId": "groom-hero-hair-tmp-002",
+            "groupId": 90,
+            "groupName": "tmp_fringe",
+            "materialSlot": "M_Hair_TMP",
+            "targetScalpSection": "tmp_scalp_missing",
+            "targetSectionPresent": false,
+            "strandCount": 2,
+            "guideCount": 0,
+            "guideIds": [],
+            "minStrands": 4,
+            "minGuides": 1,
+            "requiredGuideIds": [
+              "tmp_guide_A"
+            ],
+            "missingRequiredGuideIds": [
+              "tmp_guide_A"
+            ],
+            "uvMatchedStrands": 1,
+            "projectionMatchedStrands": 0
+          }
+        ],
+        "export": {
+          "cachePath": "D:/temp/ai_tool_ta/groom/hero_hair_projection_preview.ma",
+          "expectedExtension": ".abc",
+          "includeRootUV": true,
+          "includeStrandIds": false,
+          "includeGuideCurves": false,
+          "includeGroupIds": false,
+          "frameRange": [
+            1010,
+            1001
+          ]
+        },
+        "unreal": {
+          "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+          "expectedBindingAsset": "",
+          "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP",
+          "materialSlot": "",
+          "expectedMaterialSlots": []
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "groom-group-root-projection-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "checks": 18,
+      "pass": 10,
+      "warning": 1,
+      "error": 7
+    },
+    "rows": [
+      {
+        "id": "groom-hero-hair-001:group-projection-protocol",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "group-projection-protocol",
+        "label": "Group Projection Protocol",
+        "status": "pass",
+        "evidence": "version=groom-group-root-projection@dcc-r59",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:group-definition-coverage",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "group-definition-coverage",
+        "label": "Group Definition Coverage",
+        "status": "pass",
+        "evidence": "groups=[{'id': 10, 'name': 'fringe_left', 'materialSlot': 'M_Hair_Front_Left'}, {'id': 20, 'name': 'fringe_right', 'materialSlot': 'M_Hair_Front_Right'}, {'id': 30, 'name': 'crown_fill', 'materialSlot': 'M_Hair_Crown'}]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:strand-identity-and-group-membership",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "strand-identity-and-group-membership",
+        "label": "Strand Identity And Group Membership",
+        "status": "pass",
+        "evidence": "strands=6 duplicateIds=[] unmatchedGroups=[]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:root-projection-drift",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "root-projection-drift",
+        "label": "Root Projection Drift",
+        "status": "pass",
+        "evidence": "failures=[] maxDrift=0.0003 tolerance=0.0350",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:group-uv-region-match",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "group-uv-region-match",
+        "label": "Group Uv Region Match",
+        "status": "pass",
+        "evidence": "failures=[]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:guide-group-coverage",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "guide-group-coverage",
+        "label": "Guide Group Coverage",
+        "status": "pass",
+        "evidence": "groupFailures=[] groupRows=[{'assetId': 'groom-hero-hair-001', 'groupId': 10, 'groupName': 'fringe_left', 'materialSlot': 'M_Hair_Front_Left', 'targetScalpSection': 'head_scalp_left', 'targetSectionPresent': True, 'strandCount': 3, 'guideCount': 2, 'guideIds': ['strand_001', 'strand_003'], 'minStrands': 3, 'minGuides': 2, 'requiredGuideIds': ['strand_001', 'strand_003'], 'missingRequiredGuideIds': [], 'uvMatchedStrands': 3, 'projectionMatchedStrands': 3}, {'assetId': 'groom-hero-hair-001', 'groupId': 20, 'groupName': 'fringe_right', 'materialSlot': 'M_Hair_Front_Right', 'targetScalpSection': 'head_scalp_right', 'targetSectionPresent': True, 'strandCount': 2, 'guideCount': 1, 'guideIds': ['strand_004'], 'minStrands': 2, 'minGuides': 1, 'requiredGuideIds': ['strand_004'], 'missingRequiredGuideIds': [], 'uvMatchedStrands': 2, 'projectionMatchedStrands': 2}, {'assetId': 'groom-hero-hair-001', 'groupId': 30, 'groupName': 'crown_fill', 'materialSlot': 'M_Hair_Crown', 'targetScalpSection': 'head_scalp_crown', 'targetSectionPresent': True, 'strandCount': 1, 'guideCount': 0, 'guideIds': [], 'minStrands': 1, 'minGuides': 0, 'requiredGuideIds': [], 'missingRequiredGuideIds': [], 'uvMatchedStrands': 1, 'projectionMatchedStrands': 1}]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:material-slot-routing",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "material-slot-routing",
+        "label": "Material Slot Routing",
+        "status": "pass",
+        "evidence": "strandFailures=[] groupSlots=['M_Hair_Crown', 'M_Hair_Front_Left', 'M_Hair_Front_Right'] expectedSlots=['M_Hair_Crown', 'M_Hair_Front_Left', 'M_Hair_Front_Right']",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:alembic-group-payload",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "alembic-group-payload",
+        "label": "Alembic Group Payload",
+        "status": "pass",
+        "evidence": "path=D:/public/ai_tool_ta/groom/hero_hair_grouped.abc rootUV=True strandIds=True guides=True groupIds=True frameRange=[1001, 1001]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-001:owner-release-boundary",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "owner-release-boundary",
+        "label": "Owner Release Boundary",
+        "status": "pass",
+        "evidence": "ownerState=approved description=xgen_hero_short_hair_grouped",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:group-projection-protocol",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "group-projection-protocol",
+        "label": "Group Projection Protocol",
+        "status": "error",
+        "evidence": "version=draft",
+        "fixPreview": "Write groom-group-root-projection@dcc-r59 on the groom group projection payload."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:group-definition-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "group-definition-coverage",
+        "label": "Group Definition Coverage",
+        "status": "pass",
+        "evidence": "groups=[{'id': 90, 'name': 'tmp_fringe', 'materialSlot': 'M_Hair_TMP'}]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:strand-identity-and-group-membership",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-identity-and-group-membership",
+        "label": "Strand Identity And Group Membership",
+        "status": "error",
+        "evidence": "strands=4 duplicateIds=['tmp_001'] unmatchedGroups=['row_000', 'tmp_001']",
+        "fixPreview": "Regenerate unique strand IDs and assign each strand to a declared groom group."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:root-projection-drift",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "root-projection-drift",
+        "label": "Root Projection Drift",
+        "status": "error",
+        "evidence": "failures=['row_000', 'tmp_001', 'tmp_001', 'tmp_004'] maxDrift=0.1750 tolerance=0.0350",
+        "fixPreview": "Reproject curve roots to the scalp root_uv set and rewrite root UV payload before export."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:group-uv-region-match",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "group-uv-region-match",
+        "label": "Group Uv Region Match",
+        "status": "error",
+        "evidence": "failures=['row_000', 'tmp_001', 'tmp_004']",
+        "fixPreview": "Move mis-bucketed strands to the correct group or fix the group's UV bounds."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:guide-group-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "guide-group-coverage",
+        "label": "Guide Group Coverage",
+        "status": "error",
+        "evidence": "groupFailures=['tmp_fringe'] groupRows=[{'assetId': 'groom-hero-hair-tmp-002', 'groupId': 90, 'groupName': 'tmp_fringe', 'materialSlot': 'M_Hair_TMP', 'targetScalpSection': 'tmp_scalp_missing', 'targetSectionPresent': False, 'strandCount': 2, 'guideCount': 0, 'guideIds': [], 'minStrands': 4, 'minGuides': 1, 'requiredGuideIds': ['tmp_guide_A'], 'missingRequiredGuideIds': ['tmp_guide_A'], 'uvMatchedStrands': 1, 'projectionMatchedStrands': 0}]",
+        "fixPreview": "Restore required guide curves per group and verify target scalp section names."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:material-slot-routing",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "material-slot-routing",
+        "label": "Material Slot Routing",
+        "status": "error",
+        "evidence": "strandFailures=['row_000', 'tmp_001'] groupSlots=['M_Hair_TMP'] expectedSlots=[]",
+        "fixPreview": "Route every groom group to an expected Unreal hair material slot."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:alembic-group-payload",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "alembic-group-payload",
+        "label": "Alembic Group Payload",
+        "status": "error",
+        "evidence": "path=D:/temp/ai_tool_ta/groom/hero_hair_projection_preview.ma rootUV=True strandIds=False guides=False groupIds=False frameRange=[1010, 1001]",
+        "fixPreview": "Export Alembic with root UV, strand ID, guide and group ID payloads over a valid frame range."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:owner-release-boundary",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "owner-release-boundary",
+        "label": "Owner Release Boundary",
+        "status": "warning",
+        "evidence": "ownerState=temporary description=TMP_xgen_hero_hair_projection",
+        "fixPreview": "Keep temporary groom descriptions in owner review until they are explicitly approved."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:group-projection-protocol",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "group-projection-protocol",
+        "status": "error",
+        "owner": "reviewer",
+        "mutationScope": "owner_required",
+        "preview": "Write groom-group-root-projection@dcc-r59 on the groom group projection payload.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:strand-identity-and-group-membership",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-identity-and-group-membership",
+        "status": "error",
+        "owner": "groom-owner",
+        "mutationScope": "owner_required",
+        "preview": "Regenerate unique strand IDs and assign each strand to a declared groom group.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:root-projection-drift",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "root-projection-drift",
+        "status": "error",
+        "owner": "groom-owner",
+        "mutationScope": "owner_required",
+        "preview": "Reproject curve roots to the scalp root_uv set and rewrite root UV payload before export.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:group-uv-region-match",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "group-uv-region-match",
+        "status": "error",
+        "owner": "groom-owner",
+        "mutationScope": "owner_required",
+        "preview": "Move mis-bucketed strands to the correct group or fix the group's UV bounds.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:guide-group-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "guide-group-coverage",
+        "status": "error",
+        "owner": "character-ta",
+        "mutationScope": "owner_required",
+        "preview": "Restore required guide curves per group and verify target scalp section names.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:material-slot-routing",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "material-slot-routing",
+        "status": "error",
+        "owner": "engine-ta",
+        "mutationScope": "owner_required",
+        "preview": "Route every groom group to an expected Unreal hair material slot.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:alembic-group-payload",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "alembic-group-payload",
+        "status": "error",
+        "owner": "engine-ta",
+        "mutationScope": "owner_required",
+        "preview": "Export Alembic with root UV, strand ID, guide and group ID payloads over a valid frame range.",
+        "writeBoundary": "public_maya_fixture_only"
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:owner-release-boundary",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "owner-release-boundary",
+        "status": "warning",
+        "owner": "reviewer",
+        "mutationScope": "manual_review",
+        "preview": "Keep temporary groom descriptions in owner review until they are explicitly approved.",
+        "writeBoundary": "public_maya_fixture_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "groom-group-root-projection",
+    "name": "Groom Group / Root Projection Inspector",
+    "methodSource": "Maya curve root CV projection + group/material/guide payload checks",
+    "protocolCarrier": "Maya curve payload attrs, root CV world positions, scalp UV projection plane, group material slots",
+    "boundary": {
+      "mutation": "synthetic_maya_groom_fixture_only",
+      "sceneWrites": "creates temporary public scalp planes, curve strands and custom attrs in batch scene",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "summary": {
+    "gate": "Blocked",
+    "assetCount": 2,
+    "readyAssets": 1,
+    "reviewAssets": 0,
+    "blockedAssets": 1,
+    "readyAssetIds": [
+      "groom-hero-hair-001"
+    ],
+    "reviewAssetIds": [],
+    "blockedAssetIds": [
+      "groom-hero-hair-tmp-002"
+    ],
+    "strandProjectionRows": 10,
+    "groupCoverageRows": 4,
+    "projectionMatchedStrands": 6,
+    "groupMatchedStrands": 7,
+    "materialMatchedStrands": 8,
+    "maxProjectionDrift": 0.175,
+    "pass": 10,
+    "warning": 1,
+    "error": 7,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "R59 checks that root UV values are not just present: they agree with Maya curve root projection against the declared scalp UV plane.",
+    "The report links strand group IDs to guide coverage, target scalp sections and Unreal material-slot routing before the groom can enter BindingAsset work.",
+    "Temporary or ambiguous groom rows stay blocked with owner actions instead of being normalized into a usable engine payload."
+  ]
+}

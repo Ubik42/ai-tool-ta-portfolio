@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r59-groom-group-root-projection` | `python dcc-hosts/groom-export-inspector/scripts/run_group_root_projection.py` | Maya 2026 mayapy projects curve root CVs to scalp `root_uv`, validates group/guide/material-slot routing, reports 10 strand projection rows and 4 group coverage rows, keeps approved groom Ready, blocks TMP groom, and keeps assetWrites=0 / productionWrites=0. |
+| `validate-r59-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r59-groom-group-root-projection-presentation-pack")` | DCC Presenter Pack probes 58 key evidence files including Groom Group / Root Projection Inspector, reports 58 present / 0 missing required files, and exports 48 demo route steps. |
 | `validate-r58-max-controlled-repair` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_controlled_repair.py 600` | 3ds Max 2022 batch runtime executes 5 public fixture repair receipts, turns preGate `Blocked` into postGate `Ready`, verifies rollbackPassed=true and keeps assetWrites=0 / productionWrites=0. |
 | `validate-r58-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r58-max-controlled-repair-presentation-pack")` | DCC Presenter Pack probes 57 key evidence files including 3ds Max Controlled Repair Executor, reports 57 present / 0 missing required files, and exports 47 demo route steps. |
 | `validate-r57-blender-controlled-repair` | `python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py` | Blender 5.2 background runtime executes 4 public fixture repair receipts, turns preGate `Blocked` into postGate `Ready`, verifies rollbackPassed=true and keeps assetWrites=0 / productionWrites=0. |

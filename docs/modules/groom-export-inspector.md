@@ -1,6 +1,6 @@
 # Groom Export Inspector
 
-R46/R47/R48/R49/R50/R52/R55 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness 和 controlled executor rollback proof，覆盖 root UV、strand ID、guide curve、curve-only Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 `GroomAsset` / `GroomBindingAsset` post-check、runtime 属性/方法/调用事实回读和回滚边界。
+R46/R47/R48/R49/R50/R52/R55/R59 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness、controlled executor rollback proof、runtime fact readback 和 group/root projection 细分，覆盖 root UV、strand ID、guide curve、curve-only Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 `GroomAsset` / `GroomBindingAsset` post-check、runtime 属性/方法/调用事实回读、curve root 投影、groom group、guide coverage、material slot routing 和回滚边界。
 
 ## 核心业务逻辑
 
@@ -16,6 +16,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - Unreal import/post-check 是否能 dry-run 出任务、工厂、目标资产和 no-write gate。
 - public Unreal project 是否显式请求 HairStrands / AlembicHairImporter / AlembicImporter / GeometryCache，并在 runtime 中暴露 Groom import API。
 - approved `.abc` 进入真实 Unreal `AssetImportTask` 后，产物是否确实是 `GroomAsset`，是否能继续创建 `GroomBindingAsset`，是否能在资产存在期间读取 runtime 属性、方法面和 callable facts，以及失败时是否能干净回滚。
+- strand root CV 投影回 scalp `root_uv` 后，是否与存储 root UV、groom group UV 区间、guide 覆盖和 Unreal hair material slot 一致。
 - 临时 description / TMP groom 是否被拦截在 owner review。
 
 ## 当前实现
@@ -23,6 +24,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 代码入口：
 
 - `dcc-hosts/groom-export-inspector/fixtures/synthetic_groom_export_scene.json`
+- `dcc-hosts/groom-export-inspector/fixtures/synthetic_groom_group_projection_scene.json`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/contract.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/maya_collector.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/unreal_readiness.py`
@@ -31,6 +33,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/controlled_executor.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/groom_runtime_facts.py`
+- `dcc-hosts/groom-export-inspector/groom_export_inspector/group_root_projection.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_l3.py`
@@ -40,6 +43,8 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/scripts/run_groom_plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_groom_controlled_executor.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_group_root_projection.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_maya_group_root_projection.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_import_readiness.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_alembic_import_postcheck.py`
@@ -71,6 +76,9 @@ R46 已完成：
 - R55 runtime facts：Unreal 5.3.2 在 controlled executor 证据之上重新导入 approved curve-only public cache，创建 `GroomAsset` / `GroomBindingAsset`，在资产存在期间读取 package、property、method surface 和 callable facts，然后 rollback。
 - Presenter Pack 接入：R55 Presenter Pack 探测 Groom Runtime Fact Collector artifact，并把 demo route 扩到 43 步、evidence probes 扩到 53 个。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r55` / `dcc-first-package@1.52.0`。
+- R59 group/root projection：Maya 2026 `mayapy` 创建 grouped groom public fixture，从 curve root CV 投影到 scalp `root_uv`，检查 group definition、strand membership、projection drift、group UV region、guide coverage、material-slot routing 和 Alembic group payload。
+- Presenter Pack 接入：R59 Presenter Pack 探测 Groom Group / Root Projection artifact，并把 demo route 扩到 48 步、evidence probes 扩到 58 个。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r59` / `dcc-first-package@1.56.0`。
 
 ## 证据
 
@@ -83,7 +91,7 @@ R46 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r55-groom-runtime-facts-presentation-pack-20260806-040806.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r59-groom-group-root-projection-presentation-pack-20260806-052010.json
 ```
 
 关键结果：
@@ -234,10 +242,31 @@ Gate 为 `Ready`：R52 证明关键阻断不在 Unreal runtime 或项目插件�
 
 Gate 为 `Ready`：R55 证明 Groom 线已经不只是导入成功，而是能在真实 Unreal 资产存在期间回读审查所需 runtime surface，并在同一 commandlet 内清理所有 public fixture residue。
 
+当前 Groom Group / Root Projection artifact：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-group-root-projection-20260806-051721.json
+```
+
+关键结果：
+
+- report version：`groom-group-root-projection@0.1.0`
+- evidence level：L3
+- l3 status：`maya_groom_group_root_projection_collected`
+- Maya runtime：2026
+- assets ready / review / blocked：1 / 0 / 1
+- strand projection rows / group coverage rows：10 / 4
+- projection matched / group matched / material matched strands：6 / 7 / 8
+- max projection drift：0.175
+- checks pass / warning / error：10 / 1 / 7
+- assetWrites / engineWrites / productionWrites：0 / 0 / 0
+
+Gate 为 `Blocked` 是正确状态：approved groom 已证明 6 / 6 root projection 匹配、3 / 3 group coverage 匹配；TMP groom 被 draft protocol、缺失/重复 strand identity、root projection drift、undeclared group、guide 缺失、target scalp section 缺失、material slot 和 Alembic group payload 问题阻断。
+
 ## 后续
 
 下一阶段可以继续做：
 
-- 增加更多 hair schema 变体：多 group、不同 guide density、宽度/root UV 属性缺失、错误 scalp proximity。
+- 增加更多 hair schema 变体：不同 guide density、宽度/root UV 属性缺失、错误 scalp proximity、LOD hair group split。
 - 增加更多导入后 GroomAsset / BindingAsset 细分项：group count、binding target mesh、root projection stats；如果 Python surface 不足，再评估 Editor Utility / C++ bridge。
 - 将 Groom 证据接入 Maya GUI 的专用 reviewer panel，展示 root UV、guide、curve-only cache hash、import post-check 和 rollback receipt 的闭环。

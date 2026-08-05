@@ -5,6 +5,7 @@ __all__ = [
     "alembic_payload",
     "contract",
     "controlled_executor",
+    "group_root_projection",
     "groom_runtime_facts",
     "maya_collector",
     "plugin_api_fixture",

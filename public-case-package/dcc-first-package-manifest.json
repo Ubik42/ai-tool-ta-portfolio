@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r58",
-  "packageVersion": "dcc-first-package@1.55.0",
-  "generatedAt": "2026-08-06 04:54:33",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r59",
+  "packageVersion": "dcc-first-package@1.56.0",
+  "generatedAt": "2026-08-06 05:20:04",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 43,
+    "artifactCount": 44,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -40,7 +40,7 @@
     "assetHandoffDecisionOwnerRequired": 1,
     "assetHandoffDecisionEngineReady": 1,
     "assetHandoffDecisionEngineHeld": 1,
-    "reviewerClaims": 35,
+    "reviewerClaims": 36,
     "engineHandoffPreflightGate": "Review",
     "engineHandoffPreflightAssets": 2,
     "engineHandoffPreflightReady": 1,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 57,
-    "presentationPackPresentEvidenceFiles": 57,
+    "presentationPackEvidenceFiles": 58,
+    "presentationPackPresentEvidenceFiles": 58,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 47,
+    "presentationPackDemoRouteSteps": 48,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -768,8 +768,8 @@
     "unrealGameplayAttachFixtureAssetWrites": 0,
     "unrealGameplayAttachFixtureEngineWrites": 0,
     "unrealGameplayAttachFixtureProductionWrites": 0,
-    "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
-    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
+    "latestRuntimeEvidence": "Groom Group / Root Projection gate: Blocked overall with approved groom Ready; Maya mayapy projects 10 curve roots to scalp root_uv, validates 4 group coverage rows, and blocks the TMP groom on projection/group/guide/material payload issues with zero asset writes.",
+    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
     "groomRuntimeFactsReportVersion": "groom-runtime-facts@0.1.0",
     "groomRuntimeFactsArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
     "groomRuntimeFactsEvidenceLevel": "L3",
@@ -839,7 +839,28 @@
     "maxControlledRepairPostWarnings": 0,
     "maxControlledRepairPostErrors": 0,
     "maxControlledRepairAssetWrites": 0,
-    "maxControlledRepairProductionWrites": 0
+    "maxControlledRepairProductionWrites": 0,
+    "groomGroupRootProjectionReportVersion": "groom-group-root-projection@0.1.0",
+    "groomGroupRootProjectionArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-group-root-projection-20260806-051721.json",
+    "groomGroupRootProjectionEvidenceLevel": "L3",
+    "groomGroupRootProjectionL3Status": "maya_groom_group_root_projection_collected",
+    "groomGroupRootProjectionGate": "Blocked",
+    "groomGroupRootProjectionAssets": 2,
+    "groomGroupRootProjectionReady": 1,
+    "groomGroupRootProjectionReview": 0,
+    "groomGroupRootProjectionBlocked": 1,
+    "groomGroupRootProjectionStrandRows": 10,
+    "groomGroupRootProjectionGroupRows": 4,
+    "groomGroupRootProjectionProjectionMatched": 6,
+    "groomGroupRootProjectionGroupMatched": 7,
+    "groomGroupRootProjectionMaterialMatched": 8,
+    "groomGroupRootProjectionMaxDrift": 0.175,
+    "groomGroupRootProjectionPassChecks": 10,
+    "groomGroupRootProjectionWarningChecks": 1,
+    "groomGroupRootProjectionErrorChecks": 7,
+    "groomGroupRootProjectionAssetWrites": 0,
+    "groomGroupRootProjectionEngineWrites": 0,
+    "groomGroupRootProjectionProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -1220,6 +1241,20 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-groom-group-root-projection",
+      "label": "Groom Group / Root Projection Inspector",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-group-root-projection-20260806-051721.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-r59-presenter-pack",
+      "label": "R59 Groom Group / Root Projection Presenter Pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
+      "required": true
     }
   ],
   "validation": [
@@ -1453,7 +1488,19 @@
       "result": "passed: 57/57 evidence, 0 missing, 47 demo route",
       "required": true
     },
-    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_controlled_repair.py 600"
+    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_controlled_repair.py 600",
+    {
+      "id": "validate-r59-groom-group-root-projection",
+      "command": "python dcc-hosts/groom-export-inspector/scripts/run_group_root_projection.py",
+      "result": "passed: L3, approved groom Ready, TMP groom Blocked, 10 strand projection rows, 4 group rows, writes=0",
+      "required": true
+    },
+    {
+      "id": "validate-r59-dcc-presenter-pack",
+      "command": "mayapy dcc_presentation_export_pack(label='r59-groom-group-root-projection-presentation-pack')",
+      "result": "passed: 58/58 evidence, 0 missing, 48 demo route",
+      "required": true
+    }
   ],
   "notes": [
     "R49 adds Groom Alembic Import/Post-check Readiness: Unreal 5.3 reads the R48 .abc cache, verifies sha256 continuity, dry-runs AssetImportTask/Alembic factory setup, keeps imports held, and records missing Groom API/asset post-check gaps under assetWrites=0.",
@@ -1531,7 +1578,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -2140,7 +2187,9 @@
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
     "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json"
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
+    "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-group-root-projection-20260806-051721.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json"
   ],
   "evidence": [
     {
@@ -2576,6 +2625,7 @@
     ".\\scripts\\validate_loop.ps1 -Tier blender-controlled-repair"
   ],
   "releaseNotes": [
+    "R59 adds Groom Group / Root Projection Inspector: Maya mayapy projects curve root CVs to scalp root_uv, checks declared groom groups, guide coverage and Unreal material-slot routing, keeps the approved groom Ready and blocks temporary ambiguous rows with zero asset writes.",
     "R58 adds 3ds Max Controlled Repair Executor: 3dsmaxbatch applies public fixture UCX collision, LOD1, material/texture, UV/map channel and transform/vertex-color repair receipts, post-checks Ready, then rolls back without saving a .max file.",
     "R57 adds Blender Controlled Repair Executor: Blender background runtime applies public fixture collision, LOD, UV and material/texture repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
     "R56 adds Houdini Rule Adapter: HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input, with hython readiness blocked honestly when Houdini is not installed.",
@@ -2625,8 +2675,8 @@
   "groomRuntimeFactsAssetWrites": 6,
   "groomRuntimeFactsEngineWrites": 0,
   "groomRuntimeFactsProductionWrites": 0,
-  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r58-max-controlled-repair-presentation-pack-20260806-045801.json",
-  "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
+  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
+  "latestRuntimeEvidence": "Groom Group / Root Projection gate: Blocked overall with approved groom Ready; Maya mayapy projects 10 curve roots to scalp root_uv, validates 4 group coverage rows, and blocks the TMP groom on projection/group/guide/material payload issues with zero asset writes.",
   "houdiniRuleAdapterReportVersion": "houdini-rule-adapter-contract@0.1.0",
   "houdiniRuleAdapterArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-contract-20260806-041956.json",
   "houdiniRuleAdapterEvidenceLevel": "L2+",
@@ -2678,5 +2728,26 @@
   "maxControlledRepairPostWarnings": 0,
   "maxControlledRepairPostErrors": 0,
   "maxControlledRepairAssetWrites": 0,
-  "maxControlledRepairProductionWrites": 0
+  "maxControlledRepairProductionWrites": 0,
+  "groomGroupRootProjectionReportVersion": "groom-group-root-projection@0.1.0",
+  "groomGroupRootProjectionArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-group-root-projection-20260806-051721.json",
+  "groomGroupRootProjectionEvidenceLevel": "L3",
+  "groomGroupRootProjectionL3Status": "maya_groom_group_root_projection_collected",
+  "groomGroupRootProjectionGate": "Blocked",
+  "groomGroupRootProjectionAssets": 2,
+  "groomGroupRootProjectionReady": 1,
+  "groomGroupRootProjectionReview": 0,
+  "groomGroupRootProjectionBlocked": 1,
+  "groomGroupRootProjectionStrandRows": 10,
+  "groomGroupRootProjectionGroupRows": 4,
+  "groomGroupRootProjectionProjectionMatched": 6,
+  "groomGroupRootProjectionGroupMatched": 7,
+  "groomGroupRootProjectionMaterialMatched": 8,
+  "groomGroupRootProjectionMaxDrift": 0.175,
+  "groomGroupRootProjectionPassChecks": 10,
+  "groomGroupRootProjectionWarningChecks": 1,
+  "groomGroupRootProjectionErrorChecks": 7,
+  "groomGroupRootProjectionAssetWrites": 0,
+  "groomGroupRootProjectionEngineWrites": 0,
+  "groomGroupRootProjectionProductionWrites": 0
 }

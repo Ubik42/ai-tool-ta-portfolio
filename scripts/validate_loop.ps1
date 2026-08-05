@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -122,6 +122,7 @@ $QuickPythonFiles = @(
     (Join-Path $GroomExportInspector "groom_export_inspector\plugin_api_fixture.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\controlled_executor.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\groom_runtime_facts.py"),
+    (Join-Path $GroomExportInspector "groom_export_inspector\group_root_projection.py"),
     (Join-Path $GroomExportInspector "scripts\run_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_l3_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_maya_l3.py"),
@@ -131,6 +132,8 @@ $QuickPythonFiles = @(
     (Join-Path $GroomExportInspector "scripts\run_groom_plugin_api_fixture.py"),
     (Join-Path $GroomExportInspector "scripts\run_groom_controlled_executor.py"),
     (Join-Path $GroomExportInspector "scripts\run_groom_runtime_facts.py"),
+    (Join-Path $GroomExportInspector "scripts\run_group_root_projection.py"),
+    (Join-Path $GroomExportInspector "scripts\run_maya_group_root_projection.py"),
     (Join-Path $GroomExportInspector "scripts\run_maya_alembic_payload.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_import_readiness.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_alembic_import_postcheck.py"),
@@ -198,12 +201,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r58-max-controlled-repair-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r59-groom-group-root-projection-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.55.0", summary
-assert summary["present_evidence_files"] == 57, summary
+assert summary["package_version"] == "dcc-first-package@1.56.0", summary
+assert summary["present_evidence_files"] == 58, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 47, summary
+assert summary["demo_route_steps"] == 48, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -348,6 +351,12 @@ if ($Tier -in @("groom-controlled-executor", "full")) {
 if ($Tier -in @("groom-runtime-facts", "full")) {
     Invoke-Step "groom runtime facts" {
         python (Join-Path $GroomExportInspector "scripts\run_groom_runtime_facts.py")
+    }
+}
+
+if ($Tier -in @("groom-group-root-projection", "full")) {
+    Invoke-Step "groom group/root projection" {
+        python (Join-Path $GroomExportInspector "scripts\run_group_root_projection.py")
     }
 }
 

@@ -122,7 +122,7 @@ def collect_maya_scene_facts(cmds: Any) -> Dict[str, Any]:
     ]
     assets: List[Dict[str, Any]] = []
     for root in sorted(roots):
-        descendants = cmds.listRelatives(root, allDescendents=True, type="transform", fullPath=False) or []
+        descendants = cmds.listRelatives(root, allDescendents=True, fullPath=True) or []
         strand_nodes = [node for node in descendants if _has_attr(cmds, node, "aiToolTaGroomStrandPayload")]
         strands = []
         for node in sorted(strand_nodes):
@@ -179,6 +179,9 @@ def _create_curve(cmds: Any, namespace: str, strand: Dict[str, Any], index: int)
         "rootUv": strand.get("rootUv"),
         "guide": bool(strand.get("guide")),
         "width": float(strand.get("width", 0.0) or 0.0),
+        "groupId": strand.get("groupId"),
+        "groupName": str(strand.get("groupName", "")),
+        "materialSlot": str(strand.get("materialSlot", "")),
         "points": points,
     }
     _set_string_attr(cmds, curve, "aiToolTaGroomStrandPayload", json.dumps(payload, ensure_ascii=False, sort_keys=True))
@@ -190,13 +193,15 @@ def _set_standard_groom_attrs(cmds: Any, curve: str, payload: Dict[str, Any]) ->
     targets = [curve] + (cmds.listRelatives(curve, shapes=True, fullPath=True) or [])
     root_uv = payload.get("rootUv") if isinstance(payload.get("rootUv"), list) else [0.0, 0.0]
     strand_id = payload.get("id") or "missing"
+    group_id = int(payload.get("groupId") or 0)
+    group_name = payload.get("groupName") or "HeroHair"
     for node in targets:
         _set_double2_attr(cmds, node, "groom_root_uv", float(root_uv[0]), float(root_uv[1]))
         _set_numeric_attr(cmds, node, "groom_width", float(payload.get("width") or 0.0), "double")
         _set_numeric_attr(cmds, node, "groom_id", index_value(strand_id), "long")
         _set_numeric_attr(cmds, node, "groom_guide", 1 if payload.get("guide") else 0, "bool")
-        _set_numeric_attr(cmds, node, "groom_group_id", 0, "long")
-        _set_string_attr(cmds, node, "groom_group_name", "HeroHair")
+        _set_numeric_attr(cmds, node, "groom_group_id", group_id, "long")
+        _set_string_attr(cmds, node, "groom_group_name", str(group_name))
 
 
 def _set_string_attr(cmds: Any, node: str, attr: str, value: str) -> None:

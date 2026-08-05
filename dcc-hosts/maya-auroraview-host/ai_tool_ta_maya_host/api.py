@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r58-max-controlled-repair-presentation-pack",
+        label: str = "r59-groom-group-root-projection-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4176,6 +4176,12 @@ class MayaPortfolioApi:
                 "Groom Runtime Fact Collector artifact",
                 "artifact",
                 manifest.get("groomRuntimeFactsArtifact"),
+            ),
+            _probe_file(
+                "groom-group-root-projection",
+                "Groom Group / Root Projection artifact",
+                "artifact",
+                manifest.get("groomGroupRootProjectionArtifact"),
             ),
             _probe_file(
                 "spatial-authoring-maya-l3",
@@ -4417,6 +4423,12 @@ class MayaPortfolioApi:
                 "label": "Run Groom runtime facts",
                 "operator_action": "Run python dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py.",
                 "evidence_expected": "Unreal Python imports the approved GroomAsset/BindingAsset public fixture, reads runtime properties, method surface and callable facts, then rolls back without residue.",
+            },
+            {
+                "id": "24b-run-groom-group-root-projection",
+                "label": "Run Groom group/root projection",
+                "operator_action": "Run python dcc-hosts/groom-export-inspector/scripts/run_group_root_projection.py.",
+                "evidence_expected": "Maya mayapy projects curve root CVs to scalp root_uv, verifies group/guide/material-slot routing, keeps approved groom Ready and blocks temporary ambiguous groom rows.",
             },
             {
                 "id": "25-run-spatial-authoring-l3",
@@ -4899,6 +4911,20 @@ class MayaPortfolioApi:
                 "groom_runtime_facts_error_checks": manifest_summary.get("groomRuntimeFactsErrorChecks"),
                 "groom_runtime_facts_asset_writes": manifest_summary.get("groomRuntimeFactsAssetWrites"),
                 "groom_runtime_facts_production_writes": manifest_summary.get("groomRuntimeFactsProductionWrites"),
+                "groom_group_root_projection_gate": manifest_summary.get("groomGroupRootProjectionGate"),
+                "groom_group_root_projection_evidence_level": manifest_summary.get("groomGroupRootProjectionEvidenceLevel"),
+                "groom_group_root_projection_l3_status": manifest_summary.get("groomGroupRootProjectionL3Status"),
+                "groom_group_root_projection_assets": manifest_summary.get("groomGroupRootProjectionAssets"),
+                "groom_group_root_projection_ready": manifest_summary.get("groomGroupRootProjectionReady"),
+                "groom_group_root_projection_blocked": manifest_summary.get("groomGroupRootProjectionBlocked"),
+                "groom_group_root_projection_strand_rows": manifest_summary.get("groomGroupRootProjectionStrandRows"),
+                "groom_group_root_projection_group_rows": manifest_summary.get("groomGroupRootProjectionGroupRows"),
+                "groom_group_root_projection_projection_matched": manifest_summary.get("groomGroupRootProjectionProjectionMatched"),
+                "groom_group_root_projection_group_matched": manifest_summary.get("groomGroupRootProjectionGroupMatched"),
+                "groom_group_root_projection_max_drift": manifest_summary.get("groomGroupRootProjectionMaxDrift"),
+                "groom_group_root_projection_pass_checks": manifest_summary.get("groomGroupRootProjectionPassChecks"),
+                "groom_group_root_projection_warning_checks": manifest_summary.get("groomGroupRootProjectionWarningChecks"),
+                "groom_group_root_projection_error_checks": manifest_summary.get("groomGroupRootProjectionErrorChecks"),
                 "spatial_authoring_gate": manifest_summary.get("spatialAuthoringGate"),
                 "spatial_authoring_evidence_level": manifest_summary.get("spatialAuthoringEvidenceLevel"),
                 "spatial_authoring_l3_status": manifest_summary.get("spatialAuthoringL3Status"),
@@ -5190,6 +5216,7 @@ class MayaPortfolioApi:
                 "Groom Plugin/API Public Fixture Readiness proves the public Unreal project requests HairStrands and Alembic hair plugins, exposes Groom import API classes and keeps the probe read-only.",
                 "Groom Controlled Executor imports the curve-only public .abc through Unreal HairStrandsFactory, creates the expected GroomAsset and BindingAsset, then rolls back public fixture writes without residue.",
                 "Groom Runtime Fact Collector reads GroomAsset, GroomBindingAsset and target SkeletalMesh runtime facts while the public fixture assets exist, then rolls back without residue.",
+                "Groom Group / Root Projection Inspector proves that root UV values agree with Maya curve root projection, declared groom groups, guide coverage and Unreal hair material-slot routing.",
                 "Spatial Authoring Workbench is now backed by Maya mayapy L3 socket, hotspot, pose frame, mirror pair and pose transfer evidence.",
                 "Spatial Authoring Drilldown projects Maya L3 spatial facts into UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
                 "Unreal Socket Import Checker joins Maya spatial authoring facts to Unreal SkeletalMesh/Skeleton socket API readiness and expected socket coverage.",
@@ -5230,7 +5257,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r58-max-controlled-repair-presentation-pack",
+        label: str = "r59-groom-group-root-projection-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
