@@ -124,9 +124,9 @@ Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
 
 Business scenario: XGen/groom hair can pass ordinary mesh checks while root UVs, strand IDs, guide curves or Alembic payload flags are missing, making Unreal Groom / Binding import unreliable.
 
-Core secret: treat groom export as a non-mesh publish contract. R46 records root UV coverage, stable strand IDs, guide curve coverage, `.abc` payload flags, target Groom / Binding / SkeletalMesh intent and owner actions from Maya runtime facts.
+Core secret: treat groom export as a non-mesh publish contract. R46 records root UV coverage, stable strand IDs, guide curve coverage, `.abc` payload flags, target Groom / Binding / SkeletalMesh intent and owner actions from Maya runtime facts. R47 then checks whether those rows can actually enter Unreal import readiness through API visibility, target SkeletalMesh presence and zero-write engine boundaries.
 
-Deterministic core: public Maya scalp/curve fixture, `mayapy` collector, per-strand custom payload, root UV / strand ID / guide evaluation, Alembic contract rows, Unreal binding target rows, owner actions and zero-write boundary.
+Deterministic core: public Maya scalp/curve fixture, `mayapy` collector, per-strand custom payload, root UV / strand ID / guide evaluation, Alembic contract rows, Unreal binding target rows, Unreal 5.3.2 read-only API/asset probe, owner actions and zero-write boundary.
 
 AI boundary: AI can explain why a groom export is blocked or draft owner notes. It cannot claim a groom cache is engine-ready without deterministic root UV, ID, guide and binding evidence.
 

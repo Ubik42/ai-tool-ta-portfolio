@@ -1,0 +1,742 @@
+{
+  "reportVersion": "groom-unreal-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 01:00:16",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_groom_import_readiness_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+    "exists": true,
+    "reportVersion": "groom-export-inspector-maya-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "maya_groom_export_facts_collected",
+    "gate": "Blocked"
+  },
+  "sourceGroomSummary": {
+    "gate": "Blocked",
+    "assetCount": 2,
+    "readyAssets": 1,
+    "reviewAssets": 0,
+    "blockedAssets": 1,
+    "pass": 11,
+    "warning": 2,
+    "error": 7,
+    "readyAssetIds": [
+      "groom-hero-hair-001"
+    ],
+    "reviewAssetIds": [],
+    "blockedAssetIds": [
+      "groom-hero-hair-tmp-002"
+    ]
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "AssetImportTask": true,
+        "AssetToolsHelpers": true,
+        "AutomatedAssetImportData": true,
+        "AlembicImportFactory": true,
+        "AlembicImportSettings": false,
+        "GroomAsset": false,
+        "GroomBindingAsset": false,
+        "GroomCache": false,
+        "GroomCacheImportOptions": false,
+        "GroomImportFactory": false,
+        "GroomImportOptions": false,
+        "EditorAssetLibrary": true
+      },
+      "plugins": {
+        "Groom": {
+          "queried": false,
+          "enabled": false,
+          "rows": []
+        },
+        "HairStrands": {
+          "queried": false,
+          "enabled": false,
+          "rows": []
+        },
+        "AlembicImporter": {
+          "queried": false,
+          "enabled": false,
+          "rows": []
+        }
+      },
+      "groomClassNames": [],
+      "hairClassNames": [
+        "MaterialExpressionHairAttributes",
+        "MaterialExpressionHairColor",
+        "MaterialExpressionStrataHairBSDF"
+      ],
+      "alembicClassNames": [
+        "AbcAssetImportData",
+        "AbcCompressionSettings",
+        "AbcConversionPreset",
+        "AbcConversionSettings",
+        "AbcGeometryCacheMotionVectorsImport",
+        "AbcGeometryCacheSettings",
+        "AbcImportSettings",
+        "AbcMaterialSettings",
+        "AbcNormalGenerationSettings",
+        "AbcSamplingSettings",
+        "AbcStaticMeshSettings",
+        "AlembicImportFactory",
+        "AlembicImportType",
+        "AlembicSamplingType"
+      ],
+      "groomApiVisible": false,
+      "groomBindingApiVisible": false,
+      "importTaskVisible": true,
+      "groomImportFactoryVisible": false,
+      "alembicImportFactoryVisible": true,
+      "groomImportOptionsVisible": false,
+      "assetToolsVisible": true
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only Groom import readiness probe; no import and no asset save"
+  },
+  "apiAvailability": {
+    "classes": {
+      "AssetImportTask": true,
+      "AssetToolsHelpers": true,
+      "AutomatedAssetImportData": true,
+      "AlembicImportFactory": true,
+      "AlembicImportSettings": false,
+      "GroomAsset": false,
+      "GroomBindingAsset": false,
+      "GroomCache": false,
+      "GroomCacheImportOptions": false,
+      "GroomImportFactory": false,
+      "GroomImportOptions": false,
+      "EditorAssetLibrary": true
+    },
+    "plugins": {
+      "Groom": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      },
+      "HairStrands": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      },
+      "AlembicImporter": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      }
+    },
+    "groomClassNames": [],
+    "hairClassNames": [
+      "MaterialExpressionHairAttributes",
+      "MaterialExpressionHairColor",
+      "MaterialExpressionStrataHairBSDF"
+    ],
+    "alembicClassNames": [
+      "AbcAssetImportData",
+      "AbcCompressionSettings",
+      "AbcConversionPreset",
+      "AbcConversionSettings",
+      "AbcGeometryCacheMotionVectorsImport",
+      "AbcGeometryCacheSettings",
+      "AbcImportSettings",
+      "AbcMaterialSettings",
+      "AbcNormalGenerationSettings",
+      "AbcSamplingSettings",
+      "AbcStaticMeshSettings",
+      "AlembicImportFactory",
+      "AlembicImportType",
+      "AlembicSamplingType"
+    ],
+    "groomApiVisible": false,
+    "groomBindingApiVisible": false,
+    "importTaskVisible": true,
+    "groomImportFactoryVisible": false,
+    "alembicImportFactoryVisible": true,
+    "groomImportOptionsVisible": false,
+    "assetToolsVisible": true
+  },
+  "facts": {
+    "schema": "groom-unreal-readiness-facts@0.1.0",
+    "sourceReadable": true,
+    "sourceAssetCount": 2,
+    "runtimeCollected": true,
+    "assets": [
+      {
+        "assetId": "groom-hero-hair-001",
+        "assetLabel": "Hero Hair Approved",
+        "sourceStatus": "Ready",
+        "sourceDcc": "Maya",
+        "descriptionName": "xgen_hero_short_hair",
+        "ownerState": "approved",
+        "cachePath": "D:/public/ai_tool_ta/groom/hero_hair.abc",
+        "cacheExtensionMatched": true,
+        "includeRootUV": true,
+        "includeStrandIds": true,
+        "includeGuideCurves": true,
+        "frameStart": 1001,
+        "frameEnd": 1001,
+        "cacheContractReady": true,
+        "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "materialSlot": "M_Hair_Default",
+        "runtimeExecuted": true,
+        "runtimeMatched": true,
+        "groomApiVisible": false,
+        "groomBindingApiVisible": false,
+        "importTaskVisible": true,
+        "groomImportFactoryVisible": false,
+        "alembicImportFactoryVisible": true,
+        "groomImportOptionsVisible": false,
+        "targetSkeletalMeshExists": true,
+        "targetSkeletalMeshClass": "SkeletalMesh",
+        "expectedGroomAssetExists": false,
+        "expectedGroomAssetClass": null,
+        "expectedBindingAssetExists": false,
+        "expectedBindingAssetClass": null,
+        "assetProbeErrors": [],
+        "apiProbe": {
+          "classRows": {
+            "AssetImportTask": true,
+            "AssetToolsHelpers": true,
+            "AutomatedAssetImportData": true,
+            "AlembicImportFactory": true,
+            "AlembicImportSettings": false,
+            "GroomAsset": false,
+            "GroomBindingAsset": false,
+            "GroomCache": false,
+            "GroomCacheImportOptions": false,
+            "GroomImportFactory": false,
+            "GroomImportOptions": false,
+            "EditorAssetLibrary": true
+          },
+          "groomClassNames": [],
+          "hairClassNames": [
+            "MaterialExpressionHairAttributes",
+            "MaterialExpressionHairColor",
+            "MaterialExpressionStrataHairBSDF"
+          ],
+          "alembicClassNames": [
+            "AbcAssetImportData",
+            "AbcCompressionSettings",
+            "AbcConversionPreset",
+            "AbcConversionSettings",
+            "AbcGeometryCacheMotionVectorsImport",
+            "AbcGeometryCacheSettings",
+            "AbcImportSettings",
+            "AbcMaterialSettings",
+            "AbcNormalGenerationSettings",
+            "AbcSamplingSettings",
+            "AbcStaticMeshSettings",
+            "AlembicImportFactory",
+            "AlembicImportType",
+            "AlembicSamplingType"
+          ],
+          "pluginRows": {
+            "Groom": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            },
+            "HairStrands": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            },
+            "AlembicImporter": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            }
+          }
+        }
+      },
+      {
+        "assetId": "groom-hero-hair-tmp-002",
+        "assetLabel": "Hero Hair Temporary Groom",
+        "sourceStatus": "Blocked",
+        "sourceDcc": "Maya",
+        "descriptionName": "TMP_xgen_hero_hair",
+        "ownerState": "temporary",
+        "cachePath": "D:/temp/ai_tool_ta/groom/hero_hair_preview.ma",
+        "cacheExtensionMatched": false,
+        "includeRootUV": false,
+        "includeStrandIds": false,
+        "includeGuideCurves": false,
+        "frameStart": 1010,
+        "frameEnd": 1001,
+        "cacheContractReady": false,
+        "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+        "expectedBindingAsset": "",
+        "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP",
+        "materialSlot": "",
+        "runtimeExecuted": true,
+        "runtimeMatched": true,
+        "groomApiVisible": false,
+        "groomBindingApiVisible": false,
+        "importTaskVisible": true,
+        "groomImportFactoryVisible": false,
+        "alembicImportFactoryVisible": true,
+        "groomImportOptionsVisible": false,
+        "targetSkeletalMeshExists": false,
+        "targetSkeletalMeshClass": null,
+        "expectedGroomAssetExists": false,
+        "expectedGroomAssetClass": null,
+        "expectedBindingAssetExists": false,
+        "expectedBindingAssetClass": null,
+        "assetProbeErrors": [
+          {
+            "path": "",
+            "error": "empty_path"
+          }
+        ],
+        "apiProbe": {
+          "classRows": {
+            "AssetImportTask": true,
+            "AssetToolsHelpers": true,
+            "AutomatedAssetImportData": true,
+            "AlembicImportFactory": true,
+            "AlembicImportSettings": false,
+            "GroomAsset": false,
+            "GroomBindingAsset": false,
+            "GroomCache": false,
+            "GroomCacheImportOptions": false,
+            "GroomImportFactory": false,
+            "GroomImportOptions": false,
+            "EditorAssetLibrary": true
+          },
+          "groomClassNames": [],
+          "hairClassNames": [
+            "MaterialExpressionHairAttributes",
+            "MaterialExpressionHairColor",
+            "MaterialExpressionStrataHairBSDF"
+          ],
+          "alembicClassNames": [
+            "AbcAssetImportData",
+            "AbcCompressionSettings",
+            "AbcConversionPreset",
+            "AbcConversionSettings",
+            "AbcGeometryCacheMotionVectorsImport",
+            "AbcGeometryCacheSettings",
+            "AbcImportSettings",
+            "AbcMaterialSettings",
+            "AbcNormalGenerationSettings",
+            "AbcSamplingSettings",
+            "AbcStaticMeshSettings",
+            "AlembicImportFactory",
+            "AlembicImportType",
+            "AlembicSamplingType"
+          ],
+          "pluginRows": {
+            "Groom": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            },
+            "HairStrands": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            },
+            "AlembicImporter": {
+              "queried": false,
+              "enabled": false,
+              "rows": []
+            }
+          }
+        }
+      }
+    ],
+    "summary": {
+      "sourceReadable": true,
+      "assetRows": 2,
+      "sourceReadyRows": 1,
+      "sourceBlockedRows": 1,
+      "runtimeCollected": true,
+      "groomApiVisibleRows": 0,
+      "groomBindingApiVisibleRows": 0,
+      "importTaskVisibleRows": 2,
+      "groomImportFactoryVisibleRows": 0,
+      "alembicImportFactoryVisibleRows": 2,
+      "groomImportOptionsVisibleRows": 0,
+      "targetSkeletalMeshPresentRows": 1,
+      "expectedGroomAssetsPresentRows": 0,
+      "expectedBindingAssetsPresentRows": 0,
+      "cacheContractReadyRows": 1,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "groom-unreal-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 0,
+      "reviewAssets": 0,
+      "blockedAssets": 2,
+      "pass": 12,
+      "warning": 4,
+      "error": 6,
+      "readyAssetIds": [],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "groom-hero-hair-001",
+        "groom-hero-hair-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "source-groom-row-ready:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "source-groom-row-ready",
+        "label": "Source Groom Row",
+        "status": "pass",
+        "message": "Source Groom Row is satisfied.",
+        "evidence": "Ready",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "unreal-python-runtime:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "message": "Unreal Python Runtime is satisfied.",
+        "evidence": "True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-api-surface:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "groom-api-surface",
+        "label": "Groom API Surface",
+        "status": "error",
+        "message": "Groom import readiness needs GroomAsset and GroomBindingAsset API visibility.",
+        "evidence": "GroomAsset=False GroomBindingAsset=False",
+        "fixPreview": "Enable/verify Unreal Groom plugin support in the public test project."
+      },
+      {
+        "id": "import-api-surface:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "import-api-surface",
+        "label": "Import API Surface",
+        "status": "pass",
+        "message": "Import API Surface is satisfied.",
+        "evidence": "AssetImportTask=True GroomFactory=False AlembicFactory=True GroomOptions=False",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "target-skeletal-mesh-exists:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "target-skeletal-mesh-exists",
+        "label": "Target SkeletalMesh",
+        "status": "pass",
+        "message": "Target SkeletalMesh is satisfied.",
+        "evidence": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-target-path-declared:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "groom-target-path-declared",
+        "label": "Expected Groom Asset Path",
+        "status": "pass",
+        "message": "Expected Groom Asset Path is satisfied.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "binding-target-path-declared:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "binding-target-path-declared",
+        "label": "Expected Binding Asset Path",
+        "status": "pass",
+        "message": "Expected Binding Asset Path is satisfied.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-payload-contract:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "cache-payload-contract",
+        "label": "Alembic Payload Contract",
+        "status": "pass",
+        "message": "Alembic Payload Contract is satisfied.",
+        "evidence": "abc=True rootUV=True ids=True guides=True range=1001-1001",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "expected-groom-asset-gap:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "expected-groom-asset-gap",
+        "label": "Expected Groom Asset Exists",
+        "status": "warning",
+        "message": "A readiness-only pass may precede import, but missing expected Groom assets must stay visible for the executor plan.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "fixPreview": "Promote this row to the Alembic executor only after owner approval for creating the GroomAsset."
+      },
+      {
+        "id": "expected-binding-asset-gap:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "expected-binding-asset-gap",
+        "label": "Expected Binding Asset Exists",
+        "status": "warning",
+        "message": "A readiness-only pass may precede binding import, but missing expected Binding assets must stay visible.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "fixPreview": "Promote this row to the Alembic executor only after the target GroomAsset and SkeletalMesh are validated."
+      },
+      {
+        "id": "no-write-boundary:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "no-write-boundary",
+        "label": "Read-only Boundary",
+        "status": "pass",
+        "message": "Read-only Boundary is satisfied.",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "source-groom-row-ready:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "source-groom-row-ready",
+        "label": "Source Groom Row",
+        "status": "error",
+        "message": "Only approved R46 Maya groom rows can enter Unreal import readiness.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve R46 Groom Export Inspector owner actions before engine readiness."
+      },
+      {
+        "id": "unreal-python-runtime:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "message": "Unreal Python Runtime is satisfied.",
+        "evidence": "True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-api-surface:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "groom-api-surface",
+        "label": "Groom API Surface",
+        "status": "error",
+        "message": "Groom import readiness needs GroomAsset and GroomBindingAsset API visibility.",
+        "evidence": "GroomAsset=False GroomBindingAsset=False",
+        "fixPreview": "Enable/verify Unreal Groom plugin support in the public test project."
+      },
+      {
+        "id": "import-api-surface:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "import-api-surface",
+        "label": "Import API Surface",
+        "status": "pass",
+        "message": "Import API Surface is satisfied.",
+        "evidence": "AssetImportTask=True GroomFactory=False AlembicFactory=True GroomOptions=False",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "target-skeletal-mesh-exists:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "target-skeletal-mesh-exists",
+        "label": "Target SkeletalMesh",
+        "status": "error",
+        "message": "Groom binding readiness needs the target SkeletalMesh to exist in the public Unreal project.",
+        "evidence": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP",
+        "fixPreview": "Create or relink the public target SkeletalMesh before Groom Binding import."
+      },
+      {
+        "id": "groom-target-path-declared:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "groom-target-path-declared",
+        "label": "Expected Groom Asset Path",
+        "status": "pass",
+        "message": "Expected Groom Asset Path is satisfied.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "binding-target-path-declared:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "binding-target-path-declared",
+        "label": "Expected Binding Asset Path",
+        "status": "error",
+        "message": "The handoff must declare the GroomBindingAsset package path for the target SkeletalMesh.",
+        "evidence": "",
+        "fixPreview": "Write unreal.expectedBindingAsset on the groom handoff payload."
+      },
+      {
+        "id": "cache-payload-contract:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-payload-contract",
+        "label": "Alembic Payload Contract",
+        "status": "error",
+        "message": "The cache intent must be Alembic with root UV, strand IDs, guide curves and a valid frame range.",
+        "evidence": "abc=False rootUV=False ids=False guides=False range=1010-1001",
+        "fixPreview": "Fix the Alembic export payload before engine import readiness."
+      },
+      {
+        "id": "expected-groom-asset-gap:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "expected-groom-asset-gap",
+        "label": "Expected Groom Asset Exists",
+        "status": "warning",
+        "message": "A readiness-only pass may precede import, but missing expected Groom assets must stay visible for the executor plan.",
+        "evidence": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+        "fixPreview": "Promote this row to the Alembic executor only after owner approval for creating the GroomAsset."
+      },
+      {
+        "id": "expected-binding-asset-gap:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "expected-binding-asset-gap",
+        "label": "Expected Binding Asset Exists",
+        "status": "warning",
+        "message": "A readiness-only pass may precede binding import, but missing expected Binding assets must stay visible.",
+        "evidence": "",
+        "fixPreview": "Promote this row to the Alembic executor only after the target GroomAsset and SkeletalMesh are validated."
+      },
+      {
+        "id": "no-write-boundary:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "no-write-boundary",
+        "label": "Read-only Boundary",
+        "status": "pass",
+        "message": "Read-only Boundary is satisfied.",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "No action."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:groom-api-surface:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "groom-api-surface",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Enable/verify Unreal Groom plugin support in the public test project.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:expected-groom-asset-gap:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "expected-groom-asset-gap",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "content-owner",
+        "preview": "Promote this row to the Alembic executor only after owner approval for creating the GroomAsset.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:expected-binding-asset-gap:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "expected-binding-asset-gap",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "content-owner",
+        "preview": "Promote this row to the Alembic executor only after the target GroomAsset and SkeletalMesh are validated.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:source-groom-row-ready:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "source-groom-row-ready",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-ta",
+        "preview": "Resolve R46 Groom Export Inspector owner actions before engine readiness.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:groom-api-surface:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "groom-api-surface",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Enable/verify Unreal Groom plugin support in the public test project.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:target-skeletal-mesh-exists:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "target-skeletal-mesh-exists",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Create or relink the public target SkeletalMesh before Groom Binding import.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:binding-target-path-declared:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "binding-target-path-declared",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "content-owner",
+        "preview": "Write unreal.expectedBindingAsset on the groom handoff payload.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:cache-payload-contract:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-payload-contract",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-ta",
+        "preview": "Fix the Alembic export payload before engine import readiness.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:expected-groom-asset-gap:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "expected-groom-asset-gap",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "content-owner",
+        "preview": "Promote this row to the Alembic executor only after owner approval for creating the GroomAsset.",
+        "writeBoundary": "readiness_only_no_import"
+      },
+      {
+        "id": "owner-action:expected-binding-asset-gap:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "expected-binding-asset-gap",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "content-owner",
+        "preview": "Promote this row to the Alembic executor only after the target GroomAsset and SkeletalMesh are validated.",
+        "writeBoundary": "readiness_only_no_import"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "groom-unreal-readiness",
+    "name": "Groom Unreal Import Readiness",
+    "methodSource": "R46 Maya Groom Export Inspector + Unreal Python read-only asset/API probe",
+    "protocolCarrier": "Groom Alembic cache intent + Unreal GroomAsset / GroomBindingAsset / AssetImportTask API surface",
+    "boundary": {
+      "mutation": "unreal_read_only_import_readiness_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only Groom import readiness probe; no import and no asset save"
+    }
+  },
+  "reviewerClaims": [
+    "R47 extends Groom Export Inspector from Maya-side groom facts to Unreal-side import readiness without writing assets.",
+    "The report separates source groom contract health, Unreal Groom/Alembic API visibility, target SkeletalMesh presence, and missing expected Groom/Binding assets.",
+    "Missing Groom or Binding assets are review gaps for the next Alembic executor; source TMP groom defects and absent Unreal runtime/API surfaces remain hard blockers."
+  ]
+}

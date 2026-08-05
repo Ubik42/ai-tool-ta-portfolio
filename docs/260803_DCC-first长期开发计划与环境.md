@@ -1614,3 +1614,28 @@ public-case-package r8-70 / public-case-package@3.40.0
 ```text
 Groom Unreal import readiness 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R47 循环开发断点：Groom Unreal Import Readiness
+
+R47 已完成 `Groom Unreal Import Readiness` Unreal L3：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-unreal-readiness-20260806-010008.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r47-groom-unreal-readiness-presentation-pack-20260806-010323.json
+```
+
+R47 结果：`run_unreal_readiness.py` 调用 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R46 Groom Export Inspector Maya L3 artifact，只读采集 Groom/Alembic API visibility、target SkeletalMesh presence、expected Groom / Binding assets 和 zero-write boundary。结果为 L3 / `Blocked` / `unreal_groom_import_readiness_collected`，2 groom rows，source Ready / Blocked = 1 / 1，AssetImportTask visible rows = 2，AlembicImportFactory visible rows = 2，target SkeletalMesh present rows = 1，GroomAsset / GroomBindingAsset API visible rows = 0 / 0，expected Groom / Binding assets present = 0 / 0，12 pass / 4 warning / 6 error，10 owner actions，assetWrites=0，productionWrites=0。
+
+Public package:
+
+```text
+ai-tool-ta-dcc-first-showcase-r47 / dcc-first-package@1.44.0
+Presenter Pack evidence: 45 / 45 present, 0 missing, 36 route steps
+public-case-package r8-71 / public-case-package@3.41.0
+```
+
+下一轮入口：
+
+```text
+Groom Alembic executor 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```
