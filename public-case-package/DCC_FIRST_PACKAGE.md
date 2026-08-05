@@ -2,14 +2,14 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R60 Cross-DCC / Engine / Animation / Character / Groom Group Projection / Spatial Socket / Native Bridge Readiness / Gameplay Attach / Platform Variant / Blender Repair / Max Repair / Max Texture Manifest / Houdini Rule Adapter Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R61 Cross-DCC / Engine / Animation / Character / Groom Group Projection / Spatial Socket / Native Bridge Source / Gameplay Attach / Platform Variant / Blender Repair / Max Repair / Max Texture Manifest / Houdini Rule Adapter Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r60` |
-| Version | `dcc-first-package@1.57.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r61` |
+| Version | `dcc-first-package@1.58.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
@@ -191,8 +191,8 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Unreal Socket Native Bridge Readiness | `Blocked` L3-readiness |
 | Unreal Socket Native Bridge runtime | `unreal_socket_native_bridge_readiness_collected`, Unreal 5.3.2 |
 | Unreal Socket Native Bridge API boundary | sourceApiLimited=true, socket/editor utility APIs visible=true |
-| Unreal Socket Native Bridge project readiness | native source=false, plugin=false, binary=false, commandletVisible=false, missingRequiredFiles=6 |
-| Unreal Socket Native Bridge checks / writes | 6 pass / 0 warning / 3 error, assetWrites=0 / productionWrites=0 |
+| Unreal Socket Native Bridge project readiness | native source=true, plugin=true, binary=false, commandletVisible=false, missingRequiredFiles=0 |
+| Unreal Socket Native Bridge checks / writes | 7 pass / 0 warning / 2 error, assetWrites=0 / productionWrites=0 |
 | Unreal Gameplay Attach Fixture | `Blocked` L3-linked |
 | Unreal Gameplay Attach runtime | `unreal_gameplay_attach_fixture_linked`, Unreal 5.3.2 |
 | Unreal Gameplay Attach intents ready/review/blocked | 0 / 0 / 2 |
@@ -305,10 +305,10 @@ Then follow the Presenter Pack route:
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 49-step demo route, 7-step business route, public package manifest, 59 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Groom Group / Root Projection Inspector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Readiness, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, Blender Controlled Repair Executor, 3ds Max pymxs L3 adapter, 3ds Max Controlled Repair Executor, Max Material Texture Manifest Link, Houdini Rule Adapter contract, hython L3 readiness, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 49-step demo route, 7-step business route, public package manifest, 59 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Groom Group / Root Projection Inspector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Source Readiness, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, Blender Controlled Repair Executor, 3ds Max pymxs L3 adapter, 3ds Max Controlled Repair Executor, Max Material Texture Manifest Link, Houdini Rule Adapter contract, hython L3 readiness, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -597,10 +597,16 @@ This is the R40 execution-readiness layer above Unreal Socket Import Checker. It
 ## Unreal Socket Native Bridge Readiness
 
 ```text
-<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-053757.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-055738.json
 ```
 
-This is the R60 bridge-readiness layer above the R40 API-limited socket executor. It enters Unreal 5.3.2, verifies the socket classes and Editor Utility surface are visible, and then checks whether the public project contains the required native handoff surface: `AI_Tool_TA_SocketBridge` plugin source, commandlet/library headers and cpp files, compiled binary and commandlet visibility. The gate is correctly `Blocked`: R40 still proves Python cannot set socket identity safely, while the public Unreal project currently has no `Source`, no socket bridge plugin, no compiled bridge binary, no commandlet class and 6 required native files missing. This gives the next engineering contract without writing assets: 6 pass / 0 warning / 3 error, assetWrites=0, engineWrites=0 and productionWrites=0.
+This is the R61 bridge-source layer above the R40 API-limited socket executor. It enters Unreal 5.3.2, verifies the socket classes and Editor Utility surface are visible, and then checks whether the public project contains the required native handoff surface: `AI_Tool_TA_SocketBridge` plugin source, commandlet/library headers and cpp files, compiled binary and commandlet visibility. The gate is still correctly `Blocked`: R40 proves Python cannot set socket identity safely, R61 now provides the source/plugin contract with 0 required source files missing, and the remaining boundary is compiled binary plus commandlet visibility. This gives the next engineering contract without writing assets: 7 pass / 0 warning / 2 error, assetWrites=0, engineWrites=0 and productionWrites=0.
+
+Current source package:
+
+```text
+<repo>\dcc-hosts\unreal-handoff-inspector\projects\AI_Tool_TA_Unreal_L3\Plugins\AI_Tool_TA_SocketBridge
+```
 
 ## Unreal Gameplay Attach Fixture
 
@@ -760,10 +766,10 @@ This is the R59 Maya runtime layer above Groom Runtime Facts. It projects public
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json
 ```
 
-The Presenter Pack is the R60 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Groom Group / Root Projection Inspector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Readiness, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter, Blender L3 runtime, Blender Controlled Repair Executor, 3ds Max adapter, Max L3 runtime, Max Controlled Repair Executor, Max Material Texture Manifest Link, Houdini Rule Adapter, Houdini hython readiness, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 59 / 59 evidence files present, 0 missing required files, 49 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R61 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Groom Group / Root Projection Inspector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Source Readiness, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter, Blender L3 runtime, Blender Controlled Repair Executor, 3ds Max adapter, Max L3 runtime, Max Controlled Repair Executor, Max Material Texture Manifest Link, Houdini Rule Adapter, Houdini hython readiness, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 59 / 59 evidence files present, 0 missing required files, 49 demo route steps, and `CapturePending` media status.
 
 ## Validation
 

@@ -204,9 +204,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r60-unreal-socket-native-bridge-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r61-unreal-socket-native-source-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.57.0", summary
+assert summary["package_version"] == "dcc-first-package@1.58.0", summary
 assert summary["present_evidence_files"] == 59, summary
 assert summary["missing_required_files"] == 0, summary
 assert summary["demo_route_steps"] == 49, summary

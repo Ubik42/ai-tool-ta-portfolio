@@ -82,10 +82,11 @@ def _build_facts(source: Dict[str, Any], runtime_snapshot: Dict[str, Any]) -> Di
     expected_sockets = sum(len(row.get("expectedSocketNames", [])) for row in source_operations)
     created_sockets = source_summary.get("createdSockets", 0)
     source_errors = source_summary.get("error", 0)
+    existing_native_files = {_norm_path(item) for item in project.get("socketBridgeFiles", [])}
     missing_native_files = [
         item
         for item in _native_required_files()
-        if item not in set(project.get("socketBridgeFiles", []))
+        if _norm_path(item) not in existing_native_files
     ]
     editor_surface = api.get("classes", {})
     commandlet_visible = bool(api.get("commandletClasses", {}).get("AiToolTaSocketAuthoringCommandlet"))
@@ -340,12 +341,21 @@ def _native_required_files() -> List[str]:
     ]
 
 
+def _norm_path(path: Any) -> str:
+    return str(path).replace("\\", "/").lower()
+
+
 def _reviewer_claims(summary: Dict[str, Any]) -> List[str]:
-    return [
+    claims = [
         "R60 keeps the R40 API-limited socket finding honest: Unreal Python did not become the socket write solution.",
         "The readiness artifact names the native commandlet and Editor Utility bridge entrypoints required for safe socket authoring.",
-        "The public Unreal project is blocked until the bridge source and compiled Editor module exist; the probe is read-only with zero asset writes.",
+        "The probe is read-only with zero asset writes.",
     ]
+    if summary.get("hasNativeSource") or summary.get("hasSocketBridgePlugin"):
+        claims.append("The public Unreal project now has the socket bridge source contract; it remains blocked until the Editor module is built and the commandlet is visible.")
+    else:
+        claims.append("The public Unreal project is blocked until the bridge source and compiled Editor module exist.")
+    return claims
 
 
 def _empty_runtime_snapshot() -> Dict[str, Any]:

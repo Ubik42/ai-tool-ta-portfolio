@@ -44,10 +44,10 @@ R38/R40/R54/R60 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hot
 ```text
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json
-<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-053757.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-055738.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json
 ```
 
 当前结果：
@@ -84,20 +84,20 @@ API docs probe 证明了卡点：UE 5.3 Python 暴露 `SkeletalMesh.add_socket(s
 
 ## R60 Native Bridge Readiness
 
-R60 把 R40 的 API-limited 结论推进为 native bridge readiness contract：Unreal 5.3.2 headless runtime 能看见 SkeletalMesh / Skeleton / SkeletalMeshSocket classes 和 Editor Utility surface，但 public `.uproject` 目前没有 `Source`、没有 `AI_Tool_TA_SocketBridge` plugin、没有 compiled bridge binary、没有 commandlet class，并缺 6 个 required native files。
+R60 把 R40 的 API-limited 结论推进为 native bridge readiness contract：Unreal 5.3.2 headless runtime 能看见 SkeletalMesh / Skeleton / SkeletalMeshSocket classes 和 Editor Utility surface。R61 在 public `.uproject` 下补了 disabled-by-default 的 `AI_Tool_TA_SocketBridge` Editor plugin source package，包含 `UAiToolTaSocketAuthoringCommandlet` 和 `UAiToolTaSocketBridgeLibrary` native write path。
 
-当前结果：L3-readiness / `Blocked` / `unreal_socket_native_bridge_readiness_collected`；sourceApiLimited=true，expectedSockets=2，createdSocketsViaPython=0，socketClassesVisible=true，editorUtilitySurfaceVisible=true，hasNativeSource=false，hasSocketBridgePlugin=false，hasCompiledBridgeBinary=false，commandletVisible=false，6 pass / 0 warning / 3 error，assetWrites / productionWrites = 0 / 0。
+当前结果：L3-readiness / `Blocked` / `unreal_socket_native_bridge_readiness_collected`；sourceApiLimited=true，expectedSockets=2，createdSocketsViaPython=0，socketClassesVisible=true，editorUtilitySurfaceVisible=true，hasNativeSource=true，hasSocketBridgePlugin=true，hasCompiledBridgeBinary=false，commandletVisible=false，missingRequiredNativeFiles=0，7 pass / 0 warning / 2 error，assetWrites / productionWrites = 0 / 0。
 
-业务结论：socket 自动写入的下一步是实现 C++ commandlet / Editor Utility wrapper，把 socketName、boneName 和 relative transform 放进可 post-check / rollback 的 native write path。
+业务结论：socket 自动写入的下一步是构建加载 Editor module，并把 JSON receipt parsing、socketName/boneName/relative transform 写入、post-check 和 rollback receipt 接到这个 native write path。
 
 ## 后续
 
-下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是实现 Unreal C++ / Editor Utility Blueprint socket authoring adapter，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
+下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是构建 `AI_Tool_TA_SocketBridge` Editor module、加载 commandlet 并补完整 receipt executor，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
 
 
 ## R40 Presenter Pack
 
-当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据，Unreal Socket Native Bridge Readiness 是 R60 native handoff contract 证据。
+当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据，Unreal Socket Native Bridge Source Readiness 是 R61 native handoff source contract 证据。
 
 ## R54 Gameplay Attach Fixture
 
