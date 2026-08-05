@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r59-groom-group-root-projection-presentation-pack",
+        label: str = "r60-unreal-socket-native-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4206,6 +4206,12 @@ class MayaPortfolioApi:
                 "Unreal Socket Authoring Executor artifact",
                 "artifact",
                 manifest.get("unrealSocketAuthoringExecutorArtifact"),
+            ),
+            _probe_file(
+                "unreal-socket-native-bridge",
+                "Unreal Socket Native Bridge Readiness artifact",
+                "artifact",
+                manifest.get("unrealSocketNativeBridgeArtifact"),
             ),
             _probe_file(
                 "unreal-socket-api-docs",
@@ -4453,6 +4459,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal socket authoring executor",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py.",
                 "evidence_expected": "Approved socket rows enter a controlled Unreal execution gate; UE 5.3 Python socket authoring limits and no-write rollback boundary are exported.",
+            },
+            {
+                "id": "28b-run-unreal-socket-native-bridge",
+                "label": "Run Unreal socket native bridge readiness",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_readiness.py.",
+                "evidence_expected": "Unreal runtime collects Editor Utility/native bridge surface, proves the Python API-limited receipt requires a C++ or Editor Utility bridge, and keeps the probe read-only.",
             },
             {
                 "id": "29-run-unreal-gameplay-attach-fixture",
@@ -4977,6 +4989,25 @@ class MayaPortfolioApi:
                 "unreal_socket_authoring_executor_asset_writes": manifest_summary.get("unrealSocketAuthoringExecutorAssetWrites"),
                 "unreal_socket_authoring_executor_production_writes": manifest_summary.get("unrealSocketAuthoringExecutorProductionWrites"),
                 "unreal_socket_authoring_executor_api_docs": manifest_summary.get("unrealSocketApiDocsArtifact"),
+                "unreal_socket_native_bridge_gate": manifest_summary.get("unrealSocketNativeBridgeGate"),
+                "unreal_socket_native_bridge_evidence_level": manifest_summary.get("unrealSocketNativeBridgeEvidenceLevel"),
+                "unreal_socket_native_bridge_l3_status": manifest_summary.get("unrealSocketNativeBridgeL3Status"),
+                "unreal_socket_native_bridge_engine_version": manifest_summary.get("unrealSocketNativeBridgeEngineVersion"),
+                "unreal_socket_native_bridge_source_api_limited": manifest_summary.get("unrealSocketNativeBridgeSourceApiLimited"),
+                "unreal_socket_native_bridge_expected_sockets": manifest_summary.get("unrealSocketNativeBridgeExpectedSockets"),
+                "unreal_socket_native_bridge_created_sockets_via_python": manifest_summary.get("unrealSocketNativeBridgeCreatedSocketsViaPython"),
+                "unreal_socket_native_bridge_editor_utility_surface": manifest_summary.get("unrealSocketNativeBridgeEditorUtilitySurface"),
+                "unreal_socket_native_bridge_socket_classes_visible": manifest_summary.get("unrealSocketNativeBridgeSocketClassesVisible"),
+                "unreal_socket_native_bridge_has_source": manifest_summary.get("unrealSocketNativeBridgeHasNativeSource"),
+                "unreal_socket_native_bridge_has_plugin": manifest_summary.get("unrealSocketNativeBridgeHasPlugin"),
+                "unreal_socket_native_bridge_has_binary": manifest_summary.get("unrealSocketNativeBridgeHasCompiledBinary"),
+                "unreal_socket_native_bridge_commandlet_visible": manifest_summary.get("unrealSocketNativeBridgeCommandletVisible"),
+                "unreal_socket_native_bridge_missing_files": manifest_summary.get("unrealSocketNativeBridgeMissingRequiredFiles"),
+                "unreal_socket_native_bridge_pass_checks": manifest_summary.get("unrealSocketNativeBridgePassChecks"),
+                "unreal_socket_native_bridge_warning_checks": manifest_summary.get("unrealSocketNativeBridgeWarningChecks"),
+                "unreal_socket_native_bridge_error_checks": manifest_summary.get("unrealSocketNativeBridgeErrorChecks"),
+                "unreal_socket_native_bridge_asset_writes": manifest_summary.get("unrealSocketNativeBridgeAssetWrites"),
+                "unreal_socket_native_bridge_production_writes": manifest_summary.get("unrealSocketNativeBridgeProductionWrites"),
                 "unreal_gameplay_attach_fixture_gate": manifest_summary.get("unrealGameplayAttachFixtureGate"),
                 "unreal_gameplay_attach_fixture_evidence_level": manifest_summary.get("unrealGameplayAttachFixtureEvidenceLevel"),
                 "unreal_gameplay_attach_fixture_l3_status": manifest_summary.get("unrealGameplayAttachFixtureL3Status"),
@@ -5221,6 +5252,7 @@ class MayaPortfolioApi:
                 "Spatial Authoring Drilldown projects Maya L3 spatial facts into UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
                 "Unreal Socket Import Checker joins Maya spatial authoring facts to Unreal SkeletalMesh/Skeleton socket API readiness and expected socket coverage.",
                 "Unreal Socket Authoring Executor proves the approved public socket row can enter an engine-side execution gate, and records the UE 5.3 Python read-only socket-name limitation as a blocked readiness artifact.",
+                "Unreal Socket Native Bridge Readiness proves the socket write path now needs a C++ commandlet or Editor Utility wrapper, and records source/plugin/binary readiness without mutating assets.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
@@ -5257,7 +5289,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r59-groom-group-root-projection-presentation-pack",
+        label: str = "r60-unreal-socket-native-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

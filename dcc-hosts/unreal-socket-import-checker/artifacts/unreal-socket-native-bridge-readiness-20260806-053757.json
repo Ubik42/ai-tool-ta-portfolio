@@ -1,0 +1,371 @@
+{
+  "reportVersion": "unreal-socket-native-bridge-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "generatedAt": "2026-08-06 05:38:05",
+  "evidenceLevel": "L3-readiness",
+  "l3Status": "unreal_socket_native_bridge_readiness_collected",
+  "sourceSocketAuthoringExecutor": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-authoring-executor-20260805-222014.json",
+    "reportVersion": "unreal-socket-authoring-executor@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_socket_authoring_executor_api_limited",
+    "summary": {
+      "gate": "Blocked",
+      "selectedOperations": 1,
+      "heldRows": 1,
+      "expectedSockets": 2,
+      "createdSockets": 0,
+      "postCheckPassed": 0,
+      "rollbackPassed": 1,
+      "heldRowsUntouched": 1,
+      "pass": 9,
+      "warning": 0,
+      "error": 2,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "inMemoryWrites": 0
+    }
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "SkeletalMesh": true,
+        "Skeleton": true,
+        "SkeletalMeshSocket": true,
+        "EditorAssetLibrary": true,
+        "EditorUtilitySubsystem": true,
+        "EditorUtilityBlueprint": false,
+        "EditorUtilityWidgetBlueprint": true,
+        "AssetToolsHelpers": true,
+        "BlueprintFunctionLibrary": true,
+        "Commandlet": false,
+        "EditorLoadingAndSavingUtils": true
+      },
+      "commandletClasses": {
+        "Commandlet": false,
+        "AiToolTaSocketAuthoringCommandlet": false
+      },
+      "skeletalMeshSocketMethods": [
+        "bone_name",
+        "get_fname",
+        "get_full_name",
+        "get_name",
+        "get_path_name",
+        "get_socket_location",
+        "initialize_socket_from_location",
+        "relative_location",
+        "relative_rotation",
+        "relative_scale",
+        "rename",
+        "socket_name"
+      ],
+      "skeletonMethods": [],
+      "skeletalMeshMethods": [
+        "add_socket",
+        "find_socket",
+        "find_socket_and_index",
+        "find_socket_info",
+        "get_socket_by_index",
+        "num_sockets"
+      ],
+      "editorUtilitySubsystemMethods": [
+        "find_utility_widget_from_blueprint"
+      ],
+      "assetToolsMethods": [
+        "get_asset_tools"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only public Unreal project readiness probe"
+  },
+  "facts": {
+    "schema": "unreal-socket-native-bridge-readiness-facts@0.1.0",
+    "bridgeSchema": "unreal-socket-native-bridge-contract@dcc-r60",
+    "source": {
+      "reportVersion": "unreal-socket-authoring-executor@0.1.0",
+      "evidenceLevel": "L3",
+      "l3Status": "unreal_socket_authoring_executor_api_limited",
+      "gate": "Blocked",
+      "selectedOperations": 1,
+      "heldRows": 1,
+      "expectedSockets": 2,
+      "createdSockets": 0,
+      "errorChecks": 2,
+      "apiLimited": true
+    },
+    "project": {
+      "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+      "engineAssociation": "5.3",
+      "enabledPlugins": [
+        "PythonScriptPlugin",
+        "EditorScriptingUtilities",
+        "ControlRig",
+        "GeometryCache",
+        "AlembicImporter",
+        "HairStrands",
+        "AlembicHairImporter"
+      ],
+      "hasSourceDir": false,
+      "hasPluginsDir": false,
+      "hasSocketBridgePlugin": false,
+      "hasSocketBridgeSource": false,
+      "hasSocketBridgeBinary": false,
+      "socketBridgeFiles": [],
+      "socketBridgeBinaries": [],
+      "pythonScriptPluginEnabled": true,
+      "editorScriptingUtilitiesEnabled": true
+    },
+    "runtimeApi": {
+      "classes": {
+        "SkeletalMesh": true,
+        "Skeleton": true,
+        "SkeletalMeshSocket": true,
+        "EditorAssetLibrary": true,
+        "EditorUtilitySubsystem": true,
+        "EditorUtilityBlueprint": false,
+        "EditorUtilityWidgetBlueprint": true,
+        "AssetToolsHelpers": true,
+        "BlueprintFunctionLibrary": true,
+        "Commandlet": false,
+        "EditorLoadingAndSavingUtils": true
+      },
+      "commandletClasses": {
+        "Commandlet": false,
+        "AiToolTaSocketAuthoringCommandlet": false
+      },
+      "skeletalMeshSocketMethods": [
+        "bone_name",
+        "get_fname",
+        "get_full_name",
+        "get_name",
+        "get_path_name",
+        "get_socket_location",
+        "initialize_socket_from_location",
+        "relative_location",
+        "relative_rotation",
+        "relative_scale",
+        "rename",
+        "socket_name"
+      ],
+      "skeletonMethods": [],
+      "skeletalMeshMethods": [
+        "add_socket",
+        "find_socket",
+        "find_socket_and_index",
+        "find_socket_info",
+        "get_socket_by_index",
+        "num_sockets"
+      ],
+      "editorUtilitySubsystemMethods": [
+        "find_utility_widget_from_blueprint"
+      ],
+      "assetToolsMethods": [
+        "get_asset_tools"
+      ]
+    },
+    "bridgeReadiness": {
+      "hasNativeSource": false,
+      "hasSocketBridgePlugin": false,
+      "hasCompiledBridgeBinary": false,
+      "missingRequiredFiles": [
+        "Plugins/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.uplugin",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.Build.cs",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketAuthoringCommandlet.h",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketAuthoringCommandlet.cpp",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketBridgeLibrary.h",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketBridgeLibrary.cpp"
+      ],
+      "commandletVisible": false,
+      "editorUtilitySurfaceVisible": true,
+      "socketClassesVisible": true
+    },
+    "requiredHandoff": {
+      "entrypoint": "UAiToolTaSocketAuthoringCommandlet or Editor Utility wrapper around the same native function library",
+      "inputReceipt": "R38/R40 socket rows with socketName, parentJoint, transform, ownerState and expected target Skeleton path",
+      "operations": [
+        "Load target USkeleton or USkeletalMesh under /Game/AI_Tool_TA.",
+        "Create USkeletalMeshSocket through native object construction.",
+        "Set SocketName, BoneName and relative transform through C++ property access.",
+        "Post-check socket list and parent binding.",
+        "Rollback created sockets or save only inside explicit approved public fixture scope."
+      ]
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-socket-native-bridge-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "checks": 9,
+      "pass": 6,
+      "warning": 0,
+      "error": 3,
+      "sourceApiLimited": true,
+      "expectedSockets": 2,
+      "createdSocketsViaPython": 0,
+      "editorUtilitySurfaceVisible": true,
+      "socketClassesVisible": true,
+      "hasNativeSource": false,
+      "hasSocketBridgePlugin": false,
+      "hasCompiledBridgeBinary": false,
+      "commandletVisible": false,
+      "missingRequiredNativeFiles": 6,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "native-socket-bridge:source-python-api-limited-receipt",
+        "ruleId": "source-python-api-limited-receipt",
+        "status": "pass",
+        "evidence": "gate=Blocked expectedSockets=2 createdSockets=0 errors=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-socket-bridge:unreal-runtime-entered",
+        "ruleId": "unreal-runtime-entered",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-socket-bridge:socket-runtime-classes-visible",
+        "ruleId": "socket-runtime-classes-visible",
+        "status": "pass",
+        "evidence": "classes={'SkeletalMesh': True, 'Skeleton': True, 'SkeletalMeshSocket': True, 'EditorAssetLibrary': True, 'EditorUtilitySubsystem': True, 'EditorUtilityBlueprint': False, 'EditorUtilityWidgetBlueprint': True, 'AssetToolsHelpers': True, 'BlueprintFunctionLibrary': True, 'Commandlet': False, 'EditorLoadingAndSavingUtils': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-socket-bridge:editor-utility-surface-visible",
+        "ruleId": "editor-utility-surface-visible",
+        "status": "pass",
+        "evidence": "classes={'SkeletalMesh': True, 'Skeleton': True, 'SkeletalMeshSocket': True, 'EditorAssetLibrary': True, 'EditorUtilitySubsystem': True, 'EditorUtilityBlueprint': False, 'EditorUtilityWidgetBlueprint': True, 'AssetToolsHelpers': True, 'BlueprintFunctionLibrary': True, 'Commandlet': False, 'EditorLoadingAndSavingUtils': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-socket-bridge:native-module-source-present",
+        "ruleId": "native-module-source-present",
+        "status": "error",
+        "evidence": "hasSource=False hasPlugin=False missing=['Plugins/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.uplugin', 'Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.Build.cs', 'Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketAuthoringCommandlet.h', 'Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketAuthoringCommandlet.cpp', 'Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketBridgeLibrary.h', 'Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketBridgeLibrary.cpp']",
+        "fixPreview": "Add the public AI_Tool_TA_SocketBridge Editor plugin source before claiming native socket write support."
+      },
+      {
+        "id": "native-socket-bridge:native-commandlet-entrypoint-visible",
+        "ruleId": "native-commandlet-entrypoint-visible",
+        "status": "error",
+        "evidence": "commandletVisible=False commandletClasses={'Commandlet': False, 'AiToolTaSocketAuthoringCommandlet': False}",
+        "fixPreview": "Compile and load UAiToolTaSocketAuthoringCommandlet or an equivalent Editor Utility bridge."
+      },
+      {
+        "id": "native-socket-bridge:compiled-bridge-binary-present",
+        "ruleId": "compiled-bridge-binary-present",
+        "status": "error",
+        "evidence": "hasBinary=False binaries=[]",
+        "fixPreview": "Build the Editor-only bridge module before running socket mutation receipts through it."
+      },
+      {
+        "id": "native-socket-bridge:contract-handoff-complete",
+        "ruleId": "contract-handoff-complete",
+        "status": "pass",
+        "evidence": "operations=5 contracts=['ai-tool-ta-socket-bridge-commandlet', 'ai-tool-ta-socket-editor-utility-wrapper']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-socket-bridge:write-boundary-clean",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "native-socket-bridge-action:native-module-source-present",
+        "ruleId": "native-module-source-present",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Add the public AI_Tool_TA_SocketBridge Editor plugin source before claiming native socket write support.",
+        "writeBoundary": "readiness_only"
+      },
+      {
+        "id": "native-socket-bridge-action:native-commandlet-entrypoint-visible",
+        "ruleId": "native-commandlet-entrypoint-visible",
+        "status": "error",
+        "owner": "engine-programmer",
+        "preview": "Compile and load UAiToolTaSocketAuthoringCommandlet or an equivalent Editor Utility bridge.",
+        "writeBoundary": "readiness_only"
+      },
+      {
+        "id": "native-socket-bridge-action:compiled-bridge-binary-present",
+        "ruleId": "compiled-bridge-binary-present",
+        "status": "error",
+        "owner": "engine-programmer",
+        "preview": "Build the Editor-only bridge module before running socket mutation receipts through it.",
+        "writeBoundary": "readiness_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-socket-native-bridge-readiness",
+    "name": "Unreal Socket Native Bridge Readiness",
+    "methodSource": "R40 API-limited socket authoring receipt + Unreal runtime Editor Utility/native module surface probe",
+    "protocolCarrier": "source socket receipt, public Unreal project module layout, Editor Utility API surface and native commandlet contract",
+    "boundary": {
+      "mutation": "read_only_unreal_runtime_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only public Unreal project readiness probe"
+    }
+  },
+  "bridgeContracts": [
+    {
+      "id": "ai-tool-ta-socket-bridge-commandlet",
+      "kind": "Unreal Editor C++ Commandlet",
+      "entrypoint": "UAiToolTaSocketAuthoringCommandlet",
+      "requiredFiles": [
+        "Plugins/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.uplugin",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/AI_Tool_TA_SocketBridge.Build.cs",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketAuthoringCommandlet.h",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketAuthoringCommandlet.cpp",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketBridgeLibrary.h",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketBridgeLibrary.cpp"
+      ],
+      "receiptInput": "unreal-socket-authoring-executor@0.1.0 operations",
+      "successCriteria": [
+        "SocketName and BoneName are set by native property access.",
+        "Post-check proves expected socket names and parent bindings exist.",
+        "Rollback removes public fixture sockets or the commandlet exits without saving."
+      ]
+    },
+    {
+      "id": "ai-tool-ta-socket-editor-utility-wrapper",
+      "kind": "Editor Utility / Blueprint callable wrapper",
+      "entrypoint": "UAiToolTaSocketBridgeLibrary::ApplySocketReceipt",
+      "requiredFiles": [
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Public/AiToolTaSocketBridgeLibrary.h",
+        "Plugins/AI_Tool_TA_SocketBridge/Source/AI_Tool_TA_SocketBridge/Private/AiToolTaSocketBridgeLibrary.cpp"
+      ],
+      "receiptInput": "single approved socket row or JSON receipt",
+      "successCriteria": [
+        "Editor Utility calls the same native implementation as the commandlet.",
+        "No blocked Maya source row can enter the write path.",
+        "All writes stay inside /Game/AI_Tool_TA unless an owner-approved production scope is supplied."
+      ]
+    }
+  ],
+  "reviewerClaims": [
+    "R60 keeps the R40 API-limited socket finding honest: Unreal Python did not become the socket write solution.",
+    "The readiness artifact names the native commandlet and Editor Utility bridge entrypoints required for safe socket authoring.",
+    "The public Unreal project is blocked until the bridge source and compiled Editor module exist; the probe is read-only with zero asset writes."
+  ]
+}

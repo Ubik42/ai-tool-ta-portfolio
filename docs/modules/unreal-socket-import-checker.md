@@ -1,6 +1,6 @@
 # Unreal Socket Import Checker
 
-R38/R54 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness，并继续连接到 gameplay attach readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
+R38/R40/R54/R60 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness、API-limited authoring executor、native bridge readiness 和 gameplay attach readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -21,13 +21,16 @@ R38/R54 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / p
 
 - `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/contract.py`
 - `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/controlled_executor.py`
+- `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/native_bridge.py`
 - `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/gameplay_attach.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_smoke.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_readiness.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_fixture.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_import_checker.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/execute_socket_authoring.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_native_socket_bridge.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_api_docs.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_gameplay_attach_runtime.py`
 
@@ -41,9 +44,10 @@ R38/R54 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / p
 ```text
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-053757.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
 ```
 
 当前结果：
@@ -78,14 +82,22 @@ R40 尝试把 R38 的 approved rifle 缺 socket 问题推进到 engine-side cont
 
 API docs probe 证明了卡点：UE 5.3 Python 暴露 `SkeletalMesh.add_socket(socket, add_to_skeleton=False)`，但 commandlet-created `SkeletalMeshSocket` 的 `socket_name` 和 `bone_name` 是 read-only；构造参数和 `rename()` 只改变 UObject name，不改变 socket identity；`initialize_socket_from_location()` 需要 SkeletalMeshComponent，但仍不会设置 socket name。这个结论让工具不会把“看起来有 add_socket API”误判成“可安全自动修 socket”。
 
+## R60 Native Bridge Readiness
+
+R60 把 R40 的 API-limited 结论推进为 native bridge readiness contract：Unreal 5.3.2 headless runtime 能看见 SkeletalMesh / Skeleton / SkeletalMeshSocket classes 和 Editor Utility surface，但 public `.uproject` 目前没有 `Source`、没有 `AI_Tool_TA_SocketBridge` plugin、没有 compiled bridge binary、没有 commandlet class，并缺 6 个 required native files。
+
+当前结果：L3-readiness / `Blocked` / `unreal_socket_native_bridge_readiness_collected`；sourceApiLimited=true，expectedSockets=2，createdSocketsViaPython=0，socketClassesVisible=true，editorUtilitySurfaceVisible=true，hasNativeSource=false，hasSocketBridgePlugin=false，hasCompiledBridgeBinary=false，commandletVisible=false，6 pass / 0 warning / 3 error，assetWrites / productionWrites = 0 / 0。
+
+业务结论：socket 自动写入的下一步是实现 C++ commandlet / Editor Utility wrapper，把 socketName、boneName 和 relative transform 放进可 post-check / rollback 的 native write path。
+
 ## 后续
 
-下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是二选一：用 Unreal C++ / Editor Utility Blueprint 做 socket authoring adapter，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
+下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是实现 Unreal C++ / Editor Utility Blueprint socket authoring adapter，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
 
 
 ## R40 Presenter Pack
 
-当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据。
+当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据，Unreal Socket Native Bridge Readiness 是 R60 native handoff contract 证据。
 
 ## R54 Gameplay Attach Fixture
 

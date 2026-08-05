@@ -7,9 +7,9 @@
 最终 reviewer 应看到：
 
 - Maya 2024 内通过 AuroraView 打开工具面板。
-- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、Groom Export Inspector / Unreal readiness / Alembic payload / controlled executor、空间作者、Unreal socket readiness / authoring readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
+- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、Groom Export Inspector / Unreal readiness / Alembic payload / controlled executor、空间作者、Unreal socket readiness / authoring readiness / native bridge readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、Blender Controlled Repair Executor L3、3ds Max `pymxs` L3、3ds Max Controlled Repair Executor L3、3ds Max Material Texture Manifest Link L3-derived、Houdini Rule Adapter L2+ contract / hython readiness、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready、Groom Controlled Executor L3 Ready rollback proof、Groom Runtime Fact Collector L3 Ready 和 Groom Group / Root Projection Inspector L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3、Unreal Socket Authoring Executor API-limited L3 和 Unreal Gameplay Attach Fixture L3-linked 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、Blender Controlled Repair Executor L3、3ds Max `pymxs` L3、3ds Max Controlled Repair Executor L3、3ds Max Material Texture Manifest Link L3-derived、Houdini Rule Adapter L2+ contract / hython readiness、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready、Groom Controlled Executor L3 Ready rollback proof、Groom Runtime Fact Collector L3 Ready 和 Groom Group / Root Projection Inspector L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3、Unreal Socket Authoring Executor API-limited L3、Unreal Socket Native Bridge Readiness L3-readiness 和 Unreal Gameplay Attach Fixture L3-linked 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -20,11 +20,12 @@ public-case-package/dcc-first-package-manifest.json
 dcc-hosts/maya-auroraview-host/artifacts/r57-blender-controlled-repair-presentation-pack-20260806-044229.json
 dcc-hosts/maya-auroraview-host/artifacts/r58-max-controlled-repair-presentation-pack-20260806-045801.json
 dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-presentation-pack-20260806-052010.json
+dcc-hosts/maya-auroraview-host/artifacts/r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R59。
+稳定基线：R60。
 
 已完成：
 
@@ -67,6 +68,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-present
 - Platform Variant Executor Expansion Receipts L3-derived
 - Platform Variant StaticMesh Post-check L3
 - Unreal Socket Authoring Executor L3 API-limited readiness
+- Unreal Socket Native Bridge Readiness L3-readiness
 - Unreal Gameplay Attach Fixture L3-linked runtime gate
 - Blender Rule Adapter L3
 - Blender Controlled Repair Executor L3
@@ -80,9 +82,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-present
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder、Control Rig compile status Editor Utility / C++ bridge、socket C++ / Editor Utility Blueprint adapter、Houdini hython L3 upgrade。
+- MotionBuilder、Control Rig compile status Editor Utility / C++ bridge、真正可写 socket C++ / Editor Utility Blueprint adapter、Houdini hython L3 upgrade。
 
-## 3. R59 当前断点与已完成工具线
+## 3. R60 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -123,6 +125,8 @@ dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-present
 `Unreal Socket Import Checker` 已完成 R38 闭环：读取 Spatial Authoring Drilldown artifact，通过 UnrealEditor-Cmd 进入 public `.uproject`，采集 SkeletalMesh / Skeleton / SkeletalMeshSocket API、目标资产存在性和 expected socket coverage。结果为 L3 / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，socket API ready，4 expected sockets，0 runtime sockets，assetWrites=0，productionWrites=0。approved rifle 行被缺 `SK_Hand_L` / `SK_Hand_R` 阻断，TMP backpack 行被 Maya 源头和 Unreal 目标同时阻断。
 
 `Unreal Socket Authoring Executor` 已完成 R40 闭环：读取 R38 socket readiness artifact，只选择 approved rifle 行进入受控 Unreal executor，TMP backpack 行保持 held / no-write。Unreal 5.3.2 Python 暴露 `SkeletalMesh.add_socket(socket, add_to_skeleton=False)`，但 commandlet-created `SkeletalMeshSocket.socket_name` 和 `bone_name` 是 read-only；构造参数和 `rename()` 只改 UObject name，不改 socket identity。结果为 L3 / `Blocked` / `unreal_socket_authoring_executor_api_limited`，selected/held 1 / 1，expected/created sockets 2 / 0，9 pass / 0 warning / 2 error，assetWrites=0，productionWrites=0。这是正确的 API-limited gate，不能伪装成 socket auto-fix 成功。
+
+`Unreal Socket Native Bridge Readiness` 已完成 R60 闭环：读取 R40 API-limited executor artifact，通过 Unreal 5.3.2 headless runtime 探测 socket classes、Editor Utility surface、public `.uproject` plugin/source/binary/commandlet 状态和 native bridge contract。结果为 L3-readiness / `Blocked` / `unreal_socket_native_bridge_readiness_collected`，sourceApiLimited=true，expectedSockets=2，createdSocketsViaPython=0，socketClassesVisible=true，editorUtilitySurfaceVisible=true，hasNativeSource=false，hasSocketBridgePlugin=false，hasCompiledBridgeBinary=false，commandletVisible=false，missingRequiredNativeFiles=6，6 pass / 0 warning / 3 error，assetWrites=0，productionWrites=0。关键结论：socket 写入下一步不是继续绕 UE Python，而是补 `AI_Tool_TA_SocketBridge` C++ commandlet / Editor Utility wrapper。
 
 `Unreal Gameplay Attach Fixture` 已完成 R54 闭环：读取 R38 socket L3 artifact 和 gameplay attach manifest，通过 Unreal 5.3.2 headless 只读采集 attachable StaticMesh、AnimSequence、Actor/SceneComponent attach API 和 public project facts，再把 Maya socket/hotspot intent 连接到 gameplay equip readiness。结果为 L3-linked / `Blocked` / `unreal_gameplay_attach_fixture_linked`，2 intents，0 Ready / 0 Review / 2 Blocked，attachable assets present=2，animation assets present=2，required/missing runtime sockets=4 / 4，required/missing hotspot semantics=2 / 1，15 pass / 1 warning / 6 error，assetWrites=0，productionWrites=0。关键结论：prop 和动画都在 Unreal 里存在也不代表装备可用，角色 Skeleton socket 合约缺失会直接阻断 gameplay attach。
 
@@ -341,10 +345,16 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-executor-expansion-2
 dcc-hosts/groom-export-inspector/artifacts/groom-group-root-projection-20260806-051721.json
 ```
 
-当前 R59 Presenter Pack：
+当前 Unreal Socket Native Bridge Readiness：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-presentation-pack-20260806-052010.json
+dcc-hosts/unreal-socket-import-checker/artifacts/unreal-socket-native-bridge-readiness-20260806-053757.json
+```
+
+当前 R60 Presenter Pack：
+
+```text
+dcc-hosts/maya-auroraview-host/artifacts/r60-unreal-socket-native-bridge-presentation-pack-20260806-054048.json
 ```
 
 这条线的最终效果：
@@ -352,9 +362,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r59-groom-group-root-projection-present
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；Blender 已有 R22 `bpy` L3 和 R57 controlled repair / post-check / rollback；3ds Max 已有 `pymxs` L3、R53 material texture manifest link 和 R58 controlled repair / post-check / rollback；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R52 curve-only Maya Alembic Payload Receipt、R52 Unreal Import/Post-check Readiness、R50 Groom Plugin/API Fixture Ready、R52 Controlled Executor Ready rollback proof、R55 Runtime Fact Collector 和 R59 Group / Root Projection Inspector；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts；Houdini 已有 R56 HDA / detail attr / OUT role / PDG / bake receipt contract 和 hython readiness。
+- Unreal 侧已接入 import L3；Blender 已有 R22 `bpy` L3 和 R57 controlled repair / post-check / rollback；3ds Max 已有 `pymxs` L3、R53 material texture manifest link 和 R58 controlled repair / post-check / rollback；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R52 curve-only Maya Alembic Payload Receipt、R52 Unreal Import/Post-check Readiness、R50 Groom Plugin/API Fixture Ready、R52 Controlled Executor Ready rollback proof、R55 Runtime Fact Collector 和 R59 Group / Root Projection Inspector；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker、R40 socket API-limited executor 和 R60 native bridge readiness；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts；Houdini 已有 R56 HDA / detail attr / OUT role / PDG / bake receipt contract 和 hython readiness。
 
-继续开发时：如果能定位 `hython.exe`，先复跑 `houdini-rule-adapter/scripts/run_l3_smoke.py` 升级为真实 Houdini L3；否则优先做 MotionBuilder adapter、Control Rig Editor Utility / C++ diagnostic bridge、socket C++ / Editor Utility adapter 或 Animation Blueprint Library / C++ adapter。如果只验证当前 R59，运行：
+继续开发时：如果要把 socket 从 readiness 推到真实 write execution，需要加入 `AI_Tool_TA_SocketBridge` C++ commandlet / Editor Utility wrapper 并构建；否则优先做 MotionBuilder adapter、Control Rig Editor Utility / C++ diagnostic bridge 或 Animation Blueprint Library / C++ adapter。如果只验证当前 R60，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -379,6 +389,7 @@ python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py
 python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py
 python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py
 python dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py
+python dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_readiness.py
 python dcc-hosts/platform-variant-forge/scripts/run_smoke.py
 python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py
 python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py
@@ -395,7 +406,7 @@ python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py
 python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py
 ```
 
-当前 R59 public package 为 `ai-tool-ta-dcc-first-showcase-r59` / `dcc-first-package@1.56.0`，Presenter Pack 58 / 58 evidence files present，0 missing required files，48 demo route steps；R59 Groom Group / Root Projection Inspector 已确认 Maya 2026 runtime 可从曲线根 CV 投影回 scalp `root_uv`，并检查 group coverage、guide coverage、UV region、material slot 和 Alembic group payload。approved groom 为 Ready，TMP groom 因草稿协议、root drift、缺 guide、错 group / material / Alembic payload 和临时 owner 状态保持 Blocked。R58 3ds Max Controlled Repair、R57 Blender Controlled Repair、R56 Houdini Rule Adapter、R55 Groom Runtime Fact Collector、R54 Gameplay Attach、R53 Max Texture Manifest Link 与 R52 Groom Controlled Executor 继续作为 DCC/引擎受控执行证据。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R60 public package 为 `ai-tool-ta-dcc-first-showcase-r60` / `dcc-first-package@1.57.0`，Presenter Pack 59 / 59 evidence files present，0 missing required files，49 demo route steps；R60 Unreal Socket Native Bridge Readiness 已确认 Unreal 5.3.2 runtime 能看见 socket classes 和 Editor Utility surface，但 public project 没有 native bridge source/plugin/binary/commandlet，缺 6 个 required native files，因此正确 Blocked 且 assetWrites=0 / productionWrites=0。R59 Groom Group / Root Projection、R58 3ds Max Controlled Repair、R57 Blender Controlled Repair、R56 Houdini Rule Adapter、R55 Groom Runtime Fact Collector、R54 Gameplay Attach、R53 Max Texture Manifest Link 与 R52 Groom Controlled Executor 继续作为 DCC/引擎受控执行证据。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 
