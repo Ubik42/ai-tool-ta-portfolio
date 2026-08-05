@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R37 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json` | Maya-hosted package probes 34 key evidence files, exports 26 demo route steps, and adds Unreal Control Rig Bridge evidence. |
+| Unreal Control Rig Bridge L3 | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json` | Unreal 5.3.2 Python checks Control Rig API readiness, SkeletalMesh/Skeleton binding and expected Control Rig asset coverage from Maya Character Calibration drilldown facts. |
 | R36 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r36-spatial-authoring-drilldown-presentation-pack-20260805-204017.json` | Maya-hosted package probes 33 key evidence files, exports 25 demo route steps, and adds Spatial Authoring Drilldown evidence. |
 | Spatial Authoring Drilldown | `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json` | Maya L3 socket, hotspot, pose frame, transform and pose transfer facts become UI-ready panels with 9 owner actions. |
 | R35 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json` | Maya-hosted package probes 32 key evidence files, exports 24 demo route steps, and adds Character Calibration Drilldown evidence. |

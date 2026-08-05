@@ -83,3 +83,51 @@ Deterministic core: bridge fixture, Maya L3 source artifact, Unreal Python API p
 AI boundary: AI can explain why a clip is blocked or draft owner handoff notes. It cannot claim an AnimSequence is imported until Unreal runtime facts prove the asset and skeleton exist.
 
 Key evidence: `../docs/modules/unreal-animation-bridge.md`
+
+## 8. Character Calibration & Intent Transfer Studio
+
+Business scenario: character delivery can pass file checks while topology, joint coverage, face parameters or Control Rig mapping silently break downstream deformation.
+
+Core secret: treat character transfer as facts that survive the DCC-to-engine boundary. The module records topology signature, required joints, TMP leakage, skin influence budget, calibration delta, face parameter coverage and Control Rig mapping.
+
+Deterministic core: public Maya fixture, `mayapy` collector, source rule rows, Maya/AuroraView drilldown panels, owner actions, fix preview, and Unreal Control Rig Bridge evidence.
+
+AI boundary: AI can explain why a character is blocked or draft owner notes. It cannot approve topology drift, fake missing joints, or claim Control Rig coverage without runtime facts.
+
+Key evidence: `../docs/modules/character-calibration-studio.md`
+
+## 9. Unreal Control Rig Bridge
+
+Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding and target CR asset coverage before it is useful in engine.
+
+Core secret: separate source mapping readiness from engine binding readiness. A clean Maya row can still be blocked by a missing engine Control Rig asset, and a TMP row should be blocked at both source and engine layers.
+
+Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, asset registry checks, evaluation rows, owner actions and read-only write boundary.
+
+AI boundary: AI can summarize missing controls and owner responsibilities. It cannot create or approve Control Rig assets without deterministic engine evidence and owner approval.
+
+Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
+
+## 10. Spatial Authoring & Pose Transfer Workbench
+
+Business scenario: sockets, hotspots, pose frames and mirror transfer rules often live as scene conventions and break when assets move from DCC to gameplay.
+
+Core secret: make spatial authoring data explicit: parent joint, local offset, mirror pair, hotspot semantic, owner, pose frame range, local-space consistency and preview locator state.
+
+Deterministic core: public Maya joint/locator fixture, `mayapy` collector, spatial validation rows, drilldown panels, owner actions and fix preview.
+
+AI boundary: AI can explain socket risk and propose handoff text. It cannot approve a gameplay socket or pose transfer without source and engine facts.
+
+Key evidence: `../docs/modules/spatial-authoring-workbench.md`
+
+## 11. Platform Variant Forge
+
+Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
+
+Core secret: model variant work as a gate plus operation contracts. The module joins planned variants to Unreal runtime facts, converts drift into generation operations, executes only public-safe texture work, and records rollback receipts for heavier LOD/Nanite/collision steps.
+
+Deterministic core: variant fixture, Unreal runtime probes, generation plan, texture runtime collector, public Texture2D payload, controlled executor, executor expansion receipts and Presenter Pack probes.
+
+AI boundary: AI can explain platform drift and draft operation notes. It cannot mutate production assets or bypass owner approval for high-risk variant generation.
+
+Key evidence: `../docs/modules/platform-variant-forge.md`

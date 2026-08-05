@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "spatial-authoring", "spatial-drilldown", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -27,6 +27,7 @@ $MayaHost = Join-Path $Root "dcc-hosts\maya-auroraview-host"
 $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
+$UnrealControlRig = Join-Path $Root "dcc-hosts\unreal-control-rig-bridge"
 $SpatialAuthoring = Join-Path $Root "dcc-hosts\spatial-authoring-workbench"
 $PlatformVariant = Join-Path $Root "dcc-hosts\platform-variant-forge"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
@@ -77,6 +78,10 @@ $QuickPythonFiles = @(
     (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py"),
     (Join-Path $CharacterCalibration "scripts\run_maya_l3.py"),
     (Join-Path $CharacterCalibration "scripts\run_drilldown.py"),
+    (Join-Path $UnrealControlRig "unreal_control_rig_bridge\contract.py"),
+    (Join-Path $UnrealControlRig "scripts\run_smoke.py"),
+    (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py"),
+    (Join-Path $UnrealControlRig "scripts\unreal_python\probe_control_rig_bridge.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\drilldown.py"),
@@ -124,11 +129,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r36-spatial-authoring-drilldown-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r37-unreal-control-rig-bridge-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 33, summary
+assert summary["present_evidence_files"] == 34, summary
 assert summary["missing_required_files"] == 0, summary
-print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
+assert summary["demo_route_steps"] == 26, summary
+print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
             throw "Maya presenter pack build smoke failed with exit code $LASTEXITCODE"
@@ -175,6 +181,12 @@ if ($Tier -in @("character-calibration", "full")) {
 if ($Tier -in @("character-drilldown", "full")) {
     Invoke-Step "character calibration drilldown" {
         python (Join-Path $CharacterCalibration "scripts\run_drilldown.py")
+    }
+}
+
+if ($Tier -in @("unreal-control-rig", "full")) {
+    Invoke-Step "unreal control rig bridge L3" {
+        python (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py")
     }
 }
 

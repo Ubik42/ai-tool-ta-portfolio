@@ -1357,3 +1357,35 @@ Presenter Pack evidence: 33 / 33 present, 0 missing, 25 route steps
 ```text
 character/spatial drilldown artifact -> public Unreal runtime fixture -> Control Rig or socket facts comparison -> owner actions / rollback boundary -> Presenter Pack row -> docs
 ```
+
+## R37 循环开发断点：Unreal Control Rig Bridge
+
+R37 已完成 `Unreal Control Rig Bridge` L3：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json
+```
+
+R37 结果：`run_l3_smoke.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R35 Character Calibration Drilldown artifact，采集 Control Rig / RigVM API、SkeletalMesh / Skeleton binding 和 expected Control Rig asset path facts。结果为 L3 / `Blocked` / `unreal_control_rig_bridge_facts_collected`，2 character rows，0 Ready，0 Review，2 Blocked，8 pass，1 warning，7 error，1 个 approved SkeletalMesh/Skeleton binding，0 个 expected Control Rig asset，assetWrites=0，productionWrites=0。Blocked 是业务门禁：approved 行缺 `CR_HeroFace`，TMP 行同时被 Maya 源头缺陷和 Unreal 目标缺失阻断。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r37 / dcc-first-package@1.34.0
+Presenter Pack evidence: 34 / 34 present, 0 missing, 26 route steps
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier unreal-control-rig
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Unreal Socket Import Checker`：
+
+```text
+spatial-authoring-drilldown artifact -> public Unreal Skeleton / socket facts -> socket / hotspot / pose transfer comparison -> owner actions / rollback boundary -> Presenter Pack row -> docs
+```

@@ -1,6 +1,6 @@
 # Character Calibration & Intent Transfer Studio
 
-R26-R35 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据，并进一步生成 Maya/AuroraView 可消费的 drilldown 数据。
+R26-R37 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据、Maya/AuroraView drilldown 数据，并接到 Unreal Control Rig runtime readiness。
 
 ## 核心业务逻辑
 
@@ -41,6 +41,14 @@ R35 已完成：
 - 结果为 2 character drilldowns，14 panels，8 issue rows，8 owner actions，6 owner_required，2 manual_review。
 - Presenter Pack 接入：R35 Presenter Pack 探测 Character Calibration Drilldown artifact，并把 demo route 扩到 24 步。
 
+R37 已完成：
+
+- 读取 R35 Character Calibration Drilldown artifact，把 Maya source mapping facts 对照到 Unreal 5.3.2 Control Rig API、SkeletalMesh / Skeleton binding 和 expected Control Rig asset paths。
+- 通过 UnrealEditor-Cmd 进入 public test `.uproject`，收集 ControlRig / RigVM / SkeletalMesh / Skeleton / Asset Registry API 可用性。
+- 结果为 L3 / `Blocked` / `unreal_control_rig_bridge_facts_collected`；2 character rows，0 Ready，0 Review，2 Blocked，8 pass，1 warning，7 error。
+- approved 角色行已经找到 `/Game/AI_Tool_TA/Characters/SK_Hero` 和 Skeleton 绑定，但缺 `/Game/AI_Tool_TA/Characters/CR_HeroFace`；TMP 行同时被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton 和缺 CR asset 阻断。
+- 该桥接层只读 public Unreal fixture，assetWrites=0，productionWrites=0。
+
 ## 证据
 
 当前 L2 contract artifact：
@@ -61,10 +69,16 @@ R35 已完成：
 <repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json
 ```
 
+当前 Unreal Control Rig Bridge artifact：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json
 ```
 
 关键结果：
@@ -77,6 +91,13 @@ R35 已完成：
 - checks pass / warning / error：10 / 2 / 6
 - drilldown assets / panels：2 / 14
 - owner actions / owner required / manual review：8 / 6 / 2
+- Unreal Control Rig Bridge：L3 / `Blocked` / `unreal_control_rig_bridge_facts_collected`
+- Unreal engine：5.3.2
+- Control Rig API ready：true
+- Unreal bridge ready / review / blocked：0 / 0 / 2
+- Unreal bridge pass / warning / error：8 / 1 / 7
+- Unreal bridge skeletal bindings / Control Rig assets：1 / 0
+- Unreal bridge assetWrites / productionWrites：0 / 0
 
 Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Temporary Sculpt` 保留 topology mismatch、missing Eye_R/Jaw、TMP joint、skin influence overflow、calibration delta overflow、face param missing/out-of-range、Control Rig mapping mismatch 等业务故障。
 
@@ -84,5 +105,5 @@ Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Tem
 
 下一阶段可以继续做：
 
-- Unreal Control Rig bridge：把 Maya mapping facts 对照到 Unreal Control Rig / Skeleton 资产。
+- Control Rig asset authoring / deeper runtime controls：在 public fixture 里生成或导入 `CR_HeroFace` 后，继续检查 runtime control coverage、hierarchy、deformation target link 和 waiver。
 - Character LOD Bake Planner：把 topology / normal / tangent / vertex color payload 接到角色 LOD 生成链。
