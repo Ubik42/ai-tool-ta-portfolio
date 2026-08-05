@@ -1,0 +1,41 @@
+{
+  "schema": "synthetic-gameplay-attach-manifest@0.1.0",
+  "packageId": "gameplay-attach-fixture-r54",
+  "packageVersion": "gameplay-attach-manifest@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "intent": "Public-safe gameplay attach fixture linking Maya spatial sockets and hotspots to Unreal runtime attach readiness.",
+  "intents": [
+    {
+      "id": "rifle-primary-equip",
+      "assetId": "spatial-rifle-authoring-001",
+      "slotRole": "primaryWeapon",
+      "ownerState": "approved",
+      "attachablePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "requiredSocketNames": ["SK_Hand_R", "SK_Hand_L"],
+      "requiredHotspotSemantics": ["weapon.muzzle"],
+      "animationAssetPaths": ["/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"],
+      "attachPolicy": {
+        "attachRule": "SnapToTarget",
+        "requiresParentBinding": true,
+        "requiresVfxHotspot": true,
+        "requiresAnimationContext": true
+      }
+    },
+    {
+      "id": "backpack-temp-equip",
+      "assetId": "spatial-backpack-tmp-002",
+      "slotRole": "backpack",
+      "ownerState": "temporary",
+      "attachablePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "requiredSocketNames": ["SK_Shoulder_R", "SK_Hand_R"],
+      "requiredHotspotSemantics": ["gear.attach"],
+      "animationAssetPaths": ["/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"],
+      "attachPolicy": {
+        "attachRule": "KeepRelative",
+        "requiresParentBinding": true,
+        "requiresVfxHotspot": true,
+        "requiresAnimationContext": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "reportVersion": "unreal-gameplay-attach-fixture@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "generatedAt": "2026-08-06 03:46:24",
+  "evidenceLevel": "L3-linked",
+  "l3Status": "unreal_gameplay_attach_fixture_linked",
+  "sourceSocketImportChecker": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-import-checker-l3-20260805-212131.json",
+    "reportVersion": "unreal-socket-import-checker@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_socket_facts_collected",
+    "gate": "Blocked"
+  },
+  "gameplayAttachManifest": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\fixtures\\synthetic_gameplay_attach_manifest.json",
+    "schema": "synthetic-gameplay-attach-manifest@0.1.0",
+    "packageId": "gameplay-attach-fixture-r54",
+    "packageVersion": "gameplay-attach-manifest@0.1.0"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "Actor": true,
+        "SceneComponent": true,
+        "StaticMesh": true,
+        "StaticMeshActor": true,
+        "SkeletalMeshComponent": true,
+        "EditorAssetLibrary": true
+      },
+      "actorAttachMethods": [
+        "attach_to_actor",
+        "attach_to_component",
+        "get_attach_parent_actor",
+        "get_attach_parent_socket_name",
+        "get_attached_actors"
+      ],
+      "sceneComponentAttachMethods": [
+        "attach_to",
+        "attach_to_component",
+        "does_socket_exist",
+        "get_all_socket_names",
+        "get_attach_parent",
+        "get_attach_socket_name",
+        "get_socket_location",
+        "get_socket_quaternion",
+        "get_socket_rotation",
+        "get_socket_transform",
+        "k2_attach_to",
+        "use_attach_parent_bound"
+      ]
+    },
+    "assetRegistryScanned": true,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public fixture only"
+  },
+  "facts": {
+    "schema": "unreal-gameplay-attach-fixture-input@0.1.0",
+    "sourceSocketReportVersion": "unreal-socket-import-checker@0.1.0",
+    "sourceSocketEvidenceLevel": "L3",
+    "sourceSocketL3Status": "unreal_socket_facts_collected",
+    "manifestPackageId": "gameplay-attach-fixture-r54",
+    "manifestPackageVersion": "gameplay-attach-manifest@0.1.0",
+    "runtimeCollected": true,
+    "intents": [
+      {
+        "id": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "assetLabel": "Rifle Socket Authoring Approved",
+        "slotRole": "primaryWeapon",
+        "ownerState": "approved",
+        "attachablePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "attachableRuntime": {
+          "path": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+          "exists": true,
+          "class": "StaticMesh",
+          "pathName": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A.SM_HeroPanel_A",
+          "package": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+        },
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+        ],
+        "animationRuntime": {
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart": {
+            "path": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "exists": true,
+            "class": "AnimSequence",
+            "pathName": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+            "package": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+          }
+        },
+        "requiredSocketNames": [
+          "SK_Hand_R",
+          "SK_Hand_L"
+        ],
+        "requiredHotspotSemantics": [
+          "weapon.muzzle"
+        ],
+        "sourceStatus": "Ready",
+        "sourceOwnerState": "approved",
+        "sourceHotspots": [
+          {
+            "sourceName": "muzzle_flash",
+            "semantic": "weapon.muzzle",
+            "owner": "combat-fx",
+            "parentJoint": "Weapon_R",
+            "space": "local",
+            "previewLocator": true
+          }
+        ],
+        "runtimeSocketNames": [],
+        "missingRuntimeSockets": [
+          "SK_Hand_L",
+          "SK_Hand_R"
+        ],
+        "hotspotSemantics": [
+          "weapon.muzzle"
+        ],
+        "missingHotspotSemantics": [],
+        "parentMismatches": [],
+        "socketApiReady": true,
+        "skeletalTargetPresent": true,
+        "attachPolicy": {
+          "attachRule": "SnapToTarget",
+          "requiresParentBinding": true,
+          "requiresVfxHotspot": true,
+          "requiresAnimationContext": true
+        }
+      },
+      {
+        "id": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "assetLabel": "Backpack Socket Temporary Blocked",
+        "slotRole": "backpack",
+        "ownerState": "temporary",
+        "attachablePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "attachableRuntime": {
+          "path": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+          "exists": true,
+          "class": "StaticMesh",
+          "pathName": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M.SM_HeroPanel_A_M",
+          "package": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+        },
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+        ],
+        "animationRuntime": {
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A": {
+            "path": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "exists": true,
+            "class": "AnimSequence",
+            "pathName": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+            "package": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+          }
+        },
+        "requiredSocketNames": [
+          "SK_Shoulder_R",
+          "SK_Hand_R"
+        ],
+        "requiredHotspotSemantics": [
+          "gear.attach"
+        ],
+        "sourceStatus": "Blocked",
+        "sourceOwnerState": "temporary",
+        "sourceHotspots": [
+          {
+            "sourceName": "strap_attach_fx",
+            "semantic": "gear.unknown",
+            "owner": "",
+            "parentJoint": "Hand_R",
+            "space": "world",
+            "previewLocator": false
+          }
+        ],
+        "runtimeSocketNames": [],
+        "missingRuntimeSockets": [
+          "SK_Hand_R",
+          "SK_Shoulder_R"
+        ],
+        "hotspotSemantics": [
+          "gear.unknown"
+        ],
+        "missingHotspotSemantics": [
+          "gear.attach"
+        ],
+        "parentMismatches": [],
+        "socketApiReady": false,
+        "skeletalTargetPresent": false,
+        "attachPolicy": {
+          "attachRule": "KeepRelative",
+          "requiresParentBinding": true,
+          "requiresVfxHotspot": true,
+          "requiresAnimationContext": true
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-gameplay-attach-fixture-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "intentCount": 2,
+      "readyIntents": 0,
+      "reviewIntents": 0,
+      "blockedIntents": 2,
+      "requiredSockets": 4,
+      "missingRuntimeSockets": 4,
+      "requiredHotspots": 2,
+      "missingHotspotSemantics": 1,
+      "attachableAssetsPresent": 2,
+      "animationAssetsPresent": 2,
+      "runtimeCollected": true,
+      "pass": 15,
+      "warning": 1,
+      "error": 6,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "rifle-primary-equip:source-socket-l3",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "source-socket-l3",
+        "status": "pass",
+        "evidence": "source evidence=L3 status=unreal_socket_facts_collected",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:unreal-runtime-probe",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "unreal-runtime-probe",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:gameplay-attach-api-visible",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "gameplay-attach-api-visible",
+        "status": "pass",
+        "evidence": "api={'Actor': True, 'SceneComponent': True, 'StaticMesh': True, 'StaticMeshActor': True, 'SkeletalMeshComponent': True, 'EditorAssetLibrary': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:source-spatial-row-approved",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "source-spatial-row-approved",
+        "status": "pass",
+        "evidence": "sourceStatus=Ready sourceOwner=approved manifestOwner=approved",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:skeletal-target-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "skeletal-target-present",
+        "status": "pass",
+        "evidence": "skeletalTargetPresent=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:attachable-asset-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "attachable-asset-present",
+        "status": "pass",
+        "evidence": "attachable=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:required-sockets-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "required-sockets-present",
+        "status": "error",
+        "evidence": "required=SK_Hand_R,SK_Hand_L runtime= missing=SK_Hand_L,SK_Hand_R",
+        "fixPreview": "Create or import required sockets before gameplay attach."
+      },
+      {
+        "id": "rifle-primary-equip:socket-parent-binding-clean",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "socket-parent-binding-clean",
+        "status": "error",
+        "evidence": "parentMismatches=[] missing=['SK_Hand_L', 'SK_Hand_R']",
+        "fixPreview": "Bind sockets to the expected Skeleton bones before gameplay attach."
+      },
+      {
+        "id": "rifle-primary-equip:required-hotspot-semantics",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "required-hotspot-semantics",
+        "status": "pass",
+        "evidence": "required=weapon.muzzle source=weapon.muzzle missing=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:animation-context-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "animation-context-present",
+        "status": "pass",
+        "evidence": "animations=/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:write-boundary-clean",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:source-socket-l3",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "source-socket-l3",
+        "status": "pass",
+        "evidence": "source evidence=L3 status=unreal_socket_facts_collected",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:unreal-runtime-probe",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "unreal-runtime-probe",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:gameplay-attach-api-visible",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "gameplay-attach-api-visible",
+        "status": "pass",
+        "evidence": "api={'Actor': True, 'SceneComponent': True, 'StaticMesh': True, 'StaticMeshActor': True, 'SkeletalMeshComponent': True, 'EditorAssetLibrary': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:source-spatial-row-approved",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "source-spatial-row-approved",
+        "status": "error",
+        "evidence": "sourceStatus=Blocked sourceOwner=temporary manifestOwner=temporary",
+        "fixPreview": "Resolve source spatial owner actions before gameplay attach readiness."
+      },
+      {
+        "id": "backpack-temp-equip:skeletal-target-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "skeletal-target-present",
+        "status": "error",
+        "evidence": "skeletalTargetPresent=False",
+        "fixPreview": "Import or relink the public SkeletalMesh/Skeleton target."
+      },
+      {
+        "id": "backpack-temp-equip:attachable-asset-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "attachable-asset-present",
+        "status": "pass",
+        "evidence": "attachable=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:required-sockets-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "required-sockets-present",
+        "status": "error",
+        "evidence": "required=SK_Shoulder_R,SK_Hand_R runtime= missing=SK_Hand_R,SK_Shoulder_R",
+        "fixPreview": "Create or import required sockets before gameplay attach."
+      },
+      {
+        "id": "backpack-temp-equip:socket-parent-binding-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "socket-parent-binding-clean",
+        "status": "error",
+        "evidence": "parentMismatches=[] missing=['SK_Hand_R', 'SK_Shoulder_R']",
+        "fixPreview": "Bind sockets to the expected Skeleton bones before gameplay attach."
+      },
+      {
+        "id": "backpack-temp-equip:required-hotspot-semantics",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "required-hotspot-semantics",
+        "status": "warning",
+        "evidence": "required=gear.attach source=gear.unknown missing=gear.attach",
+        "fixPreview": "Assign required gameplay/VFX hotspot semantics or add an owner waiver."
+      },
+      {
+        "id": "backpack-temp-equip:animation-context-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "animation-context-present",
+        "status": "pass",
+        "evidence": "animations=/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:write-boundary-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "gameplay-attach-action:rifle-primary-equip:required-sockets-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "required-sockets-present",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Create or import required sockets before gameplay attach.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:rifle-primary-equip:socket-parent-binding-clean",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "socket-parent-binding-clean",
+        "status": "error",
+        "owner": "technical-animation-owner",
+        "preview": "Bind sockets to the expected Skeleton bones before gameplay attach.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:backpack-temp-equip:source-spatial-row-approved",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-spatial-row-approved",
+        "status": "error",
+        "owner": "spatial-owner",
+        "preview": "Resolve source spatial owner actions before gameplay attach readiness.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:backpack-temp-equip:skeletal-target-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "skeletal-target-present",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Import or relink the public SkeletalMesh/Skeleton target.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:backpack-temp-equip:required-sockets-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "required-sockets-present",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Create or import required sockets before gameplay attach.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:backpack-temp-equip:socket-parent-binding-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "socket-parent-binding-clean",
+        "status": "error",
+        "owner": "technical-animation-owner",
+        "preview": "Bind sockets to the expected Skeleton bones before gameplay attach.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "gameplay-attach-action:backpack-temp-equip:required-hotspot-semantics",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "required-hotspot-semantics",
+        "status": "warning",
+        "owner": "gameplay-vfx-owner",
+        "preview": "Assign required gameplay/VFX hotspot semantics or add an owner waiver.",
+        "writeBoundary": "preview_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-gameplay-attach-fixture",
+    "name": "Unreal Gameplay Attach Fixture",
+    "methodSource": "Maya spatial authoring + Unreal socket runtime facts + gameplay attach manifest",
+    "protocolCarrier": "socket names, hotspot semantics, attachable asset paths, animation context and attach policy",
+    "boundary": {
+      "mutation": "read_only_runtime_join",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R54 links Maya spatial socket/hotspot authoring to Unreal socket runtime facts and gameplay attach intent rows.",
+    "The fixture checks attachable asset presence, required socket coverage, socket parent binding, hotspot semantics and animation context before gameplay attach approval.",
+    "The report is read-only: assetWrites, engineWrites and productionWrites remain zero.",
+    "Blocked attach rows explain gameplay risk directly: an equip action can fail even when the prop asset exists if the character socket contract is missing."
+  ]
+}

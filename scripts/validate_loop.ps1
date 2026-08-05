@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -131,12 +131,15 @@ $QuickPythonFiles = @(
     (Join-Path $SpatialAuthoring "scripts\run_drilldown.py"),
     (Join-Path $UnrealSocket "unreal_socket_import_checker\contract.py"),
     (Join-Path $UnrealSocket "unreal_socket_import_checker\controlled_executor.py"),
+    (Join-Path $UnrealSocket "unreal_socket_import_checker\gameplay_attach.py"),
     (Join-Path $UnrealSocket "scripts\run_smoke.py"),
     (Join-Path $UnrealSocket "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealSocket "scripts\run_socket_authoring_executor.py"),
+    (Join-Path $UnrealSocket "scripts\run_gameplay_attach_fixture.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_import_checker.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\execute_socket_authoring.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_api_docs.py"),
+    (Join-Path $UnrealSocket "scripts\unreal_python\probe_gameplay_attach_runtime.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\runtime_contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\generation_plan.py"),
@@ -180,12 +183,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r53-max-texture-manifest-link-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r54-unreal-gameplay-attach-fixture-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.50.0", summary
-assert summary["present_evidence_files"] == 51, summary
+assert summary["package_version"] == "dcc-first-package@1.51.0", summary
+assert summary["present_evidence_files"] == 52, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 41, summary
+assert summary["demo_route_steps"] == 42, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -351,6 +354,12 @@ if ($Tier -in @("unreal-socket", "full")) {
 if ($Tier -in @("unreal-socket-authoring-executor", "full")) {
     Invoke-Step "unreal socket authoring executor" {
         python (Join-Path $UnrealSocket "scripts\run_socket_authoring_executor.py")
+    }
+}
+
+if ($Tier -in @("unreal-gameplay-attach", "full")) {
+    Invoke-Step "unreal gameplay attach fixture" {
+        python (Join-Path $UnrealSocket "scripts\run_gameplay_attach_fixture.py")
     }
 }
 

@@ -1,6 +1,6 @@
 # Unreal Socket Import Checker
 
-R38 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
+R38/R54 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness，并继续连接到 gameplay attach readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -21,12 +21,15 @@ R38 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose 
 
 - `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/contract.py`
 - `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/controlled_executor.py`
+- `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/gameplay_attach.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_smoke.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_fixture.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_import_checker.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/execute_socket_authoring.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_api_docs.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_gameplay_attach_runtime.py`
 
 数据来源：
 
@@ -39,6 +42,7 @@ R38 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose 
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json
 <repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json
 ```
 
@@ -82,3 +86,11 @@ API docs probe 证明了卡点：UE 5.3 Python 暴露 `SkeletalMesh.add_socket(s
 ## R40 Presenter Pack
 
 当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据。
+
+## R54 Gameplay Attach Fixture
+
+R54 把 socket readiness 推到实际玩法装备挂接：manifest 声明 `rifle-primary-equip` 和 `backpack-temp-equip` 两个 gameplay intent，Unreal 5.3.2 headless 只读检查 attachable StaticMesh、AnimSequence、Actor/SceneComponent attach API，以及 R38 runtime socket facts。
+
+当前结果：L3-linked / `Blocked` / `unreal_gameplay_attach_fixture_linked`；2 intents，0 Ready / 0 Review / 2 Blocked；attachable assets present=2，animation assets present=2；required/missing runtime sockets=4 / 4；required/missing hotspot semantics=2 / 1；15 pass / 1 warning / 6 error；assetWrites / productionWrites = 0 / 0。
+
+业务结论：prop 资产和动画资产存在还不够，角色 Skeleton 上的 socket 合约没落地时，equip/attach 就必须被工具挡住并输出 owner action。
