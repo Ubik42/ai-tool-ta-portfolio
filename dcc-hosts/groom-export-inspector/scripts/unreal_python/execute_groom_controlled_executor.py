@@ -460,4 +460,5 @@ def _fingerprint(payload: Dict[str, Any]) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()[:16]
 
 
-_main()
+if __name__ == "__main__":
+    _main()

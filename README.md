@@ -19,7 +19,7 @@
 当前稳定展示包：
 
 - `public-case-package/dcc-first-package-manifest.json`
-- `dcc-hosts/maya-auroraview-host/artifacts/r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json`
+- `dcc-hosts/maya-auroraview-host/artifacts/r55-groom-runtime-facts-presentation-pack-20260806-040806.json`
 
 ## 目录
 
@@ -103,7 +103,7 @@ AuroraView 迁移可行性评估见 `docs/260803_1135_AuroraView_DCC迁移可行
 
 R10.3 Asset Handoff / Publish Gate 开发计划见 `docs/260803_R10_3_AssetHandoffPublishGate开发计划.md`。
 
-当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration / Spatial Authoring、Unreal Control Rig / Socket / Gameplay Attach、Platform Variant、Blender `bpy` L3、3ds Max `pymxs` L3、3ds Max Material Texture Manifest Link、Unreal L3++ inspector、Scene Transaction Guard、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Fixture 和 Groom Controlled Executor 都已有可导出的 runtime evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 52 个关键证据文件、42 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r54` / `dcc-first-package@1.51.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json`。R54 Gameplay Attach artifact 为 `dcc-hosts/unreal-socket-import-checker/artifacts/unreal-gameplay-attach-fixture-20260806-034615.json`，把 Maya socket/hotspot intent、Unreal attachable/animation runtime assets 和 attach API 连成装备挂接门禁：2 个 attachable 资产和 2 个动画资产存在，但 4 个角色 runtime sockets 缺失，所以 2 个 gameplay intent 正确 Blocked；R53 Max Texture Manifest Link 和 R52 Groom Controlled Executor 继续作为材质贴图与 Groom 受控执行证据。
+当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration / Spatial Authoring、Unreal Control Rig / Socket / Gameplay Attach、Platform Variant、Blender `bpy` L3、3ds Max `pymxs` L3、3ds Max Material Texture Manifest Link、Unreal L3++ inspector、Scene Transaction Guard、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Fixture、Groom Controlled Executor 和 Groom Runtime Fact Collector 都已有可导出的 runtime evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 53 个关键证据文件、43 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r55` / `dcc-first-package@1.52.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r55-groom-runtime-facts-presentation-pack-20260806-040806.json`。R55 Groom Runtime Facts artifact 为 `dcc-hosts/groom-export-inspector/artifacts/groom-runtime-facts-20260806-040118.json`，在 Unreal 5.3.2 中真实导入 approved curve-only GroomAsset / GroomBindingAsset public fixture，读取 3 个 runtime assets、23 个属性、40 个方法面和 11 个 callable facts，再 clean rollback；R54 Gameplay Attach、R53 Max Texture Manifest Link 和 R52 Groom Controlled Executor 继续作为 socket gameplay、材质贴图与 Groom 受控执行证据。
 
 模块文档：
 

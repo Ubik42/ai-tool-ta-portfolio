@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r54",
-  "packageVersion": "dcc-first-package@1.51.0",
-  "generatedAt": "2026-08-06 03:46:24",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r55",
+  "packageVersion": "dcc-first-package@1.52.0",
+  "generatedAt": "2026-08-06 04:01:27",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 38,
+    "artifactCount": 39,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 52,
-    "presentationPackPresentEvidenceFiles": 52,
+    "presentationPackEvidenceFiles": 53,
+    "presentationPackPresentEvidenceFiles": 53,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 42,
+    "presentationPackDemoRouteSteps": 43,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -768,8 +768,26 @@
     "unrealGameplayAttachFixtureAssetWrites": 0,
     "unrealGameplayAttachFixtureEngineWrites": 0,
     "unrealGameplayAttachFixtureProductionWrites": 0,
-    "latestRuntimeEvidence": "Unreal Gameplay Attach Fixture L3-linked gate: Blocked by 4 missing runtime sockets; attachable/animation assets present; 0 writes.",
-    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json"
+    "latestRuntimeEvidence": "Groom Runtime Fact Collector L3 gate: Ready; 3 runtime Groom/SkeletalMesh assets readable, 23 properties, 40 methods, 11 callable facts, rollback clean.",
+    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
+    "groomRuntimeFactsReportVersion": "groom-runtime-facts@0.1.0",
+    "groomRuntimeFactsArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+    "groomRuntimeFactsEvidenceLevel": "L3",
+    "groomRuntimeFactsL3Status": "unreal_groom_runtime_facts_collected",
+    "groomRuntimeFactsGate": "Ready",
+    "groomRuntimeFactsEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "groomRuntimeFactsRuntimeAssetsPresent": 3,
+    "groomRuntimeFactsReadableProperties": 23,
+    "groomRuntimeFactsMethodSurface": 40,
+    "groomRuntimeFactsCallResults": 11,
+    "groomRuntimeFactsRollbackPassed": true,
+    "groomRuntimeFactsResidualAssetCount": 0,
+    "groomRuntimeFactsPassChecks": 11,
+    "groomRuntimeFactsWarningChecks": 0,
+    "groomRuntimeFactsErrorChecks": 0,
+    "groomRuntimeFactsAssetWrites": 6,
+    "groomRuntimeFactsEngineWrites": 0,
+    "groomRuntimeFactsProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -1089,6 +1107,18 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-groom-runtime-facts",
+      "label": "Groom Runtime Fact Collector",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+      "required": true
+    },
+    {
+      "id": "public-case-r55-presenter-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
+      "required": true
     }
   ],
   "validation": [
@@ -1265,6 +1295,20 @@
       "command": "python dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_fixture.py",
       "result": "pass",
       "evidence": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json"
+    },
+    {
+      "id": "validate-r55-groom-runtime-facts",
+      "command": "python dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py",
+      "result": "pass",
+      "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json"
+    },
+    "python dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py",
+    ".\\scripts\\validate_loop.ps1 -Tier groom-runtime-facts",
+    {
+      "id": "validate-r55-dcc-presenter-pack",
+      "command": "Maya mayapy dcc_presentation_export_pack(label=\"r55-groom-runtime-facts-presentation-pack\")",
+      "result": "pass",
+      "evidence": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json"
     }
   ],
   "notes": [
@@ -1308,7 +1352,8 @@
     "R13 adds engine-side L2 inspection through the Unreal Handoff Inspector contract.",
     "R12 adds the first non-Maya adapter evidence through the Blender Rule Adapter L2 contract.",
     "Browser package remains as historical evidence ledger.",
-    "Synthetic fixtures are public-safe and do not reference proprietary assets."
+    "Synthetic fixtures are public-safe and do not reference proprietary assets.",
+    "R55 adds Groom Runtime Fact Collector: Unreal imports the approved curve-only GroomAsset/BindingAsset public fixture, reads runtime property/method/call facts while assets exist, then rolls back without residue."
   ],
   "engineHandoffPreflightReportVersion": "maya-engine-handoff-preflight@0.1.0",
   "engineHandoffPreflightArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-8-engine-handoff-preflight-fixture-20260803-172302.json",
@@ -1342,7 +1387,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1419,7 +1464,7 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 35,
+  "artifactCount": 36,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
@@ -1577,6 +1622,13 @@
       "label": "Unreal Gameplay Attach Fixture",
       "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json",
       "kind": "json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-groom-runtime-facts",
+      "label": "Groom Runtime Fact Collector",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
       "required": true
     }
   ],
@@ -1935,7 +1987,9 @@
     "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260806-032411.json",
     "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-texture-manifest-link-20260806-032426.json",
     "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json",
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json"
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json",
+    "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json"
   ],
   "evidence": [
     {
@@ -2073,6 +2127,13 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-groom-runtime-facts",
+      "label": "Groom Runtime Fact Collector",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+      "required": true
     }
   ],
   "unrealControlRigFaceSkeletonFixtureReportVersion": "unreal-control-rig-face-skeleton-fixture@0.1.0",
@@ -2138,10 +2199,10 @@
   "groomExportInspectorAssetWrites": 0,
   "groomExportInspectorEngineWrites": 0,
   "groomExportInspectorProductionWrites": 0,
-  "presentationPackEvidenceFiles": 52,
-  "presentationPackPresentEvidenceFiles": 52,
+  "presentationPackEvidenceFiles": 53,
+  "presentationPackPresentEvidenceFiles": 53,
   "presentationPackMissingRequiredFiles": 0,
-  "presentationPackDemoRouteSteps": 42,
+  "presentationPackDemoRouteSteps": 43,
   "groomUnrealReadinessReportVersion": "groom-unreal-readiness@0.1.0",
   "groomUnrealReadinessArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-unreal-readiness-20260806-010008.json",
   "groomUnrealReadinessEvidenceLevel": "L3",
@@ -2258,7 +2319,8 @@
     "R50 proves the public Unreal fixture requests HairStrands/Alembic hair plugins and exposes Groom import API classes under a zero-write commandlet probe.",
     "R52 proves the curve-only Groom Alembic path imports as GroomAsset, creates the BindingAsset, and rolls back all public fixture writes.",
     "R53 proves Max material texture package readiness from real pymxs slot facts plus manifest policy, with one approved panel ready and one mobile hero prop blocked by missing normal/orm and 4096 texture budget drift.",
-    "R54 proves gameplay attach readiness is blocked by missing character socket contracts even when attachable props and animation assets are present in Unreal."
+    "R54 proves gameplay attach readiness is blocked by missing character socket contracts even when attachable props and animation assets are present in Unreal.",
+    "R55 proves Groom runtime fact readability: Unreal creates the public GroomAsset and GroomBindingAsset, reads 23 properties, 40 relevant methods and 11 callable facts, then rolls back all fixture assets."
   ],
   "groomControlledExecutorReportVersion": "groom-controlled-executor@0.1.0",
   "groomControlledExecutorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-controlled-executor-20260806-030046.json",
@@ -2318,11 +2380,14 @@
   "validationCommands": [
     "python -m py_compile dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/contract.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/runtime_collector.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/texture_manifest_link.py dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_3dsmax_l3.py dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py",
     "python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600",
-    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py"
+    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py",
+    "python dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py",
+    ".\\scripts\\validate_loop.ps1 -Tier groom-runtime-facts"
   ],
   "releaseNotes": [
     "R53 adds 3ds Max Material Texture Manifest Link: pymxs material bitmap slots are joined to texture package entries, channel semantics, color-space policy and PC/Mobile budgets.",
-    "R54 adds Unreal Gameplay Attach Fixture: Maya socket/hotspot authoring rows are joined to Unreal runtime asset, animation and attach API facts so gameplay equip readiness is blocked by missing character socket contracts instead of hidden until runtime."
+    "R54 adds Unreal Gameplay Attach Fixture: Maya socket/hotspot authoring rows are joined to Unreal runtime asset, animation and attach API facts so gameplay equip readiness is blocked by missing character socket contracts instead of hidden until runtime.",
+    "R55 adds Groom Runtime Fact Collector: Unreal imports the approved curve-only GroomAsset/BindingAsset public fixture, reads runtime property/method/call facts while assets exist, then rolls back without residue."
   ],
   "unrealGameplayAttachFixtureReportVersion": "unreal-gameplay-attach-fixture@0.1.0",
   "unrealGameplayAttachFixtureArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-034615.json",
@@ -2347,5 +2412,24 @@
   "unrealGameplayAttachFixtureErrorChecks": 6,
   "unrealGameplayAttachFixtureAssetWrites": 0,
   "unrealGameplayAttachFixtureEngineWrites": 0,
-  "unrealGameplayAttachFixtureProductionWrites": 0
+  "unrealGameplayAttachFixtureProductionWrites": 0,
+  "groomRuntimeFactsReportVersion": "groom-runtime-facts@0.1.0",
+  "groomRuntimeFactsArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+  "groomRuntimeFactsEvidenceLevel": "L3",
+  "groomRuntimeFactsL3Status": "unreal_groom_runtime_facts_collected",
+  "groomRuntimeFactsGate": "Ready",
+  "groomRuntimeFactsEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "groomRuntimeFactsRuntimeAssetsPresent": 3,
+  "groomRuntimeFactsReadableProperties": 23,
+  "groomRuntimeFactsMethodSurface": 40,
+  "groomRuntimeFactsCallResults": 11,
+  "groomRuntimeFactsRollbackPassed": true,
+  "groomRuntimeFactsResidualAssetCount": 0,
+  "groomRuntimeFactsPassChecks": 11,
+  "groomRuntimeFactsWarningChecks": 0,
+  "groomRuntimeFactsErrorChecks": 0,
+  "groomRuntimeFactsAssetWrites": 6,
+  "groomRuntimeFactsEngineWrites": 0,
+  "groomRuntimeFactsProductionWrites": 0,
+  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json"
 }

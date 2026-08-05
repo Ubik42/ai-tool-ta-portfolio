@@ -1,0 +1,815 @@
+{
+  "reportVersion": "groom-runtime-facts@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 04:01:27",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_groom_runtime_facts_collected",
+  "sourceImportPostcheck": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-alembic-import-postcheck-20260806-030028.json",
+    "reportVersion": "groom-alembic-import-postcheck@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_groom_alembic_import_postcheck_blocked",
+    "gate": "Blocked"
+  },
+  "sourcePluginApiFixture": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
+    "reportVersion": "groom-plugin-api-fixture@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_groom_plugin_api_fixture_ready",
+    "gate": "Ready"
+  },
+  "sourceControlledExecutor": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-controlled-executor-20260806-030046.json",
+    "reportVersion": "groom-controlled-executor@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_groom_executor_import_binding_rolled_back",
+    "gate": "Ready"
+  },
+  "selectedOperation": {
+    "assetId": "groom-hero-hair-001",
+    "assetLabel": "Hero Hair Approved",
+    "selected": true,
+    "sourceImportCandidate": true,
+    "pluginApiReady": true,
+    "alembicImportFactoryVisible": true,
+    "cache": {
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "localPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "exists": true,
+      "bytes": 12808,
+      "sourceSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "runtimeSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "localSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "hashMatches": true
+    },
+    "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+    "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+    "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+    "materialSlot": "M_Hair_Default",
+    "destinationPath": "/Game/AI_Tool_TA/Grooms"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 6,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public Groom fixture only"
+  },
+  "facts": {
+    "schema": "groom-runtime-facts-input@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "assetFacts": 3,
+      "runtimeAssetsPresent": 3,
+      "groomAssetClass": "GroomAsset",
+      "bindingAssetClass": "GroomBindingAsset",
+      "targetMeshClass": "SkeletalMesh",
+      "readableProperties": 23,
+      "methodSurface": 40,
+      "callResults": 11,
+      "rollbackPassed": true,
+      "residualAssetCount": 0,
+      "assetWrites": 6,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "pass": 11,
+      "warning": 0,
+      "error": 0,
+      "runtimeErrors": 0
+    },
+    "assetFacts": {
+      "groomAsset": {
+        "role": "groom",
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "exists": true,
+        "className": "GroomAsset",
+        "fingerprint": "/Game/AI_Tool_TA/Grooms/G_HeroHair:GroomAsset",
+        "objectClass": "GroomAsset",
+        "pathName": "/Game/AI_Tool_TA/Grooms/G_HeroHair.G_HeroHair",
+        "packageName": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "packageDirty": null,
+        "methodNames": [
+          "deformed_skeletal_mesh",
+          "enable_global_interpolation",
+          "get_package",
+          "hair_groups_cards",
+          "hair_groups_interpolation",
+          "hair_groups_lod",
+          "hair_groups_materials",
+          "hair_groups_meshes",
+          "hair_groups_physics",
+          "hair_groups_rendering",
+          "hair_interpolation_type",
+          "is_package_external",
+          "rigged_skeletal_mesh"
+        ],
+        "methodCount": 13,
+        "propertyRows": [
+          {
+            "name": "pathName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/G_HeroHair.G_HeroHair",
+            "source": "object"
+          },
+          {
+            "name": "packageName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+            "source": "object"
+          },
+          {
+            "name": "packageDirty",
+            "readable": false,
+            "value": null,
+            "source": "object"
+          },
+          {
+            "name": "asset_import_data",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/G_HeroHair.G_HeroHair:GroomAssetImportData_0",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "thumbnail_info",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "GroomAsset: Failed to find property 'thumbnail_info' for attribute 'thumbnail_info' on 'GroomAsset'"
+          },
+          {
+            "name": "hair_groups_info",
+            "readable": true,
+            "value": "[{}]",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "hair_groups_cards",
+            "readable": true,
+            "value": "[]",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "hair_groups_meshes",
+            "readable": true,
+            "value": "[]",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "enable_global_interpolation",
+            "readable": true,
+            "value": false,
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "interpolation_settings",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "GroomAsset: Failed to find property 'interpolation_settings' for attribute 'interpolation_settings' on 'GroomAsset'"
+          },
+          {
+            "name": "lod_settings",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "GroomAsset: Failed to find property 'lod_settings' for attribute 'lod_settings' on 'GroomAsset'"
+          }
+        ],
+        "readablePropertyCount": 7,
+        "callResultRows": [
+          {
+            "name": "get_package",
+            "called": true,
+            "value": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+            "error": null
+          },
+          {
+            "name": "is_package_external",
+            "called": true,
+            "value": false,
+            "error": null
+          }
+        ],
+        "callResultCount": 2,
+        "errors": []
+      },
+      "bindingAsset": {
+        "role": "binding",
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "exists": true,
+        "className": "GroomBindingAsset",
+        "fingerprint": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace:GroomBindingAsset",
+        "objectClass": "GroomBindingAsset",
+        "pathName": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace.GB_HeroHair_SK_HeroFace",
+        "packageName": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "packageDirty": null,
+        "methodNames": [
+          "get_package",
+          "groom",
+          "groom_binding_type",
+          "group_infos",
+          "is_package_external",
+          "num_interpolation_points",
+          "source_skeletal_mesh",
+          "target_skeletal_mesh"
+        ],
+        "methodCount": 8,
+        "propertyRows": [
+          {
+            "name": "pathName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace.GB_HeroHair_SK_HeroFace",
+            "source": "object"
+          },
+          {
+            "name": "packageName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+            "source": "object"
+          },
+          {
+            "name": "packageDirty",
+            "readable": false,
+            "value": null,
+            "source": "object"
+          },
+          {
+            "name": "asset_import_data",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "GroomBindingAsset: Failed to find property 'asset_import_data' for attribute 'asset_import_data' on 'GroomBindingAsset'"
+          },
+          {
+            "name": "thumbnail_info",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "GroomBindingAsset: Failed to find property 'thumbnail_info' for attribute 'thumbnail_info' on 'GroomBindingAsset'"
+          },
+          {
+            "name": "groom",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Grooms/G_HeroHair.G_HeroHair",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "target_skeletal_mesh",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "source_skeletal_mesh",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "num_interpolation_points",
+            "readable": true,
+            "value": 100,
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "matching_section",
+            "readable": true,
+            "value": 0,
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "group_infos",
+            "readable": true,
+            "value": "[{}]",
+            "source": "editor_property",
+            "error": null
+          }
+        ],
+        "readablePropertyCount": 8,
+        "callResultRows": [
+          {
+            "name": "get_package",
+            "called": true,
+            "value": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+            "error": null
+          },
+          {
+            "name": "is_package_external",
+            "called": true,
+            "value": false,
+            "error": null
+          }
+        ],
+        "callResultCount": 2,
+        "errors": []
+      },
+      "targetSkeletalMesh": {
+        "role": "skeletalMesh",
+        "path": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "exists": true,
+        "className": "SkeletalMesh",
+        "fingerprint": "/Game/AI_Tool_TA/Characters/SK_HeroFace:SkeletalMesh",
+        "objectClass": "SkeletalMesh",
+        "pathName": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace",
+        "packageName": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "packageDirty": null,
+        "methodNames": [
+          "default_mesh_deformer",
+          "get_bounds",
+          "get_imported_bounds",
+          "get_min_lod_for_quality_levels",
+          "get_overlay_material",
+          "get_overlay_material_max_draw_distance",
+          "get_package",
+          "is_package_external",
+          "lod_settings",
+          "materials",
+          "mesh_clothing_assets",
+          "negative_bounds_extension",
+          "overlay_material",
+          "overlay_material_max_draw_distance",
+          "physics_asset",
+          "positive_bounds_extension",
+          "shadow_physics_asset",
+          "skeleton",
+          "strip_lod_geometry"
+        ],
+        "methodCount": 19,
+        "propertyRows": [
+          {
+            "name": "pathName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace",
+            "source": "object"
+          },
+          {
+            "name": "packageName",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+            "source": "object"
+          },
+          {
+            "name": "packageDirty",
+            "readable": false,
+            "value": null,
+            "source": "object"
+          },
+          {
+            "name": "asset_import_data",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace:FbxSkeletalMeshImportData_0",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "thumbnail_info",
+            "readable": true,
+            "value": null,
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "skeleton",
+            "readable": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton.SK_HeroFace_Skeleton",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "materials",
+            "readable": true,
+            "value": "[{material_interface: None, material_slot_name: \"openPBR_shader1\", uv_channel_data: {}}]",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "lod_info",
+            "readable": true,
+            "value": "[{}]",
+            "source": "editor_property",
+            "error": null
+          },
+          {
+            "name": "imported_bounds",
+            "readable": false,
+            "value": null,
+            "source": "editor_property",
+            "error": "SkeletalMesh: Failed to find property 'imported_bounds' for attribute 'imported_bounds' on 'SkeletalMesh'"
+          },
+          {
+            "name": "physics_asset",
+            "readable": true,
+            "value": null,
+            "source": "editor_property",
+            "error": null
+          }
+        ],
+        "readablePropertyCount": 8,
+        "callResultRows": [
+          {
+            "name": "get_bounds",
+            "called": true,
+            "value": "<Struct 'BoxSphereBounds' (0x00000881D17611C0) {origin: {x: 0.000000, y: 0.100000, z: 5.750000}, box_extent: {x: 1.100000, y: 0.700000, z: 1.100000}, sphere_radius: 1.705872}>",
+            "error": null
+          },
+          {
+            "name": "get_imported_bounds",
+            "called": true,
+            "value": "<Struct 'BoxSphereBounds' (0x00000881D1764000) {origin: {x: 0.000000, y: 0.100000, z: 5.750000}, box_extent: {x: 1.100000, y: 0.700000, z: 1.100000}, sphere_radius: 1.705872}>",
+            "error": null
+          },
+          {
+            "name": "get_min_lod_for_quality_levels",
+            "called": true,
+            "value": [
+              "{}",
+              0
+            ],
+            "error": null
+          },
+          {
+            "name": "get_overlay_material",
+            "called": true,
+            "value": null,
+            "error": null
+          },
+          {
+            "name": "get_overlay_material_max_draw_distance",
+            "called": true,
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "name": "get_package",
+            "called": true,
+            "value": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+            "error": null
+          },
+          {
+            "name": "is_package_external",
+            "called": true,
+            "value": false,
+            "error": null
+          }
+        ],
+        "callResultCount": 7,
+        "errors": []
+      }
+    },
+    "apiSurface": {
+      "classes": {
+        "GroomAsset": true,
+        "GroomBindingAsset": true,
+        "GroomLibrary": true,
+        "HairStrandsFactory": true,
+        "GroomImportOptions": true,
+        "AlembicImportFactory": true,
+        "AssetImportTask": true
+      },
+      "methods": {
+        "GroomAsset": [
+          "deformed_skeletal_mesh",
+          "enable_global_interpolation",
+          "get_package",
+          "hair_groups_cards",
+          "hair_groups_interpolation",
+          "hair_groups_lod",
+          "hair_groups_materials",
+          "hair_groups_meshes",
+          "hair_groups_physics",
+          "hair_groups_rendering",
+          "hair_interpolation_type",
+          "is_package_external",
+          "rigged_skeletal_mesh"
+        ],
+        "GroomBindingAsset": [
+          "get_package",
+          "groom",
+          "groom_binding_type",
+          "group_infos",
+          "is_package_external",
+          "num_interpolation_points",
+          "source_skeletal_mesh",
+          "target_skeletal_mesh"
+        ],
+        "GroomLibrary": [
+          "get_package",
+          "is_package_external"
+        ],
+        "HairStrandsFactory": [
+          "get_package",
+          "is_package_external"
+        ],
+        "GroomImportOptions": [
+          "get_package",
+          "interpolation_settings",
+          "is_package_external"
+        ],
+        "AlembicImportFactory": [
+          "get_package",
+          "is_package_external"
+        ],
+        "AssetImportTask": [
+          "get_package",
+          "is_package_external"
+        ]
+      }
+    },
+    "sourceCache": {
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "localPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "exists": true,
+      "bytes": 12808,
+      "sourceSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "runtimeSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "localSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "hashMatches": true
+    }
+  },
+  "transaction": {
+    "mode": "execute_collect_then_rollback",
+    "preflight": {
+      "expectedGroomAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "exists": false,
+        "className": null,
+        "fingerprint": null,
+        "error": null
+      },
+      "expectedBindingAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "exists": false,
+        "className": null,
+        "fingerprint": null,
+        "error": null
+      },
+      "targetSkeletalMesh": {
+        "path": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "exists": true,
+        "className": "SkeletalMesh",
+        "fingerprint": "a2904fa4a39eeee0",
+        "error": null
+      },
+      "destinationDirectory": {
+        "path": "/Game/AI_Tool_TA/Grooms",
+        "exists": false,
+        "error": null
+      }
+    },
+    "importTask": {
+      "attempted": true,
+      "succeeded": true,
+      "factoryClass": "HairStrandsFactory",
+      "optionsClass": "GroomImportOptions",
+      "destination": "/Game/AI_Tool_TA/Grooms",
+      "destinationName": "G_HeroHair",
+      "propertyRows": [
+        {
+          "property": "filename",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "destination_path",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "destination_name",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "automated",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "replace_existing",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "save",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "factory",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "options",
+          "set": true,
+          "error": null
+        }
+      ],
+      "importedObjectPaths": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      ],
+      "createdAssets": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      ],
+      "errors": [],
+      "factoryCandidates": [
+        {
+          "className": "HairStrandsFactory",
+          "available": true,
+          "constructable": true,
+          "selected": true,
+          "error": null
+        }
+      ],
+      "optionProperties": []
+    },
+    "bindingAttempt": {
+      "attempted": true,
+      "succeeded": true,
+      "method": "GroomLibrary.create_new_groom_binding_asset_with_path",
+      "methodVisible": true,
+      "candidateMethods": [
+        "create_new_geometry_cache_groom_binding_asset",
+        "create_new_geometry_cache_groom_binding_asset_with_path",
+        "create_new_groom_binding_asset",
+        "create_new_groom_binding_asset_with_path"
+      ],
+      "error": null,
+      "assetPath": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+      "sourceSkeletalMeshForTransfer": "/Game/AI_Tool_TA/Characters/SK_HeroFace"
+    },
+    "rollback": {
+      "passed": true,
+      "deletedAssets": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+      ],
+      "directoryCreated": true,
+      "directoryDeleted": true,
+      "residualAssets": [],
+      "residualAssetCount": 0,
+      "writeCount": 3,
+      "errors": [],
+      "actions": [
+        {
+          "id": "delete-created-groom-asset:G_HeroHair",
+          "kind": "delete_asset",
+          "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+        },
+        {
+          "id": "delete-created-groom-asset:GB_HeroHair_SK_HeroFace",
+          "kind": "delete_asset",
+          "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+        }
+      ]
+    },
+    "writeSet": [
+      "/Game/AI_Tool_TA/Grooms",
+      "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+      "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+    ],
+    "rollbackActions": [
+      {
+        "id": "delete-empty-groom-runtime-directory",
+        "kind": "delete_directory",
+        "path": "/Game/AI_Tool_TA/Grooms"
+      },
+      {
+        "id": "delete-created-groom-asset:G_HeroHair",
+        "kind": "delete_asset",
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      },
+      {
+        "id": "delete-created-groom-asset:GB_HeroHair_SK_HeroFace",
+        "kind": "delete_asset",
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+      }
+    ],
+    "errors": []
+  },
+  "evaluation": {
+    "schema": "groom-runtime-facts-evaluation@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "checks": 11,
+      "pass": 11,
+      "warning": 0,
+      "error": 0
+    },
+    "rows": [
+      {
+        "id": "groom-runtime-facts:runtime-entered",
+        "ruleId": "runtime-entered",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:source-cache-linked",
+        "ruleId": "source-cache-linked",
+        "status": "pass",
+        "evidence": "hashMatches=True sourceHashRows=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:plugin-api-ready",
+        "ruleId": "plugin-api-ready",
+        "status": "pass",
+        "evidence": "groomImportApiReady=True GroomAssetClass=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:controlled-executor-ready-source",
+        "ruleId": "controlled-executor-ready-source",
+        "status": "pass",
+        "evidence": "sourceStatus=unreal_groom_executor_import_binding_rolled_back sourceGate=Ready selected=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:groom-asset-created",
+        "ruleId": "groom-asset-created",
+        "status": "pass",
+        "evidence": "exists=True class=GroomAsset path=/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:binding-asset-created",
+        "ruleId": "binding-asset-created",
+        "status": "pass",
+        "evidence": "exists=True class=GroomBindingAsset path=/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:target-skeletalmesh-present",
+        "ruleId": "target-skeletalmesh-present",
+        "status": "pass",
+        "evidence": "exists=True class=SkeletalMesh path=/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:groom-runtime-readable",
+        "ruleId": "groom-runtime-readable",
+        "status": "pass",
+        "evidence": "properties=7 methods=13 calls=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:binding-runtime-readable",
+        "ruleId": "binding-runtime-readable",
+        "status": "pass",
+        "evidence": "properties=8 methods=8 calls=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:public-write-scope",
+        "ruleId": "public-write-scope",
+        "status": "pass",
+        "evidence": "writeSet=['/Game/AI_Tool_TA/Grooms', '/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace', '/Game/AI_Tool_TA/Grooms/G_HeroHair']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-runtime-facts:rollback-clean",
+        "ruleId": "rollback-clean",
+        "status": "pass",
+        "evidence": "passed=True residual=0 deleted=['/Game/AI_Tool_TA/Grooms/G_HeroHair', '/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace']",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": []
+  },
+  "adapter": {
+    "id": "groom-runtime-facts",
+    "name": "Groom Runtime Fact Collector",
+    "methodSource": "Unreal HairStrandsFactory import + GroomLibrary binding + runtime fact readback + rollback",
+    "protocolCarrier": "GroomAsset, GroomBindingAsset, target SkeletalMesh, API method surface, readable runtime fields",
+    "boundary": {
+      "mutation": "public_fixture_execute_collect_then_rollback",
+      "assetWrites": 6,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "writeScope": "/Game/AI_Tool_TA public Groom fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R55 reads GroomAsset and GroomBindingAsset facts while the controlled public fixture assets exist, then rolls them back.",
+    "The collector separates import success from runtime fact readability: a GroomAsset must expose enough package, method and property surface to be reviewable.",
+    "The report keeps all writes inside /Game/AI_Tool_TA and requires rollback residue to be zero before a Ready gate."
+  ]
+}

@@ -1,6 +1,6 @@
 # Groom Export Inspector
 
-R46/R47/R48/R49/R50/R52 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness 和 controlled executor rollback proof，覆盖 root UV、strand ID、guide curve、curve-only Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 `GroomAsset` / `GroomBindingAsset` post-check 和回滚边界。
+R46/R47/R48/R49/R50/R52/R55 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness 和 controlled executor rollback proof，覆盖 root UV、strand ID、guide curve、curve-only Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 `GroomAsset` / `GroomBindingAsset` post-check、runtime 属性/方法/调用事实回读和回滚边界。
 
 ## 核心业务逻辑
 
@@ -15,7 +15,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - R48 `.abc` cache 是否能被 Unreal runtime 读到并和 receipt sha256 对齐。
 - Unreal import/post-check 是否能 dry-run 出任务、工厂、目标资产和 no-write gate。
 - public Unreal project 是否显式请求 HairStrands / AlembicHairImporter / AlembicImporter / GeometryCache，并在 runtime 中暴露 Groom import API。
-- approved `.abc` 进入真实 Unreal `AssetImportTask` 后，产物是否确实是 `GroomAsset`，是否能继续创建 `GroomBindingAsset`，以及失败时是否能干净回滚。
+- approved `.abc` 进入真实 Unreal `AssetImportTask` 后，产物是否确实是 `GroomAsset`，是否能继续创建 `GroomBindingAsset`，是否能在资产存在期间读取 runtime 属性、方法面和 callable facts，以及失败时是否能干净回滚。
 - 临时 description / TMP groom 是否被拦截在 owner review。
 
 ## 当前实现
@@ -30,6 +30,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/alembic_import_postcheck.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/controlled_executor.py`
+- `dcc-hosts/groom-export-inspector/groom_export_inspector/groom_runtime_facts.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_l3.py`
@@ -38,11 +39,13 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/scripts/run_alembic_import_postcheck.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_groom_plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_groom_controlled_executor.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_groom_runtime_facts.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_import_readiness.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_alembic_import_postcheck.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/execute_groom_controlled_executor.py`
+- `dcc-hosts/groom-export-inspector/scripts/unreal_python/collect_groom_runtime_facts.py`
 
 R46 已完成：
 
@@ -65,6 +68,9 @@ R46 已完成：
 - R52 controlled executor：Unreal 5.3.2 commandlet 只选择 approved curve-only groom cache，创建 `/Game/AI_Tool_TA/Grooms` public fixture 目录，通过 `HairStrandsFactory` 执行 `AssetImportTask`，检查 `GroomAsset`、`GroomLibrary` binding API、`GroomBindingAsset`、commandlet HairStrands logs 和 rollback receipt。
 - Presenter Pack 接入：R52 Presenter Pack 探测 Groom Controlled Executor artifact，并把 demo route 扩到 40 步、evidence probes 扩到 50 个。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r52` / `dcc-first-package@1.49.0`。
+- R55 runtime facts：Unreal 5.3.2 在 controlled executor 证据之上重新导入 approved curve-only public cache，创建 `GroomAsset` / `GroomBindingAsset`，在资产存在期间读取 package、property、method surface 和 callable facts，然后 rollback。
+- Presenter Pack 接入：R55 Presenter Pack 探测 Groom Runtime Fact Collector artifact，并把 demo route 扩到 43 步、evidence probes 扩到 53 个。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r55` / `dcc-first-package@1.52.0`。
 
 ## 证据
 
@@ -77,7 +83,7 @@ R46 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r55-groom-runtime-facts-presentation-pack-20260806-040806.json
 ```
 
 关键结果：
@@ -208,10 +214,30 @@ Gate 为 `Ready`：R50 证明 R49 的 Groom API 缺口来自 public project 未�
 
 Gate 为 `Ready`：R52 证明关键阻断不在 Unreal runtime 或项目插件，而在 Alembic payload schema。旧 asset-root cache 混入 scalp mesh 后会被泛 Alembic 路径消费；curve-only cache 满足 UE Hair translator 条件后，`HairStrandsFactory` 能导入 `GroomAsset`，并能在同一 commandlet 中创建、检查和回滚 `GroomBindingAsset`。
 
+当前 Groom Runtime Fact Collector artifact：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-runtime-facts-20260806-040118.json
+```
+
+关键结果：
+
+- report version：`groom-runtime-facts@0.1.0`
+- evidence level：L3
+- l3 status：`unreal_groom_runtime_facts_collected`
+- Unreal runtime：5.3.2
+- runtime assets present：3，分别是 `GroomAsset`、`GroomBindingAsset` 和目标 `SkeletalMesh`
+- readable properties / method surface / callable facts：23 / 40 / 11
+- checks pass / warning / error：11 / 0 / 0
+- rollback passed / residual assets：true / 0
+- assetWrites / engineWrites / productionWrites：6 / 0 / 0
+
+Gate 为 `Ready`：R55 证明 Groom 线已经不只是导入成功，而是能在真实 Unreal 资产存在期间回读审查所需 runtime surface，并在同一 commandlet 内清理所有 public fixture residue。
+
 ## 后续
 
 下一阶段可以继续做：
 
 - 增加更多 hair schema 变体：多 group、不同 guide density、宽度/root UV 属性缺失、错误 scalp proximity。
-- 增加导入后 GroomAsset / BindingAsset 的更深 runtime fact collector：curve count、group count、binding target mesh、root projection stats。
+- 增加更多导入后 GroomAsset / BindingAsset 细分项：group count、binding target mesh、root projection stats；如果 Python surface 不足，再评估 Editor Utility / C++ bridge。
 - 将 Groom 证据接入 Maya GUI 的专用 reviewer panel，展示 root UV、guide、curve-only cache hash、import post-check 和 rollback receipt 的闭环。
