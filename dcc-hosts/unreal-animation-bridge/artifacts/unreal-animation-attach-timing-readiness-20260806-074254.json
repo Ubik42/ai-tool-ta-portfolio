@@ -1,0 +1,388 @@
+{
+  "reportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Attach Timing Readiness",
+  "generatedAt": "2026-08-06 07:42:54",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "unreal_animation_attach_timing_readiness_linked",
+  "sourceGameplayReadiness": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-controlled-readiness-20260806-072642.json",
+    "reportVersion": "unreal-gameplay-attach-controlled-readiness@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "unreal_gameplay_attach_controlled_readiness_linked",
+    "gate": "Review"
+  },
+  "sourceAnimSequenceDeepFacts": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-deep-facts-20260805-224206.json",
+    "reportVersion": "unreal-animation-deep-facts@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_animsequence_deep_facts_collected",
+    "gate": "Blocked"
+  },
+  "facts": {
+    "schema": "unreal-animation-attach-timing-readiness-input@0.1.0",
+    "sourceGameplayReadiness": {
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-controlled-readiness-20260806-072642.json",
+      "reportVersion": "unreal-gameplay-attach-controlled-readiness@0.1.0",
+      "evidenceLevel": "L3-derived",
+      "l3Status": "unreal_gameplay_attach_controlled_readiness_linked",
+      "gate": "Review"
+    },
+    "sourceAnimSequenceDeepFacts": {
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-deep-facts-20260805-224206.json",
+      "reportVersion": "unreal-animation-deep-facts@0.1.0",
+      "evidenceLevel": "L3",
+      "l3Status": "unreal_animsequence_deep_facts_collected",
+      "gate": "Blocked"
+    },
+    "runtimeDeepFactsCollected": true,
+    "animationBlueprintLibraryAvailable": false,
+    "animationDataModelAvailable": true,
+    "intents": [
+      {
+        "id": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "sourceReadinessState": "ReadyByControlledExecutor",
+        "sourceReadyByControlledExecutor": true,
+        "publishRequired": true,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+        ],
+        "linkedSequenceCount": 1,
+        "linkedSequences": [
+          {
+            "assetId": "anim-hero-run-001",
+            "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "ownerState": "accepted",
+            "animSequenceExists": true,
+            "class": "AnimSequence",
+            "playLength": 1.5666667222976685,
+            "directFrameRateReadable": true,
+            "frameSpanDelta": 0
+          }
+        ],
+        "deepFactErrorRules": [],
+        "requiredAttachTimingEvents": [
+          "equip.attach"
+        ],
+        "notifyFacts": [
+          {
+            "assetId": "anim-hero-run-001",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "propertiesReadable": false,
+            "counts": [],
+            "eventNames": [],
+            "properties": [
+              {
+                "property": "notifies",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read"
+              },
+              {
+                "property": "anim_notify_tracks",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'"
+              },
+              {
+                "property": "marker_data",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'"
+              }
+            ]
+          }
+        ],
+        "notifyReadable": false,
+        "notifyEventNames": [],
+        "missingAttachTimingEvents": [
+          "equip.attach"
+        ],
+        "readinessState": "TimingBlocked"
+      },
+      {
+        "id": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "sourceReadinessState": "HeldBySourceOwner",
+        "sourceReadyByControlledExecutor": false,
+        "publishRequired": false,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+        ],
+        "linkedSequenceCount": 1,
+        "linkedSequences": [
+          {
+            "assetId": "anim-hero-attack-002",
+            "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "ownerState": "requested",
+            "animSequenceExists": true,
+            "class": "AnimSequence",
+            "playLength": 1.2999999523162842,
+            "directFrameRateReadable": true,
+            "frameSpanDelta": 0
+          }
+        ],
+        "deepFactErrorRules": [
+          "source-bridge-ready"
+        ],
+        "requiredAttachTimingEvents": [
+          "gear.attach"
+        ],
+        "notifyFacts": [
+          {
+            "assetId": "anim-hero-attack-002",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "propertiesReadable": false,
+            "counts": [],
+            "eventNames": [],
+            "properties": [
+              {
+                "property": "notifies",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read"
+              },
+              {
+                "property": "anim_notify_tracks",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'"
+              },
+              {
+                "property": "marker_data",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'"
+              }
+            ]
+          }
+        ],
+        "notifyReadable": false,
+        "notifyEventNames": [],
+        "missingAttachTimingEvents": [
+          "gear.attach"
+        ],
+        "readinessState": "HeldBySocketOrSource"
+      }
+    ],
+    "runtimeBoundary": {
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-animation-attach-timing-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "intentCount": 2,
+      "timingReady": 0,
+      "timingBlocked": 1,
+      "heldBySocketOrSource": 1,
+      "notifyReadableIntents": 0,
+      "requiredAttachTimingEvents": 2,
+      "missingAttachTimingEvents": 2,
+      "animationBlueprintLibraryAvailable": false,
+      "animationDataModelAvailable": true,
+      "pass": 5,
+      "warning": 1,
+      "error": 5,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "rifle-primary-equip:gameplay-controlled-readiness",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "pass",
+        "evidence": "sourceReadinessState=ReadyByControlledExecutor publishRequired=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:animation-sequence-linked",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "animation-sequence-linked",
+        "status": "pass",
+        "evidence": "animationPaths=['/Game/AI_Tool_TA/Animations/AS_Hero_RunStart'] linked=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:deep-facts-source-clean",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "deep-facts-source-clean",
+        "status": "pass",
+        "evidence": "deepFactErrorRules=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:notify-properties-readable",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "notify-properties-readable",
+        "status": "error",
+        "evidence": "notifyFacts=[{'assetId': 'anim-hero-run-001', 'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'propertiesReadable': False, 'counts': [], 'eventNames': [], 'properties': [{'property': 'notifies', 'ok': False, 'value': None, 'error': \"AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read\"}, {'property': 'anim_notify_tracks', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'\"}, {'property': 'marker_data', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'\"}]}]",
+        "fixPreview": "Expose AnimSequence notify data through Unreal Python, Editor Utility or C++ bridge."
+      },
+      {
+        "id": "rifle-primary-equip:required-attach-timing-events",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "required-attach-timing-events",
+        "status": "error",
+        "evidence": "required=['equip.attach'] found=[] missing=['equip.attach']",
+        "fixPreview": "Author explicit equip/attach notify events or provide an approved timing receipt."
+      },
+      {
+        "id": "backpack-temp-equip:gameplay-controlled-readiness",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "warning",
+        "evidence": "sourceReadinessState=HeldBySourceOwner publishRequired=False",
+        "fixPreview": "Resolve socket gameplay readiness before timing approval."
+      },
+      {
+        "id": "backpack-temp-equip:animation-sequence-linked",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "animation-sequence-linked",
+        "status": "pass",
+        "evidence": "animationPaths=['/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A'] linked=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:deep-facts-source-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "deep-facts-source-clean",
+        "status": "error",
+        "evidence": "deepFactErrorRules=['source-bridge-ready']",
+        "fixPreview": "Fix the animation source/deep-fact errors before attach timing approval."
+      },
+      {
+        "id": "backpack-temp-equip:notify-properties-readable",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "notify-properties-readable",
+        "status": "error",
+        "evidence": "notifyFacts=[{'assetId': 'anim-hero-attack-002', 'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'propertiesReadable': False, 'counts': [], 'eventNames': [], 'properties': [{'property': 'notifies', 'ok': False, 'value': None, 'error': \"AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read\"}, {'property': 'anim_notify_tracks', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'\"}, {'property': 'marker_data', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'\"}]}]",
+        "fixPreview": "Expose AnimSequence notify data through Unreal Python, Editor Utility or C++ bridge."
+      },
+      {
+        "id": "backpack-temp-equip:required-attach-timing-events",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "required-attach-timing-events",
+        "status": "error",
+        "evidence": "required=['gear.attach'] found=[] missing=['gear.attach']",
+        "fixPreview": "Author explicit equip/attach notify events or provide an approved timing receipt."
+      },
+      {
+        "id": "attach-timing:read-only-boundary",
+        "intentId": null,
+        "assetId": null,
+        "ruleId": "read-only-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "attach-timing-action:rifle-primary-equip:notify-properties-readable",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "notify-properties-readable",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Expose AnimSequence notify data through Unreal Python, Editor Utility or C++ bridge.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "attach-timing-action:rifle-primary-equip:required-attach-timing-events",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "required-attach-timing-events",
+        "status": "error",
+        "owner": "animation-gameplay-owner",
+        "preview": "Author explicit equip/attach notify events or provide an approved timing receipt.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "attach-timing-action:backpack-temp-equip:gameplay-controlled-readiness",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "warning",
+        "owner": "engine-ta",
+        "preview": "Resolve socket gameplay readiness before timing approval.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "attach-timing-action:backpack-temp-equip:deep-facts-source-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "deep-facts-source-clean",
+        "status": "error",
+        "owner": "animation-owner",
+        "preview": "Fix the animation source/deep-fact errors before attach timing approval.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "attach-timing-action:backpack-temp-equip:notify-properties-readable",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "notify-properties-readable",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Expose AnimSequence notify data through Unreal Python, Editor Utility or C++ bridge.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "attach-timing-action:backpack-temp-equip:required-attach-timing-events",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "required-attach-timing-events",
+        "status": "error",
+        "owner": "animation-gameplay-owner",
+        "preview": "Author explicit equip/attach notify events or provide an approved timing receipt.",
+        "writeBoundary": "review_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-animation-attach-timing-readiness",
+    "name": "Unreal Animation Attach Timing Readiness",
+    "methodSource": "R66 gameplay attach controlled readiness + R41 AnimSequence deep facts",
+    "protocolCarrier": "gameplay attach intents, AnimSequence runtime metadata, notify readability and required attach timing events",
+    "boundary": {
+      "mutation": "derived_read_only",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R67 connects socket gameplay readiness to AnimSequence timing, so attach approval depends on both runtime sockets and animation trigger evidence.",
+    "The current public AnimSequences exist and deep facts are readable, but AnimSequence notify properties are protected or absent through UE 5.3 Python.",
+    "Missing equip/attach timing events are exported as owner actions instead of implying gameplay attach can fire correctly.",
+    "The artifact remains read-only and records zero asset, engine and production writes."
+  ]
+}

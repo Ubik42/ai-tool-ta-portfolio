@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "unreal-animation-attach-timing", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -82,10 +82,12 @@ $QuickPythonFiles = @(
     (Join-Path $AnimationLab "scripts\run_maya_l3.py"),
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\contract.py"),
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\deep_facts.py"),
+    (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\attach_timing.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_deep_facts.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\run_attach_timing_readiness.py"),
     (Join-Path $UnrealAnimationBridge "scripts\generate_maya_fbx_fixture.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py"),
@@ -210,12 +212,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r66-unreal-gameplay-attach-controlled-readiness-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r67-unreal-animation-attach-timing-readiness-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.63.0", summary
-assert summary["present_evidence_files"] == 64, summary
+assert summary["package_version"] == "dcc-first-package@1.64.0", summary
+assert summary["present_evidence_files"] == 65, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 54, summary
+assert summary["demo_route_steps"] == 55, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -254,6 +256,12 @@ if ($Tier -in @("unreal-animation", "full")) {
 if ($Tier -in @("unreal-animation-deep-facts", "full")) {
     Invoke-Step "unreal animation deep facts" {
         python (Join-Path $UnrealAnimationBridge "scripts\run_deep_facts.py")
+    }
+}
+
+if ($Tier -in @("unreal-animation-attach-timing", "full")) {
+    Invoke-Step "unreal animation attach timing readiness" {
+        python (Join-Path $UnrealAnimationBridge "scripts\run_attach_timing_readiness.py")
     }
 }
 

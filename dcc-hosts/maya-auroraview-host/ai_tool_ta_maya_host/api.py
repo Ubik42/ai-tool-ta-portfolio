@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r66-unreal-gameplay-attach-controlled-readiness-presentation-pack",
+        label: str = "r67-unreal-animation-attach-timing-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4086,6 +4086,12 @@ class MayaPortfolioApi:
                 "Unreal AnimSequence Deep Facts artifact",
                 "artifact",
                 manifest.get("unrealAnimationDeepFactsArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-attach-timing-readiness",
+                "Unreal Animation Attach Timing Readiness artifact",
+                "artifact",
+                manifest.get("unrealAnimationAttachTimingReadinessArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4531,6 +4537,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal gameplay attach controlled readiness",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_controlled_readiness.py.",
                 "evidence_expected": "The R54 gameplay attach fixture is joined to the R65 native controlled socket write receipt so the approved rifle equip path becomes review-ready by executor evidence while the temporary backpack row stays held.",
+            },
+            {
+                "id": "29c-run-unreal-animation-attach-timing-readiness",
+                "label": "Run Unreal animation attach timing readiness",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_attach_timing_readiness.py.",
+                "evidence_expected": "Socket gameplay readiness is joined to AnimSequence deep facts so equip attach approval is blocked until notify/timing events are readable and authored.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5097,6 +5109,17 @@ class MayaPortfolioApi:
                 "unreal_gameplay_attach_controlled_readiness_publish_required": manifest_summary.get("unrealGameplayAttachControlledReadinessPublishRequired"),
                 "unreal_gameplay_attach_controlled_readiness_production_writes": manifest_summary.get("unrealGameplayAttachControlledReadinessProductionWrites"),
                 "unreal_gameplay_attach_controlled_readiness_final_hash_restored": manifest_summary.get("unrealGameplayAttachControlledReadinessFinalHashRestored"),
+                "unreal_animation_attach_timing_readiness_gate": manifest_summary.get("unrealAnimationAttachTimingReadinessGate"),
+                "unreal_animation_attach_timing_readiness_evidence_level": manifest_summary.get("unrealAnimationAttachTimingReadinessEvidenceLevel"),
+                "unreal_animation_attach_timing_readiness_l3_status": manifest_summary.get("unrealAnimationAttachTimingReadinessL3Status"),
+                "unreal_animation_attach_timing_readiness_timing_ready": manifest_summary.get("unrealAnimationAttachTimingReadinessTimingReady"),
+                "unreal_animation_attach_timing_readiness_timing_blocked": manifest_summary.get("unrealAnimationAttachTimingReadinessTimingBlocked"),
+                "unreal_animation_attach_timing_readiness_held_by_socket_or_source": manifest_summary.get("unrealAnimationAttachTimingReadinessHeldBySocketOrSource"),
+                "unreal_animation_attach_timing_readiness_notify_readable_intents": manifest_summary.get("unrealAnimationAttachTimingReadinessNotifyReadableIntents"),
+                "unreal_animation_attach_timing_readiness_missing_attach_timing_events": manifest_summary.get("unrealAnimationAttachTimingReadinessMissingAttachTimingEvents"),
+                "unreal_animation_attach_timing_readiness_animation_blueprint_library_available": manifest_summary.get("unrealAnimationAttachTimingReadinessAnimationBlueprintLibraryAvailable"),
+                "unreal_animation_attach_timing_readiness_animation_data_model_available": manifest_summary.get("unrealAnimationAttachTimingReadinessAnimationDataModelAvailable"),
+                "unreal_animation_attach_timing_readiness_production_writes": manifest_summary.get("unrealAnimationAttachTimingReadinessProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5363,6 +5386,7 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Controlled Write proves the commandlet can create the approved sockets, save the temp public fixture package, post-check runtime presence, roll back and restore the uasset hash.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Unreal Gameplay Attach Controlled Readiness links that attach fixture to the native controlled socket write receipt, making the approved rifle equip path review-ready while keeping publish persistence explicit.",
+                "Unreal Animation Attach Timing Readiness links socket gameplay readiness to AnimSequence notify/timing evidence and blocks equip approval when notify events are unreadable or missing.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5398,7 +5422,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r66-unreal-gameplay-attach-controlled-readiness-presentation-pack",
+        label: str = "r67-unreal-animation-attach-timing-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
