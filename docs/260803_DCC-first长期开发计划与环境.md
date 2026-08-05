@@ -1037,3 +1037,21 @@ R25 结果：Maya 2026 `mayapy` + `fbxmaya` 生成两段 public synthetic FBX；
 ```text
 topology / joint coverage fixture -> Maya collector -> calibration rule evaluation -> Presenter Pack row -> docs
 ```
+
+## R26 循环开发断点：Character Calibration Maya L3
+
+R26 已完成 `Character Calibration & Intent Transfer Studio` Maya L3：
+
+```text
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-contract-20260805-175045.json
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
+```
+
+R26 结果：Maya 2026 `mayapy` 生成 public synthetic character meshes / joint DAG / custom attrs，并采集 topology signature、joint coverage、skin influence budget、calibration delta、face parameters、Control Rig mapping 和 mirror pair coverage。结果为 2 character rows，1 Ready，1 intentionally Blocked，10 pass / 2 warning / 6 error。Bridge gate 的 `Blocked` 来自临时角色样本的业务故障，不是 Maya runtime 缺失。
+
+默认下一轮开发 `Spatial Authoring & Pose Transfer Workbench`：
+
+```text
+socket / hotspot / pose frame fixture -> Maya collector -> pose transfer rule evaluation -> Presenter Pack row -> docs
+```

@@ -2,14 +2,14 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R25 Cross-DCC / Engine / Animation Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R26 Cross-DCC / Engine / Animation / Character Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r25` |
-| Version | `dcc-first-package@1.22.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r26` |
+| Version | `dcc-first-package@1.23.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
@@ -18,9 +18,9 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 22 / 22 present |
+| Presenter pack evidence files | 23 / 23 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 14 |
+| Presenter demo route steps | 15 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -64,6 +64,10 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Unreal animation bridge assets ready/review/blocked | 1 / 0 / 1 |
 | Unreal animation bridge checks pass/warn/error | 12 / 1 / 5 |
 | Unreal animation bridge runtime | `unreal_animsequence_assets_imported`, Unreal 5.3.2, 2 / 2 sequences present, 4 synthetic assets imported |
+| Character calibration | `Blocked` L3 |
+| Character calibration assets ready/review/blocked | 1 / 0 / 1 |
+| Character calibration checks pass/warn/error | 10 / 2 / 6 |
+| Character calibration runtime | `maya_character_calibration_collected`, Maya 2026 |
 | Blocked modules | 0 |
 | Host | Maya 2024 / AuroraView |
 
@@ -95,17 +99,18 @@ Then use the right rail:
 10. `Task Orchestrator` evidence view / `Presenter Pack`
 11. Run `python <repo>\dcc-hosts\animation-continuity-lab\scripts\run_l3_smoke.py` when validating animation handoff continuity.
 12. Run `python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py` when validating Unreal Animation Bridge import L3.
-13. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py` when validating the Blender runtime L3 evidence.
-14. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600` when validating the Max adapter runtime evidence.
-15. Inspect the module rows, live demo script, GUI checklist, handoff asset rows, decision rows, engine comparison rows, Unreal inspector rows, preset fact review rows, transaction risk rows, rollback preview, Animation Continuity rows, Unreal Animation Bridge rows, Blender adapter rows, Blender runtime L3 gate, 3ds Max adapter rows, Max runtime L3 gate, media audit rows, and generated artifact paths.
+13. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py` when validating Character Calibration Maya L3.
+14. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py` when validating the Blender runtime L3 evidence.
+15. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600` when validating the Max adapter runtime evidence.
+16. Inspect the module rows, live demo script, GUI checklist, handoff asset rows, decision rows, engine comparison rows, Unreal inspector rows, preset fact review rows, transaction risk rows, rollback preview, Animation Continuity rows, Unreal Animation Bridge rows, Character Calibration rows, Blender adapter rows, Blender runtime L3 gate, 3ds Max adapter rows, Max runtime L3 gate, media audit rows, and generated artifact paths.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 14-step demo route, 7-step business route, public package manifest, 22 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 15-step demo route, 7-step business route, public package manifest, 23 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -250,6 +255,14 @@ This is the R23 animation handoff evidence layer. It creates public synthetic Ma
 
 This is the R25 animation-to-engine import layer. It reads the R23 Maya Animation Continuity L3 artifact, generates two public Maya FBX clips through `mayapy`, then enters Unreal 5.3.2 Python to import synthetic Skeleton / SkeletalMesh / AnimSequence assets. The artifact reports L3, 2 / 2 expected sequences present, 4 imported synthetic assets, 1 Ready clip, 1 intentionally Blocked clip, 12 pass checks, 1 warning, and 5 errors. The remaining Blocked state comes from the `Attack_A` business defect sample, not from missing Unreal runtime coverage.
 
+## Character Calibration Studio
+
+```text
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json
+```
+
+This is the R26 character transfer evidence layer. It creates public synthetic Maya character meshes and joint DAGs, then checks topology signature, required joint coverage, TMP joint leakage, skin influence budget, calibration delta, face parameter coverage/range, Control Rig mapping and mirror pair coverage. The artifact reports L3, 2 character rows, 1 Ready row, 1 intentionally Blocked row, 10 pass checks, 2 warnings and 6 errors. No production character scene, DNA asset, Control Rig asset or engine asset is mutated.
+
 ## Blender Rule Adapter
 
 ```text
@@ -285,10 +298,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
 ```
 
-The Presenter Pack is the R25 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 22 / 22 evidence files present, 0 missing required files, 14 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R26 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 23 / 23 evidence files present, 0 missing required files, 15 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -331,6 +344,12 @@ python -m py_compile <repo>\dcc-hosts\unreal-animation-bridge\unreal_animation_b
 python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_smoke.py
 python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_l3_smoke.py
 python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py
+```
+
+```powershell
+python -m py_compile <repo>\dcc-hosts\character-calibration-studio\character_calibration_studio\contract.py <repo>\dcc-hosts\character-calibration-studio\character_calibration_studio\maya_collector.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_smoke.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_maya_l3.py
+python <repo>\dcc-hosts\character-calibration-studio\scripts\run_smoke.py
+python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py
 ```
 
 Maya 2024 `mayapy` smoke:
@@ -377,6 +396,10 @@ Maya 2024 `mayapy` smoke:
 - unreal animation bridge checks pass/warn/error: 12 / 1 / 5
 - unreal animation bridge missing sequences: 0
 - unreal animation bridge imported assets: 4
+- character calibration report: `character-calibration-maya-l3@0.1.0`
+- character calibration L3 status: `maya_character_calibration_collected`
+- character calibration assets ready/review/blocked: 1 / 0 / 1
+- character calibration checks pass/warn/error: 10 / 2 / 6
 - blender rule adapter report: `blender-rule-adapter-contract@0.1.0`
 - blender evidence level / L3 status: L3 / `bpy_scene_collected`
 - blender adapter gate: `Blocked`
@@ -404,8 +427,8 @@ Maya 2024 `mayapy` smoke:
 - unreal preset fact platform split / approved waivers: 1 / 1
 - unreal preset fact review report: `maya-unreal-preset-fact-review@0.1.0`
 - unreal preset fact review rows / queue / blocked / waivers: 10 / 3 / 1 / 1
-- presenter pack evidence files present/missing: 22 / 0
-- presenter pack demo route steps: 14
+- presenter pack evidence files present/missing: 23 / 0
+- presenter pack demo route steps: 15
 - reviewer claims: 13
 
 ## Legacy Package

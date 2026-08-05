@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r25",
-  "packageVersion": "dcc-first-package@1.22.0",
-  "generatedAt": "2026-08-05T17:35:35+08:00",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r26",
+  "packageVersion": "dcc-first-package@1.23.0",
+  "generatedAt": "2026-08-05T17:52:16+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 22,
-    "presentationPackPresentEvidenceFiles": 22,
+    "presentationPackEvidenceFiles": 23,
+    "presentationPackPresentEvidenceFiles": 23,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 14,
+    "presentationPackDemoRouteSteps": 15,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -173,7 +173,23 @@
     "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
     "unrealAnimationBridgeRuntimeAssetsPresent": 2,
     "unrealAnimationBridgeImportSuccess": true,
-    "unrealAnimationBridgeImportedAssets": 4
+    "unrealAnimationBridgeImportedAssets": 4,
+    "characterCalibrationReportVersion": "character-calibration-maya-l3@0.1.0",
+    "characterCalibrationArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+    "characterCalibrationContractArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+    "characterCalibrationEvidenceLevel": "L3",
+    "characterCalibrationL3Status": "maya_character_calibration_collected",
+    "characterCalibrationGate": "Blocked",
+    "characterCalibrationMayaVersion": "2026",
+    "characterCalibrationMayaApiVersion": 20260302,
+    "characterCalibrationRuntimeCollected": true,
+    "characterCalibrationAssets": 2,
+    "characterCalibrationReady": 1,
+    "characterCalibrationReview": 0,
+    "characterCalibrationBlocked": 1,
+    "characterCalibrationPassChecks": 10,
+    "characterCalibrationWarningChecks": 2,
+    "characterCalibrationErrorChecks": 6
   },
   "moduleOrder": [
     "asset-protocol",
@@ -313,13 +329,25 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
       "required": true
     },
     {
       "id": "dcc-first-unreal-animation-bridge-import-l3",
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-contract",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-l3",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
       "required": true
     }
   ],
@@ -352,9 +380,13 @@
     "python -m py_compile dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py",
     "python dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py",
     "python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py",
-    "python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py"
+    "python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py",
+    "python -m py_compile dcc-hosts/character-calibration-studio/character_calibration_studio/contract.py dcc-hosts/character-calibration-studio/character_calibration_studio/maya_collector.py dcc-hosts/character-calibration-studio/scripts/run_smoke.py dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py dcc-hosts/character-calibration-studio/scripts/run_maya_l3.py",
+    "python dcc-hosts/character-calibration-studio/scripts/run_smoke.py",
+    "python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py"
   ],
   "notes": [
+    "R26 adds Character Calibration Maya L3: topology signature, joint coverage, calibration deltas, face parameters, Control Rig mapping and skin influence budget are collected from a public synthetic Maya scene.",
     "R25 upgrades Unreal Animation Bridge to import L3: Maya mayapy generates public FBX clips, Unreal imports synthetic Skeleton/SkeletalMesh/AnimSequence assets, and runtime facts confirm 2/2 sequences present.",
     "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
     "R22 upgrades Blender and 3ds Max from readiness gates to real runtime L3 evidence: bpy_scene_collected and pymxs_scene_collected.",
@@ -405,7 +437,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -508,7 +540,37 @@
       "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
       "kind": "json",
       "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-contract",
+      "label": "Character Calibration contract",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-l3",
+      "label": "Character Calibration Maya L3",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+      "required": true
     }
   ],
-  "unrealAnimationBridgeRuntimeAssetsPresent": 2
+  "unrealAnimationBridgeRuntimeAssetsPresent": 2,
+  "characterCalibrationReportVersion": "character-calibration-maya-l3@0.1.0",
+  "characterCalibrationArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+  "characterCalibrationContractArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+  "characterCalibrationEvidenceLevel": "L3",
+  "characterCalibrationL3Status": "maya_character_calibration_collected",
+  "characterCalibrationGate": "Blocked",
+  "characterCalibrationMayaVersion": "2026",
+  "characterCalibrationMayaApiVersion": 20260302,
+  "characterCalibrationRuntimeCollected": true,
+  "characterCalibrationAssets": 2,
+  "characterCalibrationReady": 1,
+  "characterCalibrationReview": 0,
+  "characterCalibrationBlocked": 1,
+  "characterCalibrationPassChecks": 10,
+  "characterCalibrationWarningChecks": 2,
+  "characterCalibrationErrorChecks": 6
 }

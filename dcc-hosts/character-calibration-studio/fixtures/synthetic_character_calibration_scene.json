@@ -1,0 +1,127 @@
+{
+  "schema": "synthetic-character-calibration-scene@0.1.0",
+  "intent": "Public-safe character calibration fixture covering topology signature, joint coverage, face parameter ownership, Control Rig mapping and calibration delta limits.",
+  "scene": {
+    "unit": "centimeter",
+    "upAxis": "Y",
+    "assetCount": 2
+  },
+  "characters": [
+    {
+      "id": "char-hero-head-001",
+      "label": "Hero Head Approved",
+      "namespace": "heroA",
+      "ownerState": "accepted",
+      "mesh": {
+        "name": "HeroHead_GEO",
+        "primitive": "cube",
+        "subdivisions": [1, 1, 1],
+        "expectedTopologySignature": "topo:head:v8:e12:f6",
+        "expectedVertexCount": 8,
+        "expectedEdgeCount": 12,
+        "expectedFaceCount": 6
+      },
+      "skeleton": {
+        "root": "HeadRoot",
+        "expectedJoints": ["HeadRoot", "Neck", "Head", "Jaw", "Eye_L", "Eye_R"],
+        "actualJoints": ["HeadRoot", "Neck", "Head", "Jaw", "Eye_L", "Eye_R"],
+        "mirrorPairs": [["Eye_L", "Eye_R"]]
+      },
+      "skin": {
+        "maxInfluences": 4,
+        "influenceBudget": 4
+      },
+      "calibration": {
+        "maxDelta": 0.035,
+        "samples": [
+          {"id": "nose_tip", "delta": 0.012},
+          {"id": "mouth_corner_l", "delta": 0.021},
+          {"id": "mouth_corner_r", "delta": 0.018}
+        ]
+      },
+      "faceParams": {
+        "required": ["jawOpen", "eyeBlink_L", "eyeBlink_R", "browRaise_L", "browRaise_R"],
+        "actual": {
+          "jawOpen": 0.0,
+          "eyeBlink_L": 0.0,
+          "eyeBlink_R": 0.0,
+          "browRaise_L": 0.0,
+          "browRaise_R": 0.0
+        },
+        "range": [0.0, 1.0]
+      },
+      "controlRig": {
+        "requiredMappings": {
+          "CTRL_jaw": "Jaw",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_eye_R": "Eye_R",
+          "CTRL_brow_L": "Head",
+          "CTRL_brow_R": "Head"
+        },
+        "actualMappings": {
+          "CTRL_jaw": "Jaw",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_eye_R": "Eye_R",
+          "CTRL_brow_L": "Head",
+          "CTRL_brow_R": "Head"
+        }
+      }
+    },
+    {
+      "id": "char-hero-head-tmp-002",
+      "label": "Hero Head Temporary Sculpt",
+      "namespace": "heroTmp",
+      "ownerState": "requested",
+      "mesh": {
+        "name": "HeroHead_TMP_GEO",
+        "primitive": "cube",
+        "subdivisions": [2, 1, 1],
+        "expectedTopologySignature": "topo:head:v8:e12:f6",
+        "expectedVertexCount": 8,
+        "expectedEdgeCount": 12,
+        "expectedFaceCount": 6
+      },
+      "skeleton": {
+        "root": "HeadRoot",
+        "expectedJoints": ["HeadRoot", "Neck", "Head", "Jaw", "Eye_L", "Eye_R"],
+        "actualJoints": ["HeadRoot", "Neck", "Head", "Jaw_TMP", "Eye_L", "TmpSocket"],
+        "mirrorPairs": [["Eye_L", "Eye_R"]]
+      },
+      "skin": {
+        "maxInfluences": 6,
+        "influenceBudget": 4
+      },
+      "calibration": {
+        "maxDelta": 0.035,
+        "samples": [
+          {"id": "nose_tip", "delta": 0.019},
+          {"id": "mouth_corner_l", "delta": 0.064},
+          {"id": "mouth_corner_r", "delta": 0.052}
+        ]
+      },
+      "faceParams": {
+        "required": ["jawOpen", "eyeBlink_L", "eyeBlink_R", "browRaise_L", "browRaise_R"],
+        "actual": {
+          "jawOpen": 1.2,
+          "eyeBlink_L": 0.0,
+          "browRaise_L": 0.1
+        },
+        "range": [0.0, 1.0]
+      },
+      "controlRig": {
+        "requiredMappings": {
+          "CTRL_jaw": "Jaw",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_eye_R": "Eye_R",
+          "CTRL_brow_L": "Head",
+          "CTRL_brow_R": "Head"
+        },
+        "actualMappings": {
+          "CTRL_jaw": "Jaw_TMP",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_brow_L": "Head"
+        }
+      }
+    }
+  ]
+}

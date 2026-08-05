@@ -35,7 +35,7 @@ R25 已完成：
 - Unreal runtime import：通过 `UnrealEditor-Cmd.exe -run=pythonscript` 进入公开 test `.uproject`，用 `AssetImportTask` + `FbxImportUI` 导入并保存 synthetic Skeleton / SkeletalMesh / AnimSequence。
 - Runtime facts：采集 `AnimSequence` 存在性、绑定 Skeleton、play length、可用 API 方法、导入选项、重命名路径和写入边界。
 - Presenter Pack 接入：R25 Presenter Pack 会探测 Unreal Animation Bridge contract + import L3 artifact，并保持 14 步 demo route。
-- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r25` / `dcc-first-package@1.22.0`。
+- public manifest 接入：当前公开包已继续升级到 `ai-tool-ta-dcc-first-showcase-r26` / `dcc-first-package@1.23.0`。
 
 ## 证据
 
@@ -60,7 +60,7 @@ R25 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
 ```
 
 关键结果：

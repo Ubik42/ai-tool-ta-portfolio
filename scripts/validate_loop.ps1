@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -26,6 +26,7 @@ function Invoke-JsonCheck {
 $MayaHost = Join-Path $Root "dcc-hosts\maya-auroraview-host"
 $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
+$CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
@@ -66,7 +67,12 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\generate_maya_fbx_fixture.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py"),
-    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py")
+    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py"),
+    (Join-Path $CharacterCalibration "character_calibration_studio\contract.py"),
+    (Join-Path $CharacterCalibration "character_calibration_studio\maya_collector.py"),
+    (Join-Path $CharacterCalibration "scripts\run_smoke.py"),
+    (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py"),
+    (Join-Path $CharacterCalibration "scripts\run_maya_l3.py")
 )
 
 $CoreJsonFiles = @(
@@ -91,9 +97,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r25-unreal-animation-import-l3-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r26-character-calibration-l3-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 22, summary
+assert summary["present_evidence_files"] == 23, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -127,6 +133,15 @@ if ($Tier -in @("unreal-animation", "full")) {
     }
     Invoke-Step "unreal animation bridge import L3 harness" {
         python (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("character-calibration", "full")) {
+    Invoke-Step "character calibration contract smoke" {
+        python (Join-Path $CharacterCalibration "scripts\run_smoke.py")
+    }
+    Invoke-Step "character calibration Maya L3" {
+        python (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py")
     }
 }
 

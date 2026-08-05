@@ -1,7 +1,7 @@
 {
   "packageId": "ai-tool-ta-public-case-package-r8-54",
   "packageVersion": "public-case-package@3.24.0",
-  "generatedAt": "2026-08-05T17:35:35+08:00",
+  "generatedAt": "2026-08-05T17:52:16+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r25",
-    "packageVersion": "dcc-first-package@1.22.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r26",
+    "packageVersion": "dcc-first-package@1.23.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 22,
-    "presentationPackPresentEvidenceFiles": 22,
+    "presentationPackEvidenceFiles": 23,
+    "presentationPackPresentEvidenceFiles": 23,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 14,
+    "presentationPackDemoRouteSteps": 15,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -218,7 +218,23 @@
     "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
     "unrealAnimationBridgeRuntimeAssetsPresent": 2,
     "unrealAnimationBridgeImportSuccess": true,
-    "unrealAnimationBridgeImportedAssets": 4
+    "unrealAnimationBridgeImportedAssets": 4,
+    "characterCalibrationReportVersion": "character-calibration-maya-l3@0.1.0",
+    "characterCalibrationArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+    "characterCalibrationContractArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+    "characterCalibrationEvidenceLevel": "L3",
+    "characterCalibrationL3Status": "maya_character_calibration_collected",
+    "characterCalibrationGate": "Blocked",
+    "characterCalibrationMayaVersion": "2026",
+    "characterCalibrationMayaApiVersion": 20260302,
+    "characterCalibrationRuntimeCollected": true,
+    "characterCalibrationAssets": 2,
+    "characterCalibrationReady": 1,
+    "characterCalibrationReview": 0,
+    "characterCalibrationBlocked": 1,
+    "characterCalibrationPassChecks": 10,
+    "characterCalibrationWarningChecks": 2,
+    "characterCalibrationErrorChecks": 6
   },
   "summary": {
     "moduleCount": 5,
@@ -293,7 +309,7 @@
     }
   ],
   "keyEvidence": [
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
     "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-164637.json",
     "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
@@ -389,7 +405,17 @@
     },
     {
       "id": "dcc-first-presentation-pack",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-contract",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-contract-20260805-175045.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-character-calibration-l3",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
       "required": true
     }
   ]

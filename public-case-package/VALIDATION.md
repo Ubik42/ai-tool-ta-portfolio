@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r26-character-calibration-contract` | `python dcc-hosts/character-calibration-studio/scripts/run_smoke.py` | Contract evaluates 2 public character calibration rows, reports 1 Ready and 1 Blocked topology/joint/control mapping sample without entering Maya. |
+| `validate-r26-character-calibration-l3` | `python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py` | Maya 2026 `mayapy` creates synthetic character meshes/joints and exports `character-calibration-maya-l3@0.1.0`, reporting 2 assets, 1 Ready, 1 Blocked, 10 pass checks, 2 warnings and 6 errors. |
+| `validate-r26-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r26-character-calibration-l3-presentation-pack")` | DCC Presenter Pack probes 23 key evidence files including Character Calibration Maya L3, reports 23 present / 0 missing required files, and exports 15 demo route steps. |
 | `validate-r25-unreal-animation-bridge-contract` | `python dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py` | Contract reads the Maya Animation Continuity L3 artifact, maps 2 takes to Unreal AnimSequence/Skeleton expectations, and reports 1 Ready / 1 Blocked before runtime import. |
 | `validate-r25-unreal-animation-bridge-import-l3` | `python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py` | Maya 2026 `mayapy` generates two public FBX clips, Unreal 5.3.2 imports synthetic Skeleton/SkeletalMesh/AnimSequence assets, reports 2 / 2 sequences present, 4 imported assets, 1 Ready clip and 1 Blocked business defect sample. |
 | `validate-r25-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r25-unreal-animation-import-l3-presentation-pack")` | DCC Presenter Pack probes 22 key evidence files including Unreal Animation Bridge import L3, reports 22 present / 0 missing required files, and exports 14 demo route steps. |

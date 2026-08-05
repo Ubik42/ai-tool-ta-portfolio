@@ -1,0 +1,2 @@
+"""Character Calibration Studio package."""
+
