@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r23-animation-continuity-l3-presentation-pack",
+        label: str = "r24-unreal-animation-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4038,6 +4038,12 @@ class MayaPortfolioApi:
                 "Animation Continuity Maya L3 artifact",
                 "artifact",
                 manifest.get("animationContinuityArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-bridge-readiness",
+                "Unreal Animation Bridge readiness artifact",
+                "artifact",
+                manifest.get("unrealAnimationBridgeArtifact"),
             ),
         ]
 
@@ -4101,31 +4107,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "Maya mayapy runtime exports keyed animCurve facts for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
             },
             {
-                "id": "09-review-blender-adapter",
+                "id": "09-run-unreal-animation-bridge-readiness",
+                "label": "Run Unreal animation bridge readiness",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py.",
+                "evidence_expected": "Unreal Python probes AnimSequence/Skeleton API availability and expected public animation fixture assets without saving packages.",
+            },
+            {
+                "id": "10-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "10-run-blender-l3-harness",
+                "id": "11-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "11-run-3dsmax-adapter-harness",
+                "id": "12-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "12-audit-gui-media",
+                "id": "13-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "13-handoff-presenter-pack",
+                "id": "14-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4217,6 +4229,19 @@ class MayaPortfolioApi:
                 "animation_continuity_pass_checks": manifest_summary.get("animationContinuityPassChecks"),
                 "animation_continuity_warning_checks": manifest_summary.get("animationContinuityWarningChecks"),
                 "animation_continuity_error_checks": manifest_summary.get("animationContinuityErrorChecks"),
+                "unreal_animation_bridge_gate": manifest_summary.get("unrealAnimationBridgeGate"),
+                "unreal_animation_bridge_evidence_level": manifest_summary.get("unrealAnimationBridgeEvidenceLevel"),
+                "unreal_animation_bridge_l3_status": manifest_summary.get("unrealAnimationBridgeL3Status"),
+                "unreal_animation_bridge_engine_version": manifest_summary.get("unrealAnimationBridgeEngineVersion"),
+                "unreal_animation_bridge_api_probe": manifest_summary.get("unrealAnimationBridgeApiProbe"),
+                "unreal_animation_bridge_assets": manifest_summary.get("unrealAnimationBridgeAssets"),
+                "unreal_animation_bridge_ready": manifest_summary.get("unrealAnimationBridgeReady"),
+                "unreal_animation_bridge_review": manifest_summary.get("unrealAnimationBridgeReview"),
+                "unreal_animation_bridge_blocked": manifest_summary.get("unrealAnimationBridgeBlocked"),
+                "unreal_animation_bridge_pass_checks": manifest_summary.get("unrealAnimationBridgePassChecks"),
+                "unreal_animation_bridge_warning_checks": manifest_summary.get("unrealAnimationBridgeWarningChecks"),
+                "unreal_animation_bridge_error_checks": manifest_summary.get("unrealAnimationBridgeErrorChecks"),
+                "unreal_animation_bridge_missing_sequences": manifest_summary.get("unrealAnimationBridgeMissingSequences"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4273,6 +4298,7 @@ class MayaPortfolioApi:
                 "Unreal Preset Fact Review projects the comparison rows into a Maya-hosted reviewer queue with owner actions.",
                 "Scene Transaction Guard captures DCC before/after scene mutation, risk rows and rollback preview from Maya.",
                 "Animation Continuity Lab is now backed by Maya mayapy L3 animCurve evidence for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
+                "Unreal Animation Bridge enters Unreal Python and records AnimSequence/Skeleton API readiness without claiming missing animation assets are present.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4296,7 +4322,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r23-animation-continuity-l3-presentation-pack",
+        label: str = "r24-unreal-animation-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

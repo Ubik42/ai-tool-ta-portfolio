@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r24-unreal-animation-bridge-contract` | `python dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py` | Contract reads the R23 Maya Animation Continuity L3 artifact, maps 2 takes to Unreal AnimSequence expectations, and reports 1 Ready / 1 Blocked before runtime asset probing. |
+| `validate-r24-unreal-animation-bridge-readiness` | `python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python enters the public test project, probes AnimSequence / Skeleton API availability, reports 2 expected sequences missing, and keeps the bridge at L3-readiness instead of claiming full AnimSequence L3. |
+| `validate-r24-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r24-unreal-animation-bridge-presentation-pack")` | DCC Presenter Pack probes 21 key evidence files including Unreal Animation Bridge readiness, reports 21 present / 0 missing required files, and exports 14 demo route steps. |
 | `validate-r23-animation-continuity-l3` | `python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py` | Maya 2026 `mayapy` runs the public synthetic animation fixture, exports `animation-continuity-maya-l3@0.1.0`, reports 2 animation takes, 1 Ready, 1 Blocked, 11 pass checks, 3 warnings, 6 errors, and real keyed animCurve collection. |
 | `validate-r23-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r23-animation-continuity-l3-presentation-pack")` | DCC Presenter Pack probes 20 key evidence files including Animation Continuity, Blender, 3ds Max and Unreal runtime artifacts, reports 20 present / 0 missing required files, and exports 13 demo route steps. |
 | `validate-r10-dcc-build` | `npm run build` | Current embedded React UI compiles for Maya/AuroraView. |
@@ -138,6 +141,12 @@ Latest Scene Transaction Guard:
 <repo>\dcc-hosts\maya-auroraview-host\artifacts\r19-scene-transaction-guard-20260804-195730.json
 ```
 
+Latest Unreal Animation Bridge readiness:
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-164730.json
+```
+
 Latest Animation Continuity L3:
 
 ```text
@@ -147,7 +156,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
 ```
 
 ## Commands

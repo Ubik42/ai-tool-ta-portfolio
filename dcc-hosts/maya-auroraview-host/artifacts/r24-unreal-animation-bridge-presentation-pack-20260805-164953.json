@@ -1,0 +1,673 @@
+{
+  "reportVersion": "maya-dcc-presentation-pack@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-05 16:49:43",
+    "auroraview_error": "No module named 'auroraview'",
+    "maya": {
+      "version": "2026",
+      "api_version": 20260302,
+      "scene": "Untitled",
+      "modified": false
+    }
+  },
+  "presentationPack": {
+    "ok": true,
+    "schema": "maya-dcc-presentation-pack@0.1.0",
+    "label": "r24-unreal-animation-bridge-presentation-pack",
+    "title": "AI Tool TA DCC Presenter Pack",
+    "generated_at": "2026-08-05 16:49:43",
+    "host": {
+      "dcc": "Autodesk Maya",
+      "mayaVersion": "2024",
+      "frontendHost": "AuroraView",
+      "entry": "from ai_tool_ta_maya_host import show_portfolio; show_portfolio()"
+    },
+    "summary": {
+      "gate": "CapturePending",
+      "package_id": "ai-tool-ta-dcc-first-showcase-r24",
+      "package_version": "dcc-first-package@1.21.0",
+      "source_gate": "Review",
+      "module_count": 5,
+      "business_route_steps": 7,
+      "demo_route_steps": 14,
+      "evidence_files": 21,
+      "present_evidence_files": 21,
+      "missing_required_files": 0,
+      "required_media_files": 10,
+      "gui_media_present": 0,
+      "gui_media_review": 0,
+      "gui_media_missing": 10,
+      "engine_preset_platform_split": 1,
+      "engine_preset_held_across_presets": 1,
+      "unreal_preset_fact_comparison_gate": "Blocked",
+      "unreal_preset_fact_comparison_presets": 2,
+      "unreal_preset_fact_comparison_assets": 1,
+      "unreal_preset_fact_comparison_rows": 10,
+      "unreal_preset_fact_comparison_matched": 7,
+      "unreal_preset_fact_comparison_drift": 1,
+      "unreal_preset_fact_comparison_waived": 1,
+      "unreal_preset_fact_comparison_blocked": 1,
+      "unreal_preset_fact_comparison_platform_split": 1,
+      "unreal_preset_fact_comparison_approved_waivers": 1,
+      "unreal_preset_fact_review_gate": "Blocked",
+      "unreal_preset_fact_review_rows": 10,
+      "unreal_preset_fact_review_attention_rows": 3,
+      "unreal_preset_fact_review_blocked": 1,
+      "unreal_preset_fact_review_waivers": 1,
+      "scene_transaction_guard_gate": "Review",
+      "scene_transaction_guard_created": 2,
+      "scene_transaction_guard_deleted": 2,
+      "scene_transaction_guard_modified": 2,
+      "scene_transaction_guard_rollback_actions": 9,
+      "scene_transaction_guard_risk_rows": 4,
+      "animation_continuity_gate": "Blocked",
+      "animation_continuity_evidence_level": "L3",
+      "animation_continuity_l3_status": "maya_anim_curves_collected",
+      "animation_continuity_maya_version": "2026",
+      "animation_continuity_runtime_collected": true,
+      "animation_continuity_assets": 2,
+      "animation_continuity_ready": 1,
+      "animation_continuity_blocked": 1,
+      "animation_continuity_pass_checks": 11,
+      "animation_continuity_warning_checks": 3,
+      "animation_continuity_error_checks": 6,
+      "unreal_animation_bridge_gate": "Blocked",
+      "unreal_animation_bridge_evidence_level": "L3-readiness",
+      "unreal_animation_bridge_l3_status": "unreal_animation_api_probe_collected",
+      "unreal_animation_bridge_engine_version": "5.3.2-29314046+++UE5+Release-5.3",
+      "unreal_animation_bridge_api_probe": "AnimSequence/Skeleton/SkeletalMesh available; expected public AnimSequence assets missing",
+      "unreal_animation_bridge_assets": 2,
+      "unreal_animation_bridge_ready": 0,
+      "unreal_animation_bridge_review": 1,
+      "unreal_animation_bridge_blocked": 1,
+      "unreal_animation_bridge_pass_checks": 8,
+      "unreal_animation_bridge_warning_checks": 3,
+      "unreal_animation_bridge_error_checks": 5,
+      "unreal_animation_bridge_missing_sequences": 2,
+      "blender_rule_adapter_gate": "Blocked",
+      "blender_rule_adapter_evidence_level": "L3",
+      "blender_rule_adapter_assets": 2,
+      "blender_rule_adapter_l3_harness_gate": "Blocked",
+      "blender_rule_adapter_l3_harness_blender_found": true,
+      "blender_rule_adapter_l3_harness_collector_ready": true,
+      "max_rule_adapter_gate": "Blocked",
+      "max_rule_adapter_evidence_level": "L3",
+      "max_rule_adapter_assets": 2,
+      "max_rule_adapter_max_batch_available": true,
+      "max_rule_adapter_l3_harness_gate": "Blocked",
+      "max_rule_adapter_l3_harness_runtime_found": true,
+      "max_rule_adapter_l3_harness_collector_ready": true,
+      "unreal_handoff_inspector_gate": "Blocked",
+      "unreal_handoff_inspector_evidence_level": "L3++",
+      "unreal_handoff_inspector_l3_status": "unreal_engine_facts_matched",
+      "unreal_handoff_inspector_engine_version": "5.3.2-29314046+++UE5+Release-5.3",
+      "unreal_handoff_inspector_asset_registry_queried": true,
+      "unreal_handoff_inspector_registry_matched": true,
+      "unreal_handoff_inspector_registry_expected_assets": 2,
+      "unreal_handoff_inspector_registry_matched_assets": 2,
+      "unreal_handoff_inspector_registry_missing_assets": 0,
+      "unreal_handoff_inspector_registry_class_mismatches": 0,
+      "unreal_handoff_inspector_engine_facts_matched": true,
+      "unreal_handoff_inspector_engine_fact_expected": 4,
+      "unreal_handoff_inspector_engine_fact_matched": 4,
+      "unreal_handoff_inspector_engine_fact_missing": 0,
+      "unreal_handoff_inspector_source_import_matched": true,
+      "unreal_handoff_inspector_material_slot_matched": true,
+      "unreal_handoff_inspector_lod_count": 1,
+      "unreal_handoff_inspector_collision_simple_shapes": 1,
+      "unreal_handoff_inspector_intents": 2
+    },
+    "demo_route": [
+      {
+        "id": "01-open-maya-host",
+        "label": "Open Maya host",
+        "operator_action": "Run show_portfolio() from Maya Script Editor or shelf.",
+        "evidence_expected": "AuroraView panel opens inside Maya and bridge state is Connected."
+      },
+      {
+        "id": "02-export-case-page",
+        "label": "Export DCC-first case page",
+        "operator_action": "Open Task Orchestrator evidence view and click Export Case Page.",
+        "evidence_expected": "maya-dcc-portfolio-case-page@1.1.0 artifact path is shown."
+      },
+      {
+        "id": "03-run-composite-gate",
+        "label": "Run composite handoff gate",
+        "operator_action": "Use Asset Handoff Gate: Fixture, Evaluate Gate, Preview Actions, Decision Packet.",
+        "evidence_expected": "2 assets resolve to 1 Ready, 1 Review, 0 Blocked, with owner and engine intent rows."
+      },
+      {
+        "id": "04-compare-engine-presets",
+        "label": "Compare engine presets",
+        "operator_action": "Click Preset Compare with PC and Mobile presets.",
+        "evidence_expected": "One platform split row and one held-across-presets row are exported with zero engine writes."
+      },
+      {
+        "id": "05-review-unreal-inspector",
+        "label": "Review Unreal handoff inspector",
+        "operator_action": "Open the Presenter Pack or public package and inspect the Unreal Handoff Inspector artifact.",
+        "evidence_expected": "DCC import intents are checked against Unreal path, asset class, dependency, fingerprint, LOD, collision and owner-state rules."
+      },
+      {
+        "id": "06-review-unreal-preset-facts",
+        "label": "Review Unreal preset facts",
+        "operator_action": "Click Preset Fact Review inside the Maya-hosted case page.",
+        "evidence_expected": "Preset facts resolve to matched, drift, waived or blocked rows with visible owner action and waiver evidence."
+      },
+      {
+        "id": "07-run-scene-transaction-guard",
+        "label": "Run scene transaction guard",
+        "operator_action": "Click Txn Guard inside the Maya-hosted case page.",
+        "evidence_expected": "Before/after scene fingerprints, mutation risk rows and rollback preview are exported from Maya."
+      },
+      {
+        "id": "08-run-animation-continuity-l3",
+        "label": "Run animation continuity L3",
+        "operator_action": "Run python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py.",
+        "evidence_expected": "Maya mayapy runtime exports keyed animCurve facts for rig identity, take range, sample rate, channels, sub-frame keys and root motion."
+      },
+      {
+        "id": "09-run-unreal-animation-bridge-readiness",
+        "label": "Run Unreal animation bridge readiness",
+        "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py.",
+        "evidence_expected": "Unreal Python probes AnimSequence/Skeleton API availability and expected public animation fixture assets without saving packages."
+      },
+      {
+        "id": "10-review-blender-adapter",
+        "label": "Review Blender rule adapter",
+        "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
+        "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input."
+      },
+      {
+        "id": "11-run-blender-l3-harness",
+        "label": "Run Blender L3 harness",
+        "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
+        "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape."
+      },
+      {
+        "id": "12-run-3dsmax-adapter-harness",
+        "label": "Run 3ds Max adapter harness",
+        "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
+        "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape."
+      },
+      {
+        "id": "13-audit-gui-media",
+        "label": "Audit GUI media",
+        "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
+        "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording."
+      },
+      {
+        "id": "14-handoff-presenter-pack",
+        "label": "Handoff presenter pack",
+        "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
+        "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries."
+      }
+    ],
+    "business_route": [
+      {
+        "id": "01-contract",
+        "phase": "Author the handoff contract",
+        "module_id": "asset-protocol",
+        "business_question": "How does the scene carry gameplay/publish semantics without relying on file naming alone?",
+        "operator_action": "Open Asset Protocol Workbench, publish the active payload, then inspect it from Maya Bridge.",
+        "core_logic": "Encode role, platform, LOD, collision, and budget into a stable custom attr payload that downstream tools can parse.",
+        "evidence_to_show": "Maya node custom attr, inspected protocol rows, DCC evidence JSON.",
+        "reviewer_value": "Shows schema ownership and DCC-native metadata strategy."
+      },
+      {
+        "id": "02-gate",
+        "phase": "Run the publish gate",
+        "module_id": "rule-matrix",
+        "business_question": "Can the tool turn project rules into repeatable DCC facts, failures, and fix previews?",
+        "operator_action": "Run Collect Scene, Validate Scene, Preview Fixes, and Export DCC Report.",
+        "core_logic": "Collect scene facts, evaluate deterministic rules, separate safe_auto fixes from manual_only decisions.",
+        "evidence_to_show": "Rule results, fix preview rows, rule-matrix artifact.",
+        "reviewer_value": "Shows production gate design instead of ad hoc checking."
+      },
+      {
+        "id": "03-review",
+        "phase": "Make visual review reproducible",
+        "module_id": "visual-review",
+        "business_question": "How does subjective art review become a fixed camera/pass contract?",
+        "operator_action": "Create the review camera rig, build pass manifest, preview capture, and export review evidence.",
+        "core_logic": "Generate canonical cameras and pass rows from the scene so review output can be compared later.",
+        "evidence_to_show": "Camera rig nodes, pass manifest, capture preview paths.",
+        "reviewer_value": "Shows review standardization and repeatable visual evidence."
+      },
+      {
+        "id": "04-delivery",
+        "phase": "Validate texture delivery",
+        "module_id": "texture-delivery",
+        "business_question": "Can texture handoff be checked against naming, color space, source path, and budget rules?",
+        "operator_action": "Create the texture fixture, inspect file nodes, validate the scene, and export the manifest.",
+        "core_logic": "Scan shading networks and file nodes, infer texture roles, compare actual color space/path/budget against policy.",
+        "evidence_to_show": "Material/file node rows, validation gates, texture-delivery manifest.",
+        "reviewer_value": "Shows the bridge between DCC material graphs and engine-facing delivery constraints."
+      },
+      {
+        "id": "05-orchestrate",
+        "phase": "Package batch handoff evidence",
+        "module_id": "task-orchestrator",
+        "business_question": "Can many scene assets be turned into a dry-run publish queue with receipts?",
+        "operator_action": "Discover scene assets, build the queue, run dry-run, and export the report.",
+        "core_logic": "Convert discovered assets into protocol/material/texture/visual/export tasks and produce per-asset receipts.",
+        "evidence_to_show": "Queue rows, dry-run events, receipts, orchestrator report.",
+        "reviewer_value": "Shows how individual tools become a governed production workflow."
+      },
+      {
+        "id": "06-composite-gate",
+        "phase": "Evaluate the composite handoff gate",
+        "module_id": "asset-handoff-gate",
+        "business_question": "Can the full asset handoff be judged as a batch instead of five separate demos?",
+        "operator_action": "Use Asset Handoff Gate: Fixture, Evaluate Gate, Preview Actions, Export Packet.",
+        "core_logic": "Merge protocol, rule, texture, visual and queue evidence into per-asset Ready/Review/Blocked gates.",
+        "evidence_to_show": "Handoff asset rows, action preview rows, exported handoff packet.",
+        "reviewer_value": "Shows the portfolio has a production workflow, not only individual module proofs."
+      },
+      {
+        "id": "07-owner-engine-handoff",
+        "phase": "Resolve owner and engine handoff",
+        "module_id": "asset-handoff-gate",
+        "business_question": "Can the handoff decision explain who owns review rows and what would enter engine import?",
+        "operator_action": "Use Asset Handoff Gate / Decision Packet after evaluating the batch gate.",
+        "core_logic": "Turn Ready/Review asset gates into repair preview rows, owner disposition rows, and engine import intents without writing to engine.",
+        "evidence_to_show": "Decision packet repairPreview, ownerDispositions, engineHandoff rows.",
+        "reviewer_value": "Shows the TA boundary between deterministic evidence, owner authority, and engine handoff planning."
+      }
+    ],
+    "key_evidence_files": [
+      {
+        "id": "public-manifest",
+        "label": "DCC-first package manifest",
+        "kind": "manifest",
+        "path": "<repo>\\public-case-package\\dcc-first-package-manifest.json",
+        "required": true,
+        "exists": true,
+        "bytes": 25976,
+        "state": "Present"
+      },
+      {
+        "id": "public-package-readme",
+        "label": "DCC-first package readme",
+        "kind": "doc",
+        "path": "<repo>\\public-case-package\\DCC_FIRST_PACKAGE.md",
+        "required": true,
+        "exists": true,
+        "bytes": 21430,
+        "state": "Present"
+      },
+      {
+        "id": "maya-host-readme",
+        "label": "Maya host readme",
+        "kind": "doc",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\README.md",
+        "required": true,
+        "exists": true,
+        "bytes": 16827,
+        "state": "Present"
+      },
+      {
+        "id": "case-page",
+        "label": "DCC-first case page artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 18652,
+        "state": "Present"
+      },
+      {
+        "id": "runbook",
+        "label": "DCC showcase runbook artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-runbook-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 35146,
+        "state": "Present"
+      },
+      {
+        "id": "gui-evidence-manifest",
+        "label": "GUI evidence manifest artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-gui-evidence-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 12320,
+        "state": "Present"
+      },
+      {
+        "id": "gui-media-audit",
+        "label": "GUI media audit artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-gui-media-audit-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 7107,
+        "state": "Present"
+      },
+      {
+        "id": "asset-handoff-gate",
+        "label": "Asset Handoff Gate artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-runbook-asset-handoff-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 59787,
+        "state": "Present"
+      },
+      {
+        "id": "asset-handoff-decision",
+        "label": "Asset Handoff Decision artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-runbook-asset-handoff-decision-20260803-171316.json",
+        "required": true,
+        "exists": true,
+        "bytes": 70415,
+        "state": "Present"
+      },
+      {
+        "id": "engine-preflight",
+        "label": "Engine Handoff Preflight artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-8-engine-handoff-preflight-fixture-20260803-172302.json",
+        "required": true,
+        "exists": true,
+        "bytes": 7571,
+        "state": "Present"
+      },
+      {
+        "id": "engine-preset-comparison",
+        "label": "Engine Preset Comparison artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-9-engine-preset-comparison-20260803-172927.json",
+        "required": true,
+        "exists": true,
+        "bytes": 15719,
+        "state": "Present"
+      },
+      {
+        "id": "blender-rule-adapter",
+        "label": "Blender Rule Adapter artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-rule-adapter-contract-20260804-201125.json",
+        "required": true,
+        "exists": true,
+        "bytes": 11603,
+        "state": "Present"
+      },
+      {
+        "id": "blender-l3-harness",
+        "label": "Blender L3 Harness readiness artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-rule-adapter-l3-20260805-153156.json",
+        "required": true,
+        "exists": true,
+        "bytes": 11614,
+        "state": "Present"
+      },
+      {
+        "id": "max-rule-adapter",
+        "label": "3ds Max Rule Adapter artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-contract-20260804-220959.json",
+        "required": true,
+        "exists": true,
+        "bytes": 18440,
+        "state": "Present"
+      },
+      {
+        "id": "max-l3-harness",
+        "label": "3ds Max L3 Harness readiness artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260805-153232.json",
+        "required": true,
+        "exists": true,
+        "bytes": 18377,
+        "state": "Present"
+      },
+      {
+        "id": "unreal-handoff-inspector",
+        "label": "Unreal Handoff Inspector artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-handoff-inspector-l3-20260803-184208.json",
+        "required": true,
+        "exists": true,
+        "bytes": 22957,
+        "state": "Present"
+      },
+      {
+        "id": "unreal-preset-fact-comparison",
+        "label": "Unreal Preset Fact Comparison artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
+        "required": true,
+        "exists": true,
+        "bytes": 7329,
+        "state": "Present"
+      },
+      {
+        "id": "unreal-preset-fact-review",
+        "label": "Unreal Preset Fact Review artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r18-unreal-preset-fact-review-20260803-190519.json",
+        "required": true,
+        "exists": true,
+        "bytes": 10735,
+        "state": "Present"
+      },
+      {
+        "id": "scene-transaction-guard",
+        "label": "Scene Transaction Guard artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r19-scene-transaction-guard-20260804-195730.json",
+        "required": true,
+        "exists": true,
+        "bytes": 17286,
+        "state": "Present"
+      },
+      {
+        "id": "animation-continuity-maya-l3",
+        "label": "Animation Continuity Maya L3 artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+        "required": true,
+        "exists": true,
+        "bytes": 25725,
+        "state": "Present"
+      },
+      {
+        "id": "unreal-animation-bridge-readiness",
+        "label": "Unreal Animation Bridge readiness artifact",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-164730.json",
+        "required": true,
+        "exists": true,
+        "bytes": 19364,
+        "state": "Present"
+      }
+    ],
+    "media_audit": {
+      "gate": "CapturePending",
+      "media_root": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence",
+      "required_files": 10,
+      "present": 0,
+      "review": 0,
+      "missing": 10,
+      "rows": [
+        {
+          "id": "shot-01-host-open",
+          "capture_type": "screenshot",
+          "target": "Maya main window with AuroraView portfolio panel open",
+          "filename": "r10-7_01_maya_host_open.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_01_maya_host_open.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can tell the tool is hosted inside Maya, not a standalone browser tab."
+        },
+        {
+          "id": "shot-02-runbook-route",
+          "capture_type": "screenshot",
+          "target": "Right rail / DCC Showcase Runbook",
+          "filename": "r10-7_02_runbook_business_route.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_02_runbook_business_route.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can read the asset handoff story before seeing individual modules."
+        },
+        {
+          "id": "shot-03-smoke-package",
+          "capture_type": "screenshot",
+          "target": "DCC Showcase Runbook after Run Smoke",
+          "filename": "r10-7_03_runbook_smoke_gate.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_03_runbook_smoke_gate.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can verify the package is backed by generated Maya artifacts and the composite handoff packet."
+        },
+        {
+          "id": "shot-04-asset-protocol",
+          "capture_type": "screenshot",
+          "target": "Asset Protocol Workbench / DCC Scene Payload",
+          "filename": "r10-7_04_asset_protocol_dcc_payload.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_04_asset_protocol_dcc_payload.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see DCC-native business metadata, not only React form data."
+        },
+        {
+          "id": "shot-05-rule-matrix",
+          "capture_type": "screenshot",
+          "target": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+          "filename": "r10-7_05_rule_matrix_maya_gate.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_05_rule_matrix_maya_gate.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see deterministic publish gate logic and manual/safe fix separation."
+        },
+        {
+          "id": "shot-06-texture-delivery",
+          "capture_type": "screenshot",
+          "target": "Texture Delivery Console / Maya Texture Inspection",
+          "filename": "r10-7_06_texture_delivery_graph.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_06_texture_delivery_graph.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see DCC material graph evidence tied to delivery rules."
+        },
+        {
+          "id": "shot-07-task-orchestrator",
+          "capture_type": "screenshot",
+          "target": "Task Orchestrator / Maya Batch Queue",
+          "filename": "r10-7_07_task_orchestrator_receipts.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_07_task_orchestrator_receipts.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see multiple assets becoming a governed handoff queue."
+        },
+        {
+          "id": "shot-08-asset-handoff-gate",
+          "capture_type": "screenshot",
+          "target": "Right rail / Asset Handoff Gate",
+          "filename": "r10-7_08_asset_handoff_gate.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_08_asset_handoff_gate.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see the five evidence streams compressed into one batch handoff decision."
+        },
+        {
+          "id": "shot-09-asset-handoff-decision",
+          "capture_type": "screenshot",
+          "target": "Right rail / Asset Handoff Gate / Decision Packet",
+          "filename": "r10-7_09_asset_handoff_decision_packet.png",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_09_asset_handoff_decision_packet.png",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 4096,
+          "status": "Missing",
+          "acceptance": "Viewer can see which asset can enter engine handoff and which asset is held for owner disposition."
+        },
+        {
+          "id": "clip-01-primary-demo",
+          "capture_type": "screen_recording",
+          "target": "Maya GUI primary route",
+          "filename": "r10-7_primary_dcc_first_route.mp4",
+          "expected_path": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence\\r10-7_primary_dcc_first_route.mp4",
+          "exists": false,
+          "bytes": 0,
+          "minimum_bytes": 100000,
+          "status": "Missing",
+          "acceptance": "A reviewer can understand the DCC-first portfolio without opening the source project."
+        }
+      ]
+    },
+    "reviewer_claims": [
+      "The portfolio opens from Maya through AuroraView.",
+      "The browser UI is the embedded panel surface, not the primary presentation target.",
+      "Five DCC modules are organized into one asset handoff business route.",
+      "Composite gate, owner disposition, engine preflight, and preset comparison are machine-checkable JSON evidence.",
+      "Engine-facing rows are dry-run sidecars and intents only; no engine write is executed.",
+      "Unreal Handoff Inspector checks DCC import intents against real public Unreal fixture assets and import-task constraints.",
+      "Unreal Preset Fact Comparison joins runtime engine facts with PC/Mobile preset policy and exception waiver rows.",
+      "Unreal Preset Fact Review projects the comparison rows into a Maya-hosted reviewer queue with owner actions.",
+      "Scene Transaction Guard captures DCC before/after scene mutation, risk rows and rollback preview from Maya.",
+      "Animation Continuity Lab is now backed by Maya mayapy L3 animCurve evidence for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
+      "Unreal Animation Bridge enters Unreal Python and records AnimSequence/Skeleton API readiness without claiming missing animation assets are present.",
+      "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
+      "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
+      "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
+      "GUI screenshots and recording are tracked by audit gate instead of being implied complete."
+    ],
+    "next_actions": [
+      {
+        "id": "capture-real-maya-media",
+        "owner": "tool-ta",
+        "state": "open",
+        "reason": "Presenter pack has code and JSON evidence, but Maya screenshots/recording are not yet complete.",
+        "target": "D:\\cs\\AIToolTA_Portfolio\\assets\\dcc-first\\r10-7-gui-evidence",
+        "missing": 10,
+        "review": 0
+      }
+    ],
+    "boundary": {
+      "mutation": "presenter_pack_export_only",
+      "sceneWrites": "none",
+      "engineWrites": 0,
+      "assets": "public synthetic fixtures only",
+      "proprietaryData": "not included"
+    },
+    "public_case_package": {
+      "manifest": "<repo>\\public-case-package\\dcc-first-package-manifest.json",
+      "readme": "<repo>\\public-case-package\\DCC_FIRST_PACKAGE.md",
+      "package_id": "ai-tool-ta-dcc-first-showcase-r24",
+      "package_version": "dcc-first-package@1.21.0"
+    }
+  }
+}

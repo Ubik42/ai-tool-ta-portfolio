@@ -71,3 +71,15 @@ Deterministic core: public synthetic Maya fixture, `mayapy` keyed curve collecto
 AI boundary: AI can explain why a failed take is risky or draft handoff notes. It cannot resample, retarget, delete additive layers or approve owner waivers without deterministic evidence.
 
 Key evidence: `../docs/modules/animation-continuity-lab.md`
+
+## 7. Unreal Animation Bridge
+
+Business scenario: animation clips can pass Maya checks but still drift after Unreal import through skeleton binding, sample-rate, curve, root-motion or compression differences.
+
+Core secret: bridge DCC facts to engine facts. The module reads Maya Animation Continuity L3 evidence, maps each take to expected Unreal AnimSequence / Skeleton facts, and records whether Unreal Python can see the required APIs and assets.
+
+Deterministic core: bridge fixture, Maya L3 source artifact, Unreal Python API probe, expected asset existence probe, evaluation rows, fix preview, and Presenter Pack evidence probe.
+
+AI boundary: AI can explain why a clip is blocked or draft owner handoff notes. It cannot claim an AnimSequence is imported until Unreal runtime facts prove the asset and skeleton exist.
+
+Key evidence: `../docs/modules/unreal-animation-bridge.md`

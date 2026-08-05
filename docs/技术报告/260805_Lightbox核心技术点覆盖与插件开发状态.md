@@ -2,20 +2,21 @@
 
 更新时间：2026-08-05  
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r23` / `dcc-first-package@1.20.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r24` / `dcc-first-package@1.21.0`
 
 ## 1. 当前结论
 
 当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Unreal Python 和普通 Python fixture 共同生成。
 
-R23 的硬证据：
+R24 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json`
+- Unreal Animation Bridge readiness：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-164730.json`
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json`
-- Presenter Pack 结果：20 / 20 evidence files present，0 missing required files，13 demo route steps。
-- Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Blender/Max 的 `Blocked` 是 synthetic fixture 中故意放入的失败资产，不是 runtime 缺失。
+- Presenter Pack 结果：21 / 21 evidence files present，0 missing required files，14 demo route steps。
+- Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max 的 `Blocked` 是 synthetic fixture 或缺 public animation fixture 导致的业务阻断，不是工具静默失败。
 
 ## 2. Lightbox核心技术点覆盖
 
@@ -31,7 +32,7 @@ R23 的硬证据：
 | 复合资产放行门禁 | `Asset Handoff Gate` 合并协议、规则、贴图、视觉、队列，输出 Ready/Review/Blocked 和 Decision Packet | 已覆盖，Maya L3 | 真实资产案例和 reviewer 录屏 |
 | DCC 到引擎 handoff | Maya Engine Preflight + Unreal Handoff Inspector 覆盖 import intent、registry、engine facts、PC/Mobile preset 和 waiver | 覆盖强，Unreal L3++ | 真实 texture/LOD/import preset 扩展 |
 | 场景事务、写入边界和 rollback preview | `Scene Transaction Guard` 输出 before/after fingerprint、created/deleted/modified、risk rows、rollback actions | 已覆盖 Maya L3 首版 | 抽成所有 DCC 工具共用的 transaction middleware |
-| 动画确定性导出、Take、sub-frame、channel identity | `Animation Continuity Lab` 已通过 Maya `mayapy` 采集 keyed animCurve facts，检查 rig identity、skeleton fingerprint、sample rate、required channel、sub-frame、root motion、active layer | Maya L3 首版 | 扩 MotionBuilder take/story/character mapping 和 Unreal AnimSequence runtime 对照 |
+| 动画确定性导出、Take、sub-frame、channel identity | `Animation Continuity Lab` 已通过 Maya `mayapy` 采集 keyed animCurve facts；`Unreal Animation Bridge` 已进入 Unreal Python 做 AnimSequence/Skeleton readiness probe | Maya L3 + Unreal L3-readiness | 补 public Skeleton / AnimSequence fixture 后采集真实 sequence length、curve names、root motion、compression facts |
 | 角色 DNA、拓扑、joint coverage、面部/肌肉参数迁移 | 已有 topology signature、joint coverage、calibration delta fixture | L2 | 开发 `Character Calibration & Intent Transfer Studio` |
 | 空间热点、Socket、Pose Transfer、mirror、locator preview | 已有 spatial authoring fixture | L2 | 开发 `Spatial Authoring & Pose Transfer Workbench` |
 | PC -> Mobile 平台派生、LOD/材质/贴图/碰撞生成链 | 当前有规则检查和 engine preset comparison | 局部覆盖 | 开发 `Platform Variant Forge` 或 `LOD Bake Planner` |
@@ -41,7 +42,7 @@ R23 的硬证据：
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R23 Presenter Pack 20/20 evidence present；13 步 demo route；新增 command bridge |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R24 Presenter Pack 21/21 evidence present；14 步 demo route；新增 command bridge |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
 | 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3 |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
@@ -52,18 +53,19 @@ R23 的硬证据：
 | 9 | Scene Transaction Guard | 记录工具运行前后到底改了场景什么，并给 rollback preview | Maya L3 首版完成 |
 | 10 | Blender Rule Adapter | 从 Blender 采集 custom props、collections、material、UV、collision facts | `bpy` L3 完成 |
 | 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts | `pymxs` L3 完成 |
-| 12 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成；MotionBuilder/Unreal 对照未做 |
-| 13 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | 协议和 headless fixture 完成，插件未开发 |
-| 14 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | 协议和 headless fixture 完成，插件未开发 |
-| 15 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | 只有规则/预检覆盖，生成链未开发 |
-| 16 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
-| 17 | Groom Export Inspector | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、Alembic payload | 计划阶段 |
+| 12 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
+| 13 | Unreal Animation Bridge | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression readiness | Unreal Python L3-readiness 完成；缺 public AnimSequence/Skeleton fixture |
+| 14 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | 协议和 headless fixture 完成，插件未开发 |
+| 15 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | 协议和 headless fixture 完成，插件未开发 |
+| 16 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | 只有规则/预检覆盖，生成链未开发 |
+| 17 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
+| 18 | Groom Export Inspector | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、Alembic payload | 计划阶段 |
 
 ## 4. 当前开发进度
 
 | 插件/工具线 | 完成度判断 | 能展示什么 | 不能展示什么 |
 | --- | --- | --- | --- |
-| Maya Host / Presenter Pack | 88% | Maya 内打开工具、外部 command bridge、13 步 demo route、20 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
+| Maya Host / Presenter Pack | 89% | Maya 内打开工具、外部 command bridge、14 步 demo route、21 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
 | Asset Protocol Workbench | 75% | Maya 节点 custom attr 协议写入、inspect、DCC evidence report | UV/vertex color 语义 carrier 未实装 |
 | Cross-DCC Rule Matrix | 80% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter | Houdini adapter 未做；规则覆盖仍可加深 |
 | Visual Review Studio | 55% | camera rig、pass manifest、capture preview path、review report | 真实 playblast/截图、图片 diff、HTML 视觉报告未进入 DCC-first media |
@@ -75,6 +77,7 @@ R23 的硬证据：
 | Blender Rule Adapter | 70% | Blender 5.2 `bpy` L3、custom props/collection/material/UV/collision 采集 | 还缺真实复杂 Blender 资产 fixture |
 | 3ds Max Rule Adapter | 70% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision 采集 | 还缺真实复杂 Max 资产 fixture |
 | Animation Continuity Lab | 45% | Maya `mayapy` L3 keyed animCurve 采集，rig/skeleton/take/sample/channel/sub-frame/root-motion/layer 检查，fix preview 和 Presenter Pack 接入 | 没有 Maya UI drilldown；MotionBuilder/Unreal runtime 对照未做 |
+| Unreal Animation Bridge | 25% | Unreal Python L3-readiness、AnimSequence/Skeleton API probe、expected sequence missing rows、Maya L3 source comparison | 没有 public Skeleton / AnimSequence fixture，因此还不是完整 Unreal animation L3 |
 | Character Calibration Studio | 15% | topology signature、joint coverage、位移阈值 fixture | 没有 Maya mesh/DNA runtime，没有可视化工作台 |
 | Spatial Authoring Workbench | 15% | hotspot、pose frame、transform contract fixture | 没有 Maya 热点 UI、locator preview、pose transfer 执行 |
 | Platform Variant / LOD Bake / Groom | 5-10% | 方法提炼和计划 | 还没有代码闭环 |
@@ -108,7 +111,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r23-animation-continuity-l3-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r24-unreal-animation-bridge-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -119,4 +122,4 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness 打转，它们已升到 runtime L3。`Animation Continuity Lab` 的 Maya L3 首版已经闭环，下一轮优先做 MotionBuilder / Unreal Animation Bridge：把 Maya 采集到的 rig、take、channel、root motion 事实和 MotionBuilder/Unreal 侧 runtime facts 对齐。它最能体现工具管线 TA 对“业务正确性”的理解，而不是只做资产静态检查。
+下一轮不要再围绕 Blender/Max readiness 打转，它们已升到 runtime L3。`Animation Continuity Lab` 的 Maya L3 和 Unreal Animation Bridge readiness 已闭环；后续如果继续动画线，优先补 public Skeleton / AnimSequence fixture，让 Unreal bridge 从 L3-readiness 升为真实 AnimSequence facts。另一条高价值路线是 Character Calibration & Intent Transfer Studio。

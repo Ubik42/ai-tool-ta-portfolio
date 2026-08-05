@@ -9,18 +9,19 @@ It demonstrates DCC / engine pipeline tool logic through synthetic fixtures, run
 Stable baseline:
 
 ```text
-ai-tool-ta-dcc-first-showcase-r23 / dcc-first-package@1.20.0
+ai-tool-ta-dcc-first-showcase-r24 / dcc-first-package@1.21.0
 ```
 
 Primary delivery artifact:
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
+dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
 ```
 
 Main runtime evidence:
 
 ```text
+dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-bridge-readiness-20260805-164730.json
 dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-20260805-162744.json
 dcc-hosts/blender-rule-adapter/artifacts/blender-rule-adapter-l3-20260805-153156.json
 dcc-hosts/3dsmax-rule-adapter/artifacts/max-rule-adapter-l3-20260805-153232.json

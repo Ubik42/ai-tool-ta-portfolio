@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已经有 Maya `mayapy` L3 keyed animCurve 证据。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge L3-readiness。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
+dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R23。
+稳定基线：R24。
 
 已完成：
 
@@ -36,6 +36,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentatio
 - Unreal Handoff Inspector
 - Scene Transaction Guard
 - Animation Continuity Lab Maya L3
+- Unreal Animation Bridge L3-readiness
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -44,11 +45,13 @@ dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentatio
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder / Unreal Animation Bridge、Houdini、Character Calibration、Spatial Authoring 等后续工具线。
+- Unreal AnimSequence/Skeleton public fixture、MotionBuilder、Houdini、Character Calibration、Spatial Authoring 等后续工具线。
 
-## 3. R23 当前断点
+## 3. R24 当前断点
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
+
+`Unreal Animation Bridge` 已完成首轮 readiness 闭环：读取 R23 Maya L3 artifact，映射 Unreal AnimSequence / Skeleton 预期，通过 UnrealEditor-Cmd 进入公开 test `.uproject`，探测 animation API 和 expected sequence asset presence。
 
 核心文件：
 
@@ -59,6 +62,11 @@ dcc-hosts/animation-continuity-lab/animation_continuity_lab/maya_collector.py
 dcc-hosts/animation-continuity-lab/scripts/run_smoke.py
 dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
 dcc-hosts/animation-continuity-lab/scripts/run_maya_l3.py
+dcc-hosts/unreal-animation-bridge/fixtures/synthetic_unreal_animation_bridge.json
+dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py
+dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py
+dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py
+dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py
 ```
 
 已生成首个 L2 artifact：
@@ -79,6 +87,18 @@ dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-202608
 dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
 ```
 
+当前 Unreal Animation Bridge readiness：
+
+```text
+dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-bridge-readiness-20260805-164730.json
+```
+
+当前 R24 Presenter Pack：
+
+```text
+dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+```
+
 这条线的最终效果：
 
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
@@ -86,13 +106,14 @@ dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentatio
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
 - 后续再接入 MotionBuilder / Unreal animation import 对照。
 
-继续开发时优先做 MotionBuilder / Unreal Animation Bridge。如果只验证当前 R23，运行：
+继续开发时优先做 Unreal AnimSequence/Skeleton public fixture 或 Character Calibration。如果只验证当前 R24，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
+python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py
 ```
 
-当前 R23 public package 为 `ai-tool-ta-dcc-first-showcase-r23` / `dcc-first-package@1.20.0`，Presenter Pack 20 / 20 evidence files present，0 missing required files，13 demo route steps；gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R24 public package 为 `ai-tool-ta-dcc-first-showcase-r24` / `dcc-first-package@1.21.0`，Presenter Pack 21 / 21 evidence files present，0 missing required files，14 demo route steps；gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

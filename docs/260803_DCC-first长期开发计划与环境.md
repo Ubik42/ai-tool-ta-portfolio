@@ -1002,10 +1002,19 @@ R23 已完成 `Animation Continuity Lab` Maya L3：
 
 R23 结果：Maya 2026 `mayapy` keyed animCurve facts collected，2 animation takes，1 Ready / 1 Blocked，11 pass / 3 warning / 6 error；Presenter Pack 20 / 20 evidence files present，0 missing required files，13 demo route steps。
 
-默认下一轮开发 `MotionBuilder / Unreal Animation Bridge`：
+R24 已完成 `Unreal Animation Bridge` L3-readiness：
 
 ```text
-choose runtime -> synthetic animation bridge fixture -> collector/readiness artifact -> continuity comparison -> Presenter Pack row -> docs
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-164730.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+```
+
+R24 结果：Unreal 5.3.2 Python runtime probe collected，`AnimSequence` / `AnimSequenceFactory` / `Skeleton` / `SkeletalMesh` API 可见，2 个 expected AnimSequence 资产缺失；Bridge gate 为 `Blocked`，这代表 public skeletal animation fixture 未补，不是 runtime 没跑。
+
+默认下一轮开发 `Unreal AnimSequence Fixture L3` 或 `Character Calibration & Intent Transfer Studio`：
+
+```text
+public skeleton/sequence fixture -> Unreal runtime collector -> continuity comparison -> Presenter Pack row -> docs
 ```
 
 只有修改 runtime adapter 时才跑对应 DCC runtime；只有发布里程碑才跑 `full`；只改文档或 manifest 时不跑 Blender/Max/Unreal。

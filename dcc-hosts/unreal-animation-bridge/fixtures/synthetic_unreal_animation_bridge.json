@@ -1,0 +1,57 @@
+{
+  "schema": "synthetic-unreal-animation-bridge@0.1.0",
+  "intent": "Public-safe fixture comparing Maya animation-continuity facts against Unreal AnimSequence import expectations.",
+  "sourceMayaL3Artifact": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+  "unrealProject": {
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "fixtureRoot": "/Game/AI_Tool_TA",
+    "expectedEngineVersionMajor": 5
+  },
+  "animationSequences": [
+    {
+      "assetId": "anim-hero-run-001",
+      "mayaTakeName": "RunStart",
+      "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+      "expectedSampleRate": 30,
+      "expectedStartFrame": 1001,
+      "expectedEndFrame": 1048,
+      "rootMotionMode": "enabled",
+      "requiredCurveNames": [
+        "Hips.translateX",
+        "Hips.translateZ",
+        "Hips.rotateY",
+        "LeftFoot.rotateX",
+        "RightFoot.rotateX"
+      ],
+      "compression": {
+        "allowFrameRangeTrim": false,
+        "allowRemoveLinearKeys": true
+      },
+      "ownerState": "accepted"
+    },
+    {
+      "assetId": "anim-hero-attack-002",
+      "mayaTakeName": "Attack_A",
+      "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+      "expectedSampleRate": 30,
+      "expectedStartFrame": 2001,
+      "expectedEndFrame": 2040,
+      "rootMotionMode": "disabled",
+      "requiredCurveNames": [
+        "Hips.translateZ",
+        "Hips.rotateY",
+        "RightFoot.rotateX",
+        "WeaponSocket.rotateY"
+      ],
+      "compression": {
+        "allowFrameRangeTrim": false,
+        "allowRemoveLinearKeys": false
+      },
+      "ownerState": "requested"
+    }
+  ]
+}

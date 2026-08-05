@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -25,6 +25,7 @@ function Invoke-JsonCheck {
 
 $MayaHost = Join-Path $Root "dcc-hosts\maya-auroraview-host"
 $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
+$UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
@@ -58,7 +59,11 @@ $QuickPythonFiles = @(
     (Join-Path $AnimationLab "animation_continuity_lab\maya_collector.py"),
     (Join-Path $AnimationLab "scripts\run_smoke.py"),
     (Join-Path $AnimationLab "scripts\run_l3_smoke.py"),
-    (Join-Path $AnimationLab "scripts\run_maya_l3.py")
+    (Join-Path $AnimationLab "scripts\run_maya_l3.py"),
+    (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\contract.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\run_l3_smoke.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py")
 )
 
 $CoreJsonFiles = @(
@@ -83,9 +88,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r23-animation-continuity-l3-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r24-unreal-animation-bridge-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 20, summary
+assert summary["present_evidence_files"] == 21, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -110,6 +115,12 @@ if ($Tier -in @("ui", "full")) {
 if ($Tier -in @("animation", "full")) {
     Invoke-Step "animation continuity contract smoke" {
         python (Join-Path $AnimationLab "scripts\run_smoke.py")
+    }
+}
+
+if ($Tier -in @("unreal-animation", "full")) {
+    Invoke-Step "unreal animation bridge contract smoke" {
+        python (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py")
     }
 }
 

@@ -37,7 +37,8 @@ AIToolTA_Portfolio/
 │   ├── blender-rule-adapter/
 │   ├── 3dsmax-rule-adapter/
 │   ├── unreal-handoff-inspector/
-│   └── animation-continuity-lab/
+│   ├── animation-continuity-lab/
+│   └── unreal-animation-bridge/
 ├── public-case-package/
 └── assets/
 ```
@@ -97,7 +98,7 @@ AuroraView 迁移可行性评估见 `docs/260803_1135_AuroraView_DCC迁移可行
 
 R10.3 Asset Handoff / Publish Gate 开发计划见 `docs/260803_R10_3_AssetHandoffPublishGate开发计划.md`。
 
-当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Blender `bpy` L3、3ds Max `pymxs` L3、Unreal L3++ inspector、Maya-hosted preset fact reviewer 和 Scene Transaction Guard 都已有可导出的 JSON evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 20 个关键证据文件、13 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r23` / `dcc-first-package@1.20.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json`，Animation Continuity L3 artifact 为 `dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-20260805-162744.json`，Blender L3 artifact 为 `dcc-hosts/blender-rule-adapter/artifacts/blender-rule-adapter-l3-20260805-153156.json`，3ds Max L3 artifact 为 `dcc-hosts/3dsmax-rule-adapter/artifacts/max-rule-adapter-l3-20260805-153232.json`，R19 transaction artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r19-scene-transaction-guard-20260804-195730.json`。
+当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Unreal Animation Bridge L3-readiness、Blender `bpy` L3、3ds Max `pymxs` L3、Unreal L3++ inspector、Maya-hosted preset fact reviewer 和 Scene Transaction Guard 都已有可导出的 JSON evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 21 个关键证据文件、14 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r24` / `dcc-first-package@1.21.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json`，Unreal Animation Bridge readiness artifact 为 `dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-bridge-readiness-20260805-164730.json`，Animation Continuity L3 artifact 为 `dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-20260805-162744.json`，Blender L3 artifact 为 `dcc-hosts/blender-rule-adapter/artifacts/blender-rule-adapter-l3-20260805-153156.json`，3ds Max L3 artifact 为 `dcc-hosts/3dsmax-rule-adapter/artifacts/max-rule-adapter-l3-20260805-153232.json`，R19 transaction artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r19-scene-transaction-guard-20260804-195730.json`。
 
 模块文档：
 
@@ -111,6 +112,7 @@ R10.3 Asset Handoff / Publish Gate 开发计划见 `docs/260803_R10_3_AssetHando
 - `docs/modules/dcc-first-case-page.md`
 - `docs/modules/scene-transaction-guard.md`
 - `docs/modules/animation-continuity-lab.md`
+- `docs/modules/unreal-animation-bridge.md`
 - `docs/modules/blender-rule-adapter.md`
 - `docs/modules/3dsmax-rule-adapter.md`
 - `docs/modules/unreal-handoff-inspector.md`

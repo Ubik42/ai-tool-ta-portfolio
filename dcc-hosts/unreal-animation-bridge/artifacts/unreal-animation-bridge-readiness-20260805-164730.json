@@ -1,0 +1,488 @@
+{
+  "reportVersion": "unreal-animation-bridge-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Bridge",
+  "generatedAt": "2026-08-05 16:47:40",
+  "evidenceLevel": "L3-readiness",
+  "l3Status": "unreal_animation_api_probe_collected",
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\fixtures\\synthetic_unreal_animation_bridge.json",
+    "schema": "synthetic-unreal-animation-bridge@0.1.0",
+    "intent": "Public-safe fixture comparing Maya animation-continuity facts against Unreal AnimSequence import expectations."
+  },
+  "sourceMayaReport": {
+    "path": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+    "reportVersion": "animation-continuity-maya-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "maya_anim_curves_collected",
+    "runtimeCollected": true
+  },
+  "adapter": {
+    "id": "unreal-animation-bridge",
+    "name": "Unreal Animation Bridge",
+    "methodSource": "Lightbox animation export / Unreal AnimSequence import continuity",
+    "protocolCarrier": "Maya animation-continuity L3 artifact + Unreal AnimSequence/Skeleton facts",
+    "boundary": {
+      "mutation": "unreal_runtime_probe_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "unreal-animation-bridge-input@0.1.0",
+    "unrealProject": {
+      "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+      "fixtureRoot": "/Game/AI_Tool_TA",
+      "expectedEngineVersionMajor": 5
+    },
+    "sourceMaya": {
+      "reportVersion": "animation-continuity-maya-l3@0.1.0",
+      "evidenceLevel": "L3",
+      "l3Status": "maya_anim_curves_collected",
+      "runtimeCollected": true,
+      "assetCount": 2
+    },
+    "sequences": [
+      {
+        "assetId": "anim-hero-run-001",
+        "mayaTakeName": "RunStart",
+        "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+        "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+        "ownerState": "accepted",
+        "sourceMayaFound": true,
+        "sourceMaya": {
+          "rigId": "HeroRig_A",
+          "expectedRigId": "HeroRig_A",
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "takeName": "RunStart",
+          "startFrame": 1001,
+          "endFrame": 1048,
+          "actualFirstKey": 1001.0,
+          "actualLastKey": 1048.0,
+          "sampleRate": 30,
+          "missingChannels": [],
+          "duplicateChannels": [],
+          "subFrameCount": 0,
+          "outsideRangeCount": 0,
+          "rootMotionPolicy": "required",
+          "rootMotionDelta": 5.6,
+          "scaleMaxDrift": 0.0,
+          "additiveWithoutOwner": 0,
+          "channelIdentities": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ]
+        },
+        "expectedUnreal": {
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "sampleRate": 30,
+          "startFrame": 1001,
+          "endFrame": 1048,
+          "rootMotionMode": "enabled",
+          "requiredCurveNames": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ],
+          "compression": {
+            "allowFrameRangeTrim": false,
+            "allowRemoveLinearKeys": true
+          }
+        },
+        "runtimeUnreal": {
+          "assetId": "anim-hero-run-001",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "animSequenceExists": false,
+          "skeletonExists": false,
+          "animSequenceClass": null,
+          "skeletonClass": null,
+          "readOnlyProbe": true
+        }
+      },
+      {
+        "assetId": "anim-hero-attack-002",
+        "mayaTakeName": "Attack_A",
+        "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+        "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+        "ownerState": "requested",
+        "sourceMayaFound": true,
+        "sourceMaya": {
+          "rigId": "HeroRig_TMP",
+          "expectedRigId": "HeroRig_A",
+          "skeletonFingerprint": "skel:hero:v002:spine61:face12",
+          "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "takeName": "Attack_A",
+          "startFrame": 2001,
+          "endFrame": 2040,
+          "actualFirstKey": 2000.0,
+          "actualLastKey": 2042.0,
+          "sampleRate": 24,
+          "missingChannels": [
+            "RightFoot.rotateX"
+          ],
+          "duplicateChannels": [
+            "Hips.translateZ"
+          ],
+          "subFrameCount": 1,
+          "outsideRangeCount": 2,
+          "rootMotionPolicy": "disabled",
+          "rootMotionDelta": 9.0,
+          "scaleMaxDrift": 0.08000000000000007,
+          "additiveWithoutOwner": 1,
+          "channelIdentities": [
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "Hips.scaleX",
+            "WeaponSocket.rotateY",
+            "Hips.translateZ"
+          ]
+        },
+        "expectedUnreal": {
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "sampleRate": 30,
+          "startFrame": 2001,
+          "endFrame": 2040,
+          "rootMotionMode": "disabled",
+          "requiredCurveNames": [
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "RightFoot.rotateX",
+            "WeaponSocket.rotateY"
+          ],
+          "compression": {
+            "allowFrameRangeTrim": false,
+            "allowRemoveLinearKeys": false
+          }
+        },
+        "runtimeUnreal": {
+          "assetId": "anim-hero-attack-002",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "animSequenceExists": false,
+          "skeletonExists": false,
+          "animSequenceClass": null,
+          "skeletonClass": null,
+          "readOnlyProbe": true
+        }
+      }
+    ],
+    "unrealRuntime": {
+      "executed": true,
+      "runtime": "Unreal Python",
+      "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+      "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+      "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+      "api": {
+        "classes": {
+          "AnimSequence": true,
+          "AnimSequenceFactory": true,
+          "AnimationBlueprintLibrary": false,
+          "Skeleton": true,
+          "SkeletalMesh": true,
+          "EditorAssetLibrary": true,
+          "AssetRegistryHelpers": true
+        },
+        "animationBlueprintLibraryMethods": []
+      },
+      "assets": {
+        "expectedSequenceCount": 2,
+        "presentSequenceCount": 0,
+        "missingSequenceCount": 2,
+        "allExpectedAssetsPresent": false,
+        "present": [],
+        "missing": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+        ],
+        "rows": {
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart": {
+            "assetId": "anim-hero-run-001",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+            "animSequenceExists": false,
+            "skeletonExists": false,
+            "animSequenceClass": null,
+            "skeletonClass": null,
+            "readOnlyProbe": true
+          },
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A": {
+            "assetId": "anim-hero-attack-002",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+            "animSequenceExists": false,
+            "skeletonExists": false,
+            "animSequenceClass": null,
+            "skeletonClass": null,
+            "readOnlyProbe": true
+          }
+        }
+      },
+      "mutation": {
+        "engineWrites": 0,
+        "assetWrites": 0,
+        "savePackage": false,
+        "writeScope": "read-only public test project probe"
+      }
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-animation-bridge-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 0,
+      "reviewAssets": 1,
+      "blockedAssets": 1,
+      "pass": 8,
+      "warning": 3,
+      "error": 5,
+      "readyAssetIds": [],
+      "reviewAssetIds": [
+        "anim-hero-run-001"
+      ],
+      "blockedAssetIds": [
+        "anim-hero-attack-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "anim-hero-run-001:maya-source-l3",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "maya-source-l3",
+        "label": "Maya source L3",
+        "status": "pass",
+        "reason": "Unreal animation bridge must start from real Maya keyed animCurve evidence.",
+        "evidence": "sourceFound=True evidence=L3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:skeleton-binding",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "skeleton-binding",
+        "label": "Skeleton binding",
+        "status": "pass",
+        "reason": "Unreal AnimSequence must bind to the same approved skeleton fingerprint as the Maya take.",
+        "evidence": "maya=skel:hero:v003:spine62:face18 expected=skel:hero:v003:spine62:face18",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:sample-rate",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "sample-rate",
+        "label": "Sample rate",
+        "status": "pass",
+        "reason": "Unreal import should not silently resample the take.",
+        "evidence": "maya=30 expected=30",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:frame-range",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "frame-range",
+        "label": "Frame range",
+        "status": "pass",
+        "reason": "Keys outside the declared take can leak poses into the imported AnimSequence.",
+        "evidence": "first=1001.0 last=1048.0 expected=1001-1048",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:curve-coverage",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "curve-coverage",
+        "label": "Curve coverage",
+        "status": "pass",
+        "reason": "Gameplay curves required by Unreal must be present and uniquely identified in Maya.",
+        "evidence": "missing=[] duplicates=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:sub-frame-boundary",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "sub-frame-boundary",
+        "label": "Sub-frame boundary",
+        "status": "pass",
+        "reason": "Unreal compression can quantize sub-frame keys differently unless they are explicitly approved.",
+        "evidence": "subFrameCount=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:root-motion",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "root-motion",
+        "label": "Root motion",
+        "status": "pass",
+        "reason": "Root motion mode must match the root translate curve evidence before engine import.",
+        "evidence": "mode=enabled delta=5.6000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-asset-readiness",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-asset-readiness",
+        "label": "Runtime asset readiness",
+        "status": "warning",
+        "reason": "Unreal runtime probe should see the expected AnimSequence and Skeleton before claiming full L3.",
+        "evidence": "executed=True anim=False skeleton=False",
+        "fixPreview": "Create public skeletal animation fixture assets or keep this row as readiness."
+      },
+      {
+        "id": "anim-hero-attack-002:maya-source-l3",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "maya-source-l3",
+        "label": "Maya source L3",
+        "status": "pass",
+        "reason": "Unreal animation bridge must start from real Maya keyed animCurve evidence.",
+        "evidence": "sourceFound=True evidence=L3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:skeleton-binding",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "skeleton-binding",
+        "label": "Skeleton binding",
+        "status": "error",
+        "reason": "Unreal AnimSequence must bind to the same approved skeleton fingerprint as the Maya take.",
+        "evidence": "maya=skel:hero:v002:spine61:face12 expected=skel:hero:v003:spine62:face18",
+        "fixPreview": "Retarget or re-export from the approved skeleton before import."
+      },
+      {
+        "id": "anim-hero-attack-002:sample-rate",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sample-rate",
+        "label": "Sample rate",
+        "status": "error",
+        "reason": "Unreal import should not silently resample the take.",
+        "evidence": "maya=24 expected=30",
+        "fixPreview": "Resample or bake the Maya take to the target engine sample rate."
+      },
+      {
+        "id": "anim-hero-attack-002:frame-range",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "frame-range",
+        "label": "Frame range",
+        "status": "warning",
+        "reason": "Keys outside the declared take can leak poses into the imported AnimSequence.",
+        "evidence": "first=2000.0 last=2042.0 expected=2001-2040",
+        "fixPreview": "Trim keys or split the take before import."
+      },
+      {
+        "id": "anim-hero-attack-002:curve-coverage",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "curve-coverage",
+        "label": "Curve coverage",
+        "status": "error",
+        "reason": "Gameplay curves required by Unreal must be present and uniquely identified in Maya.",
+        "evidence": "missing=['RightFoot.rotateX'] duplicates=['Hips.translateZ']",
+        "fixPreview": "Restore missing channels and resolve namespace/source collisions."
+      },
+      {
+        "id": "anim-hero-attack-002:sub-frame-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sub-frame-boundary",
+        "label": "Sub-frame boundary",
+        "status": "error",
+        "reason": "Unreal compression can quantize sub-frame keys differently unless they are explicitly approved.",
+        "evidence": "subFrameCount=1",
+        "fixPreview": "Bake sub-frame keys or attach an animation owner waiver."
+      },
+      {
+        "id": "anim-hero-attack-002:root-motion",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "root-motion",
+        "label": "Root motion",
+        "status": "error",
+        "reason": "Root motion mode must match the root translate curve evidence before engine import.",
+        "evidence": "mode=disabled delta=9.0000",
+        "fixPreview": "Bake root motion into the approved root or convert the clip to in-place."
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-asset-readiness",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-asset-readiness",
+        "label": "Runtime asset readiness",
+        "status": "warning",
+        "reason": "Unreal runtime probe should see the expected AnimSequence and Skeleton before claiming full L3.",
+        "evidence": "executed=True anim=False skeleton=False",
+        "fixPreview": "Create public skeletal animation fixture assets or keep this row as readiness."
+      }
+    ],
+    "fixPreview": [
+      {
+        "id": "fix:anim-hero-run-001:runtime-asset-readiness",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-asset-readiness",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Create public skeletal animation fixture assets or keep this row as readiness."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:skeleton-binding",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "skeleton-binding",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Retarget or re-export from the approved skeleton before import."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:sample-rate",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sample-rate",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Resample or bake the Maya take to the target engine sample rate."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:frame-range",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "frame-range",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Trim keys or split the take before import."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:curve-coverage",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "curve-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Restore missing channels and resolve namespace/source collisions."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:sub-frame-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sub-frame-boundary",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Bake sub-frame keys or attach an animation owner waiver."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:root-motion",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "root-motion",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Bake root motion into the approved root or convert the clip to in-place."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:runtime-asset-readiness",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-asset-readiness",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Create public skeletal animation fixture assets or keep this row as readiness."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "The bridge compares Maya keyed animCurve facts with Unreal AnimSequence expectations instead of trusting an FBX handoff label.",
+    "Runtime readiness enters Unreal Python and records animation API / asset availability without creating or saving production assets.",
+    "Blocked rows are explicit owner or fixture gaps: skeleton binding, sample rate, curve coverage, frame range, root motion and compression boundaries stay auditable."
+  ]
+}
