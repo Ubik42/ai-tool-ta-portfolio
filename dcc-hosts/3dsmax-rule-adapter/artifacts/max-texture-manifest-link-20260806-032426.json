@@ -1,0 +1,387 @@
+{
+  "reportVersion": "max-texture-manifest-link@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / 3ds Max Rule Adapter",
+  "generatedAt": "2026-08-06 03:24:26",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "max_material_texture_manifest_linked",
+  "sourceMaxRuntime": {
+    "path": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260806-032411.json",
+    "reportVersion": "max-rule-adapter-pymxs-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "pymxs_scene_collected",
+    "gate": "Blocked"
+  },
+  "textureManifest": {
+    "path": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\fixtures\\synthetic_texture_delivery_manifest.json",
+    "schema": "synthetic-max-texture-delivery-manifest@0.1.0",
+    "packageId": "max-material-texture-fixture-r53",
+    "packageVersion": "max-texture-manifest@0.1.0"
+  },
+  "facts": {
+    "schema": "max-material-texture-manifest-link@0.1.0",
+    "sourceRuntimeReportVersion": "max-rule-adapter-pymxs-l3@0.1.0",
+    "manifestPackageId": "max-material-texture-fixture-r53",
+    "manifestPackageVersion": "max-texture-manifest@0.1.0",
+    "assets": [
+      {
+        "assetId": "max-prop-001",
+        "assetLabel": "Ready modular panel",
+        "sourceDcc": "3ds Max",
+        "sourceGate": "Ready",
+        "platform": "pc",
+        "ownerState": "approved",
+        "materialRows": [
+          {
+            "node": "SM_MaxPanel_A_LOD0",
+            "lod": "LOD0",
+            "materialName": "MI_MaxPanel_A_LOD0",
+            "textures": [
+              "T_MaxPanel_A_BC.png",
+              "T_MaxPanel_A_N.png",
+              "T_MaxPanel_A_ORM.png"
+            ]
+          },
+          {
+            "node": "SM_MaxPanel_A_LOD1",
+            "lod": "LOD1",
+            "materialName": "MI_MaxPanel_A_LOD1",
+            "textures": [
+              "T_MaxPanel_A_BC.png",
+              "T_MaxPanel_A_N.png"
+            ]
+          }
+        ],
+        "slotTextureNames": [
+          "T_MaxPanel_A_BC.png",
+          "T_MaxPanel_A_N.png",
+          "T_MaxPanel_A_ORM.png"
+        ],
+        "slotSemantics": [
+          "baseColor",
+          "normal",
+          "orm"
+        ],
+        "manifestTextureNames": [
+          "T_MaxPanel_A_BC.png",
+          "T_MaxPanel_A_N.png",
+          "T_MaxPanel_A_ORM.png"
+        ],
+        "manifestSemantics": [
+          "baseColor",
+          "normal",
+          "orm"
+        ],
+        "requiredSemantics": [
+          "baseColor",
+          "normal",
+          "orm"
+        ],
+        "missingManifestTextures": [],
+        "orphanManifestTextures": [],
+        "missingRequiredSemantics": [],
+        "packageEntries": [
+          {
+            "textureName": "T_MaxPanel_A_BC.png",
+            "semantic": "baseColor",
+            "width": 2048,
+            "height": 2048,
+            "srgb": true,
+            "ownerState": "approved"
+          },
+          {
+            "textureName": "T_MaxPanel_A_N.png",
+            "semantic": "normal",
+            "width": 2048,
+            "height": 2048,
+            "srgb": false,
+            "ownerState": "approved"
+          },
+          {
+            "textureName": "T_MaxPanel_A_ORM.png",
+            "semantic": "orm",
+            "width": 2048,
+            "height": 2048,
+            "srgb": false,
+            "ownerState": "approved"
+          }
+        ],
+        "textureChecks": [
+          {
+            "textureName": "T_MaxPanel_A_BC.png",
+            "ok": true,
+            "failStatus": "warning",
+            "evidence": "semantic=baseColor size=2048x2048 srgb=True platform=pc max=4096",
+            "fixPreview": "None"
+          },
+          {
+            "textureName": "T_MaxPanel_A_N.png",
+            "ok": true,
+            "failStatus": "warning",
+            "evidence": "semantic=normal size=2048x2048 srgb=False platform=pc max=4096",
+            "fixPreview": "None"
+          },
+          {
+            "textureName": "T_MaxPanel_A_ORM.png",
+            "ok": true,
+            "failStatus": "warning",
+            "evidence": "semantic=orm size=2048x2048 srgb=False platform=pc max=4096",
+            "fixPreview": "None"
+          }
+        ]
+      },
+      {
+        "assetId": "max-hero-002",
+        "assetLabel": "Blocked hero prop",
+        "sourceDcc": "3ds Max",
+        "sourceGate": "Blocked",
+        "platform": "mobile",
+        "ownerState": "temporary",
+        "materialRows": [
+          {
+            "node": "SM_MaxHero_B_LOD0",
+            "lod": "LOD0",
+            "materialName": "HeroMaterial_LOD0",
+            "textures": [
+              "T_MaxHero_B_BC.png"
+            ]
+          }
+        ],
+        "slotTextureNames": [
+          "T_MaxHero_B_BC.png"
+        ],
+        "slotSemantics": [
+          "baseColor"
+        ],
+        "manifestTextureNames": [
+          "T_MaxHero_B_BC.png"
+        ],
+        "manifestSemantics": [
+          "baseColor"
+        ],
+        "requiredSemantics": [
+          "baseColor",
+          "normal",
+          "orm"
+        ],
+        "missingManifestTextures": [],
+        "orphanManifestTextures": [],
+        "missingRequiredSemantics": [
+          "normal",
+          "orm"
+        ],
+        "packageEntries": [
+          {
+            "textureName": "T_MaxHero_B_BC.png",
+            "semantic": "baseColor",
+            "width": 4096,
+            "height": 4096,
+            "srgb": true,
+            "ownerState": "temporary"
+          }
+        ],
+        "textureChecks": [
+          {
+            "textureName": "T_MaxHero_B_BC.png",
+            "ok": false,
+            "failStatus": "error",
+            "evidence": "semantic=baseColor size=4096x4096 srgb=True platform=mobile max=2048",
+            "fixPreview": "Fix resolution for T_MaxHero_B_BC.png before package acceptance."
+          }
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "max-texture-manifest-link-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "materialRows": 3,
+      "slotTextures": 4,
+      "manifestTextures": 4,
+      "missingManifestTextures": 0,
+      "missingRequiredSemantics": 2,
+      "pass": 13,
+      "warning": 1,
+      "error": 2,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "max-prop-001:source-runtime-l3",
+        "assetId": "max-prop-001",
+        "ruleId": "source-runtime-l3",
+        "status": "pass",
+        "evidence": "sourceGate=Ready",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:manifest-package-present",
+        "assetId": "max-prop-001",
+        "ruleId": "manifest-package-present",
+        "status": "pass",
+        "evidence": "manifestTextures=T_MaxPanel_A_BC.png,T_MaxPanel_A_N.png,T_MaxPanel_A_ORM.png",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:slot-textures-covered",
+        "assetId": "max-prop-001",
+        "ruleId": "slot-textures-covered",
+        "status": "pass",
+        "evidence": "missing=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:no-orphan-manifest-textures",
+        "assetId": "max-prop-001",
+        "ruleId": "no-orphan-manifest-textures",
+        "status": "pass",
+        "evidence": "orphans=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:required-channel-semantics",
+        "assetId": "max-prop-001",
+        "ruleId": "required-channel-semantics",
+        "status": "pass",
+        "evidence": "required=baseColor,normal,orm slotSemantics=baseColor,normal,orm missing=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:material-name-policy",
+        "assetId": "max-prop-001",
+        "ruleId": "material-name-policy",
+        "status": "pass",
+        "evidence": "materials=MI_MaxPanel_A_LOD0,MI_MaxPanel_A_LOD1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:texture-policy:T_MaxPanel_A_BC.png",
+        "assetId": "max-prop-001",
+        "ruleId": "texture-policy:T_MaxPanel_A_BC.png",
+        "status": "pass",
+        "evidence": "semantic=baseColor size=2048x2048 srgb=True platform=pc max=4096",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:texture-policy:T_MaxPanel_A_N.png",
+        "assetId": "max-prop-001",
+        "ruleId": "texture-policy:T_MaxPanel_A_N.png",
+        "status": "pass",
+        "evidence": "semantic=normal size=2048x2048 srgb=False platform=pc max=4096",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:texture-policy:T_MaxPanel_A_ORM.png",
+        "assetId": "max-prop-001",
+        "ruleId": "texture-policy:T_MaxPanel_A_ORM.png",
+        "status": "pass",
+        "evidence": "semantic=orm size=2048x2048 srgb=False platform=pc max=4096",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:source-runtime-l3",
+        "assetId": "max-hero-002",
+        "ruleId": "source-runtime-l3",
+        "status": "pass",
+        "evidence": "sourceGate=Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:manifest-package-present",
+        "assetId": "max-hero-002",
+        "ruleId": "manifest-package-present",
+        "status": "pass",
+        "evidence": "manifestTextures=T_MaxHero_B_BC.png",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:slot-textures-covered",
+        "assetId": "max-hero-002",
+        "ruleId": "slot-textures-covered",
+        "status": "pass",
+        "evidence": "missing=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:no-orphan-manifest-textures",
+        "assetId": "max-hero-002",
+        "ruleId": "no-orphan-manifest-textures",
+        "status": "pass",
+        "evidence": "orphans=",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:required-channel-semantics",
+        "assetId": "max-hero-002",
+        "ruleId": "required-channel-semantics",
+        "status": "error",
+        "evidence": "required=baseColor,normal,orm slotSemantics=baseColor missing=normal,orm",
+        "fixPreview": "Bind every required texture semantic in Max material slots before export."
+      },
+      {
+        "id": "max-hero-002:material-name-policy",
+        "assetId": "max-hero-002",
+        "ruleId": "material-name-policy",
+        "status": "warning",
+        "evidence": "materials=HeroMaterial_LOD0",
+        "fixPreview": "Rename Max materials to MI_* so package slots and engine material instances stay deterministic."
+      },
+      {
+        "id": "max-hero-002:texture-policy:T_MaxHero_B_BC.png",
+        "assetId": "max-hero-002",
+        "ruleId": "texture-policy:T_MaxHero_B_BC.png",
+        "status": "error",
+        "evidence": "semantic=baseColor size=4096x4096 srgb=True platform=mobile max=2048",
+        "fixPreview": "Fix resolution for T_MaxHero_B_BC.png before package acceptance."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "max-texture-action:max-hero-002:required-channel-semantics",
+        "assetId": "max-hero-002",
+        "ruleId": "required-channel-semantics",
+        "owner": "asset-owner",
+        "preview": "Bind every required texture semantic in Max material slots before export."
+      },
+      {
+        "id": "max-texture-action:max-hero-002:material-name-policy",
+        "assetId": "max-hero-002",
+        "ruleId": "material-name-policy",
+        "owner": "asset-owner",
+        "preview": "Rename Max materials to MI_* so package slots and engine material instances stay deterministic."
+      },
+      {
+        "id": "max-texture-action:max-hero-002:texture-policy:T_MaxHero_B_BC.png",
+        "assetId": "max-hero-002",
+        "ruleId": "texture-policy:T_MaxHero_B_BC.png",
+        "owner": "material-ta",
+        "preview": "Fix resolution for T_MaxHero_B_BC.png before package acceptance."
+      }
+    ]
+  },
+  "adapter": {
+    "id": "max-texture-manifest-link",
+    "name": "3ds Max Material Texture Manifest Link",
+    "methodSource": "3ds Max pymxs material slot facts + texture delivery manifest",
+    "protocolCarrier": "material slot texture filenames, package entries, channel semantics and platform budgets",
+    "boundary": {
+      "mutation": "read_only_artifact_join",
+      "sceneWrites": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R53 links real 3ds Max pymxs material-slot facts to a texture delivery manifest instead of judging texture package readiness from filenames alone.",
+    "The report separates Max source slot coverage, required channel semantics, color-space policy, platform resolution budget and owner action boundaries.",
+    "The join is read-only: sceneWrites, assetWrites, engineWrites and productionWrites stay zero.",
+    "The fixture keeps one approved panel ready and one mobile hero prop blocked so both clean and failing package paths are inspectable."
+  ]
+}

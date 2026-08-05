@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r52-groom-hair-schema-executor-presentation-pack",
+        label: str = "r53-max-texture-manifest-link-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4014,6 +4014,12 @@ class MayaPortfolioApi:
             _probe_file("blender-l3-harness", "Blender L3 Harness readiness artifact", "artifact", manifest.get("blenderRuleAdapterL3HarnessArtifact")),
             _probe_file("max-rule-adapter", "3ds Max Rule Adapter artifact", "artifact", manifest.get("maxRuleAdapterArtifact")),
             _probe_file("max-l3-harness", "3ds Max L3 Harness readiness artifact", "artifact", manifest.get("maxRuleAdapterL3HarnessArtifact")),
+            _probe_file(
+                "max-texture-manifest-link",
+                "3ds Max Material Texture Manifest Link artifact",
+                "artifact",
+                manifest.get("maxTextureManifestLinkArtifact"),
+            ),
             _probe_file("unreal-handoff-inspector", "Unreal Handoff Inspector artifact", "artifact", manifest.get("unrealHandoffInspectorArtifact")),
             _probe_file(
                 "unreal-preset-fact-comparison",
@@ -4461,13 +4467,19 @@ class MayaPortfolioApi:
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "39-audit-gui-media",
+                "id": "39-run-max-texture-manifest-link",
+                "label": "Run Max texture manifest link",
+                "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py.",
+                "evidence_expected": "Max pymxs material bitmap slots are checked against package entries, channel semantics, color-space policy and platform resolution budgets.",
+            },
+            {
+                "id": "40-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "40-handoff-presenter-pack",
+                "id": "41-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4964,6 +4976,17 @@ class MayaPortfolioApi:
                 "max_rule_adapter_l3_harness_gate": manifest_summary.get("maxRuleAdapterL3HarnessGate"),
                 "max_rule_adapter_l3_harness_runtime_found": manifest_summary.get("maxRuleAdapterL3HarnessRuntimeFound"),
                 "max_rule_adapter_l3_harness_collector_ready": manifest_summary.get("maxRuleAdapterL3HarnessCollectorReady"),
+                "max_texture_manifest_link_gate": manifest_summary.get("maxTextureManifestLinkGate"),
+                "max_texture_manifest_link_evidence_level": manifest_summary.get("maxTextureManifestLinkEvidenceLevel"),
+                "max_texture_manifest_link_l3_status": manifest_summary.get("maxTextureManifestLinkL3Status"),
+                "max_texture_manifest_link_assets": manifest_summary.get("maxTextureManifestLinkAssets"),
+                "max_texture_manifest_link_material_rows": manifest_summary.get("maxTextureManifestLinkMaterialRows"),
+                "max_texture_manifest_link_slot_textures": manifest_summary.get("maxTextureManifestLinkSlotTextures"),
+                "max_texture_manifest_link_manifest_textures": manifest_summary.get("maxTextureManifestLinkManifestTextures"),
+                "max_texture_manifest_link_missing_required_semantics": manifest_summary.get("maxTextureManifestLinkMissingRequiredSemantics"),
+                "max_texture_manifest_link_pass_checks": manifest_summary.get("maxTextureManifestLinkPassChecks"),
+                "max_texture_manifest_link_warning_checks": manifest_summary.get("maxTextureManifestLinkWarningChecks"),
+                "max_texture_manifest_link_error_checks": manifest_summary.get("maxTextureManifestLinkErrorChecks"),
                 "unreal_handoff_inspector_gate": manifest_summary.get("unrealHandoffInspectorGate"),
                 "unreal_handoff_inspector_evidence_level": manifest_summary.get("unrealHandoffInspectorEvidenceLevel"),
                 "unreal_handoff_inspector_l3_status": manifest_summary.get("unrealHandoffInspectorL3Status"),
@@ -5036,6 +5059,7 @@ class MayaPortfolioApi:
                 "Platform Variant StaticMesh Post-check validates those receipts against read-only Unreal StaticMesh LOD, collision and Nanite facts.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
+                "3ds Max Material Texture Manifest Link joins pymxs material bitmap slots to package texture entries, channel semantics, color-space policy and platform budgets.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
                 "GUI screenshots and recording are tracked by audit gate instead of being implied complete.",
             ],
@@ -5057,7 +5081,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r52-groom-hair-schema-executor-presentation-pack",
+        label: str = "r53-max-texture-manifest-link-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、Groom Export Inspector / Unreal readiness / Alembic payload / controlled executor、空间作者、Unreal socket readiness / authoring readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready 和 Groom Controlled Executor L3 Ready rollback proof；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3 和 Unreal Socket Authoring Executor API-limited L3 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、3ds Max Material Texture Manifest Link L3-derived、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready 和 Groom Controlled Executor L3 Ready rollback proof；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3 和 Unreal Socket Authoring Executor API-limited L3 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json
+dcc-hosts/maya-auroraview-host/artifacts/r53-max-texture-manifest-link-presentation-pack-20260806-032705.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R52。
+稳定基线：R53。
 
 已完成：
 
@@ -65,6 +65,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presenta
 - Unreal Socket Authoring Executor L3 API-limited readiness
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
+- 3ds Max Material Texture Manifest Link L3-derived
 - Maya command bridge
 - 轻量验证脚本 `scripts/validate_loop.ps1`
 
@@ -73,7 +74,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presenta
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
 - MotionBuilder、Houdini、Control Rig compile status Editor Utility / C++ bridge、socket C++ / Editor Utility Blueprint adapter、gameplay attach fixture 和 Groom 深层 runtime fact collector 等后续工具线。
 
-## 3. R52 当前断点与已完成工具线
+## 3. R53 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -312,10 +313,10 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-controlled-executor-
 dcc-hosts/platform-variant-forge/artifacts/platform-variant-executor-expansion-20260805-201222.json
 ```
 
-当前 R52 Presenter Pack：
+当前 R53 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json
+dcc-hosts/maya-auroraview-host/artifacts/r53-max-texture-manifest-link-presentation-pack-20260806-032705.json
 ```
 
 这条线的最终效果：
@@ -325,7 +326,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presenta
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
 - Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R52 curve-only Maya Alembic Payload Receipt、R52 Unreal Alembic Import/Post-check Readiness、R50 Groom Plugin/API Fixture Ready 和 R52 Controlled Executor Ready rollback proof；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Editor Utility/C++ diagnostic bridge、socket C++ adapter、gameplay attach fixture 或 Groom 深层 runtime fact collector。
 
-继续开发时优先做 gameplay attach fixture、Houdini 非 Maya adapter、Control Rig Editor Utility / C++ diagnostic bridge，或 Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning；Groom 线下一步是更深 runtime fact collector，而不是继续解 StaticMesh importer。如果只验证当前 R52，运行：
+继续开发时优先做 gameplay attach fixture、Houdini 非 Maya adapter、Control Rig Editor Utility / C++ diagnostic bridge，或 Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning；Groom 线下一步是更深 runtime fact collector，而不是继续解 StaticMesh importer。如果只验证当前 R53，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -356,9 +357,11 @@ python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py
 python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py
 python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py
 python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py
+python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600
+python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py
 ```
 
-当前 R52 public package 为 `ai-tool-ta-dcc-first-showcase-r52` / `dcc-first-package@1.49.0`，Presenter Pack 50 / 50 evidence files present，0 missing required files，40 demo route steps；Groom Export Inspector 已确认 Maya runtime 可回读 root UV、strand ID、guide curve、Alembic payload 和 Unreal binding intent，Groom Unreal Import Readiness 已确认 UE 5.3 runtime 可进入、AssetImportTask / AlembicImportFactory 可见、`SK_HeroFace` 存在；R52 Groom Alembic Payload Receipt 已确认 approved groom 能写出 curve-only public synthetic `.abc` cache、schemaCompatibleRows=1、meshShapeRows=0 且 TMP groom 被 held；R52 Groom Alembic Import/Post-check 已确认 `.abc` sha256 continuity、AssetImportTask dry-run、HairStrandsFactory / Alembic factory visibility、Groom API ready 和 no-write boundary；R50 Groom Plugin/API Fixture 已确认 public Unreal 工程 4/4 请求 HairStrands/Alembic 插件、Groom import API ready=true 且零写入；R52 Groom Controlled Executor 已真实执行 approved curve-only `.abc` import，产物为 `GroomAsset`，BindingAsset 创建并 post-check=true，rollback clean，residual assets=0。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R53 public package 为 `ai-tool-ta-dcc-first-showcase-r53` / `dcc-first-package@1.50.0`，Presenter Pack 51 / 51 evidence files present，0 missing required files，41 demo route steps；R53 Max Texture Manifest Link 已确认 Max `pymxs` L3 material rows=3、slot textures=4、manifest textures=4、missing manifest textures=0，并把 `max-hero-002` 因 normal / orm 缺失和 mobile 4096 贴图预算阻断。R52 Groom Controlled Executor 已真实执行 approved curve-only `.abc` import，产物为 `GroomAsset`，BindingAsset 创建并 post-check=true，rollback clean，residual assets=0。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

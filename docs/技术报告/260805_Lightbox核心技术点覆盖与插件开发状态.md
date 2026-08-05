@@ -2,15 +2,17 @@
 
 更新时间：2026-08-05  
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r52` / `dcc-first-package@1.49.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r53` / `dcc-first-package@1.50.0`
 
 ## 1. 当前结论
 
 当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Unreal Python 和普通 Python fixture 共同生成。
 
-R52 的硬证据：
+R53 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json`
+- 3ds Max Material Texture Manifest Link：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json`
+- 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`
 - Groom Controlled Executor：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-030046.json`
 - Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json`
 - Groom Plugin/API Public Fixture：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-plugin-api-fixture-20260806-020048.json`
@@ -42,8 +44,8 @@ R52 的硬证据：
 - Character Calibration Maya L3：`<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json`
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
-- 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json`
-- Presenter Pack 结果：50 / 50 evidence files present，0 missing required files，40 demo route steps。
+- 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`
+- Presenter Pack 结果：51 / 51 evidence files present，0 missing required files，41 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断或 runtime drift，不是 runtime 缺失。
 
 ## 2. Lightbox核心技术点覆盖
@@ -55,7 +57,7 @@ R52 的硬证据：
 | 规则和 DCC adapter 分层 | Maya adapter、Blender `bpy`、3ds Max `pymxs` 已归一化到 shared rule input | 已覆盖主要方法 | Houdini、MotionBuilder、Photoshop/Substance adapter |
 | 资产协议作为工作台底座 | `Asset Protocol` 串起 LOD、platform、collision、budget、handoff | 已覆盖 | 扩到 platform variant、character LOD、animation intent |
 | 固定相机/固定 pass 的视觉评审 | `Visual Review Studio` 已生成 Maya camera rig、pass manifest、capture preview、report | 部分覆盖 | 真实 Maya playblast/截图和视觉 diff media |
-| 贴图/材质交付检查 | `Texture Delivery Console` 已扫描 Maya material / file node / role / colorSpace / path / budget | 部分覆盖 | Substance、Photoshop、DDS、SpriteSheet、真实 UE texture import |
+| 贴图/材质交付检查 | `Texture Delivery Console` 已扫描 Maya material / file node / role / colorSpace / path / budget；R53 已把 3ds Max material bitmap slots 与 texture delivery manifest、BC/N/ORM channel 语义、sRGB/linear、平台尺寸预算做 join | 覆盖加深，Maya + Max L3-derived | Substance、Photoshop、DDS、SpriteSheet、真实 UE texture import |
 | 任务平台和交付收据 | `Task Orchestrator` 已有 scene discovery、dry-run queue、per-asset receipts | 部分覆盖 | 真实平台 adapter、任务附件、状态同步 |
 | 复合资产放行门禁 | `Asset Handoff Gate` 合并协议、规则、贴图、视觉、队列，输出 Ready/Review/Blocked 和 Decision Packet | 已覆盖，Maya L3 | 真实资产案例和 reviewer 录屏 |
 | DCC 到引擎 handoff | Maya Engine Preflight + Unreal Handoff Inspector 覆盖 import intent、registry、engine facts、PC/Mobile preset 和 waiver | 覆盖强，Unreal L3++ | 真实 texture/LOD/import preset 扩展 |
@@ -70,9 +72,9 @@ R52 的硬证据：
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R52 Presenter Pack 50/50 evidence present；40 步 demo route；新增 Groom Controlled Executor probe |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R53 Presenter Pack 51/51 evidence present；41 步 demo route；新增 Max texture manifest link probe |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
-| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3 |
+| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3；Max texture manifest link L3-derived |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
 | 5 | Texture Delivery Console | 检查材质球、贴图路径、色彩空间、命名和平台预算 | Maya material/file node inspection 已完成 |
 | 6 | Task Orchestrator | 把一批资产变成可 dry-run 的发布任务队列和收据 | Maya scene discovery、queue、receipt 已完成 |
@@ -80,7 +82,7 @@ R52 的硬证据：
 | 8 | Engine Handoff / Unreal Handoff Inspector | 检查 DCC 交付意图进 Unreal 后是否符合路径、依赖、LOD、碰撞和平台 preset | Unreal L3++ 已完成，PC/Mobile preset fact review 已接回 Maya |
 | 9 | Scene Transaction Guard | 记录工具运行前后到底改了场景什么，并给 rollback preview | Maya L3 首版完成 |
 | 10 | Blender Rule Adapter | 从 Blender 采集 custom props、collections、material、UV、collision facts | `bpy` L3 完成 |
-| 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts | `pymxs` L3 完成 |
+| 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts，并把 material bitmap slot 连接到贴图交付 manifest | `pymxs` L3 完成；R53 Max texture manifest link 完成 |
 | 12 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
 | 13 | Unreal Animation Bridge / Deep Facts | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；R41 deep facts 完成，2 runtime rows，2/2 duration frame spans matched，curve metadata warning 清晰暴露 |
 | 14 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成；R35 drilldown 完成；R42 Unreal Control Rig Fixture Authoring Ready；R44 Face Skeleton Fixture 已补齐 approved 行 Skeleton targets；R45 compile 方法可调用但 diagnostic/status 仍 Review |
@@ -94,17 +96,17 @@ R52 的硬证据：
 
 | 插件/工具线 | 完成度判断 | 能展示什么 | 不能展示什么 |
 | --- | --- | --- | --- |
-| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、40 步 demo route、50 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
+| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、41 步 demo route、51 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
 | Asset Protocol Workbench | 75% | Maya 节点 custom attr 协议写入、inspect、DCC evidence report | UV/vertex color 语义 carrier 未实装 |
 | Cross-DCC Rule Matrix | 80% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter | Houdini adapter 未做；规则覆盖仍可加深 |
 | Visual Review Studio | 55% | camera rig、pass manifest、capture preview path、review report | 真实 playblast/截图、图片 diff、HTML 视觉报告未进入 DCC-first media |
-| Texture Delivery Console | 55% | Maya 材质/贴图节点扫描、色彩空间和路径检查、manifest | DDS/SP/Photoshop/SpriteSheet/UE texture import |
+| Texture Delivery Console | 62% | Maya 材质/贴图节点扫描、色彩空间和路径检查、manifest；R53 从 Max material slot 反查 texture package coverage、BC/N/ORM 语义和 Mobile 预算 | DDS/SP/Photoshop/SpriteSheet/UE texture import |
 | Task Orchestrator | 55% | dry-run 队列、per-asset receipts、report export | 真实任务平台 adapter 和附件同步 |
 | Asset Handoff Gate | 70% | 合成资产批量 gate、Decision Packet、engine intent、owner held | 真实资产案例和 reviewer 录屏 |
 | Unreal Handoff Inspector | 80% | Unreal 5.3 L3++ engine facts、registry fixture、PC/Mobile waiver review | 可继续扩真实 import preset |
 | Scene Transaction Guard | 65% | Maya scene diff、risk rows、rollback preview | 还不是所有工具共享的 transaction middleware |
 | Blender Rule Adapter | 70% | Blender 5.2 `bpy` L3、custom props/collection/material/UV/collision 采集 | 还缺真实复杂 Blender 资产 fixture |
-| 3ds Max Rule Adapter | 70% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision 采集 | 还缺真实复杂 Max 资产 fixture |
+| 3ds Max Rule Adapter | 78% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision/material texture rows 采集；R53 material slot -> texture manifest link 已完成 | 还缺真实复杂 Max 资产 fixture、Max side auto-fix/receipt |
 | Animation Continuity Lab | 45% | Maya `mayapy` L3 keyed animCurve 采集，rig/skeleton/take/sample/channel/sub-frame/root-motion/layer 检查，fix preview 和 Presenter Pack 接入 | 没有 Maya UI drilldown；MotionBuilder/Unreal runtime 对照未做 |
 | Unreal Animation Bridge | 62% | Maya 生成 FBX、Unreal Python 导入 Skeleton/SkeletalMesh/AnimSequence、2/2 sequences present；R41 只读采集 duration、derived frame span、frame-rate、root motion、compression metadata visibility，assetWrites=0 | curve names 在 UE Python 下不可读，后续需要 Animation Blueprint Library / C++ adapter |
 | Character Calibration Studio | 84% | Maya `mayapy` L3 采集 topology signature、joint coverage、calibration delta、face params、Control Rig mapping；R35 drilldown 输出 14 个 UI-ready panels、8 条 owner actions；R42 创建 public `CR_HeroFace`，写入 5 个 runtime controls；R44 创建 public `SK_HeroFace_Skeleton` 并复跑 deformation-link；R45 调用 compile 方法并证明无 dirty/save 副作用 | direct diagnostic/status bridge、owner waiver 还可深化 |
@@ -141,7 +143,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r52-groom-hair-schema-executor-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r53-max-texture-manifest-link-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -152,7 +154,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness 或 Groom StaticMesh importer 打转，它们已进入真实 runtime 证据。`Unreal Animation Bridge` 已有 import L3 和 R41 deep facts；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture 和 R52 controlled executor Ready rollback proof；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 gameplay attach fixture、Houdini 非 Maya adapter 或 Control Rig Editor Utility / C++ diagnostic bridge。
+下一轮不要再围绕 Blender/Max readiness 或 Groom StaticMesh importer 打转，它们已进入真实 runtime 证据。`3ds Max Rule Adapter` 已有 `pymxs` L3 和 R53 material slot -> texture manifest link；`Unreal Animation Bridge` 已有 import L3 和 R41 deep facts；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture 和 R52 controlled executor Ready rollback proof；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 gameplay attach fixture、Houdini 非 Maya adapter 或 Control Rig Editor Utility / C++ diagnostic bridge。
 
 
 ## R39 补充
@@ -232,3 +234,10 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 - Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json`，50/50 evidence files present，0 missing required files，40 demo route steps。
 - Groom Controlled Executor：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-030046.json`
 - 结果：L3 / `Ready` / `unreal_groom_executor_import_binding_rolled_back`，Unreal 5.3.2 runtime 成功执行 approved curve-only `.abc` import，selected=1，import attempted/succeeded=true/true，imported asset class=`GroomAsset`，wrongImportedClass=false，GroomAsset post-check=true，BindingAsset 创建并 post-check=true，rollback=true，residual assets=0，11 pass / 0 warning / 0 error，assetWrites=6，engineWrites=0，productionWrites=0，persistentMutation=false。核心业务发现：当前缺口已从 plugin/API 和 cache receipt 推进到完整 GroomAsset / BindingAsset 受控执行闭环。
+
+## R53 补充
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json`，51/51 evidence files present，0 missing required files，41 demo route steps。
+- 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`，新增 `materialTextureRows`，3 条 material bitmap slot facts 来自真实 Max 2022 `pymxs` batch。
+- 3ds Max Material Texture Manifest Link：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json`
+- 结果：L3-derived / `Blocked` / `max_material_texture_manifest_linked`，2 assets，1 Ready / 1 Blocked，slotTextures=4，manifestTextures=4，missingManifestTextures=0，missingRequiredSemantics=2，13 pass / 1 warning / 2 error，assetWrites=0，productionWrites=0。核心业务发现：真实贴图交付判断要把 DCC material slot、交付包 manifest、channel 语义、色彩空间和平台预算放在同一个 gate 里，不能只做路径存在检查。

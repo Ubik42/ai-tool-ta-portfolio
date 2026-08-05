@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -60,7 +60,9 @@ $QuickPythonFiles = @(
     (Join-Path $BlenderAdapter "blender_rule_adapter\bpy_collector.py"),
     (Join-Path $BlenderAdapter "scripts\run_l3_smoke.py"),
     (Join-Path $MaxAdapter "max_rule_adapter\runtime_collector.py"),
+    (Join-Path $MaxAdapter "max_rule_adapter\texture_manifest_link.py"),
     (Join-Path $MaxAdapter "scripts\run_l3_smoke.py"),
+    (Join-Path $MaxAdapter "scripts\run_texture_manifest_link.py"),
     (Join-Path $AnimationLab "animation_continuity_lab\contract.py"),
     (Join-Path $AnimationLab "animation_continuity_lab\maya_collector.py"),
     (Join-Path $AnimationLab "scripts\run_smoke.py"),
@@ -178,11 +180,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r52-groom-hair-schema-executor-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r53-max-texture-manifest-link-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 50, summary
+assert summary["package_version"] == "dcc-first-package@1.50.0", summary
+assert summary["present_evidence_files"] == 51, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 40, summary
+assert summary["demo_route_steps"] == 41, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -408,6 +411,12 @@ if ($Tier -in @("blender", "full")) {
 if ($Tier -in @("max", "full")) {
     Invoke-Step "3ds Max runtime l3" {
         python (Join-Path $MaxAdapter "scripts\run_l3_smoke.py") --run-runtime --timeout-seconds $TimeoutSeconds
+    }
+}
+
+if ($Tier -in @("max-texture-manifest-link", "full")) {
+    Invoke-Step "3ds Max material texture manifest link" {
+        python (Join-Path $MaxAdapter "scripts\run_texture_manifest_link.py")
     }
 }
 

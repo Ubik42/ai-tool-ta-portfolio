@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R53 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json` | Maya-hosted package probes 51 key evidence files, exports 41 demo route steps, and adds 3ds Max Material Texture Manifest Link evidence. |
+| 3ds Max Material Texture Manifest Link | `<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json` | 3ds Max `pymxs` material bitmap slots are joined to texture package entries, required channel semantics, sRGB/linear policy and PC/Mobile texture budgets; one approved panel is Ready and one mobile hero prop is Blocked. |
 | R52 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json` | Maya-hosted package probes 50 key evidence files, exports 40 demo route steps, and adds curve-only Groom import/binding executor evidence. |
 | Groom Controlled Executor | `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-030046.json` | Unreal 5.3.2 executes the approved curve-only public `.abc` through `HairStrandsFactory`, creates `GroomAsset` and `GroomBindingAsset`, verifies post-checks and clean HairStrands logs, rolls back `/Game/AI_Tool_TA/Grooms` writes, and leaves residual assets at 0. |
 | R50 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json` | Maya-hosted package probes 49 key evidence files, exports 39 demo route steps, and adds Groom Plugin/API Public Fixture Readiness evidence. |
@@ -73,7 +75,7 @@ Full machine-readable evidence is exported from the site report:
 | Unreal Animation Bridge readiness | `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-173401.json` | Unreal Python entered the public test project and confirmed the expected imported AnimSequence / Skeleton assets are present. |
 | Animation Continuity Maya L3 | `<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json` | Maya 2026 `mayapy` collected keyed animCurve facts for rig identity, take range, sample rate, required channels, channel collision, sub-frame keys, root motion, scale drift and additive layers. |
 | Blender L3 runtime | `<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json` | Blender 5.2 `bpy` collected object custom properties, collections, material slots, UVs and collision proxy facts into the Cross-DCC rule input. |
-| 3ds Max L3 runtime | `<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json` | 3ds Max 2022 `pymxs` collected user props, layer/export root, LOD suffixes, material, UV, transform and collision facts. |
+| 3ds Max L3 runtime | `<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json` | 3ds Max 2022 `pymxs` collected user props, layer/export root, LOD suffixes, material-to-texture rows, UV, transform and collision facts. |
 | Unreal L3++ runtime | `<repo>\dcc-hosts\unreal-handoff-inspector\artifacts\unreal-handoff-inspector-l3-20260803-184208.json` | Unreal Python matched imported StaticMesh path/class, source import data, material slot, LOD count and simple collision facts. |
 
 ## Coverage

@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r53-max-texture-manifest-link` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py` | Reads the latest real 3ds Max `pymxs` L3 artifact and joins material bitmap slots to the public texture delivery manifest. Reports L3-derived, 2 assets, 1 Ready, 1 Blocked, 3 material rows, 4 slot textures, 4 manifest textures, 0 missing manifest textures, 2 missing required semantics, and 13 / 1 / 2 checks. |
+| `validate-r53-max-l3-runtime` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600` | 3ds Max 2022 batch runs the public fixture through `pymxs`, exports `max-rule-adapter-pymxs-l3@0.1.0`, and includes material-to-texture rows for R53 package-link validation. |
+| `validate-r53-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r53-max-texture-manifest-link-presentation-pack")` | DCC Presenter Pack probes 51 key evidence files including Max Material Texture Manifest Link, reports 51 present / 0 missing required files, and exports 41 demo route steps. |
 | `validate-r52-groom-controlled-executor` | `python dcc-hosts/groom-export-inspector/scripts/run_groom_controlled_executor.py` | Unreal 5.3.2 Python selects the approved curve-only groom `.abc`, executes `AssetImportTask` through `HairStrandsFactory`, creates `GroomAsset` and `GroomBindingAsset`, verifies post-checks, rolls back public fixture writes, reports residual assets=0, and keeps engineWrites=0 / productionWrites=0. |
 | `validate-r52-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r52-groom-hair-schema-executor-presentation-pack")` | DCC Presenter Pack probes 50 key evidence files including curve-only Groom Controlled Executor, reports 50 present / 0 missing required files, and exports 40 demo route steps. |
 | `validate-r50-groom-plugin-api-fixture` | `python dcc-hosts/groom-export-inspector/scripts/run_groom_plugin_api_fixture.py` | Unreal 5.3.2 Python enters the public project with HairStrands/Alembic plugins enabled, verifies 4/4 descriptors, 4/4 project requests, Groom import API readiness, Alembic factory visibility and zero asset/engine/production writes. |
@@ -175,7 +178,13 @@ Latest 3ds Max Rule Adapter contract:
 Latest 3ds Max L3 runtime:
 
 ```text
-<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json
+<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json
+```
+
+Latest 3ds Max Material Texture Manifest Link:
+
+```text
+<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json
 ```
 
 Latest Unreal Handoff Inspector contract:
@@ -217,7 +226,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json
 ```
 
 ## Commands

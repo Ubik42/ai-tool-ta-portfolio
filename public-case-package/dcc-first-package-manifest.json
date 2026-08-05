@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r52",
-  "packageVersion": "dcc-first-package@1.49.0",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r53",
+  "packageVersion": "dcc-first-package@1.50.0",
   "generatedAt": "2026-08-06 03:04:13",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 50,
-    "presentationPackPresentEvidenceFiles": 50,
+    "presentationPackEvidenceFiles": 51,
+    "presentationPackPresentEvidenceFiles": 51,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 40,
+    "presentationPackDemoRouteSteps": 41,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -722,7 +722,28 @@
     "groomAlembicPayloadMeshShapeRows": 0,
     "groomAlembicPayloadCurveShapeRows": 1,
     "groomControlledExecutorCommandletReturnCode": 0,
-    "groomControlledExecutorHairStrandsErrorCount": 0
+    "groomControlledExecutorHairStrandsErrorCount": 0,
+    "maxRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260806-032411.json",
+    "maxTextureManifestLinkReportVersion": "max-texture-manifest-link@0.1.0",
+    "maxTextureManifestLinkArtifact": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-texture-manifest-link-20260806-032426.json",
+    "maxTextureManifestLinkEvidenceLevel": "L3-derived",
+    "maxTextureManifestLinkL3Status": "max_material_texture_manifest_linked",
+    "maxTextureManifestLinkGate": "Blocked",
+    "maxTextureManifestLinkAssets": 2,
+    "maxTextureManifestLinkReady": 1,
+    "maxTextureManifestLinkReview": 0,
+    "maxTextureManifestLinkBlocked": 1,
+    "maxTextureManifestLinkMaterialRows": 3,
+    "maxTextureManifestLinkSlotTextures": 4,
+    "maxTextureManifestLinkManifestTextures": 4,
+    "maxTextureManifestLinkMissingManifestTextures": 0,
+    "maxTextureManifestLinkMissingRequiredSemantics": 2,
+    "maxTextureManifestLinkPassChecks": 13,
+    "maxTextureManifestLinkWarningChecks": 1,
+    "maxTextureManifestLinkErrorChecks": 2,
+    "maxTextureManifestLinkAssetWrites": 0,
+    "maxTextureManifestLinkEngineWrites": 0,
+    "maxTextureManifestLinkProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -1280,7 +1301,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1321,7 +1342,7 @@
   "maxRuleAdapterGate": "Blocked",
   "maxRuleAdapterMaxBatchAvailable": true,
   "maxRuleAdapterL3HarnessReportVersion": "max-rule-adapter-pymxs-l3@0.1.0",
-  "maxRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260805-153232.json",
+  "maxRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260806-032411.json",
   "maxRuleAdapterL3HarnessGate": "Blocked",
   "maxRuleAdapterL3HarnessRuntimeFound": true,
   "maxRuleAdapterL3HarnessCollectorReady": true,
@@ -1862,7 +1883,10 @@
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-face-skeleton-fixture-20260806-025402.json",
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json"
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json",
+    "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260806-032411.json",
+    "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-texture-manifest-link-20260806-032426.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r53-max-texture-manifest-link-presentation-pack-20260806-032705.json"
   ],
   "evidence": [
     {
@@ -1986,6 +2010,13 @@
       "id": "public-case-r43-presenter-pack",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-max-texture-manifest-link",
+      "label": "3ds Max Material Texture Manifest Link",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-texture-manifest-link-20260806-032426.json",
+      "required": true
     }
   ],
   "unrealControlRigFaceSkeletonFixtureReportVersion": "unreal-control-rig-face-skeleton-fixture@0.1.0",
@@ -2051,10 +2082,10 @@
   "groomExportInspectorAssetWrites": 0,
   "groomExportInspectorEngineWrites": 0,
   "groomExportInspectorProductionWrites": 0,
-  "presentationPackEvidenceFiles": 50,
-  "presentationPackPresentEvidenceFiles": 50,
+  "presentationPackEvidenceFiles": 51,
+  "presentationPackPresentEvidenceFiles": 51,
   "presentationPackMissingRequiredFiles": 0,
-  "presentationPackDemoRouteSteps": 40,
+  "presentationPackDemoRouteSteps": 41,
   "groomUnrealReadinessReportVersion": "groom-unreal-readiness@0.1.0",
   "groomUnrealReadinessArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-unreal-readiness-20260806-010008.json",
   "groomUnrealReadinessEvidenceLevel": "L3",
@@ -2169,7 +2200,8 @@
   "groomPluginApiFixtureProductionWrites": 0,
   "reviewerClaims": [
     "R50 proves the public Unreal fixture requests HairStrands/Alembic hair plugins and exposes Groom import API classes under a zero-write commandlet probe.",
-    "R52 proves the curve-only Groom Alembic path imports as GroomAsset, creates the BindingAsset, and rolls back all public fixture writes."
+    "R52 proves the curve-only Groom Alembic path imports as GroomAsset, creates the BindingAsset, and rolls back all public fixture writes.",
+    "R53 proves Max material texture package readiness from real pymxs slot facts plus manifest policy, with one approved panel ready and one mobile hero prop blocked by missing normal/orm and 4096 texture budget drift."
   ],
   "groomControlledExecutorReportVersion": "groom-controlled-executor@0.1.0",
   "groomControlledExecutorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-controlled-executor-20260806-030046.json",
@@ -2205,5 +2237,33 @@
   "groomControlledExecutorExpectedGroomAssetClass": "GroomAsset",
   "groomControlledExecutorExpectedBindingAssetPresent": true,
   "groomControlledExecutorRollbackDeletedAssets": 2,
-  "groomControlledExecutorSourceCacheHashMatched": true
+  "groomControlledExecutorSourceCacheHashMatched": true,
+  "maxTextureManifestLinkReportVersion": "max-texture-manifest-link@0.1.0",
+  "maxTextureManifestLinkArtifact": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-texture-manifest-link-20260806-032426.json",
+  "maxTextureManifestLinkEvidenceLevel": "L3-derived",
+  "maxTextureManifestLinkL3Status": "max_material_texture_manifest_linked",
+  "maxTextureManifestLinkGate": "Blocked",
+  "maxTextureManifestLinkAssets": 2,
+  "maxTextureManifestLinkReady": 1,
+  "maxTextureManifestLinkReview": 0,
+  "maxTextureManifestLinkBlocked": 1,
+  "maxTextureManifestLinkMaterialRows": 3,
+  "maxTextureManifestLinkSlotTextures": 4,
+  "maxTextureManifestLinkManifestTextures": 4,
+  "maxTextureManifestLinkMissingManifestTextures": 0,
+  "maxTextureManifestLinkMissingRequiredSemantics": 2,
+  "maxTextureManifestLinkPassChecks": 13,
+  "maxTextureManifestLinkWarningChecks": 1,
+  "maxTextureManifestLinkErrorChecks": 2,
+  "maxTextureManifestLinkAssetWrites": 0,
+  "maxTextureManifestLinkEngineWrites": 0,
+  "maxTextureManifestLinkProductionWrites": 0,
+  "validationCommands": [
+    "python -m py_compile dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/contract.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/runtime_collector.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/texture_manifest_link.py dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_3dsmax_l3.py dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py",
+    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600",
+    "python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py"
+  ],
+  "releaseNotes": [
+    "R53 adds 3ds Max Material Texture Manifest Link: pymxs material bitmap slots are joined to texture package entries, channel semantics, color-space policy and PC/Mobile budgets."
+  ]
 }

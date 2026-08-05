@@ -16,6 +16,11 @@
 - `docs/AI_HANDOFF.md`
 - `public-case-package/DCC_FIRST_PACKAGE.md`
 
+当前稳定展示包：
+
+- `public-case-package/dcc-first-package-manifest.json`
+- `dcc-hosts/maya-auroraview-host/artifacts/r53-max-texture-manifest-link-presentation-pack-20260806-032705.json`
+
 ## 目录
 
 ```text
@@ -98,7 +103,7 @@ AuroraView 迁移可行性评估见 `docs/260803_1135_AuroraView_DCC迁移可行
 
 R10.3 Asset Handoff / Publish Gate 开发计划见 `docs/260803_R10_3_AssetHandoffPublishGate开发计划.md`。
 
-当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration / Spatial Authoring、Unreal Control Rig / Socket、Platform Variant、Blender `bpy` L3、3ds Max `pymxs` L3、Unreal L3++ inspector、Scene Transaction Guard、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Fixture 和 Groom Controlled Executor 都已有可导出的 runtime evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 50 个关键证据文件、40 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r52` / `dcc-first-package@1.49.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json`。R52 Groom Controlled Executor artifact 为 `dcc-hosts/groom-export-inspector/artifacts/groom-controlled-executor-20260806-030046.json`，真实 Unreal `HairStrandsFactory` 已导入 approved curve-only `.abc` 为 `GroomAsset`，并创建 `GroomBindingAsset`，post-check 与 rollback 均通过；public synthetic cache 为 `dcc-hosts/groom-export-inspector/artifacts/cache/groom-alembic-r52-hair-schema/groom_hero_hair_001.abc`。
+当前 DCC-first 状态：Maya AuroraView 宿主已能打开作品集 UI；5 个 Maya 工具模块、Asset Handoff Gate、Owner/Engine Decision、Engine Preflight、PC/Mobile Preset Compare、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration / Spatial Authoring、Unreal Control Rig / Socket、Platform Variant、Blender `bpy` L3、3ds Max `pymxs` L3、3ds Max Material Texture Manifest Link、Unreal L3++ inspector、Scene Transaction Guard、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Fixture 和 Groom Controlled Executor 都已有可导出的 runtime evidence。当前 `maya-dcc-presentation-pack@0.1.0` 探测 51 个关键证据文件、41 段展示路线和 GUI media gate；public package 为 `ai-tool-ta-dcc-first-showcase-r53` / `dcc-first-package@1.50.0`，总体 gate 仍为 `CapturePending`，因为 9 张 Maya 截图和 1 段录屏尚未补齐。最新 presenter pack artifact 为 `dcc-hosts/maya-auroraview-host/artifacts/r53-max-texture-manifest-link-presentation-pack-20260806-032705.json`。R53 Max Texture Manifest Link artifact 为 `dcc-hosts/3dsmax-rule-adapter/artifacts/max-texture-manifest-link-20260806-032426.json`，从真实 Max `pymxs` material slot facts join 贴图 manifest、BC/N/ORM 语义、sRGB/linear 和 Mobile 预算；R52 Groom Controlled Executor 仍证明 Unreal `HairStrandsFactory` 可导入 approved curve-only `.abc` 为 `GroomAsset`，创建 `GroomBindingAsset` 并 rollback clean。
 
 模块文档：
 

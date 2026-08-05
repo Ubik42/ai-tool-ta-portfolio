@@ -1,0 +1,59 @@
+{
+  "schema": "synthetic-max-texture-delivery-manifest@0.1.0",
+  "packageId": "max-material-texture-fixture-r53",
+  "packageVersion": "max-texture-manifest@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / 3ds Max Rule Adapter",
+  "intent": "Public-safe texture delivery manifest used to cross-check 3ds Max material bitmap slots against package entries, channel semantics and platform budgets.",
+  "assets": [
+    {
+      "assetId": "max-prop-001",
+      "assetLabel": "Ready modular panel",
+      "platform": "pc",
+      "ownerState": "approved",
+      "requiredSemantics": ["baseColor", "normal", "orm"],
+      "textures": [
+        {
+          "textureName": "T_MaxPanel_A_BC.png",
+          "semantic": "baseColor",
+          "width": 2048,
+          "height": 2048,
+          "srgb": true,
+          "ownerState": "approved"
+        },
+        {
+          "textureName": "T_MaxPanel_A_N.png",
+          "semantic": "normal",
+          "width": 2048,
+          "height": 2048,
+          "srgb": false,
+          "ownerState": "approved"
+        },
+        {
+          "textureName": "T_MaxPanel_A_ORM.png",
+          "semantic": "orm",
+          "width": 2048,
+          "height": 2048,
+          "srgb": false,
+          "ownerState": "approved"
+        }
+      ]
+    },
+    {
+      "assetId": "max-hero-002",
+      "assetLabel": "Blocked hero prop",
+      "platform": "mobile",
+      "ownerState": "temporary",
+      "requiredSemantics": ["baseColor", "normal", "orm"],
+      "textures": [
+        {
+          "textureName": "T_MaxHero_B_BC.png",
+          "semantic": "baseColor",
+          "width": 4096,
+          "height": 4096,
+          "srgb": true,
+          "ownerState": "temporary"
+        }
+      ]
+    }
+  ]
+}

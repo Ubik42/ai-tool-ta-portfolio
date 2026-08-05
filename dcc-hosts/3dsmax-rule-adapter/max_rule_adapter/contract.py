@@ -73,6 +73,16 @@ def collect_scene_facts(fixture: Dict[str, Any]) -> Dict[str, Any]:
         lod_values = sorted({node.get("lod") for node in render_nodes if node.get("lod")})
         transform_rows = [node.get("transform", {}) for node in render_nodes]
         transform_clean = all(_transform_is_clean(transform) for transform in transform_rows)
+        material_texture_rows = [
+            {
+                "node": node.get("name"),
+                "lod": node.get("lod"),
+                "materialName": node.get("material", {}).get("name"),
+                "textures": list(node.get("material", {}).get("textures", [])),
+            }
+            for node in render_nodes
+            if isinstance(node.get("material"), dict)
+        ]
 
         rows.append(
             {
@@ -113,6 +123,7 @@ def collect_scene_facts(fixture: Dict[str, Any]) -> Dict[str, Any]:
                     "lodValues": lod_values,
                     "materialNames": material_names,
                     "textureImages": texture_images,
+                    "materialTextureRows": material_texture_rows,
                     "mapChannels": sorted({channel.get("channel") for channel in map_channels}),
                     "vertexColorChannels": vertex_color_channels,
                     "transformRows": transform_rows,

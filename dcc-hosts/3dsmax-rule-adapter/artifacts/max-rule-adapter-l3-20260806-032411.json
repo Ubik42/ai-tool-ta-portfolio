@@ -1,0 +1,542 @@
+{
+  "reportVersion": "max-rule-adapter-pymxs-l3@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / 3ds Max Rule Adapter",
+  "generatedAt": "2026-08-06 03:24:11",
+  "evidenceLevel": "L3",
+  "l3Status": "pymxs_scene_collected",
+  "maxRuntime": {
+    "runner": "3dsmaxbatch.exe",
+    "version": "#(24000, 60, 0, 24, 3, 11, 109, 2022, \".3.11 Security Fix\")"
+  },
+  "fixture": {
+    "path": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\3dsmax-rule-adapter\\fixtures\\synthetic_3dsmax_scene.json",
+    "schema": "synthetic-3dsmax-scene@0.1.0",
+    "intent": "Public-safe fixture proving the 3ds Max adapter contract for Cross-DCC Rule Matrix. It contains one ready static prop and one intentionally blocked hero prop."
+  },
+  "adapter": {
+    "id": "3dsmax",
+    "name": "3ds Max Rule Adapter",
+    "methodSource": "max_rule_adapter_reference / max_scene_rule_reference / Cross-DCC Rule Matrix",
+    "protocolCarrier": "pymxs user properties + layers + materials + map channels",
+    "boundary": {
+      "mutation": "synthetic_3dsmax_fixture_only",
+      "sceneWrites": "creates temporary public fixture nodes in the batch scene",
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "cross-dcc-rule-input@0.1.0",
+    "scene": {
+      "sourceDcc": "3ds Max",
+      "systemUnit": "centimeter",
+      "displayUnit": "centimeter",
+      "unitScale": 1.0,
+      "upAxis": "Z",
+      "assetCount": 2,
+      "runtimeCollected": true,
+      "runtimeObjectCount": 4
+    },
+    "assets": [
+      {
+        "assetId": "max-prop-001",
+        "assetLabel": "Ready modular panel",
+        "sourceDcc": "3ds Max",
+        "normalizedSchema": "cross-dcc-rule-input@0.1.0",
+        "protocolCarrier": "node user properties + layer/export dummy + material + map channels",
+        "sourceFields": {
+          "protocol": "asset.userProperties.aiToolTaProtocol or node user props",
+          "collision": "nodes[role=collision] or UCX_*",
+          "lod": "node.lod or *_LOD# suffix",
+          "materialTexture": "node.material.name + material bitmap slots",
+          "uv": "mesh map channels / Unwrap_UVW",
+          "transform": "object transform, pivot and reset/frozen state",
+          "exportRoot": "asset.exportRoot or layer / Dummy hierarchy"
+        },
+        "normalized": {
+          "asset.protocol.schema": "asset-protocol@dcc-r9",
+          "asset.delivery.platform": "pc",
+          "asset.delivery.collision": "proxy",
+          "asset.delivery.lodCount": 2,
+          "asset.render.materialSlots": 2,
+          "asset.render.textureImages": 3,
+          "asset.render.uvLayerCount": 2,
+          "asset.render.minUvUtilization": 0.73,
+          "asset.render.maxUvOverlap": 0.0,
+          "asset.render.minTexelDensity": 256.0,
+          "asset.render.vertexColorChannels": 0,
+          "asset.transform.clean": true,
+          "asset.export.root": "EXPORT_max_prop_001",
+          "asset.export.layer": "ASSET_max_prop_001"
+        },
+        "raw": {
+          "nodes": [
+            "SM_MaxPanel_A_LOD0",
+            "SM_MaxPanel_A_LOD1",
+            "UCX_MaxPanel_A_00"
+          ],
+          "renderNodes": [
+            "SM_MaxPanel_A_LOD0",
+            "SM_MaxPanel_A_LOD1"
+          ],
+          "collisionNodes": [
+            "UCX_MaxPanel_A_00"
+          ],
+          "lodValues": [
+            "LOD0",
+            "LOD1"
+          ],
+          "materialNames": [
+            "MI_MaxPanel_A_LOD0",
+            "MI_MaxPanel_A_LOD1"
+          ],
+          "textureImages": [
+            "T_MaxPanel_A_BC.png",
+            "T_MaxPanel_A_N.png",
+            "T_MaxPanel_A_ORM.png"
+          ],
+          "materialTextureRows": [
+            {
+              "node": "SM_MaxPanel_A_LOD0",
+              "lod": "LOD0",
+              "materialName": "MI_MaxPanel_A_LOD0",
+              "textures": [
+                "T_MaxPanel_A_BC.png",
+                "T_MaxPanel_A_N.png",
+                "T_MaxPanel_A_ORM.png"
+              ]
+            },
+            {
+              "node": "SM_MaxPanel_A_LOD1",
+              "lod": "LOD1",
+              "materialName": "MI_MaxPanel_A_LOD1",
+              "textures": [
+                "T_MaxPanel_A_BC.png",
+                "T_MaxPanel_A_N.png"
+              ]
+            }
+          ],
+          "mapChannels": [
+            1,
+            2
+          ],
+          "vertexColorChannels": [],
+          "transformRows": [
+            {
+              "frozen": true,
+              "pivotAtOrigin": true,
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frozen": true,
+              "pivotAtOrigin": true,
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "assetId": "max-hero-002",
+        "assetLabel": "Blocked hero prop",
+        "sourceDcc": "3ds Max",
+        "normalizedSchema": "cross-dcc-rule-input@0.1.0",
+        "protocolCarrier": "node user properties + layer/export dummy + material + map channels",
+        "sourceFields": {
+          "protocol": "asset.userProperties.aiToolTaProtocol or node user props",
+          "collision": "nodes[role=collision] or UCX_*",
+          "lod": "node.lod or *_LOD# suffix",
+          "materialTexture": "node.material.name + material bitmap slots",
+          "uv": "mesh map channels / Unwrap_UVW",
+          "transform": "object transform, pivot and reset/frozen state",
+          "exportRoot": "asset.exportRoot or layer / Dummy hierarchy"
+        },
+        "normalized": {
+          "asset.protocol.schema": "asset-protocol@dcc-r9",
+          "asset.delivery.platform": "mobile",
+          "asset.delivery.collision": "missing",
+          "asset.delivery.lodCount": 1,
+          "asset.render.materialSlots": 1,
+          "asset.render.textureImages": 1,
+          "asset.render.uvLayerCount": 3,
+          "asset.render.minUvUtilization": 0.18,
+          "asset.render.maxUvOverlap": 0.12,
+          "asset.render.minTexelDensity": 64.0,
+          "asset.render.vertexColorChannels": 1,
+          "asset.transform.clean": false,
+          "asset.export.root": "EXPORT_max_hero_002",
+          "asset.export.layer": "ASSET_max_hero_002"
+        },
+        "raw": {
+          "nodes": [
+            "SM_MaxHero_B_LOD0"
+          ],
+          "renderNodes": [
+            "SM_MaxHero_B_LOD0"
+          ],
+          "collisionNodes": [],
+          "lodValues": [
+            "LOD0"
+          ],
+          "materialNames": [
+            "HeroMaterial_LOD0"
+          ],
+          "textureImages": [
+            "T_MaxHero_B_BC.png"
+          ],
+          "materialTextureRows": [
+            {
+              "node": "SM_MaxHero_B_LOD0",
+              "lod": "LOD0",
+              "materialName": "HeroMaterial_LOD0",
+              "textures": [
+                "T_MaxHero_B_BC.png"
+              ]
+            }
+          ],
+          "mapChannels": [
+            1,
+            2,
+            3
+          ],
+          "vertexColorChannels": [
+            0
+          ],
+          "transformRows": [
+            {
+              "frozen": false,
+              "pivotAtOrigin": false,
+              "position": [
+                14.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.25
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "max-rule-adapter-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 13,
+      "warning": 5,
+      "error": 2,
+      "readyAssetIds": [
+        "max-prop-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "max-hero-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "max-prop-001:protocol-carrier",
+        "assetId": "max-prop-001",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "3ds Max node user properties must expose asset-protocol@dcc-r9.",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:unit-up-axis",
+        "assetId": "max-prop-001",
+        "ruleId": "unit-up-axis",
+        "label": "Unit / up axis",
+        "status": "pass",
+        "reason": "Max scene should declare centimeter scale and Z-up before engine export.",
+        "evidence": "unitScale=1.0 upAxis=Z",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:export-root-layer",
+        "assetId": "max-prop-001",
+        "ruleId": "export-root-layer",
+        "label": "Export root / layer",
+        "status": "pass",
+        "reason": "Adapter must identify export root and asset layer or dummy hierarchy.",
+        "evidence": "root=EXPORT_max_prop_001 layer=ASSET_max_prop_001",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:lod-sequence",
+        "assetId": "max-prop-001",
+        "ruleId": "lod-sequence",
+        "label": "LOD sequence",
+        "status": "pass",
+        "reason": "Max static props require LOD0 plus at least one lower LOD for this fixture.",
+        "evidence": "lods=LOD0,LOD1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:material-name-policy",
+        "assetId": "max-prop-001",
+        "ruleId": "material-name-policy",
+        "label": "Material naming",
+        "status": "pass",
+        "reason": "Material names should use MI_* so downstream engine slots and texture sync stay deterministic.",
+        "evidence": "MI_MaxPanel_A_LOD0,MI_MaxPanel_A_LOD1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:uv-channel-budget",
+        "assetId": "max-prop-001",
+        "ruleId": "uv-channel-budget",
+        "label": "UV channel budget",
+        "status": "pass",
+        "reason": "This public Max fixture allows UV1 and optional lightmap UV only.",
+        "evidence": "2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:uv-quality",
+        "assetId": "max-prop-001",
+        "ruleId": "uv-quality",
+        "label": "UV quality / texel density",
+        "status": "pass",
+        "reason": "UV utilization, overlap and texel density must stay inside platform handoff limits.",
+        "evidence": "utilization=0.73 overlap=0.0 density=256.0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:transform-clean",
+        "assetId": "max-prop-001",
+        "ruleId": "transform-clean",
+        "label": "Transform clean",
+        "status": "pass",
+        "reason": "Max export nodes need frozen transform and pivot/origin agreement.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:collision-contract",
+        "assetId": "max-prop-001",
+        "ruleId": "collision-contract",
+        "label": "Collision contract",
+        "status": "pass",
+        "reason": "Collision must be declared and backed by UCX/proxy object evidence.",
+        "evidence": "collision=proxy nodes=UCX_MaxPanel_A_00",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-prop-001:vertex-color-boundary",
+        "assetId": "max-prop-001",
+        "ruleId": "vertex-color-boundary",
+        "label": "Vertex color boundary",
+        "status": "pass",
+        "reason": "Unexpected vertex color channels can carry stale bake or mask payloads.",
+        "evidence": "0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:protocol-carrier",
+        "assetId": "max-hero-002",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "3ds Max node user properties must expose asset-protocol@dcc-r9.",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:unit-up-axis",
+        "assetId": "max-hero-002",
+        "ruleId": "unit-up-axis",
+        "label": "Unit / up axis",
+        "status": "pass",
+        "reason": "Max scene should declare centimeter scale and Z-up before engine export.",
+        "evidence": "unitScale=1.0 upAxis=Z",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:export-root-layer",
+        "assetId": "max-hero-002",
+        "ruleId": "export-root-layer",
+        "label": "Export root / layer",
+        "status": "pass",
+        "reason": "Adapter must identify export root and asset layer or dummy hierarchy.",
+        "evidence": "root=EXPORT_max_hero_002 layer=ASSET_max_hero_002",
+        "fixPreview": "None"
+      },
+      {
+        "id": "max-hero-002:lod-sequence",
+        "assetId": "max-hero-002",
+        "ruleId": "lod-sequence",
+        "label": "LOD sequence",
+        "status": "warning",
+        "reason": "Max static props require LOD0 plus at least one lower LOD for this fixture.",
+        "evidence": "lods=LOD0",
+        "fixPreview": "Create LOD1 or attach platform exception."
+      },
+      {
+        "id": "max-hero-002:material-name-policy",
+        "assetId": "max-hero-002",
+        "ruleId": "material-name-policy",
+        "label": "Material naming",
+        "status": "warning",
+        "reason": "Material names should use MI_* so downstream engine slots and texture sync stay deterministic.",
+        "evidence": "HeroMaterial_LOD0",
+        "fixPreview": "Rename material or export owner-visible material slot waiver."
+      },
+      {
+        "id": "max-hero-002:uv-channel-budget",
+        "assetId": "max-hero-002",
+        "ruleId": "uv-channel-budget",
+        "label": "UV channel budget",
+        "status": "error",
+        "reason": "This public Max fixture allows UV1 and optional lightmap UV only.",
+        "evidence": "3",
+        "fixPreview": "Remove legacy map channels or move payload into approved custom properties."
+      },
+      {
+        "id": "max-hero-002:uv-quality",
+        "assetId": "max-hero-002",
+        "ruleId": "uv-quality",
+        "label": "UV quality / texel density",
+        "status": "warning",
+        "reason": "UV utilization, overlap and texel density must stay inside platform handoff limits.",
+        "evidence": "utilization=0.18 overlap=0.12 density=64.0",
+        "fixPreview": "Run Unwrap_UVW review and texel density pass before export."
+      },
+      {
+        "id": "max-hero-002:transform-clean",
+        "assetId": "max-hero-002",
+        "ruleId": "transform-clean",
+        "label": "Transform clean",
+        "status": "warning",
+        "reason": "Max export nodes need frozen transform and pivot/origin agreement.",
+        "evidence": "False",
+        "fixPreview": "Reset XForm, collapse stack if approved, and move pivot under owner review."
+      },
+      {
+        "id": "max-hero-002:collision-contract",
+        "assetId": "max-hero-002",
+        "ruleId": "collision-contract",
+        "label": "Collision contract",
+        "status": "error",
+        "reason": "Collision must be declared and backed by UCX/proxy object evidence.",
+        "evidence": "collision=missing nodes=-",
+        "fixPreview": "Author UCX collision or attach gameplay owner disposition."
+      },
+      {
+        "id": "max-hero-002:vertex-color-boundary",
+        "assetId": "max-hero-002",
+        "ruleId": "vertex-color-boundary",
+        "label": "Vertex color boundary",
+        "status": "warning",
+        "reason": "Unexpected vertex color channels can carry stale bake or mask payloads.",
+        "evidence": "1",
+        "fixPreview": "Remove vertex color data or document the protocol field that consumes it."
+      }
+    ],
+    "fixPreview": [
+      {
+        "id": "fix:max-hero-002:lod-sequence",
+        "assetId": "max-hero-002",
+        "ruleId": "lod-sequence",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Create LOD1 or attach platform exception."
+      },
+      {
+        "id": "fix:max-hero-002:material-name-policy",
+        "assetId": "max-hero-002",
+        "ruleId": "material-name-policy",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Rename material or export owner-visible material slot waiver."
+      },
+      {
+        "id": "fix:max-hero-002:uv-channel-budget",
+        "assetId": "max-hero-002",
+        "ruleId": "uv-channel-budget",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Remove legacy map channels or move payload into approved custom properties."
+      },
+      {
+        "id": "fix:max-hero-002:uv-quality",
+        "assetId": "max-hero-002",
+        "ruleId": "uv-quality",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Run Unwrap_UVW review and texel density pass before export."
+      },
+      {
+        "id": "fix:max-hero-002:transform-clean",
+        "assetId": "max-hero-002",
+        "ruleId": "transform-clean",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Reset XForm, collapse stack if approved, and move pivot under owner review."
+      },
+      {
+        "id": "fix:max-hero-002:collision-contract",
+        "assetId": "max-hero-002",
+        "ruleId": "collision-contract",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Author UCX collision or attach gameplay owner disposition."
+      },
+      {
+        "id": "fix:max-hero-002:vertex-color-boundary",
+        "assetId": "max-hero-002",
+        "ruleId": "vertex-color-boundary",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Remove vertex color data or document the protocol field that consumes it."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "3ds Max adapter can collect pymxs scene nodes into the same Cross-DCC rule input used by Maya and Blender evidence.",
+    "User properties, layer/export root, LOD suffixes, material assignment, UV channel declarations and collision proxies are represented as runtime facts.",
+    "The L3 smoke only creates public synthetic fixture nodes and performs no production asset writes."
+  ]
+}
