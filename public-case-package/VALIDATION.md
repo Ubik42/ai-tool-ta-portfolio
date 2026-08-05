@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r36-spatial-authoring-drilldown` | `python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py` | Maya L3 spatial authoring facts are converted into 2 UI-ready drilldowns, 18 panels, 9 issue rows, 9 owner actions, 7 owner-required actions and 2 manual-review actions. |
+| `validate-r36-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r36-spatial-authoring-drilldown-presentation-pack")` | DCC Presenter Pack probes 33 key evidence files including Spatial Authoring Drilldown, reports 33 present / 0 missing required files, and exports 25 demo route steps. |
 | `validate-r35-character-calibration-drilldown` | `python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py` | Maya L3 character calibration facts are converted into 2 UI-ready drilldowns, 14 panels, 8 issue rows, 8 owner actions, 6 owner-required actions and 2 manual-review actions. |
 | `validate-r35-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r35-character-calibration-drilldown-presentation-pack")` | DCC Presenter Pack probes 32 key evidence files including Character Calibration Drilldown, reports 32 present / 0 missing required files, and exports 24 demo route steps. |
 | `validate-r34-platform-variant-executor-expansion` | `python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py` | R30 LOD/Nanite/collision generation operations are converted into 5 approval / rollback receipts linked to the R33 rolled-back Unreal executor proof: 2 no-op verified, 1 approval-ready, 2 readiness-only, 0 blocked. |

@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R36 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r36-spatial-authoring-drilldown-presentation-pack-20260805-204017.json` | Maya-hosted package probes 33 key evidence files, exports 25 demo route steps, and adds Spatial Authoring Drilldown evidence. |
+| Spatial Authoring Drilldown | `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json` | Maya L3 socket, hotspot, pose frame, transform and pose transfer facts become UI-ready panels with 9 owner actions. |
 | R35 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json` | Maya-hosted package probes 32 key evidence files, exports 24 demo route steps, and adds Character Calibration Drilldown evidence. |
 | Character Calibration Drilldown | `<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json` | Maya L3 character calibration facts become UI-ready topology, skeleton, skin, calibration, face, Control Rig and mirror panels with 8 owner actions. |
 | R34 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json` | Maya-hosted package probes 31 key evidence files, exports 23 demo route steps, and adds Platform Variant Executor Expansion Receipts evidence. |

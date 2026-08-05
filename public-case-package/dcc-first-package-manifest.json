@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r35",
-  "packageVersion": "dcc-first-package@1.32.0",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r36",
+  "packageVersion": "dcc-first-package@1.33.0",
   "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 20,
+    "artifactCount": 21,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -40,7 +40,7 @@
     "assetHandoffDecisionOwnerRequired": 1,
     "assetHandoffDecisionEngineReady": 1,
     "assetHandoffDecisionEngineHeld": 1,
-    "reviewerClaims": 25,
+    "reviewerClaims": 26,
     "engineHandoffPreflightGate": "Review",
     "engineHandoffPreflightAssets": 2,
     "engineHandoffPreflightReady": 1,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 32,
-    "presentationPackPresentEvidenceFiles": 32,
+    "presentationPackEvidenceFiles": 33,
+    "presentationPackPresentEvidenceFiles": 33,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 24,
+    "presentationPackDemoRouteSteps": 25,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r36-spatial-authoring-drilldown-presentation-pack-20260805-204017.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -329,7 +329,25 @@
     "characterCalibrationDrilldownSourcePass": 10,
     "characterCalibrationDrilldownSourceWarning": 2,
     "characterCalibrationDrilldownSourceError": 6,
-    "characterCalibrationDrilldownProductionWrites": 0
+    "characterCalibrationDrilldownProductionWrites": 0,
+    "spatialAuthoringDrilldownReportVersion": "spatial-authoring-drilldown@0.1.0",
+    "spatialAuthoringDrilldownArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
+    "spatialAuthoringDrilldownEvidenceLevel": "L3-derived",
+    "spatialAuthoringDrilldownL3Status": "maya_spatial_authoring_rows_to_drilldown",
+    "spatialAuthoringDrilldownGate": "Blocked",
+    "spatialAuthoringDrilldownAssets": 2,
+    "spatialAuthoringDrilldownPanels": 18,
+    "spatialAuthoringDrilldownReady": 1,
+    "spatialAuthoringDrilldownReview": 0,
+    "spatialAuthoringDrilldownBlocked": 1,
+    "spatialAuthoringDrilldownIssues": 9,
+    "spatialAuthoringDrilldownOwnerActions": 9,
+    "spatialAuthoringDrilldownOwnerRequired": 7,
+    "spatialAuthoringDrilldownManualReview": 2,
+    "spatialAuthoringDrilldownSourcePass": 11,
+    "spatialAuthoringDrilldownSourceWarning": 2,
+    "spatialAuthoringDrilldownSourceError": 7,
+    "spatialAuthoringDrilldownProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -549,6 +567,13 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-drilldown",
+      "label": "Spatial Authoring Drilldown",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
+      "kind": "json",
+      "required": true
     }
   ],
   "validation": [
@@ -602,10 +627,13 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py",
     "python -m py_compile dcc-hosts/character-calibration-studio/character_calibration_studio/drilldown.py dcc-hosts/character-calibration-studio/scripts/run_drilldown.py",
-    "python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py"
+    "python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py",
+    "python -m py_compile dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/drilldown.py dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py",
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py"
   ],
   "notes": [
-    "Current final presentation route is DCC-first through the R35 Presenter Pack.",
+    "R36 adds Spatial Authoring Drilldown: Maya L3 socket, hotspot, pose frame and pose transfer facts become UI-ready panels, owner actions and fix previews.",
+    "Current final presentation route is DCC-first through the R36 Presenter Pack.",
     "R35 adds Character Calibration Drilldown: Maya L3 character facts become UI-ready panels, owner actions and fix previews.",
     "R34 adds Platform Variant Executor Expansion Receipts: LOD, Nanite and collision operations become approval and rollback receipts linked to the rolled-back Unreal executor proof.",
     "R33 adds Platform Variant Controlled Executor: Unreal Python applies a public Texture2D max-size clamp, validates post-state, and rolls back to the preflight fingerprint.",
@@ -664,7 +692,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r36-spatial-authoring-drilldown-presentation-pack-20260805-204017.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -741,7 +769,7 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 20,
+  "artifactCount": 21,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
@@ -800,6 +828,13 @@
       "id": "dcc-first-character-calibration-drilldown",
       "label": "Character Calibration Drilldown",
       "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+      "kind": "json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-drilldown",
+      "label": "Spatial Authoring Drilldown",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
       "kind": "json",
       "required": true
     }
@@ -960,5 +995,23 @@
   "characterCalibrationDrilldownSourcePass": 10,
   "characterCalibrationDrilldownSourceWarning": 2,
   "characterCalibrationDrilldownSourceError": 6,
-  "characterCalibrationDrilldownProductionWrites": 0
+  "characterCalibrationDrilldownProductionWrites": 0,
+  "spatialAuthoringDrilldownReportVersion": "spatial-authoring-drilldown@0.1.0",
+  "spatialAuthoringDrilldownArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
+  "spatialAuthoringDrilldownEvidenceLevel": "L3-derived",
+  "spatialAuthoringDrilldownL3Status": "maya_spatial_authoring_rows_to_drilldown",
+  "spatialAuthoringDrilldownGate": "Blocked",
+  "spatialAuthoringDrilldownAssets": 2,
+  "spatialAuthoringDrilldownPanels": 18,
+  "spatialAuthoringDrilldownReady": 1,
+  "spatialAuthoringDrilldownReview": 0,
+  "spatialAuthoringDrilldownBlocked": 1,
+  "spatialAuthoringDrilldownIssues": 9,
+  "spatialAuthoringDrilldownOwnerActions": 9,
+  "spatialAuthoringDrilldownOwnerRequired": 7,
+  "spatialAuthoringDrilldownManualReview": 2,
+  "spatialAuthoringDrilldownSourcePass": 11,
+  "spatialAuthoringDrilldownSourceWarning": 2,
+  "spatialAuthoringDrilldownSourceError": 7,
+  "spatialAuthoringDrilldownProductionWrites": 0
 }

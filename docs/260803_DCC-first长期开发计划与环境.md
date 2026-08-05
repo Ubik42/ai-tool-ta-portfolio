@@ -1325,3 +1325,35 @@ Presenter Pack evidence: 32 / 32 present, 0 missing, 24 route steps
 ```text
 spatial-authoring-maya-l3 artifact -> socket / hotspot / pose transfer panels -> owner actions / fix previews -> Presenter Pack row -> docs
 ```
+
+## R36 循环开发断点：Spatial Authoring Drilldown
+
+R36 已完成 `Spatial Authoring Drilldown`：
+
+```text
+<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r36-spatial-authoring-drilldown-presentation-pack-20260805-204017.json
+```
+
+R36 结果：`run_drilldown.py` 读取 `spatial-authoring-maya-l3-20260805-181524.json`，把 Spatial Authoring Maya L3 的 flat validation rows 转成 AuroraView / Maya 面板可直接消费的 protocol carrier、parent joint、socket、mirror pair、hotspot、pose frame、transform、preview locator 和 pose transfer drilldown panels。结果为 L3-derived / `Blocked` / `maya_spatial_authoring_rows_to_drilldown`，2 spatial drilldowns，18 panels，1 Ready，1 intentionally Blocked，9 issue rows，9 owner actions，7 owner-required，2 manual-review，productionWrites=0。这个 gate 继承自 synthetic temp backpack 的业务阻断，不是 runtime 缺失。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r36 / dcc-first-package@1.33.0
+Presenter Pack evidence: 33 / 33 present, 0 missing, 25 route steps
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier spatial-drilldown
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Unreal Control Rig Bridge` 或 `Unreal Socket Import Checker`：
+
+```text
+character/spatial drilldown artifact -> public Unreal runtime fixture -> Control Rig or socket facts comparison -> owner actions / rollback boundary -> Presenter Pack row -> docs
+```
