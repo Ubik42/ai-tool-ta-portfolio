@@ -1,0 +1,611 @@
+{
+  "reportVersion": "unreal-control-rig-bridge@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Bridge",
+  "generatedAt": "2026-08-05 23:51:48",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_control_rig_bridge_facts_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+    "reportVersion": "character-calibration-drilldown@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "maya_character_calibration_rows_to_drilldown",
+    "gate": "Blocked"
+  },
+  "sourceMayaL3": {
+    "available": true,
+    "reportVersion": "character-calibration-maya-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "maya_character_calibration_collected",
+    "runtimeCollected": true
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "ControlRig": true,
+        "ControlRigBlueprint": true,
+        "ControlRigBlueprintFactory": true,
+        "ControlRigComponent": true,
+        "ControlRigShapeLibrary": true,
+        "RigHierarchy": true,
+        "RigVMBlueprint": true,
+        "RigVMController": true,
+        "SkeletalMesh": true,
+        "Skeleton": true,
+        "EditorAssetLibrary": true,
+        "AssetRegistryHelpers": true
+      },
+      "controlRigBlueprintMethods": [
+        "create_control_rig",
+        "create_rig_vm_host",
+        "get_auto_vm_recompile",
+        "get_available_rig_vm_structs",
+        "get_control_rig_class",
+        "get_controller",
+        "get_controller_by_name",
+        "get_currently_open_rig_blueprints",
+        "get_hierarchy_controller",
+        "get_or_create_controller",
+        "get_rig_vm_host_class",
+        "hierarchy",
+        "recompile_vm",
+        "recompile_vm_if_required",
+        "request_auto_vm_recompilation",
+        "request_rig_vm_init",
+        "set_auto_vm_recompile",
+        "vm_compile_settings"
+      ]
+    },
+    "assetRegistryScanned": true,
+    "engineWrites": 0,
+    "assetWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public fixture only"
+  },
+  "facts": {
+    "schema": "unreal-control-rig-bridge-input@0.1.0",
+    "sourceRows": 2,
+    "runtimeCollected": true,
+    "characters": [
+      {
+        "assetId": "char-hero-head-001",
+        "assetLabel": "Hero Head Approved",
+        "sourceStatus": "Ready",
+        "sourceIssueCount": 0,
+        "sourceControlRig": {
+          "requiredCount": 5,
+          "actualCount": 5,
+          "requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "missingControls": [],
+          "targetMismatches": [],
+          "unresolvedTargets": [],
+          "panelStatus": "Ready"
+        },
+        "sourceSkeleton": {
+          "missing": [],
+          "temporary": [],
+          "panelStatus": "Ready"
+        },
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+          "bindingPolicy": "read_existing_public_face_skeleton_fixture_assets"
+        },
+        "runtime": {
+          "assetId": "char-hero-head-001",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+          "skeletalMeshExists": true,
+          "skeletonExists": true,
+          "controlRigExists": true,
+          "skeletalMeshClass": "SkeletalMesh",
+          "skeletonClass": "Skeleton",
+          "controlRigClass": "ControlRigBlueprint",
+          "requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "skeletalMeshFacts": {
+            "pathName": "/Game/AI_Tool_TA/Characters/SK_HeroFace.SK_HeroFace",
+            "class": "SkeletalMesh",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+            "availableMethods": [
+              "add_socket",
+              "default_mesh_deformer",
+              "find_socket",
+              "find_socket_and_index",
+              "find_socket_info",
+              "get_socket_by_index",
+              "mesh_clothing_assets",
+              "num_sockets",
+              "skeleton"
+            ]
+          },
+          "skeletonFacts": {
+            "pathName": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton.SK_HeroFace_Skeleton",
+            "class": "Skeleton",
+            "availableMethods": [
+              "add_compatible_skeleton",
+              "add_compatible_skeleton_soft",
+              "compatible_skeletons",
+              "get_reference_pose"
+            ]
+          },
+          "controlRigFacts": {
+            "controlsReadable": true,
+            "controls": [
+              "CTRL_brow_L",
+              "CTRL_brow_R",
+              "CTRL_eye_L",
+              "CTRL_eye_R",
+              "CTRL_jaw"
+            ],
+            "availableMethods": [
+              "create_control_rig",
+              "create_rig_vm_host",
+              "get_auto_vm_recompile",
+              "get_available_rig_vm_structs",
+              "get_control_rig_class",
+              "get_controller",
+              "get_controller_by_name",
+              "get_currently_open_rig_blueprints",
+              "get_hierarchy_controller",
+              "get_or_create_controller",
+              "get_rig_vm_host_class",
+              "hierarchy",
+              "recompile_vm",
+              "recompile_vm_if_required",
+              "request_auto_vm_recompilation",
+              "request_rig_vm_init",
+              "set_auto_vm_recompile",
+              "vm_compile_settings"
+            ],
+            "pathName": "/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace",
+            "class": "ControlRigBlueprint",
+            "requiredControls": [
+              "CTRL_brow_L",
+              "CTRL_brow_R",
+              "CTRL_eye_L",
+              "CTRL_eye_R",
+              "CTRL_jaw"
+            ]
+          }
+        },
+        "normalized": {
+          "source.status": "Ready",
+          "source.controlRigPanelStatus": "Ready",
+          "source.skeletonPanelStatus": "Ready",
+          "source.missingControls": [],
+          "source.targetMismatches": [],
+          "source.unresolvedTargets": [],
+          "source.missingJoints": [],
+          "source.temporaryJoints": [],
+          "runtime.executed": true,
+          "runtime.controlRigApiReady": true,
+          "runtime.skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "runtime.skeletalMeshExists": true,
+          "runtime.skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+          "runtime.skeletonExists": true,
+          "runtime.controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+          "runtime.controlRigExists": true,
+          "runtime.requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "runtime.controlsReadable": true,
+          "runtime.missingControls": [],
+          "runtime.assetRegistryScanned": true
+        }
+      },
+      {
+        "assetId": "char-hero-head-tmp-002",
+        "assetLabel": "Hero Head Temporary Sculpt",
+        "sourceStatus": "Blocked",
+        "sourceIssueCount": 8,
+        "sourceControlRig": {
+          "requiredCount": 5,
+          "actualCount": 3,
+          "requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "missingControls": [
+            "CTRL_brow_R",
+            "CTRL_eye_R"
+          ],
+          "targetMismatches": [
+            {
+              "control": "CTRL_jaw",
+              "expected": "Jaw",
+              "actual": "Jaw_TMP"
+            }
+          ],
+          "unresolvedTargets": [],
+          "panelStatus": "Blocked"
+        },
+        "sourceSkeleton": {
+          "missing": [
+            "Eye_R",
+            "Jaw"
+          ],
+          "temporary": [
+            "Jaw_TMP",
+            "TmpSocket"
+          ],
+          "panelStatus": "Blocked"
+        },
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+          "bindingPolicy": "read_existing_public_fixture_assets"
+        },
+        "runtime": {
+          "assetId": "char-hero-head-tmp-002",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+          "skeletalMeshExists": false,
+          "skeletonExists": false,
+          "controlRigExists": false,
+          "skeletalMeshClass": null,
+          "skeletonClass": null,
+          "controlRigClass": null,
+          "requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "skeletalMeshFacts": {},
+          "skeletonFacts": {},
+          "controlRigFacts": {
+            "controlsReadable": false,
+            "controls": [],
+            "availableMethods": [],
+            "requiredControls": [
+              "CTRL_brow_L",
+              "CTRL_brow_R",
+              "CTRL_eye_L",
+              "CTRL_eye_R",
+              "CTRL_jaw"
+            ]
+          }
+        },
+        "normalized": {
+          "source.status": "Blocked",
+          "source.controlRigPanelStatus": "Blocked",
+          "source.skeletonPanelStatus": "Blocked",
+          "source.missingControls": [
+            "CTRL_brow_R",
+            "CTRL_eye_R"
+          ],
+          "source.targetMismatches": [
+            {
+              "control": "CTRL_jaw",
+              "expected": "Jaw",
+              "actual": "Jaw_TMP"
+            }
+          ],
+          "source.unresolvedTargets": [],
+          "source.missingJoints": [
+            "Eye_R",
+            "Jaw"
+          ],
+          "source.temporaryJoints": [
+            "Jaw_TMP",
+            "TmpSocket"
+          ],
+          "runtime.executed": true,
+          "runtime.controlRigApiReady": true,
+          "runtime.skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "runtime.skeletalMeshExists": false,
+          "runtime.skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "runtime.skeletonExists": false,
+          "runtime.controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+          "runtime.controlRigExists": false,
+          "runtime.requiredControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "runtime.controlsReadable": false,
+          "runtime.missingControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "runtime.assetRegistryScanned": true
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-bridge-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "characterRows": 2,
+      "readyRows": 1,
+      "reviewRows": 0,
+      "blockedRows": 1,
+      "pass": 10,
+      "warning": 1,
+      "error": 5,
+      "readyAssetIds": [
+        "char-hero-head-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "char-hero-head-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "char-hero-head-001:source-drilldown-ready",
+        "assetId": "char-hero-head-001",
+        "ruleId": "source-drilldown-ready",
+        "label": "Source Character Drilldown",
+        "status": "pass",
+        "reason": "Only Ready Maya character calibration rows should proceed to Unreal Control Rig binding.",
+        "evidence": "Ready",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:unreal-python-runtime",
+        "assetId": "char-hero-head-001",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The bridge must collect engine facts through Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-api-availability",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-api-availability",
+        "label": "Control Rig API",
+        "status": "pass",
+        "reason": "Unreal Control Rig API or plugin must be visible before mapping facts are trusted.",
+        "evidence": "{'ControlRig': True, 'ControlRigBlueprint': True, 'ControlRigBlueprintFactory': True, 'ControlRigComponent': True, 'ControlRigShapeLibrary': True, 'RigHierarchy': True, 'RigVMBlueprint': True, 'RigVMController': True, 'SkeletalMesh': True, 'Skeleton': True, 'EditorAssetLibrary': True, 'AssetRegistryHelpers': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:skeletal-mesh-binding",
+        "assetId": "char-hero-head-001",
+        "ruleId": "skeletal-mesh-binding",
+        "label": "Skeletal Mesh Binding",
+        "status": "pass",
+        "reason": "Control Rig mapping needs an existing SkeletalMesh and Skeleton target.",
+        "evidence": "mesh=True skeleton=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:maya-control-mapping-clean",
+        "assetId": "char-hero-head-001",
+        "ruleId": "maya-control-mapping-clean",
+        "label": "Maya Control Mapping",
+        "status": "pass",
+        "reason": "Maya control mapping must have no missing controls, mismatches or unresolved deformation targets.",
+        "evidence": "missing=[] mismatch=[] unresolved=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-asset-presence",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-asset-presence",
+        "label": "Control Rig Asset",
+        "status": "pass",
+        "reason": "The expected Unreal Control Rig asset must exist before runtime control coverage can be audited.",
+        "evidence": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:runtime-control-coverage",
+        "assetId": "char-hero-head-001",
+        "ruleId": "runtime-control-coverage",
+        "label": "Runtime Control Coverage",
+        "status": "pass",
+        "reason": "Runtime Control Rig controls must cover every required Maya control mapping.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:deformation-target-coverage",
+        "assetId": "char-hero-head-001",
+        "ruleId": "deformation-target-coverage",
+        "label": "Deformation Target Coverage",
+        "status": "pass",
+        "reason": "Missing or temporary Maya deformation joints should not enter engine Control Rig binding.",
+        "evidence": "missing=[] tmp=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:source-drilldown-ready",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-drilldown-ready",
+        "label": "Source Character Drilldown",
+        "status": "error",
+        "reason": "Only Ready Maya character calibration rows should proceed to Unreal Control Rig binding.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve Maya character drilldown owner actions before engine bridge."
+      },
+      {
+        "id": "char-hero-head-tmp-002:unreal-python-runtime",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The bridge must collect engine facts through Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-rig-api-availability",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-api-availability",
+        "label": "Control Rig API",
+        "status": "pass",
+        "reason": "Unreal Control Rig API or plugin must be visible before mapping facts are trusted.",
+        "evidence": "{'ControlRig': True, 'ControlRigBlueprint': True, 'ControlRigBlueprintFactory': True, 'ControlRigComponent': True, 'ControlRigShapeLibrary': True, 'RigHierarchy': True, 'RigVMBlueprint': True, 'RigVMController': True, 'SkeletalMesh': True, 'Skeleton': True, 'EditorAssetLibrary': True, 'AssetRegistryHelpers': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:skeletal-mesh-binding",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "skeletal-mesh-binding",
+        "label": "Skeletal Mesh Binding",
+        "status": "error",
+        "reason": "Control Rig mapping needs an existing SkeletalMesh and Skeleton target.",
+        "evidence": "mesh=False skeleton=False",
+        "fixPreview": "Import or relink the public SkeletalMesh/Skeleton before bridge approval."
+      },
+      {
+        "id": "char-hero-head-tmp-002:maya-control-mapping-clean",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "maya-control-mapping-clean",
+        "label": "Maya Control Mapping",
+        "status": "error",
+        "reason": "Maya control mapping must have no missing controls, mismatches or unresolved deformation targets.",
+        "evidence": "missing=['CTRL_brow_R', 'CTRL_eye_R'] mismatch=[{'control': 'CTRL_jaw', 'expected': 'Jaw', 'actual': 'Jaw_TMP'}] unresolved=[]",
+        "fixPreview": "Complete source Control Rig mapping in Maya before Unreal binding."
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-rig-asset-presence",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-presence",
+        "label": "Control Rig Asset",
+        "status": "error",
+        "reason": "The expected Unreal Control Rig asset must exist before runtime control coverage can be audited.",
+        "evidence": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "fixPreview": "Create or import the public Control Rig asset under the expected engine path."
+      },
+      {
+        "id": "char-hero-head-tmp-002:runtime-control-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "runtime-control-coverage",
+        "label": "Runtime Control Coverage",
+        "status": "error",
+        "reason": "Runtime Control Rig controls must cover every required Maya control mapping.",
+        "evidence": "['CTRL_brow_L', 'CTRL_brow_R', 'CTRL_eye_L', 'CTRL_eye_R', 'CTRL_jaw']",
+        "fixPreview": "Regenerate Control Rig controls or attach an explicit owner waiver."
+      },
+      {
+        "id": "char-hero-head-tmp-002:deformation-target-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "deformation-target-coverage",
+        "label": "Deformation Target Coverage",
+        "status": "warning",
+        "reason": "Missing or temporary Maya deformation joints should not enter engine Control Rig binding.",
+        "evidence": "missing=['Eye_R', 'Jaw'] tmp=['Jaw_TMP', 'TmpSocket']",
+        "fixPreview": "Restore approved deformation joints or hold the bridge for owner review."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:char-hero-head-tmp-002:source-drilldown-ready",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-drilldown-ready",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "character-owner",
+        "preview": "Resolve Maya character drilldown owner actions before engine bridge.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:skeletal-mesh-binding",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "skeletal-mesh-binding",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Import or relink the public SkeletalMesh/Skeleton before bridge approval.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:maya-control-mapping-clean",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "maya-control-mapping-clean",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "character-owner",
+        "preview": "Complete source Control Rig mapping in Maya before Unreal binding.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:control-rig-asset-presence",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-presence",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "control-rig-owner",
+        "preview": "Create or import the public Control Rig asset under the expected engine path.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:runtime-control-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "runtime-control-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "control-rig-owner",
+        "preview": "Regenerate Control Rig controls or attach an explicit owner waiver.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:deformation-target-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "deformation-target-coverage",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "character-owner",
+        "preview": "Restore approved deformation joints or hold the bridge for owner review.",
+        "writeBoundary": "preview_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-control-rig-bridge",
+    "name": "Unreal Control Rig Bridge",
+    "methodSource": "Maya character calibration / Control Rig mapping to Unreal runtime readiness",
+    "protocolCarrier": "Character Calibration drilldown + Unreal Python Control Rig and Skeleton facts",
+    "boundary": {
+      "mutation": "public_unreal_test_project_read_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R37 joins Maya character Control Rig intent to Unreal runtime facts instead of treating Control Rig as a Maya-only checklist.",
+    "The bridge separates source mapping defects, Unreal skeleton binding, Control Rig API readiness and missing Control Rig asset coverage.",
+    "The first Unreal pass is read-only against the public test project; missing CR assets block runtime approval without mutating production content."
+  ]
+}

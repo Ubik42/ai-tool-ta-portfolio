@@ -1,6 +1,6 @@
 # Character Calibration & Intent Transfer Studio
 
-R26-R43 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据、Maya/AuroraView drilldown 数据，并接到 Unreal Control Rig runtime readiness、public fixture authoring 与 deformation target link。
+R26-R44 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据、Maya/AuroraView drilldown 数据，并接到 Unreal Control Rig runtime readiness、public fixture authoring、face Skeleton fixture 与 deformation target link。
 
 ## 核心业务逻辑
 
@@ -62,6 +62,12 @@ R43 已完成：
 - 结果为 L3 / `Blocked` / `unreal_control_rig_deformation_link_collected`；10 control links，5 runtime controls，5 shape/offset-readable controls，2 Skeleton target matches，0 direct compile-status rows，assetWrites=0。
 - 业务结论：approved 行的 CR asset / controls 已经存在，但 public Skeleton 没有确认 `Eye_L`、`Eye_R`、`Jaw`，不能把“控件存在”包装成“角色绑定可交付”。
 
+R44 已完成：
+
+- 新增 Unreal Control Rig Face Skeleton Fixture，Maya 2026 `mayapy` 生成 public face Skeleton FBX，Unreal 5.3.2 导入 `SK_HeroFace` / `SK_HeroFace_Skeleton`。
+- Face Skeleton artifact 确认 required targets 4 / 4 present，R43 缺的 `Eye_L`、`Eye_R`、`Jaw` 为 3 / 3 resolved，assetWrites=2，productionWrites=0。
+- 更新 approved 角色的 Unreal expected Skeleton target 到 `SK_HeroFace_Skeleton` 后复跑 bridge / deformation-link：Skeleton target matches 从 2 提升到 5，approved 行从 Blocked 推进到 Review；剩余问题是 direct compile status API-limited。
+
 ## 证据
 
 当前 L2 contract artifact：
@@ -86,14 +92,15 @@ R43 已完成：
 
 ```text
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json
-<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json
-<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-235140.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json
 ```
 
 关键结果：
@@ -116,10 +123,15 @@ R43 已完成：
 - Unreal bridge pass / warning / error：10 / 1 / 5
 - Unreal bridge skeletal bindings / Control Rig assets：1 / 1
 - Unreal bridge assetWrites / productionWrites：0 / 0
+- Unreal Control Rig Face Skeleton Fixture：L3 / `Review` / `unreal_control_rig_face_skeleton_fixture_imported`
+- Unreal face Skeleton required targets / matches：4 / 4
+- Unreal face Skeleton previous missing / resolved：3 / 3
+- Unreal face Skeleton assetWrites / productionWrites：2 / 0
 - Unreal Control Rig Deformation Link：L3 / `Blocked` / `unreal_control_rig_deformation_link_collected`
-- Unreal deformation link controls / runtime / Skeleton matches：10 / 5 / 2
+- Unreal deformation link rows ready / review / blocked：0 / 1 / 1
+- Unreal deformation link controls / runtime / Skeleton matches：10 / 5 / 5
 - Unreal deformation link shape-or-offset readable / direct compile status：5 / 0
-- Unreal deformation link pass / warning / error：12 / 2 / 6
+- Unreal deformation link pass / warning / error：13 / 2 / 5
 - Unreal deformation link assetWrites / productionWrites：0 / 0
 
 Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Temporary Sculpt` 保留 topology mismatch、missing Eye_R/Jaw、TMP joint、skin influence overflow、calibration delta overflow、face param missing/out-of-range、Control Rig mapping mismatch 等业务故障。
@@ -128,5 +140,5 @@ Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Tem
 
 下一阶段可以继续做：
 
-- Control Rig compile bridge：用 Editor Utility / C++ 补 direct compile status，并导入 public face skeleton fixture 或 owner waiver。
+- Control Rig compile bridge：用 Editor Utility / C++ 补 direct compile status，或补 owner waiver drilldown。
 - Character LOD Bake Planner：把 topology / normal / tangent / vertex color payload 接到角色 LOD 生成链。

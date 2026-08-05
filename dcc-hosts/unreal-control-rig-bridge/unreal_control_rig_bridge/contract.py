@@ -147,7 +147,14 @@ def evaluate_bridge(facts: Dict[str, Any], runtime_snapshot: Dict[str, Any]) -> 
 
 def expected_unreal_targets(asset_id: str) -> Dict[str, Any]:
     is_tmp = "tmp" in asset_id.lower()
-    suffix = "_TMP" if is_tmp else ""
+    if not is_tmp:
+        return {
+            "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+            "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+            "bindingPolicy": "read_existing_public_face_skeleton_fixture_assets",
+        }
+    suffix = "_TMP"
     return {
         "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero%s" % suffix,
         "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero%s_Skeleton" % suffix,
@@ -318,4 +325,3 @@ def _required_controls(source_character: Dict[str, Any], source_control: Dict[st
     for mismatch in source_control.get("metrics", {}).get("targetMismatches", []):
         controls.add(str(mismatch.get("control")))
     return sorted(name for name in controls if name and name != "None")
-

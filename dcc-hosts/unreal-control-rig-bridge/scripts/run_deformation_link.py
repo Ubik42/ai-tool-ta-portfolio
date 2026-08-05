@@ -12,7 +12,7 @@ from typing import Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTFOLIO_ROOT = ROOT.parents[1]
-SOURCE_BRIDGE_ARTIFACT = ROOT / "artifacts" / "unreal-control-rig-bridge-l3-20260805-230343.json"
+SOURCE_BRIDGE_ARTIFACT_FALLBACK = ROOT / "artifacts" / "unreal-control-rig-bridge-l3-20260805-230343.json"
 FIXTURE_AUTHORING_ARTIFACT = ROOT / "artifacts" / "unreal-control-rig-fixture-authoring-20260805-230323.json"
 UNREAL_PROJECT = (
     PORTFOLIO_ROOT
@@ -49,8 +49,17 @@ def find_unreal_cli() -> Optional[str]:
     return None
 
 
+def resolve_source_bridge_artifact() -> Path:
+    env_path = os.environ.get("AI_TOOL_TA_UNREAL_CONTROL_RIG_DEFORMATION_SOURCE")
+    if env_path and Path(env_path).exists():
+        return Path(env_path)
+    candidates = sorted((ROOT / "artifacts").glob("unreal-control-rig-bridge-l3-*.json"))
+    return candidates[-1] if candidates else SOURCE_BRIDGE_ARTIFACT_FALLBACK
+
+
 def main() -> int:
     unreal_cli = find_unreal_cli()
+    source_bridge_artifact = resolve_source_bridge_artifact()
     artifact_dir = ROOT / "artifacts"
     logs_dir = artifact_dir / "unreal-control-rig-deformation-link-logs"
     artifact_dir.mkdir(parents=True, exist_ok=True)
@@ -64,7 +73,7 @@ def main() -> int:
         return _blocked(output_path, "blocked_by_missing_unreal_cli", None, None)
     if not UNREAL_PROJECT.exists():
         return _blocked(output_path, "blocked_by_missing_unreal_project", unreal_cli, None)
-    if not SOURCE_BRIDGE_ARTIFACT.exists():
+    if not source_bridge_artifact.exists():
         return _blocked(output_path, "blocked_by_missing_control_rig_bridge_artifact", unreal_cli, str(UNREAL_PROJECT))
     if not FIXTURE_AUTHORING_ARTIFACT.exists():
         return _blocked(output_path, "blocked_by_missing_control_rig_fixture_authoring_artifact", unreal_cli, str(UNREAL_PROJECT))
@@ -72,7 +81,7 @@ def main() -> int:
     env = os.environ.copy()
     env["AI_TOOL_TA_UNREAL_CONTROL_RIG_ROOT"] = str(ROOT)
     env["AI_TOOL_TA_UNREAL_CONTROL_RIG_DEFORMATION_OUTPUT"] = str(output_path)
-    env["AI_TOOL_TA_UNREAL_CONTROL_RIG_DEFORMATION_SOURCE"] = str(SOURCE_BRIDGE_ARTIFACT)
+    env["AI_TOOL_TA_UNREAL_CONTROL_RIG_DEFORMATION_SOURCE"] = str(source_bridge_artifact)
     env["AI_TOOL_TA_UNREAL_CONTROL_RIG_FIXTURE_AUTHORING_SOURCE"] = str(FIXTURE_AUTHORING_ARTIFACT)
     env["AI_TOOL_TA_UNREAL_PROJECT"] = str(UNREAL_PROJECT)
     env["AI_TOOL_TA_UNREAL_CLI"] = str(unreal_cli)
@@ -139,7 +148,7 @@ def _blocked(output_path: Path, reason: str, unreal_cli: Optional[str], project:
         },
         "characters": [],
     }
-    report = build_deformation_link_report(SOURCE_BRIDGE_ARTIFACT, FIXTURE_AUTHORING_ARTIFACT, runtime_snapshot)
+    report = build_deformation_link_report(resolve_source_bridge_artifact(), FIXTURE_AUTHORING_ARTIFACT, runtime_snapshot)
     output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"ok": False, "reason": reason, "path": str(output_path)}, ensure_ascii=False, indent=2))
     return 0

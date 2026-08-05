@@ -1,0 +1,357 @@
+{
+  "reportVersion": "unreal-control-rig-face-skeleton-fixture@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Face Skeleton Fixture",
+  "generatedAt": "2026-08-05 23:51:30",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_control_rig_face_skeleton_fixture_imported",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-232729.json",
+    "reportVersion": "unreal-control-rig-deformation-link@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_deformation_link_collected",
+    "gate": "Blocked"
+  },
+  "fbxManifest": {
+    "path": "<repo>\\.tmp\\unreal-control-rig-face-skeleton-fixture\\face-skeleton-fbx-fixture-20260805-235115.json",
+    "reportVersion": "unreal-control-rig-face-skeleton-maya-fbx-fixture@0.1.0",
+    "exported": {
+      "assetId": "char-hero-head-001",
+      "sourceFbxName": "SK_HeroFace_SkeletonFixture.fbx",
+      "path": "D:\\cs\\AIToolTA_Portfolio\\.tmp\\unreal-control-rig-face-skeleton-fixture\\fbx\\SK_HeroFace_SkeletonFixture.fbx",
+      "publicPath": "<repo>\\.tmp\\unreal-control-rig-face-skeleton-fixture\\fbx\\SK_HeroFace_SkeletonFixture.fbx",
+      "bytes": 50592,
+      "requiredTargets": [
+        "Head",
+        "Jaw",
+        "Eye_L",
+        "Eye_R"
+      ],
+      "joints": [
+        "Root",
+        "HeadRoot",
+        "Neck",
+        "Head",
+        "Jaw",
+        "Eye_L",
+        "Eye_R"
+      ]
+    }
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "AssetImportTask": true,
+        "AssetToolsHelpers": true,
+        "EditorAssetLibrary": true,
+        "FBXImportType": true,
+        "FbxImportUI": true,
+        "Skeleton": true,
+        "SkeletalMesh": true
+      },
+      "fbxImportUIProperties": [
+        "anim_sequence_import_data",
+        "create_physics_asset",
+        "import_animations",
+        "import_mesh",
+        "import_rigid_mesh",
+        "mesh_type_to_import",
+        "override_animation_name",
+        "physics_asset",
+        "skeletal_mesh_import_data",
+        "skeleton",
+        "static_mesh_import_data"
+      ],
+      "skeletonMethods": [
+        "add_compatible_skeleton",
+        "add_compatible_skeleton_soft",
+        "compatible_skeletons",
+        "get_reference_pose"
+      ]
+    },
+    "assetWrites": 2,
+    "engineWrites": 2,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public face Skeleton fixture only"
+  },
+  "facts": {
+    "schema": "unreal-control-rig-face-skeleton-fixture@0.1.0",
+    "sourceDeformationSummary": {
+      "characterRows": 2,
+      "controlsEvaluated": 10,
+      "runtimeControlsPresent": 5,
+      "mappedTargetNames": 8,
+      "skeletonTargetMatches": 2,
+      "skeletonTargetUnknown": 5,
+      "shapeOrOffsetReadableControls": 5,
+      "compileApiVisibleRows": 1,
+      "directCompileStatusRows": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "requiredTargets": [
+      "Eye_L",
+      "Eye_R",
+      "Head",
+      "Jaw"
+    ],
+    "previousMissingTargets": [
+      "Eye_L",
+      "Eye_R",
+      "Jaw"
+    ],
+    "runtimeCollected": true,
+    "import": {
+      "attempted": true,
+      "success": true,
+      "method": "AssetImportTask + FbxImportUI",
+      "sourceFbx": "D:\\cs\\AIToolTA_Portfolio\\.tmp\\unreal-control-rig-face-skeleton-fixture\\fbx\\SK_HeroFace_SkeletonFixture.fbx",
+      "destination": "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture",
+      "targetSkeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+      "targetSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+      "importedObjectPaths": [
+        "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/SK_HeroFace_SkeletonFixture",
+        "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/openPBR_shader1",
+        "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/SK_HeroFace_SkeletonFixture_Skeleton"
+      ],
+      "renamed": {
+        "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+        "rows": [
+          {
+            "source": "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/SK_HeroFace_SkeletonFixture",
+            "class": "SkeletalMesh",
+            "target": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+            "renamed": true
+          },
+          {
+            "source": "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/openPBR_shader1",
+            "class": "Material",
+            "target": null,
+            "renamed": false
+          },
+          {
+            "source": "/Game/AI_Tool_TA/_RuntimeImport/FaceSkeletonFixture/SK_HeroFace_SkeletonFixture_Skeleton",
+            "class": "Skeleton",
+            "target": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+            "renamed": true
+          }
+        ]
+      },
+      "failures": [],
+      "assetWrites": 2,
+      "engineWrites": 2,
+      "savePackage": true,
+      "options": {
+        "set:AssetImportTask.filename": true,
+        "set:AssetImportTask.destination_path": true,
+        "set:AssetImportTask.automated": true,
+        "set:AssetImportTask.replace_existing": true,
+        "set:AssetImportTask.save": true,
+        "set:FbxImportUI.automated_import_should_detect_type": true,
+        "set:FbxImportUI.mesh_type_to_import": true,
+        "set:FbxImportUI.import_mesh": true,
+        "set:FbxImportUI.import_as_skeletal": true,
+        "set:FbxImportUI.import_animations": true,
+        "set:FbxImportUI.create_physics_asset": true,
+        "set:AssetImportTask.options": true
+      }
+    },
+    "faceSkeleton": {
+      "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+      "skeletalMeshExists": true,
+      "skeletalMeshClass": "SkeletalMesh",
+      "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+      "exists": true,
+      "class": "Skeleton",
+      "boneNamesReadable": true,
+      "boneNames": [
+        "Eye_L",
+        "Eye_R",
+        "Head",
+        "HeadRoot",
+        "Jaw",
+        "Neck",
+        "Root"
+      ],
+      "boneProbe": {
+        "readable": true,
+        "method": "Skeleton.get_reference_pose",
+        "count": 7,
+        "errors": []
+      },
+      "requiredTargets": [
+        "Head",
+        "Jaw",
+        "Eye_L",
+        "Eye_R"
+      ],
+      "targetMatches": {
+        "Head": true,
+        "Jaw": true,
+        "Eye_L": true,
+        "Eye_R": true
+      }
+    },
+    "targetRows": [
+      {
+        "target": "Eye_L",
+        "presentInImportedSkeleton": true,
+        "wasMissingInR43": true
+      },
+      {
+        "target": "Eye_R",
+        "presentInImportedSkeleton": true,
+        "wasMissingInR43": true
+      },
+      {
+        "target": "Head",
+        "presentInImportedSkeleton": true,
+        "wasMissingInR43": false
+      },
+      {
+        "target": "Jaw",
+        "presentInImportedSkeleton": true,
+        "wasMissingInR43": true
+      }
+    ],
+    "summary": {
+      "requiredTargetCount": 4,
+      "targetMatches": 4,
+      "previousMissingCount": 3,
+      "previousMissingResolved": 3,
+      "assetWrites": 2,
+      "engineWrites": 2,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-face-skeleton-fixture-evaluation@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "pass": 7,
+      "warning": 1,
+      "error": 0,
+      "ownerActionCount": 1
+    },
+    "evaluations": [
+      {
+        "id": "face-skeleton-fixture:source-deformation-link-present",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "source-deformation-link-present",
+        "label": "Source Deformation Link",
+        "status": "pass",
+        "reason": "Face Skeleton fixture should answer a concrete R43 deformation-link gap.",
+        "evidence": "{'characterRows': 2, 'controlsEvaluated': 10, 'runtimeControlsPresent': 5, 'mappedTargetNames': 8, 'skeletonTargetMatches': 2, 'skeletonTargetUnknown': 5, 'shapeOrOffsetReadableControls': 5, 'compileApiVisibleRows': 1, 'directCompileStatusRows': 0, 'assetWrites': 0, 'engineWrites': 0, 'productionWrites': 0}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:maya-fbx-generated",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "maya-fbx-generated",
+        "label": "Maya FBX Generated",
+        "status": "pass",
+        "reason": "The public face Skeleton should come from a generated synthetic Maya FBX.",
+        "evidence": "D:\\cs\\AIToolTA_Portfolio\\.tmp\\unreal-control-rig-face-skeleton-fixture\\fbx\\SK_HeroFace_SkeletonFixture.fbx",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:unreal-import-success",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "unreal-import-success",
+        "label": "Unreal Import Success",
+        "status": "pass",
+        "reason": "The generated FBX must import into the public Unreal project.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:face-skeleton-readable",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "face-skeleton-readable",
+        "label": "Face Skeleton Readable",
+        "status": "pass",
+        "reason": "The imported Skeleton must expose bone names through Unreal Python.",
+        "evidence": "exists=True readable=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:target-coverage",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "target-coverage",
+        "label": "Required Face Target Coverage",
+        "status": "pass",
+        "reason": "Control Rig deformation targets should all exist in the imported public face Skeleton.",
+        "evidence": "[{'target': 'Eye_L', 'presentInImportedSkeleton': True, 'wasMissingInR43': True}, {'target': 'Eye_R', 'presentInImportedSkeleton': True, 'wasMissingInR43': True}, {'target': 'Head', 'presentInImportedSkeleton': True, 'wasMissingInR43': False}, {'target': 'Jaw', 'presentInImportedSkeleton': True, 'wasMissingInR43': True}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:r43-missing-target-resolution",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "r43-missing-target-resolution",
+        "label": "R43 Missing Target Resolution",
+        "status": "pass",
+        "reason": "Every R43 missing approved-row deformation target should be present in the public face Skeleton fixture.",
+        "evidence": "resolved=3 missing=3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:public-fixture-write-boundary",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "public-fixture-write-boundary",
+        "label": "Public Fixture Write Boundary",
+        "status": "pass",
+        "reason": "This importer may write public synthetic fixtures but must not touch production assets.",
+        "evidence": "assetWrites=2 engineWrites=2 productionWrites=0 scope=/Game/AI_Tool_TA public face Skeleton fixture only",
+        "fixPreview": "None"
+      },
+      {
+        "id": "face-skeleton-fixture:bridge-recheck-required",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "bridge-recheck-required",
+        "label": "Bridge Recheck Required",
+        "status": "warning",
+        "reason": "The fixture is useful only after the Control Rig bridge and deformation-link collector are rerun against SK_HeroFace.",
+        "evidence": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+        "fixPreview": "Rerun run_l3_smoke.py and run_deformation_link.py after switching approved targets to the face Skeleton fixture."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:face-skeleton-fixture:bridge-recheck-required",
+        "assetId": "face-skeleton-fixture",
+        "ruleId": "bridge-recheck-required",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "engine-ta",
+        "preview": "Rerun run_l3_smoke.py and run_deformation_link.py after switching approved targets to the face Skeleton fixture.",
+        "writeBoundary": "public_fixture_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-control-rig-face-skeleton-fixture",
+    "name": "Unreal Control Rig Face Skeleton Fixture",
+    "methodSource": "Maya synthetic face Skeleton FBX -> Unreal public SkeletalMesh/Skeleton import",
+    "protocolCarrier": "R43 Control Rig deformation-link missing target facts + imported Unreal Skeleton bone facts",
+    "boundary": {
+      "mutation": "public_unreal_test_project_fixture_only",
+      "engineWrites": 2,
+      "assetWrites": 2,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public face Skeleton fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R44 creates a public face Skeleton fixture instead of waiving R43's missing deformation targets.",
+    "The report proves whether Head, Jaw, Eye_L and Eye_R are readable from the imported Unreal Skeleton.",
+    "The fixture is generated from public synthetic Maya data and writes only under /Game/AI_Tool_TA.",
+    "The result is a relink target for the Control Rig bridge; direct compile-status proof remains a separate adapter task."
+  ]
+}

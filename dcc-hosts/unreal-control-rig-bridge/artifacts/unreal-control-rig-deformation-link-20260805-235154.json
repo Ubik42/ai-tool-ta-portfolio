@@ -1,0 +1,1446 @@
+{
+  "reportVersion": "unreal-control-rig-deformation-link@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Deformation Link",
+  "generatedAt": "2026-08-05 23:52:02",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_control_rig_deformation_link_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
+    "reportVersion": "unreal-control-rig-bridge@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_bridge_facts_collected",
+    "gate": "Blocked"
+  },
+  "fixtureAuthoringArtifact": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-fixture-authoring-20260805-230323.json",
+    "reportVersion": "unreal-control-rig-fixture-authoring@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_fixture_authoring_collected",
+    "gate": "Ready"
+  },
+  "sourceBridgeSummary": {
+    "gate": "Blocked",
+    "characterRows": 2,
+    "readyRows": 1,
+    "reviewRows": 0,
+    "blockedRows": 1,
+    "pass": 10,
+    "warning": 1,
+    "error": 5,
+    "readyAssetIds": [
+      "char-hero-head-001"
+    ],
+    "reviewAssetIds": [],
+    "blockedAssetIds": [
+      "char-hero-head-tmp-002"
+    ]
+  },
+  "fixtureAuthoringSummary": {
+    "gate": "Ready",
+    "operationRows": 1,
+    "heldRows": 1,
+    "createdAssets": 1,
+    "existingAssets": 0,
+    "savedAssets": 1,
+    "hierarchyReadableRows": 1,
+    "requiredControlCount": 5,
+    "runtimeControlCount": 5,
+    "missingControlCount": 0,
+    "assetWrites": 1,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "ControlRig": true,
+        "ControlRigBlueprint": true,
+        "RigElementKey": true,
+        "RigElementType": true,
+        "RigHierarchy": true,
+        "Skeleton": true,
+        "SkeletalMesh": true,
+        "EditorAssetLibrary": true
+      },
+      "controlRigBlueprintMethods": [
+        "create_control_rig",
+        "create_rig_vm_host",
+        "get_auto_vm_recompile",
+        "get_available_rig_vm_structs",
+        "get_control_rig_class",
+        "get_controller",
+        "get_controller_by_name",
+        "get_currently_open_rig_blueprints",
+        "get_hierarchy_controller",
+        "get_or_create_controller",
+        "get_rig_vm_host_class",
+        "hierarchy",
+        "recompile_vm",
+        "recompile_vm_if_required",
+        "request_auto_vm_recompilation",
+        "request_rig_vm_init",
+        "set_auto_vm_recompile",
+        "vm_compile_settings"
+      ],
+      "rigHierarchyMethods": [
+        "find_control",
+        "get_all_keys",
+        "get_control_preferred_euler_angles",
+        "get_control_preferred_euler_angles_by_index",
+        "get_control_preferred_euler_rotation_order",
+        "get_control_preferred_euler_rotation_order_by_index",
+        "get_control_preferred_rotator",
+        "get_control_preferred_rotator_by_index",
+        "get_control_value",
+        "get_control_value_by_index",
+        "get_controller",
+        "get_controls",
+        "get_curve_value",
+        "get_curve_value_by_index",
+        "get_euler_transform_from_control_value",
+        "get_float_from_control_value",
+        "get_global_control_offset_transform",
+        "get_global_control_offset_transform_by_index",
+        "get_global_control_shape_transform",
+        "get_global_control_shape_transform_by_index",
+        "get_global_transform",
+        "get_global_transform_by_index",
+        "get_int_from_control_value",
+        "get_key",
+        "get_keys",
+        "get_local_control_shape_transform",
+        "get_local_control_shape_transform_by_index",
+        "get_local_transform",
+        "get_local_transform_by_index",
+        "get_parent_transform",
+        "get_parent_transform_by_index",
+        "get_rig_element_key_array_metadata",
+        "get_rig_element_key_metadata",
+        "get_rotator_from_control_value",
+        "get_selected_keys",
+        "get_transform_array_metadata",
+        "get_transform_from_control_value",
+        "get_transform_metadata",
+        "get_transform_no_scale_from_control_value",
+        "get_vector2d_from_control_value",
+        "get_vector_from_control_value",
+        "is_controller_available",
+        "is_curve_value_set",
+        "is_curve_value_set_by_index",
+        "make_control_value_from_bool",
+        "make_control_value_from_euler_transform",
+        "make_control_value_from_float",
+        "make_control_value_from_int",
+        "make_control_value_from_rotator",
+        "make_control_value_from_transform",
+        "make_control_value_from_transform_no_scale",
+        "make_control_value_from_vector",
+        "make_control_value_from_vector2d",
+        "reset_curve_values",
+        "send_auto_key_event",
+        "set_control_offset_transform",
+        "set_control_offset_transform_by_index",
+        "set_control_preferred_euler_angles",
+        "set_control_preferred_euler_angles_by_index",
+        "set_control_preferred_rotation_order",
+        "set_control_preferred_rotation_order_by_index",
+        "set_control_preferred_rotator",
+        "set_control_preferred_rotator_by_index",
+        "set_control_settings",
+        "set_control_settings_by_index",
+        "set_control_shape_transform",
+        "set_control_shape_transform_by_index",
+        "set_control_value",
+        "set_control_value_by_index",
+        "set_control_visibility",
+        "set_control_visibility_by_index",
+        "set_curve_value",
+        "set_curve_value_by_index",
+        "set_global_transform",
+        "set_global_transform_by_index",
+        "set_local_transform",
+        "set_local_transform_by_index",
+        "set_rig_element_key_array_metadata",
+        "set_rig_element_key_metadata",
+        "set_transform_array_metadata",
+        "set_transform_metadata",
+        "sort_keys",
+        "unset_curve_value",
+        "unset_curve_value_by_index"
+      ],
+      "skeletonMethods": [
+        "add_compatible_skeleton",
+        "add_compatible_skeleton_soft",
+        "compatible_skeletons",
+        "get_reference_pose"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only /Game/AI_Tool_TA Control Rig deformation link probe"
+  },
+  "facts": {
+    "schema": "unreal-control-rig-deformation-link@0.1.0",
+    "sourceBridgeCharacters": 2,
+    "sourceBridgeReadyRows": 1,
+    "fixtureOperationRows": 1,
+    "fixtureRequiredControls": 5,
+    "runtimeCollected": true,
+    "characters": [
+      {
+        "assetId": "char-hero-head-001",
+        "assetLabel": "Hero Head Approved",
+        "sourceStatus": "Ready",
+        "sourceControlRigPanelStatus": "Ready",
+        "sourceSkeletonPanelStatus": "Ready",
+        "sourceMissingJoints": [],
+        "sourceTemporaryJoints": [],
+        "sourceTargetMismatches": [],
+        "sourceUnresolvedTargets": [],
+        "sourceExpectedJoints": [
+          "HeadRoot",
+          "Neck",
+          "Head",
+          "Jaw",
+          "Eye_L",
+          "Eye_R"
+        ],
+        "sourceActualJoints": [
+          "Eye_L",
+          "Eye_R",
+          "Head",
+          "HeadRoot",
+          "Jaw",
+          "Neck"
+        ],
+        "sourceMappings": {
+          "CTRL_brow_L": "Head",
+          "CTRL_brow_R": "Head",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_eye_R": "Eye_R",
+          "CTRL_jaw": "Jaw"
+        },
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+          "bindingPolicy": "read_existing_public_face_skeleton_fixture_assets"
+        },
+        "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "skeletalMeshExists": true,
+        "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_HeroFace_Skeleton",
+        "skeletonExists": true,
+        "skeletonClass": "Skeleton",
+        "skeletonBoneNamesReadable": true,
+        "skeletonBoneNames": [
+          "Eye_L",
+          "Eye_R",
+          "Head",
+          "HeadRoot",
+          "Jaw",
+          "Neck",
+          "Root"
+        ],
+        "skeletonBoneProbe": {
+          "readable": true,
+          "method": "Skeleton.get_reference_pose",
+          "count": 7,
+          "errors": []
+        },
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "controlRigExists": true,
+        "controlRigClass": "ControlRigBlueprint",
+        "requiredControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "hierarchyReadable": true,
+        "hierarchyKeyCount": 5,
+        "hierarchyKeys": [
+          {
+            "name": "CTRL_brow_L",
+            "type": "<RigElementType.CONTROL: 4>",
+            "repr": "<Struct 'RigElementKey' (0x000004C400931A00) {type: Control, name: \"CTRL_brow_L\"}>"
+          },
+          {
+            "name": "CTRL_brow_R",
+            "type": "<RigElementType.CONTROL: 4>",
+            "repr": "<Struct 'RigElementKey' (0x000004C400931A20) {type: Control, name: \"CTRL_brow_R\"}>"
+          },
+          {
+            "name": "CTRL_eye_L",
+            "type": "<RigElementType.CONTROL: 4>",
+            "repr": "<Struct 'RigElementKey' (0x000004C4009319B0) {type: Control, name: \"CTRL_eye_L\"}>"
+          },
+          {
+            "name": "CTRL_eye_R",
+            "type": "<RigElementType.CONTROL: 4>",
+            "repr": "<Struct 'RigElementKey' (0x000004C400931830) {type: Control, name: \"CTRL_eye_R\"}>"
+          },
+          {
+            "name": "CTRL_jaw",
+            "type": "<RigElementType.CONTROL: 4>",
+            "repr": "<Struct 'RigElementKey' (0x000004C400931770) {type: Control, name: \"CTRL_jaw\"}>"
+          }
+        ],
+        "runtimeControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "missingControls": [],
+        "controlLinks": [
+          {
+            "control": "CTRL_brow_L",
+            "deformationTarget": "Head",
+            "runtimeControlExists": true,
+            "targetInUnrealSkeleton": true,
+            "shapeReadable": true,
+            "offsetReadable": true,
+            "valueReadable": true,
+            "detail": {
+              "control": "CTRL_brow_L",
+              "key": "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>",
+              "valueCalls": [
+                {
+                  "method": "get_control_value",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2600) {}>",
+                  "error": null
+                },
+                {
+                  "method": "get_control_value_by_index",
+                  "args": [
+                    "0"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2000) {}>",
+                  "error": null
+                }
+              ],
+              "shapeCalls": [
+                {
+                  "method": "get_local_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_local_control_shape_transform_by_index",
+                  "args": [
+                    "0"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform_by_index",
+                  "args": [
+                    "0"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                }
+              ],
+              "offsetCalls": [
+                {
+                  "method": "get_global_control_offset_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_offset_transform_by_index",
+                  "args": [
+                    "0"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12B840) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                }
+              ],
+              "metadataCalls": [
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>",
+                    "aiToolTA"
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                },
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009312B0) {type: Control, name: \"CTRL_brow_L\"}>",
+                    ""
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                }
+              ]
+            }
+          },
+          {
+            "control": "CTRL_brow_R",
+            "deformationTarget": "Head",
+            "runtimeControlExists": true,
+            "targetInUnrealSkeleton": true,
+            "shapeReadable": true,
+            "offsetReadable": true,
+            "valueReadable": true,
+            "detail": {
+              "control": "CTRL_brow_R",
+              "key": "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>",
+              "valueCalls": [
+                {
+                  "method": "get_control_value",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2300) {}>",
+                  "error": null
+                },
+                {
+                  "method": "get_control_value_by_index",
+                  "args": [
+                    "1"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2700) {}>",
+                  "error": null
+                }
+              ],
+              "shapeCalls": [
+                {
+                  "method": "get_local_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_local_control_shape_transform_by_index",
+                  "args": [
+                    "1"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform_by_index",
+                  "args": [
+                    "1"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                }
+              ],
+              "offsetCalls": [
+                {
+                  "method": "get_global_control_offset_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_offset_transform_by_index",
+                  "args": [
+                    "1"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC12BB10) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                }
+              ],
+              "metadataCalls": [
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>",
+                    "aiToolTA"
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                },
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009319F0) {type: Control, name: \"CTRL_brow_R\"}>",
+                    ""
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                }
+              ]
+            }
+          },
+          {
+            "control": "CTRL_eye_L",
+            "deformationTarget": "Eye_L",
+            "runtimeControlExists": true,
+            "targetInUnrealSkeleton": true,
+            "shapeReadable": true,
+            "offsetReadable": true,
+            "valueReadable": true,
+            "detail": {
+              "control": "CTRL_eye_L",
+              "key": "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>",
+              "valueCalls": [
+                {
+                  "method": "get_control_value",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2B00) {}>",
+                  "error": null
+                },
+                {
+                  "method": "get_control_value_by_index",
+                  "args": [
+                    "2"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2600) {}>",
+                  "error": null
+                }
+              ],
+              "shapeCalls": [
+                {
+                  "method": "get_local_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_local_control_shape_transform_by_index",
+                  "args": [
+                    "2"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform_by_index",
+                  "args": [
+                    "2"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                }
+              ],
+              "offsetCalls": [
+                {
+                  "method": "get_global_control_offset_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_offset_transform_by_index",
+                  "args": [
+                    "2"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC1509F0) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                }
+              ],
+              "metadataCalls": [
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>",
+                    "aiToolTA"
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                },
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C4009315A0) {type: Control, name: \"CTRL_eye_L\"}>",
+                    ""
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                }
+              ]
+            }
+          },
+          {
+            "control": "CTRL_eye_R",
+            "deformationTarget": "Eye_R",
+            "runtimeControlExists": true,
+            "targetInUnrealSkeleton": true,
+            "shapeReadable": true,
+            "offsetReadable": true,
+            "valueReadable": true,
+            "detail": {
+              "control": "CTRL_eye_R",
+              "key": "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>",
+              "valueCalls": [
+                {
+                  "method": "get_control_value",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2000) {}>",
+                  "error": null
+                },
+                {
+                  "method": "get_control_value_by_index",
+                  "args": [
+                    "3"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2300) {}>",
+                  "error": null
+                }
+              ],
+              "shapeCalls": [
+                {
+                  "method": "get_local_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_local_control_shape_transform_by_index",
+                  "args": [
+                    "3"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform_by_index",
+                  "args": [
+                    "3"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                }
+              ],
+              "offsetCalls": [
+                {
+                  "method": "get_global_control_offset_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_offset_transform_by_index",
+                  "args": [
+                    "3"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC150F00) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                }
+              ],
+              "metadataCalls": [
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>",
+                    "aiToolTA"
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                },
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931880) {type: Control, name: \"CTRL_eye_R\"}>",
+                    ""
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                }
+              ]
+            }
+          },
+          {
+            "control": "CTRL_jaw",
+            "deformationTarget": "Jaw",
+            "runtimeControlExists": true,
+            "targetInUnrealSkeleton": true,
+            "shapeReadable": true,
+            "offsetReadable": true,
+            "valueReadable": true,
+            "detail": {
+              "control": "CTRL_jaw",
+              "key": "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>",
+              "valueCalls": [
+                {
+                  "method": "get_control_value",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2700) {}>",
+                  "error": null
+                },
+                {
+                  "method": "get_control_value_by_index",
+                  "args": [
+                    "4"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'RigControlValue' (0x000004C4009E2700) {}>",
+                  "error": null
+                }
+              ],
+              "shapeCalls": [
+                {
+                  "method": "get_local_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_local_control_shape_transform_by_index",
+                  "args": [
+                    "4"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_shape_transform_by_index",
+                  "args": [
+                    "4"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 0.000000, y: 0.000000, z: 0.000000}}>",
+                  "error": null
+                }
+              ],
+              "offsetCalls": [
+                {
+                  "method": "get_global_control_offset_transform",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                },
+                {
+                  "method": "get_global_control_offset_transform_by_index",
+                  "args": [
+                    "4"
+                  ],
+                  "ok": true,
+                  "value": "<Struct 'Transform' (0x00000140AC15A450) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>",
+                  "error": null
+                }
+              ],
+              "metadataCalls": [
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>",
+                    "aiToolTA"
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                },
+                {
+                  "method": "get_rig_element_key_metadata",
+                  "args": [
+                    "<Struct 'RigElementKey' (0x000004C400931540) {type: Control, name: \"CTRL_jaw\"}>",
+                    ""
+                  ],
+                  "ok": false,
+                  "value": null,
+                  "error": "get_rig_element_key_metadata() required argument 'default_value' (pos 3) not found"
+                }
+              ]
+            }
+          }
+        ],
+        "compileProbe": {
+          "compileApiVisible": true,
+          "directCompileStatusReadable": false,
+          "directCompileStatus": null,
+          "compileMethods": [
+            "create_control_rig",
+            "create_rig_vm_host",
+            "get_auto_vm_recompile",
+            "get_available_rig_vm_structs",
+            "get_control_rig_class",
+            "get_currently_open_rig_blueprints",
+            "get_rig_vm_host_class",
+            "recompile_vm",
+            "recompile_vm_if_required",
+            "request_auto_vm_recompilation",
+            "request_rig_vm_init",
+            "set_auto_vm_recompile",
+            "vm_compile_settings"
+          ],
+          "classRows": [
+            {
+              "method": "get_control_rig_class",
+              "args": [],
+              "ok": true,
+              "value": "<Object '/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace_C' (0x000004C3E9DFD200) Class 'RigVMBlueprintGeneratedClass'>",
+              "error": null
+            },
+            {
+              "method": "get_rig_vm_host_class",
+              "args": [],
+              "ok": true,
+              "value": "<Object '/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace_C' (0x000004C3E9DFD200) Class 'RigVMBlueprintGeneratedClass'>",
+              "error": null
+            }
+          ],
+          "settingsRows": [
+            {
+              "attribute": "vm_compile_settings",
+              "ok": true,
+              "value": "<Struct 'RigVMCompileSettings' (0x000004C3F5CFD618) {surpress_info_messages: True, surpress_warnings: False, surpress_errors: False, enable_pin_watches: True, ast_settings: {}}>",
+              "error": null
+            },
+            {
+              "attribute": "compile_status",
+              "ok": false,
+              "value": null,
+              "error": "ControlRigBlueprint: Failed to find property 'compile_status' for attribute 'compile_status' on 'ControlRigBlueprint'"
+            },
+            {
+              "attribute": "last_compile_status",
+              "ok": false,
+              "value": null,
+              "error": "ControlRigBlueprint: Failed to find property 'last_compile_status' for attribute 'last_compile_status' on 'ControlRigBlueprint'"
+            },
+            {
+              "attribute": "status",
+              "ok": false,
+              "value": null,
+              "error": "ControlRigBlueprint: Property 'Status' for attribute 'status' on 'ControlRigBlueprint' is protected and cannot be read"
+            }
+          ]
+        }
+      },
+      {
+        "assetId": "char-hero-head-tmp-002",
+        "assetLabel": "Hero Head Temporary Sculpt",
+        "sourceStatus": "Blocked",
+        "sourceControlRigPanelStatus": "Blocked",
+        "sourceSkeletonPanelStatus": "Blocked",
+        "sourceMissingJoints": [
+          "Eye_R",
+          "Jaw"
+        ],
+        "sourceTemporaryJoints": [
+          "Jaw_TMP",
+          "TmpSocket"
+        ],
+        "sourceTargetMismatches": [
+          {
+            "control": "CTRL_jaw",
+            "expected": "Jaw",
+            "actual": "Jaw_TMP"
+          }
+        ],
+        "sourceUnresolvedTargets": [],
+        "sourceExpectedJoints": [
+          "HeadRoot",
+          "Neck",
+          "Head",
+          "Jaw",
+          "Eye_L",
+          "Eye_R"
+        ],
+        "sourceActualJoints": [
+          "Eye_L",
+          "Head",
+          "HeadRoot",
+          "Jaw_TMP",
+          "Neck",
+          "TmpSocket"
+        ],
+        "sourceMappings": {
+          "CTRL_brow_L": "Head",
+          "CTRL_eye_L": "Eye_L",
+          "CTRL_jaw": "Jaw",
+          "CTRL_brow_R": "",
+          "CTRL_eye_R": ""
+        },
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+          "bindingPolicy": "read_existing_public_fixture_assets"
+        },
+        "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+        "skeletalMeshExists": false,
+        "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+        "skeletonExists": false,
+        "skeletonClass": null,
+        "skeletonBoneNamesReadable": false,
+        "skeletonBoneNames": [],
+        "skeletonBoneProbe": {
+          "readable": false,
+          "method": null,
+          "count": 0,
+          "errors": [
+            "skeleton_asset_missing"
+          ]
+        },
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "controlRigExists": false,
+        "controlRigClass": null,
+        "requiredControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "hierarchyReadable": false,
+        "hierarchyKeyCount": 0,
+        "hierarchyKeys": [],
+        "runtimeControls": [],
+        "missingControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "controlLinks": [
+          {
+            "control": "CTRL_brow_L",
+            "deformationTarget": "Head",
+            "runtimeControlExists": false,
+            "targetInUnrealSkeleton": "unknown",
+            "shapeReadable": false,
+            "offsetReadable": false,
+            "valueReadable": false,
+            "detail": {
+              "control": "CTRL_brow_L",
+              "key": null,
+              "valueCalls": [],
+              "shapeCalls": [],
+              "offsetCalls": [],
+              "metadataCalls": []
+            }
+          },
+          {
+            "control": "CTRL_brow_R",
+            "deformationTarget": "",
+            "runtimeControlExists": false,
+            "targetInUnrealSkeleton": "unknown",
+            "shapeReadable": false,
+            "offsetReadable": false,
+            "valueReadable": false,
+            "detail": {
+              "control": "CTRL_brow_R",
+              "key": null,
+              "valueCalls": [],
+              "shapeCalls": [],
+              "offsetCalls": [],
+              "metadataCalls": []
+            }
+          },
+          {
+            "control": "CTRL_eye_L",
+            "deformationTarget": "Eye_L",
+            "runtimeControlExists": false,
+            "targetInUnrealSkeleton": "unknown",
+            "shapeReadable": false,
+            "offsetReadable": false,
+            "valueReadable": false,
+            "detail": {
+              "control": "CTRL_eye_L",
+              "key": null,
+              "valueCalls": [],
+              "shapeCalls": [],
+              "offsetCalls": [],
+              "metadataCalls": []
+            }
+          },
+          {
+            "control": "CTRL_eye_R",
+            "deformationTarget": "",
+            "runtimeControlExists": false,
+            "targetInUnrealSkeleton": "unknown",
+            "shapeReadable": false,
+            "offsetReadable": false,
+            "valueReadable": false,
+            "detail": {
+              "control": "CTRL_eye_R",
+              "key": null,
+              "valueCalls": [],
+              "shapeCalls": [],
+              "offsetCalls": [],
+              "metadataCalls": []
+            }
+          },
+          {
+            "control": "CTRL_jaw",
+            "deformationTarget": "Jaw",
+            "runtimeControlExists": false,
+            "targetInUnrealSkeleton": "unknown",
+            "shapeReadable": false,
+            "offsetReadable": false,
+            "valueReadable": false,
+            "detail": {
+              "control": "CTRL_jaw",
+              "key": null,
+              "valueCalls": [],
+              "shapeCalls": [],
+              "offsetCalls": [],
+              "metadataCalls": []
+            }
+          }
+        ],
+        "compileProbe": {
+          "compileApiVisible": false,
+          "directCompileStatusReadable": false,
+          "directCompileStatus": null,
+          "compileMethods": [],
+          "classRows": [],
+          "settingsRows": []
+        }
+      }
+    ],
+    "summary": {
+      "characterRows": 2,
+      "controlsEvaluated": 10,
+      "runtimeControlsPresent": 5,
+      "mappedTargetNames": 8,
+      "skeletonTargetMatches": 5,
+      "skeletonTargetUnknown": 5,
+      "shapeOrOffsetReadableControls": 5,
+      "compileApiVisibleRows": 1,
+      "directCompileStatusRows": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-deformation-link-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "characterRows": 2,
+      "readyRows": 0,
+      "reviewRows": 1,
+      "blockedRows": 1,
+      "pass": 13,
+      "warning": 2,
+      "error": 5,
+      "readyAssetIds": [],
+      "reviewAssetIds": [
+        "char-hero-head-001"
+      ],
+      "blockedAssetIds": [
+        "char-hero-head-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "char-hero-head-001:source-bridge-ready",
+        "assetId": "char-hero-head-001",
+        "ruleId": "source-bridge-ready",
+        "label": "Source Bridge Ready",
+        "status": "pass",
+        "reason": "Only approved Character Calibration bridge rows should be treated as deformation-link candidates.",
+        "evidence": "Ready",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:unreal-python-runtime",
+        "assetId": "char-hero-head-001",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The deformation link report must be collected inside Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-asset-readable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-asset-readable",
+        "label": "Control Rig Asset Readable",
+        "status": "pass",
+        "reason": "CR_HeroFace must exist and expose hierarchy facts before deformation links can be trusted.",
+        "evidence": "exists=True hierarchy=True class=ControlRigBlueprint",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:runtime-control-coverage",
+        "assetId": "char-hero-head-001",
+        "ruleId": "runtime-control-coverage",
+        "label": "Runtime Control Coverage",
+        "status": "pass",
+        "reason": "Every Maya required control should exist in the Unreal Control Rig runtime hierarchy.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:deformation-target-source-clean",
+        "assetId": "char-hero-head-001",
+        "ruleId": "deformation-target-source-clean",
+        "label": "Source Deformation Targets",
+        "status": "pass",
+        "reason": "Maya control mappings should resolve to approved deformation targets before engine handoff.",
+        "evidence": "missingJoints=[] temporaryJoints=[] missingTargets=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:deformation-target-skeleton-link",
+        "assetId": "char-hero-head-001",
+        "ruleId": "deformation-target-skeleton-link",
+        "label": "Skeleton Target Link",
+        "status": "pass",
+        "reason": "Control Rig targets should be visible in the Unreal Skeleton when the Skeleton API exposes bone names.",
+        "evidence": "missing=[] unknown=[] skeletonReadable=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-shape-offset-readability",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-shape-offset-readability",
+        "label": "Control Shape / Offset Readability",
+        "status": "pass",
+        "reason": "Reviewer should be able to inspect control shape or offset facts for each runtime control.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-compile-api",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-compile-api",
+        "label": "Compile API Surface",
+        "status": "pass",
+        "reason": "The Control Rig asset should expose VM / compile API methods before compile-readiness can be discussed.",
+        "evidence": "['create_control_rig', 'create_rig_vm_host', 'get_auto_vm_recompile', 'get_available_rig_vm_structs', 'get_control_rig_class', 'get_currently_open_rig_blueprints', 'get_rig_vm_host_class', 'recompile_vm', 'recompile_vm_if_required', 'request_auto_vm_recompilation', 'request_rig_vm_init', 'set_auto_vm_recompile', 'vm_compile_settings']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:compile-status-direct-readability",
+        "assetId": "char-hero-head-001",
+        "ruleId": "compile-status-direct-readability",
+        "label": "Direct Compile Status",
+        "status": "warning",
+        "reason": "UE Python must expose a stable direct compile status before this report can claim compile success.",
+        "evidence": "None",
+        "fixPreview": "Treat this as API-limited readiness, or add an Editor Utility/C++ bridge for direct compile status."
+      },
+      {
+        "id": "char-hero-head-001:read-only-boundary",
+        "assetId": "char-hero-head-001",
+        "ruleId": "read-only-boundary",
+        "label": "Read-only Boundary",
+        "status": "pass",
+        "reason": "The deformation link collector should not save public or production assets.",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:source-bridge-ready",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-bridge-ready",
+        "label": "Source Bridge Ready",
+        "status": "error",
+        "reason": "Only approved Character Calibration bridge rows should be treated as deformation-link candidates.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve Character Calibration drilldown and bridge owner actions before engine binding review."
+      },
+      {
+        "id": "char-hero-head-tmp-002:unreal-python-runtime",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The deformation link report must be collected inside Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-rig-asset-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-readable",
+        "label": "Control Rig Asset Readable",
+        "status": "error",
+        "reason": "CR_HeroFace must exist and expose hierarchy facts before deformation links can be trusted.",
+        "evidence": "exists=False hierarchy=False class=None",
+        "fixPreview": "Create or repair the public Control Rig fixture, then rerun the read-only deformation probe."
+      },
+      {
+        "id": "char-hero-head-tmp-002:runtime-control-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "runtime-control-coverage",
+        "label": "Runtime Control Coverage",
+        "status": "error",
+        "reason": "Every Maya required control should exist in the Unreal Control Rig runtime hierarchy.",
+        "evidence": "['CTRL_brow_L', 'CTRL_brow_R', 'CTRL_eye_L', 'CTRL_eye_R', 'CTRL_jaw']",
+        "fixPreview": "Add missing controls or hold the binding with an explicit owner waiver."
+      },
+      {
+        "id": "char-hero-head-tmp-002:deformation-target-source-clean",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "deformation-target-source-clean",
+        "label": "Source Deformation Targets",
+        "status": "error",
+        "reason": "Maya control mappings should resolve to approved deformation targets before engine handoff.",
+        "evidence": "missingJoints=['Eye_R', 'Jaw'] temporaryJoints=['Jaw_TMP', 'TmpSocket'] missingTargets=['CTRL_brow_R', 'CTRL_eye_R']",
+        "fixPreview": "Restore approved joints and complete Maya control target mapping before Control Rig handoff."
+      },
+      {
+        "id": "char-hero-head-tmp-002:deformation-target-skeleton-link",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "deformation-target-skeleton-link",
+        "label": "Skeleton Target Link",
+        "status": "pass",
+        "reason": "Control Rig targets should be visible in the Unreal Skeleton when the Skeleton API exposes bone names.",
+        "evidence": "missing=[] unknown=['CTRL_brow_L->Head', 'CTRL_brow_R->', 'CTRL_eye_L->Eye_L', 'CTRL_eye_R->', 'CTRL_jaw->Jaw'] skeletonReadable=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-shape-offset-readability",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-shape-offset-readability",
+        "label": "Control Shape / Offset Readability",
+        "status": "pass",
+        "reason": "Reviewer should be able to inspect control shape or offset facts for each runtime control.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-rig-compile-api",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-compile-api",
+        "label": "Compile API Surface",
+        "status": "error",
+        "reason": "The Control Rig asset should expose VM / compile API methods before compile-readiness can be discussed.",
+        "evidence": "[]",
+        "fixPreview": "Enable ControlRig/RigVM support in the public project."
+      },
+      {
+        "id": "char-hero-head-tmp-002:compile-status-direct-readability",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-status-direct-readability",
+        "label": "Direct Compile Status",
+        "status": "warning",
+        "reason": "UE Python must expose a stable direct compile status before this report can claim compile success.",
+        "evidence": "None",
+        "fixPreview": "Treat this as API-limited readiness, or add an Editor Utility/C++ bridge for direct compile status."
+      },
+      {
+        "id": "char-hero-head-tmp-002:read-only-boundary",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "read-only-boundary",
+        "label": "Read-only Boundary",
+        "status": "pass",
+        "reason": "The deformation link collector should not save public or production assets.",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:char-hero-head-001:compile-status-direct-readability",
+        "assetId": "char-hero-head-001",
+        "ruleId": "compile-status-direct-readability",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "control-rig-owner",
+        "preview": "Treat this as API-limited readiness, or add an Editor Utility/C++ bridge for direct compile status.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:source-bridge-ready",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-bridge-ready",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "character-owner",
+        "preview": "Resolve Character Calibration drilldown and bridge owner actions before engine binding review.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:control-rig-asset-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-readable",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Create or repair the public Control Rig fixture, then rerun the read-only deformation probe.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:runtime-control-coverage",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "runtime-control-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "control-rig-owner",
+        "preview": "Add missing controls or hold the binding with an explicit owner waiver.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:deformation-target-source-clean",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "deformation-target-source-clean",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "character-owner",
+        "preview": "Restore approved joints and complete Maya control target mapping before Control Rig handoff.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:control-rig-compile-api",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-compile-api",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Enable ControlRig/RigVM support in the public project.",
+        "writeBoundary": "read_only_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:compile-status-direct-readability",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-status-direct-readability",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "control-rig-owner",
+        "preview": "Treat this as API-limited readiness, or add an Editor Utility/C++ bridge for direct compile status.",
+        "writeBoundary": "read_only_probe"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-control-rig-deformation-link",
+    "name": "Unreal Control Rig Deformation Link",
+    "methodSource": "Post-authoring Control Rig fixture audit against Maya character deformation intent",
+    "protocolCarrier": "Character Calibration raw mapping + Unreal ControlRigBlueprint hierarchy / Skeleton facts",
+    "boundary": {
+      "mutation": "public_unreal_test_project_read_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only /Game/AI_Tool_TA Control Rig deformation link probe"
+    }
+  },
+  "reviewerClaims": [
+    "R43 audits the generated public CR_HeroFace fixture as an engine-side character binding artifact, not just as an asset-presence check.",
+    "The report links Maya required controls to deformation target names, Unreal runtime controls, hierarchy shape/offset readability and Skeleton target coverage.",
+    "Compile readiness is reported from the UE Python API surface only; missing direct compile status remains a review gate instead of being treated as success.",
+    "The collector is read-only and records zero asset writes, engine writes and production writes."
+  ]
+}

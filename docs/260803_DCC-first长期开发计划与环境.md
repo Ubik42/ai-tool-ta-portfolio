@@ -1539,3 +1539,29 @@ Presenter Pack evidence: 41 / 41 present, 0 missing, 32 route steps
 ```text
 Control Rig direct compile status bridge / public face skeleton fixture 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R44 循环开发断点：Unreal Control Rig Face Skeleton Fixture
+
+R44 已完成 `Unreal Control Rig Face Skeleton Fixture` L3，并复跑 post-face bridge / deformation-link：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-235140.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json
+```
+
+R44 结果：`run_face_skeleton_fixture.py` 先用 Maya 2026 `mayapy` 生成 public face Skeleton FBX，再由 Unreal 5.3.2 导入 `/Game/AI_Tool_TA/Characters/SK_HeroFace` 和 `SK_HeroFace_Skeleton`。artifact 为 L3 / `Review`，required target matches 4 / 4，previous R43 missing targets resolved 3 / 3，assetWrites=2，productionWrites=0。复跑 `run_l3_smoke.py` 后 approved 行 Ready；复跑 `run_deformation_link.py` 后 approved 行从 Blocked 推进到 Review，runtime controls 5，Skeleton target matches 5，shape/offset-readable controls 5，0 direct compile-status rows，13 pass / 2 warning / 5 error，assetWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r44 / dcc-first-package@1.41.0
+Presenter Pack evidence: 42 / 42 present, 0 missing, 33 route steps
+```
+
+下一轮入口：
+
+```text
+Control Rig direct compile status bridge 或 gameplay attach fixture / Groom Export Inspector -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```

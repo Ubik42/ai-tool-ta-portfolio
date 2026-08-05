@@ -1,6 +1,6 @@
 # Unreal Control Rig Bridge
 
-R37-R43 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，并继续推进到 public Control Rig fixture authoring、hierarchy coverage 和 deformation target link，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
+R37-R44 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，并继续推进到 public Control Rig fixture authoring、face Skeleton fixture、hierarchy coverage 和 deformation target link，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -18,13 +18,17 @@ R37-R43 目标：把 Maya Character Calibration 的 Control Rig mapping facts �
 
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/contract.py`
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/fixture_authoring.py`
+- `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/deformation_link.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/run_face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_deformation_link.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/generate_face_skeleton_fbx.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/probe_control_rig_bridge.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/author_control_rig_fixture.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/import_face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/collect_control_rig_deformation_link.py`
 - `dcc-hosts/unreal-handoff-inspector/projects/AI_Tool_TA_Unreal_L3/AI_Tool_TA_Unreal_L3.uproject`
 
@@ -52,20 +56,28 @@ R43 已完成：
 - 输出直接 compile status API-limited 的 warning，不把 `recompile_vm` 等方法存在伪装成 compile success。
 - 结果揭示：`CR_HeroFace` 已有 5 个 runtime controls 和 5 个 shape/offset-readable controls，但 Skeleton 只确认 `Head` target；`Eye_L`、`Eye_R`、`Jaw` 未在 public Skeleton 中匹配，approved 行继续 Blocked。
 
+R44 已完成：
+
+- 新增 Face Skeleton Fixture：Maya 2026 `mayapy` 生成 public `SK_HeroFace_SkeletonFixture.fbx`，Unreal 5.3.2 导入为 `/Game/AI_Tool_TA/Characters/SK_HeroFace` 和 `SK_HeroFace_Skeleton`。
+- Face Skeleton artifact 确认 required targets `Head`、`Jaw`、`Eye_L`、`Eye_R` 为 4 / 4 present，R43 缺的 `Eye_L`、`Eye_R`、`Jaw` 为 3 / 3 resolved，assetWrites=2，productionWrites=0。
+- `expected_unreal_targets()` 的 approved 行切到 `SK_HeroFace` / `SK_HeroFace_Skeleton`，复跑 bridge 后 approved 行保持 Ready，TMP 行继续 Blocked。
+- 复跑 Deformation Link 后 Skeleton target matches 从 2 提升到 5，approved 行从 Blocked 推进到 Review；剩余 Review 来自 direct compile status 仍无法通过 UE Python 稳定读取。
+
 ## 证据
 
 当前 L3 artifacts：
 
 ```text
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json
-<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json
-<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-235140.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json
 ```
 
 关键结果：
@@ -88,18 +100,25 @@ R43 已完成：
 - checks pass / warning / error：10 / 1 / 5
 - skeletal bindings / Control Rig assets：1 / 1
 - assetWrites / productionWrites：0 / 0
+- face Skeleton fixture report version：`unreal-control-rig-face-skeleton-fixture@0.1.0`
+- face Skeleton fixture evidence：L3 / `unreal_control_rig_face_skeleton_fixture_imported`
+- face Skeleton fixture gate：`Review`
+- face Skeleton required targets / matches：4 / 4
+- previous missing targets / resolved：3 / 3
+- face Skeleton assetWrites / productionWrites：2 / 0
 - deformation link report version：`unreal-control-rig-deformation-link@0.1.0`
 - deformation link evidence：L3 / `unreal_control_rig_deformation_link_collected`
 - deformation link gate：`Blocked`
 - deformation link character rows：2
-- deformation link controls / runtime controls / Skeleton matches：10 / 5 / 2
+- deformation link rows ready / review / blocked：0 / 1 / 1
+- deformation link controls / runtime controls / Skeleton matches：10 / 5 / 5
 - shape-or-offset readable controls：5
 - direct compile status rows：0
-- deformation link checks pass / warning / error：12 / 2 / 6
+- deformation link checks pass / warning / error：13 / 2 / 5
 - deformation link assetWrites / productionWrites：0 / 0
 
-Gate 仍为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping、Unreal SkeletalMesh/Skeleton binding、`CR_HeroFace` asset 和 5 个 runtime controls 已经通过，但 public Skeleton 没有确认 `Eye_L`、`Eye_R`、`Jaw` deformation targets，且 UE Python 不能直接读取稳定 compile status；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
+Gate 仍为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping、`SK_HeroFace_Skeleton` target coverage、`CR_HeroFace` asset 和 5 个 runtime controls 已经通过，approved 行只剩 direct compile status API-limited Review；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
 
 ## 后续
 
-下一步可以继续做 Control Rig compile status 的 Editor Utility / C++ bridge、public face skeleton fixture import、owner waiver drilldown，或并行深化 Spatial Authoring 的 gameplay attach fixture。
+下一步可以继续做 Control Rig compile status 的 Editor Utility / C++ bridge、owner waiver drilldown，或并行深化 Spatial Authoring 的 gameplay attach fixture。
