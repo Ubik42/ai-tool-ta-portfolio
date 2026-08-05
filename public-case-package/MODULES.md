@@ -102,21 +102,21 @@ Business scenario: character delivery can pass file checks while topology, joint
 
 Core secret: treat character transfer as facts that survive the DCC-to-engine boundary. The module records topology signature, required joints, TMP leakage, skin influence budget, calibration delta, face parameter coverage and Control Rig mapping.
 
-Deterministic core: public Maya fixture, `mayapy` collector, source rule rows, Maya/AuroraView drilldown panels, owner actions, fix preview, and Unreal Control Rig Bridge evidence.
+Deterministic core: public Maya fixture, `mayapy` collector, source rule rows, Maya/AuroraView drilldown panels, owner actions, fix preview, Unreal Control Rig Bridge evidence, fixture authoring receipt, and deformation-link postcheck.
 
 AI boundary: AI can explain why a character is blocked or draft owner notes. It cannot approve topology drift, fake missing joints, or claim Control Rig coverage without runtime facts.
 
 Key evidence: `../docs/modules/character-calibration-studio.md`
 
-## 10. Unreal Control Rig Bridge / Fixture Authoring
+## 10. Unreal Control Rig Bridge / Fixture / Deformation Link
 
-Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding and target CR asset coverage before it is useful in engine.
+Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding, target CR asset coverage, runtime controls, and deformation target links before it is useful in engine.
 
-Core secret: separate source mapping readiness, engine binding readiness and controlled fixture authoring. R42 proves the approved row can create `CR_HeroFace`, add the five required runtime controls and become Ready, while the TMP row stays blocked at both source and engine layers.
+Core secret: separate source mapping readiness, engine binding readiness, controlled fixture authoring, runtime hierarchy coverage, Skeleton target coverage and compile-readiness API visibility. R43 proves that `CR_HeroFace` having five runtime controls is still not enough when the public Skeleton only confirms two deformation target matches and direct compile status remains API-limited.
 
-Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, AssetTools authoring harness, hierarchy controller control creation, post-authoring bridge recheck, evaluation rows, owner actions and public-fixture write boundary.
+Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, AssetTools authoring harness, hierarchy controller control creation, read-only deformation-link collector, Skeleton reference-pose facts, shape/offset readability rows, post-authoring bridge recheck, evaluation rows, owner actions and public-fixture write boundary.
 
-AI boundary: AI can summarize missing controls and owner responsibilities. It cannot approve Control Rig coverage without deterministic engine evidence, hierarchy facts and explicit write boundary.
+AI boundary: AI can summarize missing controls, missing deformation targets and owner responsibilities. It cannot approve Control Rig coverage or compile readiness without deterministic engine evidence, hierarchy facts and explicit write boundary.
 
 Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
 

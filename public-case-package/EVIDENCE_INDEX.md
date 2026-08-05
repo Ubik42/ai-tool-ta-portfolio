@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R43 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json` | Maya-hosted package probes 41 key evidence files, exports 32 demo route steps, and adds Unreal Control Rig Deformation Link evidence. |
+| Unreal Control Rig Deformation Link | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json` | Unreal 5.3.2 Python reads `CR_HeroFace`, links 10 Maya controls across 2 character rows to runtime controls and deformation targets, confirms 5 runtime controls, 5 shape/offset-readable controls, 2 Skeleton target matches, 0 direct compile-status rows, and keeps assetWrites=0. |
 | R42 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json` | Maya-hosted package probes 40 key evidence files, exports 31 demo route steps, and adds Unreal Control Rig Fixture Authoring evidence. |
 | Unreal Control Rig Fixture Authoring | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json` | Unreal 5.3.2 Python creates the public `CR_HeroFace` fixture, adds 5 required Maya controls to the runtime hierarchy, saves 1 public fixture asset, and keeps productionWrites=0. |
 | Unreal Control Rig Bridge L3 after fixture authoring | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json` | Post-authoring Unreal bridge marks approved `char-hero-head-001` Ready while the TMP row remains Blocked by source defects. |

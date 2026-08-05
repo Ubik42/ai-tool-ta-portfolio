@@ -1515,3 +1515,27 @@ Presenter Pack evidence: 40 / 40 present, 0 missing, 31 route steps
 ```text
 Control Rig deformation target link / compile status 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R43 循环开发断点：Unreal Control Rig Deformation Link
+
+R43 已完成 `Unreal Control Rig Deformation Link` L3：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json
+```
+
+R43 结果：`run_deformation_link.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，只读 `CR_HeroFace`、`SK_Hero_Skeleton` 和 Maya `controlRigMappings`。它把 control presence 推进到 control -> deformation target -> Skeleton target match、hierarchy shape / offset 可读性和 compile API visibility。结果为 L3 / `Blocked` / `unreal_control_rig_deformation_link_collected`，2 character rows，10 control links，5 runtime controls，5 shape/offset-readable controls，2 Skeleton target matches，0 direct compile-status rows，12 pass / 2 warning / 6 error，assetWrites=0，productionWrites=0。关键业务结论：控件存在不等于绑定可交付，approved 行还缺 `Eye_L`、`Eye_R`、`Jaw` Skeleton target matches。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r43 / dcc-first-package@1.40.0
+Presenter Pack evidence: 41 / 41 present, 0 missing, 32 route steps
+```
+
+下一轮入口：
+
+```text
+Control Rig direct compile status bridge / public face skeleton fixture 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```

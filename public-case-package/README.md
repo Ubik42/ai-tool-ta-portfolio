@@ -1,4 +1,4 @@
-# AI Tool TA Public Case Package R42
+# AI Tool TA Public Case Package R43
 
 ## Current DCC-first Entry
 
@@ -31,6 +31,7 @@ The current final presentation route is now Maya-hosted:
 - Character Calibration Drilldown: `<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json`
 - Unreal Control Rig Bridge L3 after fixture authoring: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json`
 - Unreal Control Rig Fixture Authoring: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json`
+- Unreal Control Rig Deformation Link: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json`
 - Spatial Authoring Maya L3: `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json`
 - Spatial Authoring Drilldown: `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json`
 - Platform Variant Forge: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json`
@@ -44,9 +45,9 @@ The current final presentation route is now Maya-hosted:
 - Unreal Socket Authoring Executor: `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json`
 - Unreal Socket API Docs Probe: `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json`
 - Platform Variant StaticMesh Post-check: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json`
-- R42 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json`
+- R43 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json`
 
-Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R42 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after fixture authoring, Unreal Control Rig Fixture Authoring, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
+Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R43 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after fixture authoring, Unreal Control Rig Fixture Authoring, Unreal Control Rig Deformation Link, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
 
 This package is the public reviewer entry point for the AI Tool TA portfolio.
 It presents DCC / engine tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
@@ -65,8 +66,8 @@ It presents DCC / engine tool modules as production-style case studies, with syn
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-public-case-package-r8-66` |
-| Version | `public-case-package@3.36.0` |
+| Package | `ai-tool-ta-public-case-package-r8-67` |
+| Version | `public-case-package@3.37.0` |
 | Source report | `portfolio-case-study-r8-54` |
 | Source report version | `portfolio-case-study-report@3.31.0` |
 | Evidence manifest | `portfolio-evidence-manifest-r8-54` |

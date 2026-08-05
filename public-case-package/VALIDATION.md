@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r43-unreal-control-rig-deformation-link` | `python dcc-hosts/unreal-control-rig-bridge/scripts/run_deformation_link.py` | Unreal 5.3.2 Python reads `CR_HeroFace`, maps 10 controls across 2 character rows, confirms 5 runtime controls, 5 shape/offset-readable controls, 2 Skeleton target matches, 0 direct compile-status rows, and keeps assetWrites=0. |
+| `validate-r43-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r43-unreal-control-rig-deformation-link-presentation-pack")` | DCC Presenter Pack probes 41 key evidence files including Control Rig Deformation Link, reports 41 present / 0 missing required files, and exports 32 demo route steps. |
 | `validate-r42-unreal-control-rig-fixture-authoring` | `python dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py` | Unreal 5.3.2 Python creates `CR_HeroFace` under `/Game/AI_Tool_TA`, adds 5 required controls to the runtime hierarchy, saves 1 public fixture asset, and keeps productionWrites=0. |
 | `validate-r42-unreal-control-rig-bridge-post-authoring` | `python dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py` | Post-authoring bridge reports 2 character rows with approved `char-hero-head-001` Ready, TMP row Blocked, 10 pass / 1 warning / 5 error and assetWrites=0. |
 | `validate-r42-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r42-unreal-control-rig-fixture-authoring-presentation-pack")` | DCC Presenter Pack probes 40 key evidence files including Control Rig Fixture Authoring, reports 40 present / 0 missing required files, and exports 31 demo route steps. |

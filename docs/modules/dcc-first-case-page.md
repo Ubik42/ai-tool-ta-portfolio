@@ -1,6 +1,6 @@
 # DCC-first Case Page / Presenter Pack
 
-R42 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after fixture authoring、Unreal Control Rig Fixture Authoring、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
+R43 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after fixture authoring、Unreal Control Rig Fixture Authoring、Unreal Control Rig Deformation Link、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
 
 ## 核心业务逻辑
 
@@ -12,7 +12,7 @@ R42 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 M
 - Composite gate：把 Asset Handoff Gate 的 Ready / Review / Blocked 作为最终业务判定。
 - Owner / Engine decision：把 repair preview、owner disposition、engine handoff mock 放进主案例。
 - Media plan：把 9 张截图和 1 段录屏变成明确采集清单。
-- Presenter Pack：探测 40 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
+- Presenter Pack：探测 41 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
 - Preset Fact Review：把 Unreal preset comparison 的 blocked / drift / waived / matched rows 投影成 Maya 内 reviewer queue。
 - Scene Transaction Guard：把 Maya 工具运行前后的 scene mutation 输出为 fingerprint、risk rows 和 rollback preview。
 
@@ -39,7 +39,7 @@ Maya API：
 
 React 入口：
 
-- `Task Orchestrator` 证据视图顶部的 `R42 Cross-DCC / Engine Reviewer Pack`
+- `Task Orchestrator` 证据视图顶部的 `R43 Cross-DCC / Engine Reviewer Pack`
 - `Export Case Page` 按钮
 - `Presenter Pack` 按钮
 - `Preset Facts` 按钮
@@ -47,7 +47,7 @@ React 入口：
 - 7 段 business route
 - Composite Gate 摘要
 - Owner / Engine Decision 摘要
-- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Unreal AnimSequence Deep Facts、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Unreal Control Rig Fixture Authoring、Spatial Authoring、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Unreal Socket API docs probe、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
+- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Unreal AnimSequence Deep Facts、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Unreal Control Rig Fixture Authoring、Unreal Control Rig Deformation Link、Spatial Authoring、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Unreal Socket API docs probe、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
 - GUI evidence plan
 - GUI media audit
 - Presenter Pack evidence file probes
@@ -82,11 +82,11 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r42` / `dcc-first-package@1.39.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r43` / `dcc-first-package@1.40.0`
   - gate：`CapturePending`
-  - demo route steps：31
-  - key evidence files：40
-  - present/missing required evidence files：40 / 0
+  - demo route steps：32
+  - key evidence files：41
+  - present/missing required evidence files：41 / 0
   - Animation Continuity：L3 / `Blocked` / `maya_anim_curves_collected`
   - Animation Continuity assets ready/blocked：1 / 1
   - Unreal Animation Bridge：L3 / `Blocked` / `unreal_animsequence_assets_imported`
@@ -108,6 +108,11 @@ React 入口：
   - Unreal Control Rig Fixture Authoring operations / held：1 / 1
   - Unreal Control Rig Fixture Authoring controls required/runtime/missing：5 / 5 / 0
   - Unreal Control Rig Fixture Authoring assetWrites / productionWrites：1 / 0
+  - Unreal Control Rig Deformation Link：L3 / `Blocked` / `unreal_control_rig_deformation_link_collected`
+  - Unreal Control Rig Deformation Link controls / runtime / Skeleton matches：10 / 5 / 2
+  - Unreal Control Rig Deformation Link shape-or-offset readable / direct compile status：5 / 0
+  - Unreal Control Rig Deformation Link pass/warn/error：12 / 2 / 6
+  - Unreal Control Rig Deformation Link assetWrites / productionWrites：0 / 0
   - Spatial Authoring：L3 / `Blocked` / `maya_spatial_authoring_collected`
   - Spatial Authoring assets ready/review/blocked：1 / 0 / 1
   - Spatial Authoring Drilldown：L3-derived / `Blocked` / `maya_spatial_authoring_rows_to_drilldown`
@@ -152,7 +157,7 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json
 ```
 
 Unreal Control Rig Bridge original R37：
@@ -171,6 +176,12 @@ Unreal Control Rig Bridge after fixture authoring：
 
 ```text
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json
+```
+
+Unreal Control Rig Deformation Link：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json
 ```
 
 Platform Variant Unreal Runtime Probe：
@@ -336,4 +347,8 @@ R40 的结论是 API-limited gate：Unreal 5.3 Python 能看到 `SkeletalMesh.ad
 
 ## R42 Unreal Control Rig Fixture Authoring
 
-当前 Presenter Pack 已接入 `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json` 和 post-authoring bridge `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json`，demo route 增至 31 步，evidence probe 增至 40 个。R42 通过 Unreal Python 创建 public `CR_HeroFace`，写入 5 个 required controls，生产写入为 0；复跑 bridge 后 approved 角色行 Ready，TMP 行继续 Blocked。
+R42 Presenter Pack 接入 `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json` 和 post-authoring bridge `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json`，demo route 增至 31 步，evidence probe 增至 40 个。R42 通过 Unreal Python 创建 public `CR_HeroFace`，写入 5 个 required controls，生产写入为 0；复跑 bridge 后 approved 角色行 Ready，TMP 行继续 Blocked。
+
+## R43 Unreal Control Rig Deformation Link
+
+当前 Presenter Pack 已接入 `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-232729.json`，demo route 增至 32 步，evidence probe 增至 41 个。R43 通过 Unreal Python 只读 `CR_HeroFace`、`SK_Hero_Skeleton` 和 Maya controlRigMappings，证明 5 个 runtime controls 和 shape/offset facts 都可读，但 public Skeleton 只确认 2 个 deformation target matches，direct compile status 仍为 0 行可读；这使 approved 角色在更深的绑定层继续 Blocked，且 assetWrites=0。
