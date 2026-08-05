@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -59,7 +59,10 @@ $QuickPythonFiles = @(
     (Join-Path $MayaHost "scripts\send_maya_command.py"),
     (Join-Path $MayaHost "scripts\start_maya_command_bridge.py"),
     (Join-Path $BlenderAdapter "blender_rule_adapter\bpy_collector.py"),
+    (Join-Path $BlenderAdapter "blender_rule_adapter\controlled_repair.py"),
     (Join-Path $BlenderAdapter "scripts\run_l3_smoke.py"),
+    (Join-Path $BlenderAdapter "scripts\run_controlled_repair.py"),
+    (Join-Path $BlenderAdapter "scripts\run_blender_controlled_repair.py"),
     (Join-Path $MaxAdapter "max_rule_adapter\runtime_collector.py"),
     (Join-Path $MaxAdapter "max_rule_adapter\texture_manifest_link.py"),
     (Join-Path $MaxAdapter "scripts\run_l3_smoke.py"),
@@ -192,12 +195,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r56-houdini-rule-adapter-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r57-blender-controlled-repair-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.53.0", summary
-assert summary["present_evidence_files"] == 55, summary
+assert summary["package_version"] == "dcc-first-package@1.54.0", summary
+assert summary["present_evidence_files"] == 56, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 45, summary
+assert summary["demo_route_steps"] == 46, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -429,6 +432,12 @@ if ($Tier -in @("platform-variant-staticmesh-postcheck", "full")) {
 if ($Tier -in @("blender", "full")) {
     Invoke-Step "blender runtime l3" {
         python (Join-Path $BlenderAdapter "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("blender-controlled-repair", "full")) {
+    Invoke-Step "Blender controlled repair executor" {
+        python (Join-Path $BlenderAdapter "scripts\run_controlled_repair.py")
     }
 }
 

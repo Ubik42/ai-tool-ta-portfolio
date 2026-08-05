@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-public-case-package-r8-80",
-  "packageVersion": "public-case-package@3.50.0",
-  "generatedAt": "2026-08-06 04:19:56",
+  "packageId": "ai-tool-ta-public-case-package-r8-81",
+  "packageVersion": "public-case-package@3.51.0",
+  "generatedAt": "2026-08-06 04:39:19",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,9 +9,9 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r56",
-    "packageVersion": "dcc-first-package@1.53.0",
-    "generatedAt": "2026-08-06 04:19:56",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r57",
+    "packageVersion": "dcc-first-package@1.54.0",
+    "generatedAt": "2026-08-06 04:39:19",
     "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
     "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
     "host": {
@@ -24,7 +24,7 @@
     "sourceCaseGate": "Review",
     "summary": {
       "moduleCount": 5,
-      "artifactCount": 41,
+      "artifactCount": 42,
       "casePageSections": 6,
       "casePageArtifactRows": 4,
       "ready": 3,
@@ -109,10 +109,10 @@
       "unrealHandoffInspectorReviewChecks": 2,
       "unrealHandoffInspectorBlockedChecks": 4,
       "presentationPackGate": "CapturePending",
-      "presentationPackEvidenceFiles": 55,
-      "presentationPackPresentEvidenceFiles": 55,
+      "presentationPackEvidenceFiles": 56,
+      "presentationPackPresentEvidenceFiles": 56,
       "presentationPackMissingRequiredFiles": 0,
-      "presentationPackDemoRouteSteps": 45,
+      "presentationPackDemoRouteSteps": 46,
       "unrealPresetFactComparisonGate": "Blocked",
       "unrealPresetFactComparisonPresets": 2,
       "unrealPresetFactComparisonAssets": 1,
@@ -162,7 +162,7 @@
       "animationContinuityPassChecks": 11,
       "animationContinuityWarningChecks": 3,
       "animationContinuityErrorChecks": 6,
-      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
       "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
       "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
       "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -778,8 +778,8 @@
       "unrealGameplayAttachFixtureAssetWrites": 0,
       "unrealGameplayAttachFixtureEngineWrites": 0,
       "unrealGameplayAttachFixtureProductionWrites": 0,
-      "latestRuntimeEvidence": "Houdini Rule Adapter gate: Blocked by missing hython; HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input. Groom Runtime Fact Collector remains L3 Ready.",
-      "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+      "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
+      "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
       "groomRuntimeFactsReportVersion": "groom-runtime-facts@0.1.0",
       "groomRuntimeFactsArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
       "groomRuntimeFactsEvidenceLevel": "L3",
@@ -817,7 +817,22 @@
       "houdiniRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-l3-readiness-20260806-041956.json",
       "houdiniRuleAdapterL3HarnessGate": "Blocked",
       "houdiniRuleAdapterL3HarnessHythonFound": false,
-      "houdiniRuleAdapterL3HarnessCollectorReady": true
+      "houdiniRuleAdapterL3HarnessCollectorReady": true,
+      "blenderControlledRepairReportVersion": "blender-controlled-repair-executor@0.1.0",
+      "blenderControlledRepairArtifact": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+      "blenderControlledRepairEvidenceLevel": "L3",
+      "blenderControlledRepairL3Status": "blender_controlled_repair_rolled_back",
+      "blenderControlledRepairGate": "Ready",
+      "blenderControlledRepairPreGate": "Blocked",
+      "blenderControlledRepairPostGate": "Ready",
+      "blenderControlledRepairRollbackGate": "Blocked",
+      "blenderControlledRepairRollbackPassed": true,
+      "blenderControlledRepairSelectedOperations": 4,
+      "blenderControlledRepairExecutedOperations": 4,
+      "blenderControlledRepairPostReadyAssets": 2,
+      "blenderControlledRepairPostBlockedAssets": 0,
+      "blenderControlledRepairAssetWrites": 0,
+      "blenderControlledRepairProductionWrites": 0
     },
     "moduleOrder": [
       "asset-protocol",
@@ -1170,6 +1185,20 @@
         "kind": "artifact",
         "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
         "required": true
+      },
+      {
+        "id": "dcc-first-blender-controlled-repair",
+        "label": "Blender Controlled Repair Executor",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+        "required": true
+      },
+      {
+        "id": "dcc-first-r57-presenter-pack",
+        "label": "R57 Blender Controlled Repair Presenter Pack",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+        "required": true
       }
     ],
     "validation": [
@@ -1378,6 +1407,18 @@
         "command": "mayapy dcc_presentation_export_pack(label='r56-houdini-rule-adapter-presentation-pack')",
         "result": "passed: 55/55 evidence, 0 missing, 45 demo route",
         "required": true
+      },
+      {
+        "id": "validate-r57-blender-controlled-repair",
+        "command": "python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py",
+        "result": "passed: L3 Ready, preGate Blocked, postGate Ready, rollbackPassed=true, 4 executed operations, writes=0",
+        "required": true
+      },
+      {
+        "id": "validate-r57-dcc-presenter-pack",
+        "command": "mayapy dcc_presentation_export_pack(label='r57-blender-controlled-repair-presentation-pack')",
+        "result": "passed: 56/56 evidence, 0 missing, 46 demo route",
+        "required": true
       }
     ],
     "notes": [
@@ -1456,7 +1497,7 @@
     "unrealHandoffInspectorCollisionSimpleShapes": 1,
     "unrealHandoffInspectorGate": "Blocked",
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
     "presentationPackGate": "CapturePending",
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -2061,7 +2102,9 @@
       "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
       "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-contract-20260806-041956.json",
       "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-l3-readiness-20260806-041956.json",
-      "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json"
+      "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+      "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+      "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json"
     ],
     "evidence": [
       {
@@ -2227,6 +2270,20 @@
         "kind": "artifact",
         "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
         "required": true
+      },
+      {
+        "id": "dcc-first-blender-controlled-repair",
+        "label": "Blender Controlled Repair Executor",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+        "required": true
+      },
+      {
+        "id": "dcc-first-r57-presenter-pack",
+        "label": "R57 Blender Controlled Repair Presenter Pack",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+        "required": true
       }
     ],
     "unrealControlRigFaceSkeletonFixtureReportVersion": "unreal-control-rig-face-skeleton-fixture@0.1.0",
@@ -2292,10 +2349,10 @@
     "groomExportInspectorAssetWrites": 0,
     "groomExportInspectorEngineWrites": 0,
     "groomExportInspectorProductionWrites": 0,
-    "presentationPackEvidenceFiles": 55,
-    "presentationPackPresentEvidenceFiles": 55,
+    "presentationPackEvidenceFiles": 56,
+    "presentationPackPresentEvidenceFiles": 56,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 45,
+    "presentationPackDemoRouteSteps": 46,
     "groomUnrealReadinessReportVersion": "groom-unreal-readiness@0.1.0",
     "groomUnrealReadinessArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-unreal-readiness-20260806-010008.json",
     "groomUnrealReadinessEvidenceLevel": "L3",
@@ -2478,9 +2535,12 @@
       ".\\scripts\\validate_loop.ps1 -Tier groom-runtime-facts",
       "python dcc-hosts/houdini-rule-adapter/scripts/run_smoke.py",
       "python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py",
-      ".\\scripts\\validate_loop.ps1 -Tier houdini"
+      ".\\scripts\\validate_loop.ps1 -Tier houdini",
+      "python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py",
+      ".\\scripts\\validate_loop.ps1 -Tier blender-controlled-repair"
     ],
     "releaseNotes": [
+      "R57 adds Blender Controlled Repair Executor: Blender background runtime applies public fixture collision, LOD, UV and material/texture repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
       "R56 adds Houdini Rule Adapter: HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input, with hython readiness blocked honestly when Houdini is not installed.",
       "R53 adds 3ds Max Material Texture Manifest Link: pymxs material bitmap slots are joined to texture package entries, channel semantics, color-space policy and PC/Mobile budgets.",
       "R54 adds Unreal Gameplay Attach Fixture: Maya socket/hotspot authoring rows are joined to Unreal runtime asset, animation and attach API facts so gameplay equip readiness is blocked by missing character socket contracts instead of hidden until runtime.",
@@ -2528,8 +2588,8 @@
     "groomRuntimeFactsAssetWrites": 6,
     "groomRuntimeFactsEngineWrites": 0,
     "groomRuntimeFactsProductionWrites": 0,
-    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
-    "latestRuntimeEvidence": "Houdini Rule Adapter gate: Blocked by missing hython; HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input. Groom Runtime Fact Collector remains L3 Ready.",
+    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+    "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
     "houdiniRuleAdapterReportVersion": "houdini-rule-adapter-contract@0.1.0",
     "houdiniRuleAdapterArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-contract-20260806-041956.json",
     "houdiniRuleAdapterEvidenceLevel": "L2+",
@@ -2549,7 +2609,22 @@
     "houdiniRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-l3-readiness-20260806-041956.json",
     "houdiniRuleAdapterL3HarnessGate": "Blocked",
     "houdiniRuleAdapterL3HarnessHythonFound": false,
-    "houdiniRuleAdapterL3HarnessCollectorReady": true
+    "houdiniRuleAdapterL3HarnessCollectorReady": true,
+    "blenderControlledRepairReportVersion": "blender-controlled-repair-executor@0.1.0",
+    "blenderControlledRepairArtifact": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+    "blenderControlledRepairEvidenceLevel": "L3",
+    "blenderControlledRepairL3Status": "blender_controlled_repair_rolled_back",
+    "blenderControlledRepairGate": "Ready",
+    "blenderControlledRepairPreGate": "Blocked",
+    "blenderControlledRepairPostGate": "Ready",
+    "blenderControlledRepairRollbackGate": "Blocked",
+    "blenderControlledRepairRollbackPassed": true,
+    "blenderControlledRepairSelectedOperations": 4,
+    "blenderControlledRepairExecutedOperations": 4,
+    "blenderControlledRepairPostReadyAssets": 2,
+    "blenderControlledRepairPostBlockedAssets": 0,
+    "blenderControlledRepairAssetWrites": 0,
+    "blenderControlledRepairProductionWrites": 0
   },
   "summary": {
     "moduleCount": 5,
@@ -2559,14 +2634,14 @@
     "ownerSignoffCount": 3,
     "validationCommandCount": 148,
     "manifestArtifactCount": 37,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
-    "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r56",
-    "currentDccFirstPackageVersion": "dcc-first-package@1.53.0",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+    "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r57",
+    "currentDccFirstPackageVersion": "dcc-first-package@1.54.0",
     "currentDccFirstPackageArtifactCount": 36,
-    "presentationPackEvidenceFiles": 55,
-    "presentationPackPresentEvidenceFiles": 55,
+    "presentationPackEvidenceFiles": 56,
+    "presentationPackPresentEvidenceFiles": 56,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 45,
+    "presentationPackDemoRouteSteps": 46,
     "spatialAuthoringDrilldownReportVersion": "spatial-authoring-drilldown@0.1.0",
     "spatialAuthoringDrilldownArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
     "spatialAuthoringDrilldownEvidenceLevel": "L3-derived",
@@ -5194,7 +5269,7 @@
     "unrealControlRigFaceSkeletonFixtureAssetWrites": 2,
     "unrealControlRigFaceSkeletonFixtureEngineWrites": 2,
     "unrealControlRigFaceSkeletonFixtureProductionWrites": 0,
-    "artifactCount": 41,
+    "artifactCount": 42,
     "presentationPackGate": "CapturePending",
     "unrealControlRigCompileStatusReportVersion": "unreal-control-rig-compile-status@0.1.0",
     "unrealControlRigCompileStatusArtifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
@@ -5387,7 +5462,7 @@
     "currentDccFirstGroomControlledExecutorGate": "Ready",
     "currentDccFirstGroomControlledExecutorImportedAssetClass": "GroomAsset",
     "currentDccFirstGroomControlledExecutorRollbackPassed": true,
-    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
     "groomAlembicPayloadExportMode": "curve_only",
     "groomAlembicPayloadCurveOnlyRows": 2,
     "groomAlembicPayloadSchemaInspectedRows": 1,
@@ -5464,7 +5539,7 @@
     "groomRuntimeFactsAssetWrites": 6,
     "groomRuntimeFactsEngineWrites": 0,
     "groomRuntimeFactsProductionWrites": 0,
-    "latestRuntimeEvidence": "Houdini Rule Adapter gate: Blocked by missing hython; HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input. Groom Runtime Fact Collector remains L3 Ready.",
+    "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -5816,7 +5891,22 @@
     "houdiniRuleAdapterL3HarnessArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-l3-readiness-20260806-041956.json",
     "houdiniRuleAdapterL3HarnessGate": "Blocked",
     "houdiniRuleAdapterL3HarnessHythonFound": false,
-    "houdiniRuleAdapterL3HarnessCollectorReady": true
+    "houdiniRuleAdapterL3HarnessCollectorReady": true,
+    "blenderControlledRepairReportVersion": "blender-controlled-repair-executor@0.1.0",
+    "blenderControlledRepairArtifact": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+    "blenderControlledRepairEvidenceLevel": "L3",
+    "blenderControlledRepairL3Status": "blender_controlled_repair_rolled_back",
+    "blenderControlledRepairGate": "Ready",
+    "blenderControlledRepairPreGate": "Blocked",
+    "blenderControlledRepairPostGate": "Ready",
+    "blenderControlledRepairRollbackGate": "Blocked",
+    "blenderControlledRepairRollbackPassed": true,
+    "blenderControlledRepairSelectedOperations": 4,
+    "blenderControlledRepairExecutedOperations": 4,
+    "blenderControlledRepairPostReadyAssets": 2,
+    "blenderControlledRepairPostBlockedAssets": 0,
+    "blenderControlledRepairAssetWrites": 0,
+    "blenderControlledRepairProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -6062,6 +6152,20 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
       "required": true
+    },
+    {
+      "id": "public-case-blender-controlled-repair",
+      "label": "Blender Controlled Repair Executor",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+      "required": true
+    },
+    {
+      "id": "public-case-r57-presenter-pack",
+      "label": "R57 Blender Controlled Repair Presenter Pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+      "required": true
     }
   ],
   "keyEvidence": [
@@ -6176,7 +6280,9 @@
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r55-groom-runtime-facts-presentation-pack-20260806-040806.json",
     "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-contract-20260806-041956.json",
     "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-l3-readiness-20260806-041956.json",
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json"
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+    "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json"
   ],
   "acceptedReceipts": [
     "accept-rules-r2",
@@ -6478,6 +6584,20 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
       "required": true
+    },
+    {
+      "id": "public-case-blender-controlled-repair",
+      "label": "Blender Controlled Repair Executor",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+      "required": true
+    },
+    {
+      "id": "public-case-r57-presenter-pack",
+      "label": "R57 Blender Controlled Repair Presenter Pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+      "required": true
     }
   ],
   "validation": [
@@ -6677,6 +6797,18 @@
       "command": "mayapy dcc_presentation_export_pack(label='r56-houdini-rule-adapter-presentation-pack')",
       "result": "passed: 55/55 evidence, 0 missing, 45 demo route",
       "required": true
+    },
+    {
+      "id": "validate-r57-blender-controlled-repair",
+      "command": "python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py",
+      "result": "passed: L3 Ready, preGate Blocked, postGate Ready, rollbackPassed=true, 4 executed operations, writes=0",
+      "required": true
+    },
+    {
+      "id": "validate-r57-dcc-presenter-pack",
+      "command": "mayapy dcc_presentation_export_pack(label='r57-blender-controlled-repair-presentation-pack')",
+      "result": "passed: 56/56 evidence, 0 missing, 46 demo route",
+      "required": true
     }
   ],
   "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
@@ -6706,7 +6838,7 @@
   "platformVariantGenerationPlanOwnerRequired": 6,
   "platformVariantGenerationPlanExecutorReady": 1,
   "artifactCount": 96,
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
   "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
   "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
   "platformVariantTextureRuntimeEvidenceLevel": "L3",
@@ -7169,9 +7301,12 @@
     ".\\scripts\\validate_loop.ps1 -Tier groom-runtime-facts",
     "python dcc-hosts/houdini-rule-adapter/scripts/run_smoke.py",
     "python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py",
-    ".\\scripts\\validate_loop.ps1 -Tier houdini"
+    ".\\scripts\\validate_loop.ps1 -Tier houdini",
+    "python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py",
+    ".\\scripts\\validate_loop.ps1 -Tier blender-controlled-repair"
   ],
   "releaseNotes": [
+    "R57 adds Blender Controlled Repair Executor: Blender background runtime applies public fixture collision, LOD, UV and material/texture repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
     "R56 adds Houdini Rule Adapter: HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input, with hython readiness blocked honestly when Houdini is not installed.",
     "R53 adds 3ds Max Material Texture Manifest Link: pymxs material bitmap slots are joined to texture package entries, channel semantics, color-space policy and PC/Mobile budgets.",
     "R54 adds Unreal Gameplay Attach Fixture: Maya socket/hotspot authoring rows are joined to Unreal runtime asset, animation and attach API facts so gameplay equip readiness is blocked by missing character socket contracts instead of hidden until runtime.",
@@ -7219,8 +7354,22 @@
   "groomRuntimeFactsAssetWrites": 6,
   "groomRuntimeFactsEngineWrites": 0,
   "groomRuntimeFactsProductionWrites": 0,
-  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json",
-  "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r56",
-  "currentDccFirstPackageVersion": "dcc-first-package@1.53.0",
-  "latestRuntimeEvidence": "Houdini Rule Adapter gate: Blocked by missing hython; HDA metadata, detail attributes, OUT role nodes, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule input. Groom Runtime Fact Collector remains L3 Ready."
+  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r57-blender-controlled-repair-presentation-pack-20260806-044229.json",
+  "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r57",
+  "currentDccFirstPackageVersion": "dcc-first-package@1.54.0",
+  "latestRuntimeEvidence": "Blender Controlled Repair Executor gate: Ready; Blender 5.2 background runtime converts blocked collision/LOD/UV/material-texture rows into 4 public repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
+  "blenderControlledRepairReportVersion": "blender-controlled-repair-executor@0.1.0",
+  "blenderControlledRepairArtifact": "<repo>\\dcc-hosts\\blender-rule-adapter\\artifacts\\blender-controlled-repair-20260806-043919.json",
+  "blenderControlledRepairEvidenceLevel": "L3",
+  "blenderControlledRepairL3Status": "blender_controlled_repair_rolled_back",
+  "blenderControlledRepairGate": "Ready",
+  "blenderControlledRepairPreGate": "Blocked",
+  "blenderControlledRepairPostGate": "Ready",
+  "blenderControlledRepairRollbackPassed": true,
+  "blenderControlledRepairSelectedOperations": 4,
+  "blenderControlledRepairExecutedOperations": 4,
+  "blenderControlledRepairPostReadyAssets": 2,
+  "blenderControlledRepairPostBlockedAssets": 0,
+  "blenderControlledRepairAssetWrites": 0,
+  "blenderControlledRepairProductionWrites": 0
 }

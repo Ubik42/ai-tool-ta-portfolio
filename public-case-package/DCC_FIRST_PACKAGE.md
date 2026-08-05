@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R56 Cross-DCC / Engine / Animation / Character / Groom / Spatial Socket / Gameplay Attach / Platform Variant / Max Texture Manifest / Houdini Rule Adapter Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R57 Cross-DCC / Engine / Animation / Character / Groom / Spatial Socket / Gameplay Attach / Platform Variant / Blender Repair / Max Texture Manifest / Houdini Rule Adapter Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r56` |
-| Version | `dcc-first-package@1.53.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r57` |
+| Version | `dcc-first-package@1.54.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 41 |
+| DCC artifacts | 42 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 55 / 55 present |
+| Presenter pack evidence files | 56 / 56 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 45 |
+| Presenter demo route steps | 46 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -39,6 +39,10 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Blender adapter assets ready/blocked | 1 / 1 |
 | Blender adapter checks pass/warn/error | 8 / 3 / 1 |
 | Blender L3 harness | `Blocked`, `bpy_scene_collected`, Blender 5.2.0 LTS |
+| Blender controlled repair | `Ready` L3 |
+| Blender repair pre/post/rollback | `Blocked` -> `Ready` -> rollback fingerprint matched |
+| Blender repair selected/executed operations | 4 / 4 |
+| Blender repair writes | assetWrites=0 / productionWrites=0 |
 | 3ds Max rule adapter | `Blocked` L3 |
 | 3ds Max adapter assets ready/review/blocked | 1 / 0 / 1 |
 | 3ds Max adapter checks pass/warn/error | 13 / 5 / 2 |
@@ -276,20 +280,21 @@ Then follow the Presenter Pack route:
 37. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_staticmesh_postcheck.py`.
 38. Review the Blender Rule Adapter artifact.
 39. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
-40. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
-41. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_texture_manifest_link.py`.
-42. Review the Houdini Rule Adapter contract artifact.
-43. Run `python <repo>\dcc-hosts\houdini-rule-adapter\scripts\run_l3_smoke.py`.
-44. Audit GUI media after final Maya screenshots and recording are captured.
-45. Export and hand off the Presenter Pack.
+40. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_controlled_repair.py`.
+41. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+42. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_texture_manifest_link.py`.
+43. Review the Houdini Rule Adapter contract artifact.
+44. Run `python <repo>\dcc-hosts\houdini-rule-adapter\scripts\run_l3_smoke.py`.
+45. Audit GUI media after final Maya screenshots and recording are captured.
+46. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r57-blender-controlled-repair-presentation-pack-20260806-044229.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 45-step demo route, 7-step business route, public package manifest, 55 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, Max Material Texture Manifest Link, Houdini Rule Adapter contract, hython L3 readiness, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 46-step demo route, 7-step business route, public package manifest, 56 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Groom Runtime Fact Collector, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Gameplay Attach Fixture, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, Blender Controlled Repair Executor, 3ds Max pymxs L3 adapter, Max Material Texture Manifest Link, Houdini Rule Adapter contract, hython L3 readiness, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -664,6 +669,14 @@ This is the first non-Maya evidence row in the DCC-first package. The adapter no
 ```
 
 This is the R22 bridge from contract adapter to real Blender runtime. The code includes `bpy_collector.py`, `scripts\run_blender_l3.py`, and `scripts\run_l3_smoke.py`. On this machine Blender 5.2.0 LTS exports `bpy_scene_collected`; the gate remains `Blocked` because the synthetic fixture intentionally includes one blocked asset. No production Blender scene, asset, or engine data is mutated.
+
+## Blender Controlled Repair Executor
+
+```text
+<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-controlled-repair-20260806-043919.json
+```
+
+This is the R57 Fix / Extract / rollback layer above the Blender L3 collector. Blender 5.2.0 LTS runs in background mode, starts from the blocked mobile asset, executes 4 public fixture repair receipts for collision proxy, LOD1, UV metrics and material/texture binding metadata, post-checks both assets as Ready, then rebuilds the original fixture and verifies the preflight fingerprint. It reports L3, gate `Ready`, preGate `Blocked`, postGate `Ready`, rollbackPassed=true, assetWrites=0 and productionWrites=0. No `.blend` file is saved.
 
 ## 3ds Max Rule Adapter
 

@@ -2,15 +2,16 @@
 
 更新时间：2026-08-06
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r56` / `dcc-first-package@1.53.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r57` / `dcc-first-package@1.54.0`
 
 ## 1. 当前结论
 
 当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Houdini contract / hython readiness、Unreal Python 和普通 Python fixture 共同生成。
 
-R56 的硬证据：
+R57 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r57-blender-controlled-repair-presentation-pack-20260806-044229.json`
+- Blender Controlled Repair Executor：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-controlled-repair-20260806-043919.json`
 - Houdini Rule Adapter：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-contract-20260806-041956.json`
 - Houdini hython L3 readiness：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-l3-readiness-20260806-041956.json`
 - Groom Runtime Fact Collector：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-runtime-facts-20260806-040118.json`
@@ -49,7 +50,7 @@ R56 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`
-- Presenter Pack 结果：55 / 55 evidence files present，0 missing required files，45 demo route steps。
+- Presenter Pack 结果：56 / 56 evidence files present，0 missing required files，46 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Houdini/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断、runtime drift 或本机缺少 `hython.exe` 的明确 readiness gate。
 
 ## 2. Lightbox核心技术点覆盖
@@ -57,7 +58,7 @@ R56 的硬证据：
 | Lightbox提炼点 | 当前覆盖 | 状态 | 后续缺口 |
 | --- | --- | --- | --- |
 | 业务语义进入资产数据：custom attr / UV / vertex color / sets | `Asset Protocol Workbench` 已在 Maya 写入和回读 `aiToolTaProtocol` custom attr | 已覆盖核心，Maya L3 | UV / vertex color 语义 carrier 可作为后续子功能 |
-| Pyblish式 Collect / Validate / Fix / Extract | `Cross-DCC Rule Matrix`、`Asset Handoff Gate`、Blender/Max/Houdini adapter 已实现 collect、validate、fix preview、report export | 已覆盖，Maya/Blender/Max 有 runtime 证据，Houdini 有 contract/readiness 证据 | 共享 transaction recorder、更多 DCC auto-fix receipt |
+| Pyblish式 Collect / Validate / Fix / Extract | `Cross-DCC Rule Matrix`、`Asset Handoff Gate`、Blender/Max/Houdini adapter 已实现 collect、validate、fix preview、report export；R57 Blender Controlled Repair 已执行真实 DCC fix/post-check/rollback receipt | 已覆盖，Maya/Blender/Max 有 runtime 证据，Houdini 有 contract/readiness 证据 | 共享 transaction recorder、更多 DCC auto-fix receipt |
 | 规则和 DCC adapter 分层 | Maya adapter、Blender `bpy`、3ds Max `pymxs`、Houdini HDA/PDG/bake receipt contract 已归一化到 shared rule input | 已覆盖主要方法 | MotionBuilder、Photoshop/Substance adapter |
 | 资产协议作为工作台底座 | `Asset Protocol` 串起 LOD、platform、collision、budget、handoff | 已覆盖 | 扩到 platform variant、character LOD、animation intent |
 | 固定相机/固定 pass 的视觉评审 | `Visual Review Studio` 已生成 Maya camera rig、pass manifest、capture preview、report | 部分覆盖 | 真实 Maya playblast/截图和视觉 diff media |
@@ -77,9 +78,9 @@ R56 的硬证据：
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R56 Presenter Pack 55/55 evidence present；45 步 demo route；新增 Houdini adapter probes |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R57 Presenter Pack 56/56 evidence present；46 步 demo route；新增 Blender controlled repair probe |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
-| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max/Houdini 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3；Max texture manifest link L3-derived；Houdini L2+ contract / hython readiness |
+| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max/Houdini 等 DCC 采集事实后检查 | Maya L3；Blender L3；Blender controlled repair L3；3ds Max L3；Max texture manifest link L3-derived；Houdini L2+ contract / hython readiness |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
 | 5 | Texture Delivery Console | 检查材质球、贴图路径、色彩空间、命名和平台预算 | Maya material/file node inspection 已完成 |
 | 6 | Task Orchestrator | 把一批资产变成可 dry-run 的发布任务队列和收据 | Maya scene discovery、queue、receipt 已完成 |
@@ -87,6 +88,7 @@ R56 的硬证据：
 | 8 | Engine Handoff / Unreal Handoff Inspector | 检查 DCC 交付意图进 Unreal 后是否符合路径、依赖、LOD、碰撞和平台 preset | Unreal L3++ 已完成，PC/Mobile preset fact review 已接回 Maya |
 | 9 | Scene Transaction Guard | 记录工具运行前后到底改了场景什么，并给 rollback preview | Maya L3 首版完成 |
 | 10 | Blender Rule Adapter | 从 Blender 采集 custom props、collections、material、UV、collision facts | `bpy` L3 完成 |
+| 10.1 | Blender Controlled Repair Executor | 把 Blender blocked 行转成可执行修复收据，执行后 post-check，再 rollback | R57 L3 完成；preGate Blocked，postGate Ready，rollbackPassed=true，4/4 operations，0 assetWrites |
 | 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts，并把 material bitmap slot 连接到贴图交付 manifest | `pymxs` L3 完成；R53 Max texture manifest link 完成 |
 | 12 | Houdini Rule Adapter | 检查 procedural HDA 资产是否有稳定协议、输出角色、packed prototype、PDG wedge 和 frozen bake receipt | R56 L2+ contract 完成；hython L3 readiness 完成但本机缺 `hython.exe` |
 | 13 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
@@ -102,9 +104,9 @@ R56 的硬证据：
 
 | 插件/工具线 | 完成度判断 | 能展示什么 | 不能展示什么 |
 | --- | --- | --- | --- |
-| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、45 步 demo route、55 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
+| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、46 步 demo route、56 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
 | Asset Protocol Workbench | 75% | Maya 节点 custom attr 协议写入、inspect、DCC evidence report | UV/vertex color 语义 carrier 未实装 |
-| Cross-DCC Rule Matrix | 86% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter、Houdini HDA/PDG/bake receipt contract | Houdini 缺真实 hython L3；规则覆盖仍可加深 |
+| Cross-DCC Rule Matrix | 88% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter、Blender controlled repair rollback、Houdini HDA/PDG/bake receipt contract | Houdini 缺真实 hython L3；规则覆盖仍可加深 |
 | Visual Review Studio | 55% | camera rig、pass manifest、capture preview path、review report | 真实 playblast/截图、图片 diff、HTML 视觉报告未进入 DCC-first media |
 | Texture Delivery Console | 62% | Maya 材质/贴图节点扫描、色彩空间和路径检查、manifest；R53 从 Max material slot 反查 texture package coverage、BC/N/ORM 语义和 Mobile 预算 | DDS/SP/Photoshop/SpriteSheet/UE texture import |
 | Task Orchestrator | 55% | dry-run 队列、per-asset receipts、report export | 真实任务平台 adapter 和附件同步 |
@@ -112,6 +114,7 @@ R56 的硬证据：
 | Unreal Handoff Inspector | 80% | Unreal 5.3 L3++ engine facts、registry fixture、PC/Mobile waiver review | 可继续扩真实 import preset |
 | Scene Transaction Guard | 65% | Maya scene diff、risk rows、rollback preview | 还不是所有工具共享的 transaction middleware |
 | Blender Rule Adapter | 70% | Blender 5.2 `bpy` L3、custom props/collection/material/UV/collision 采集 | 还缺真实复杂 Blender 资产 fixture |
+| Blender Controlled Repair Executor | 72% | Blender 5.2 background 执行 collision proxy、LOD1、UV metric、material/texture metadata 4 条 public repair receipt；post-check Ready；rollback fingerprint matched；0 assetWrites | 还缺真实复杂资产上的 repair 策略、共享 transaction middleware |
 | 3ds Max Rule Adapter | 78% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision/material texture rows 采集；R53 material slot -> texture manifest link 已完成 | 还缺真实复杂 Max 资产 fixture、Max side auto-fix/receipt |
 | Houdini Rule Adapter | 55% | HDA locked state、detail attributes、`OUT_*` 输出角色、geometry attrs、packed prototypes、PDG wedges、frozen bake receipt 已归一到 Cross-DCC Rule Matrix；hython launcher / collector ready | 本机缺 `hython.exe`，真实 Houdini L3 待升级；还缺复杂 HDA fixture |
 | Animation Continuity Lab | 45% | Maya `mayapy` L3 keyed animCurve 采集，rig/skeleton/take/sample/channel/sub-frame/root-motion/layer 检查，fix preview 和 Presenter Pack 接入 | 没有 Maya UI drilldown；MotionBuilder 对照未做 |
@@ -150,7 +153,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r56-houdini-rule-adapter-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r57-blender-controlled-repair-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -267,3 +270,9 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 - Houdini Rule Adapter：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-contract-20260806-041956.json`
 - Houdini hython L3 readiness：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-l3-readiness-20260806-041956.json`
 - 结果：L2+ / `Blocked` / `blocked_by_missing_hython`，2 procedural assets，1 Ready / 0 Review / 1 Blocked，11 pass / 2 warning / 5 error，HDA locked state、detail attributes、`OUT_*` role nodes、geometry attrs、packed prototypes、PDG wedges 和 frozen bake receipt 全部进入 `cross-dcc-rule-input@0.1.0`。本机未发现 `hython.exe`，collector ready，sceneWrites / assetWrites / productionWrites 全为 0。核心业务发现：Houdini 程序化资产的交付秘诀不是只看最终 mesh，而是证明 procedural network 可冻结、可复现、可拆 role、可追踪 cook/wedge/bake 收据。
+
+## R57 补充
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r57-blender-controlled-repair-presentation-pack-20260806-044229.json`，56/56 evidence files present，0 missing required files，46 demo route steps。
+- Blender Controlled Repair Executor：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-controlled-repair-20260806-043919.json`
+- 结果：L3 / `Ready` / `blender_controlled_repair_rolled_back`，Blender 5.2 background runtime，preGate=Blocked，postGate=Ready，rollbackPassed=true，selected/executed=4/4，postReadyAssets=2，postBlockedAssets=0，assetWrites=0，productionWrites=0。核心业务发现：Lightbox/Pyblish 的 Fix 不是“自动把资产改好”这么简单，而是 repair receipt、post-check 和 rollback boundary 的三件套。

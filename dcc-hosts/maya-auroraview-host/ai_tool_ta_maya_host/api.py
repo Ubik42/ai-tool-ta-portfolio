@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r56-houdini-rule-adapter-presentation-pack",
+        label: str = "r57-blender-controlled-repair-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4012,6 +4012,12 @@ class MayaPortfolioApi:
             _probe_file("engine-preset-comparison", "Engine Preset Comparison artifact", "artifact", manifest.get("enginePresetComparisonArtifact")),
             _probe_file("blender-rule-adapter", "Blender Rule Adapter artifact", "artifact", manifest.get("blenderRuleAdapterArtifact")),
             _probe_file("blender-l3-harness", "Blender L3 Harness readiness artifact", "artifact", manifest.get("blenderRuleAdapterL3HarnessArtifact")),
+            _probe_file(
+                "blender-controlled-repair",
+                "Blender Controlled Repair Executor artifact",
+                "artifact",
+                manifest.get("blenderControlledRepairArtifact"),
+            ),
             _probe_file("max-rule-adapter", "3ds Max Rule Adapter artifact", "artifact", manifest.get("maxRuleAdapterArtifact")),
             _probe_file("max-l3-harness", "3ds Max L3 Harness readiness artifact", "artifact", manifest.get("maxRuleAdapterL3HarnessArtifact")),
             _probe_file(
@@ -4497,37 +4503,43 @@ class MayaPortfolioApi:
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "40-run-3dsmax-adapter-harness",
+                "id": "40-run-blender-controlled-repair",
+                "label": "Run Blender controlled repair",
+                "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py.",
+                "evidence_expected": "Blender background runtime executes public fixture repair receipts, post-checks Ready, then rolls back to the preflight fingerprint without saving a .blend file.",
+            },
+            {
+                "id": "41-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "41-run-max-texture-manifest-link",
+                "id": "42-run-max-texture-manifest-link",
                 "label": "Run Max texture manifest link",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py.",
                 "evidence_expected": "Max pymxs material bitmap slots are checked against package entries, channel semantics, color-space policy and platform resolution budgets.",
             },
             {
-                "id": "42-review-houdini-adapter",
+                "id": "43-review-houdini-adapter",
                 "label": "Review Houdini rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Houdini Rule Adapter contract artifact.",
                 "evidence_expected": "HDA metadata, detail attributes, OUT_* role nodes, packed prototypes, PDG wedges and bake receipts normalize into Cross-DCC rule input.",
             },
             {
-                "id": "43-run-houdini-l3-readiness",
+                "id": "44-run-houdini-l3-readiness",
                 "label": "Run Houdini hython L3 readiness",
                 "operator_action": "Run python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "The launcher either runs hython collection or exports a clear blocked readiness gate when hython.exe is not available.",
             },
             {
-                "id": "44-audit-gui-media",
+                "id": "45-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "45-handoff-presenter-pack",
+                "id": "46-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -5051,6 +5063,18 @@ class MayaPortfolioApi:
                 "blender_rule_adapter_l3_harness_gate": manifest_summary.get("blenderRuleAdapterL3HarnessGate"),
                 "blender_rule_adapter_l3_harness_blender_found": manifest_summary.get("blenderRuleAdapterL3HarnessBlenderFound"),
                 "blender_rule_adapter_l3_harness_collector_ready": manifest_summary.get("blenderRuleAdapterL3HarnessCollectorReady"),
+                "blender_controlled_repair_gate": manifest_summary.get("blenderControlledRepairGate"),
+                "blender_controlled_repair_evidence_level": manifest_summary.get("blenderControlledRepairEvidenceLevel"),
+                "blender_controlled_repair_l3_status": manifest_summary.get("blenderControlledRepairL3Status"),
+                "blender_controlled_repair_pre_gate": manifest_summary.get("blenderControlledRepairPreGate"),
+                "blender_controlled_repair_post_gate": manifest_summary.get("blenderControlledRepairPostGate"),
+                "blender_controlled_repair_rollback_passed": manifest_summary.get("blenderControlledRepairRollbackPassed"),
+                "blender_controlled_repair_selected_operations": manifest_summary.get("blenderControlledRepairSelectedOperations"),
+                "blender_controlled_repair_executed_operations": manifest_summary.get("blenderControlledRepairExecutedOperations"),
+                "blender_controlled_repair_post_ready": manifest_summary.get("blenderControlledRepairPostReadyAssets"),
+                "blender_controlled_repair_post_blocked": manifest_summary.get("blenderControlledRepairPostBlockedAssets"),
+                "blender_controlled_repair_asset_writes": manifest_summary.get("blenderControlledRepairAssetWrites"),
+                "blender_controlled_repair_production_writes": manifest_summary.get("blenderControlledRepairProductionWrites"),
                 "max_rule_adapter_gate": manifest_summary.get("maxRuleAdapterGate"),
                 "max_rule_adapter_evidence_level": manifest_summary.get("maxRuleAdapterEvidenceLevel"),
                 "max_rule_adapter_assets": manifest_summary.get("maxRuleAdapterAssets"),
@@ -5156,6 +5180,7 @@ class MayaPortfolioApi:
                 "Platform Variant Executor Expansion turns LOD, Nanite and collision operations into approval and rollback receipts linked to the controlled executor proof.",
                 "Platform Variant StaticMesh Post-check validates those receipts against read-only Unreal StaticMesh LOD, collision and Nanite facts.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
+                "Blender Controlled Repair Executor turns blocked collision, LOD, UV and material/texture sync rows into public fixture repair receipts, post-checks Ready, then rolls back without saving a .blend file.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "3ds Max Material Texture Manifest Link joins pymxs material bitmap slots to package texture entries, channel semantics, color-space policy and platform budgets.",
                 "Houdini Rule Adapter normalizes HDA state, detail attributes, OUT_* role nodes, packed instance prototypes, PDG wedge summaries and frozen bake receipts into the shared Cross-DCC rule matrix.",
@@ -5180,7 +5205,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r56-houdini-rule-adapter-presentation-pack",
+        label: str = "r57-blender-controlled-repair-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

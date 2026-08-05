@@ -1,0 +1,325 @@
+{
+  "reportVersion": "blender-controlled-repair-executor@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Blender Rule Adapter",
+  "generatedAt": "2026-08-06 04:39:19",
+  "evidenceLevel": "L3",
+  "l3Status": "blender_controlled_repair_rolled_back",
+  "blenderRuntime": {
+    "version": "5.2.0",
+    "versionString": "5.2.0 LTS",
+    "background": true
+  },
+  "fixture": {
+    "path": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\blender-rule-adapter\\fixtures\\synthetic_blender_scene.json",
+    "schema": "synthetic-blender-scene@0.1.0",
+    "intent": "Public-safe fixture proving the Blender adapter contract for Cross-DCC Rule Matrix. It contains one ready asset and one intentionally blocked asset."
+  },
+  "summary": {
+    "gate": "Ready",
+    "preGate": "Blocked",
+    "postGate": "Ready",
+    "rollbackGate": "Blocked",
+    "selectedOperations": 4,
+    "executedOperations": 4,
+    "postReadyAssets": 2,
+    "postBlockedAssets": 0,
+    "rollbackPassed": true,
+    "assetWrites": 0,
+    "productionWrites": 0
+  },
+  "boundary": {
+    "mutation": "synthetic_blender_fixture_scene_then_rollback",
+    "sceneWrites": 4,
+    "assetWrites": 0,
+    "fileWrites": 0,
+    "productionWrites": 0,
+    "saveBlendFile": false
+  },
+  "preflight": {
+    "fingerprint": "44135ad7d4b72ade",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 8,
+      "warning": 3,
+      "error": 1,
+      "readyAssetIds": [
+        "blender-asset-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "blender-asset-002"
+      ]
+    }
+  },
+  "operations": [
+    {
+      "id": "repair-blender-asset-002-collision-proxy",
+      "assetId": "blender-asset-002",
+      "category": "collision",
+      "ruleIds": [
+        "collision-contract"
+      ],
+      "action": "add_ucx_proxy_and_protocol_collision",
+      "preValue": "missing",
+      "targetValue": "proxy",
+      "writeSet": [
+        "root.aiToolTaProtocol.collision",
+        "root.aiToolTaCollections",
+        "UCX_BlenderAsset002_00"
+      ],
+      "rollback": "reset synthetic scene from fixture",
+      "status": "executed",
+      "sceneObjectCountBefore": 6,
+      "sceneObjectCountAfter": 7,
+      "assetWrites": 0,
+      "productionWrites": 0
+    },
+    {
+      "id": "repair-blender-asset-002-lod1",
+      "assetId": "blender-asset-002",
+      "category": "lod",
+      "ruleIds": [
+        "lod-budget"
+      ],
+      "action": "add_lod1_collection_and_mesh",
+      "preValue": 1,
+      "targetValue": 2,
+      "writeSet": [
+        "root.aiToolTaCollections",
+        "LOD1",
+        "SM_BlenderAsset002_LOD1"
+      ],
+      "rollback": "reset synthetic scene from fixture",
+      "status": "executed",
+      "sceneObjectCountBefore": 7,
+      "sceneObjectCountAfter": 8,
+      "assetWrites": 0,
+      "productionWrites": 0
+    },
+    {
+      "id": "repair-blender-asset-002-uv-metrics",
+      "assetId": "blender-asset-002",
+      "category": "uv",
+      "ruleIds": [
+        "uv-contract"
+      ],
+      "action": "apply_public_uv_metric_receipt",
+      "preValue": {
+        "minUvUtilization": 0.41,
+        "maxUvOverlap": 0.08
+      },
+      "targetValue": {
+        "minUvUtilization": 0.68,
+        "maxUvOverlap": 0.01
+      },
+      "writeSet": [
+        "SM_BlenderAsset002_LOD0.aiToolTaUvMetrics"
+      ],
+      "rollback": "reset synthetic scene from fixture",
+      "status": "executed",
+      "sceneObjectCountBefore": 8,
+      "sceneObjectCountAfter": 8,
+      "assetWrites": 0,
+      "productionWrites": 0
+    },
+    {
+      "id": "repair-blender-asset-002-texture-bindings",
+      "assetId": "blender-asset-002",
+      "category": "material-texture",
+      "ruleIds": [
+        "material-texture-sync"
+      ],
+      "action": "write_material_texture_binding_metadata",
+      "preValue": {
+        "materialSlots": 4,
+        "textureImages": 1
+      },
+      "targetValue": {
+        "materialSlots": 4,
+        "textureImages": 4
+      },
+      "writeSet": [
+        "MI_mobile_glass.aiToolTaTextures",
+        "MI_mobile_detail.aiToolTaTextures",
+        "MI_mobile_unused.aiToolTaTextures"
+      ],
+      "rollback": "reset synthetic scene from fixture",
+      "status": "executed",
+      "sceneObjectCountBefore": 8,
+      "sceneObjectCountAfter": 8,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  ],
+  "postCheck": {
+    "fingerprint": "aae8a074770015e8",
+    "summary": {
+      "gate": "Ready",
+      "assetCount": 2,
+      "readyAssets": 2,
+      "reviewAssets": 0,
+      "blockedAssets": 0,
+      "pass": 12,
+      "warning": 0,
+      "error": 0,
+      "readyAssetIds": [
+        "blender-asset-001",
+        "blender-asset-002"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": []
+    },
+    "evaluations": [
+      {
+        "id": "blender-asset-001:protocol-carrier",
+        "assetId": "blender-asset-001",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "Blender object custom properties must expose asset-protocol@dcc-r9.",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-001:collision-contract",
+        "assetId": "blender-asset-001",
+        "ruleId": "collision-contract",
+        "label": "Collision contract",
+        "status": "pass",
+        "reason": "Collision must be declared through protocol or UCX/collision object evidence.",
+        "evidence": "proxy",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-001:lod-budget",
+        "assetId": "blender-asset-001",
+        "ruleId": "lod-budget",
+        "label": "LOD budget",
+        "status": "pass",
+        "reason": "At least two LOD collections are required for this public Blender fixture.",
+        "evidence": "2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-001:material-texture-sync",
+        "assetId": "blender-asset-001",
+        "ruleId": "material-texture-sync",
+        "label": "Material / texture sync",
+        "status": "pass",
+        "reason": "Material slots and texture images should not drift by more than one.",
+        "evidence": "4 material / 3 texture",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-001:uv-contract",
+        "assetId": "blender-asset-001",
+        "ruleId": "uv-contract",
+        "label": "UV contract",
+        "status": "pass",
+        "reason": "UVs require at least one layer, acceptable utilization and low overlap.",
+        "evidence": "layers=1 utilization=0.72 overlap=0.0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-001:export-root",
+        "assetId": "blender-asset-001",
+        "ruleId": "export-root",
+        "label": "Export root",
+        "status": "pass",
+        "reason": "Adapter must identify the export root collection/object.",
+        "evidence": "EXPORT_blender_asset_001",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:protocol-carrier",
+        "assetId": "blender-asset-002",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "Blender object custom properties must expose asset-protocol@dcc-r9.",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:collision-contract",
+        "assetId": "blender-asset-002",
+        "ruleId": "collision-contract",
+        "label": "Collision contract",
+        "status": "pass",
+        "reason": "Collision must be declared through protocol or UCX/collision object evidence.",
+        "evidence": "proxy",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:lod-budget",
+        "assetId": "blender-asset-002",
+        "ruleId": "lod-budget",
+        "label": "LOD budget",
+        "status": "pass",
+        "reason": "At least two LOD collections are required for this public Blender fixture.",
+        "evidence": "2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:material-texture-sync",
+        "assetId": "blender-asset-002",
+        "ruleId": "material-texture-sync",
+        "label": "Material / texture sync",
+        "status": "pass",
+        "reason": "Material slots and texture images should not drift by more than one.",
+        "evidence": "5 material / 4 texture",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:uv-contract",
+        "assetId": "blender-asset-002",
+        "ruleId": "uv-contract",
+        "label": "UV contract",
+        "status": "pass",
+        "reason": "UVs require at least one layer, acceptable utilization and low overlap.",
+        "evidence": "layers=1 utilization=0.68 overlap=0.01",
+        "fixPreview": "None"
+      },
+      {
+        "id": "blender-asset-002:export-root",
+        "assetId": "blender-asset-002",
+        "ruleId": "export-root",
+        "label": "Export root",
+        "status": "pass",
+        "reason": "Adapter must identify the export root collection/object.",
+        "evidence": "EXPORT_blender_asset_002",
+        "fixPreview": "None"
+      }
+    ]
+  },
+  "rollback": {
+    "fingerprint": "44135ad7d4b72ade",
+    "matchesPreflight": true,
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 8,
+      "warning": 3,
+      "error": 1,
+      "readyAssetIds": [
+        "blender-asset-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "blender-asset-002"
+      ]
+    }
+  },
+  "reviewerClaims": [
+    "Blender controlled repair turns blocked rule rows into explicit operation receipts before mutating the scene.",
+    "The executor fixes only public synthetic fixture data: protocol collision, collision proxy, LOD1 collection/object, UV metrics and texture binding metadata.",
+    "Post-check proves the repaired scene becomes Ready, then rollback restores the preflight fingerprint without saving a .blend file."
+  ]
+}
