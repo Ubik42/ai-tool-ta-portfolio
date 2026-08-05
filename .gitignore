@@ -40,3 +40,4 @@ lightbox提取/
 *.hipnc
 *.uasset
 *.umap
+dcc-hosts/unreal-socket-import-checker/artifacts/native-bridge-builds/

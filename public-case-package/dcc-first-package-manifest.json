@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r61",
-  "packageVersion": "dcc-first-package@1.58.0",
-  "generatedAt": "2026-08-06 05:57:46",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r62",
+  "packageVersion": "dcc-first-package@1.59.0",
+  "generatedAt": "2026-08-06 06:23:01",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 45,
+    "artifactCount": 46,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 59,
-    "presentationPackPresentEvidenceFiles": 59,
+    "presentationPackEvidenceFiles": 60,
+    "presentationPackPresentEvidenceFiles": 60,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 49,
+    "presentationPackDemoRouteSteps": 50,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -768,8 +768,8 @@
     "unrealGameplayAttachFixtureAssetWrites": 0,
     "unrealGameplayAttachFixtureEngineWrites": 0,
     "unrealGameplayAttachFixtureProductionWrites": 0,
-    "latestRuntimeEvidence": "Unreal Socket Native Bridge source contract gate: source/plugin files present and required native file count is 0; compiled binary and commandlet remain blocked with zero asset writes.",
-    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json",
+    "latestRuntimeEvidence": "Unreal Socket Native Bridge Build gate: Ready; RunUAT BuildPlugin compiled AI_Tool_TA_SocketBridge with MSVC 14.38, produced one DLL hash receipt, restored UBT config and wrote no assets.",
+    "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
     "groomRuntimeFactsReportVersion": "groom-runtime-facts@0.1.0",
     "groomRuntimeFactsArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
     "groomRuntimeFactsEvidenceLevel": "L3",
@@ -861,9 +861,9 @@
     "groomGroupRootProjectionAssetWrites": 0,
     "groomGroupRootProjectionEngineWrites": 0,
     "groomGroupRootProjectionProductionWrites": 0,
-    "presenterPackEvidenceTotal": 59,
-    "presenterPackEvidencePresent": 59,
-    "presenterDemoRouteSteps": 49,
+    "presenterPackEvidenceTotal": 60,
+    "presenterPackEvidencePresent": 60,
+    "presenterDemoRouteSteps": 50,
     "unrealSocketNativeBridgeReportVersion": "unreal-socket-native-bridge-readiness@0.1.0",
     "unrealSocketNativeBridgeArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-readiness-20260806-055738.json",
     "unrealSocketNativeBridgeEvidenceLevel": "L3-readiness",
@@ -886,7 +886,26 @@
     "unrealSocketNativeBridgeAssetWrites": 0,
     "unrealSocketNativeBridgeEngineWrites": 0,
     "unrealSocketNativeBridgeProductionWrites": 0,
-    "unrealSocketNativeBridgeSourceFiles": 6
+    "unrealSocketNativeBridgeSourceFiles": 6,
+    "unrealSocketNativeBridgeBuildReportVersion": "unreal-socket-native-bridge-build@0.1.0",
+    "unrealSocketNativeBridgeBuildArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
+    "unrealSocketNativeBridgeBuildEvidenceLevel": "L3-build",
+    "unrealSocketNativeBridgeBuildL3Status": "unreal_socket_native_bridge_plugin_built",
+    "unrealSocketNativeBridgeBuildGate": "Ready",
+    "unrealSocketNativeBridgeBuildRunUATFound": true,
+    "unrealSocketNativeBridgeBuildMSVCFound": true,
+    "unrealSocketNativeBridgeBuildAttempted": true,
+    "unrealSocketNativeBridgeBuildReturnCode": 0,
+    "unrealSocketNativeBridgeBuildCompiledDlls": 1,
+    "unrealSocketNativeBridgeBuildErrorLines": 0,
+    "unrealSocketNativeBridgeBuildPackageDir": "D:\\cs\\_test\\ai_tool_ta_socket_builds\\atsb-20260806-061812",
+    "unrealSocketNativeBridgeBuildCompilerVersion": "14.38.33130",
+    "unrealSocketNativeBridgeBuildConfigRestored": true,
+    "unrealSocketNativeBridgeBuildDllBytes": 98304,
+    "unrealSocketNativeBridgeBuildDllSha256": "df0c473ee4e7aa79bc9e5c681abe9c6fc1b636cb697a7f9970479184114eb14f",
+    "unrealSocketNativeBridgeBuildAssetWrites": 0,
+    "unrealSocketNativeBridgeBuildEngineWrites": 0,
+    "unrealSocketNativeBridgeBuildProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -910,6 +929,20 @@
   "assetHandoffDecisionGate": "Review",
   "packageFiles": [
     {
+      "id": "public-case-r62-presenter-pack",
+      "label": "R62 Unreal Socket Native Build Presenter Pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-socket-native-build-r62",
+      "label": "Unreal Socket Native Bridge Build Harness",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
+      "required": true
+    },
+    {
       "id": "public-case-r61-presenter-pack",
       "label": "R61 Unreal Socket Native Source Presenter Pack",
       "kind": "artifact",
@@ -921,13 +954,6 @@
       "label": "Unreal Socket Native Bridge Source Readiness",
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-readiness-20260806-055738.json",
-      "required": true
-    },
-    {
-      "id": "dcc-first-unreal-socket-native-source-package",
-      "label": "AI_Tool_TA_SocketBridge source package",
-      "kind": "source",
-      "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_SocketBridge",
       "required": true
     },
     {
@@ -1316,9 +1342,30 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-unreal-socket-native-source-package",
+      "label": "AI_Tool_TA_SocketBridge source package",
+      "kind": "source",
+      "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_SocketBridge",
+      "required": true
     }
   ],
   "validation": [
+    {
+      "id": "validate-r62-dcc-presenter-pack",
+      "command": "Maya mayapy dcc_presentation_export_pack(label=\"r62-unreal-socket-native-build-presentation-pack\")",
+      "result": "passed: 60/60 evidence, 0 missing, 50 demo route, gate=CapturePending only for media",
+      "required": true,
+      "evidence": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json"
+    },
+    {
+      "id": "validate-r62-unreal-socket-native-build",
+      "command": "python dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_build.py",
+      "result": "passed: RunUAT BuildPlugin Ready, returnCode=0, compiledDlls=1, errorLines=0, compiler=14.38.33130, configRestored=true, writes=0",
+      "required": true,
+      "evidence": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json"
+    },
     {
       "id": "validate-r61-dcc-presenter-pack",
       "command": "Maya mayapy dcc_presentation_export_pack(label=\"r61-unreal-socket-native-source-presentation-pack\")",
@@ -1588,6 +1635,7 @@
     }
   ],
   "notes": [
+    "R62 adds Unreal Socket Native Bridge Build Harness: RunUAT BuildPlugin compiles the public AI_Tool_TA_SocketBridge Editor module with MSVC 14.38, records DLL hash evidence, restores the temporary UBT config and keeps asset/engine/production writes at 0.",
     "R49 adds Groom Alembic Import/Post-check Readiness: Unreal 5.3 reads the R48 .abc cache, verifies sha256 continuity, dry-runs AssetImportTask/Alembic factory setup, keeps imports held, and records missing Groom API/asset post-check gaps under assetWrites=0.",
     "R47 result is L3 / Blocked: Unreal runtime entered UE 5.3, AssetImportTask and AlembicImportFactory are visible, SK_HeroFace exists, GroomAsset/GroomBindingAsset API and expected Groom/Binding assets are still absent.",
     "R47 adds Groom Unreal Import Readiness: Unreal Python joins R46 Maya groom facts to Groom/Alembic API visibility, target SkeletalMesh presence, expected Groom/Binding assets and zero-write boundary.",
@@ -1663,7 +1711,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1740,7 +1788,7 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 43,
+  "artifactCount": 46,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
@@ -1912,6 +1960,13 @@
       "label": "Groom Runtime Fact Collector",
       "kind": "json",
       "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-runtime-facts-20260806-040118.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-socket-native-build-r62",
+      "label": "Unreal Socket Native Bridge Build Harness",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
       "required": true
     }
   ],
@@ -2247,6 +2302,8 @@
   "unrealControlRigDeformationLinkErrorChecks": 5,
   "unrealControlRigDeformationLinkOwnerActions": 7,
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
+    "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json",
     "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-readiness-20260806-055738.json",
     "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_SocketBridge\\AI_Tool_TA_SocketBridge.uplugin",
@@ -2294,6 +2351,20 @@
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r59-groom-group-root-projection-presentation-pack-20260806-052010.json"
   ],
   "evidence": [
+    {
+      "id": "public-case-r62-presenter-pack",
+      "label": "R62 Unreal Socket Native Build Presenter Pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-socket-native-build-r62",
+      "label": "Unreal Socket Native Bridge Build Harness",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
+      "required": true
+    },
     {
       "id": "public-case-r52-presenter-pack",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json",
@@ -2715,6 +2786,8 @@
   "maxTextureManifestLinkEngineWrites": 0,
   "maxTextureManifestLinkProductionWrites": 0,
   "validationCommands": [
+    "python dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_build.py",
+    ".\\scripts\\validate_loop.ps1 -Tier unreal-socket-native-build",
     "python -m py_compile dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/contract.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/runtime_collector.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/texture_manifest_link.py dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_3dsmax_l3.py dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py",
     "python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600",
     "python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py",
@@ -2727,6 +2800,7 @@
     ".\\scripts\\validate_loop.ps1 -Tier blender-controlled-repair"
   ],
   "releaseNotes": [
+    "R62 adds Unreal Socket Native Bridge Build Harness: RunUAT BuildPlugin compiles the public AI_Tool_TA_SocketBridge Editor module with MSVC 14.38, records DLL hash evidence, restores the temporary UBT config and keeps asset/engine/production writes at 0.",
     "R61 adds the public AI_Tool_TA_SocketBridge source package: the required uplugin, Build.cs, commandlet and BlueprintFunctionLibrary files are present; Unreal readiness now reports missingRequiredNativeFiles=0 while binary/commandlet loading remains the expected blocked boundary.",
     "R60 adds Unreal Socket Native Bridge Readiness: Unreal 5.3.2 runtime proves socket/editor utility APIs are visible, but the public project has no AI_Tool_TA_SocketBridge source/plugin/binary or commandlet yet, so the C++/Editor Utility write path is correctly Blocked with zero asset writes.",
     "R59 adds Groom Group / Root Projection Inspector: Maya mayapy projects curve root CVs to scalp root_uv, checks declared groom groups, guide coverage and Unreal material-slot routing, keeps the approved groom Ready and blocks temporary ambiguous rows with zero asset writes.",
@@ -2779,8 +2853,8 @@
   "groomRuntimeFactsAssetWrites": 6,
   "groomRuntimeFactsEngineWrites": 0,
   "groomRuntimeFactsProductionWrites": 0,
-  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r61-unreal-socket-native-source-presentation-pack-20260806-060018.json",
-  "latestRuntimeEvidence": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-readiness-20260806-055738.json",
+  "currentDccFirstPresentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r62-unreal-socket-native-build-presentation-pack-20260806-062236.json",
+  "latestRuntimeEvidence": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
   "houdiniRuleAdapterReportVersion": "houdini-rule-adapter-contract@0.1.0",
   "houdiniRuleAdapterArtifact": "<repo>\\dcc-hosts\\houdini-rule-adapter\\artifacts\\houdini-rule-adapter-contract-20260806-041956.json",
   "houdiniRuleAdapterEvidenceLevel": "L2+",
@@ -2876,5 +2950,26 @@
   "unrealSocketNativeBridgeAssetWrites": 0,
   "unrealSocketNativeBridgeEngineWrites": 0,
   "unrealSocketNativeBridgeProductionWrites": 0,
-  "unrealSocketNativeBridgeSourceFiles": 6
+  "unrealSocketNativeBridgeSourceFiles": 6,
+  "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r62",
+  "currentDccFirstPackageVersion": "dcc-first-package@1.59.0",
+  "unrealSocketNativeBridgeBuildReportVersion": "unreal-socket-native-bridge-build@0.1.0",
+  "unrealSocketNativeBridgeBuildArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
+  "unrealSocketNativeBridgeBuildEvidenceLevel": "L3-build",
+  "unrealSocketNativeBridgeBuildL3Status": "unreal_socket_native_bridge_plugin_built",
+  "unrealSocketNativeBridgeBuildGate": "Ready",
+  "unrealSocketNativeBridgeBuildRunUATFound": true,
+  "unrealSocketNativeBridgeBuildMSVCFound": true,
+  "unrealSocketNativeBridgeBuildAttempted": true,
+  "unrealSocketNativeBridgeBuildReturnCode": 0,
+  "unrealSocketNativeBridgeBuildCompiledDlls": 1,
+  "unrealSocketNativeBridgeBuildErrorLines": 0,
+  "unrealSocketNativeBridgeBuildPackageDir": "D:\\cs\\_test\\ai_tool_ta_socket_builds\\atsb-20260806-061812",
+  "unrealSocketNativeBridgeBuildCompilerVersion": "14.38.33130",
+  "unrealSocketNativeBridgeBuildConfigRestored": true,
+  "unrealSocketNativeBridgeBuildDllBytes": 98304,
+  "unrealSocketNativeBridgeBuildDllSha256": "df0c473ee4e7aa79bc9e5c681abe9c6fc1b636cb697a7f9970479184114eb14f",
+  "unrealSocketNativeBridgeBuildAssetWrites": 0,
+  "unrealSocketNativeBridgeBuildEngineWrites": 0,
+  "unrealSocketNativeBridgeBuildProductionWrites": 0
 }

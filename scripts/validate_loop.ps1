@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -155,6 +155,7 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealSocket "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealSocket "scripts\run_socket_authoring_executor.py"),
     (Join-Path $UnrealSocket "scripts\run_native_bridge_readiness.py"),
+    (Join-Path $UnrealSocket "scripts\run_native_bridge_build.py"),
     (Join-Path $UnrealSocket "scripts\run_gameplay_attach_fixture.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_import_checker.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\execute_socket_authoring.py"),
@@ -204,12 +205,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r61-unreal-socket-native-source-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r62-unreal-socket-native-build-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.58.0", summary
-assert summary["present_evidence_files"] == 59, summary
+assert summary["package_version"] == "dcc-first-package@1.59.0", summary
+assert summary["present_evidence_files"] == 60, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 49, summary
+assert summary["demo_route_steps"] == 50, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -393,6 +394,12 @@ if ($Tier -in @("unreal-socket-authoring-executor", "full")) {
 if ($Tier -in @("unreal-socket-native-bridge", "full")) {
     Invoke-Step "unreal socket native bridge readiness" {
         python (Join-Path $UnrealSocket "scripts\run_native_bridge_readiness.py")
+    }
+}
+
+if ($Tier -in @("unreal-socket-native-build", "full")) {
+    Invoke-Step "unreal socket native bridge build" {
+        python (Join-Path $UnrealSocket "scripts\run_native_bridge_build.py")
     }
 }
 
