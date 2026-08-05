@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R28 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json` | Maya-hosted package probes 25 key evidence files, exports 17 demo route steps, and adds Platform Variant Forge evidence. |
+| Platform Variant Forge | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json` | PC/Mobile variant plans are checked against path, owner, triangle, texture, material, draw-call, LOD, Nanite, shader and collision policy while joined to Unreal preset fact evidence. |
 | R27 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json` | Maya-hosted package probes 24 key evidence files, exports 16 demo route steps, and adds Spatial Authoring Maya L3 evidence. |
 | Spatial Authoring Maya L3 | `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json` | Maya 2026 creates public synthetic joints and locators, then collects socket, hotspot, pose frame, mirror pair and pose transfer facts. |
 | R26 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json` | Maya-hosted package probes 23 key evidence files, exports 15 demo route steps, and adds Character Calibration Maya L3 evidence. |

@@ -1074,3 +1074,34 @@ R27 结果：Maya 2026 `mayapy` 生成 public synthetic joints / locator DAG / c
 ```text
 PC/Mobile policy fixture -> variant plan contract -> preset comparison reuse -> optional Unreal material/LOD fact probe -> Presenter Pack row -> docs
 ```
+
+## R28 循环开发断点：Platform Variant Forge
+
+R28 已完成 `Platform Variant Forge` L3-linked 首版：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json
+```
+
+R28 结果：普通 Python smoke 读取 public-safe PC/Mobile variant fixture，并连接已有 Unreal preset fact comparison L3++ artifact。报告覆盖 target engine path、owner approval、triangle / texture memory / material slot / draw call budget、LOD coverage、Nanite policy、shader feature downgrade 和 collision simplification policy。结果为 2 source assets，3 platform variants，2 Ready，1 intentionally Blocked Mobile variant，21 pass / 1 warning / 8 error。`Blocked` 来自 Mobile 临时背包样本的业务故障，不是证据链缺失。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r28 / dcc-first-package@1.25.0
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Unreal Runtime Probe`：
+
+```text
+variant plan artifact -> Unreal StaticMesh / material / texture / collision fact probe -> runtime-vs-plan comparison -> Presenter Pack row -> docs
+```

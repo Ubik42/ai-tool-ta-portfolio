@@ -1,0 +1,865 @@
+{
+  "reportVersion": "platform-variant-forge-contract@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 18:33:15",
+  "evidenceLevel": "L3-linked",
+  "l3Status": "platform_variant_plan_joined_to_unreal_facts",
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\fixtures\\synthetic_platform_variant_plan.json",
+    "schema": "synthetic-platform-variant-plan@0.1.0",
+    "intent": "Public-safe fixture for PC to Mobile asset variant planning."
+  },
+  "sourceEvidence": {
+    "available": true,
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
+    "reportVersion": "unreal-preset-fact-comparison@0.1.0",
+    "evidenceLevel": "L3++",
+    "l3Status": "unreal_engine_facts_matched",
+    "gate": "Blocked",
+    "factRows": 10,
+    "matched": 7,
+    "drift": 1,
+    "waived": 1,
+    "blocked": 1,
+    "platformSplit": 1,
+    "presetSummaries": [
+      {
+        "preset": "pc",
+        "platform": "pc",
+        "gate": "Review",
+        "factRows": 5,
+        "matched": 4,
+        "drift": 0,
+        "waived": 1,
+        "blocked": 0,
+        "disposition": "review_approved_exception"
+      },
+      {
+        "preset": "mobile",
+        "platform": "mobile",
+        "gate": "Blocked",
+        "factRows": 5,
+        "matched": 3,
+        "drift": 1,
+        "waived": 0,
+        "blocked": 1,
+        "disposition": "hold_engine_import"
+      }
+    ],
+    "assetComparisons": [
+      {
+        "assetId": "maya-asset-001",
+        "label": "Ready PC hero panel",
+        "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "presetGates": {
+          "pc": "Review",
+          "mobile": "Blocked"
+        },
+        "delta": "platform_split",
+        "dispositions": {
+          "pc": "review_approved_exception",
+          "mobile": "hold_engine_import"
+        }
+      }
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-forge",
+    "name": "Platform Variant Forge",
+    "methodSource": "Lightbox PC to Mobile asset derivation / LOD material texture collision budget policy",
+    "protocolCarrier": "variant plan fixture + engine preset fact comparison artifact",
+    "boundary": {
+      "mutation": "planning_artifact_only",
+      "sceneWrites": 0,
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "platform-variant-forge-input@0.1.0",
+    "sourceEvidenceLevel": "L3++",
+    "sourceGate": "Blocked",
+    "assets": [
+      {
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "ownerState": "approved-master",
+        "sourcePlatform": "pc",
+        "sourceAsset": {
+          "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+          "triangles": 42000,
+          "textureMaxPixels": 4096,
+          "textureMemoryMb": 180,
+          "materialSlots": 4,
+          "drawCalls": 5,
+          "lods": [
+            "LOD0",
+            "LOD1"
+          ],
+          "nanite": true,
+          "shaderFeatures": [
+            "clearcoat",
+            "detail-normal",
+            "emissive"
+          ],
+          "collisionSimpleShapes": 5,
+          "complexAsSimple": false,
+          "sourceFingerprint": "src:hero-panel:pc-master:v1"
+        },
+        "variants": [
+          {
+            "platform": "pc",
+            "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+            "requestedActions": [
+              "rename-path",
+              "preserve-master"
+            ],
+            "ownerApproval": "art-lead",
+            "expected": {
+              "triangles": 42000,
+              "textureMaxPixels": 4096,
+              "textureMemoryMb": 180,
+              "materialSlots": 4,
+              "drawCalls": 5,
+              "lods": [
+                "LOD0",
+                "LOD1"
+              ],
+              "nanite": true,
+              "shaderFeatures": [
+                "clearcoat",
+                "detail-normal",
+                "emissive"
+              ],
+              "collisionSimpleShapes": 5,
+              "complexAsSimple": false
+            },
+            "policy": {
+              "id": "pc",
+              "label": "PC Hero",
+              "maxTriangles": 60000,
+              "maxTexturePixels": 4096,
+              "maxTextureMemoryMb": 256,
+              "maxMaterialSlots": 6,
+              "maxDrawCalls": 8,
+              "requiredLods": [
+                "LOD0",
+                "LOD1"
+              ],
+              "allowNanite": true,
+              "allowedShaderFeatures": [
+                "clearcoat",
+                "detail-normal",
+                "emissive",
+                "parallax"
+              ],
+              "collision": {
+                "maxSimpleShapes": 8,
+                "allowComplexAsSimple": true
+              }
+            },
+            "normalized": {
+              "source.enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+              "target.enginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+              "target.expectedPrefix": "/Game/AI_Tool_TA/Props/PC/",
+              "target.pathMatched": true,
+              "target.ownerApproval": "art-lead",
+              "target.requestedActions": [
+                "rename-path",
+                "preserve-master"
+              ],
+              "target.sourceEvidenceJoined": true,
+              "target.unrealPresetGate": "Blocked",
+              "budget.triangles": 42000,
+              "budget.maxTriangles": 60000,
+              "budget.texturePixels": 4096,
+              "budget.maxTexturePixels": 4096,
+              "budget.textureMemoryMb": 180,
+              "budget.maxTextureMemoryMb": 256,
+              "budget.materialSlots": 4,
+              "budget.maxMaterialSlots": 6,
+              "budget.drawCalls": 5,
+              "budget.maxDrawCalls": 8,
+              "lod.required": [
+                "LOD0",
+                "LOD1"
+              ],
+              "lod.actual": [
+                "LOD0",
+                "LOD1"
+              ],
+              "lod.missing": [],
+              "nanite.actual": true,
+              "nanite.allowed": true,
+              "shader.disallowed": [],
+              "collision.simpleShapes": 5,
+              "collision.maxSimpleShapes": 8,
+              "collision.complexAsSimple": false,
+              "collision.allowComplexAsSimple": true
+            }
+          },
+          {
+            "platform": "mobile",
+            "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+            "requestedActions": [
+              "generate-lod2",
+              "disable-nanite",
+              "merge-materials",
+              "downscale-textures",
+              "simplify-collision"
+            ],
+            "ownerApproval": "art-lead",
+            "expected": {
+              "triangles": 9800,
+              "textureMaxPixels": 2048,
+              "textureMemoryMb": 52,
+              "materialSlots": 2,
+              "drawCalls": 3,
+              "lods": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "nanite": false,
+              "shaderFeatures": [
+                "emissive"
+              ],
+              "collisionSimpleShapes": 3,
+              "complexAsSimple": false
+            },
+            "policy": {
+              "id": "mobile",
+              "label": "Mobile Runtime",
+              "maxTriangles": 12000,
+              "maxTexturePixels": 2048,
+              "maxTextureMemoryMb": 64,
+              "maxMaterialSlots": 3,
+              "maxDrawCalls": 4,
+              "requiredLods": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "allowNanite": false,
+              "allowedShaderFeatures": [
+                "emissive"
+              ],
+              "collision": {
+                "maxSimpleShapes": 3,
+                "allowComplexAsSimple": false
+              }
+            },
+            "normalized": {
+              "source.enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+              "target.enginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+              "target.expectedPrefix": "/Game/AI_Tool_TA/Props/Mobile/",
+              "target.pathMatched": true,
+              "target.ownerApproval": "art-lead",
+              "target.requestedActions": [
+                "generate-lod2",
+                "disable-nanite",
+                "merge-materials",
+                "downscale-textures",
+                "simplify-collision"
+              ],
+              "target.sourceEvidenceJoined": true,
+              "target.unrealPresetGate": "Blocked",
+              "budget.triangles": 9800,
+              "budget.maxTriangles": 12000,
+              "budget.texturePixels": 2048,
+              "budget.maxTexturePixels": 2048,
+              "budget.textureMemoryMb": 52,
+              "budget.maxTextureMemoryMb": 64,
+              "budget.materialSlots": 2,
+              "budget.maxMaterialSlots": 3,
+              "budget.drawCalls": 3,
+              "budget.maxDrawCalls": 4,
+              "lod.required": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "lod.actual": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "lod.missing": [],
+              "nanite.actual": false,
+              "nanite.allowed": false,
+              "shader.disallowed": [],
+              "collision.simpleShapes": 3,
+              "collision.maxSimpleShapes": 3,
+              "collision.complexAsSimple": false,
+              "collision.allowComplexAsSimple": false
+            }
+          }
+        ]
+      },
+      {
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "assetLabel": "Vehicle Shell Mobile Variant Blocked",
+        "ownerState": "temporary",
+        "sourcePlatform": "pc",
+        "sourceAsset": {
+          "enginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+          "triangles": 88000,
+          "textureMaxPixels": 4096,
+          "textureMemoryMb": 310,
+          "materialSlots": 7,
+          "drawCalls": 9,
+          "lods": [
+            "LOD0"
+          ],
+          "nanite": true,
+          "shaderFeatures": [
+            "clearcoat",
+            "parallax",
+            "detail-normal"
+          ],
+          "collisionSimpleShapes": 9,
+          "complexAsSimple": true,
+          "sourceFingerprint": "src:vehicle-shell:tmp:v3"
+        },
+        "variants": [
+          {
+            "platform": "mobile",
+            "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+            "requestedActions": [
+              "rename-path"
+            ],
+            "ownerApproval": "",
+            "expected": {
+              "triangles": 55000,
+              "textureMaxPixels": 4096,
+              "textureMemoryMb": 220,
+              "materialSlots": 6,
+              "drawCalls": 8,
+              "lods": [
+                "LOD0"
+              ],
+              "nanite": true,
+              "shaderFeatures": [
+                "clearcoat",
+                "parallax",
+                "detail-normal"
+              ],
+              "collisionSimpleShapes": 9,
+              "complexAsSimple": true
+            },
+            "policy": {
+              "id": "mobile",
+              "label": "Mobile Runtime",
+              "maxTriangles": 12000,
+              "maxTexturePixels": 2048,
+              "maxTextureMemoryMb": 64,
+              "maxMaterialSlots": 3,
+              "maxDrawCalls": 4,
+              "requiredLods": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "allowNanite": false,
+              "allowedShaderFeatures": [
+                "emissive"
+              ],
+              "collision": {
+                "maxSimpleShapes": 3,
+                "allowComplexAsSimple": false
+              }
+            },
+            "normalized": {
+              "source.enginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+              "target.enginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+              "target.expectedPrefix": "/Game/AI_Tool_TA/Vehicles/Mobile/",
+              "target.pathMatched": false,
+              "target.ownerApproval": "",
+              "target.requestedActions": [
+                "rename-path"
+              ],
+              "target.sourceEvidenceJoined": true,
+              "target.unrealPresetGate": "Blocked",
+              "budget.triangles": 55000,
+              "budget.maxTriangles": 12000,
+              "budget.texturePixels": 4096,
+              "budget.maxTexturePixels": 2048,
+              "budget.textureMemoryMb": 220,
+              "budget.maxTextureMemoryMb": 64,
+              "budget.materialSlots": 6,
+              "budget.maxMaterialSlots": 3,
+              "budget.drawCalls": 8,
+              "budget.maxDrawCalls": 4,
+              "lod.required": [
+                "LOD0",
+                "LOD1",
+                "LOD2"
+              ],
+              "lod.actual": [
+                "LOD0"
+              ],
+              "lod.missing": [
+                "LOD1",
+                "LOD2"
+              ],
+              "nanite.actual": true,
+              "nanite.allowed": false,
+              "shader.disallowed": [
+                "clearcoat",
+                "detail-normal",
+                "parallax"
+              ],
+              "collision.simpleShapes": 9,
+              "collision.maxSimpleShapes": 3,
+              "collision.complexAsSimple": true,
+              "collision.allowComplexAsSimple": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "platform-variant-forge-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "variantCount": 3,
+      "readyVariants": 2,
+      "reviewVariants": 0,
+      "blockedVariants": 1,
+      "pass": 21,
+      "warning": 1,
+      "error": 8,
+      "readyVariantIds": [
+        "variant-hero-panel-001:mobile",
+        "variant-hero-panel-001:pc"
+      ],
+      "reviewVariantIds": [],
+      "blockedVariantIds": [
+        "variant-vehicle-shell-tmp-002:mobile"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "variant-hero-panel-001:pc:source-evidence-join",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "source-evidence-join",
+        "label": "Source evidence join",
+        "status": "pass",
+        "reason": "Variant plans should reference existing engine preset fact evidence.",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:target-path-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "target-path-policy",
+        "label": "Target path policy",
+        "status": "pass",
+        "reason": "Platform variants must land in a platform-scoped engine path.",
+        "evidence": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:owner-approval",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "owner-approval",
+        "label": "Owner approval",
+        "status": "pass",
+        "reason": "Platform degradation can change gameplay and visual intent, so an accountable owner must approve the plan.",
+        "evidence": "art-lead",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:triangle-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "triangle-budget",
+        "label": "Triangle budget",
+        "status": "pass",
+        "reason": "Mobile and PC variants must stay under their target geometry budget.",
+        "evidence": "42000/60000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:texture-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "texture-budget",
+        "label": "Texture budget",
+        "status": "pass",
+        "reason": "Texture size and memory budget must match the target platform.",
+        "evidence": "pixels=4096/4096 memory=180/256",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:material-draw-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "material-draw-budget",
+        "label": "Material and draw-call budget",
+        "status": "pass",
+        "reason": "Variant generation must merge materials and reduce draw calls where the platform requires it.",
+        "evidence": "materials=4/6 draws=5/8",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:lod-coverage",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "lod-coverage",
+        "label": "LOD coverage",
+        "status": "pass",
+        "reason": "Platform variants need the required LOD chain before runtime import approval.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "nanite-policy",
+        "label": "Nanite policy",
+        "status": "pass",
+        "reason": "Mobile variants cannot inherit PC-only Nanite state.",
+        "evidence": "actual=True allowed=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:shader-feature-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "shader-feature-policy",
+        "label": "Shader feature policy",
+        "status": "pass",
+        "reason": "Platform variants should not carry expensive shader features that the target policy disallows.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:collision-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "collision-policy",
+        "label": "Collision policy",
+        "status": "pass",
+        "reason": "Collision simplification is gameplay-sensitive and must meet target runtime policy.",
+        "evidence": "simple=5/8 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:source-evidence-join",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "source-evidence-join",
+        "label": "Source evidence join",
+        "status": "pass",
+        "reason": "Variant plans should reference existing engine preset fact evidence.",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:target-path-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "target-path-policy",
+        "label": "Target path policy",
+        "status": "pass",
+        "reason": "Platform variants must land in a platform-scoped engine path.",
+        "evidence": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:owner-approval",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "owner-approval",
+        "label": "Owner approval",
+        "status": "pass",
+        "reason": "Platform degradation can change gameplay and visual intent, so an accountable owner must approve the plan.",
+        "evidence": "art-lead",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:triangle-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "triangle-budget",
+        "label": "Triangle budget",
+        "status": "pass",
+        "reason": "Mobile and PC variants must stay under their target geometry budget.",
+        "evidence": "9800/12000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:texture-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "texture-budget",
+        "label": "Texture budget",
+        "status": "pass",
+        "reason": "Texture size and memory budget must match the target platform.",
+        "evidence": "pixels=2048/2048 memory=52/64",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:material-draw-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "material-draw-budget",
+        "label": "Material and draw-call budget",
+        "status": "pass",
+        "reason": "Variant generation must merge materials and reduce draw calls where the platform requires it.",
+        "evidence": "materials=2/3 draws=3/4",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:lod-coverage",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "lod-coverage",
+        "label": "LOD coverage",
+        "status": "pass",
+        "reason": "Platform variants need the required LOD chain before runtime import approval.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "nanite-policy",
+        "label": "Nanite policy",
+        "status": "pass",
+        "reason": "Mobile variants cannot inherit PC-only Nanite state.",
+        "evidence": "actual=False allowed=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:shader-feature-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "shader-feature-policy",
+        "label": "Shader feature policy",
+        "status": "pass",
+        "reason": "Platform variants should not carry expensive shader features that the target policy disallows.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:collision-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "collision-policy",
+        "label": "Collision policy",
+        "status": "pass",
+        "reason": "Collision simplification is gameplay-sensitive and must meet target runtime policy.",
+        "evidence": "simple=3/3 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:source-evidence-join",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "source-evidence-join",
+        "label": "Source evidence join",
+        "status": "pass",
+        "reason": "Variant plans should reference existing engine preset fact evidence.",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:target-path-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "target-path-policy",
+        "label": "Target path policy",
+        "status": "error",
+        "reason": "Platform variants must land in a platform-scoped engine path.",
+        "evidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "fixPreview": "Move the target asset under the approved platform path prefix."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:owner-approval",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "owner-approval",
+        "label": "Owner approval",
+        "status": "error",
+        "reason": "Platform degradation can change gameplay and visual intent, so an accountable owner must approve the plan.",
+        "evidence": "",
+        "fixPreview": "Attach art / tech owner approval before publishing the variant."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:triangle-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "triangle-budget",
+        "label": "Triangle budget",
+        "status": "error",
+        "reason": "Mobile and PC variants must stay under their target geometry budget.",
+        "evidence": "55000/12000",
+        "fixPreview": "Generate lower LODs or split the asset."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:texture-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "texture-budget",
+        "label": "Texture budget",
+        "status": "error",
+        "reason": "Texture size and memory budget must match the target platform.",
+        "evidence": "pixels=4096/2048 memory=220/64",
+        "fixPreview": "Downscale or repack textures for the platform variant."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:material-draw-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "material-draw-budget",
+        "label": "Material and draw-call budget",
+        "status": "error",
+        "reason": "Variant generation must merge materials and reduce draw calls where the platform requires it.",
+        "evidence": "materials=6/3 draws=8/4",
+        "fixPreview": "Merge material slots or bake detail into shared textures."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:lod-coverage",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "lod-coverage",
+        "label": "LOD coverage",
+        "status": "error",
+        "reason": "Platform variants need the required LOD chain before runtime import approval.",
+        "evidence": "['LOD1', 'LOD2']",
+        "fixPreview": "Generate the missing LODs or attach a platform waiver."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:nanite-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "nanite-policy",
+        "label": "Nanite policy",
+        "status": "error",
+        "reason": "Mobile variants cannot inherit PC-only Nanite state.",
+        "evidence": "actual=True allowed=False",
+        "fixPreview": "Disable Nanite or route the asset to a PC-only package."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:shader-feature-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "shader-feature-policy",
+        "label": "Shader feature policy",
+        "status": "warning",
+        "reason": "Platform variants should not carry expensive shader features that the target policy disallows.",
+        "evidence": "['clearcoat', 'detail-normal', 'parallax']",
+        "fixPreview": "Bake or replace disallowed material features."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:collision-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "collision-policy",
+        "label": "Collision policy",
+        "status": "error",
+        "reason": "Collision simplification is gameplay-sensitive and must meet target runtime policy.",
+        "evidence": "simple=9/3 complexAsSimple=True",
+        "fixPreview": "Simplify collision and remove complex-as-simple before publish."
+      }
+    ],
+    "variantActions": [
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:target-path-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "target-path-policy",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Move the target asset under the approved platform path prefix."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:owner-approval",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "owner-approval",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Attach art / tech owner approval before publishing the variant."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:triangle-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "triangle-budget",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Generate lower LODs or split the asset."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:texture-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "texture-budget",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Downscale or repack textures for the platform variant."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:material-draw-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "material-draw-budget",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Merge material slots or bake detail into shared textures."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:lod-coverage",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "lod-coverage",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Generate the missing LODs or attach a platform waiver."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:nanite-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "nanite-policy",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Disable Nanite or route the asset to a PC-only package."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:shader-feature-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "shader-feature-policy",
+        "status": "warning",
+        "mutationScope": "plan_only_review",
+        "preview": "Bake or replace disallowed material features."
+      },
+      {
+        "id": "action:variant-vehicle-shell-tmp-002:mobile:collision-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "collision-policy",
+        "status": "error",
+        "mutationScope": "plan_only_owner_required",
+        "preview": "Simplify collision and remove complex-as-simple before publish."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Platform Variant Forge explains PC to Mobile derivation as deterministic budget and policy rows, not as an opaque export button.",
+    "The report joins existing Unreal preset fact comparison evidence, so platform split decisions stay connected to engine-side facts.",
+    "All outputs are planning artifacts; no Maya scene, Unreal asset, source texture or production package is mutated."
+  ]
+}

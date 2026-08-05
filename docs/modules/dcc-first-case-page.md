@@ -82,11 +82,11 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r27` / `dcc-first-package@1.24.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r28` / `dcc-first-package@1.25.0`
   - gate：`CapturePending`
-  - demo route steps：16
-  - key evidence files：24
-  - present/missing required evidence files：24 / 0
+  - demo route steps：17
+  - key evidence files：25
+  - present/missing required evidence files：25 / 0
   - Animation Continuity：L3 / `Blocked` / `maya_anim_curves_collected`
   - Animation Continuity assets ready/blocked：1 / 1
   - Unreal Animation Bridge：L3 / `Blocked` / `unreal_animsequence_assets_imported`
@@ -95,9 +95,11 @@ React 入口：
   - Character Calibration assets ready/review/blocked：1 / 0 / 1
   - Spatial Authoring：L3 / `Blocked` / `maya_spatial_authoring_collected`
   - Spatial Authoring assets ready/review/blocked：1 / 0 / 1
+  - Platform Variant Forge：L3-linked / `Blocked` / `platform_variant_plan_joined_to_unreal_facts`
+  - Platform Variant Forge variants ready/review/blocked：2 / 0 / 1
   - Blender adapter：L3 / `Blocked` / `bpy_scene_collected`
   - 3ds Max adapter：L3 / `Blocked` / `pymxs_scene_collected`
-  - Animation/Max/Blender gate 的 `Blocked` 来自 synthetic fixture 中故意保留的失败资产，不是 runtime 缺失
+  - Animation/Max/Blender/Platform gate 的 `Blocked` 来自 synthetic fixture 中故意保留的失败资产或平台阻断，不是 runtime 缺失
   - Unreal inspector：L3++ / `unreal_engine_facts_matched`
   - Unreal engine facts：4 / 4 matched
   - Unreal preset fact rows matched/drift/waived/blocked：7 / 1 / 1 / 1
@@ -110,7 +112,7 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json
 ```
 
 Unreal Animation Bridge：

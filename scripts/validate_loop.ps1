@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "platform-variant", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -28,6 +28,7 @@ $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
 $SpatialAuthoring = Join-Path $Root "dcc-hosts\spatial-authoring-workbench"
+$PlatformVariant = Join-Path $Root "dcc-hosts\platform-variant-forge"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
@@ -78,7 +79,9 @@ $QuickPythonFiles = @(
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "scripts\run_smoke.py"),
     (Join-Path $SpatialAuthoring "scripts\run_l3_smoke.py"),
-    (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py")
+    (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py"),
+    (Join-Path $PlatformVariant "platform_variant_forge\contract.py"),
+    (Join-Path $PlatformVariant "scripts\run_smoke.py")
 )
 
 $CoreJsonFiles = @(
@@ -103,9 +106,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r27-spatial-authoring-l3-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r28-platform-variant-forge-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 24, summary
+assert summary["present_evidence_files"] == 25, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -157,6 +160,12 @@ if ($Tier -in @("spatial-authoring", "full")) {
     }
     Invoke-Step "spatial authoring Maya L3" {
         python (Join-Path $SpatialAuthoring "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("platform-variant", "full")) {
+    Invoke-Step "platform variant forge contract smoke" {
+        python (Join-Path $PlatformVariant "scripts\run_smoke.py")
     }
 }
 

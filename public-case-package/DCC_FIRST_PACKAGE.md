@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R27 Cross-DCC / Engine / Animation / Character / Spatial Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R28 Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r27` |
-| Version | `dcc-first-package@1.24.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r28` |
+| Version | `dcc-first-package@1.25.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 11 |
+| DCC artifacts | 12 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 24 / 24 present |
+| Presenter pack evidence files | 25 / 25 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 16 |
+| Presenter demo route steps | 17 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -72,6 +72,11 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Spatial authoring assets ready/review/blocked | 1 / 0 / 1 |
 | Spatial authoring checks pass/warn/error | 11 / 2 / 7 |
 | Spatial authoring runtime | `maya_spatial_authoring_collected`, Maya 2026 |
+| Platform variant forge | `Blocked` L3-linked |
+| Platform variant assets / variants | 2 / 3 |
+| Platform variant variants ready/review/blocked | 2 / 0 / 1 |
+| Platform variant checks pass/warn/error | 21 / 1 / 8 |
+| Platform variant runtime | `platform_variant_plan_joined_to_unreal_facts`, Unreal preset fact rows 10 |
 | Blocked modules | 0 |
 | Host | Maya 2024 / AuroraView |
 
@@ -89,33 +94,33 @@ from ai_tool_ta_maya_host import show_portfolio
 show_portfolio()
 ```
 
-Then use the right rail:
+Then follow the Presenter Pack route:
 
-1. `DCC Showcase Runbook` / `Build Plan`
-2. `DCC Showcase Runbook` / `Run Smoke`
-3. `DCC Showcase Runbook` / `Export Package`
-4. `Asset Handoff Gate` / `Fixture` / `Export Packet`
-5. `Asset Handoff Gate` / `Decision Packet`
-6. `Task Orchestrator` evidence view / `Export Case Page`
-7. `Task Orchestrator` evidence view / `Audit Media`
-8. `Task Orchestrator` evidence view / `Preset Facts`
-9. `Task Orchestrator` evidence view / `Txn Guard`
-10. `Task Orchestrator` evidence view / `Presenter Pack`
-11. Run `python <repo>\dcc-hosts\animation-continuity-lab\scripts\run_l3_smoke.py` when validating animation handoff continuity.
-12. Run `python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py` when validating Unreal Animation Bridge import L3.
-13. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py` when validating Character Calibration Maya L3.
-14. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py` when validating Spatial Authoring Maya L3.
-15. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py` when validating the Blender runtime L3 evidence.
-16. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600` when validating the Max adapter runtime evidence.
-17. Inspect the module rows, live demo script, GUI checklist, handoff asset rows, decision rows, engine comparison rows, Unreal inspector rows, preset fact review rows, transaction risk rows, rollback preview, Animation Continuity rows, Unreal Animation Bridge rows, Character Calibration rows, Spatial Authoring rows, Blender adapter rows, Blender runtime L3 gate, 3ds Max adapter rows, Max runtime L3 gate, media audit rows, and generated artifact paths.
+1. Open Maya host through `show_portfolio()`.
+2. Export the DCC-first case page from `Task Orchestrator`.
+3. Run the composite Asset Handoff Gate and Decision Packet.
+4. Compare PC and Mobile engine presets.
+5. Review the Unreal Handoff Inspector.
+6. Review Unreal preset facts inside the Maya-hosted case page.
+7. Run Scene Transaction Guard.
+8. Run `python <repo>\dcc-hosts\animation-continuity-lab\scripts\run_l3_smoke.py`.
+9. Run `python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py`.
+10. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py`.
+11. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py`.
+12. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py`.
+13. Review the Blender Rule Adapter artifact.
+14. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
+15. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+16. Audit GUI media after final Maya screenshots and recording are captured.
+17. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 16-step demo route, 7-step business route, public package manifest, 24 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 17-step demo route, 7-step business route, public package manifest, 25 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -276,6 +281,14 @@ This is the R26 character transfer evidence layer. It creates public synthetic M
 
 This is the R27 socket / hotspot / pose transfer evidence layer. It creates public synthetic Maya joints and locators, then checks parent joint coverage, local offset tolerance, mirror pair symmetry, hotspot semantic and owner, pose frame coverage/range, transform scale, local-space consistency, preview locator presence and pose transfer approval. The artifact reports L3, 2 spatial authoring rows, 1 Ready row, 1 intentionally Blocked row, 11 pass checks, 2 warnings and 7 errors. No production Maya scene, engine socket asset or private gameplay data is mutated.
 
+## Platform Variant Forge
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json
+```
+
+This is the R28 PC to Mobile asset variant planning layer. It reads public-safe source asset facts, joins them to the existing Unreal preset fact comparison artifact, and checks target path policy, owner approval, triangle budget, texture memory, material slots, draw calls, LOD coverage, Nanite policy, shader feature downgrade and collision simplification. The artifact reports `L3-linked`, 2 source assets, 3 planned variants, 2 Ready variants, 1 intentionally Blocked Mobile variant, 21 pass checks, 1 warning and 8 errors. No scene, mesh, texture, material or Unreal asset is mutated.
+
 ## Blender Rule Adapter
 
 ```text
@@ -311,10 +324,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json
 ```
 
-The Presenter Pack is the R27 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 24 / 24 evidence files present, 0 missing required files, 16 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R28 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 25 / 25 evidence files present, 0 missing required files, 17 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -371,6 +384,11 @@ python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_smoke.py
 python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py
 ```
 
+```powershell
+python -m py_compile <repo>\dcc-hosts\platform-variant-forge\platform_variant_forge\contract.py <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py
+python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py
+```
+
 Maya 2024 `mayapy` smoke:
 
 - case page report: `maya-dcc-portfolio-case-page@1.1.0`
@@ -423,6 +441,13 @@ Maya 2024 `mayapy` smoke:
 - spatial authoring L3 status: `maya_spatial_authoring_collected`
 - spatial authoring assets ready/review/blocked: 1 / 0 / 1
 - spatial authoring checks pass/warn/error: 11 / 2 / 7
+- platform variant forge report: `platform-variant-forge-contract@0.1.0`
+- platform variant forge evidence / L3 status: L3-linked / `platform_variant_plan_joined_to_unreal_facts`
+- platform variant forge gate: `Blocked`
+- platform variant forge assets / variants: 2 / 3
+- platform variant forge variants ready/review/blocked: 2 / 0 / 1
+- platform variant forge checks pass/warn/error: 21 / 1 / 8
+- platform variant forge source fact rows: 10
 - blender rule adapter report: `blender-rule-adapter-contract@0.1.0`
 - blender evidence level / L3 status: L3 / `bpy_scene_collected`
 - blender adapter gate: `Blocked`
@@ -450,10 +475,10 @@ Maya 2024 `mayapy` smoke:
 - unreal preset fact platform split / approved waivers: 1 / 1
 - unreal preset fact review report: `maya-unreal-preset-fact-review@0.1.0`
 - unreal preset fact review rows / queue / blocked / waivers: 10 / 3 / 1 / 1
-- presenter pack evidence files present/missing: 24 / 0
-- presenter pack demo route steps: 16
+- presenter pack evidence files present/missing: 25 / 0
+- presenter pack demo route steps: 17
 - reviewer claims: 13
 
 ## Legacy Package
 
-The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R25 Maya Cross-DCC / Engine Reviewer Pack.
+The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R28 Maya Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Reviewer Pack.

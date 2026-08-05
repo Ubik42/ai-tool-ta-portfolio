@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r27-spatial-authoring-l3-presentation-pack",
+        label: str = "r28-platform-variant-forge-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4062,6 +4062,12 @@ class MayaPortfolioApi:
                 "Spatial Authoring Maya L3 artifact",
                 "artifact",
                 manifest.get("spatialAuthoringArtifact"),
+            ),
+            _probe_file(
+                "platform-variant-forge",
+                "Platform Variant Forge artifact",
+                "artifact",
+                manifest.get("platformVariantForgeArtifact"),
             ),
         ]
 
@@ -4143,31 +4149,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "Maya mayapy creates synthetic joints and locators, then exports socket, hotspot, pose frame, mirror pair and pose transfer facts.",
             },
             {
-                "id": "12-review-blender-adapter",
+                "id": "12-run-platform-variant-forge",
+                "label": "Run platform variant forge",
+                "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_smoke.py.",
+                "evidence_expected": "PC and Mobile variant plans are checked against LOD, material, texture, collision, path, owner and Unreal preset fact evidence.",
+            },
+            {
+                "id": "13-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "13-run-blender-l3-harness",
+                "id": "14-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "14-run-3dsmax-adapter-harness",
+                "id": "15-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "15-audit-gui-media",
+                "id": "16-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "16-handoff-presenter-pack",
+                "id": "17-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4299,6 +4311,17 @@ class MayaPortfolioApi:
                 "spatial_authoring_pass_checks": manifest_summary.get("spatialAuthoringPassChecks"),
                 "spatial_authoring_warning_checks": manifest_summary.get("spatialAuthoringWarningChecks"),
                 "spatial_authoring_error_checks": manifest_summary.get("spatialAuthoringErrorChecks"),
+                "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
+                "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
+                "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
+                "platform_variant_forge_assets": manifest_summary.get("platformVariantForgeAssets"),
+                "platform_variant_forge_variants": manifest_summary.get("platformVariantForgeVariants"),
+                "platform_variant_forge_ready": manifest_summary.get("platformVariantForgeReady"),
+                "platform_variant_forge_review": manifest_summary.get("platformVariantForgeReview"),
+                "platform_variant_forge_blocked": manifest_summary.get("platformVariantForgeBlocked"),
+                "platform_variant_forge_pass_checks": manifest_summary.get("platformVariantForgePassChecks"),
+                "platform_variant_forge_warning_checks": manifest_summary.get("platformVariantForgeWarningChecks"),
+                "platform_variant_forge_error_checks": manifest_summary.get("platformVariantForgeErrorChecks"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4358,6 +4381,7 @@ class MayaPortfolioApi:
                 "Unreal Animation Bridge generates public Maya FBX clips, imports them into Unreal, and records real AnimSequence/Skeleton/SkeletalMesh facts.",
                 "Character Calibration Studio is now backed by Maya mayapy L3 topology, joint coverage, calibration delta, face parameter and Control Rig mapping evidence.",
                 "Spatial Authoring Workbench is now backed by Maya mayapy L3 socket, hotspot, pose frame, mirror pair and pose transfer evidence.",
+                "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4381,7 +4405,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r27-spatial-authoring-l3-presentation-pack",
+        label: str = "r28-platform-variant-forge-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

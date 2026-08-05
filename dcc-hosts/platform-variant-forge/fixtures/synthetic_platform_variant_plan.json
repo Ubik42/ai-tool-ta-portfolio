@@ -1,0 +1,144 @@
+{
+  "schema": "synthetic-platform-variant-plan@0.1.0",
+  "intent": "Public-safe fixture for PC to Mobile asset variant planning.",
+  "sourceEvidence": {
+    "unrealPresetFactComparison": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
+    "enginePresetComparison": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-9-engine-preset-comparison-20260803-172927.json"
+  },
+  "platformPolicies": [
+    {
+      "id": "pc",
+      "label": "PC Hero",
+      "maxTriangles": 60000,
+      "maxTexturePixels": 4096,
+      "maxTextureMemoryMb": 256,
+      "maxMaterialSlots": 6,
+      "maxDrawCalls": 8,
+      "requiredLods": ["LOD0", "LOD1"],
+      "allowNanite": true,
+      "allowedShaderFeatures": ["clearcoat", "detail-normal", "emissive", "parallax"],
+      "collision": {
+        "maxSimpleShapes": 8,
+        "allowComplexAsSimple": true
+      }
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile Runtime",
+      "maxTriangles": 12000,
+      "maxTexturePixels": 2048,
+      "maxTextureMemoryMb": 64,
+      "maxMaterialSlots": 3,
+      "maxDrawCalls": 4,
+      "requiredLods": ["LOD0", "LOD1", "LOD2"],
+      "allowNanite": false,
+      "allowedShaderFeatures": ["emissive"],
+      "collision": {
+        "maxSimpleShapes": 3,
+        "allowComplexAsSimple": false
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "variant-hero-panel-001",
+      "label": "Hero Panel Platform Variant",
+      "ownerState": "approved-master",
+      "sourcePlatform": "pc",
+      "targetPlatforms": ["pc", "mobile"],
+      "sourceAsset": {
+        "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "triangles": 42000,
+        "textureMaxPixels": 4096,
+        "textureMemoryMb": 180,
+        "materialSlots": 4,
+        "drawCalls": 5,
+        "lods": ["LOD0", "LOD1"],
+        "nanite": true,
+        "shaderFeatures": ["clearcoat", "detail-normal", "emissive"],
+        "collisionSimpleShapes": 5,
+        "complexAsSimple": false,
+        "sourceFingerprint": "src:hero-panel:pc-master:v1"
+      },
+      "variantPlans": [
+        {
+          "platform": "pc",
+          "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+          "requestedActions": ["rename-path", "preserve-master"],
+          "ownerApproval": "art-lead",
+          "expected": {
+            "triangles": 42000,
+            "textureMaxPixels": 4096,
+            "textureMemoryMb": 180,
+            "materialSlots": 4,
+            "drawCalls": 5,
+            "lods": ["LOD0", "LOD1"],
+            "nanite": true,
+            "shaderFeatures": ["clearcoat", "detail-normal", "emissive"],
+            "collisionSimpleShapes": 5,
+            "complexAsSimple": false
+          }
+        },
+        {
+          "platform": "mobile",
+          "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+          "requestedActions": ["generate-lod2", "disable-nanite", "merge-materials", "downscale-textures", "simplify-collision"],
+          "ownerApproval": "art-lead",
+          "expected": {
+            "triangles": 9800,
+            "textureMaxPixels": 2048,
+            "textureMemoryMb": 52,
+            "materialSlots": 2,
+            "drawCalls": 3,
+            "lods": ["LOD0", "LOD1", "LOD2"],
+            "nanite": false,
+            "shaderFeatures": ["emissive"],
+            "collisionSimpleShapes": 3,
+            "complexAsSimple": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "variant-vehicle-shell-tmp-002",
+      "label": "Vehicle Shell Mobile Variant Blocked",
+      "ownerState": "temporary",
+      "sourcePlatform": "pc",
+      "targetPlatforms": ["mobile"],
+      "sourceAsset": {
+        "enginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "triangles": 88000,
+        "textureMaxPixels": 4096,
+        "textureMemoryMb": 310,
+        "materialSlots": 7,
+        "drawCalls": 9,
+        "lods": ["LOD0"],
+        "nanite": true,
+        "shaderFeatures": ["clearcoat", "parallax", "detail-normal"],
+        "collisionSimpleShapes": 9,
+        "complexAsSimple": true,
+        "sourceFingerprint": "src:vehicle-shell:tmp:v3"
+      },
+      "variantPlans": [
+        {
+          "platform": "mobile",
+          "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+          "requestedActions": ["rename-path"],
+          "ownerApproval": "",
+          "expected": {
+            "triangles": 55000,
+            "textureMaxPixels": 4096,
+            "textureMemoryMb": 220,
+            "materialSlots": 6,
+            "drawCalls": 8,
+            "lods": ["LOD0"],
+            "nanite": true,
+            "shaderFeatures": ["clearcoat", "parallax", "detail-normal"],
+            "collisionSimpleShapes": 9,
+            "complexAsSimple": true
+          }
+        }
+      ]
+    }
+  ]
+}

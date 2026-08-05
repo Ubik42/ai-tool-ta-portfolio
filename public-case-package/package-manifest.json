@@ -1,7 +1,7 @@
 {
   "packageId": "ai-tool-ta-public-case-package-r8-54",
   "packageVersion": "public-case-package@3.24.0",
-  "generatedAt": "2026-08-05T18:16:28+08:00",
+  "generatedAt": "2026-08-05T18:24:45+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r27",
-    "packageVersion": "dcc-first-package@1.24.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r28",
+    "packageVersion": "dcc-first-package@1.25.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -29,7 +29,7 @@
     "gate": "CapturePending",
     "sourceCaseGate": "Review",
     "moduleCount": 5,
-    "artifactCount": 10,
+    "artifactCount": 12,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "businessRouteSteps": 7,
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 24,
-    "presentationPackPresentEvidenceFiles": 24,
+    "presentationPackEvidenceFiles": 25,
+    "presentationPackPresentEvidenceFiles": 25,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 16,
+    "presentationPackDemoRouteSteps": 17,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -250,16 +250,31 @@
     "spatialAuthoringBlocked": 1,
     "spatialAuthoringPassChecks": 11,
     "spatialAuthoringWarningChecks": 2,
-    "spatialAuthoringErrorChecks": 7
+    "spatialAuthoringErrorChecks": 7,
+    "platformVariantForgeReportVersion": "platform-variant-forge-contract@0.1.0",
+    "platformVariantForgeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+    "platformVariantForgeEvidenceLevel": "L3-linked",
+    "platformVariantForgeL3Status": "platform_variant_plan_joined_to_unreal_facts",
+    "platformVariantForgeGate": "Blocked",
+    "platformVariantForgeAssets": 2,
+    "platformVariantForgeVariants": 3,
+    "platformVariantForgeReady": 2,
+    "platformVariantForgeReview": 0,
+    "platformVariantForgeBlocked": 1,
+    "platformVariantForgePassChecks": 21,
+    "platformVariantForgeWarningChecks": 1,
+    "platformVariantForgeErrorChecks": 8,
+    "platformVariantForgeSourceGate": "Blocked",
+    "platformVariantForgeSourceFactRows": 10
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 315,
-    "requiredEvidenceCount": 249,
-    "packageFileCount": 11,
+    "evidenceCount": 316,
+    "requiredEvidenceCount": 250,
+    "packageFileCount": 12,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 107,
-    "manifestArtifactCount": 65
+    "validationCommandCount": 109,
+    "manifestArtifactCount": 68
   },
   "moduleOrder": [
     "asset-protocol",
@@ -320,7 +335,7 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
       "required": true
     },
     {
@@ -334,9 +349,17 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-forge",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+      "required": true
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
+    "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
     "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
     "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
@@ -401,6 +424,7 @@
     "accept-impact-r8"
   ],
   "notes": [
+    "R28 adds Platform Variant Forge evidence for PC/Mobile asset derivation plans.",
     "R27 adds Spatial Authoring Maya L3 evidence for socket, hotspot, pose frame and mirror transfer authoring.",
     "R24 adds Unreal Animation Bridge readiness: Unreal Python probes AnimSequence/Skeleton API and expected public animation assets from Maya Animation Continuity facts.",
     "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
@@ -437,7 +461,7 @@
     },
     {
       "id": "dcc-first-presentation-pack",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
       "required": true
     },
     {
@@ -459,11 +483,18 @@
       "id": "dcc-first-spatial-authoring-l3",
       "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-forge",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+      "required": true
     }
   ],
   "validation": [
     "python -m py_compile dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/contract.py dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/maya_collector.py dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_maya_l3.py",
     "python dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py",
-    "python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py"
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py",
+    "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
+    "python dcc-hosts/platform-variant-forge/scripts/run_smoke.py"
   ]
 }
