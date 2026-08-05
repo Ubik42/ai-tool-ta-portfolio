@@ -1,0 +1,451 @@
+{
+  "reportVersion": "platform-variant-generation-plan@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 19:00:52",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "runtime_drift_to_generation_plan",
+  "sourceRuntime": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
+    "reportVersion": "platform-variant-unreal-runtime@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_variant_runtime_assets_collected",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3"
+  },
+  "sourcePlan": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+    "reportVersion": "platform-variant-forge-contract@0.1.0",
+    "evidenceLevel": "L3-linked",
+    "l3Status": "platform_variant_plan_joined_to_unreal_facts"
+  },
+  "summary": {
+    "gate": "Blocked",
+    "operationCount": 11,
+    "readyOperations": 1,
+    "reviewOperations": 3,
+    "blockedOperations": 2,
+    "satisfiedOperations": 5,
+    "variantCount": 3,
+    "executorReadyOperations": 1,
+    "ownerApprovalRequired": 6,
+    "operationTypes": [
+      "apply-runtime-nanite-policy",
+      "create-or-import-source",
+      "create-target-variant",
+      "disable-nanite",
+      "downscale-textures",
+      "generate-lod2",
+      "generate-missing-runtime-lods",
+      "merge-materials",
+      "preserve-master",
+      "rename-path",
+      "simplify-collision"
+    ]
+  },
+  "operations": [
+    {
+      "id": "variant-hero-panel-001:mobile:disable-nanite",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "disable-nanite",
+      "ruleId": "runtime-nanite-policy",
+      "status": "Satisfied",
+      "reason": "Runtime Nanite flag matches policy.",
+      "runtimeEvidence": "actual=False expected=False",
+      "sourceRuntimeStatus": "pass",
+      "preview": "None",
+      "ownerApproval": "art-lead",
+      "approvalRequired": false,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualNanite": false,
+        "expectedNanite": false
+      },
+      "unrealPythonPreview": "target_mesh.get_editor_property('nanite_settings').enabled = expected_nanite",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:mobile:downscale-textures",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "downscale-textures",
+      "ruleId": "runtime-texture-budget",
+      "status": "Review",
+      "reason": "Runtime texture source facts are not collected yet; planner can only emit the bake contract.",
+      "runtimeEvidence": null,
+      "sourceRuntimeStatus": null,
+      "preview": "Downscale texture set and repack platform material payload.",
+      "ownerApproval": "art-lead",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "expectedTextureMaxPixels": 2048,
+        "expectedTextureMemoryMb": 52,
+        "materialPaths": [
+          "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        ],
+        "missingRuntimeTextureFacts": true
+      },
+      "unrealPythonPreview": "Texture pipeline adapter exports resized maps before Unreal material reassignment.",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:mobile:generate-lod2",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "generate-lod2",
+      "ruleId": "runtime-lod-count",
+      "status": "Review",
+      "reason": "Runtime mesh exists but geometry counts are not readable in the synthetic fixture; keep as executor readiness.",
+      "runtimeEvidence": "actual=1 expected>=3",
+      "sourceRuntimeStatus": "warning",
+      "preview": "Generate missing LODs ['LOD1', 'LOD2'] with platform reduction settings.",
+      "ownerApproval": "art-lead",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualLodCount": 1,
+        "expectedLods": [
+          "LOD0",
+          "LOD1",
+          "LOD2"
+        ],
+        "missingLods": [
+          "LOD1",
+          "LOD2"
+        ],
+        "screenSizePolicy": [
+          1.0,
+          0.45,
+          0.18
+        ],
+        "reductionSettings": {
+          "method": "percent_triangles",
+          "targetPercentByMissingLod": {
+            "LOD1": 0.35,
+            "LOD2": 0.175
+          },
+          "recomputeNormals": true,
+          "preserveUVs": true,
+          "preserveVertexColors": true
+        }
+      },
+      "unrealPythonPreview": "StaticMeshEditorSubsystem.set_lods(target_mesh, lod_settings)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:mobile:merge-materials",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "merge-materials",
+      "ruleId": "runtime-material-budget",
+      "status": "Satisfied",
+      "reason": "Material slot budget already matches runtime target.",
+      "runtimeEvidence": "actual=1 expected<=2",
+      "sourceRuntimeStatus": "pass",
+      "preview": "None",
+      "ownerApproval": "art-lead",
+      "approvalRequired": false,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualMaterialSlots": 1,
+        "expectedMaterialSlots": 2,
+        "materialPaths": [
+          "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        ]
+      },
+      "unrealPythonPreview": "MaterialEditingLibrary.reassign_material_slots(target_mesh, baked_material)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:mobile:simplify-collision",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "simplify-collision",
+      "ruleId": "runtime-collision-policy",
+      "status": "Satisfied",
+      "reason": "Collision policy already matches runtime target.",
+      "runtimeEvidence": "simple=1 expected<=3 complexAsSimple=False",
+      "sourceRuntimeStatus": "pass",
+      "preview": "None",
+      "ownerApproval": "art-lead",
+      "approvalRequired": false,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualSimpleShapes": 1,
+        "expectedSimpleShapes": 3,
+        "complexAsSimple": false
+      },
+      "unrealPythonPreview": "EditorStaticMeshLibrary.remove_collisions(target_mesh); add_simple_collisions(target_mesh)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "action": "apply-runtime-nanite-policy",
+      "ruleId": "runtime-nanite-policy",
+      "status": "Ready",
+      "reason": "Runtime Nanite flag differs from platform policy.",
+      "runtimeEvidence": "actual=False expected=True",
+      "sourceRuntimeStatus": "warning",
+      "preview": "Set Nanite enabled=True on the target StaticMesh.",
+      "ownerApproval": "art-lead",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "actualNanite": false,
+        "expectedNanite": true
+      },
+      "unrealPythonPreview": "target_mesh.get_editor_property('nanite_settings').enabled = expected_nanite",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:pc:generate-missing-runtime-lods",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "action": "generate-missing-runtime-lods",
+      "ruleId": "runtime-lod-count",
+      "status": "Review",
+      "reason": "Runtime mesh exists but geometry counts are not readable in the synthetic fixture; keep as executor readiness.",
+      "runtimeEvidence": "actual=1 expected>=2",
+      "sourceRuntimeStatus": "warning",
+      "preview": "Generate missing LODs ['LOD1'] with platform reduction settings.",
+      "ownerApproval": "art-lead",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "actualLodCount": 1,
+        "expectedLods": [
+          "LOD0",
+          "LOD1"
+        ],
+        "missingLods": [
+          "LOD1"
+        ],
+        "screenSizePolicy": [
+          1.0,
+          0.55
+        ],
+        "reductionSettings": {
+          "method": "percent_triangles",
+          "targetPercentByMissingLod": {
+            "LOD1": 0.55
+          },
+          "recomputeNormals": true,
+          "preserveUVs": true,
+          "preserveVertexColors": true
+        }
+      },
+      "unrealPythonPreview": "StaticMeshEditorSubsystem.set_lods(target_mesh, lod_settings)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:pc:preserve-master",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "action": "preserve-master",
+      "ruleId": "runtime-path-policy",
+      "status": "Satisfied",
+      "reason": "Runtime target path already matches platform scope.",
+      "runtimeEvidence": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "sourceRuntimeStatus": "pass",
+      "preview": "None",
+      "ownerApproval": "art-lead",
+      "approvalRequired": false,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "expectedPrefix": "/Game/AI_Tool_TA/Props/PC/",
+        "pathMatched": true
+      },
+      "unrealPythonPreview": "EditorAssetLibrary.rename_asset(source_path, platform_scoped_path)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-hero-panel-001:pc:rename-path",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "action": "rename-path",
+      "ruleId": "runtime-path-policy",
+      "status": "Satisfied",
+      "reason": "Runtime target path already matches platform scope.",
+      "runtimeEvidence": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "sourceRuntimeStatus": "pass",
+      "preview": "None",
+      "ownerApproval": "art-lead",
+      "approvalRequired": false,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "expectedPrefix": "/Game/AI_Tool_TA/Props/PC/",
+        "pathMatched": true
+      },
+      "unrealPythonPreview": "EditorAssetLibrary.rename_asset(source_path, platform_scoped_path)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-vehicle-shell-tmp-002:mobile:create-or-import-source",
+      "assetId": "variant-vehicle-shell-tmp-002",
+      "assetLabel": "Vehicle Shell Mobile Variant Blocked",
+      "platform": "mobile",
+      "action": "create-or-import-source",
+      "ruleId": "runtime-source-asset",
+      "status": "Blocked",
+      "reason": "Source StaticMesh is absent in Unreal runtime.",
+      "runtimeEvidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "sourceRuntimeStatus": "error",
+      "preview": "Import source StaticMesh before platform derivation.",
+      "ownerApproval": "",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "deterministicParams": {
+        "sourceEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      "unrealPythonPreview": "asset_tools.import_asset_tasks([source_import_task])",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    },
+    {
+      "id": "variant-vehicle-shell-tmp-002:mobile:create-target-variant",
+      "assetId": "variant-vehicle-shell-tmp-002",
+      "assetLabel": "Vehicle Shell Mobile Variant Blocked",
+      "platform": "mobile",
+      "action": "create-target-variant",
+      "ruleId": "runtime-target-asset",
+      "status": "Blocked",
+      "reason": "Target platform variant asset is absent in Unreal runtime.",
+      "runtimeEvidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "sourceRuntimeStatus": "error",
+      "preview": "Create the platform target asset under the planned path.",
+      "ownerApproval": "",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "deterministicParams": {
+        "sourceEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      "unrealPythonPreview": "EditorAssetLibrary.duplicate_asset(source_path, target_path)",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    }
+  ],
+  "executorContract": {
+    "schema": "platform-variant-generation-executor-contract@0.1.0",
+    "mode": "dry-run",
+    "canExecuteWithoutHuman": false,
+    "requiredRuntime": "Unreal Python",
+    "expectedBoundary": "/Game/AI_Tool_TA public fixture or user-approved project scope",
+    "blockedUntil": [
+      "source and target assets exist",
+      "geometry facts are readable for destructive LOD generation",
+      "texture facts are collected before texture bake execution",
+      "owner approval exists for visual or gameplay-affecting changes"
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-generation-planner",
+    "name": "Platform Variant Auto LOD / Material Bake Planner",
+    "methodSource": "Platform variant runtime drift to dry-run generation plan",
+    "protocolCarrier": "R28 variant plan + R29 Unreal runtime facts",
+    "boundary": {
+      "mutation": "dry_run_generation_plan_only",
+      "sceneWrites": 0,
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R30 turns runtime drift rows into explicit generation operations instead of leaving them as generic warnings.",
+    "Each operation carries its owner approval, transaction boundary, deterministic parameters and rollback preview.",
+    "The artifact stays dry-run: it explains what an Unreal executor would do without mutating production assets."
+  ]
+}

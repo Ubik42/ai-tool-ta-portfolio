@@ -1,6 +1,6 @@
 # DCC-first Case Page / Presenter Pack
 
-R27 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Character Calibration Maya L3、Spatial Authoring Maya L3、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
+R30 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Character Calibration Maya L3、Spatial Authoring Maya L3、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
 
 ## 核心业务逻辑
 
@@ -12,7 +12,7 @@ R27 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 M
 - Composite gate：把 Asset Handoff Gate 的 Ready / Review / Blocked 作为最终业务判定。
 - Owner / Engine decision：把 repair preview、owner disposition、engine handoff mock 放进主案例。
 - Media plan：把 9 张截图和 1 段录屏变成明确采集清单。
-- Presenter Pack：探测 24 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
+- Presenter Pack：探测 27 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
 - Preset Fact Review：把 Unreal preset comparison 的 blocked / drift / waived / matched rows 投影成 Maya 内 reviewer queue。
 - Scene Transaction Guard：把 Maya 工具运行前后的 scene mutation 输出为 fingerprint、risk rows 和 rollback preview。
 
@@ -47,7 +47,7 @@ React 入口：
 - 7 段 business route
 - Composite Gate 摘要
 - Owner / Engine Decision 摘要
-- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Character Calibration、Spatial Authoring、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
+- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Character Calibration、Spatial Authoring、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
 - GUI evidence plan
 - GUI media audit
 - Presenter Pack evidence file probes
@@ -82,11 +82,11 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r29` / `dcc-first-package@1.26.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r30` / `dcc-first-package@1.27.0`
   - gate：`CapturePending`
-  - demo route steps：18
-  - key evidence files：26
-  - present/missing required evidence files：26 / 0
+  - demo route steps：19
+  - key evidence files：27
+  - present/missing required evidence files：27 / 0
   - Animation Continuity：L3 / `Blocked` / `maya_anim_curves_collected`
   - Animation Continuity assets ready/blocked：1 / 1
   - Unreal Animation Bridge：L3 / `Blocked` / `unreal_animsequence_assets_imported`
@@ -100,6 +100,8 @@ React 入口：
   - Platform Variant Unreal Runtime Probe：L3 / `Blocked` / `unreal_variant_runtime_assets_collected`
   - Platform Variant Unreal Runtime variants ready/review/blocked：0 / 2 / 1
   - Platform Variant Unreal Runtime checks pass/warn/error：21 / 4 / 2
+  - Platform Variant Generation Planner：L3-derived / `Blocked` / `runtime_drift_to_generation_plan`
+  - Platform Variant Generation operations ready/review/blocked/satisfied：1 / 3 / 2 / 5
   - Blender adapter：L3 / `Blocked` / `bpy_scene_collected`
   - 3ds Max adapter：L3 / `Blocked` / `pymxs_scene_collected`
   - Animation/Max/Blender/Platform gate 的 `Blocked` 来自 synthetic fixture 中故意保留的失败资产、平台阻断或 runtime drift，不是 runtime 缺失
@@ -115,13 +117,19 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json
 ```
 
 Platform Variant Unreal Runtime Probe：
 
 ```text
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json
+```
+
+Platform Variant Generation Planner：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json
 ```
 
 Unreal Animation Bridge：

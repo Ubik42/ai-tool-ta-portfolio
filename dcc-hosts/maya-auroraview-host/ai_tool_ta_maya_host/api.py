@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r29-platform-variant-unreal-runtime-presentation-pack",
+        label: str = "r30-platform-variant-generation-plan-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4074,6 +4074,12 @@ class MayaPortfolioApi:
                 "Platform Variant Unreal Runtime Probe artifact",
                 "artifact",
                 manifest.get("platformVariantUnrealRuntimeArtifact"),
+            ),
+            _probe_file(
+                "platform-variant-generation-plan",
+                "Platform Variant Generation Plan artifact",
+                "artifact",
+                manifest.get("platformVariantGenerationPlanArtifact"),
             ),
         ]
 
@@ -4167,31 +4173,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "Unreal Python collects runtime StaticMesh facts for planned PC/Mobile variants and compares them against the R28 variant plan.",
             },
             {
-                "id": "14-review-blender-adapter",
+                "id": "14-run-platform-variant-generation-plan",
+                "label": "Run platform variant generation plan",
+                "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py.",
+                "evidence_expected": "Runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction boundaries.",
+            },
+            {
+                "id": "15-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "15-run-blender-l3-harness",
+                "id": "16-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "16-run-3dsmax-adapter-harness",
+                "id": "17-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "17-audit-gui-media",
+                "id": "18-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "18-handoff-presenter-pack",
+                "id": "19-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4346,6 +4358,15 @@ class MayaPortfolioApi:
                 "platform_variant_unreal_runtime_pass_checks": manifest_summary.get("platformVariantUnrealRuntimePassChecks"),
                 "platform_variant_unreal_runtime_warning_checks": manifest_summary.get("platformVariantUnrealRuntimeWarningChecks"),
                 "platform_variant_unreal_runtime_error_checks": manifest_summary.get("platformVariantUnrealRuntimeErrorChecks"),
+                "platform_variant_generation_plan_gate": manifest_summary.get("platformVariantGenerationPlanGate"),
+                "platform_variant_generation_plan_evidence_level": manifest_summary.get("platformVariantGenerationPlanEvidenceLevel"),
+                "platform_variant_generation_plan_l3_status": manifest_summary.get("platformVariantGenerationPlanL3Status"),
+                "platform_variant_generation_plan_operations": manifest_summary.get("platformVariantGenerationPlanOperations"),
+                "platform_variant_generation_plan_ready": manifest_summary.get("platformVariantGenerationPlanReady"),
+                "platform_variant_generation_plan_review": manifest_summary.get("platformVariantGenerationPlanReview"),
+                "platform_variant_generation_plan_blocked": manifest_summary.get("platformVariantGenerationPlanBlocked"),
+                "platform_variant_generation_plan_satisfied": manifest_summary.get("platformVariantGenerationPlanSatisfied"),
+                "platform_variant_generation_plan_owner_required": manifest_summary.get("platformVariantGenerationPlanOwnerRequired"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4407,6 +4428,7 @@ class MayaPortfolioApi:
                 "Spatial Authoring Workbench is now backed by Maya mayapy L3 socket, hotspot, pose frame, mirror pair and pose transfer evidence.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
+                "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4430,7 +4452,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r29-platform-variant-unreal-runtime-presentation-pack",
+        label: str = "r30-platform-variant-generation-plan-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

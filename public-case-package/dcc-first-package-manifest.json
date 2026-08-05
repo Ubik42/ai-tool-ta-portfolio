@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r29",
-  "packageVersion": "dcc-first-package@1.26.0",
-  "generatedAt": "2026-08-05T18:43:50+08:00",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r30",
+  "packageVersion": "dcc-first-package@1.27.0",
+  "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 13,
+    "artifactCount": 15,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 26,
-    "presentationPackPresentEvidenceFiles": 26,
+    "presentationPackEvidenceFiles": 27,
+    "presentationPackPresentEvidenceFiles": 27,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 18,
+    "presentationPackDemoRouteSteps": 19,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -234,7 +234,19 @@
     "platformVariantUnrealRuntimeBlocked": 1,
     "platformVariantUnrealRuntimePassChecks": 21,
     "platformVariantUnrealRuntimeWarningChecks": 4,
-    "platformVariantUnrealRuntimeErrorChecks": 2
+    "platformVariantUnrealRuntimeErrorChecks": 2,
+    "platformVariantGenerationPlanReportVersion": "platform-variant-generation-plan@0.1.0",
+    "platformVariantGenerationPlanArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
+    "platformVariantGenerationPlanEvidenceLevel": "L3-derived",
+    "platformVariantGenerationPlanL3Status": "runtime_drift_to_generation_plan",
+    "platformVariantGenerationPlanGate": "Blocked",
+    "platformVariantGenerationPlanOperations": 11,
+    "platformVariantGenerationPlanReady": 1,
+    "platformVariantGenerationPlanReview": 3,
+    "platformVariantGenerationPlanBlocked": 2,
+    "platformVariantGenerationPlanSatisfied": 5,
+    "platformVariantGenerationPlanOwnerRequired": 6,
+    "platformVariantGenerationPlanExecutorReady": 1
   },
   "moduleOrder": [
     "asset-protocol",
@@ -374,7 +386,7 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
       "required": true
     },
     {
@@ -411,6 +423,18 @@
       "id": "dcc-first-platform-variant-forge",
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-unreal-runtime",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-generation-plan",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
       "required": true
     }
   ],
@@ -453,11 +477,14 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/runtime_contract.py dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py",
-    "python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py"
+    "python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py",
+    "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py",
+    "python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py"
   ],
   "notes": [
+    "R30 adds Platform Variant Generation Planner: runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction and approval boundaries.",
     "R29 adds Platform Variant Unreal Runtime Probe: Unreal Python collects public StaticMesh runtime facts for planned PC/Mobile variants and compares runtime path, LOD, material, Nanite and collision state against the variant plan.",
-    "Current final presentation route is DCC-first through the R29 Presenter Pack.",
+    "Current final presentation route is DCC-first through the R30 Presenter Pack.",
     "R28 adds Platform Variant Forge: PC/Mobile variant plans are checked against path, owner, triangle, texture, material, draw-call, LOD, Nanite, shader and collision policy while joined to existing Unreal preset fact evidence.",
     "R27 adds Spatial Authoring Maya L3: socket parent joints, offsets, mirror pairs, hotspots, pose frames, local space, preview locators and pose transfer approval are collected from public synthetic Maya locators.",
     "Current final presentation route is DCC-first through the R27 Presenter Pack.",
@@ -512,7 +539,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -589,7 +616,7 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 13,
+  "artifactCount": 15,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
@@ -692,5 +719,17 @@
   "platformVariantUnrealRuntimeBlocked": 1,
   "platformVariantUnrealRuntimePassChecks": 21,
   "platformVariantUnrealRuntimeWarningChecks": 4,
-  "platformVariantUnrealRuntimeErrorChecks": 2
+  "platformVariantUnrealRuntimeErrorChecks": 2,
+  "platformVariantGenerationPlanReportVersion": "platform-variant-generation-plan@0.1.0",
+  "platformVariantGenerationPlanArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
+  "platformVariantGenerationPlanEvidenceLevel": "L3-derived",
+  "platformVariantGenerationPlanL3Status": "runtime_drift_to_generation_plan",
+  "platformVariantGenerationPlanGate": "Blocked",
+  "platformVariantGenerationPlanOperations": 11,
+  "platformVariantGenerationPlanReady": 1,
+  "platformVariantGenerationPlanReview": 3,
+  "platformVariantGenerationPlanBlocked": 2,
+  "platformVariantGenerationPlanSatisfied": 5,
+  "platformVariantGenerationPlanOwnerRequired": 6,
+  "platformVariantGenerationPlanExecutorReady": 1
 }

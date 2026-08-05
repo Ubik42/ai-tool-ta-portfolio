@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "platform-variant", "platform-variant-unreal", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -82,8 +82,10 @@ $QuickPythonFiles = @(
     (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\runtime_contract.py"),
+    (Join-Path $PlatformVariant "platform_variant_forge\generation_plan.py"),
     (Join-Path $PlatformVariant "scripts\run_smoke.py"),
     (Join-Path $PlatformVariant "scripts\run_unreal_runtime_probe.py"),
+    (Join-Path $PlatformVariant "scripts\run_generation_plan.py"),
     (Join-Path $PlatformVariant "scripts\unreal_python\probe_variant_runtime.py")
 )
 
@@ -109,9 +111,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r29-platform-variant-unreal-runtime-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r30-platform-variant-generation-plan-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 26, summary
+assert summary["present_evidence_files"] == 27, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -175,6 +177,12 @@ if ($Tier -in @("platform-variant", "full")) {
 if ($Tier -in @("platform-variant-unreal", "full")) {
     Invoke-Step "platform variant unreal runtime probe" {
         python (Join-Path $PlatformVariant "scripts\run_unreal_runtime_probe.py")
+    }
+}
+
+if ($Tier -in @("platform-variant-generation", "full")) {
+    Invoke-Step "platform variant generation plan" {
+        python (Join-Path $PlatformVariant "scripts\run_generation_plan.py")
     }
 }
 

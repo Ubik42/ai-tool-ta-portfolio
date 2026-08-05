@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R30 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json` | Maya-hosted package probes 27 key evidence files, exports 19 demo route steps, and adds Platform Variant Generation Planner evidence. |
+| Platform Variant Generation Planner | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json` | R29 Unreal runtime drift is converted into 11 dry-run generation operations for LOD, Nanite, material bake, texture downscale, collision and missing asset preconditions. |
 | R29 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json` | Maya-hosted package probes 26 key evidence files, exports 18 demo route steps, and adds Platform Variant Unreal Runtime Probe evidence. |
 | Platform Variant Unreal Runtime Probe | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json` | Unreal 5.3.2 Python collects runtime StaticMesh facts for planned PC/Mobile variants and compares path, LOD, material, Nanite and collision state against the variant plan. |
 | Platform Variant Forge | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json` | PC/Mobile variant plans are checked against path, owner, triangle, texture, material, draw-call, LOD, Nanite, shader and collision policy while joined to Unreal preset fact evidence. |

@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r30-platform-variant-generation-plan` | `python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py` | R29 runtime drift is converted into `platform-variant-generation-plan@0.1.0`, reporting 11 dry-run operations: 1 Ready, 3 Review, 2 Blocked and 5 Satisfied, with owner approval and rollback boundaries. |
+| `validate-r30-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r30-platform-variant-generation-plan-presentation-pack")` | DCC Presenter Pack probes 27 key evidence files including Platform Variant Generation Planner, reports 27 present / 0 missing required files, and exports 19 demo route steps. |
 | `validate-r29-platform-variant-unreal-runtime` | `python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py` | Unreal 5.3.2 Python collects runtime StaticMesh facts for 3 planned variants, reports 0 Ready / 2 Review / 1 Blocked runtime variants, and compares runtime path, LOD, material, Nanite and collision state against the variant plan. |
 | `validate-r29-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r29-platform-variant-unreal-runtime-presentation-pack")` | DCC Presenter Pack probes 26 key evidence files including Platform Variant Unreal Runtime Probe, reports 26 present / 0 missing required files, and exports 18 demo route steps. |
 | `validate-r28-platform-variant-forge` | `python dcc-hosts/platform-variant-forge/scripts/run_smoke.py` | Contract evaluates 2 public source assets and 3 platform variants, reports 2 Ready variants and 1 Blocked Mobile variant, and joins the plan to Unreal preset fact comparison evidence. |

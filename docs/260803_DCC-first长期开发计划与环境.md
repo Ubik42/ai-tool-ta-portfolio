@@ -1136,3 +1136,34 @@ ai-tool-ta-dcc-first-showcase-r29 / dcc-first-package@1.26.0
 ```text
 runtime drift artifact -> LOD/material/texture fix plan -> Unreal Python generation contract -> Presenter Pack row -> docs
 ```
+
+## R30 循环开发断点：Platform Variant Auto LOD / Material Bake Planner
+
+R30 已完成 `Platform Variant Generation Planner` L3-derived：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json
+```
+
+R30 结果：`run_generation_plan.py` 读取 R29 Unreal runtime drift 和 R28 variant plan，把 generic warning 转成可审核的 dry-run operation contract。操作覆盖 missing LOD、Nanite policy、material merge、texture downscale、collision simplification、source import 和 target variant creation。结果为 11 operations，1 Ready，3 Review，2 Blocked，5 Satisfied，owner approval required 6。`Blocked` 来自 synthetic vehicle 缺源资产/目标资产；HeroPanel 的 LOD/texture bake 保持 Review，因为当前 public fixture 的几何/贴图 runtime facts 不足以执行 destructive bake。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r30 / dcc-first-package@1.27.0
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant-generation
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Texture Runtime Collector / Controlled Executor`：
+
+```text
+generation plan artifact -> texture/material runtime fact collector or public-scope executor -> re-check gate -> Presenter Pack row -> docs
+```
