@@ -1,0 +1,157 @@
+{
+  "reportVersion": "maya-dcc-gui-media-audit@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:59:01",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": false
+    }
+  },
+  "mediaAudit": {
+    "ok": true,
+    "schema": "maya-dcc-gui-media-audit@0.1.0",
+    "media_root": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence",
+    "manifest_schema": "maya-dcc-gui-evidence-manifest@1.1.0",
+    "rows": [
+      {
+        "id": "shot-01-host-open",
+        "capture_type": "screenshot",
+        "target": "Maya main window with AuroraView portfolio panel open",
+        "filename": "r10-3_01_maya_host_open.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_01_maya_host_open.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can tell the tool is hosted inside Maya, not a standalone browser tab."
+      },
+      {
+        "id": "shot-02-runbook-route",
+        "capture_type": "screenshot",
+        "target": "Right rail / DCC Showcase Runbook",
+        "filename": "r10-3_02_runbook_business_route.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_02_runbook_business_route.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can read the asset handoff story before seeing individual modules."
+      },
+      {
+        "id": "shot-03-smoke-package",
+        "capture_type": "screenshot",
+        "target": "DCC Showcase Runbook after Run Smoke",
+        "filename": "r10-3_03_runbook_smoke_gate.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_03_runbook_smoke_gate.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can verify the package is backed by generated Maya artifacts and the composite handoff packet."
+      },
+      {
+        "id": "shot-04-asset-protocol",
+        "capture_type": "screenshot",
+        "target": "Asset Protocol Workbench / DCC Scene Payload",
+        "filename": "r10-3_04_asset_protocol_dcc_payload.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_04_asset_protocol_dcc_payload.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can see DCC-native business metadata, not only React form data."
+      },
+      {
+        "id": "shot-05-rule-matrix",
+        "capture_type": "screenshot",
+        "target": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+        "filename": "r10-3_05_rule_matrix_maya_gate.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_05_rule_matrix_maya_gate.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can see deterministic publish gate logic and manual/safe fix separation."
+      },
+      {
+        "id": "shot-06-texture-delivery",
+        "capture_type": "screenshot",
+        "target": "Texture Delivery Console / Maya Texture Inspection",
+        "filename": "r10-3_06_texture_delivery_graph.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_06_texture_delivery_graph.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can see DCC material graph evidence tied to delivery rules."
+      },
+      {
+        "id": "shot-07-task-orchestrator",
+        "capture_type": "screenshot",
+        "target": "Task Orchestrator / Maya Batch Queue",
+        "filename": "r10-3_07_task_orchestrator_receipts.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_07_task_orchestrator_receipts.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can see multiple assets becoming a governed handoff queue."
+      },
+      {
+        "id": "shot-08-asset-handoff-gate",
+        "capture_type": "screenshot",
+        "target": "Right rail / Asset Handoff Gate",
+        "filename": "r10-3_08_asset_handoff_gate.png",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_08_asset_handoff_gate.png",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 4096,
+        "status": "Missing",
+        "acceptance": "Viewer can see the five evidence streams compressed into one batch handoff decision."
+      },
+      {
+        "id": "clip-01-primary-demo",
+        "capture_type": "screen_recording",
+        "target": "Maya GUI primary route",
+        "filename": "r10-3_primary_dcc_first_route.mp4",
+        "expected_path": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence\\r10-3_primary_dcc_first_route.mp4",
+        "exists": false,
+        "bytes": 0,
+        "minimum_bytes": 100000,
+        "status": "Missing",
+        "acceptance": "A reviewer can understand the DCC-first portfolio without opening the source project."
+      }
+    ],
+    "summary": {
+      "gate": "CapturePending",
+      "required_files": 9,
+      "present": 0,
+      "review": 0,
+      "missing": 9,
+      "shot_count": 8,
+      "recording_count": 1
+    },
+    "capture_policy": {
+      "no_placeholder_media": true,
+      "expected_media_root": "<repo>\\assets\\dcc-first\\r10-5-gui-evidence",
+      "screenshots": "PNG files should be real Maya GUI captures.",
+      "recordings": "MP4 file should be the primary Maya route recording."
+    }
+  }
+}

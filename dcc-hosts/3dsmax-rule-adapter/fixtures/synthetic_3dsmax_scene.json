@@ -1,0 +1,172 @@
+{
+  "schema": "synthetic-3dsmax-scene@0.1.0",
+  "intent": "Public-safe fixture proving the 3ds Max adapter contract for Cross-DCC Rule Matrix. It contains one ready static prop and one intentionally blocked hero prop.",
+  "scene": {
+    "sourceDcc": "3ds Max",
+    "systemUnit": "centimeter",
+    "displayUnit": "centimeter",
+    "unitScale": 1.0,
+    "upAxis": "Z",
+    "frameRate": 30
+  },
+  "assets": [
+    {
+      "id": "max-prop-001",
+      "label": "Ready modular panel",
+      "exportRoot": "EXPORT_max_prop_001",
+      "layer": "ASSET_max_prop_001",
+      "userProperties": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "platform": "pc",
+          "collision": "proxy",
+          "lodPolicy": "static-prop",
+          "allowsVertexColor": false
+        }
+      },
+      "nodes": [
+        {
+          "name": "SM_MaxPanel_A_LOD0",
+          "class": "Editable_Poly",
+          "role": "render",
+          "lod": "LOD0",
+          "faces": 240,
+          "triangles": 480,
+          "material": {
+            "name": "MI_MaxPanel_A_LOD0",
+            "textures": [
+              "T_MaxPanel_A_BC.png",
+              "T_MaxPanel_A_N.png",
+              "T_MaxPanel_A_ORM.png"
+            ]
+          },
+          "mapChannels": [
+            {
+              "channel": 1,
+              "name": "UV1",
+              "utilization": 0.86,
+              "overlapRatio": 0.0,
+              "texelDensity": 512
+            },
+            {
+              "channel": 2,
+              "name": "Lightmap",
+              "utilization": 0.73,
+              "overlapRatio": 0.0,
+              "texelDensity": 256
+            }
+          ],
+          "vertexColorChannels": [],
+          "transform": {
+            "frozen": true,
+            "position": [0.0, 0.0, 0.0],
+            "rotation": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0],
+            "pivotAtOrigin": true
+          }
+        },
+        {
+          "name": "SM_MaxPanel_A_LOD1",
+          "class": "Editable_Poly",
+          "role": "render",
+          "lod": "LOD1",
+          "faces": 96,
+          "triangles": 192,
+          "material": {
+            "name": "MI_MaxPanel_A_LOD1",
+            "textures": [
+              "T_MaxPanel_A_BC.png",
+              "T_MaxPanel_A_N.png"
+            ]
+          },
+          "mapChannels": [
+            {
+              "channel": 1,
+              "name": "UV1",
+              "utilization": 0.81,
+              "overlapRatio": 0.0,
+              "texelDensity": 384
+            }
+          ],
+          "vertexColorChannels": [],
+          "transform": {
+            "frozen": true,
+            "position": [0.0, 0.0, 0.0],
+            "rotation": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0],
+            "pivotAtOrigin": true
+          }
+        },
+        {
+          "name": "UCX_MaxPanel_A_00",
+          "class": "Editable_Poly",
+          "role": "collision",
+          "faces": 12,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "id": "max-hero-002",
+      "label": "Blocked hero prop",
+      "exportRoot": "EXPORT_max_hero_002",
+      "layer": "ASSET_max_hero_002",
+      "userProperties": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "platform": "mobile",
+          "collision": "missing",
+          "lodPolicy": "hero-prop",
+          "allowsVertexColor": false
+        }
+      },
+      "nodes": [
+        {
+          "name": "SM_MaxHero_B_LOD0",
+          "class": "Editable_Poly",
+          "role": "render",
+          "lod": "LOD0",
+          "faces": 3800,
+          "triangles": 7600,
+          "material": {
+            "name": "HeroMaterial_LOD0",
+            "textures": [
+              "T_MaxHero_B_BC.png"
+            ]
+          },
+          "mapChannels": [
+            {
+              "channel": 1,
+              "name": "UV1",
+              "utilization": 0.42,
+              "overlapRatio": 0.08,
+              "texelDensity": 128
+            },
+            {
+              "channel": 2,
+              "name": "Lightmap",
+              "utilization": 0.31,
+              "overlapRatio": 0.03,
+              "texelDensity": 96
+            },
+            {
+              "channel": 3,
+              "name": "LegacyColorMask",
+              "utilization": 0.18,
+              "overlapRatio": 0.12,
+              "texelDensity": 64
+            }
+          ],
+          "vertexColorChannels": [0],
+          "transform": {
+            "frozen": false,
+            "position": [14.0, 0.0, 0.0],
+            "rotation": [0.0, 0.0, 12.0],
+            "scale": [1.0, 1.0, 1.25],
+            "pivotAtOrigin": false
+          }
+        }
+      ]
+    }
+  ]
+}

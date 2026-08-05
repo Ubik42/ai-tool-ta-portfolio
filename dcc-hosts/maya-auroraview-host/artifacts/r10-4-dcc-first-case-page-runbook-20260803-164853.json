@@ -1,0 +1,687 @@
+{
+  "reportVersion": "maya-dcc-showcase-runbook-package@1.3.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:48:53",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "plan": {
+    "ok": true,
+    "schema": "maya-dcc-showcase-runbook@1.0.0",
+    "title": "DCC-first Portfolio Demo Runbook",
+    "mode": "maya-auroraview",
+    "showcase_positioning": {
+      "thesis": "A Maya-hosted AI Tool TA portfolio that turns one asset handoff into protocol, gate, review, delivery, and batch evidence.",
+      "demo_mode": "DCC-first / Maya AuroraView",
+      "module_shell_explanation": "The shell is the DCC presentation and evidence orchestration layer; the five modules are business stages in one asset publish chain, and Asset Handoff Gate is the composite gate that proves the chain can be evaluated as a batch."
+    },
+    "modules": [
+      {
+        "id": "asset-protocol",
+        "label": "Asset Protocol Workbench",
+        "gui_entry": "Right rail Maya Bridge plus Asset Protocol Workbench DCC Evidence",
+        "primary_method": "asset_inspect_protocol",
+        "proof": "custom attr payload written to Maya nodes and recovered as scene evidence"
+      },
+      {
+        "id": "rule-matrix",
+        "label": "Cross-DCC Rule Matrix",
+        "gui_entry": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+        "primary_method": "rule_matrix_export_report",
+        "proof": "scene facts, validation rows, fix preview and JSON artifact"
+      },
+      {
+        "id": "visual-review",
+        "label": "Visual Review Studio",
+        "gui_entry": "Visual Review Studio / Maya Capture Setup",
+        "primary_method": "visual_review_export_report",
+        "proof": "camera rig, pass manifest, capture preview and JSON artifact"
+      },
+      {
+        "id": "texture-delivery",
+        "label": "Texture Delivery Console",
+        "gui_entry": "Texture Delivery Console / Maya Texture Inspection",
+        "primary_method": "texture_delivery_export_manifest",
+        "proof": "material/file node inspection, color-space validation and manifest artifact"
+      },
+      {
+        "id": "task-orchestrator",
+        "label": "Task Orchestrator",
+        "gui_entry": "Task Orchestrator / Maya Batch Queue",
+        "primary_method": "task_orchestrator_export_report",
+        "proof": "scene asset discovery, dry-run task events, receipts and JSON artifact"
+      }
+    ],
+    "composite_gate": {
+      "id": "asset-handoff-gate",
+      "label": "Asset Handoff Gate",
+      "gui_entry": "Right rail / Asset Handoff Gate",
+      "primary_method": "asset_handoff_export_packet",
+      "proof": "per-asset gate merges protocol, rule, texture, visual and queue evidence into a publish handoff packet",
+      "report_version": "maya-asset-handoff-gate@0.1.0"
+    },
+    "presentation_route": [
+      {
+        "id": "01-contract",
+        "phase": "Author the handoff contract",
+        "module_id": "asset-protocol",
+        "business_question": "How does the scene carry gameplay/publish semantics without relying on file naming alone?",
+        "operator_action": "Open Asset Protocol Workbench, publish the active payload, then inspect it from Maya Bridge.",
+        "core_logic": "Encode role, platform, LOD, collision, and budget into a stable custom attr payload that downstream tools can parse.",
+        "evidence_to_show": "Maya node custom attr, inspected protocol rows, DCC evidence JSON.",
+        "reviewer_value": "Shows schema ownership and DCC-native metadata strategy."
+      },
+      {
+        "id": "02-gate",
+        "phase": "Run the publish gate",
+        "module_id": "rule-matrix",
+        "business_question": "Can the tool turn project rules into repeatable DCC facts, failures, and fix previews?",
+        "operator_action": "Run Collect Scene, Validate Scene, Preview Fixes, and Export DCC Report.",
+        "core_logic": "Collect scene facts, evaluate deterministic rules, separate safe_auto fixes from manual_only decisions.",
+        "evidence_to_show": "Rule results, fix preview rows, rule-matrix artifact.",
+        "reviewer_value": "Shows production gate design instead of ad hoc checking."
+      },
+      {
+        "id": "03-review",
+        "phase": "Make visual review reproducible",
+        "module_id": "visual-review",
+        "business_question": "How does subjective art review become a fixed camera/pass contract?",
+        "operator_action": "Create the review camera rig, build pass manifest, preview capture, and export review evidence.",
+        "core_logic": "Generate canonical cameras and pass rows from the scene so review output can be compared later.",
+        "evidence_to_show": "Camera rig nodes, pass manifest, capture preview paths.",
+        "reviewer_value": "Shows review standardization and repeatable visual evidence."
+      },
+      {
+        "id": "04-delivery",
+        "phase": "Validate texture delivery",
+        "module_id": "texture-delivery",
+        "business_question": "Can texture handoff be checked against naming, color space, source path, and budget rules?",
+        "operator_action": "Create the texture fixture, inspect file nodes, validate the scene, and export the manifest.",
+        "core_logic": "Scan shading networks and file nodes, infer texture roles, compare actual color space/path/budget against policy.",
+        "evidence_to_show": "Material/file node rows, validation gates, texture-delivery manifest.",
+        "reviewer_value": "Shows the bridge between DCC material graphs and engine-facing delivery constraints."
+      },
+      {
+        "id": "05-orchestrate",
+        "phase": "Package batch handoff evidence",
+        "module_id": "task-orchestrator",
+        "business_question": "Can many scene assets be turned into a dry-run publish queue with receipts?",
+        "operator_action": "Discover scene assets, build the queue, run dry-run, and export the report.",
+        "core_logic": "Convert discovered assets into protocol/material/texture/visual/export tasks and produce per-asset receipts.",
+        "evidence_to_show": "Queue rows, dry-run events, receipts, orchestrator report.",
+        "reviewer_value": "Shows how individual tools become a governed production workflow."
+      },
+      {
+        "id": "06-composite-gate",
+        "phase": "Evaluate the composite handoff gate",
+        "module_id": "asset-handoff-gate",
+        "business_question": "Can the full asset handoff be judged as a batch instead of five separate demos?",
+        "operator_action": "Use Asset Handoff Gate: Fixture, Evaluate Gate, Preview Actions, Export Packet.",
+        "core_logic": "Merge protocol, rule, texture, visual and queue evidence into per-asset Ready/Review/Blocked gates.",
+        "evidence_to_show": "Handoff asset rows, action preview rows, exported handoff packet.",
+        "reviewer_value": "Shows the portfolio has a production workflow, not only individual module proofs."
+      }
+    ],
+    "demo_script": [
+      {
+        "id": "open-host",
+        "segment": "Open Maya host",
+        "operator_action": "Run show_portfolio() from Maya Script Editor or shelf.",
+        "talk_track": "This is a Maya-hosted toolbench. The browser build is only the embedded UI surface.",
+        "evidence_expected": "AuroraView panel opens with Maya Bridge connected."
+      },
+      {
+        "id": "build-plan",
+        "segment": "Build DCC plan",
+        "operator_action": "Click DCC Showcase Runbook / Build Plan.",
+        "talk_track": "The runbook lists each production problem, its Maya API entry, and the proof artifact.",
+        "evidence_expected": "Five module rows appear in the right rail."
+      },
+      {
+        "id": "run-smoke",
+        "segment": "Run synthetic scene smoke",
+        "operator_action": "Click Run Smoke or Export Package.",
+        "talk_track": "The tool creates public synthetic Maya fixtures, runs all DCC adapters, and writes JSON artifacts.",
+        "evidence_expected": "Five module artifacts are generated, with no Blocked module."
+      },
+      {
+        "id": "inspect-modules",
+        "segment": "Inspect module panels",
+        "operator_action": "Open each module from the left navigation and inspect its DCC panel.",
+        "talk_track": "Each module exposes its own business loop: protocol, rules, visual review, texture delivery, and batch orchestration.",
+        "evidence_expected": "Each module shows scene facts, gate rows, output path, and raw JSON."
+      },
+      {
+        "id": "run-handoff-gate",
+        "segment": "Run composite handoff gate",
+        "operator_action": "Click Asset Handoff Gate / Fixture, Evaluate Gate, Preview Actions, Export Packet.",
+        "talk_track": "The composite gate proves the five module evidence streams can become one asset handoff decision.",
+        "evidence_expected": "maya-asset-handoff-gate JSON contains 2 assets, 1 Ready, 1 Review, 0 Blocked."
+      },
+      {
+        "id": "handoff-package",
+        "segment": "Export reviewer package",
+        "operator_action": "Use Export Package and open the artifact path.",
+        "talk_track": "The final claim is machine-checkable: DCC-backed evidence exists for every module and for the composite handoff gate.",
+        "evidence_expected": "maya-dcc-showcase-runbook-package JSON contains plan, smoke, presentation, handoff gate, and artifacts."
+      }
+    ],
+    "gui_click_checklist": [
+      {
+        "id": "right-rail-runbook",
+        "target": "Right rail / DCC Showcase Runbook",
+        "clicks": [
+          "Build Plan",
+          "Run Smoke",
+          "Export Package"
+        ]
+      },
+      {
+        "id": "right-rail-handoff-gate",
+        "target": "Right rail / Asset Handoff Gate",
+        "clicks": [
+          "Fixture",
+          "Evaluate Gate",
+          "Preview Actions",
+          "Export Packet"
+        ]
+      },
+      {
+        "id": "asset-protocol-panel",
+        "target": "Asset Protocol Workbench",
+        "clicks": [
+          "Export DCC Evidence"
+        ]
+      },
+      {
+        "id": "rule-matrix-panel",
+        "target": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+        "clicks": [
+          "Collect Scene",
+          "Validate Scene",
+          "Preview Fixes",
+          "Export DCC Report"
+        ]
+      },
+      {
+        "id": "visual-review-panel",
+        "target": "Visual Review Studio / Maya Capture Setup",
+        "clicks": [
+          "Create Rig",
+          "Build Manifest",
+          "Preview Capture",
+          "Export DCC Review"
+        ]
+      },
+      {
+        "id": "texture-delivery-panel",
+        "target": "Texture Delivery Console / Maya Texture Inspection",
+        "clicks": [
+          "Create Fixture",
+          "Inspect Textures",
+          "Validate Scene",
+          "Export Manifest"
+        ]
+      },
+      {
+        "id": "task-orchestrator-panel",
+        "target": "Task Orchestrator / Maya Batch Queue",
+        "clicks": [
+          "Create Fixture",
+          "Discover Scene",
+          "Build Queue",
+          "Dry Run",
+          "Export Report"
+        ]
+      }
+    ],
+    "steps": [
+      "Open show_portfolio() in Maya.",
+      "Use DCC Showcase Runbook in the right rail to build the plan.",
+      "Run smoke to create synthetic scene fixtures and execute all module adapters.",
+      "Run Asset Handoff Gate to evaluate the composite handoff workflow.",
+      "Open each module-specific panel to inspect the same evidence by business domain.",
+      "Export package to hand off a single JSON proof bundle."
+    ],
+    "mutation_policy": "Smoke creates synthetic demo nodes and JSON artifacts only; production scene mutation remains behind module-specific actions."
+  },
+  "smoke": {
+    "ok": true,
+    "schema": "maya-dcc-showcase-smoke@1.0.0",
+    "started_at": "2026-08-03 16:48:52",
+    "finished_at": "2026-08-03 16:48:53",
+    "gate": "Review",
+    "created": [
+      {
+        "kind": "asset_protocol_fixture",
+        "root": "r9_7_asset_protocol_fixture1",
+        "nodes": [
+          "hero_prop_body1",
+          "hero_prop_socket1"
+        ]
+      },
+      {
+        "kind": "texture_fixture",
+        "root": "r9_7_texture_fixture1",
+        "nodes": [
+          "WPN_Rifle_LOD0_texture_body1"
+        ]
+      },
+      {
+        "kind": "task_fixture",
+        "root": "r9_7_task_batch1",
+        "nodes": [
+          "BATCH_Crate_LOD0_ready1",
+          "BATCH_Vehicle_DT_review1"
+        ]
+      },
+      {
+        "kind": "visual_camera_rig",
+        "root": "r9_7_review_rig1",
+        "nodes": [
+          "Camera_Front1",
+          "Camera_Back1",
+          "Camera_Left1",
+          "Camera_Right1",
+          "Camera_Top1",
+          "Camera_Bottom1",
+          "Camera_1",
+          "Camera_2",
+          "Camera_3",
+          "Camera_4"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "id": "asset-protocol",
+        "label": "Asset Protocol Workbench",
+        "gate": "Ready",
+        "summary": {
+          "nodes": 2,
+          "rows": 2
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-asset-protocol-20260803-164853.json"
+      },
+      {
+        "id": "rule-matrix",
+        "label": "Cross-DCC Rule Matrix",
+        "gate": "Ready",
+        "summary": {
+          "facts": 4,
+          "results": 6,
+          "fixes": 1
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-rule-matrix-20260803-164853.json"
+      },
+      {
+        "id": "visual-review",
+        "label": "Visual Review Studio",
+        "gate": "Ready",
+        "summary": {
+          "cameras": 10,
+          "meshes": 5,
+          "images": 50
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-visual-review-20260803-164853.json"
+      },
+      {
+        "id": "texture-delivery",
+        "label": "Texture Delivery Console",
+        "gate": "Review",
+        "summary": {
+          "sources": 4,
+          "materials": 4,
+          "results": 5
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-texture-delivery-20260803-164853.json"
+      },
+      {
+        "id": "task-orchestrator",
+        "label": "Task Orchestrator",
+        "gate": "Review",
+        "summary": {
+          "assets": 5,
+          "tasks": 25,
+          "events": 25,
+          "receipts": 5
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-task-orchestrator-20260803-164853.json"
+      }
+    ],
+    "artifacts": [
+      {
+        "module_id": "asset-protocol",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-asset-protocol-20260803-164853.json",
+        "bytes": 3099
+      },
+      {
+        "module_id": "rule-matrix",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-rule-matrix-20260803-164853.json",
+        "bytes": 8421
+      },
+      {
+        "module_id": "visual-review",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-visual-review-20260803-164853.json",
+        "bytes": 33652
+      },
+      {
+        "module_id": "texture-delivery",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-texture-delivery-20260803-164853.json",
+        "bytes": 8317
+      },
+      {
+        "module_id": "task-orchestrator",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-task-orchestrator-20260803-164853.json",
+        "bytes": 30789
+      }
+    ],
+    "summary": {
+      "module_count": 5,
+      "ready": 3,
+      "review": 2,
+      "blocked": 0,
+      "artifact_count": 5
+    }
+  },
+  "handoffGate": {
+    "fixture": {
+      "ok": true,
+      "schema": "maya-asset-handoff-fixture@0.1.0",
+      "root": "r10_3_showcase_handoff1",
+      "nodes": [
+        "AH_Crate_LOD0_publish_ready1",
+        "AH_Vehicle_DT_needs_texture_review1"
+      ],
+      "ready_node": "AH_Crate_LOD0_publish_ready1",
+      "review_node": "AH_Vehicle_DT_needs_texture_review1",
+      "material": "M_AH_Crate_Body1",
+      "shading_engine": "SG_AH_Crate_Body1",
+      "file_node": "T_AH_Crate_BC_2048_png1",
+      "texture_path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_AH_Crate_BC_2048.png",
+      "camera_rig": {
+        "root": "r10_3_showcase_handoff_review_rig1",
+        "count": 10
+      },
+      "notes": [
+        "ready node has protocol, material, file node, collision and LOD evidence",
+        "review node has valid protocol but intentionally lacks material and texture evidence"
+      ]
+    },
+    "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-asset-handoff-20260803-164853.json",
+    "bytes": 60150,
+    "summary": {
+      "asset_count": 2,
+      "ready": 1,
+      "review": 1,
+      "blocked": 0,
+      "gate": "Review"
+    },
+    "reportVersion": "maya-asset-handoff-gate@0.1.0"
+  },
+  "presentation": {
+    "entry": "from ai_tool_ta_maya_host import show_portfolio; show_portfolio()",
+    "recommended_order": [
+      "asset-protocol",
+      "rule-matrix",
+      "visual-review",
+      "texture-delivery",
+      "task-orchestrator"
+    ],
+    "showcase_positioning": {
+      "thesis": "A Maya-hosted AI Tool TA portfolio that turns one asset handoff into protocol, gate, review, delivery, and batch evidence.",
+      "demo_mode": "DCC-first / Maya AuroraView",
+      "module_shell_explanation": "The shell is the DCC presentation and evidence orchestration layer; the five modules are business stages in one asset publish chain, and Asset Handoff Gate is the composite gate that proves the chain can be evaluated as a batch."
+    },
+    "business_route": [
+      {
+        "id": "01-contract",
+        "phase": "Author the handoff contract",
+        "module_id": "asset-protocol",
+        "business_question": "How does the scene carry gameplay/publish semantics without relying on file naming alone?",
+        "operator_action": "Open Asset Protocol Workbench, publish the active payload, then inspect it from Maya Bridge.",
+        "core_logic": "Encode role, platform, LOD, collision, and budget into a stable custom attr payload that downstream tools can parse.",
+        "evidence_to_show": "Maya node custom attr, inspected protocol rows, DCC evidence JSON.",
+        "reviewer_value": "Shows schema ownership and DCC-native metadata strategy."
+      },
+      {
+        "id": "02-gate",
+        "phase": "Run the publish gate",
+        "module_id": "rule-matrix",
+        "business_question": "Can the tool turn project rules into repeatable DCC facts, failures, and fix previews?",
+        "operator_action": "Run Collect Scene, Validate Scene, Preview Fixes, and Export DCC Report.",
+        "core_logic": "Collect scene facts, evaluate deterministic rules, separate safe_auto fixes from manual_only decisions.",
+        "evidence_to_show": "Rule results, fix preview rows, rule-matrix artifact.",
+        "reviewer_value": "Shows production gate design instead of ad hoc checking."
+      },
+      {
+        "id": "03-review",
+        "phase": "Make visual review reproducible",
+        "module_id": "visual-review",
+        "business_question": "How does subjective art review become a fixed camera/pass contract?",
+        "operator_action": "Create the review camera rig, build pass manifest, preview capture, and export review evidence.",
+        "core_logic": "Generate canonical cameras and pass rows from the scene so review output can be compared later.",
+        "evidence_to_show": "Camera rig nodes, pass manifest, capture preview paths.",
+        "reviewer_value": "Shows review standardization and repeatable visual evidence."
+      },
+      {
+        "id": "04-delivery",
+        "phase": "Validate texture delivery",
+        "module_id": "texture-delivery",
+        "business_question": "Can texture handoff be checked against naming, color space, source path, and budget rules?",
+        "operator_action": "Create the texture fixture, inspect file nodes, validate the scene, and export the manifest.",
+        "core_logic": "Scan shading networks and file nodes, infer texture roles, compare actual color space/path/budget against policy.",
+        "evidence_to_show": "Material/file node rows, validation gates, texture-delivery manifest.",
+        "reviewer_value": "Shows the bridge between DCC material graphs and engine-facing delivery constraints."
+      },
+      {
+        "id": "05-orchestrate",
+        "phase": "Package batch handoff evidence",
+        "module_id": "task-orchestrator",
+        "business_question": "Can many scene assets be turned into a dry-run publish queue with receipts?",
+        "operator_action": "Discover scene assets, build the queue, run dry-run, and export the report.",
+        "core_logic": "Convert discovered assets into protocol/material/texture/visual/export tasks and produce per-asset receipts.",
+        "evidence_to_show": "Queue rows, dry-run events, receipts, orchestrator report.",
+        "reviewer_value": "Shows how individual tools become a governed production workflow."
+      },
+      {
+        "id": "06-composite-gate",
+        "phase": "Evaluate the composite handoff gate",
+        "module_id": "asset-handoff-gate",
+        "business_question": "Can the full asset handoff be judged as a batch instead of five separate demos?",
+        "operator_action": "Use Asset Handoff Gate: Fixture, Evaluate Gate, Preview Actions, Export Packet.",
+        "core_logic": "Merge protocol, rule, texture, visual and queue evidence into per-asset Ready/Review/Blocked gates.",
+        "evidence_to_show": "Handoff asset rows, action preview rows, exported handoff packet.",
+        "reviewer_value": "Shows the portfolio has a production workflow, not only individual module proofs."
+      }
+    ],
+    "composite_gate": {
+      "id": "asset-handoff-gate",
+      "label": "Asset Handoff Gate",
+      "gui_entry": "Right rail / Asset Handoff Gate",
+      "primary_method": "asset_handoff_export_packet",
+      "proof": "per-asset gate merges protocol, rule, texture, visual and queue evidence into a publish handoff packet",
+      "report_version": "maya-asset-handoff-gate@0.1.0"
+    },
+    "live_demo_script": [
+      {
+        "id": "open-host",
+        "segment": "Open Maya host",
+        "operator_action": "Run show_portfolio() from Maya Script Editor or shelf.",
+        "talk_track": "This is a Maya-hosted toolbench. The browser build is only the embedded UI surface.",
+        "evidence_expected": "AuroraView panel opens with Maya Bridge connected."
+      },
+      {
+        "id": "build-plan",
+        "segment": "Build DCC plan",
+        "operator_action": "Click DCC Showcase Runbook / Build Plan.",
+        "talk_track": "The runbook lists each production problem, its Maya API entry, and the proof artifact.",
+        "evidence_expected": "Five module rows appear in the right rail."
+      },
+      {
+        "id": "run-smoke",
+        "segment": "Run synthetic scene smoke",
+        "operator_action": "Click Run Smoke or Export Package.",
+        "talk_track": "The tool creates public synthetic Maya fixtures, runs all DCC adapters, and writes JSON artifacts.",
+        "evidence_expected": "Five module artifacts are generated, with no Blocked module."
+      },
+      {
+        "id": "inspect-modules",
+        "segment": "Inspect module panels",
+        "operator_action": "Open each module from the left navigation and inspect its DCC panel.",
+        "talk_track": "Each module exposes its own business loop: protocol, rules, visual review, texture delivery, and batch orchestration.",
+        "evidence_expected": "Each module shows scene facts, gate rows, output path, and raw JSON."
+      },
+      {
+        "id": "run-handoff-gate",
+        "segment": "Run composite handoff gate",
+        "operator_action": "Click Asset Handoff Gate / Fixture, Evaluate Gate, Preview Actions, Export Packet.",
+        "talk_track": "The composite gate proves the five module evidence streams can become one asset handoff decision.",
+        "evidence_expected": "maya-asset-handoff-gate JSON contains 2 assets, 1 Ready, 1 Review, 0 Blocked."
+      },
+      {
+        "id": "handoff-package",
+        "segment": "Export reviewer package",
+        "operator_action": "Use Export Package and open the artifact path.",
+        "talk_track": "The final claim is machine-checkable: DCC-backed evidence exists for every module and for the composite handoff gate.",
+        "evidence_expected": "maya-dcc-showcase-runbook-package JSON contains plan, smoke, presentation, handoff gate, and artifacts."
+      }
+    ],
+    "gui_click_checklist": [
+      {
+        "id": "right-rail-runbook",
+        "target": "Right rail / DCC Showcase Runbook",
+        "clicks": [
+          "Build Plan",
+          "Run Smoke",
+          "Export Package"
+        ]
+      },
+      {
+        "id": "right-rail-handoff-gate",
+        "target": "Right rail / Asset Handoff Gate",
+        "clicks": [
+          "Fixture",
+          "Evaluate Gate",
+          "Preview Actions",
+          "Export Packet"
+        ]
+      },
+      {
+        "id": "asset-protocol-panel",
+        "target": "Asset Protocol Workbench",
+        "clicks": [
+          "Export DCC Evidence"
+        ]
+      },
+      {
+        "id": "rule-matrix-panel",
+        "target": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+        "clicks": [
+          "Collect Scene",
+          "Validate Scene",
+          "Preview Fixes",
+          "Export DCC Report"
+        ]
+      },
+      {
+        "id": "visual-review-panel",
+        "target": "Visual Review Studio / Maya Capture Setup",
+        "clicks": [
+          "Create Rig",
+          "Build Manifest",
+          "Preview Capture",
+          "Export DCC Review"
+        ]
+      },
+      {
+        "id": "texture-delivery-panel",
+        "target": "Texture Delivery Console / Maya Texture Inspection",
+        "clicks": [
+          "Create Fixture",
+          "Inspect Textures",
+          "Validate Scene",
+          "Export Manifest"
+        ]
+      },
+      {
+        "id": "task-orchestrator-panel",
+        "target": "Task Orchestrator / Maya Batch Queue",
+        "clicks": [
+          "Create Fixture",
+          "Discover Scene",
+          "Build Queue",
+          "Dry Run",
+          "Export Report"
+        ]
+      }
+    ],
+    "additional_artifacts": [
+      {
+        "module_id": "asset-handoff-gate",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-4-dcc-first-case-page-runbook-asset-handoff-20260803-164853.json",
+        "bytes": 60150,
+        "reportVersion": "maya-asset-handoff-gate@0.1.0",
+        "gate": "Review"
+      }
+    ],
+    "reviewer_claims": [
+      {
+        "id": "dcc-hosted",
+        "claim": "The portfolio runs inside Maya through AuroraView.",
+        "proof": "environment_status and connected bridge methods are exported with the package."
+      },
+      {
+        "id": "five-modules",
+        "claim": "All five portfolio modules have DCC-backed evidence.",
+        "proof": "smoke.summary.module_count == 5 and smoke.summary.artifact_count == 5."
+      },
+      {
+        "id": "synthetic-public",
+        "claim": "The demo is public-safe and does not depend on proprietary assets.",
+        "proof": "smoke.created contains synthetic fixtures only."
+      },
+      {
+        "id": "deterministic-gates",
+        "claim": "AI narration does not override deterministic gates.",
+        "proof": "module gates and receipts are computed before presentation fields."
+      },
+      {
+        "id": "composite-handoff-gate",
+        "claim": "The five DCC evidence streams can be evaluated as one asset handoff gate.",
+        "proof": "presentation.additional_artifacts contains maya-asset-handoff-gate@0.1.0."
+      }
+    ],
+    "evidence_requirements": [
+      "package gate must not be Blocked",
+      "five module artifacts must be generated",
+      "asset handoff gate artifact must be generated",
+      "each artifact path must exist under maya-auroraview-host/artifacts",
+      "public case package must point to the latest DCC-first manifest"
+    ],
+    "public_case_package": {
+      "readme": "public-case-package/DCC_FIRST_PACKAGE.md",
+      "manifest": "public-case-package/dcc-first-package-manifest.json",
+      "legacy_package": "public-case-package/README.md"
+    },
+    "final_claim": "The portfolio is one DCC-first asset publish chain with five inspectable business stages, one composite handoff gate, and exported Maya evidence."
+  }
+}

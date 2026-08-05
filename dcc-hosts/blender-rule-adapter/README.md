@@ -1,0 +1,43 @@
+# Blender Rule Adapter
+
+This host proves the first non-Maya Cross-DCC adapter contract for the AI Tool TA portfolio.
+
+Current evidence level is L2+ on this machine because Blender CLI is not installed. The adapter exports the L2 contract artifact from a public synthetic Blender scene fixture, and now also ships an L3 readiness harness: a real `bpy` collector, a `blender --background --python` launcher, and a readiness artifact that records the missing runtime as an explicit gate.
+
+## What It Proves
+
+- Blender object custom properties can carry `asset-protocol@dcc-r9`.
+- Collections map to export root, LOD and collision evidence.
+- Material slots, image textures and UV layers can be normalized into the same rule input shape used by Cross-DCC Rule Matrix.
+- The fixture includes one Ready asset and one intentionally Blocked asset so failure behavior is visible.
+- This pass performs no DCC scene writes and no production asset mutation.
+- The L3 path creates only temporary public fixture objects when Blender is available.
+
+## Run
+
+```powershell
+python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_smoke.py
+```
+
+Run the L3 readiness harness:
+
+```powershell
+python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py
+```
+
+Latest artifact is written to:
+
+```text
+<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-contract-20260804-201125.json
+<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-readiness-20260804-201125.json
+```
+
+## L3 Runtime Path
+
+When Blender is available, the same launcher will run the `bpy` collector:
+
+```powershell
+blender --background --python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_blender_l3.py
+```
+
+The runtime report schema is `blender-rule-adapter-bpy-l3@0.1.0`. It creates the public fixture inside Blender, collects object custom properties, collections, material slots, textures and UV layers through `bpy`, then evaluates the same Cross-DCC rules as the L2 contract.

@@ -1,0 +1,262 @@
+{
+  "reportVersion": "maya-rule-matrix-dcc-report@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:42:09",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "collect": {
+    "schema": "maya-rule-matrix-facts@1.0.0",
+    "count": 4,
+    "facts": [
+      {
+        "node": "hero_prop_body1",
+        "node_type": "transform",
+        "shapes": [
+          "hero_prop_body1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "initialShadingGroup"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_asset_protocol_fixture1",
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "hero_prop_body1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": "simple",
+        "collision_from_name": false
+      },
+      {
+        "node": "hero_prop_socket1",
+        "node_type": "transform",
+        "shapes": [
+          "hero_prop_socket1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 760,
+        "faces": 400,
+        "materials": [
+          "initialShadingGroup"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_asset_protocol_fixture1",
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "hero_prop_socket1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": "simple",
+        "collision_from_name": false
+      },
+      {
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "node_type": "transform",
+        "shapes": [
+          "WPN_Rifle_LOD0_texture_body1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "SG_AI_Texture_Body1"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_texture_fixture1",
+        "top_parent": "r9_7_texture_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "WPN_Rifle_LOD0_texture_body1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": "simple",
+        "collision_from_name": false
+      },
+      {
+        "node": "BATCH_Crate_LOD0_ready1",
+        "node_type": "transform",
+        "shapes": [
+          "BATCH_Crate_LOD0_ready1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "SG_Batch_Crate_Body1"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_task_batch1",
+        "top_parent": "r9_7_task_batch1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "BATCH_Crate_LOD0_ready1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": "simple",
+        "collision_from_name": false
+      }
+    ]
+  },
+  "validation": {
+    "schema": "maya-rule-matrix-validation@1.0.0",
+    "summary": {
+      "score": 100,
+      "pass": 6,
+      "warning": 0,
+      "error": 0,
+      "skipped": 0,
+      "gate": "Ready"
+    },
+    "results": [
+      {
+        "rule_id": "protocol-carrier",
+        "name": "Protocol Carrier",
+        "stage": "Collect",
+        "severity": "blocker",
+        "status": "pass",
+        "message": "All collected nodes carry a valid asset protocol payload.",
+        "evidence": "schema=asset-protocol@dcc-r9 nodes=4",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "collision-contract",
+        "name": "Collision Contract",
+        "stage": "Validate",
+        "severity": "blocker",
+        "status": "pass",
+        "message": "Collision contract is declared in payload or node naming.",
+        "evidence": "missing=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "lod-budget",
+        "name": "LOD Budget",
+        "stage": "Validate",
+        "severity": "major",
+        "status": "pass",
+        "message": "LOD declaration is present for collected nodes.",
+        "evidence": "missing=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "material-texture-sync",
+        "name": "Material / Texture Sync",
+        "stage": "Validate",
+        "severity": "major",
+        "status": "pass",
+        "message": "Mesh shapes and shadingEngine bindings are present.",
+        "evidence": "missingMesh=- missingMaterial=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "export-root-clean",
+        "name": "Export Root Clean",
+        "stage": "Fix",
+        "severity": "major",
+        "status": "pass",
+        "message": "Collected nodes are under an export root or fixture root.",
+        "evidence": "noRoot=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "publish-manifest",
+        "name": "Publish Manifest",
+        "stage": "Extract",
+        "severity": "minor",
+        "status": "pass",
+        "message": "Manifest can be exported from collected scene facts.",
+        "evidence": "upstreamGate=Ready, facts=4",
+        "nodes": [
+          "hero_prop_body1",
+          "hero_prop_socket1",
+          "WPN_Rifle_LOD0_texture_body1",
+          "BATCH_Crate_LOD0_ready1"
+        ],
+        "fix_preview": "Safe preview: export validation report JSON as the publish sidecar."
+      }
+    ]
+  },
+  "fixPreview": {
+    "schema": "maya-rule-matrix-fix-preview@1.0.0",
+    "summary": {
+      "total": 1,
+      "safe_auto": 1,
+      "manual_only": 0
+    },
+    "previews": [
+      {
+        "id": "fix-publish-manifest",
+        "node": "<scene>",
+        "rule_id": "publish-manifest",
+        "kind": "safe_auto",
+        "owner": "Tool",
+        "mutation": "export_report_json",
+        "target": "maya-auroraview-host/artifacts",
+        "before": "transient validation result",
+        "after": "versioned report artifact",
+        "preview": "Export collected facts, validation rows, and staged fixes as JSON evidence."
+      }
+    ]
+  }
+}

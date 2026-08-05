@@ -1,0 +1,589 @@
+{
+  "reportVersion": "maya-scene-transaction-guard@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-04 19:57:30",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "transactionGuard": {
+    "ok": true,
+    "schema": "maya-scene-transaction-guard@0.1.0",
+    "generated_at": "2026-08-04 19:57:30",
+    "fixture": {
+      "ok": true,
+      "schema": "maya-scene-transaction-fixture@0.1.0",
+      "root": "r19_scene_transaction_guard1",
+      "nodes": {
+        "body": "r19_scene_transaction_guard_hero_body1",
+        "obsolete": "r19_scene_transaction_guard_obsolete_proxy1",
+        "camera": "r19_scene_transaction_guard_review_cam1",
+        "cameraShape": "r19_scene_transaction_guard_review_cam_Shape1"
+      },
+      "scope": [
+        "r19_scene_transaction_guard1"
+      ]
+    },
+    "summary": {
+      "gate": "Review",
+      "beforeFingerprint": "8d096c2e9a7dccca",
+      "afterFingerprint": "e048ce005ffd65c3",
+      "created": 2,
+      "deleted": 2,
+      "modified": 2,
+      "selectionChanged": true,
+      "timeChanged": true,
+      "rollbackActions": 9,
+      "riskRows": 4
+    },
+    "before": {
+      "schema": "maya-scene-transaction-state@0.1.0",
+      "captured_at": "2026-08-04 19:57:30",
+      "scope": [
+        "r19_scene_transaction_guard1",
+        "r19_scene_transaction_guard_hero_body1Shape",
+        "r19_scene_transaction_guard_hero_body1",
+        "r19_scene_transaction_guard_obsolete_proxy1Shape",
+        "r19_scene_transaction_guard_obsolete_proxy1",
+        "r19_scene_transaction_guard_review_cam_Shape1",
+        "r19_scene_transaction_guard_review_cam1"
+      ],
+      "node_count": 7,
+      "selection": [
+        "r19_scene_transaction_guard_hero_body1",
+        "r19_scene_transaction_guard_obsolete_proxy1"
+      ],
+      "time": 12.0,
+      "playback": {
+        "min": 1.0,
+        "max": 120.0
+      },
+      "nodes": {
+        "r19_scene_transaction_guard1": {
+          "type": "transform",
+          "parent": null,
+          "children": [
+            "r19_scene_transaction_guard_hero_body1",
+            "r19_scene_transaction_guard_obsolete_proxy1",
+            "r19_scene_transaction_guard_review_cam1"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "scope_root"
+          }
+        },
+        "r19_scene_transaction_guard_hero_body1Shape": {
+          "type": "mesh",
+          "parent": "r19_scene_transaction_guard_hero_body1",
+          "children": [],
+          "attrs": {}
+        },
+        "r19_scene_transaction_guard_hero_body1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_hero_body1Shape"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                -1.25,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "hero_asset"
+          }
+        },
+        "r19_scene_transaction_guard_obsolete_proxy1Shape": {
+          "type": "locator",
+          "parent": "r19_scene_transaction_guard_obsolete_proxy1",
+          "children": [],
+          "attrs": {}
+        },
+        "r19_scene_transaction_guard_obsolete_proxy1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_obsolete_proxy1Shape"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                1.25,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "obsolete_proxy"
+          }
+        },
+        "r19_scene_transaction_guard_review_cam_Shape1": {
+          "type": "camera",
+          "parent": "r19_scene_transaction_guard_review_cam1",
+          "children": [],
+          "attrs": {
+            "focalLength": 50.0,
+            "nearClipPlane": 0.1,
+            "farClipPlane": 10000.0
+          }
+        },
+        "r19_scene_transaction_guard_review_cam1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_review_cam_Shape1"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                0.0,
+                3.0,
+                7.0
+              ]
+            ],
+            "rotate": [
+              [
+                -23.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "review_camera"
+          }
+        }
+      },
+      "fingerprint": "8d096c2e9a7dccca"
+    },
+    "after": {
+      "schema": "maya-scene-transaction-state@0.1.0",
+      "captured_at": "2026-08-04 19:57:30",
+      "scope": [
+        "r19_scene_transaction_guard1",
+        "r19_scene_transaction_guard_hero_body1Shape",
+        "r19_scene_transaction_guard_hero_body1",
+        "r19_scene_transaction_guard_review_cam_Shape1",
+        "r19_scene_transaction_guard_review_cam1",
+        "r19_scene_transaction_guard_collision_proxy1Shape",
+        "r19_scene_transaction_guard_collision_proxy1"
+      ],
+      "node_count": 7,
+      "selection": [
+        "r19_scene_transaction_guard_hero_body1",
+        "r19_scene_transaction_guard_collision_proxy1"
+      ],
+      "time": 24.0,
+      "playback": {
+        "min": 1.0,
+        "max": 120.0
+      },
+      "nodes": {
+        "r19_scene_transaction_guard1": {
+          "type": "transform",
+          "parent": null,
+          "children": [
+            "r19_scene_transaction_guard_hero_body1",
+            "r19_scene_transaction_guard_review_cam1",
+            "r19_scene_transaction_guard_collision_proxy1"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "scope_root"
+          }
+        },
+        "r19_scene_transaction_guard_hero_body1Shape": {
+          "type": "mesh",
+          "parent": "r19_scene_transaction_guard_hero_body1",
+          "children": [],
+          "attrs": {}
+        },
+        "r19_scene_transaction_guard_hero_body1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_hero_body1Shape"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                -0.55,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": false,
+            "aiToolTaTransactionRole": "hero_asset"
+          }
+        },
+        "r19_scene_transaction_guard_review_cam_Shape1": {
+          "type": "camera",
+          "parent": "r19_scene_transaction_guard_review_cam1",
+          "children": [],
+          "attrs": {
+            "focalLength": 85.0,
+            "nearClipPlane": 0.1,
+            "farClipPlane": 10000.0
+          }
+        },
+        "r19_scene_transaction_guard_review_cam1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_review_cam_Shape1"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                0.0,
+                3.0,
+                7.0
+              ]
+            ],
+            "rotate": [
+              [
+                -23.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "review_camera"
+          }
+        },
+        "r19_scene_transaction_guard_collision_proxy1Shape": {
+          "type": "mesh",
+          "parent": "r19_scene_transaction_guard_collision_proxy1",
+          "children": [],
+          "attrs": {}
+        },
+        "r19_scene_transaction_guard_collision_proxy1": {
+          "type": "transform",
+          "parent": "r19_scene_transaction_guard1",
+          "children": [
+            "r19_scene_transaction_guard_collision_proxy1Shape"
+          ],
+          "attrs": {
+            "translate": [
+              [
+                0.65,
+                0.0,
+                0.0
+              ]
+            ],
+            "rotate": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "scale": [
+              [
+                0.3,
+                0.3,
+                0.3
+              ]
+            ],
+            "visibility": true,
+            "aiToolTaTransactionRole": "created_collision_proxy"
+          }
+        }
+      },
+      "fingerprint": "e048ce005ffd65c3"
+    },
+    "diff": {
+      "schema": "maya-scene-transaction-diff@0.1.0",
+      "summary": {
+        "created": 2,
+        "deleted": 2,
+        "modified": 2,
+        "selectionChanged": true,
+        "timeChanged": true,
+        "rollbackActions": 9,
+        "gate": "Review"
+      },
+      "created": [
+        "r19_scene_transaction_guard_collision_proxy1",
+        "r19_scene_transaction_guard_collision_proxy1Shape"
+      ],
+      "deleted": [
+        "r19_scene_transaction_guard_obsolete_proxy1",
+        "r19_scene_transaction_guard_obsolete_proxy1Shape"
+      ],
+      "modified": [
+        {
+          "node": "r19_scene_transaction_guard_hero_body1",
+          "type": "transform",
+          "deltas": [
+            {
+              "field": "attrs.translate",
+              "before": [
+                [
+                  -1.25,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "after": [
+                [
+                  -0.55,
+                  0.0,
+                  0.0
+                ]
+              ]
+            },
+            {
+              "field": "attrs.visibility",
+              "before": true,
+              "after": false
+            }
+          ]
+        },
+        {
+          "node": "r19_scene_transaction_guard_review_cam_Shape1",
+          "type": "camera",
+          "deltas": [
+            {
+              "field": "attrs.focalLength",
+              "before": 50.0,
+              "after": 85.0
+            }
+          ]
+        }
+      ],
+      "selection_changed": {
+        "changed": true,
+        "before": [
+          "r19_scene_transaction_guard_hero_body1",
+          "r19_scene_transaction_guard_obsolete_proxy1"
+        ],
+        "after": [
+          "r19_scene_transaction_guard_hero_body1",
+          "r19_scene_transaction_guard_collision_proxy1"
+        ]
+      },
+      "time_changed": {
+        "changed": true,
+        "before": 12.0,
+        "after": 24.0
+      },
+      "rollback_preview": [
+        {
+          "id": "rollback-delete-r19_scene_transaction_guard_collision_proxy1",
+          "kind": "delete_created_node",
+          "node": "r19_scene_transaction_guard_collision_proxy1"
+        },
+        {
+          "id": "rollback-delete-r19_scene_transaction_guard_collision_proxy1Shape",
+          "kind": "delete_created_node",
+          "node": "r19_scene_transaction_guard_collision_proxy1Shape"
+        },
+        {
+          "id": "rollback-restore-r19_scene_transaction_guard_obsolete_proxy1",
+          "kind": "restore_deleted_node_from_snapshot",
+          "node": "r19_scene_transaction_guard_obsolete_proxy1"
+        },
+        {
+          "id": "rollback-restore-r19_scene_transaction_guard_obsolete_proxy1Shape",
+          "kind": "restore_deleted_node_from_snapshot",
+          "node": "r19_scene_transaction_guard_obsolete_proxy1Shape"
+        },
+        {
+          "id": "rollback-set-r19_scene_transaction_guard_hero_body1-attrs-translate",
+          "kind": "set_previous_value",
+          "node": "r19_scene_transaction_guard_hero_body1",
+          "field": "attrs.translate",
+          "value": [
+            [
+              -1.25,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "id": "rollback-set-r19_scene_transaction_guard_hero_body1-attrs-visibility",
+          "kind": "set_previous_value",
+          "node": "r19_scene_transaction_guard_hero_body1",
+          "field": "attrs.visibility",
+          "value": true
+        },
+        {
+          "id": "rollback-set-r19_scene_transaction_guard_review_cam_Shape1-attrs-focalLength",
+          "kind": "set_previous_value",
+          "node": "r19_scene_transaction_guard_review_cam_Shape1",
+          "field": "attrs.focalLength",
+          "value": 50.0
+        },
+        {
+          "id": "rollback-selection",
+          "kind": "restore_selection",
+          "value": [
+            "r19_scene_transaction_guard_hero_body1",
+            "r19_scene_transaction_guard_obsolete_proxy1"
+          ]
+        },
+        {
+          "id": "rollback-time",
+          "kind": "restore_current_time",
+          "value": 12.0
+        }
+      ]
+    },
+    "risk_rows": [
+      {
+        "id": "created-node-risk",
+        "severity": "review",
+        "count": 2,
+        "reason": "New scene nodes should be intentional and named before publish."
+      },
+      {
+        "id": "deleted-node-risk",
+        "severity": "review",
+        "count": 2,
+        "reason": "Deleted nodes need rollback evidence or owner approval."
+      },
+      {
+        "id": "modified-node-risk",
+        "severity": "review",
+        "count": 2,
+        "reason": "Attribute changes are grouped as a rollback preview instead of being hidden in tool execution."
+      },
+      {
+        "id": "context-risk",
+        "severity": "review",
+        "count": 2,
+        "reason": "Selection and timeline context are part of DCC tool state and must be restored or documented."
+      }
+    ],
+    "reviewer_claims": [
+      "The transaction guard captures scene state before and after a DCC tool mutation.",
+      "Created, deleted, modified, selection and timeline changes are visible as evidence rows.",
+      "Rollback is exported as a preview receipt; no production restore or engine write is executed."
+    ],
+    "boundary": {
+      "mutation": "synthetic_maya_fixture_only",
+      "sceneWrites": "public fixture nodes only",
+      "engineWrites": 0,
+      "externalWrites": 0
+    }
+  }
+}

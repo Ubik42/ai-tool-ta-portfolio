@@ -1,0 +1,125 @@
+{
+  "contractId": "impactcontract_r8_6_platform_receipt_sync",
+  "contractVersion": "adapter-contract@0.1.0",
+  "reportVersion": "impact-adapter-contract-replay@0.1.0",
+  "sourceScenarioId": "dependency-impact-r8-3-vehicle-trailer-release",
+  "generatedAt": "2026-07-30T23:59:50+08:00",
+  "adapterName": "platform-receipt-sync-public-adapter",
+  "adapterKind": "platform_receipt_sync",
+  "mode": "contract_replay",
+  "mutationAllowed": false,
+  "command": "impact-contract-replay --adapter platform-receipt --fixture fixtures/dependency-impact/r8-5-batch-variants.json --contract fixtures/dependency-impact/r8-6-adapter-contract-replay.json --dry-run --no-write",
+  "inputContract": {
+    "fixturePath": "fixtures/dependency-impact/r8-3-vehicle-trailer-release.json",
+    "batchVariantPath": "fixtures/dependency-impact/r8-5-batch-variants.json",
+    "requiredArtifacts": [
+      "fixtures/dependency-impact/r8-5-batch-variants.json",
+      "fixtures/dependency-impact/r8-6-adapter-contract-replay.json",
+      "assets/task-orchestrator-r8-6-exported-report.json"
+    ],
+    "requiredEnv": [
+      "THM_LIGHTBOX_ENV=public-demo",
+      "IMPACT_REPLAY_WRITE=0"
+    ]
+  },
+  "outputContract": {
+    "receiptDraftPath": "assets/task-orchestrator-r8-6-exported-report.json",
+    "syncPayloadPath": "fixtures/dependency-impact/r8-6-adapter-contract-replay.json",
+    "expectedStatuses": ["Ready", "Review", "Blocked"]
+  },
+  "summary": {
+    "totalAssertions": 6,
+    "passedAssertions": 4,
+    "reviewAssertions": 2,
+    "failedAssertions": 0,
+    "gate": "Review",
+    "nextAction": "Replace mock endpoint with the production receipt adapter only after scoped credentials and owner write policy are approved."
+  },
+  "assertions": [
+    {
+      "id": "contract-fixture-path-public",
+      "label": "Fixture path is public",
+      "status": "pass",
+      "gate": "Ready",
+      "expected": "Only relative public fixture paths are accepted.",
+      "actual": "fixtures/dependency-impact/r8-3-vehicle-trailer-release.json + fixtures/dependency-impact/r8-5-batch-variants.json"
+    },
+    {
+      "id": "contract-variant-gates",
+      "label": "Variant gates are deterministic",
+      "status": "pass",
+      "gate": "Ready",
+      "expected": "Ready, Review, and Blocked variants must be represented before sync payload generation.",
+      "actual": "1 Ready / 2 Review / 1 Blocked"
+    },
+    {
+      "id": "contract-command-boundary",
+      "label": "Replay command is non-mutating",
+      "status": "pass",
+      "gate": "Ready",
+      "expected": "Contract replay must include dry-run and no-write flags.",
+      "actual": "--dry-run --no-write"
+    },
+    {
+      "id": "contract-output-shape",
+      "label": "Output shape is known",
+      "status": "pass",
+      "gate": "Ready",
+      "expected": "Receipt draft and sync payload paths must be known before external sync is attempted.",
+      "actual": "assets/task-orchestrator-r8-6-exported-report.json + fixtures/dependency-impact/r8-6-adapter-contract-replay.json"
+    },
+    {
+      "id": "contract-external-endpoint",
+      "label": "External endpoint is mocked",
+      "status": "review",
+      "gate": "Review",
+      "expected": "Production sync requires an asset platform or publish-ledger adapter endpoint.",
+      "actual": "mock://arthub/task-receipts"
+    },
+    {
+      "id": "contract-production-credential",
+      "label": "Production credential is absent",
+      "status": "review",
+      "gate": "Review",
+      "expected": "Production replay needs a scoped write credential owned by the platform service.",
+      "actual": "No credential is loaded in the public portfolio package."
+    }
+  ],
+  "syncPayloads": [
+    {
+      "sourceVariantId": "variant-trailer-lod-tight-threshold",
+      "owner": "Vehicle TA",
+      "syncAction": "hold_for_review",
+      "gate": "Review"
+    },
+    {
+      "sourceVariantId": "variant-trailer-collision-accepted-texture-pending",
+      "owner": "Physics TA",
+      "syncAction": "hold_for_review",
+      "gate": "Review"
+    },
+    {
+      "sourceVariantId": "variant-trailer-texture-platform-regression",
+      "owner": "Texture TA",
+      "syncAction": "skip_blocked",
+      "gate": "Review"
+    },
+    {
+      "sourceVariantId": "variant-trailer-release-ready-after-closure",
+      "owner": "Release TA",
+      "syncAction": "create_draft",
+      "gate": "Ready"
+    }
+  ],
+  "recoveryPlan": [
+    "Run contract replay against the Review variants with production endpoint disabled.",
+    "Ask adapter owner to approve endpoint, credential scope, and payload comment template.",
+    "Retry only the held payloads after contract assertions pass; blocked variants require owner fixture changes first."
+  ],
+  "guardrails": [
+    "No external task, comment, publish receipt, or engine package state is mutated by this fixture.",
+    "Blocked variants produce skipped payloads and recovery incidents instead of success receipts.",
+    "Production credentials are intentionally absent from the public package."
+  ]
+}
+

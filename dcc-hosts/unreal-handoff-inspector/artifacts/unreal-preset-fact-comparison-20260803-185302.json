@@ -1,0 +1,222 @@
+{
+  "reportVersion": "unreal-preset-fact-comparison@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Handoff Inspector",
+  "sourceReport": {
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-handoff-inspector-l3-20260803-184208.json",
+    "reportVersion": "unreal-handoff-inspector-contract@0.4.0",
+    "evidenceLevel": "L3++",
+    "l3Status": "unreal_engine_facts_matched"
+  },
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\synthetic_unreal_handoff.json",
+    "schema": "synthetic-unreal-handoff@0.1.0",
+    "intent": "Public-safe Unreal-side fixture proving that DCC import intents still need engine content registry, import task, dependency, platform and owner-state inspection."
+  },
+  "summary": {
+    "gate": "Blocked",
+    "presetCount": 2,
+    "assetCount": 1,
+    "factRows": 10,
+    "matched": 7,
+    "drift": 1,
+    "waived": 1,
+    "blocked": 1,
+    "platformSplit": 1,
+    "sameState": 0,
+    "approvedWaivers": 1,
+    "sourceEvidenceLevel": "L3++",
+    "sourceL3Status": "unreal_engine_facts_matched"
+  },
+  "presetSummaries": [
+    {
+      "preset": "pc",
+      "platform": "pc",
+      "gate": "Review",
+      "factRows": 5,
+      "matched": 4,
+      "drift": 0,
+      "waived": 1,
+      "blocked": 0,
+      "disposition": "review_approved_exception"
+    },
+    {
+      "preset": "mobile",
+      "platform": "mobile",
+      "gate": "Blocked",
+      "factRows": 5,
+      "matched": 3,
+      "drift": 1,
+      "waived": 0,
+      "blocked": 1,
+      "disposition": "hold_engine_import"
+    }
+  ],
+  "assetComparisons": [
+    {
+      "assetId": "maya-asset-001",
+      "label": "Ready PC hero panel",
+      "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "presetGates": {
+        "pc": "Review",
+        "mobile": "Blocked"
+      },
+      "delta": "platform_split",
+      "dispositions": {
+        "pc": "review_approved_exception",
+        "mobile": "hold_engine_import"
+      }
+    }
+  ],
+  "factRows": [
+    {
+      "id": "maya-asset-001-pc-engine-path",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "engine-path",
+      "status": "matched",
+      "matched": true,
+      "actual": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "expected": "startsWith:/Game/AI_Tool_TA/",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-pc-source-import-data",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "source-import-data",
+      "status": "matched",
+      "matched": true,
+      "actual": "matched=True",
+      "expected": "sourceFileMatched=true",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-pc-material-slot",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "material-slot",
+      "status": "matched",
+      "matched": true,
+      "actual": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+      "expected": "assigned material dependency",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-pc-lod-count",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "lod-count",
+      "status": "waived",
+      "matched": false,
+      "actual": 1,
+      "expected": "minLods=2",
+      "waiver": {
+        "id": "waiver-pc-single-lod-public-fixture",
+        "owner": "tool-ta",
+        "expiresOn": "2026-09-30",
+        "reason": "The public OBJ fixture intentionally imports as one LOD; production assets must generate the full LOD chain before release."
+      },
+      "fixPreview": "Waiver accepted: waiver-pc-single-lod-public-fixture"
+    },
+    {
+      "id": "maya-asset-001-pc-collision-policy",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "collision-policy",
+      "status": "matched",
+      "matched": true,
+      "actual": "simple",
+      "expected": "allowed=simple,complex,proxy",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-mobile-engine-path",
+      "assetId": "maya-asset-001",
+      "preset": "mobile",
+      "factId": "engine-path",
+      "status": "blocked",
+      "matched": false,
+      "actual": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "expected": "startsWith:/Game/AI_Tool_TA/Mobile/",
+      "waiver": null,
+      "fixPreview": "Engine path must match platform content root."
+    },
+    {
+      "id": "maya-asset-001-mobile-source-import-data",
+      "assetId": "maya-asset-001",
+      "preset": "mobile",
+      "factId": "source-import-data",
+      "status": "matched",
+      "matched": true,
+      "actual": "matched=True",
+      "expected": "sourceFileMatched=true",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-mobile-material-slot",
+      "assetId": "maya-asset-001",
+      "preset": "mobile",
+      "factId": "material-slot",
+      "status": "matched",
+      "matched": true,
+      "actual": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+      "expected": "assigned material dependency",
+      "waiver": null,
+      "fixPreview": "None"
+    },
+    {
+      "id": "maya-asset-001-mobile-lod-count",
+      "assetId": "maya-asset-001",
+      "preset": "mobile",
+      "factId": "lod-count",
+      "status": "drift",
+      "matched": false,
+      "actual": 1,
+      "expected": "minLods=2",
+      "waiver": null,
+      "fixPreview": "Generate the preset LOD chain or attach an approved platform exception."
+    },
+    {
+      "id": "maya-asset-001-mobile-collision-policy",
+      "assetId": "maya-asset-001",
+      "preset": "mobile",
+      "factId": "collision-policy",
+      "status": "matched",
+      "matched": true,
+      "actual": "simple",
+      "expected": "allowed=simple,proxy",
+      "waiver": null,
+      "fixPreview": "None"
+    }
+  ],
+  "waiverRows": [
+    {
+      "id": "waiver-pc-single-lod-public-fixture",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "lod-count",
+      "state": "approved",
+      "owner": "tool-ta",
+      "expiresOn": "2026-09-30",
+      "consumedByComparison": true,
+      "reason": "The public OBJ fixture intentionally imports as one LOD; production assets must generate the full LOD chain before release."
+    }
+  ],
+  "policy": {
+    "comparisonRule": "Compare Unreal runtime facts against platform preset expectations before import approval.",
+    "waiverRule": "Approved waivers convert specific preset/fact drift into Review, not Ready; expired or missing waivers keep drift visible.",
+    "blockedRule": "Path, source, material and collision mismatches hold import because they affect engine addressability or gameplay behavior.",
+    "engineWrites": 0,
+    "mutation": "comparison_artifact_only"
+  },
+  "reviewerClaims": [
+    "R17 joins DCC preset intent with Unreal runtime facts instead of stopping at sidecar preflight.",
+    "Every preset/fact row resolves to matched, drift, waived, or blocked so reviewer decisions are auditable.",
+    "The PC single-LOD exception is represented as an owner-scoped waiver row, while Mobile remains blocked by platform path and LOD policy."
+  ]
+}

@@ -1,0 +1,221 @@
+# Validation Ledger
+
+## Current DCC-first Validation
+
+| Command id | Command | Proves |
+| --- | --- | --- |
+| `validate-r10-dcc-build` | `npm run build` | Current embedded React UI compiles for Maya/AuroraView. |
+| `validate-r10-dcc-api` | `python -m py_compile dcc-hosts/maya-auroraview-host/ai_tool_ta_maya_host/api.py` | Maya host API surface is syntactically valid. |
+| `validate-r10-7-case-page` | `Maya 2024 mayapy showcase_runbook_export_case_page(label="r10-7-dcc-first-case-page")` | Case page exports 6 sections, 7 business route steps, 7 live demo script steps, 9 GUI shots, 1 recording, 4 artifact rows, and 6 reviewer claims. |
+| `validate-r10-7-gui-media-audit` | `Maya 2024 mayapy showcase_runbook_export_gui_media_audit(label="r10-7-gui-media-audit")` | GUI media audit scans the R10.7 media root, exports 10 expected media rows, and correctly reports CapturePending with 10 missing files before real capture. |
+| `validate-r10-7-handoff-decision` | `Maya 2024 mayapy asset_handoff_export_decision_packet(label="r10-7-dcc-first-case-page-runbook-asset-handoff-decision")` | Asset Handoff Decision Packet exports 2 repair preview rows, 2 owner disposition rows, 1 engine-ready intent, 1 held engine intent, and zero engine writes. |
+| `validate-r10-8-engine-preflight` | `Maya 2024 mayapy engine_handoff_export_preflight_packet(label="r10-8-engine-handoff-preflight-fixture", platform_preset="pc")` | Engine Handoff Preflight exports 2 preflight rows, 1 dry-run import sidecar, 1 owner-held row, 8 passing checks, 1 hold check, and zero engine writes. |
+| `validate-r10-9-engine-preset-comparison` | `Maya 2024 mayapy engine_handoff_export_preset_comparison(label="r10-9-engine-preset-comparison", platform_presets=["pc", "mobile"])` | Engine preset comparison exports 2 preset summaries, 2 asset comparison rows, 1 platform split, 1 held-across-presets row, 1 ready sidecar, and zero engine writes. |
+| `validate-r22-blender-l3-runtime` | `python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py` | Blender 5.2.0 LTS runs the public synthetic fixture through `bpy`, exports `blender-rule-adapter-bpy-l3@0.1.0`, reports 2 assets, 1 Ready, 1 Blocked, 8 pass checks, 3 warnings, 1 error. |
+| `validate-r22-max-l3-runtime` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600` | 3ds Max 2022 batch runs the public synthetic fixture through `pymxs`, exports `max-rule-adapter-pymxs-l3@0.1.0`, reports 2 assets, 1 Ready, 1 Blocked, 13 pass checks, 5 warnings, 2 errors. |
+| `validate-r22-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r22-blender-max-l3-presentation-pack")` | DCC Presenter Pack probes 19 key evidence files including Blender and Max runtime L3 artifacts, reports 19 present / 0 missing required files, and exports 12 demo route steps. |
+| `validate-r21-max-rule-adapter` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py` | 3ds Max Rule Adapter exports L2+ contract evidence from public fixtures: 2 assets, 1 Ready, 1 Blocked, 13 pass checks, 5 warnings, 2 errors, and Max batch availability. |
+| `validate-r21-max-l3-readiness` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py` | 3ds Max L3 readiness harness discovers `3dsmaxbatch.exe`, confirms collector readiness, keeps runtime launch opt-in, and reports `Review` without production writes. |
+| `validate-r21-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r21-3dsmax-rule-adapter-presentation-pack")` | DCC Presenter Pack probes 19 key evidence files including Max adapter and Max L3 readiness, reports 19 present / 0 missing required files, and exports 12 demo route steps. |
+| `validate-r20-blender-l3-harness` | `python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py` | Blender L3 readiness harness compiles the real `bpy` collector path, searches Blender CLI, reports collector ready, and records `Blocked` because this machine has no discoverable `blender.exe`. |
+| `validate-r20-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r20-blender-l3-harness-presentation-pack")` | DCC Presenter Pack probes 17 key evidence files including Blender L3 readiness, reports 17 present / 0 missing required files, and exports 11 demo route steps. |
+| `validate-r19-scene-transaction-guard` | `Maya 2024 mayapy scene_transaction_export_receipt(label="r19-scene-transaction-guard")` | Scene Transaction Guard exports before/after fingerprints, 2 created nodes, 2 deleted nodes, 2 modified nodes, selection/time changes, 9 rollback preview actions, and 4 risk rows. |
+| `validate-r19-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r19-scene-transaction-guard-presentation-pack")` | DCC Presenter Pack probes 16 key evidence files including Scene Transaction Guard, reports 16 present / 0 missing required files, and exports 10 demo route steps. |
+| `validate-r18-unreal-preset-fact-review` | `Maya 2024 mayapy unreal_preset_fact_review_export(label="r18-unreal-preset-fact-review")` | Maya-hosted preset fact reviewer projects the R17 comparison into 10 review rows, 3 attention rows, 1 blocked row, and 1 waiver row without scene or engine writes. |
+| `validate-r18-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r18-unreal-preset-fact-review-presentation-pack")` | DCC Presenter Pack probes 15 key evidence files including the preset fact review artifact, reports 15 present / 0 missing required files, and exports 9 demo route steps. |
+| `validate-r17-unreal-preset-fact-comparison` | `python dcc-hosts/unreal-handoff-inspector/scripts/run_preset_fact_compare.py` | Unreal preset fact comparison reads the R16 L3++ artifact, compares engine facts against PC / Mobile preset policy and waiver rows, and exports 10 fact rows: 7 matched, 1 drift, 1 waived, 1 blocked. |
+| `validate-r17-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r17-unreal-preset-facts-presentation-pack")` | DCC Presenter Pack probes 14 key evidence files including Unreal preset fact comparison, reports 14 present / 0 missing required files, and keeps the overall gate at CapturePending until real Maya GUI media exists. |
+| `validate-r16-unreal-engine-facts` | `python dcc-hosts/unreal-handoff-inspector/scripts/run_unreal_l3_smoke.py` | UnrealEditor-Cmd runs Unreal Python against the public test `.uproject`, exports `unreal-handoff-inspector-contract@0.4.0`, and matches 4 / 4 StaticMesh engine facts: source import data, material slot, LOD count and collision settings. |
+| `validate-r16-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r16-unreal-engine-facts-presentation-pack")` | DCC Presenter Pack probes 13 key evidence files including Unreal L3++ and Blender evidence, reports 13 present / 0 missing required files, and keeps the overall gate at CapturePending until real Maya GUI media exists. |
+| `validate-r15-unreal-registry-fixture` | `python dcc-hosts/unreal-handoff-inspector/scripts/run_unreal_l3_smoke.py` | UnrealEditor-Cmd runs Unreal Python against the public test `.uproject`, exports `unreal-handoff-inspector-contract@0.3.0`, imports public StaticMesh / creates Material fixture assets, queries Asset Registry, and matches 2 / 2 expected path/class rows. |
+| `validate-r15-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r15-unreal-registry-fixture-presentation-pack")` | DCC Presenter Pack probes 13 key evidence files including Unreal L3+ and Blender evidence, reports 13 present / 0 missing required files, and keeps the overall gate at CapturePending until real Maya GUI media exists. |
+| `validate-r14-unreal-l3-inspector` | `python dcc-hosts/unreal-handoff-inspector/scripts/run_unreal_l3_smoke.py` | UnrealEditor-Cmd runs Unreal Python against the public test `.uproject`, exports `unreal-handoff-inspector-contract@0.2.0`, records Unreal 5.3.2 / Python 3.9.7 runtime, queries Asset Registry, and keeps engine writes at 0. |
+| `validate-r14-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r14-unreal-l3-presentation-pack")` | DCC Presenter Pack probes 13 key evidence files including Unreal L3 and Blender evidence, reports 13 present / 0 missing required files, and keeps the overall gate at CapturePending until real Maya GUI media exists. |
+| `validate-r13-unreal-handoff-inspector` | `python dcc-hosts/unreal-handoff-inspector/scripts/run_smoke.py` | Unreal Handoff Inspector exports L2 engine-side contract evidence: 2 import intents, 1 import-ready command, 1 blocked import, Unreal CLI available, test project missing, 14 pass checks, 2 review checks, 4 blocked checks. |
+| `validate-r13-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r13-engine-presentation-pack")` | DCC Presenter Pack exports 8 demo route steps, probes 13 key evidence files including Blender and Unreal evidence, reports 13 present / 0 missing required files, and keeps the overall gate at CapturePending until real Maya GUI media exists. |
+| `validate-r12-blender-rule-adapter` | `python dcc-hosts/blender-rule-adapter/scripts/run_smoke.py` | Blender Rule Adapter exports L2 contract evidence from a public fixture: 2 assets, 1 Ready, 1 Blocked, 8 pass checks, 3 warnings, 1 error, and L3 status `blocked_by_missing_blender_cli`. |
+| `validate-r12-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r12-cross-dcc-presentation-pack")` | Historical R12 Presenter Pack exported 7 demo route steps, probed 12 key evidence files including Blender adapter evidence, and reported 12 present / 0 missing required files. |
+| `validate-r11-dcc-presenter-pack` | `Maya 2024 mayapy dcc_presentation_export_pack(label="r11-dcc-presentation-pack")` | Historical R11 Presenter Pack exported 6 demo route steps, probed 11 key evidence files, and reported 11 present / 0 missing required files. |
+| `validate-r10-7-dcc-smoke` | `Maya 2024 mayapy showcase_runbook_export_package(label="r10-7-dcc-first-case-page-runbook")` | DCC-first package exports 5 modules, 5 module artifacts, 1 handoff artifact, 1 decision artifact, 0 blocked modules, 7 business route steps, 7 live demo script steps, 7 GUI checklist items, and 6 reviewer claims. |
+| `validate-r10-7-gui-evidence` | `Maya 2024 mayapy showcase_runbook_export_gui_evidence_manifest(label="r10-7-dcc-first-case-page-gui-evidence")` | GUI evidence manifest exports 9 screenshot targets, 1 recording target, 7 business route steps, and 10 required media files. |
+| `validate-r10-7-asset-handoff` | `Maya 2024 mayapy asset_handoff_export_packet(label="r10-7-dcc-first-case-page-runbook-asset-handoff")` | Asset Handoff Gate exports 2 synthetic assets, 1 Ready asset, 1 Review asset, 0 Blocked assets, 3 preview actions, and protocol/rule/texture/visual/queue evidence. |
+
+Latest case page artifact:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-dcc-first-case-page-20260803-171316.json
+```
+
+Latest runbook artifact:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-dcc-first-case-page-runbook-20260803-171316.json
+```
+
+Latest GUI evidence manifest:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-dcc-first-case-page-gui-evidence-20260803-171316.json
+```
+
+Latest GUI media audit:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-gui-media-audit-20260803-171316.json
+```
+
+Latest Asset Handoff Gate packet:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-dcc-first-case-page-runbook-asset-handoff-20260803-171316.json
+```
+
+Latest Asset Handoff Decision packet:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-7-dcc-first-case-page-runbook-asset-handoff-decision-20260803-171316.json
+```
+
+Latest Engine Handoff Preflight packet:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-8-engine-handoff-preflight-fixture-20260803-172302.json
+```
+
+Latest Engine Preset Comparison packet:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r10-9-engine-preset-comparison-20260803-172927.json
+```
+
+Latest Blender Rule Adapter contract:
+
+```text
+<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-contract-20260804-201125.json
+```
+
+Latest Blender L3 runtime:
+
+```text
+<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json
+```
+
+Latest 3ds Max Rule Adapter contract:
+
+```text
+<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-contract-20260804-220959.json
+```
+
+Latest 3ds Max L3 runtime:
+
+```text
+<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json
+```
+
+Latest Unreal Handoff Inspector contract:
+
+```text
+<repo>\dcc-hosts\unreal-handoff-inspector\artifacts\unreal-handoff-inspector-l3-20260803-184208.json
+```
+
+Latest Unreal Preset Fact Comparison:
+
+```text
+<repo>\dcc-hosts\unreal-handoff-inspector\artifacts\unreal-preset-fact-comparison-20260803-185302.json
+```
+
+Latest Unreal Preset Fact Review:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r18-unreal-preset-fact-review-20260803-190519.json
+```
+
+Latest Scene Transaction Guard:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r19-scene-transaction-guard-20260804-195730.json
+```
+
+Latest DCC Presenter Pack:
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r22-blender-max-l3-presentation-pack-20260805-153957.json
+```
+
+## Commands
+
+| Command id | Command | Proves |
+| --- | --- | --- |
+| `validate-build` | `npm run build` | TypeScript and Vite production bundle compile with the current data model. |
+| `validate-css-constraints` | `rg "#[0-9a-fA-F]{3,8}|[0-9]+px [0-9]+px [1-9][0-9]px|border-(left|right): [2-9]" src/styles.css` | No banned hex colors, large soft shadows, or wide side-stripe borders were introduced. |
+| `validate-playwright-r6-3` | `python - <<PLAYWRIGHT_R6_3` | Task Orchestrator evidence view renders manifest and avoids horizontal overflow. |
+| `validate-exported-report` | `assert reportVersion, modules, caseCardContracts, reviewerAcceptance, evidenceManifest, evidenceIndex counts` | Exported JSON is machine-checkable. |
+| `validate-playwright-r7-1` | `python - <<PLAYWRIGHT_R7_1` | Pending receipt review panel renders and exports the R7.1 report. |
+| `validate-playwright-r7-2` | `python - <<PLAYWRIGHT_R7_2` | Rule Matrix renders fix preview and manual disposition evidence. |
+| `validate-playwright-r7-3` | `python - <<PLAYWRIGHT_R7_3` | Texture Delivery renders approved package delta and committed manifest. |
+| `validate-playwright-r7-4` | `python - <<PLAYWRIGHT_R7_4` | Owner signoff ledger closes R2/R4 receipts and exports R7.4 report. |
+| `validate-playwright-r7-5` | `python - <<PLAYWRIGHT_R7_5` | Public package panel renders, exports `portfolio-case-study-report@0.8.0`, and package files exist. |
+| `validate-playwright-r8-0` | `node - <<PLAYWRIGHT_R8_0` | Dependency impact panel renders 5 assets, 3 paths, 4 decisions, and 3 receipts. |
+| `validate-playwright-r8-1` | `node - <<PLAYWRIGHT_R8_1` | Public dependency dataset, path steps, decision matrix, and `task-orchestrator-report@0.6.0` export are verified. |
+| `validate-playwright-r8-2` | `node - <<PLAYWRIGHT_R8_2` | Public package 0.2 renders, R8 impact receipt is closed, and `portfolio-case-study-report@0.9.0` exports. |
+| `validate-playwright-r8-3` | `node - <<PLAYWRIGHT_R8_3` | Scenario switch and receipt drilldown render, vehicle dataset counts match, and `task-orchestrator-report@0.7.0` exports. |
+| `validate-playwright-r8-4` | `node - <<PLAYWRIGHT_R8_4` | Scenario comparison, fixture authoring draft, receipt closure simulation, and `task-orchestrator-report@0.8.0` export are verified. |
+| `validate-playwright-r8-5` | `node - <<PLAYWRIGHT_R8_5` | Batch fixture variants, adapter replay dry-run, regression score trend, and `task-orchestrator-report@0.9.0` export are verified. |
+| `validate-playwright-r8-6` | `node - <<PLAYWRIGHT_R8_6` | Adapter contract replay, external receipt sync mock, replay failure recovery, and `task-orchestrator-report@1.0.0` export are verified. |
+| `validate-playwright-r8-7` | `node - <<PLAYWRIGHT_R8_7` | Production handoff diff, adapter owner approval packet, held payload retry ledger, and `task-orchestrator-report@1.1.0` export are verified. |
+| `validate-playwright-r8-8` | `node - <<PLAYWRIGHT_R8_8` | Signed receipt sandbox, production adapter smoke harness, rollback receipt verification, and `task-orchestrator-report@1.2.0` export are verified. |
+| `validate-playwright-r8-9` | `node - <<PLAYWRIGHT_R8_9` | Credential boundary drill, receipt retention audit, cross-module release drill, and `task-orchestrator-report@1.3.0` export are verified. |
+| `validate-playwright-r8-10` | `node - <<PLAYWRIGHT_R8_10` | Adapter failure injection matrix, receipt lineage graph, reviewer packet diff, and `task-orchestrator-report@1.4.0` export are verified. |
+| `validate-playwright-r8-11` | `node - <<PLAYWRIGHT_R8_11` | Live adapter readiness simulator, owner approval closeout, mutation replay rehearsal, and `task-orchestrator-report@1.5.0` export are verified. |
+| `validate-playwright-r8-12` | `node - <<PLAYWRIGHT_R8_12` | Production adapter cutover checklist, post-cutover receipt monitor, emergency stop drill, and `task-orchestrator-report@1.6.0` export are verified. |
+| `validate-playwright-r8-13` | `node - <<PLAYWRIGHT_R8_13` | Private owner receipt bridge, cutover signoff diff, production route shadow replay, and `task-orchestrator-report@1.7.0` export are verified. |
+| `validate-playwright-r8-14` | `node - <<PLAYWRIGHT_R8_14` | Production drift audit, owner SLA monitor, release freeze replay, and `task-orchestrator-report@1.8.0` export are verified. |
+| `validate-playwright-r8-15` | `node - <<PLAYWRIGHT_R8_15` | Adapter rollback adjudicator, receipt dispute replay, audit export diff, and `task-orchestrator-report@1.9.0` export are verified. |
+| `validate-playwright-r8-16` | `node - <<PLAYWRIGHT_R8_16` | Rollout wave planner, incident replay notebook, owner exception ledger, and `task-orchestrator-report@1.10.0` export are verified. |
+| `validate-playwright-r8-17` | `node - <<PLAYWRIGHT_R8_17` | Rollback budget simulator, release confidence heatmap, evidence aging policy, and `task-orchestrator-report@1.11.0` export are verified. |
+| `validate-playwright-r8-18` | `node - <<PLAYWRIGHT_R8_18` | Release rollback rehearsal, owner quorum simulator, stale evidence auto-refresh queue, and `task-orchestrator-report@1.12.0` export are verified. |
+| `validate-playwright-r8-19` | `node - <<PLAYWRIGHT_R8_19` | Release decision board, owner SLA escalation queue, evidence retention purge rehearsal, and `task-orchestrator-report@1.13.0` export are verified. |
+| `validate-playwright-r8-20` | `node - <<PLAYWRIGHT_R8_20` | Release evidence compactor, reviewer packet lockfile, production readiness exception closeout, and `task-orchestrator-report@1.14.0` export are verified. |
+| `validate-playwright-r8-21` | `node - <<PLAYWRIGHT_R8_21` | Locked packet diff viewer, exception burn-down dashboard, reviewer acceptance replay, and `task-orchestrator-report@1.15.0` export are verified. |
+| `validate-playwright-r8-22` | `node - <<PLAYWRIGHT_R8_22` | Accepted packet freeze, exception owner response importer, release readiness replay diff, and `task-orchestrator-report@1.16.0` export are verified. |
+| `validate-playwright-r8-23` | `node - <<PLAYWRIGHT_R8_23` | Frozen packet promotion gate, owner response SLA reconciliation, readiness acceptance ledger, and `task-orchestrator-report@1.17.0` export are verified. |
+| `validate-playwright-r8-24` | `node - <<PLAYWRIGHT_R8_24` | Promotion rollback preview, SLA exception waiver ledger, candidate packet release note generator, and `task-orchestrator-report@1.18.0` export are verified. |
+| `validate-playwright-r8-25` | `node - <<PLAYWRIGHT_R8_25` | Release-note reviewer approval loop, waiver expiry monitor, rollback rehearsal bundle diff, and `task-orchestrator-report@1.19.0` export are verified. |
+| `validate-playwright-r8-26` | `node - <<PLAYWRIGHT_R8_26` | Approval evidence seal, waiver renewal simulator, rollback drill incident handoff, and `task-orchestrator-report@1.20.0` export are verified. |
+| `validate-playwright-r8-27` | `node - <<PLAYWRIGHT_R8_27` | Sealed approval replay, waiver expiry burn-down, incident closure acceptance packet, and `task-orchestrator-report@1.21.0` export are verified. |
+| `validate-playwright-r8-28` | `node - <<PLAYWRIGHT_R8_28` | Closure acceptance replay, waiver owner response importer, incident SLA scoreboard, and `task-orchestrator-report@1.22.0` export are verified. |
+| `validate-playwright-r8-29` | `node - <<PLAYWRIGHT_R8_29` | Incident closure diff viewer, waiver SLA reconciliation, release operations acceptance ledger, and `task-orchestrator-report@1.23.0` export are verified. |
+| `validate-playwright-r8-30` | `node - <<PLAYWRIGHT_R8_30` | Operations packet signoff diff, release train readiness board, owner escalation closeout, and `task-orchestrator-report@1.24.0` export are verified. |
+| `validate-playwright-r8-31` | `node - <<PLAYWRIGHT_R8_31` | Release train replay receipt, owner closeout aging audit, publish rehearsal variance report, and `task-orchestrator-report@1.25.0` export are verified. |
+| `validate-playwright-r8-32` | `node - <<PLAYWRIGHT_R8_32` | Release manager daily digest, late owner risk forecast, package acceptance freeze diff, and `task-orchestrator-report@1.26.0` export are verified. |
+| `validate-playwright-r8-33` | `node - <<PLAYWRIGHT_R8_33` | Release acceptance waiver summary, freeze exception closure board, publish go/no-go packet, and `task-orchestrator-report@1.27.0` export are verified. |
+| `validate-playwright-r8-34` | `node - <<PLAYWRIGHT_R8_34` | Publish decision receipt replay, post-release watch window board, rollback readiness delta, and `task-orchestrator-report@1.28.0` export are verified. |
+| `validate-playwright-r8-35` | `node - <<PLAYWRIGHT_R8_35` | Release closeout receipt seal, watch escalation replay, rollback drill closeout packet, and `task-orchestrator-report@1.29.0` export are verified. |
+| `validate-playwright-r8-36` | `node - <<PLAYWRIGHT_R8_36` | Closeout acceptance replay, escalation aging board, final release archive packet, and `task-orchestrator-report@1.30.0` export are verified. |
+| `validate-playwright-r8-37` | `node - <<PLAYWRIGHT_R8_37` | Archive integrity audit, release memory search, archived packet restore rehearsal, and `task-orchestrator-report@1.31.0` export are verified. |
+| `validate-playwright-r8-38` | `node - <<PLAYWRIGHT_R8_38` | Archive retention policy simulator, release memory diff timeline, restore approval packet, and `task-orchestrator-report@1.32.0` export are verified. |
+| `validate-playwright-r8-39` | `playwright-cli run-code .playwright-cli/r8-39-verify.js` | Archive access review ledger, restore incident drillbook, release memory ownership transfer, and `task-orchestrator-report@1.33.0` export are verified. |
+| `validate-playwright-r8-40` | `playwright-cli run-code .playwright-cli/r8-40-verify.js` | Restore readiness replay audit, archive permission expiry monitor, release memory audit export bundle, and `task-orchestrator-report@1.34.0` export are verified. |
+| `validate-playwright-r8-41` | `playwright-cli run-code --filename=.playwright-cli/r8-41-verify.js` | Audit bundle reviewer signoff queue, permission renewal replay simulator, restore memory evidence notarization, and `task-orchestrator-report@1.35.0` export are verified. |
+| `validate-playwright-r8-42` | `playwright-cli run-code --filename=.playwright-cli/r8-42-verify.js` | Release memory query replay, restore approval comparison, audit packet retention renewal dashboard, and `task-orchestrator-report@1.36.0` export are verified. |
+| `validate-playwright-r8-43` | `playwright-cli run-code --filename=.playwright-cli/r8-43-verify.js` | Audit query exception ledger, retention owner response importer, restore memory packet handoff, and `task-orchestrator-report@1.37.0` export are verified. |
+| `validate-playwright-r8-44` | `playwright-cli run-code --filename=.playwright-cli/r8-44-verify.js` | Restore packet acceptance replay, handoff owner SLA board, archive restoration drill exporter, and `task-orchestrator-report@1.38.0` export are verified. |
+| `validate-playwright-r8-45` | `playwright-cli run-code --filename=.playwright-cli/r8-45-verify.js` | Restoration drill acceptance ledger, archive drill owner response importer, restore operations readiness digest, and `task-orchestrator-report@1.39.0` export are verified. |
+| `validate-playwright-r8-46` | `playwright-cli run-code --filename=.playwright-cli/r8-46-verify.js` | Restore readiness exception closeout, archive ops SLA escalation queue, restore command rehearsal lock, and `task-orchestrator-report@1.40.0` export are verified. |
+| `validate-playwright-r8-47` | `playwright-cli run-code --filename=.playwright-cli/r8-47-verify.js` | Restore lock reviewer signoff queue, archive command rollback rehearse diff, restore execution redline packet, and `task-orchestrator-report@1.41.0` export are verified. |
+| `validate-playwright-r8-48` | `playwright-cli run-code --filename=.playwright-cli/r8-48-verify.js` | Restore redline owner override simulator, archive execution blackbox recorder, restore abort drill closeout ledger, and `task-orchestrator-report@1.42.0` export are verified. |
+| `validate-playwright-r8-49` | `playwright-cli run-code --filename=.playwright-cli/r8-49-verify.js` | Restore incident replay notarization, archive restore execution variance report, post-abort owner evidence reconciliation, and `task-orchestrator-report@1.43.0` export are verified. |
+| `validate-playwright-r8-50` | `playwright-cli run-code --filename=.playwright-cli/r8-50-verify.js` | Restore acceptance final attestation, archive incident delta aging board, post-restore owner signoff packet, and `task-orchestrator-report@1.44.0` export are verified. |
+| `validate-playwright-r8-51` | `playwright-cli run-code --filename=.playwright-cli/r8-51-verify.js` | Signoff dispute replay, archive acceptance freeze diff, owner closure exception ledger, and `task-orchestrator-report@1.45.0` export are verified. |
+| `validate-playwright-r8-52` | `playwright-cli run-code --filename=.playwright-cli/r8-52-verify.js` | Closure evidence seal, archive terminal package diff, owner reopen guardrail simulator, and `task-orchestrator-report@1.46.0` export are verified. |
+| `validate-playwright-r8-53` | `playwright-cli run-code --filename=.playwright-cli/r8-53-verify.js` | Sealed closure receipt replay, terminal archive retention renewal, owner reopen incident drillbook, and `task-orchestrator-report@1.47.0` export are verified. |
+| `validate-playwright-r8-54` | `playwright-cli run-code --filename=.playwright-cli/r8-54-verify.js` | Receipt replay aging lock, retention exception burn-down, drillbook acceptance ledger, and `task-orchestrator-report@1.48.0` export are verified. |
+
+## Current Gate
+
+| Field | Value |
+| --- | --- |
+| Release gate | `Ready` |
+| Blocking receipts | `[]` |
+| Package files | 6 |
+| Validation commands | 64 |

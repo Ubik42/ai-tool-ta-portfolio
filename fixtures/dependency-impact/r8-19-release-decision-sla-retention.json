@@ -1,0 +1,386 @@
+{
+  "reportVersion": "impact-release-decision-sla-retention-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "release_decision_sla_retention",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.13.0",
+    "asset-dependency-impact@1.9.0",
+    "impact-release-decision-board@0.1.0",
+    "impact-owner-sla-escalation-queue@0.1.0",
+    "impact-evidence-retention-purge-rehearsal@0.1.0",
+    "impact-audit-export-diff@0.5.0"
+  ],
+  "releaseDecisionBoard": {
+    "summary": {
+      "totalLanes": 6,
+      "approvedLanes": 2,
+      "conditionalLanes": 2,
+      "deferredLanes": 2,
+      "blockedLanes": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review",
+      "nextAction": "Treat conditional and deferred lanes as explicit release decisions, not hidden blockers."
+    },
+    "businessSignal": "Final release authority is lane-level; approved, conditional, and deferred decisions remain separately reviewable.",
+    "lanes": [
+      {
+        "id": "decision-public-baseline",
+        "state": "approved",
+        "gate": "Ready",
+        "lane": "wave-0",
+        "releaseDecision": "approve public package baseline",
+        "decisionReason": "baseline rehearsal passed, owner vote accepted, and report refresh completed",
+        "requiredOwnerState": "accepted",
+        "requiredEvidenceState": "refreshed",
+        "liveWrites": 0
+      },
+      {
+        "id": "decision-rollback-preview",
+        "state": "approved",
+        "gate": "Ready",
+        "lane": "wave-1",
+        "releaseDecision": "approve dry-run rollback preview evidence",
+        "decisionReason": "preview rehearsal passed, release owner accepted, and screenshot refresh completed",
+        "requiredOwnerState": "accepted",
+        "requiredEvidenceState": "refreshed",
+        "liveWrites": 0
+      },
+      {
+        "id": "decision-monitor-watch",
+        "state": "conditional",
+        "gate": "Review",
+        "lane": "wave-2",
+        "releaseDecision": "hold promotion until monitor refresh and owner vote close",
+        "decisionReason": "monitor rehearsal is watch-only and refresh job is queued",
+        "requiredOwnerState": "requested",
+        "requiredEvidenceState": "queued",
+        "liveWrites": 0
+      },
+      {
+        "id": "decision-security-alias",
+        "state": "conditional",
+        "gate": "Review",
+        "lane": "wave-3",
+        "releaseDecision": "hold alias lane until security counterclaim closes",
+        "decisionReason": "security rehearsal is watch-only and owner vote is requested",
+        "requiredOwnerState": "requested",
+        "requiredEvidenceState": "queued",
+        "liveWrites": 0
+      },
+      {
+        "id": "decision-endpoint-route",
+        "state": "deferred",
+        "gate": "Review",
+        "lane": "wave-4",
+        "releaseDecision": "defer private endpoint route",
+        "decisionReason": "endpoint route is owner-held, quorum vote is missing, and refresh is owner-required",
+        "requiredOwnerState": "missing",
+        "requiredEvidenceState": "owner_required",
+        "liveWrites": 0
+      },
+      {
+        "id": "decision-owner-unfreeze",
+        "state": "deferred",
+        "gate": "Review",
+        "lane": "wave-5",
+        "releaseDecision": "defer emergency unfreeze implication",
+        "decisionReason": "unfreeze rehearsal is owner-held, optional quorum vote is missing, and closeout is owner-required",
+        "requiredOwnerState": "missing",
+        "requiredEvidenceState": "owner_required",
+        "liveWrites": 0
+      }
+    ]
+  },
+  "ownerSlaEscalationQueue": {
+    "summary": {
+      "totalItems": 6,
+      "withinSlaItems": 2,
+      "dueTodayItems": 2,
+      "escalatedItems": 2,
+      "blockedItems": 0,
+      "maxElapsedHours": 72,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Close due-today and escalated owner items before conditional or deferred lanes can move."
+    },
+    "businessSignal": "Owner gaps become due-date and escalation work items instead of silent blockers.",
+    "items": [
+      {
+        "id": "sla-portfolio-baseline",
+        "state": "within_sla",
+        "gate": "Ready",
+        "owner": "Portfolio TA",
+        "role": "public package owner",
+        "dueAt": "2026-08-02T18:00:00+08:00",
+        "elapsedHours": 8,
+        "escalationPath": "none",
+        "blocker": "none",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "sla-release-preview",
+        "state": "within_sla",
+        "gate": "Ready",
+        "owner": "Release TA",
+        "role": "rollback preview owner",
+        "dueAt": "2026-08-02T18:00:00+08:00",
+        "elapsedHours": 10,
+        "escalationPath": "none",
+        "blocker": "none",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "sla-monitor-watch",
+        "state": "due_today",
+        "gate": "Review",
+        "owner": "Platform TA",
+        "role": "monitor stream owner",
+        "dueAt": "2026-08-01T18:00:00+08:00",
+        "elapsedHours": 38,
+        "escalationPath": "Platform TA -> Release TA",
+        "blocker": "monitor refresh queued",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "sla-security-alias",
+        "state": "due_today",
+        "gate": "Review",
+        "owner": "Security TA",
+        "role": "security alias owner",
+        "dueAt": "2026-08-01T18:30:00+08:00",
+        "elapsedHours": 40,
+        "escalationPath": "Security TA -> Release TA",
+        "blocker": "counterclaim ruling requested",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "sla-endpoint-route",
+        "state": "escalated",
+        "gate": "Review",
+        "owner": "Platform Adapter Owner",
+        "role": "private endpoint owner",
+        "dueAt": "2026-07-31T18:00:00+08:00",
+        "elapsedHours": 72,
+        "escalationPath": "Platform Adapter Owner -> Platform Lead",
+        "blocker": "required endpoint vote missing",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "sla-owner-unfreeze",
+        "state": "escalated",
+        "gate": "Review",
+        "owner": "Release TA",
+        "role": "emergency release owner",
+        "dueAt": "2026-07-31T19:00:00+08:00",
+        "elapsedHours": 68,
+        "escalationPath": "Release TA -> Release Lead",
+        "blocker": "unfreeze closeout missing",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "evidenceRetentionPurgeRehearsal": {
+    "summary": {
+      "totalRecords": 6,
+      "retainedRecords": 2,
+      "purgeQueuedRecords": 2,
+      "ownerHoldRecords": 2,
+      "blockedRecords": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep purge rehearsal dry-run until replacement evidence and owner holds are closed."
+    },
+    "businessSignal": "Retention cleanup is rehearsed as retain, purge-queued, and owner-held records with zero live writes.",
+    "records": [
+      {
+        "id": "retention-public-package-report",
+        "state": "retained",
+        "gate": "Ready",
+        "evidenceRef": "portfolio-r8-18-json",
+        "retentionClass": "release-record",
+        "purgeAction": "retain",
+        "owner": "Portfolio TA",
+        "retentionUntil": "2026-09-30T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "retention-rollback-preview",
+        "state": "retained",
+        "gate": "Ready",
+        "evidenceRef": "task-orchestrator-r8-18-release-rehearsal-full",
+        "retentionClass": "review-screenshot",
+        "purgeAction": "retain",
+        "owner": "Release TA",
+        "retentionUntil": "2026-09-30T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "retention-monitor-watch",
+        "state": "purge_queued",
+        "gate": "Review",
+        "evidenceRef": "monitor-owner-held-route",
+        "retentionClass": "stale-public-alias",
+        "purgeAction": "purge after refreshed copy is attached",
+        "owner": "Platform TA",
+        "retentionUntil": "2026-08-07T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "retention-security-alias",
+        "state": "purge_queued",
+        "gate": "Review",
+        "evidenceRef": "private-security-service-identity",
+        "retentionClass": "redacted-private-alias",
+        "purgeAction": "purge public stale alias after owner refresh",
+        "owner": "Security TA",
+        "retentionUntil": "2026-08-07T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "retention-endpoint-route",
+        "state": "owner_hold",
+        "gate": "Review",
+        "evidenceRef": "private-endpoint-route-policy",
+        "retentionClass": "private-owner-policy",
+        "purgeAction": "hold until owner refresh is recorded",
+        "owner": "Platform Adapter Owner",
+        "retentionUntil": "2026-08-14T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "retention-owner-unfreeze",
+        "state": "owner_hold",
+        "gate": "Review",
+        "evidenceRef": "private-route-unfreeze-approval",
+        "retentionClass": "emergency-owner-approval",
+        "purgeAction": "hold until emergency closeout is recorded",
+        "owner": "Release TA",
+        "retentionUntil": "2026-08-14T23:59:59+08:00",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 8,
+      "unchangedRows": 2,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.19 decision, escalation, and retention reports are accepted by reviewers."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.12.0",
+        "after": "task-orchestrator-report@1.13.0",
+        "diffReason": "R8.19 adds release decision, owner SLA escalation, and retention purge rehearsal reports",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-impact-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.8.0",
+        "after": "asset-dependency-impact@1.9.0",
+        "diffReason": "impact schema now includes three R8.19 release decision reports",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-audit-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@0.4.0",
+        "after": "impact-audit-export-diff@0.5.0",
+        "diffReason": "audit export diff now records R8.19 schema additions",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-release-decision",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseDecisionBoard",
+        "before": "missing",
+        "after": "6 lanes, 2 approved, 2 conditional, 2 deferred",
+        "diffReason": "reviewers need per-lane release decisions before package readiness is interpreted",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-owner-sla-escalation",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.ownerSlaEscalationQueue",
+        "before": "missing",
+        "after": "6 items, 2 within SLA, 2 due today, 2 escalated",
+        "diffReason": "reviewers need owner escalation state for requested and missing quorum votes",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-retention-purge",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.evidenceRetentionPurgeRehearsal",
+        "before": "missing",
+        "after": "6 records, 2 retained, 2 purge queued, 2 owner-held",
+        "diffReason": "reviewers need retention and purge rehearsal before stale evidence is removed",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "diffReason": "R8.19 adds release decision and retention logic without exposing private values",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-live-writes",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "diffReason": "release decision board, SLA escalation, and retention purge rehearsal stay dry-run",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "guardrails": [
+    "Release decisions are per lane and cannot collapse deferred lanes into global Ready.",
+    "Approved lanes require passed rehearsal, accepted owner vote, and refreshed public evidence.",
+    "Decision board remains non-mutating and emits zero live writes.",
+    "SLA escalation requests owner action; it cannot synthesize approval.",
+    "Escalated rows expose owner role and public blocker, not private receipt bodies.",
+    "Required owner SLA gaps keep the release board in Review.",
+    "Retention purge rehearsal never deletes evidence in the public portfolio.",
+    "Private owner policy evidence stays owner-held until replacement is recorded.",
+    "Queued purge records require refreshed evidence before removal can be proposed."
+  ],
+  "artifacts": [
+    "fixtures/dependency-impact/r8-19-release-decision-sla-retention.json",
+    "assets/task-orchestrator-r8-19-exported-report.json",
+    "fixtures/dependency-impact/r8-19-release-decision-sla-retention.json",
+    "assets/task-orchestrator-r8-19-exported-report.json",
+    "fixtures/dependency-impact/r8-19-release-decision-sla-retention.json",
+    "assets/task-orchestrator-r8-19-exported-report.json"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "reportVersion": "max-rule-adapter-l3-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / 3ds Max Rule Adapter",
+  "generatedAt": "2026-08-04 22:09:59",
+  "evidenceLevel": "L2+",
+  "gate": "Review",
+  "l3Status": "runtime_discovered_not_invoked",
+  "maxRuntime": {
+    "runner": "3dsmaxbatch.exe",
+    "available": true,
+    "path": "C:\\Program Files\\Autodesk\\3ds Max 2022\\3dsmaxbatch.exe",
+    "searched": [
+      "C:\\Program Files\\Autodesk\\3ds Max 2026\\3dsmaxbatch.exe",
+      "C:\\Program Files\\Autodesk\\3ds Max 2025\\3dsmaxbatch.exe",
+      "C:\\Program Files\\Autodesk\\3ds Max 2024\\3dsmaxbatch.exe",
+      "C:\\Program Files\\Autodesk\\3ds Max 2023\\3dsmaxbatch.exe",
+      "C:\\Program Files\\Autodesk\\3ds Max 2022\\3dsmaxbatch.exe",
+      "D:\\Program Files\\Autodesk\\3ds Max 2026\\3dsmaxbatch.exe",
+      "D:\\Program Files\\Autodesk\\3ds Max 2025\\3dsmaxbatch.exe",
+      "D:\\Program Files\\Autodesk\\3ds Max 2024\\3dsmaxbatch.exe",
+      "D:\\Program Files\\Autodesk\\3ds Max 2023\\3dsmaxbatch.exe",
+      "D:\\Program Files\\Autodesk\\3ds Max 2022\\3dsmaxbatch.exe"
+    ],
+    "runtimeLaunchPolicy": "opt_in",
+    "runtimeRequested": false
+  },
+  "collector": {
+    "script": "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\scripts\\run_3dsmax_l3.py",
+    "ready": true,
+    "expectedCommand": "3dsmaxbatch.exe <repo>\\dcc-hosts\\3dsmax-rule-adapter\\scripts\\run_3dsmax_l3.py -v 2 -safescene off",
+    "reportWhenAvailable": "max-rule-adapter-pymxs-l3@0.1.0"
+  },
+  "boundary": {
+    "mutation": "no_3dsmax_runtime_invoked",
+    "sceneWrites": 0,
+    "assetWrites": 0,
+    "productionWrites": 0
+  },
+  "nextActions": [
+    {
+      "id": "run-pymxs-l3-smoke",
+      "state": "ready_after_operator_opt_in",
+      "owner": "tool-ta",
+      "command": "python <repo>\\dcc-hosts\\3dsmax-rule-adapter\\scripts\\run_l3_smoke.py --run-runtime",
+      "reason": "3ds Max batch exists, but heartbeat does not launch it because the process can require license/UI/session state."
+    }
+  ],
+  "reviewerClaims": [
+    "The pymxs collector and 3dsmaxbatch launcher are present and compile in normal Python.",
+    "The machine can discover 3dsmaxbatch.exe.",
+    "No 3ds Max scene, production asset or engine data is mutated unless the operator explicitly runs the L3 batch smoke."
+  ]
+}

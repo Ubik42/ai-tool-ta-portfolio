@@ -1,0 +1,77 @@
+{
+  "reportVersion": "impact-rollout-incident-exception-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "rollout_incident_exception_rehearsal",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.10.0",
+    "asset-dependency-impact@1.6.0",
+    "impact-rollout-wave-planner@0.1.0",
+    "impact-incident-replay-notebook@0.1.0",
+    "impact-owner-exception-ledger@0.1.0",
+    "impact-audit-export-diff@0.2.0"
+  ],
+  "rolloutWavePlanner": {
+    "summary": {
+      "totalWaves": 6,
+      "readyWaves": 2,
+      "watchWaves": 2,
+      "ownerHoldWaves": 2,
+      "blockedWaves": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Rollout is staged by public baseline, dry-run rollback preview, watch lanes, and owner-held lanes instead of flattening the release into one Ready state."
+  },
+  "incidentReplayNotebook": {
+    "summary": {
+      "totalCases": 6,
+      "replayedCases": 2,
+      "openQuestionCases": 2,
+      "ownerHoldCases": 2,
+      "blockedCases": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Incidents are replayed as false alarms, open questions, or owner-held cases before any watch lane is promoted."
+  },
+  "ownerExceptionLedger": {
+    "summary": {
+      "totalExceptions": 6,
+      "acceptedExceptions": 2,
+      "requestedExceptions": 2,
+      "expiredExceptions": 2,
+      "blockedExceptions": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Owner exceptions are scoped, expiring records rather than implicit authority to roll out private endpoint or unfreeze behavior."
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 7,
+      "unchangedRows": 2,
+      "addedRows": 3,
+      "changedRows": 2,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "R8.16 export schema changes are visible while private exposure and live write boundaries remain unchanged."
+  },
+  "guardrails": [
+    "Rollout wave planner is a review plan, not production rollout authority.",
+    "Incident replay notebook records questions and owner holds without production mutation.",
+    "Expired owner exceptions cannot justify rollout or unfreeze claims.",
+    "Any private value exposure or non-zero live write blocks the package."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-16-rollout-incident-full.png",
+    "assets/task-orchestrator-r8-16-mobile-tall.png",
+    "assets/task-orchestrator-r8-16-exported-report.json",
+    "assets/portfolio-case-study-r8-16-exported-report.json"
+  ]
+}

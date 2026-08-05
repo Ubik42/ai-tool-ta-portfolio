@@ -1,0 +1,1 @@
+auroraview[qt]>=0.5.10

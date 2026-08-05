@@ -1,0 +1,708 @@
+{
+  "reportVersion": "impact-reviewer-acceptance-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "packet_diff_exception_acceptance",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.15.0",
+    "asset-dependency-impact@1.11.0",
+    "impact-locked-packet-diff-viewer@0.1.0",
+    "impact-exception-burn-down-dashboard@0.1.0",
+    "impact-reviewer-acceptance-replay@0.1.0",
+    "impact-audit-export-diff@0.7.0"
+  ],
+  "lockedPacketDiffViewer": {
+    "reportVersion": "impact-locked-packet-diff-viewer@0.1.0",
+    "viewerId": "packetdiffviewer_1qk2uol",
+    "mode": "locked_packet_diff_viewer",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "unchangedRows": 2,
+      "changedRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Accept changed public packet rows before freezing the R8.21 reviewer package."
+    },
+    "rows": [
+      {
+        "id": "packet-diff-lock-public-package-report",
+        "label": "Lock public package report unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "lockedEntryId": "lock-public-package-report",
+        "path": "assets/portfolio-case-study-r8-20-exported-report.json",
+        "beforeVersion": "portfolio-case-study-report@2.7.0",
+        "afterVersion": "portfolio-case-study-report@2.7.0",
+        "beforeChecksum": "lock_gp44wk",
+        "afterChecksum": "lock_gp44wk",
+        "diffReason": "locked public artifact stayed byte-stable between R8.20 packet export and R8.21 replay",
+        "reviewerAction": "accept without reopening owner review",
+        "owner": "Portfolio TA",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-public-package-report",
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep unchanged locked artifact in the accepted reviewer packet."
+      },
+      {
+        "id": "packet-diff-lock-task-report",
+        "label": "Lock task orchestrator report unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "lockedEntryId": "lock-task-report",
+        "path": "assets/task-orchestrator-r8-20-exported-report.json",
+        "beforeVersion": "task-orchestrator-report@1.14.0",
+        "afterVersion": "task-orchestrator-report@1.14.0",
+        "beforeChecksum": "lock_1759p48",
+        "afterChecksum": "lock_1759p48",
+        "diffReason": "locked public artifact stayed byte-stable between R8.20 packet export and R8.21 replay",
+        "reviewerAction": "accept without reopening owner review",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-task-report",
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep unchanged locked artifact in the accepted reviewer packet."
+      },
+      {
+        "id": "packet-diff-lock-decision-screenshot",
+        "label": "Decision screenshot changed needs diff review",
+        "state": "changed",
+        "gate": "Review",
+        "lockedEntryId": "lock-decision-screenshot",
+        "path": "assets/task-orchestrator-r8-20-evidence-lockfile-full.png",
+        "beforeVersion": "screenshot@r8-20",
+        "afterVersion": "impact-release-hardening-package@0.2.0",
+        "beforeChecksum": "lock_rs44k",
+        "afterChecksum": "packetdiff_1xsiqsu",
+        "diffReason": "fixture now carries packet diff, exception burn-down, and reviewer acceptance replay reports",
+        "reviewerAction": "review changed public artifact before accepting the packet",
+        "owner": "Portfolio TA",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-decision-screenshot",
+          "evidencecompactor_123vzg9"
+        ],
+        "nextAction": "Keep changed artifact in Review until the reviewer accepts the visual and JSON diff."
+      },
+      {
+        "id": "packet-diff-lock-fixture",
+        "label": "Fixture package changed needs diff review",
+        "state": "changed",
+        "gate": "Review",
+        "lockedEntryId": "lock-fixture",
+        "path": "fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json",
+        "beforeVersion": "impact-release-hardening-package@0.1.0",
+        "afterVersion": "impact-release-hardening-package@0.2.0",
+        "beforeChecksum": "lock_jjlxkt",
+        "afterChecksum": "packetdiff_1mcgmnt",
+        "diffReason": "fixture now carries packet diff, exception burn-down, and reviewer acceptance replay reports",
+        "reviewerAction": "review changed public artifact before accepting the packet",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-fixture",
+          "evidencecompactor_123vzg9"
+        ],
+        "nextAction": "Keep changed artifact in Review until the reviewer accepts the visual and JSON diff."
+      },
+      {
+        "id": "packet-diff-lock-endpoint-route",
+        "label": "Endpoint route lock owner-held remains owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "lockedEntryId": "lock-endpoint-route",
+        "path": "private://endpoint-route-policy",
+        "beforeVersion": "redacted-owner-policy",
+        "afterVersion": "redacted-owner-policy",
+        "beforeChecksum": "lock_184wda6",
+        "afterChecksum": "lock_184wda6",
+        "diffReason": "private owner-held packet entry cannot be expanded into public diff",
+        "reviewerAction": "require owner public replacement reference",
+        "owner": "Platform Adapter Owner",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-endpoint-route",
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep owner-held entry redacted until owner supplies a public replacement."
+      },
+      {
+        "id": "packet-diff-lock-owner-unfreeze",
+        "label": "Emergency unfreeze lock owner-held remains owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "lockedEntryId": "lock-owner-unfreeze",
+        "path": "private://emergency-unfreeze-approval",
+        "beforeVersion": "redacted-owner-approval",
+        "afterVersion": "redacted-owner-approval",
+        "beforeChecksum": "lock_1g9296o",
+        "afterChecksum": "lock_1g9296o",
+        "diffReason": "private owner-held packet entry cannot be expanded into public diff",
+        "reviewerAction": "require owner public replacement reference",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-owner-unfreeze",
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep owner-held entry redacted until owner supplies a public replacement."
+      }
+    ],
+    "guardrails": [
+      "Packet diff compares public artifact identity, version, and checksum only.",
+      "Owner-held private entries remain redacted and cannot be expanded by the viewer.",
+      "Changed public rows require reviewer acceptance before becoming locked."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-21-packet-diff-exception-acceptance.json",
+      "assets/task-orchestrator-r8-21-exported-report.json"
+    ]
+  },
+  "exceptionBurnDownDashboard": {
+    "reportVersion": "impact-exception-burn-down-dashboard@0.1.0",
+    "dashboardId": "exceptionburndown_g4ppkl",
+    "mode": "exception_burn_down_dashboard",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalExceptions": 6,
+      "closedExceptions": 2,
+      "needsOwnerExceptions": 2,
+      "deferredExceptions": 2,
+      "blockedExceptions": 0,
+      "remainingExceptions": 4,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Burn down owner-needed and deferred exceptions before claiming production readiness."
+    },
+    "lanes": [
+      {
+        "id": "burndown-closeout-public-baseline",
+        "label": "Close public baseline exception",
+        "state": "closed",
+        "gate": "Ready",
+        "exceptionRef": "exception-public-package-baseline",
+        "owner": "Portfolio TA",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-08-02T18:00:00+08:00",
+        "burnDownSignal": "exception count reduced and closeout evidence attached",
+        "remainingWork": "none",
+        "requiredEvidence": "lock-public-package-report",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-public-baseline",
+          "lock-public-package-report",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Keep baseline closeout attached to public package release note."
+      },
+      {
+        "id": "burndown-closeout-rollback-preview",
+        "label": "Close rollback preview exception",
+        "state": "closed",
+        "gate": "Ready",
+        "exceptionRef": "exception-rollback-preview",
+        "owner": "Release TA",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-08-02T18:00:00+08:00",
+        "burnDownSignal": "exception count reduced and closeout evidence attached",
+        "remainingWork": "none",
+        "requiredEvidence": "lock-task-report",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-rollback-preview",
+          "lock-task-report",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Keep rollback preview closeout dry-run only."
+      },
+      {
+        "id": "burndown-closeout-monitor-watch",
+        "label": "Monitor watch closeout needs owner",
+        "state": "needs_owner",
+        "gate": "Review",
+        "exceptionRef": "exception-monitor-watch-refresh",
+        "owner": "Platform TA",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-08-01T18:00:00+08:00",
+        "burnDownSignal": "waiting for owner response before burn-down can continue",
+        "remainingWork": "owner response plus reviewer acceptance",
+        "requiredEvidence": "lock-decision-screenshot",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-monitor-watch",
+          "lock-decision-screenshot",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Attach monitor refresh owner response before closing exception."
+      },
+      {
+        "id": "burndown-closeout-security-alias",
+        "label": "Security alias closeout needs owner",
+        "state": "needs_owner",
+        "gate": "Review",
+        "exceptionRef": "exception-security-alias-counterclaim",
+        "owner": "Security TA",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-08-01T18:30:00+08:00",
+        "burnDownSignal": "waiting for owner response before burn-down can continue",
+        "remainingWork": "owner response plus reviewer acceptance",
+        "requiredEvidence": "lock-fixture",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-security-alias",
+          "lock-fixture",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Attach security owner response before closing exception."
+      },
+      {
+        "id": "burndown-closeout-endpoint-route",
+        "label": "Endpoint route closeout deferred",
+        "state": "deferred",
+        "gate": "Review",
+        "exceptionRef": "exception-endpoint-route-owner-refresh",
+        "owner": "Platform Adapter Owner",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-07-31T18:00:00+08:00",
+        "burnDownSignal": "deferred until public replacement evidence exists",
+        "remainingWork": "public replacement reference plus closeout replay",
+        "requiredEvidence": "lock-endpoint-route",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-endpoint-route",
+          "lock-endpoint-route",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Keep endpoint route deferred until public replacement ref exists."
+      },
+      {
+        "id": "burndown-closeout-owner-unfreeze",
+        "label": "Emergency unfreeze closeout deferred",
+        "state": "deferred",
+        "gate": "Review",
+        "exceptionRef": "exception-owner-unfreeze-closeout",
+        "owner": "Release TA",
+        "openedAt": "2026-07-31T10:00:00+08:00",
+        "dueAt": "2026-07-31T19:00:00+08:00",
+        "burnDownSignal": "deferred until public replacement evidence exists",
+        "remainingWork": "public replacement reference plus closeout replay",
+        "requiredEvidence": "lock-owner-unfreeze",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeout-owner-unfreeze",
+          "lock-owner-unfreeze",
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Keep emergency unfreeze deferred until owner closeout is attached."
+      }
+    ],
+    "trend": [
+      {
+        "label": "Open",
+        "closedExceptions": 0,
+        "needsOwnerExceptions": 2,
+        "deferredExceptions": 2,
+        "remainingExceptions": 6
+      },
+      {
+        "label": "After closeout",
+        "closedExceptions": 2,
+        "needsOwnerExceptions": 2,
+        "deferredExceptions": 2,
+        "remainingExceptions": 4
+      },
+      {
+        "label": "Owner response due",
+        "closedExceptions": 2,
+        "needsOwnerExceptions": 2,
+        "deferredExceptions": 2,
+        "remainingExceptions": 4
+      },
+      {
+        "label": "Target",
+        "closedExceptions": 6,
+        "needsOwnerExceptions": 0,
+        "deferredExceptions": 0,
+        "remainingExceptions": 0
+      }
+    ],
+    "guardrails": [
+      "Burn-down dashboard tracks remaining review responsibility, not production permission.",
+      "Deferred private-route exceptions must stay visible until a public replacement reference exists.",
+      "Burn-down simulation emits zero live writes."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-21-packet-diff-exception-acceptance.json",
+      "assets/task-orchestrator-r8-21-exported-report.json"
+    ]
+  },
+  "reviewerAcceptanceReplay": {
+    "reportVersion": "impact-reviewer-acceptance-replay@0.1.0",
+    "replayId": "acceptancereplay_1do593x",
+    "mode": "reviewer_acceptance_replay",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalReplays": 6,
+      "acceptedReplays": 2,
+      "replayRequiredReplays": 2,
+      "ownerHoldReplays": 2,
+      "blockedReplays": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Replay changed-row acceptance and owner replacements before locking the next packet."
+    },
+    "items": [
+      {
+        "id": "acceptance-replay-lock-public-package-report",
+        "label": "Lock public package report unchanged accepted",
+        "state": "accepted",
+        "gate": "Ready",
+        "packetEntryId": "lock-public-package-report",
+        "reviewer": "Portfolio TA",
+        "acceptanceSource": "locked packet row plus unchanged checksum",
+        "replayResult": "acceptance can be replayed from lockfile without reopening exception",
+        "requiredInput": "locked artifact checksum",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-public-package-report",
+          "lock-public-package-report"
+        ],
+        "nextAction": "Keep replay receipt attached to public package manifest."
+      },
+      {
+        "id": "acceptance-replay-lock-task-report",
+        "label": "Lock task orchestrator report unchanged accepted",
+        "state": "accepted",
+        "gate": "Ready",
+        "packetEntryId": "lock-task-report",
+        "reviewer": "Release TA",
+        "acceptanceSource": "locked packet row plus unchanged checksum",
+        "replayResult": "acceptance can be replayed from lockfile without reopening exception",
+        "requiredInput": "locked artifact checksum",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-task-report",
+          "lock-task-report"
+        ],
+        "nextAction": "Keep replay receipt attached to public package manifest."
+      },
+      {
+        "id": "acceptance-replay-lock-decision-screenshot",
+        "label": "Decision screenshot changed needs diff review requires replay",
+        "state": "replay_required",
+        "gate": "Review",
+        "packetEntryId": "lock-decision-screenshot",
+        "reviewer": "Portfolio TA",
+        "acceptanceSource": "changed public artifact diff",
+        "replayResult": "reviewer must accept the R8.21 diff before the row can be locked",
+        "requiredInput": "lock-decision-screenshot",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-decision-screenshot",
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Replay reviewer acceptance after changed artifact review is recorded."
+      },
+      {
+        "id": "acceptance-replay-lock-fixture",
+        "label": "Fixture package changed needs diff review requires replay",
+        "state": "replay_required",
+        "gate": "Review",
+        "packetEntryId": "lock-fixture",
+        "reviewer": "Release TA",
+        "acceptanceSource": "changed public artifact diff",
+        "replayResult": "reviewer must accept the R8.21 diff before the row can be locked",
+        "requiredInput": "lock-fixture",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-fixture",
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Replay reviewer acceptance after changed artifact review is recorded."
+      },
+      {
+        "id": "acceptance-replay-lock-endpoint-route",
+        "label": "Endpoint route lock owner-held remains owner-held owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "packetEntryId": "lock-endpoint-route",
+        "reviewer": "Platform Adapter Owner",
+        "acceptanceSource": "redacted owner-held packet entry",
+        "replayResult": "acceptance cannot be replayed publicly without owner replacement reference",
+        "requiredInput": "owner public replacement reference",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-endpoint-route",
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Keep acceptance replay owner-held until public replacement evidence exists."
+      },
+      {
+        "id": "acceptance-replay-lock-owner-unfreeze",
+        "label": "Emergency unfreeze lock owner-held remains owner-held owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "packetEntryId": "lock-owner-unfreeze",
+        "reviewer": "Release TA",
+        "acceptanceSource": "redacted owner-held packet entry",
+        "replayResult": "acceptance cannot be replayed publicly without owner replacement reference",
+        "requiredInput": "owner public replacement reference",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packet-diff-lock-owner-unfreeze",
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Keep acceptance replay owner-held until public replacement evidence exists."
+      }
+    ],
+    "guardrails": [
+      "Reviewer acceptance replay proves acceptance can be reproduced from public evidence.",
+      "Changed public rows require a fresh reviewer action before acceptance is replayed.",
+      "Owner-held rows cannot be replayed publicly without replacement evidence."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-21-packet-diff-exception-acceptance.json",
+      "assets/task-orchestrator-r8-21-exported-report.json"
+    ]
+  },
+  "auditExportDiff": {
+    "reportVersion": "impact-audit-export-diff@0.7.0",
+    "diffId": "exportdiff_1t0mf9y",
+    "mode": "audit_export_diff",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 11,
+      "unchangedRows": 5,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.21 packet diff, exception burn-down, and acceptance replay are accepted by reviewers."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "label": "Report version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.14.0",
+        "after": "task-orchestrator-report@1.15.0",
+        "diffReason": "R8.21 adds locked packet diff viewer, exception burn-down dashboard, and reviewer acceptance replay",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packetdiffviewer_1qk2uol"
+        ],
+        "nextAction": "Keep report version diff in every exported package."
+      },
+      {
+        "id": "export-diff-impact-version",
+        "label": "Impact report version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.10.0",
+        "after": "asset-dependency-impact@1.11.0",
+        "diffReason": "impact schema now includes three R8.21 reviewer replay reports",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Use impact version as machine-readable schema boundary."
+      },
+      {
+        "id": "export-diff-audit-version",
+        "label": "Audit diff version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@0.6.0",
+        "after": "impact-audit-export-diff@0.7.0",
+        "diffReason": "audit export diff now records R8.21 schema additions",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptancereplay_1do593x"
+        ],
+        "nextAction": "Keep audit diff version explicit for package review."
+      },
+      {
+        "id": "export-diff-locked-packet-diff-viewer",
+        "label": "Locked packet diff viewer was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.lockedPacketDiffViewer",
+        "before": "missing",
+        "after": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+        "diffReason": "reviewers need a locked packet diff before accepting R8.21 evidence",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packetdiffviewer_1qk2uol"
+        ],
+        "nextAction": "Keep changed rows in Review until reviewer action is replayed."
+      },
+      {
+        "id": "export-diff-exception-burndown",
+        "label": "Exception burn-down dashboard was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.exceptionBurnDownDashboard",
+        "before": "missing",
+        "after": "6 exceptions, 2 closed, 4 remaining",
+        "diffReason": "reviewers need exception remaining-work state before production readiness is claimed",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Keep owner-needed and deferred exceptions visible in burn-down."
+      },
+      {
+        "id": "export-diff-acceptance-replay",
+        "label": "Reviewer acceptance replay was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.reviewerAcceptanceReplay",
+        "before": "missing",
+        "after": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+        "diffReason": "reviewer acceptance must be reproducible from public packet evidence",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptancereplay_1do593x"
+        ],
+        "nextAction": "Replay changed-row acceptance before locking the next packet."
+      },
+      {
+        "id": "export-diff-evidence-compactor",
+        "label": "Release evidence compactor remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.releaseEvidenceCompactor",
+        "before": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+        "after": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+        "diffReason": "R8.21 consumes the compacted packet but does not change compaction rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "evidencecompactor_123vzg9"
+        ],
+        "nextAction": "Keep compactor as the baseline for packet diff."
+      },
+      {
+        "id": "export-diff-reviewer-lockfile",
+        "label": "Reviewer packet lockfile remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reviewerPacketLockfile",
+        "before": "6 entries, 2 locked, 2 changed, 2 owner-held",
+        "after": "6 entries, 2 locked, 2 changed, 2 owner-held",
+        "diffReason": "R8.21 diff viewer reads the lockfile without rewriting it",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep lockfile as immutable R8.20 baseline."
+      },
+      {
+        "id": "export-diff-exception-closeout",
+        "label": "Production readiness exception closeout remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.productionReadinessExceptionCloseout",
+        "before": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+        "after": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+        "diffReason": "R8.21 burn-down consumes closeout state without changing the source closeout",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Use closeout as source of truth for burn-down."
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "label": "Private boundary remains unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "diffReason": "R8.21 adds diff, burn-down, and replay logic without exposing private values",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-endpoint-route",
+          "packetdiffviewer_1qk2uol",
+          "disputereplay_f37nu8",
+          "ownerexceptions_1yeedp4"
+        ],
+        "nextAction": "Keep private exposure diff at zero."
+      },
+      {
+        "id": "export-diff-live-writes",
+        "label": "Live write boundary remains unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "diffReason": "packet diff, exception burn-down, and acceptance replay stay dry-run",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptancereplay_1do593x",
+          "rollbackjudge_oehpls"
+        ],
+        "nextAction": "Block the export if liveWrites becomes non-zero."
+      }
+    ],
+    "guardrails": [
+      "Audit export diff records schema and evidence changes explicitly.",
+      "Private exposure and live write boundaries must remain unchanged.",
+      "Added R8.21 reports stay Review until changed packet rows, remaining exceptions, and owner-held replay items close."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-21-packet-diff-exception-acceptance.json",
+      "assets/task-orchestrator-r8-21-exported-report.json"
+    ]
+  },
+  "guardrails": [
+    "Public packet diff may compare artifact identity, version, and checksum only.",
+    "Exception burn-down may show remaining owner work but cannot grant production readiness.",
+    "Reviewer acceptance replay may reproduce public acceptance but cannot synthesize owner approval.",
+    "The package records zero live writes and exposes zero private fields."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-21-acceptance-replay-full.png",
+    "assets/task-orchestrator-r8-21-exported-report.json",
+    "assets/portfolio-case-study-r8-21-exported-report.json"
+  ]
+}

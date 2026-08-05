@@ -1,0 +1,89 @@
+{
+  "reportVersion": "maya-asset-protocol-showcase@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 17:13:16",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "fixture": {
+    "ok": true,
+    "root": "r9_7_asset_protocol_fixture1",
+    "nodes": [
+      "hero_prop_body1",
+      "hero_prop_socket1"
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "role": "synthetic_fixture",
+      "platform": "pc",
+      "lod": "lod0",
+      "budget": {
+        "triangles": 12000,
+        "textures": 4
+      }
+    }
+  },
+  "inspection": {
+    "ok": true,
+    "rows": [
+      {
+        "node": "hero_prop_body1",
+        "has_protocol": true,
+        "raw": "{\"budget\": {\"textures\": 4, \"triangles\": 12000}, \"collision\": \"simple\", \"evidence\": {\"source\": \"r9.7 dcc showcase runbook\"}, \"lod\": \"lod0\", \"platform\": \"pc\", \"role\": \"showcase_publish_target\", \"schema\": \"asset-protocol@dcc-r9\"}",
+        "payload": {
+          "budget": {
+            "textures": 4,
+            "triangles": 12000
+          },
+          "collision": "simple",
+          "evidence": {
+            "source": "r9.7 dcc showcase runbook"
+          },
+          "lod": "lod0",
+          "platform": "pc",
+          "role": "showcase_publish_target",
+          "schema": "asset-protocol@dcc-r9"
+        }
+      },
+      {
+        "node": "hero_prop_socket1",
+        "has_protocol": true,
+        "raw": "{\"budget\": {\"textures\": 4, \"triangles\": 12000}, \"collision\": \"simple\", \"evidence\": {\"source\": \"r9.7 dcc showcase runbook\"}, \"lod\": \"lod0\", \"platform\": \"pc\", \"role\": \"showcase_publish_target\", \"schema\": \"asset-protocol@dcc-r9\"}",
+        "payload": {
+          "budget": {
+            "textures": 4,
+            "triangles": 12000
+          },
+          "collision": "simple",
+          "evidence": {
+            "source": "r9.7 dcc showcase runbook"
+          },
+          "lod": "lod0",
+          "platform": "pc",
+          "role": "showcase_publish_target",
+          "schema": "asset-protocol@dcc-r9"
+        }
+      }
+    ],
+    "count": 2
+  },
+  "gate": "Ready"
+}

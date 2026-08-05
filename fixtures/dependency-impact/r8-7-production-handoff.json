@@ -1,0 +1,126 @@
+{
+  "reportVersion": "impact-production-handoff-package@0.1.0",
+  "generatedAt": "2026-07-30T23:59:59+08:00",
+  "sourceScenarioId": "dependency-impact-r8-3-vehicle-trailer-release",
+  "sourceContractFixture": "fixtures/dependency-impact/r8-6-adapter-contract-replay.json",
+  "mode": "production_handoff_review",
+  "mutationAllowed": false,
+  "handoffDiff": {
+    "reportVersion": "impact-production-handoff-diff@0.1.0",
+    "baselinePacket": "impact-adapter-contract-replay@0.1.0",
+    "candidatePacket": "impact-external-receipt-sync@0.1.0",
+    "summary": {
+      "totalRows": 4,
+      "readyRows": 1,
+      "reviewRows": 3,
+      "blockedRows": 1,
+      "changedFields": 4,
+      "gate": "Review"
+    },
+    "rows": [
+      {
+        "sourceVariantId": "variant-trailer-lod-tight-threshold",
+        "targetSystem": "asset platform Task",
+        "owner": "Vehicle TA",
+        "field": "taskReceipt.comment",
+        "before": "mock payload only",
+        "after": "held_for_adapter_owner_review",
+        "status": "changed",
+        "gate": "Review"
+      },
+      {
+        "sourceVariantId": "variant-trailer-collision-accepted-texture-pending",
+        "targetSystem": "asset platform Task",
+        "owner": "Physics TA",
+        "field": "taskReceipt.comment",
+        "before": "mock payload only",
+        "after": "held_for_adapter_owner_review",
+        "status": "changed",
+        "gate": "Review"
+      },
+      {
+        "sourceVariantId": "variant-trailer-texture-platform-regression",
+        "targetSystem": "Release Queue",
+        "owner": "Texture TA",
+        "field": "releaseQueue.state",
+        "before": "mock payload only",
+        "after": "skip_blocked_until_owner_fix",
+        "status": "held",
+        "gate": "Review"
+      },
+      {
+        "sourceVariantId": "variant-trailer-release-ready-after-closure",
+        "targetSystem": "Publish Ledger",
+        "owner": "Release TA",
+        "field": "receiptDraft.status",
+        "before": "none",
+        "after": "draft_ready",
+        "status": "added",
+        "gate": "Ready"
+      }
+    ]
+  },
+  "adapterOwnerApproval": {
+    "reportVersion": "impact-adapter-owner-approval@0.1.0",
+    "approvalState": "ready_to_review",
+    "summary": {
+      "totalChecks": 5,
+      "passedChecks": 3,
+      "reviewChecks": 2,
+      "blockedChecks": 0,
+      "requiredApprovals": 3,
+      "acceptedApprovals": 0,
+      "gate": "Review"
+    },
+    "requestedApprovals": [
+      {
+        "owner": "Platform Adapter Owner",
+        "scope": "endpoint and command contract",
+        "state": "requested"
+      },
+      {
+        "owner": "Release TA",
+        "scope": "handoff diff acceptance",
+        "state": "requested"
+      },
+      {
+        "owner": "Security TA",
+        "scope": "credential scope",
+        "state": "requested"
+      }
+    ]
+  },
+  "heldPayloadRetryLedger": {
+    "reportVersion": "impact-held-payload-retry-ledger@0.1.0",
+    "summary": {
+      "totalEntries": 3,
+      "retryReady": 1,
+      "waitingOwner": 1,
+      "blocked": 1,
+      "gate": "Review"
+    },
+    "entries": [
+      {
+        "sourceVariantId": "variant-trailer-lod-tight-threshold",
+        "state": "waiting_owner",
+        "requiredApprovalIds": ["approval-endpoint-owner", "approval-handoff-diff-reviewed"]
+      },
+      {
+        "sourceVariantId": "variant-trailer-collision-accepted-texture-pending",
+        "state": "retry_ready",
+        "requiredApprovalIds": ["approval-endpoint-owner"]
+      },
+      {
+        "sourceVariantId": "variant-trailer-texture-platform-regression",
+        "state": "blocked",
+        "requiredApprovalIds": ["approval-blocked-skip-policy", "approval-credential-scope"]
+      }
+    ]
+  },
+  "guardrails": [
+    "This fixture proves production handoff review shape only; it does not write external task comments or publish receipts.",
+    "Owner approval is requested but not accepted in the public package.",
+    "Held payloads can retry only after adapter owner approval; blocked payloads require fixture repair first."
+  ]
+}
+

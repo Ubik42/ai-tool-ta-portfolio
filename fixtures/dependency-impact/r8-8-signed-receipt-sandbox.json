@@ -1,0 +1,76 @@
+{
+  "reportVersion": "impact-signed-receipt-package@0.1.0",
+  "generatedAt": "2026-07-30T23:59:59+08:00",
+  "mode": "signed_receipt_sandbox_review",
+  "mutationAllowed": false,
+  "sourceReports": [
+    "impact-production-handoff-diff@0.1.0",
+    "impact-adapter-owner-approval@0.1.0",
+    "impact-held-payload-retry-ledger@0.1.0"
+  ],
+  "signedReceiptSandbox": {
+    "reportVersion": "impact-signed-receipt-sandbox@0.1.0",
+    "mode": "signed_receipt_sandbox",
+    "summary": {
+      "totalReceipts": 4,
+      "signedReceipts": 3,
+      "heldReceipts": 1,
+      "rejectedReceipts": 0,
+      "replayableReceipts": 3,
+      "gate": "Review"
+    },
+    "receiptScopes": [
+      "no-write receipt boundary",
+      "handoff field diff acceptance",
+      "retry-ready held payload",
+      "blocked payload rollback hold"
+    ],
+    "guardrails": [
+      "All signatures are deterministic public evidence, not production credentials.",
+      "writeMode remains sandbox_only for every receipt.",
+      "Held rollback receipts cannot be replayed until owner approval and fixture repair close."
+    ]
+  },
+  "productionAdapterSmokeHarness": {
+    "reportVersion": "impact-production-adapter-smoke@0.1.0",
+    "adapterName": "receipt-sync-adapter",
+    "mutationAllowed": false,
+    "summary": {
+      "totalChecks": 5,
+      "passedChecks": 4,
+      "reviewChecks": 1,
+      "failedChecks": 0,
+      "endpointsCovered": 3,
+      "writeAttempts": 0,
+      "gate": "Review"
+    },
+    "commandPreview": "receipt-sync-adapter smoke --fixture fixtures/dependency-impact/r8-8-signed-receipt-sandbox.json --dry-run --no-write",
+    "reviewOnlyCheck": "Credential scope is still external"
+  },
+  "rollbackReceiptVerification": {
+    "reportVersion": "impact-rollback-receipt-verification@0.1.0",
+    "mode": "rollback_receipt_verification",
+    "summary": {
+      "totalRollbacks": 3,
+      "verifiedRollbacks": 2,
+      "waitingOwner": 1,
+      "blockedRollbacks": 0,
+      "gate": "Review"
+    },
+    "verifiedPaths": [
+      "no-write boundary rollback",
+      "retry-ready payload rollback"
+    ],
+    "waitingOwnerPath": "waiting-owner payload rollback"
+  },
+  "businessValue": [
+    "Signed sandbox receipts prove a receipt can be reviewed and replayed without production credentials.",
+    "The smoke harness proves adapter shape and no-write behavior before any live endpoint is enabled.",
+    "Rollback verification proves retry failure returns to the ledger instead of silently advancing publish state."
+  ],
+  "guardrails": [
+    "No production endpoint URL is stored in the public package.",
+    "No secret, token, or service identity is represented in this fixture.",
+    "A blocked payload cannot become replayable through rollback verification alone."
+  ]
+}

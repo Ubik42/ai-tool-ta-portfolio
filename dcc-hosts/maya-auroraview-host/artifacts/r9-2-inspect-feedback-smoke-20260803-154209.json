@@ -1,0 +1,154 @@
+{
+  "fixture": {
+    "ok": true,
+    "root": "ai_tool_ta_fixture1",
+    "nodes": [
+      "hero_prop_body1",
+      "hero_prop_socket1"
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "role": "synthetic_fixture",
+      "platform": "pc",
+      "lod": "lod0",
+      "budget": {
+        "triangles": 12000,
+        "textures": 4
+      }
+    }
+  },
+  "applied": {
+    "ok": true,
+    "changed": [
+      {
+        "node": "hero_prop_body1",
+        "attr": "aiToolTaProtocol"
+      },
+      {
+        "node": "hero_prop_socket1",
+        "attr": "aiToolTaProtocol"
+      }
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "sourceModule": "asset-protocol-workbench",
+      "asset": {
+        "id": "vehicle_trailer",
+        "name": "Vehicle Trailer"
+      },
+      "readiness": {
+        "status": "Review",
+        "score": 78
+      },
+      "encodedPayload": {
+        "assetId": "vehicle_trailer",
+        "customAttrs": {
+          "LB_platform": "PC",
+          "LB_lod_count": 3
+        },
+        "uv3": {
+          "uClass": 0.44,
+          "vMask": 9,
+          "maskBinary": "1001"
+        },
+        "delivery": {
+          "platform": "PC",
+          "lodCount": 3,
+          "materialSlots": 4,
+          "textureSets": 4
+        }
+      },
+      "validationSummary": {
+        "errors": 0,
+        "warnings": 2,
+        "total": 6
+      }
+    }
+  },
+  "inspect": {
+    "ok": true,
+    "rows": [
+      {
+        "node": "hero_prop_body1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"vehicle_trailer\", \"name\": \"Vehicle Trailer\"}, \"encodedPayload\": {\"assetId\": \"vehicle_trailer\", \"customAttrs\": {\"LB_lod_count\": 3, \"LB_platform\": \"PC\"}, \"delivery\": {\"lodCount\": 3, \"materialSlots\": 4, \"platform\": \"PC\", \"textureSets\": 4}, \"uv3\": {\"maskBinary\": \"1001\", \"uClass\": 0.44, \"vMask\": 9}}, \"readiness\": {\"score\": 78, \"status\": \"Review\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 0, \"total\": 6, \"warnings\": 2}}",
+        "payload": {
+          "asset": {
+            "id": "vehicle_trailer",
+            "name": "Vehicle Trailer"
+          },
+          "encodedPayload": {
+            "assetId": "vehicle_trailer",
+            "customAttrs": {
+              "LB_lod_count": 3,
+              "LB_platform": "PC"
+            },
+            "delivery": {
+              "lodCount": 3,
+              "materialSlots": 4,
+              "platform": "PC",
+              "textureSets": 4
+            },
+            "uv3": {
+              "maskBinary": "1001",
+              "uClass": 0.44,
+              "vMask": 9
+            }
+          },
+          "readiness": {
+            "score": 78,
+            "status": "Review"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 0,
+            "total": 6,
+            "warnings": 2
+          }
+        }
+      },
+      {
+        "node": "hero_prop_socket1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"vehicle_trailer\", \"name\": \"Vehicle Trailer\"}, \"encodedPayload\": {\"assetId\": \"vehicle_trailer\", \"customAttrs\": {\"LB_lod_count\": 3, \"LB_platform\": \"PC\"}, \"delivery\": {\"lodCount\": 3, \"materialSlots\": 4, \"platform\": \"PC\", \"textureSets\": 4}, \"uv3\": {\"maskBinary\": \"1001\", \"uClass\": 0.44, \"vMask\": 9}}, \"readiness\": {\"score\": 78, \"status\": \"Review\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 0, \"total\": 6, \"warnings\": 2}}",
+        "payload": {
+          "asset": {
+            "id": "vehicle_trailer",
+            "name": "Vehicle Trailer"
+          },
+          "encodedPayload": {
+            "assetId": "vehicle_trailer",
+            "customAttrs": {
+              "LB_lod_count": 3,
+              "LB_platform": "PC"
+            },
+            "delivery": {
+              "lodCount": 3,
+              "materialSlots": 4,
+              "platform": "PC",
+              "textureSets": 4
+            },
+            "uv3": {
+              "maskBinary": "1001",
+              "uClass": 0.44,
+              "vMask": 9
+            }
+          },
+          "readiness": {
+            "score": 78,
+            "status": "Review"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 0,
+            "total": 6,
+            "warnings": 2
+          }
+        }
+      }
+    ],
+    "count": 2
+  }
+}

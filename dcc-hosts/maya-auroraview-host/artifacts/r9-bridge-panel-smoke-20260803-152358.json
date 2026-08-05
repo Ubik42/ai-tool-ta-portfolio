@@ -1,0 +1,56 @@
+{
+  "fixture": {
+    "ok": true,
+    "root": "ai_tool_ta_fixture1",
+    "nodes": [
+      "hero_prop_body1",
+      "hero_prop_socket1"
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "role": "synthetic_fixture",
+      "platform": "pc",
+      "lod": "lod0",
+      "budget": {
+        "triangles": 12000,
+        "textures": 4
+      }
+    }
+  },
+  "inspect": {
+    "ok": true,
+    "rows": [
+      {
+        "node": "hero_prop_body1",
+        "has_protocol": true,
+        "raw": "{\"budget\": {\"textures\": 4, \"triangles\": 12000}, \"lod\": \"lod0\", \"platform\": \"pc\", \"role\": \"synthetic_fixture\", \"schema\": \"asset-protocol@dcc-r9\"}",
+        "payload": {
+          "budget": {
+            "textures": 4,
+            "triangles": 12000
+          },
+          "lod": "lod0",
+          "platform": "pc",
+          "role": "synthetic_fixture",
+          "schema": "asset-protocol@dcc-r9"
+        }
+      },
+      {
+        "node": "hero_prop_socket1",
+        "has_protocol": true,
+        "raw": "{\"budget\": {\"textures\": 4, \"triangles\": 12000}, \"lod\": \"lod0\", \"platform\": \"pc\", \"role\": \"synthetic_fixture\", \"schema\": \"asset-protocol@dcc-r9\"}",
+        "payload": {
+          "budget": {
+            "textures": 4,
+            "triangles": 12000
+          },
+          "lod": "lod0",
+          "platform": "pc",
+          "role": "synthetic_fixture",
+          "schema": "asset-protocol@dcc-r9"
+        }
+      }
+    ],
+    "count": 2
+  }
+}

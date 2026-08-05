@@ -1,0 +1,1322 @@
+{
+  "reportVersion": "maya-asset-handoff-gate@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 17:05:27",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "summary": {
+    "asset_count": 2,
+    "ready": 1,
+    "review": 1,
+    "blocked": 0,
+    "gate": "Review"
+  },
+  "assets": [
+    {
+      "asset_id": "asset-001",
+      "node": "AH_Crate_LOD0_publish_ready1",
+      "gate": "Ready",
+      "role": "handoff_publish_ready",
+      "lod": "lod0",
+      "platform": "pc",
+      "triangles": 12,
+      "protocol": {
+        "has_protocol": true,
+        "payload_valid": true,
+        "carrier": "AH_Crate_LOD0_publish_ready1"
+      },
+      "materials": 1,
+      "textures": 1,
+      "rule_results": 1,
+      "queue_tasks": 5,
+      "receipt_state": "accepted",
+      "blockers": [],
+      "review": [],
+      "evidence": [
+        "protocol",
+        "rule_matrix:1",
+        "material:1",
+        "texture:1",
+        "queue:5"
+      ]
+    },
+    {
+      "asset_id": "asset-002",
+      "node": "AH_Vehicle_DT_needs_texture_review1",
+      "gate": "Review",
+      "role": "handoff_review_asset",
+      "lod": "dt",
+      "platform": "pc",
+      "triangles": 760,
+      "protocol": {
+        "has_protocol": true,
+        "payload_valid": true,
+        "carrier": "AH_Vehicle_DT_needs_texture_review1"
+      },
+      "materials": 1,
+      "textures": 0,
+      "rule_results": 1,
+      "queue_tasks": 5,
+      "receipt_state": "held_for_review",
+      "blockers": [],
+      "review": [
+        "no texture file nodes"
+      ],
+      "evidence": [
+        "protocol",
+        "rule_matrix:1",
+        "material:1",
+        "texture:0",
+        "queue:5"
+      ]
+    }
+  ],
+  "collect": {
+    "ok": true,
+    "adapter": "maya",
+    "schema": "maya-asset-handoff-collect@0.1.0",
+    "assets": [
+      {
+        "id": "asset-001",
+        "node": "AH_Crate_LOD0_publish_ready1",
+        "shapes": [
+          "AH_Crate_LOD0_publish_ready1Shape"
+        ],
+        "top_parent": "r10_6_decision_handoff1",
+        "lod": "lod0",
+        "role": "handoff_publish_ready",
+        "platform": "pc",
+        "triangles": 12,
+        "budget_triangles": 12000,
+        "material_count": 1,
+        "texture_count": 1,
+        "shading_engines": [
+          "SG_AH_Crate_Body1"
+        ],
+        "materials": [
+          "M_AH_Crate_Body1"
+        ],
+        "file_nodes": [
+          "T_AH_Crate_BC_2048_png1"
+        ],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "AH_Crate_LOD0_publish_ready1",
+        "visible": true,
+        "gate": "Ready",
+        "blockers": [],
+        "review": []
+      },
+      {
+        "id": "asset-002",
+        "node": "AH_Vehicle_DT_needs_texture_review1",
+        "shapes": [
+          "AH_Vehicle_DT_needs_texture_review1Shape"
+        ],
+        "top_parent": "r10_6_decision_handoff1",
+        "lod": "dt",
+        "role": "handoff_review_asset",
+        "platform": "pc",
+        "triangles": 760,
+        "budget_triangles": 8000,
+        "material_count": 1,
+        "texture_count": 0,
+        "shading_engines": [
+          "initialShadingGroup"
+        ],
+        "materials": [
+          "standardSurface1"
+        ],
+        "file_nodes": [],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "AH_Vehicle_DT_needs_texture_review1",
+        "visible": true,
+        "gate": "Review",
+        "blockers": [],
+        "review": [
+          "no texture file nodes"
+        ]
+      }
+    ],
+    "discovery": {
+      "schema": "maya-task-orchestrator-discovery@1.0.0",
+      "assets": [
+        {
+          "id": "asset-001",
+          "node": "AH_Crate_LOD0_publish_ready1",
+          "shapes": [
+            "AH_Crate_LOD0_publish_ready1Shape"
+          ],
+          "top_parent": "r10_6_decision_handoff1",
+          "lod": "lod0",
+          "role": "handoff_publish_ready",
+          "platform": "pc",
+          "triangles": 12,
+          "budget_triangles": 12000,
+          "material_count": 1,
+          "texture_count": 1,
+          "shading_engines": [
+            "SG_AH_Crate_Body1"
+          ],
+          "materials": [
+            "M_AH_Crate_Body1"
+          ],
+          "file_nodes": [
+            "T_AH_Crate_BC_2048_png1"
+          ],
+          "has_protocol": true,
+          "payload_valid": true,
+          "protocol_carrier": "AH_Crate_LOD0_publish_ready1",
+          "visible": true,
+          "gate": "Ready",
+          "blockers": [],
+          "review": []
+        },
+        {
+          "id": "asset-002",
+          "node": "AH_Vehicle_DT_needs_texture_review1",
+          "shapes": [
+            "AH_Vehicle_DT_needs_texture_review1Shape"
+          ],
+          "top_parent": "r10_6_decision_handoff1",
+          "lod": "dt",
+          "role": "handoff_review_asset",
+          "platform": "pc",
+          "triangles": 760,
+          "budget_triangles": 8000,
+          "material_count": 1,
+          "texture_count": 0,
+          "shading_engines": [
+            "initialShadingGroup"
+          ],
+          "materials": [
+            "standardSurface1"
+          ],
+          "file_nodes": [],
+          "has_protocol": true,
+          "payload_valid": true,
+          "protocol_carrier": "AH_Vehicle_DT_needs_texture_review1",
+          "visible": true,
+          "gate": "Review",
+          "blockers": [],
+          "review": [
+            "no texture file nodes"
+          ]
+        }
+      ],
+      "summary": {
+        "asset_count": 2,
+        "ready": 1,
+        "review": 1,
+        "blocked": 0,
+        "gate": "Review"
+      }
+    },
+    "protocol": {
+      "ok": true,
+      "rows": [
+        {
+          "node": "AH_Crate_LOD0_publish_ready1",
+          "has_protocol": true,
+          "raw": "{\"budget\": {\"textures\": 4, \"triangles\": 12000}, \"collision\": \"simple\", \"evidence\": {\"source\": \"r10.3 asset handoff gate\"}, \"lod\": \"lod0\", \"platform\": \"pc\", \"role\": \"handoff_publish_ready\", \"schema\": \"asset-protocol@dcc-r9\"}",
+          "payload": {
+            "budget": {
+              "textures": 4,
+              "triangles": 12000
+            },
+            "collision": "simple",
+            "evidence": {
+              "source": "r10.3 asset handoff gate"
+            },
+            "lod": "lod0",
+            "platform": "pc",
+            "role": "handoff_publish_ready",
+            "schema": "asset-protocol@dcc-r9"
+          }
+        },
+        {
+          "node": "AH_Vehicle_DT_needs_texture_review1",
+          "has_protocol": true,
+          "raw": "{\"budget\": {\"textures\": 2, \"triangles\": 8000}, \"collision\": \"simple\", \"evidence\": {\"reviewReason\": \"material and texture binding intentionally absent\", \"source\": \"r10.3 asset handoff gate\"}, \"lod\": \"dt\", \"platform\": \"pc\", \"role\": \"handoff_review_asset\", \"schema\": \"asset-protocol@dcc-r9\"}",
+          "payload": {
+            "budget": {
+              "textures": 2,
+              "triangles": 8000
+            },
+            "collision": "simple",
+            "evidence": {
+              "reviewReason": "material and texture binding intentionally absent",
+              "source": "r10.3 asset handoff gate"
+            },
+            "lod": "dt",
+            "platform": "pc",
+            "role": "handoff_review_asset",
+            "schema": "asset-protocol@dcc-r9"
+          }
+        }
+      ],
+      "count": 2
+    },
+    "ruleMatrix": {
+      "summary": {
+        "score": 100,
+        "pass": 6,
+        "warning": 0,
+        "error": 0,
+        "skipped": 0,
+        "gate": "Ready"
+      },
+      "results": [
+        {
+          "rule_id": "protocol-carrier",
+          "name": "Protocol Carrier",
+          "stage": "Collect",
+          "severity": "blocker",
+          "status": "pass",
+          "message": "All collected nodes carry a valid asset protocol payload.",
+          "evidence": "schema=asset-protocol@dcc-r9 nodes=2",
+          "nodes": [],
+          "fix_preview": "No fix needed."
+        },
+        {
+          "rule_id": "collision-contract",
+          "name": "Collision Contract",
+          "stage": "Validate",
+          "severity": "blocker",
+          "status": "pass",
+          "message": "Collision contract is declared in payload or node naming.",
+          "evidence": "missing=-",
+          "nodes": [],
+          "fix_preview": "No fix needed."
+        },
+        {
+          "rule_id": "lod-budget",
+          "name": "LOD Budget",
+          "stage": "Validate",
+          "severity": "major",
+          "status": "pass",
+          "message": "LOD declaration is present for collected nodes.",
+          "evidence": "missing=-",
+          "nodes": [],
+          "fix_preview": "No fix needed."
+        },
+        {
+          "rule_id": "material-texture-sync",
+          "name": "Material / Texture Sync",
+          "stage": "Validate",
+          "severity": "major",
+          "status": "pass",
+          "message": "Mesh shapes and shadingEngine bindings are present.",
+          "evidence": "missingMesh=- missingMaterial=-",
+          "nodes": [],
+          "fix_preview": "No fix needed."
+        },
+        {
+          "rule_id": "export-root-clean",
+          "name": "Export Root Clean",
+          "stage": "Fix",
+          "severity": "major",
+          "status": "pass",
+          "message": "Collected nodes are under an export root or fixture root.",
+          "evidence": "noRoot=-",
+          "nodes": [],
+          "fix_preview": "No fix needed."
+        },
+        {
+          "rule_id": "publish-manifest",
+          "name": "Publish Manifest",
+          "stage": "Extract",
+          "severity": "minor",
+          "status": "pass",
+          "message": "Manifest can be exported from collected scene facts.",
+          "evidence": "upstreamGate=Ready, facts=2",
+          "nodes": [
+            "AH_Crate_LOD0_publish_ready1",
+            "AH_Vehicle_DT_needs_texture_review1"
+          ],
+          "fix_preview": "Safe preview: export validation report JSON as the publish sidecar."
+        }
+      ],
+      "fixPreview": {
+        "total": 1,
+        "safe_auto": 1,
+        "manual_only": 0,
+        "gate": "Ready"
+      },
+      "previews": [
+        {
+          "id": "fix-publish-manifest",
+          "node": "<scene>",
+          "rule_id": "publish-manifest",
+          "kind": "safe_auto",
+          "owner": "Tool",
+          "mutation": "export_report_json",
+          "target": "maya-auroraview-host/artifacts",
+          "before": "transient validation result",
+          "after": "versioned report artifact",
+          "preview": "Export collected facts, validation rows, and staged fixes as JSON evidence."
+        }
+      ]
+    },
+    "textureDelivery": {
+      "inspection": {
+        "schema": "maya-texture-delivery-inspection@1.0.0",
+        "mesh_summary": {
+          "LOD0": [
+            "AH_Crate_LOD0_publish_ready1"
+          ],
+          "DT": [
+            "AH_Vehicle_DT_needs_texture_review1"
+          ],
+          "other": [],
+          "total": 2
+        },
+        "meshes": [
+          {
+            "node": "AH_Crate_LOD0_publish_ready1",
+            "shapes": [
+              "AH_Crate_LOD0_publish_ready1Shape"
+            ],
+            "bucket": "LOD0",
+            "slot": "B",
+            "parent": "r10_6_decision_handoff1"
+          },
+          {
+            "node": "AH_Vehicle_DT_needs_texture_review1",
+            "shapes": [
+              "AH_Vehicle_DT_needs_texture_review1Shape"
+            ],
+            "bucket": "DT",
+            "slot": "A",
+            "parent": "r10_6_decision_handoff1"
+          }
+        ],
+        "materials": [
+          {
+            "name": "M_AH_Crate_Body1",
+            "shading_engine": "SG_AH_Crate_Body1",
+            "file_nodes": [
+              "T_AH_Crate_BC_2048_png1"
+            ]
+          },
+          {
+            "name": "standardSurface1",
+            "shading_engine": "initialParticleSE",
+            "file_nodes": []
+          },
+          {
+            "name": "standardSurface1",
+            "shading_engine": "initialShadingGroup",
+            "file_nodes": []
+          }
+        ],
+        "file_nodes": [
+          {
+            "node": "T_AH_Crate_BC_2048_png1",
+            "file_name": "T_AH_Crate_BC_2048.png",
+            "path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_AH_Crate_BC_2048.png",
+            "exists": false,
+            "role": "baseColor",
+            "color_space": "sRGB",
+            "expected_color_space": "sRGB",
+            "resolution": 2048,
+            "materials": [
+              "M_AH_Crate_Body1"
+            ]
+          }
+        ]
+      },
+      "validation": {
+        "schema": "maya-texture-delivery-validation@1.0.0",
+        "summary": {
+          "gate": "Review",
+          "pass": 4,
+          "warning": 1,
+          "error": 0,
+          "source_count": 1,
+          "material_count": 3
+        },
+        "results": [
+          {
+            "rule_id": "material-binding",
+            "label": "Material Binding",
+            "status": "pass",
+            "evidence": "materials=3 fileNodes=1",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-source-paths",
+            "label": "Texture Source Paths",
+            "status": "warning",
+            "evidence": "missing=T_AH_Crate_BC_2048_png1",
+            "fix_preview": "Relink missing sourceimages paths before launching external packers."
+          },
+          {
+            "rule_id": "texture-role-naming",
+            "label": "Texture Role Naming",
+            "status": "pass",
+            "evidence": "unknown=-",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-color-space",
+            "label": "Texture Color Space",
+            "status": "pass",
+            "evidence": "mismatch=-",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-platform-budget",
+            "label": "Texture Platform Budget",
+            "status": "pass",
+            "evidence": "over4096=-",
+            "fix_preview": "No fix needed."
+          }
+        ]
+      }
+    },
+    "visualReview": {
+      "manifest": {
+        "schema": "maya-visual-review-pass-manifest@1.0.0",
+        "resolution": {
+          "width": 1024,
+          "height": 1024
+        },
+        "camera_groups": [
+          "basic",
+          "detail"
+        ],
+        "cameras": [
+          {
+            "name": "Camera_1",
+            "shape": "Camera_01_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 70.0
+          },
+          {
+            "name": "Camera_2",
+            "shape": "Camera_02_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 70.0
+          },
+          {
+            "name": "Camera_3",
+            "shape": "Camera_03_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 70.0
+          },
+          {
+            "name": "Camera_4",
+            "shape": "Camera_04_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 70.0
+          },
+          {
+            "name": "Camera_Back1",
+            "shape": "Camera_Back_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          },
+          {
+            "name": "Camera_Bottom1",
+            "shape": "Camera_Bottom_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          },
+          {
+            "name": "Camera_Front1",
+            "shape": "Camera_Front_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          },
+          {
+            "name": "Camera_Left1",
+            "shape": "Camera_Left_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          },
+          {
+            "name": "Camera_Right1",
+            "shape": "Camera_Right_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          },
+          {
+            "name": "Camera_Top1",
+            "shape": "Camera_Top_Shape1",
+            "group": "basic",
+            "tagged": true,
+            "focal_length": 50.0
+          }
+        ],
+        "mesh_summary": {
+          "total": 2,
+          "lod0": 1,
+          "dt": 1,
+          "other": 0
+        },
+        "meshes": [
+          {
+            "node": "AH_Crate_LOD0_publish_ready1",
+            "shapes": [
+              "AH_Crate_LOD0_publish_ready1Shape"
+            ],
+            "bucket": "LOD0",
+            "slot": "B",
+            "parent": "r10_6_decision_handoff1"
+          },
+          {
+            "node": "AH_Vehicle_DT_needs_texture_review1",
+            "shapes": [
+              "AH_Vehicle_DT_needs_texture_review1Shape"
+            ],
+            "bucket": "DT",
+            "slot": "A",
+            "parent": "r10_6_decision_handoff1"
+          }
+        ],
+        "passes": [
+          {
+            "id": "rb_lod0",
+            "label": "Red / Blue LOD0",
+            "status": "run",
+            "reason": "LOD0 mesh bucket has 1 node(s).",
+            "required_bucket": "LOD0",
+            "material_contract": "A red 45% transparent, B cyan 45% transparent",
+            "camera_count": 10,
+            "image_count": 10,
+            "shots": [
+              {
+                "camera": "Camera_1",
+                "output": "Camera_1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_2",
+                "output": "Camera_2_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_3",
+                "output": "Camera_3_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_4",
+                "output": "Camera_4_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Back1",
+                "output": "Camera_Back1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Bottom1",
+                "output": "Camera_Bottom1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Front1",
+                "output": "Camera_Front1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Left1",
+                "output": "Camera_Left1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Right1",
+                "output": "Camera_Right1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Top1",
+                "output": "Camera_Top1_rb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              }
+            ]
+          },
+          {
+            "id": "wb_lod0",
+            "label": "White / Blue LOD0",
+            "status": "run",
+            "reason": "LOD0 mesh bucket has 1 node(s).",
+            "required_bucket": "LOD0",
+            "material_contract": "A lambert white, B cyan",
+            "camera_count": 10,
+            "image_count": 10,
+            "shots": [
+              {
+                "camera": "Camera_1",
+                "output": "Camera_1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_2",
+                "output": "Camera_2_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_3",
+                "output": "Camera_3_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_4",
+                "output": "Camera_4_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Back1",
+                "output": "Camera_Back1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Bottom1",
+                "output": "Camera_Bottom1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Front1",
+                "output": "Camera_Front1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Left1",
+                "output": "Camera_Left1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Right1",
+                "output": "Camera_Right1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Top1",
+                "output": "Camera_Top1_wb_lod0.png",
+                "width": 1024,
+                "height": 1024
+              }
+            ]
+          },
+          {
+            "id": "rb_dt",
+            "label": "Red / Blue DT",
+            "status": "run",
+            "reason": "DT mesh bucket has 1 node(s).",
+            "required_bucket": "DT",
+            "material_contract": "A red 45% transparent, B cyan 45% transparent",
+            "camera_count": 10,
+            "image_count": 10,
+            "shots": [
+              {
+                "camera": "Camera_1",
+                "output": "Camera_1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_2",
+                "output": "Camera_2_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_3",
+                "output": "Camera_3_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_4",
+                "output": "Camera_4_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Back1",
+                "output": "Camera_Back1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Bottom1",
+                "output": "Camera_Bottom1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Front1",
+                "output": "Camera_Front1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Left1",
+                "output": "Camera_Left1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Right1",
+                "output": "Camera_Right1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Top1",
+                "output": "Camera_Top1_rb_dt.png",
+                "width": 1024,
+                "height": 1024
+              }
+            ]
+          },
+          {
+            "id": "wb_dt",
+            "label": "White / Blue DT",
+            "status": "run",
+            "reason": "DT mesh bucket has 1 node(s).",
+            "required_bucket": "DT",
+            "material_contract": "A lambert white, B cyan",
+            "camera_count": 10,
+            "image_count": 10,
+            "shots": [
+              {
+                "camera": "Camera_1",
+                "output": "Camera_1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_2",
+                "output": "Camera_2_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_3",
+                "output": "Camera_3_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_4",
+                "output": "Camera_4_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Back1",
+                "output": "Camera_Back1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Bottom1",
+                "output": "Camera_Bottom1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Front1",
+                "output": "Camera_Front1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Left1",
+                "output": "Camera_Left1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Right1",
+                "output": "Camera_Right1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Top1",
+                "output": "Camera_Top1_wb_dt.png",
+                "width": 1024,
+                "height": 1024
+              }
+            ]
+          },
+          {
+            "id": "solo_b",
+            "label": "Variant Dual LOD",
+            "status": "run",
+            "reason": "Variant has at least one visible LOD bucket.",
+            "required_bucket": "variant_lod0_or_dt",
+            "material_contract": "B LOD0 dark grey, B DT light grey, A hidden",
+            "camera_count": 10,
+            "image_count": 10,
+            "shots": [
+              {
+                "camera": "Camera_1",
+                "output": "Camera_1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_2",
+                "output": "Camera_2_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_3",
+                "output": "Camera_3_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_4",
+                "output": "Camera_4_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Back1",
+                "output": "Camera_Back1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Bottom1",
+                "output": "Camera_Bottom1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Front1",
+                "output": "Camera_Front1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Left1",
+                "output": "Camera_Left1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Right1",
+                "output": "Camera_Right1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "camera": "Camera_Top1",
+                "output": "Camera_Top1_solo_b.png",
+                "width": 1024,
+                "height": 1024
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "run": 5,
+          "skipped": 0,
+          "image_count": 50,
+          "gate": "Ready"
+        }
+      },
+      "summary": {
+        "run": 5,
+        "skipped": 0,
+        "image_count": 50,
+        "gate": "Ready"
+      }
+    },
+    "taskQueue": {
+      "queue": {
+        "schema": "maya-task-orchestrator-queue@1.0.0",
+        "summary": {
+          "total": 10,
+          "done": 7,
+          "queued": 1,
+          "review": 2,
+          "blocked": 0,
+          "gate": "Review"
+        },
+        "tasks": [
+          {
+            "id": "protocol:AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "label": "Collect Protocol Payload",
+            "phase": "collect",
+            "status": "done",
+            "command": "api.asset_inspect_protocol(names=[AH_Crate_LOD0_publish_ready1])",
+            "evidence": "protocol carrier=AH_Crate_LOD0_publish_ready1",
+            "depends_on": [],
+            "mutation_allowed": false
+          },
+          {
+            "id": "material:AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "label": "Validate Material Binding",
+            "phase": "validate",
+            "status": "done",
+            "command": "api.rule_matrix_validate_scene(names=[AH_Crate_LOD0_publish_ready1])",
+            "evidence": "materials=1 shadingEngines=1",
+            "depends_on": [
+              "protocol:AH_Crate_LOD0_publish_ready1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "texture:AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "label": "Validate Texture Delivery",
+            "phase": "validate",
+            "status": "done",
+            "command": "api.texture_delivery_validate_scene(include_all=True)",
+            "evidence": "fileNodes=1",
+            "depends_on": [
+              "material:AH_Crate_LOD0_publish_ready1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "visual:AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "label": "Build Visual Review Manifest",
+            "phase": "review",
+            "status": "done",
+            "command": "api.visual_review_build_pass_manifest(names=[AH_Crate_LOD0_publish_ready1])",
+            "evidence": "visible=True shapes=1",
+            "depends_on": [
+              "material:AH_Crate_LOD0_publish_ready1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "publish:AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "label": "Export Evidence Packet",
+            "phase": "extract",
+            "status": "queued",
+            "command": "api.task_orchestrator_export_report(names=[AH_Crate_LOD0_publish_ready1])",
+            "evidence": "assetGate=Ready review=- blockers=-",
+            "depends_on": [
+              "protocol:AH_Crate_LOD0_publish_ready1",
+              "material:AH_Crate_LOD0_publish_ready1",
+              "texture:AH_Crate_LOD0_publish_ready1",
+              "visual:AH_Crate_LOD0_publish_ready1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "protocol:AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "label": "Collect Protocol Payload",
+            "phase": "collect",
+            "status": "done",
+            "command": "api.asset_inspect_protocol(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "evidence": "protocol carrier=AH_Vehicle_DT_needs_texture_review1",
+            "depends_on": [],
+            "mutation_allowed": false
+          },
+          {
+            "id": "material:AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "label": "Validate Material Binding",
+            "phase": "validate",
+            "status": "done",
+            "command": "api.rule_matrix_validate_scene(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "evidence": "materials=1 shadingEngines=1",
+            "depends_on": [
+              "protocol:AH_Vehicle_DT_needs_texture_review1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "texture:AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "label": "Validate Texture Delivery",
+            "phase": "validate",
+            "status": "review",
+            "command": "api.texture_delivery_validate_scene(include_all=True)",
+            "evidence": "fileNodes=0",
+            "depends_on": [
+              "material:AH_Vehicle_DT_needs_texture_review1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "visual:AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "label": "Build Visual Review Manifest",
+            "phase": "review",
+            "status": "done",
+            "command": "api.visual_review_build_pass_manifest(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "evidence": "visible=True shapes=1",
+            "depends_on": [
+              "material:AH_Vehicle_DT_needs_texture_review1"
+            ],
+            "mutation_allowed": false
+          },
+          {
+            "id": "publish:AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "label": "Export Evidence Packet",
+            "phase": "extract",
+            "status": "review",
+            "command": "api.task_orchestrator_export_report(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+            "depends_on": [
+              "protocol:AH_Vehicle_DT_needs_texture_review1",
+              "material:AH_Vehicle_DT_needs_texture_review1",
+              "texture:AH_Vehicle_DT_needs_texture_review1",
+              "visual:AH_Vehicle_DT_needs_texture_review1"
+            ],
+            "mutation_allowed": false
+          }
+        ]
+      },
+      "dryRun": {
+        "schema": "maya-task-orchestrator-dry-run@1.0.0",
+        "summary": {
+          "events": 10,
+          "done": 8,
+          "review": 2,
+          "blocked": 0,
+          "gate": "Review"
+        },
+        "events": [
+          {
+            "id": "event-001",
+            "task_id": "protocol:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "phase": "collect",
+            "status": "done",
+            "duration_ms": 15,
+            "evidence": "protocol carrier=AH_Crate_LOD0_publish_ready1",
+            "command": "api.asset_inspect_protocol(names=[AH_Crate_LOD0_publish_ready1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-002",
+            "task_id": "material:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "phase": "validate",
+            "status": "done",
+            "duration_ms": 18,
+            "evidence": "materials=1 shadingEngines=1",
+            "command": "api.rule_matrix_validate_scene(names=[AH_Crate_LOD0_publish_ready1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-003",
+            "task_id": "texture:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "phase": "validate",
+            "status": "done",
+            "duration_ms": 21,
+            "evidence": "fileNodes=1",
+            "command": "api.texture_delivery_validate_scene(include_all=True)",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-004",
+            "task_id": "visual:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "phase": "review",
+            "status": "done",
+            "duration_ms": 24,
+            "evidence": "visible=True shapes=1",
+            "command": "api.visual_review_build_pass_manifest(names=[AH_Crate_LOD0_publish_ready1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-005",
+            "task_id": "publish:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "phase": "extract",
+            "status": "done",
+            "duration_ms": 27,
+            "evidence": "assetGate=Ready review=- blockers=-",
+            "command": "api.task_orchestrator_export_report(names=[AH_Crate_LOD0_publish_ready1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-006",
+            "task_id": "protocol:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "phase": "collect",
+            "status": "done",
+            "duration_ms": 30,
+            "evidence": "protocol carrier=AH_Vehicle_DT_needs_texture_review1",
+            "command": "api.asset_inspect_protocol(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-007",
+            "task_id": "material:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "phase": "validate",
+            "status": "done",
+            "duration_ms": 33,
+            "evidence": "materials=1 shadingEngines=1",
+            "command": "api.rule_matrix_validate_scene(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-008",
+            "task_id": "texture:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "phase": "validate",
+            "status": "review",
+            "duration_ms": 36,
+            "evidence": "fileNodes=0",
+            "command": "api.texture_delivery_validate_scene(include_all=True)",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-009",
+            "task_id": "visual:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "phase": "review",
+            "status": "done",
+            "duration_ms": 39,
+            "evidence": "visible=True shapes=1",
+            "command": "api.visual_review_build_pass_manifest(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "mutation_allowed": false
+          },
+          {
+            "id": "event-010",
+            "task_id": "publish:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "phase": "extract",
+            "status": "review",
+            "duration_ms": 42,
+            "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+            "command": "api.task_orchestrator_export_report(names=[AH_Vehicle_DT_needs_texture_review1])",
+            "mutation_allowed": false
+          }
+        ],
+        "receipts": [
+          {
+            "id": "receipt:AH_Crate_LOD0_publish_ready1",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "state": "accepted",
+            "gate": "Ready",
+            "evidence_count": 5,
+            "next_action": "Eligible for evidence packet export."
+          },
+          {
+            "id": "receipt:AH_Vehicle_DT_needs_texture_review1",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "state": "held_for_review",
+            "gate": "Review",
+            "evidence_count": 5,
+            "next_action": "TA review required before publish."
+          }
+        ]
+      }
+    },
+    "summary": {
+      "asset_count": 2,
+      "ready": 1,
+      "review": 1,
+      "blocked": 0,
+      "rule_gate": "Ready",
+      "texture_gate": "Review",
+      "visual_gate": "Ready",
+      "queue_gate": "Review"
+    }
+  },
+  "actions": [
+    {
+      "id": "handoff-asset-001-export",
+      "asset": "AH_Crate_LOD0_publish_ready1",
+      "kind": "safe_auto",
+      "label": "Export handoff sidecar",
+      "phase": "extract",
+      "preview": "Write protocol, rule, texture, visual, queue evidence into the handoff packet."
+    },
+    {
+      "id": "handoff-asset-002-002",
+      "asset": "AH_Vehicle_DT_needs_texture_review1",
+      "kind": "manual_only",
+      "label": "Resolve handoff evidence",
+      "phase": "validate",
+      "preview": "no texture file nodes"
+    },
+    {
+      "id": "handoff-packet-export",
+      "asset": "<batch>",
+      "kind": "safe_auto",
+      "label": "Export batch handoff packet",
+      "phase": "extract",
+      "preview": "Export all asset gates, evidence summaries, actions, receipts and residual risk as JSON."
+    }
+  ],
+  "boundary": {
+    "mutation": "preview_and_packet_export_only",
+    "sceneWrites": "fixture creation writes synthetic demo assets only",
+    "ownerAuthority": "Review rows require TA/owner disposition before promotion"
+  }
+}

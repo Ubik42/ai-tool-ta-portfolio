@@ -1,0 +1,909 @@
+{
+  "reportVersion": "impact-promotion-sla-acceptance-package@0.1.0",
+  "packageId": "r8-23-promotion-sla-acceptance",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    {
+      "id": "portfolio-asset-delivery-001",
+      "version": "task-orchestrator-report@1.17.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json"
+    },
+    {
+      "id": "impact_1dgga2j",
+      "version": "asset-dependency-impact@1.13.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json#assetDependencyImpact"
+    },
+    {
+      "id": "promotiongate_x6bmtp",
+      "version": "impact-frozen-packet-promotion-gate@0.1.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json#assetDependencyImpact.frozenPacketPromotionGate"
+    },
+    {
+      "id": "ownersla_1k84f7z",
+      "version": "impact-owner-response-sla-reconciliation@0.1.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json#assetDependencyImpact.ownerResponseSlaReconciliation"
+    },
+    {
+      "id": "readinessledger_19x5leh",
+      "version": "impact-readiness-acceptance-ledger@0.1.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json#assetDependencyImpact.readinessAcceptanceLedger"
+    },
+    {
+      "id": "exportdiff_hld57c",
+      "version": "impact-audit-export-diff@0.9.0",
+      "path": "assets/task-orchestrator-r8-23-exported-report.json#assetDependencyImpact.auditExportDiff"
+    },
+    {
+      "id": "portfolio-case-study-r8-23",
+      "version": "portfolio-case-study-report@3.0.0",
+      "path": "assets/portfolio-case-study-r8-23-exported-report.json"
+    },
+    {
+      "id": "ai-tool-ta-public-case-package-r8-23",
+      "version": "public-case-package@2.3.0",
+      "path": "public-case-package/package-manifest.json"
+    },
+    {
+      "id": "portfolio-evidence-manifest-r8-23",
+      "version": "portfolio-evidence-manifest@2.3.0",
+      "path": "assets/portfolio-case-study-r8-23-exported-report.json#evidenceManifest"
+    }
+  ],
+  "summaries": {
+    "frozenPacketPromotionGate": {
+      "totalRows": 6,
+      "promotedRows": 2,
+      "diffBlockedRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Promote only unchanged-ready frozen rows; keep diff-blocked and owner-held rows out of the candidate packet."
+    },
+    "ownerResponseSlaReconciliation": {
+      "totalRows": 6,
+      "reconciledRows": 2,
+      "dueTodayRows": 0,
+      "overdueRows": 2,
+      "deferredRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Reconcile imported responses, escalate overdue owner responses, and keep deferred replacement evidence visible."
+    },
+    "readinessAcceptanceLedger": {
+      "totalRows": 6,
+      "acceptedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Accept only rows that pass promotion gate and SLA reconciliation; keep review and owner-held rows explicit."
+    },
+    "auditExportDiff": {
+      "totalRows": 17,
+      "unchangedRows": 11,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.23 promotion gate, SLA reconciliation, and readiness acceptance ledger are accepted by reviewers."
+    },
+    "evidenceManifest": {
+      "artifactCount": 189,
+      "requiredArtifactCount": 154,
+      "validationCommandCount": 33,
+      "generatedArtifactCount": 138,
+      "pendingArtifactCount": 0,
+      "byModule": [
+        {
+          "moduleId": "asset-protocol",
+          "indexed": 3,
+          "required": 2,
+          "screenshot": 1,
+          "json": 1,
+          "doc": 1
+        },
+        {
+          "moduleId": "rule-matrix",
+          "indexed": 6,
+          "required": 4,
+          "screenshot": 4,
+          "json": 2,
+          "doc": 0
+        },
+        {
+          "moduleId": "visual-review",
+          "indexed": 3,
+          "required": 2,
+          "screenshot": 1,
+          "json": 2,
+          "doc": 0
+        },
+        {
+          "moduleId": "texture-console",
+          "indexed": 7,
+          "required": 5,
+          "screenshot": 3,
+          "json": 4,
+          "doc": 0
+        },
+        {
+          "moduleId": "task-orchestrator",
+          "indexed": 137,
+          "required": 108,
+          "screenshot": 58,
+          "json": 76,
+          "doc": 3
+        }
+      ]
+    }
+  },
+  "reports": {
+    "frozenPacketPromotionGate": {
+      "reportVersion": "impact-frozen-packet-promotion-gate@0.1.0",
+      "gateId": "promotiongate_x6bmtp",
+      "mode": "frozen_packet_promotion_gate",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "promotedRows": 2,
+        "diffBlockedRows": 2,
+        "ownerHoldRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Promote only unchanged-ready frozen rows; keep diff-blocked and owner-held rows out of the candidate packet."
+      },
+      "rows": [
+        {
+          "id": "promotion-freeze-lock-public-package-report",
+          "label": "Lock public package report unchanged accepted freezes into release packet remains ready can promote",
+          "state": "promoted",
+          "gate": "Ready",
+          "sourceReadinessRowId": "readiness-diff-lock-public-package-report",
+          "packetEntryId": "lock-public-package-report",
+          "owner": "Portfolio TA",
+          "promotionLane": "frozen-public-packet",
+          "promotionRule": "unchanged-ready row plus frozen accepted packet entry may enter promotion preview",
+          "promotionResult": "row promoted into the R8.23 candidate packet",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-public-package-report",
+            "freeze-lock-public-package-report"
+          ],
+          "nextAction": "Keep promoted row in candidate packet until acceptance ledger closes."
+        },
+        {
+          "id": "promotion-freeze-lock-task-report",
+          "label": "Lock task orchestrator report unchanged accepted freezes into release packet remains ready can promote",
+          "state": "promoted",
+          "gate": "Ready",
+          "sourceReadinessRowId": "readiness-diff-lock-task-report",
+          "packetEntryId": "lock-task-report",
+          "owner": "Release TA",
+          "promotionLane": "frozen-public-packet",
+          "promotionRule": "unchanged-ready row plus frozen accepted packet entry may enter promotion preview",
+          "promotionResult": "row promoted into the R8.23 candidate packet",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-task-report",
+            "freeze-lock-task-report"
+          ],
+          "nextAction": "Keep promoted row in candidate packet until acceptance ledger closes."
+        },
+        {
+          "id": "promotion-freeze-lock-decision-screenshot",
+          "label": "Decision screenshot changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff",
+          "state": "blocked_by_diff",
+          "gate": "Review",
+          "sourceReadinessRowId": "readiness-diff-lock-decision-screenshot",
+          "packetEntryId": "lock-decision-screenshot",
+          "owner": "Portfolio TA",
+          "promotionLane": "changed-public-packet",
+          "promotionRule": "changed-review rows cannot promote until reviewer diff acceptance closes",
+          "promotionResult": "promotion preview excludes this row",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-decision-screenshot",
+            "freeze-lock-decision-screenshot"
+          ],
+          "nextAction": "Accept changed public diff before attempting promotion again."
+        },
+        {
+          "id": "promotion-freeze-lock-fixture",
+          "label": "Fixture package changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff",
+          "state": "blocked_by_diff",
+          "gate": "Review",
+          "sourceReadinessRowId": "readiness-diff-lock-fixture",
+          "packetEntryId": "lock-fixture",
+          "owner": "Release TA",
+          "promotionLane": "changed-public-packet",
+          "promotionRule": "changed-review rows cannot promote until reviewer diff acceptance closes",
+          "promotionResult": "promotion preview excludes this row",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-fixture",
+            "freeze-lock-fixture"
+          ],
+          "nextAction": "Accept changed public diff before attempting promotion again."
+        },
+        {
+          "id": "promotion-freeze-lock-endpoint-route",
+          "label": "Endpoint route lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourceReadinessRowId": "readiness-diff-lock-endpoint-route",
+          "packetEntryId": "lock-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "promotionLane": "owner-held-packet",
+          "promotionRule": "owner-held readiness rows cannot enter public promotion preview",
+          "promotionResult": "promotion gate keeps this row outside the candidate packet",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-endpoint-route",
+            "freeze-lock-endpoint-route"
+          ],
+          "nextAction": "Import public owner replacement evidence before promotion."
+        },
+        {
+          "id": "promotion-freeze-lock-owner-unfreeze",
+          "label": "Emergency unfreeze lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourceReadinessRowId": "readiness-diff-lock-owner-unfreeze",
+          "packetEntryId": "lock-owner-unfreeze",
+          "owner": "Release TA",
+          "promotionLane": "owner-held-packet",
+          "promotionRule": "owner-held readiness rows cannot enter public promotion preview",
+          "promotionResult": "promotion gate keeps this row outside the candidate packet",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readiness-diff-lock-owner-unfreeze",
+            "freeze-lock-owner-unfreeze"
+          ],
+          "nextAction": "Import public owner replacement evidence before promotion."
+        }
+      ],
+      "guardrails": [
+        "Promotion gate previews candidate packet state; it does not publish production data.",
+        "Changed-review rows need explicit reviewer acceptance before promotion.",
+        "Owner-held rows require public replacement evidence before promotion."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json",
+        "assets/task-orchestrator-r8-23-exported-report.json"
+      ]
+    },
+    "ownerResponseSlaReconciliation": {
+      "reportVersion": "impact-owner-response-sla-reconciliation@0.1.0",
+      "reconciliationId": "ownersla_1k84f7z",
+      "mode": "owner_response_sla_reconciliation",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "reconciledRows": 2,
+        "dueTodayRows": 0,
+        "overdueRows": 2,
+        "deferredRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Reconcile imported responses, escalate overdue owner responses, and keep deferred replacement evidence visible."
+      },
+      "rows": [
+        {
+          "id": "sla-owner-response-burndown-closeout-public-baseline",
+          "label": "Close public baseline exception response imports is reconciled",
+          "state": "reconciled",
+          "gate": "Ready",
+          "sourceResponseId": "owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "responseState": "imported",
+          "dueAt": "2026-07-31T20:00:00+08:00",
+          "reconciledAt": "2026-07-31T18:30:00+08:00",
+          "slaSignal": "closed response imported before SLA cutoff",
+          "releaseEffect": "response can support accepted readiness rows",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-public-baseline",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Carry reconciled response into readiness acceptance ledger."
+        },
+        {
+          "id": "sla-owner-response-burndown-closeout-rollback-preview",
+          "label": "Close rollback preview exception response imports is reconciled",
+          "state": "reconciled",
+          "gate": "Ready",
+          "sourceResponseId": "owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "responseState": "imported",
+          "dueAt": "2026-07-31T20:00:00+08:00",
+          "reconciledAt": "2026-07-31T18:30:00+08:00",
+          "slaSignal": "closed response imported before SLA cutoff",
+          "releaseEffect": "response can support accepted readiness rows",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-rollback-preview",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Carry reconciled response into readiness acceptance ledger."
+        },
+        {
+          "id": "sla-owner-response-burndown-closeout-monitor-watch",
+          "label": "Monitor watch closeout needs owner waits for owner is overdue",
+          "state": "overdue",
+          "gate": "Review",
+          "sourceResponseId": "owner-response-burndown-closeout-monitor-watch",
+          "owner": "Platform TA",
+          "responseState": "waiting_owner",
+          "dueAt": "2026-07-31T20:00:00+08:00",
+          "reconciledAt": null,
+          "slaSignal": "3 owner response window missed in public package replay",
+          "releaseEffect": "readiness acceptance must stay Review",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-monitor-watch",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Escalate owner response and rerun SLA reconciliation after public response arrives."
+        },
+        {
+          "id": "sla-owner-response-burndown-closeout-security-alias",
+          "label": "Security alias closeout needs owner waits for owner is overdue",
+          "state": "overdue",
+          "gate": "Review",
+          "sourceResponseId": "owner-response-burndown-closeout-security-alias",
+          "owner": "Security TA",
+          "responseState": "waiting_owner",
+          "dueAt": "2026-07-31T20:00:00+08:00",
+          "reconciledAt": null,
+          "slaSignal": "4 owner response window missed in public package replay",
+          "releaseEffect": "readiness acceptance must stay Review",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-security-alias",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Escalate owner response and rerun SLA reconciliation after public response arrives."
+        },
+        {
+          "id": "sla-owner-response-burndown-closeout-endpoint-route",
+          "label": "Endpoint route closeout deferred stays deferred remains deferred",
+          "state": "deferred",
+          "gate": "Review",
+          "sourceResponseId": "owner-response-burndown-closeout-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "responseState": "deferred",
+          "dueAt": "owner-replacement-required",
+          "reconciledAt": null,
+          "slaSignal": "SLA cannot close until replacement public evidence exists",
+          "releaseEffect": "owner-held readiness remains outside promotion",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-endpoint-route",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Wait for replacement public evidence before SLA can reconcile."
+        },
+        {
+          "id": "sla-owner-response-burndown-closeout-owner-unfreeze",
+          "label": "Emergency unfreeze closeout deferred stays deferred remains deferred",
+          "state": "deferred",
+          "gate": "Review",
+          "sourceResponseId": "owner-response-burndown-closeout-owner-unfreeze",
+          "owner": "Release TA",
+          "responseState": "deferred",
+          "dueAt": "owner-replacement-required",
+          "reconciledAt": null,
+          "slaSignal": "SLA cannot close until replacement public evidence exists",
+          "releaseEffect": "owner-held readiness remains outside promotion",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "owner-response-burndown-closeout-owner-unfreeze",
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Wait for replacement public evidence before SLA can reconcile."
+        }
+      ],
+      "guardrails": [
+        "SLA reconciliation records response timing, not owner approval content.",
+        "Overdue responses keep release readiness in Review.",
+        "Deferred private replacement evidence stays redacted."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json",
+        "assets/task-orchestrator-r8-23-exported-report.json"
+      ]
+    },
+    "readinessAcceptanceLedger": {
+      "reportVersion": "impact-readiness-acceptance-ledger@0.1.0",
+      "ledgerId": "readinessledger_19x5leh",
+      "mode": "readiness_acceptance_ledger",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "acceptedRows": 2,
+        "reviewRows": 2,
+        "ownerHoldRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Accept only rows that pass promotion gate and SLA reconciliation; keep review and owner-held rows explicit."
+      },
+      "rows": [
+        {
+          "id": "readiness-accept-lock-public-package-report",
+          "label": "Lock public package report unchanged accepted freezes into release packet remains ready can promote accepted",
+          "state": "accepted",
+          "gate": "Ready",
+          "promotionRowId": "promotion-freeze-lock-public-package-report",
+          "slaRowId": "sla-owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "acceptanceRule": "promotion gate is promoted and owner response SLA is reconciled",
+          "acceptanceResult": "row accepted into candidate readiness ledger",
+          "requiredEvidence": [
+            "promotion-freeze-lock-public-package-report",
+            "sla-owner-response-burndown-closeout-public-baseline"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Keep accepted ledger row as candidate packet evidence."
+        },
+        {
+          "id": "readiness-accept-lock-task-report",
+          "label": "Lock task orchestrator report unchanged accepted freezes into release packet remains ready can promote accepted",
+          "state": "accepted",
+          "gate": "Ready",
+          "promotionRowId": "promotion-freeze-lock-task-report",
+          "slaRowId": "sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "acceptanceRule": "promotion gate is promoted and owner response SLA is reconciled",
+          "acceptanceResult": "row accepted into candidate readiness ledger",
+          "requiredEvidence": [
+            "promotion-freeze-lock-task-report",
+            "sla-owner-response-burndown-closeout-rollback-preview"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Keep accepted ledger row as candidate packet evidence."
+        },
+        {
+          "id": "readiness-accept-lock-decision-screenshot",
+          "label": "Decision screenshot changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review",
+          "state": "needs_review",
+          "gate": "Review",
+          "promotionRowId": "promotion-freeze-lock-decision-screenshot",
+          "slaRowId": "sla-owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "acceptanceRule": "diff-blocked promotion rows need reviewer acceptance before ledger acceptance",
+          "acceptanceResult": "row remains review-only",
+          "requiredEvidence": [
+            "promotion-freeze-lock-decision-screenshot",
+            "sla-owner-response-burndown-closeout-public-baseline"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Close diff acceptance before accepting this readiness ledger row."
+        },
+        {
+          "id": "readiness-accept-lock-fixture",
+          "label": "Fixture package changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review",
+          "state": "needs_review",
+          "gate": "Review",
+          "promotionRowId": "promotion-freeze-lock-fixture",
+          "slaRowId": "sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "acceptanceRule": "diff-blocked promotion rows need reviewer acceptance before ledger acceptance",
+          "acceptanceResult": "row remains review-only",
+          "requiredEvidence": [
+            "promotion-freeze-lock-fixture",
+            "sla-owner-response-burndown-closeout-rollback-preview"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Close diff acceptance before accepting this readiness ledger row."
+        },
+        {
+          "id": "readiness-accept-lock-endpoint-route",
+          "label": "Endpoint route lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "promotionRowId": "promotion-freeze-lock-endpoint-route",
+          "slaRowId": "sla-owner-response-burndown-closeout-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "acceptanceRule": "owner-held promotion rows require public owner replacement before ledger acceptance",
+          "acceptanceResult": "row remains outside accepted readiness ledger",
+          "requiredEvidence": [
+            "promotion-freeze-lock-endpoint-route",
+            "sla-owner-response-burndown-closeout-endpoint-route"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Import public owner replacement evidence, reconcile SLA, then replay ledger acceptance."
+        },
+        {
+          "id": "readiness-accept-lock-owner-unfreeze",
+          "label": "Emergency unfreeze lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "promotionRowId": "promotion-freeze-lock-owner-unfreeze",
+          "slaRowId": "sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "acceptanceRule": "owner-held promotion rows require public owner replacement before ledger acceptance",
+          "acceptanceResult": "row remains outside accepted readiness ledger",
+          "requiredEvidence": [
+            "promotion-freeze-lock-owner-unfreeze",
+            "sla-owner-response-burndown-closeout-rollback-preview"
+          ],
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "nextAction": "Import public owner replacement evidence, reconcile SLA, then replay ledger acceptance."
+        }
+      ],
+      "guardrails": [
+        "Readiness acceptance ledger is a public review ledger, not production release permission.",
+        "Diff-blocked and owner-held rows must stay visible until their source evidence changes.",
+        "Ledger acceptance requires both promotion and SLA evidence."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json",
+        "assets/task-orchestrator-r8-23-exported-report.json"
+      ]
+    },
+    "auditExportDiff": {
+      "reportVersion": "impact-audit-export-diff@0.9.0",
+      "diffId": "exportdiff_hld57c",
+      "mode": "audit_export_diff",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 17,
+        "unchangedRows": 11,
+        "addedRows": 3,
+        "changedRows": 3,
+        "blockedRows": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Keep audit export diff in Review until R8.23 promotion gate, SLA reconciliation, and readiness acceptance ledger are accepted by reviewers."
+      },
+      "rows": [
+        {
+          "id": "export-diff-report-version",
+          "label": "Report version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "taskOrchestrator.reportVersion",
+          "before": "task-orchestrator-report@1.16.0",
+          "after": "task-orchestrator-report@1.17.0",
+          "diffReason": "R8.23 adds frozen packet promotion gate, owner response SLA reconciliation, and readiness acceptance ledger",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "promotiongate_x6bmtp"
+          ],
+          "nextAction": "Keep report version diff in every exported package."
+        },
+        {
+          "id": "export-diff-impact-version",
+          "label": "Impact report version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reportVersion",
+          "before": "asset-dependency-impact@1.12.0",
+          "after": "asset-dependency-impact@1.13.0",
+          "diffReason": "impact schema now includes three R8.23 promotion and acceptance reports",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "ownersla_1k84f7z"
+          ],
+          "nextAction": "Use impact version as machine-readable schema boundary."
+        },
+        {
+          "id": "export-diff-audit-version",
+          "label": "Audit diff version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+          "before": "impact-audit-export-diff@0.8.0",
+          "after": "impact-audit-export-diff@0.9.0",
+          "diffReason": "audit export diff now records R8.23 schema additions",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessledger_19x5leh"
+          ],
+          "nextAction": "Keep audit diff version explicit for package review."
+        },
+        {
+          "id": "export-diff-locked-packet-diff-viewer",
+          "label": "Locked packet diff viewer remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.lockedPacketDiffViewer",
+          "before": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+          "after": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+          "diffReason": "R8.22 consumes the R8.21 packet diff without changing the source viewer",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "packetdiffviewer_1qk2uol"
+          ],
+          "nextAction": "Keep packet diff as the input to accepted packet freeze."
+        },
+        {
+          "id": "export-diff-exception-burndown",
+          "label": "Exception burn-down dashboard remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.exceptionBurnDownDashboard",
+          "before": "6 exceptions, 2 closed, 4 remaining",
+          "after": "6 exceptions, 2 closed, 4 remaining",
+          "diffReason": "R8.22 importer reads burn-down state without mutating the dashboard",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "exceptionburndown_g4ppkl"
+          ],
+          "nextAction": "Keep burn-down as the input to owner response import."
+        },
+        {
+          "id": "export-diff-acceptance-replay",
+          "label": "Reviewer acceptance replay remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reviewerAcceptanceReplay",
+          "before": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+          "after": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+          "diffReason": "R8.22 freeze consumes replay state without rewriting acceptance history",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "acceptancereplay_1do593x"
+          ],
+          "nextAction": "Keep reviewer acceptance replay as immutable R8.21 baseline."
+        },
+        {
+          "id": "export-diff-accepted-packet-freeze",
+          "label": "Accepted packet freeze remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.acceptedPacketFreeze",
+          "before": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+          "after": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+          "diffReason": "R8.23 promotion gate reads accepted packet freeze without rewriting freeze state",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "acceptedfreeze_yi72s0"
+          ],
+          "nextAction": "Keep accepted packet freeze as promotion input."
+        },
+        {
+          "id": "export-diff-owner-response-importer",
+          "label": "Exception owner response importer remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.exceptionOwnerResponseImporter",
+          "before": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+          "after": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+          "diffReason": "R8.23 SLA reconciliation reads owner response import state without mutating responses",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Keep owner response importer as SLA input."
+        },
+        {
+          "id": "export-diff-readiness-replay-diff",
+          "label": "Release readiness replay diff remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.releaseReadinessReplayDiff",
+          "before": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+          "after": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+          "diffReason": "R8.23 promotion gate consumes readiness diff as immutable release replay input",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessdiff_1v17mdt"
+          ],
+          "nextAction": "Keep readiness replay diff as promotion source of truth."
+        },
+        {
+          "id": "export-diff-frozen-packet-promotion-gate",
+          "label": "Frozen packet promotion gate was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.frozenPacketPromotionGate",
+          "before": "missing",
+          "after": "6 rows, 2 promoted, 2 diff-blocked, 2 owner-held",
+          "diffReason": "frozen rows now pass through a promotion gate before entering the candidate packet",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "promotiongate_x6bmtp"
+          ],
+          "nextAction": "Promote only unchanged-ready frozen rows."
+        },
+        {
+          "id": "export-diff-owner-response-sla-reconciliation",
+          "label": "Owner response SLA reconciliation was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.ownerResponseSlaReconciliation",
+          "before": "missing",
+          "after": "6 rows, 2 reconciled, 2 overdue, 2 deferred",
+          "diffReason": "owner response state now has SLA reconciliation before readiness acceptance",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "ownersla_1k84f7z"
+          ],
+          "nextAction": "Escalate overdue owner responses before accepting readiness rows."
+        },
+        {
+          "id": "export-diff-readiness-acceptance-ledger",
+          "label": "Readiness acceptance ledger was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.readinessAcceptanceLedger",
+          "before": "missing",
+          "after": "6 rows, 2 accepted, 2 needs-review, 2 owner-held",
+          "diffReason": "release readiness acceptance now requires both promotion and SLA evidence",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessledger_19x5leh"
+          ],
+          "nextAction": "Use readiness acceptance ledger as the R8.23 package review gate."
+        },
+        {
+          "id": "export-diff-evidence-compactor",
+          "label": "Release evidence compactor remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.releaseEvidenceCompactor",
+          "before": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+          "after": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+          "diffReason": "R8.21 consumes the compacted packet but does not change compaction rules",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "evidencecompactor_123vzg9"
+          ],
+          "nextAction": "Keep compactor as the baseline for packet diff."
+        },
+        {
+          "id": "export-diff-reviewer-lockfile",
+          "label": "Reviewer packet lockfile remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reviewerPacketLockfile",
+          "before": "6 entries, 2 locked, 2 changed, 2 owner-held",
+          "after": "6 entries, 2 locked, 2 changed, 2 owner-held",
+          "diffReason": "R8.21 diff viewer reads the lockfile without rewriting it",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "packetlock_1s002ln"
+          ],
+          "nextAction": "Keep lockfile as immutable R8.20 baseline."
+        },
+        {
+          "id": "export-diff-exception-closeout",
+          "label": "Production readiness exception closeout remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.productionReadinessExceptionCloseout",
+          "before": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+          "after": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+          "diffReason": "R8.21 burn-down consumes closeout state without changing the source closeout",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "exceptioncloseout_wfn3c5"
+          ],
+          "nextAction": "Use closeout as source of truth for burn-down."
+        },
+        {
+          "id": "export-diff-private-boundary",
+          "label": "Private boundary remains unchanged",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "privacy.privateDataExposed",
+          "before": "false",
+          "after": "false",
+          "diffReason": "R8.23 adds promotion, SLA reconciliation, and acceptance ledger without exposing private values",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "lock-endpoint-route",
+            "promotiongate_x6bmtp",
+            "ownersla_1k84f7z",
+            "disputereplay_f37nu8",
+            "ownerexceptions_1yeedp4"
+          ],
+          "nextAction": "Keep private exposure diff at zero."
+        },
+        {
+          "id": "export-diff-live-writes",
+          "label": "Live write boundary remains unchanged",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "mutation.liveWrites",
+          "before": "0",
+          "after": "0",
+          "diffReason": "promotion gate, SLA reconciliation, and readiness acceptance ledger stay dry-run",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessledger_19x5leh",
+            "rollbackjudge_oehpls"
+          ],
+          "nextAction": "Block the export if liveWrites becomes non-zero."
+        }
+      ],
+      "guardrails": [
+        "Audit export diff records schema and evidence changes explicitly.",
+        "Private exposure and live write boundaries must remain unchanged.",
+        "Added R8.23 reports stay Review until diff-blocked promotion rows, overdue owner responses, and owner-held ledger rows close."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json",
+        "assets/task-orchestrator-r8-23-exported-report.json"
+      ]
+    }
+  },
+  "publicPackage": {
+    "packageId": "ai-tool-ta-public-case-package-r8-23",
+    "packageVersion": "public-case-package@2.3.0",
+    "sourceReportId": "portfolio-case-study-r8-23",
+    "releaseGate": "Ready",
+    "readyForPublicPackage": true,
+    "evidenceCount": 156,
+    "requiredEvidenceCount": 121,
+    "validationCommandCount": 33
+  },
+  "guardrails": [
+    "Promotion gate previews candidate packet state; it does not publish production data.",
+    "Changed-review rows need explicit reviewer acceptance before promotion.",
+    "Owner-held rows require public replacement evidence before promotion.",
+    "SLA reconciliation records response timing, not owner approval content.",
+    "Overdue responses keep release readiness in Review.",
+    "Deferred private replacement evidence stays redacted.",
+    "Readiness acceptance ledger is a public review ledger, not production release permission.",
+    "Diff-blocked and owner-held rows must stay visible until their source evidence changes.",
+    "Ledger acceptance requires both promotion and SLA evidence.",
+    "candidate packet promotion remains review evidence until private owner receipt bodies close externally",
+    "SLA reconciliation may escalate overdue rows but cannot synthesize approval",
+    "readiness acceptance ledger cannot mark diff-blocked or owner-held rows as accepted"
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-23-promotion-acceptance-full.png",
+    "assets/task-orchestrator-r8-23-mobile-tall.png",
+    "assets/task-orchestrator-r8-23-exported-report.json",
+    "fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json",
+    "assets/portfolio-case-study-r8-23-exported-report.json",
+    "public-case-package/package-manifest.json"
+  ]
+}

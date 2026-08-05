@@ -1,0 +1,892 @@
+{
+  "reportVersion": "maya-visual-review-dcc-report@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:48:53",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "manifest": {
+    "schema": "maya-visual-review-pass-manifest@1.0.0",
+    "resolution": {
+      "width": 1024,
+      "height": 1024
+    },
+    "camera_groups": [
+      "basic",
+      "detail"
+    ],
+    "cameras": [
+      {
+        "name": "Camera_1",
+        "shape": "Camera_01_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 70.0
+      },
+      {
+        "name": "Camera_2",
+        "shape": "Camera_02_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 70.0
+      },
+      {
+        "name": "Camera_3",
+        "shape": "Camera_03_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 70.0
+      },
+      {
+        "name": "Camera_4",
+        "shape": "Camera_04_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 70.0
+      },
+      {
+        "name": "Camera_Back1",
+        "shape": "Camera_Back_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      },
+      {
+        "name": "Camera_Bottom1",
+        "shape": "Camera_Bottom_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      },
+      {
+        "name": "Camera_Front1",
+        "shape": "Camera_Front_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      },
+      {
+        "name": "Camera_Left1",
+        "shape": "Camera_Left_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      },
+      {
+        "name": "Camera_Right1",
+        "shape": "Camera_Right_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      },
+      {
+        "name": "Camera_Top1",
+        "shape": "Camera_Top_Shape1",
+        "group": "basic",
+        "tagged": true,
+        "focal_length": 50.0
+      }
+    ],
+    "mesh_summary": {
+      "total": 5,
+      "lod0": 2,
+      "dt": 1,
+      "other": 2
+    },
+    "meshes": [
+      {
+        "node": "BATCH_Crate_LOD0_ready1",
+        "shapes": [
+          "BATCH_Crate_LOD0_ready1Shape"
+        ],
+        "bucket": "LOD0",
+        "slot": "B",
+        "parent": "r9_7_task_batch1"
+      },
+      {
+        "node": "BATCH_Vehicle_DT_review1",
+        "shapes": [
+          "BATCH_Vehicle_DT_review1Shape"
+        ],
+        "bucket": "DT",
+        "slot": "B",
+        "parent": "r9_7_task_batch1"
+      },
+      {
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "shapes": [
+          "WPN_Rifle_LOD0_texture_body1Shape"
+        ],
+        "bucket": "LOD0",
+        "slot": "B",
+        "parent": "r9_7_texture_fixture1"
+      },
+      {
+        "node": "hero_prop_body1",
+        "shapes": [
+          "hero_prop_body1Shape"
+        ],
+        "bucket": "other",
+        "slot": "B",
+        "parent": "r9_7_asset_protocol_fixture1"
+      },
+      {
+        "node": "hero_prop_socket1",
+        "shapes": [
+          "hero_prop_socket1Shape"
+        ],
+        "bucket": "other",
+        "slot": "A",
+        "parent": "r9_7_asset_protocol_fixture1"
+      }
+    ],
+    "passes": [
+      {
+        "id": "rb_lod0",
+        "label": "Red / Blue LOD0",
+        "status": "run",
+        "reason": "LOD0 mesh bucket has 2 node(s).",
+        "required_bucket": "LOD0",
+        "material_contract": "A red 45% transparent, B cyan 45% transparent",
+        "camera_count": 10,
+        "image_count": 10,
+        "shots": [
+          {
+            "camera": "Camera_1",
+            "output": "Camera_1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_2",
+            "output": "Camera_2_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_3",
+            "output": "Camera_3_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_4",
+            "output": "Camera_4_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Back1",
+            "output": "Camera_Back1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Bottom1",
+            "output": "Camera_Bottom1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Front1",
+            "output": "Camera_Front1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Left1",
+            "output": "Camera_Left1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Right1",
+            "output": "Camera_Right1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Top1",
+            "output": "Camera_Top1_rb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      {
+        "id": "wb_lod0",
+        "label": "White / Blue LOD0",
+        "status": "run",
+        "reason": "LOD0 mesh bucket has 2 node(s).",
+        "required_bucket": "LOD0",
+        "material_contract": "A lambert white, B cyan",
+        "camera_count": 10,
+        "image_count": 10,
+        "shots": [
+          {
+            "camera": "Camera_1",
+            "output": "Camera_1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_2",
+            "output": "Camera_2_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_3",
+            "output": "Camera_3_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_4",
+            "output": "Camera_4_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Back1",
+            "output": "Camera_Back1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Bottom1",
+            "output": "Camera_Bottom1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Front1",
+            "output": "Camera_Front1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Left1",
+            "output": "Camera_Left1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Right1",
+            "output": "Camera_Right1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Top1",
+            "output": "Camera_Top1_wb_lod0.png",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      {
+        "id": "rb_dt",
+        "label": "Red / Blue DT",
+        "status": "run",
+        "reason": "DT mesh bucket has 1 node(s).",
+        "required_bucket": "DT",
+        "material_contract": "A red 45% transparent, B cyan 45% transparent",
+        "camera_count": 10,
+        "image_count": 10,
+        "shots": [
+          {
+            "camera": "Camera_1",
+            "output": "Camera_1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_2",
+            "output": "Camera_2_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_3",
+            "output": "Camera_3_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_4",
+            "output": "Camera_4_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Back1",
+            "output": "Camera_Back1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Bottom1",
+            "output": "Camera_Bottom1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Front1",
+            "output": "Camera_Front1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Left1",
+            "output": "Camera_Left1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Right1",
+            "output": "Camera_Right1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Top1",
+            "output": "Camera_Top1_rb_dt.png",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      {
+        "id": "wb_dt",
+        "label": "White / Blue DT",
+        "status": "run",
+        "reason": "DT mesh bucket has 1 node(s).",
+        "required_bucket": "DT",
+        "material_contract": "A lambert white, B cyan",
+        "camera_count": 10,
+        "image_count": 10,
+        "shots": [
+          {
+            "camera": "Camera_1",
+            "output": "Camera_1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_2",
+            "output": "Camera_2_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_3",
+            "output": "Camera_3_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_4",
+            "output": "Camera_4_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Back1",
+            "output": "Camera_Back1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Bottom1",
+            "output": "Camera_Bottom1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Front1",
+            "output": "Camera_Front1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Left1",
+            "output": "Camera_Left1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Right1",
+            "output": "Camera_Right1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Top1",
+            "output": "Camera_Top1_wb_dt.png",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      {
+        "id": "solo_b",
+        "label": "Variant Dual LOD",
+        "status": "run",
+        "reason": "Variant has at least one visible LOD bucket.",
+        "required_bucket": "variant_lod0_or_dt",
+        "material_contract": "B LOD0 dark grey, B DT light grey, A hidden",
+        "camera_count": 10,
+        "image_count": 10,
+        "shots": [
+          {
+            "camera": "Camera_1",
+            "output": "Camera_1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_2",
+            "output": "Camera_2_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_3",
+            "output": "Camera_3_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_4",
+            "output": "Camera_4_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Back1",
+            "output": "Camera_Back1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Bottom1",
+            "output": "Camera_Bottom1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Front1",
+            "output": "Camera_Front1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Left1",
+            "output": "Camera_Left1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Right1",
+            "output": "Camera_Right1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "camera": "Camera_Top1",
+            "output": "Camera_Top1_solo_b.png",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "run": 5,
+      "skipped": 0,
+      "image_count": 50,
+      "gate": "Ready"
+    }
+  },
+  "capturePreview": {
+    "schema": "maya-visual-review-capture-preview@1.0.0",
+    "outputDir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853",
+    "summary": {
+      "planned": 50,
+      "passes_run": 5,
+      "passes_skipped": 0,
+      "gate": "Ready"
+    },
+    "captures": [
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_2",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_2_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_3",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_3_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_4",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_4_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Back1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Back1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Bottom1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Bottom1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Front1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Front1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Left1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Left1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Right1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Right1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_lod0",
+        "camera": "Camera_Top1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Top1_rb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_2",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_2_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_3",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_3_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_4",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_4_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Back1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Back1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Bottom1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Bottom1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Front1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Front1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Left1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Left1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Right1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Right1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_lod0",
+        "camera": "Camera_Top1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Top1_wb_lod0.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_2",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_2_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_3",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_3_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_4",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_4_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Back1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Back1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Bottom1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Bottom1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Front1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Front1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Left1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Left1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Right1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Right1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "rb_dt",
+        "camera": "Camera_Top1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Top1_rb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_2",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_2_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_3",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_3_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_4",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_4_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Back1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Back1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Bottom1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Bottom1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Front1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Front1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Left1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Left1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Right1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Right1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "wb_dt",
+        "camera": "Camera_Top1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Top1_wb_dt.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_2",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_2_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_3",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_3_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_4",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_4_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Back1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Back1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Bottom1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Bottom1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Front1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Front1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Left1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Left1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Right1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Right1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      },
+      {
+        "pass_id": "solo_b",
+        "camera": "Camera_Top1",
+        "status": "planned",
+        "output": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\visual-review-capture-20260803-164853\\Camera_Top1_solo_b.png",
+        "note": "Preview only; GUI playblast can write this path in the next R9.4 step."
+      }
+    ]
+  }
+}

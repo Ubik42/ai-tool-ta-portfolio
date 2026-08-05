@@ -1,0 +1,414 @@
+{
+  "reportVersion": "maya-rule-matrix-dcc-report@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:15:36",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "collect": {
+    "schema": "maya-rule-matrix-facts@1.0.0",
+    "count": 5,
+    "facts": [
+      {
+        "node": "BATCH_Crate_LOD0_ready1",
+        "node_type": "transform",
+        "shapes": [
+          "BATCH_Crate_LOD0_ready1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "SG_Batch_Crate_Body1"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_task_batch1",
+        "top_parent": "r9_7_task_batch1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "BATCH_Crate_LOD0_ready1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "batch_ready_asset",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": null,
+        "collision_from_name": false
+      },
+      {
+        "node": "BATCH_Vehicle_DT_review1",
+        "node_type": "transform",
+        "shapes": [
+          "BATCH_Vehicle_DT_review1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 760,
+        "faces": 400,
+        "materials": [
+          "initialShadingGroup"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_task_batch1",
+        "top_parent": "r9_7_task_batch1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": null,
+        "has_protocol": false,
+        "payload_valid": false,
+        "payload_error": null,
+        "schema": null,
+        "role": null,
+        "platform": null,
+        "lod": null,
+        "budget_triangles": null,
+        "budget_textures": null,
+        "collision": null,
+        "collision_from_name": false
+      },
+      {
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "node_type": "transform",
+        "shapes": [
+          "WPN_Rifle_LOD0_texture_body1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "SG_AI_Texture_Body1"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_texture_fixture1",
+        "top_parent": "r9_7_texture_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": null,
+        "has_protocol": false,
+        "payload_valid": false,
+        "payload_error": null,
+        "schema": null,
+        "role": null,
+        "platform": null,
+        "lod": null,
+        "budget_triangles": null,
+        "budget_textures": null,
+        "collision": null,
+        "collision_from_name": false
+      },
+      {
+        "node": "hero_prop_body1",
+        "node_type": "transform",
+        "shapes": [
+          "hero_prop_body1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 12,
+        "faces": 6,
+        "materials": [
+          "initialShadingGroup"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_asset_protocol_fixture1",
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "hero_prop_body1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "synthetic_fixture",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": null,
+        "collision_from_name": false
+      },
+      {
+        "node": "hero_prop_socket1",
+        "node_type": "transform",
+        "shapes": [
+          "hero_prop_socket1Shape"
+        ],
+        "mesh_shape_count": 1,
+        "triangles": 760,
+        "faces": 400,
+        "materials": [
+          "initialShadingGroup"
+        ],
+        "material_count": 1,
+        "visible": true,
+        "parent": "r9_7_asset_protocol_fixture1",
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "has_export_root": true,
+        "protocol_attr": "aiToolTaProtocol",
+        "protocol_carrier": "hero_prop_socket1",
+        "has_protocol": true,
+        "payload_valid": true,
+        "payload_error": null,
+        "schema": "asset-protocol@dcc-r9",
+        "role": "synthetic_fixture",
+        "platform": "pc",
+        "lod": "lod0",
+        "budget_triangles": 12000,
+        "budget_textures": 4,
+        "collision": null,
+        "collision_from_name": false
+      }
+    ]
+  },
+  "validation": {
+    "schema": "maya-rule-matrix-validation@1.0.0",
+    "summary": {
+      "score": 0,
+      "pass": 2,
+      "warning": 1,
+      "error": 3,
+      "skipped": 0,
+      "gate": "Blocked"
+    },
+    "results": [
+      {
+        "rule_id": "protocol-carrier",
+        "name": "Protocol Carrier",
+        "stage": "Collect",
+        "severity": "blocker",
+        "status": "error",
+        "message": "Protocol custom attr is missing or unreadable.",
+        "evidence": "missing=BATCH_Vehicle_DT_review1,WPN_Rifle_LOD0_texture_body1 invalid=-",
+        "nodes": [
+          "BATCH_Vehicle_DT_review1",
+          "WPN_Rifle_LOD0_texture_body1"
+        ],
+        "fix_preview": "Safe preview: add or rewrite aiToolTaProtocol with the active payload."
+      },
+      {
+        "rule_id": "collision-contract",
+        "name": "Collision Contract",
+        "stage": "Validate",
+        "severity": "blocker",
+        "status": "error",
+        "message": "Collision declaration is missing on collected publish nodes.",
+        "evidence": "missing=BATCH_Crate_LOD0_ready1,BATCH_Vehicle_DT_review1,WPN_Rifle_LOD0_texture_body1,hero_prop_body1,hero_prop_socket1",
+        "nodes": [
+          "BATCH_Crate_LOD0_ready1",
+          "BATCH_Vehicle_DT_review1",
+          "WPN_Rifle_LOD0_texture_body1",
+          "hero_prop_body1",
+          "hero_prop_socket1"
+        ],
+        "fix_preview": "Manual preview: author collision geometry, set collision payload, or attach owner waiver."
+      },
+      {
+        "rule_id": "lod-budget",
+        "name": "LOD Budget",
+        "stage": "Validate",
+        "severity": "major",
+        "status": "warning",
+        "message": "LOD declaration is absent; platform budget cannot be checked.",
+        "evidence": "missing=BATCH_Vehicle_DT_review1,WPN_Rifle_LOD0_texture_body1",
+        "nodes": [
+          "BATCH_Vehicle_DT_review1",
+          "WPN_Rifle_LOD0_texture_body1"
+        ],
+        "fix_preview": "Manual preview: queue LOD budget review."
+      },
+      {
+        "rule_id": "material-texture-sync",
+        "name": "Material / Texture Sync",
+        "stage": "Validate",
+        "severity": "major",
+        "status": "pass",
+        "message": "Mesh shapes and shadingEngine bindings are present.",
+        "evidence": "missingMesh=- missingMaterial=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "export-root-clean",
+        "name": "Export Root Clean",
+        "stage": "Fix",
+        "severity": "major",
+        "status": "pass",
+        "message": "Collected nodes are under an export root or fixture root.",
+        "evidence": "noRoot=-",
+        "nodes": [],
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "publish-manifest",
+        "name": "Publish Manifest",
+        "stage": "Extract",
+        "severity": "minor",
+        "status": "error",
+        "message": "Manifest should include blockers before the asset can publish.",
+        "evidence": "upstreamGate=Blocked, facts=5",
+        "nodes": [
+          "BATCH_Crate_LOD0_ready1",
+          "BATCH_Vehicle_DT_review1",
+          "WPN_Rifle_LOD0_texture_body1",
+          "hero_prop_body1",
+          "hero_prop_socket1"
+        ],
+        "fix_preview": "Safe preview: export validation report JSON as the publish sidecar."
+      }
+    ]
+  },
+  "fixPreview": {
+    "schema": "maya-rule-matrix-fix-preview@1.0.0",
+    "summary": {
+      "total": 10,
+      "safe_auto": 3,
+      "manual_only": 7
+    },
+    "previews": [
+      {
+        "id": "fix-BATCH_Vehicle_DT_review1-protocol-carrier",
+        "node": "BATCH_Vehicle_DT_review1",
+        "rule_id": "protocol-carrier",
+        "kind": "safe_auto",
+        "owner": "Tool",
+        "mutation": "write_string_attr",
+        "target": "BATCH_Vehicle_DT_review1.aiToolTaProtocol",
+        "before": "missing_or_invalid",
+        "after": "asset-protocol@dcc-r9",
+        "preview": "Add or rewrite aiToolTaProtocol using the active workbench payload."
+      },
+      {
+        "id": "fix-WPN_Rifle_LOD0_texture_body1-protocol-carrier",
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "rule_id": "protocol-carrier",
+        "kind": "safe_auto",
+        "owner": "Tool",
+        "mutation": "write_string_attr",
+        "target": "WPN_Rifle_LOD0_texture_body1.aiToolTaProtocol",
+        "before": "missing_or_invalid",
+        "after": "asset-protocol@dcc-r9",
+        "preview": "Add or rewrite aiToolTaProtocol using the active workbench payload."
+      },
+      {
+        "id": "fix-BATCH_Crate_LOD0_ready1-collision-contract",
+        "node": "BATCH_Crate_LOD0_ready1",
+        "rule_id": "collision-contract",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "owner_disposition_required",
+        "target": "BATCH_Crate_LOD0_ready1",
+        "before": "collision=missing",
+        "after": "collision=simple|complex|proxy or waiver",
+        "preview": "Do not auto-generate gameplay-affecting collision without owner approval."
+      },
+      {
+        "id": "fix-BATCH_Vehicle_DT_review1-collision-contract",
+        "node": "BATCH_Vehicle_DT_review1",
+        "rule_id": "collision-contract",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "owner_disposition_required",
+        "target": "BATCH_Vehicle_DT_review1",
+        "before": "collision=missing",
+        "after": "collision=simple|complex|proxy or waiver",
+        "preview": "Do not auto-generate gameplay-affecting collision without owner approval."
+      },
+      {
+        "id": "fix-WPN_Rifle_LOD0_texture_body1-collision-contract",
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "rule_id": "collision-contract",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "owner_disposition_required",
+        "target": "WPN_Rifle_LOD0_texture_body1",
+        "before": "collision=missing",
+        "after": "collision=simple|complex|proxy or waiver",
+        "preview": "Do not auto-generate gameplay-affecting collision without owner approval."
+      },
+      {
+        "id": "fix-hero_prop_body1-collision-contract",
+        "node": "hero_prop_body1",
+        "rule_id": "collision-contract",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "owner_disposition_required",
+        "target": "hero_prop_body1",
+        "before": "collision=missing",
+        "after": "collision=simple|complex|proxy or waiver",
+        "preview": "Do not auto-generate gameplay-affecting collision without owner approval."
+      },
+      {
+        "id": "fix-hero_prop_socket1-collision-contract",
+        "node": "hero_prop_socket1",
+        "rule_id": "collision-contract",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "owner_disposition_required",
+        "target": "hero_prop_socket1",
+        "before": "collision=missing",
+        "after": "collision=simple|complex|proxy or waiver",
+        "preview": "Do not auto-generate gameplay-affecting collision without owner approval."
+      },
+      {
+        "id": "fix-BATCH_Vehicle_DT_review1-lod-budget",
+        "node": "BATCH_Vehicle_DT_review1",
+        "rule_id": "lod-budget",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "budget_review_required",
+        "target": "BATCH_Vehicle_DT_review1",
+        "before": "lod=missing",
+        "after": "lod declaration or owner exception",
+        "preview": "Queue LOD review before extract."
+      },
+      {
+        "id": "fix-WPN_Rifle_LOD0_texture_body1-lod-budget",
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "rule_id": "lod-budget",
+        "kind": "manual_only",
+        "owner": "TA",
+        "mutation": "budget_review_required",
+        "target": "WPN_Rifle_LOD0_texture_body1",
+        "before": "lod=missing",
+        "after": "lod declaration or owner exception",
+        "preview": "Queue LOD review before extract."
+      },
+      {
+        "id": "fix-publish-manifest",
+        "node": "<scene>",
+        "rule_id": "publish-manifest",
+        "kind": "safe_auto",
+        "owner": "Tool",
+        "mutation": "export_report_json",
+        "target": "maya-auroraview-host/artifacts",
+        "before": "transient validation result",
+        "after": "versioned report artifact",
+        "preview": "Export collected facts, validation rows, and staged fixes as JSON evidence."
+      }
+    ]
+  }
+}

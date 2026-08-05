@@ -1,0 +1,334 @@
+{
+  "reportVersion": "impact-budget-confidence-aging-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "budget_confidence_aging_rehearsal",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.11.0",
+    "asset-dependency-impact@1.7.0",
+    "impact-rollback-budget-simulator@0.1.0",
+    "impact-release-confidence-heatmap@0.1.0",
+    "impact-evidence-aging-policy@0.1.0",
+    "impact-audit-export-diff@0.3.0"
+  ],
+  "rollbackBudgetSimulator": {
+    "summary": {
+      "totalLines": 6,
+      "withinBudgetLines": 2,
+      "nearLimitLines": 2,
+      "overBudgetLines": 2,
+      "blockedLines": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep near-limit and over-budget rollback lanes in Review until owner exceptions are refreshed."
+    },
+    "businessSignal": "Rollback is budgeted by lane; over-budget rollback paths stay visible for review but cannot authorize live rollback.",
+    "lineStates": [
+      {
+        "id": "budget-public-baseline",
+        "state": "within_budget",
+        "gate": "Ready",
+        "budgetLimit": 12,
+        "estimatedCost": 4,
+        "remainingBudget": 8,
+        "owner": "Portfolio TA",
+        "liveWrites": 0
+      },
+      {
+        "id": "budget-rollback-preview",
+        "state": "within_budget",
+        "gate": "Ready",
+        "budgetLimit": 16,
+        "estimatedCost": 7,
+        "remainingBudget": 9,
+        "owner": "Release TA",
+        "liveWrites": 0
+      },
+      {
+        "id": "budget-monitor-watch",
+        "state": "near_limit",
+        "gate": "Review",
+        "budgetLimit": 14,
+        "estimatedCost": 12,
+        "remainingBudget": 2,
+        "owner": "Platform TA",
+        "liveWrites": 0
+      },
+      {
+        "id": "budget-security-alias",
+        "state": "near_limit",
+        "gate": "Review",
+        "budgetLimit": 10,
+        "estimatedCost": 9,
+        "remainingBudget": 1,
+        "owner": "Security TA",
+        "liveWrites": 0
+      },
+      {
+        "id": "budget-endpoint-route",
+        "state": "over_budget",
+        "gate": "Review",
+        "budgetLimit": 12,
+        "estimatedCost": 19,
+        "remainingBudget": -7,
+        "owner": "Platform Adapter Owner",
+        "liveWrites": 0
+      },
+      {
+        "id": "budget-owner-unfreeze",
+        "state": "over_budget",
+        "gate": "Review",
+        "budgetLimit": 10,
+        "estimatedCost": 18,
+        "remainingBudget": -8,
+        "owner": "Release TA",
+        "liveWrites": 0
+      }
+    ]
+  },
+  "releaseConfidenceHeatmap": {
+    "summary": {
+      "totalCells": 6,
+      "highCells": 2,
+      "mediumCells": 2,
+      "lowCells": 2,
+      "blockedCells": 0,
+      "minConfidenceScore": 41,
+      "privateValuesExposed": 0,
+      "gate": "Review",
+      "nextAction": "Treat low-confidence lanes as release review work, not hidden blockers."
+    },
+    "businessSignal": "Release confidence is evaluated per lane and signal instead of collapsing owner-held or stale evidence into one Ready flag.",
+    "cells": [
+      {
+        "id": "confidence-public-baseline",
+        "state": "high",
+        "gate": "Ready",
+        "lane": "wave-0",
+        "signal": "manifest sync",
+        "confidenceScore": 92,
+        "owner": "Portfolio TA"
+      },
+      {
+        "id": "confidence-rollback-preview",
+        "state": "high",
+        "gate": "Ready",
+        "lane": "wave-1",
+        "signal": "dry-run rehearsal",
+        "confidenceScore": 86,
+        "owner": "Release TA"
+      },
+      {
+        "id": "confidence-monitor-watch",
+        "state": "medium",
+        "gate": "Review",
+        "lane": "wave-2",
+        "signal": "watch stream continuity",
+        "confidenceScore": 64,
+        "owner": "Platform TA"
+      },
+      {
+        "id": "confidence-security-alias",
+        "state": "medium",
+        "gate": "Review",
+        "lane": "wave-3",
+        "signal": "redacted alias ruling",
+        "confidenceScore": 58,
+        "owner": "Security TA"
+      },
+      {
+        "id": "confidence-endpoint-route",
+        "state": "low",
+        "gate": "Review",
+        "lane": "wave-4",
+        "signal": "private endpoint exception",
+        "confidenceScore": 43,
+        "owner": "Platform Adapter Owner"
+      },
+      {
+        "id": "confidence-owner-unfreeze",
+        "state": "low",
+        "gate": "Review",
+        "lane": "wave-5",
+        "signal": "unfreeze exception",
+        "confidenceScore": 41,
+        "owner": "Release TA"
+      }
+    ]
+  },
+  "evidenceAgingPolicy": {
+    "summary": {
+      "totalRecords": 6,
+      "freshRecords": 2,
+      "dueSoonRecords": 2,
+      "expiredRecords": 2,
+      "blockedRecords": 0,
+      "maxAgeHours": 96,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Refresh due-soon and expired evidence before it can support release confidence."
+    },
+    "businessSignal": "Evidence freshness is a release input; expired evidence remains auditable but cannot support release readiness.",
+    "records": [
+      {
+        "id": "aging-public-package-report",
+        "state": "fresh",
+        "gate": "Ready",
+        "evidenceRef": "portfolio-r8-16-json",
+        "ageHours": 8,
+        "expiresAt": "2026-08-07T15:59:59+08:00",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "aging-rollback-preview-screenshot",
+        "state": "fresh",
+        "gate": "Ready",
+        "evidenceRef": "task-orchestrator-r8-16-rollout-incident-full",
+        "ageHours": 10,
+        "expiresAt": "2026-08-07T13:59:59+08:00",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "aging-monitor-watch-stream",
+        "state": "due_soon",
+        "gate": "Review",
+        "evidenceRef": "monitor-owner-held-route",
+        "ageHours": 42,
+        "expiresAt": "2026-08-02T05:59:59+08:00",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "aging-security-alias-receipt",
+        "state": "due_soon",
+        "gate": "Review",
+        "evidenceRef": "private-security-service-identity",
+        "ageHours": 44,
+        "expiresAt": "2026-08-02T03:59:59+08:00",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "aging-endpoint-route-exception",
+        "state": "expired",
+        "gate": "Review",
+        "evidenceRef": "private-endpoint-route-policy",
+        "ageHours": 96,
+        "expiresAt": "2026-07-31T18:00:00+08:00",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "aging-owner-unfreeze-exception",
+        "state": "expired",
+        "gate": "Review",
+        "evidenceRef": "private-route-unfreeze-approval",
+        "ageHours": 90,
+        "expiresAt": "2026-07-31T19:00:00+08:00",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 8,
+      "unchangedRows": 2,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.17 budget, confidence, and aging reports are accepted by reviewers."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.10.0",
+        "after": "task-orchestrator-report@1.11.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-impact-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.6.0",
+        "after": "asset-dependency-impact@1.7.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-audit-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@0.2.0",
+        "after": "impact-audit-export-diff@0.3.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-rollback-budget",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.rollbackBudgetSimulator",
+        "before": "missing",
+        "after": "6 lines, 2 within budget, 2 near limit, 2 over budget",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-release-confidence",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseConfidenceHeatmap",
+        "before": "missing",
+        "after": "6 cells, 2 high, 2 medium, 2 low",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-evidence-aging",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.evidenceAgingPolicy",
+        "before": "missing",
+        "after": "6 records, 2 fresh, 2 due soon, 2 expired",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-live-writes",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "guardrails": [
+    "Rollback budget is review evidence, not authorization for live rollback.",
+    "Over-budget lanes can remain visible but cannot be promoted to release action.",
+    "Every rollback line keeps liveWrites at zero in the public portfolio.",
+    "Confidence is a multi-signal review aid, not a single global Ready switch.",
+    "Owner-held lanes cannot be averaged into a green release state.",
+    "Private service names stay behind public refs and owner ids.",
+    "Expired evidence can be displayed for audit but cannot support release readiness.",
+    "Evidence freshness is evaluated per record, not by package-level age alone.",
+    "Private refs remain aliases and expose zero private fields."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-17-budget-confidence-full.png",
+    "assets/task-orchestrator-r8-17-mobile-tall.png",
+    "assets/task-orchestrator-r8-17-exported-report.json",
+    "assets/portfolio-case-study-r8-17-exported-report.json"
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "reportVersion": "unreal-handoff-inspector-contract@0.4.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Handoff Inspector",
+  "evidenceLevel": "L3+",
+  "l3Status": "unreal_registry_fixture_matched",
+  "unrealCli": {
+    "available": true,
+    "path": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe"
+  },
+  "unrealProject": {
+    "available": true,
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject"
+  },
+  "unrealPython": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "assetRegistry": {
+      "queried": true,
+      "gameAssetCount": 2,
+      "error": null
+    },
+    "fixtureAssets": {
+      "fixtureRoot": "/Game/AI_Tool_TA",
+      "sourceFiles": [
+        "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj"
+      ],
+      "assetWrites": 0,
+      "expectedAssetCount": 2,
+      "matchedAssetCount": 2,
+      "missingAssetCount": 0,
+      "classMismatchCount": 0,
+      "matched": true,
+      "errors": [],
+      "rows": [
+        {
+          "path": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+          "role": "ready_import_target",
+          "expectedClass": "StaticMesh",
+          "exists": true,
+          "className": "StaticMesh",
+          "classMatches": true,
+          "packageName": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+          "objectPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A.SM_HeroPanel_A"
+        },
+        {
+          "path": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+          "role": "ready_material_dependency",
+          "expectedClass": "Material",
+          "exists": true,
+          "className": "Material",
+          "classMatches": true,
+          "packageName": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+          "objectPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        }
+      ]
+    },
+    "engineFacts": {
+      "assetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "assetWrites": 1,
+      "expectedFactCount": 4,
+      "matchedFactCount": 3,
+      "missingFactCount": 1,
+      "matched": false,
+      "facts": {
+        "sourceImportData": {
+          "assetImportDataPresent": true,
+          "sourceFiles": [
+            "<repo>/dcc-hosts/unreal-handoff-inspector/fixtures/unreal_sources/SM_HeroPanel_A.obj"
+          ],
+          "expectedSourceFile": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj",
+          "sourceFileMatched": true,
+          "errors": []
+        },
+        "materialSlots": {
+          "slotCount": 1,
+          "expectedMaterialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+          "expectedMaterialAssigned": true,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "slotName": "WorldGridMaterial",
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "lod": {
+          "lodCount": -1,
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": null,
+          "errors": []
+        },
+        "collision": {
+          "bodySetupPresent": true,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "editorStaticMeshLibraryCollisionComplexity": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "editorStaticMeshLibraryConvexCount": -1,
+          "errors": []
+        }
+      },
+      "rows": [
+        {
+          "id": "source-import-data",
+          "matched": true,
+          "evidence": "sourceFiles=<repo>/dcc-hosts/unreal-handoff-inspector/fixtures/unreal_sources/SM_HeroPanel_A.obj expected=<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj"
+        },
+        {
+          "id": "material-slot",
+          "matched": true,
+          "evidence": "slots=1 assigned=/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        },
+        {
+          "id": "lod-count",
+          "matched": false,
+          "evidence": "lodCount=-1 sourceModelCount=None"
+        },
+        {
+          "id": "collision-settings",
+          "matched": true,
+          "evidence": "bodySetup=True trace=<CollisionTraceFlag.CTF_USE_DEFAULT: 0> simpleShapes=1"
+        }
+      ],
+      "errors": [],
+      "apiProbe": {
+        "editorStaticMeshLibraryAvailable": true,
+        "editorStaticMeshLibraryMethods": [
+          "add_simple_collisions",
+          "add_simple_collisions_with_notification",
+          "bulk_set_convex_decomposition_collisions",
+          "bulk_set_convex_decomposition_collisions_with_notification",
+          "enable_section_collision",
+          "get_collision_complexity",
+          "get_convex_collision_count",
+          "get_lod_build_settings",
+          "get_lod_count",
+          "get_lod_reduction_settings",
+          "get_lod_screen_sizes",
+          "get_number_materials",
+          "get_number_verts",
+          "get_simple_collision_count",
+          "has_instance_vertex_colors",
+          "has_vertex_colors",
+          "import_lod",
+          "is_section_collision_enabled",
+          "remove_collisions",
+          "remove_collisions_with_notification",
+          "remove_lods",
+          "set_convex_decomposition_collisions",
+          "set_convex_decomposition_collisions_with_notification",
+          "set_lod_build_settings",
+          "set_lod_from_static_mesh",
+          "set_lod_reduction_settings",
+          "set_lods",
+          "set_lods_with_notification"
+        ]
+      }
+    },
+    "mutation": {
+      "engineWrites": 0,
+      "assetWrites": 1,
+      "savePackage": true,
+      "writeScope": "/Game/AI_Tool_TA public test fixture only"
+    }
+  },
+  "unrealRegistryEvidence": {
+    "matched": true,
+    "expectedAssetCount": 2,
+    "matchedAssetCount": 2,
+    "missingAssetCount": 0,
+    "classMismatchCount": 0,
+    "assetWrites": 0,
+    "fixtureRoot": "/Game/AI_Tool_TA",
+    "sourceFiles": [
+      "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj"
+    ],
+    "rows": [
+      {
+        "path": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "role": "ready_import_target",
+        "expectedClass": "StaticMesh",
+        "exists": true,
+        "className": "StaticMesh",
+        "classMatches": true,
+        "packageName": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "objectPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A.SM_HeroPanel_A"
+      },
+      {
+        "path": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+        "role": "ready_material_dependency",
+        "expectedClass": "Material",
+        "exists": true,
+        "className": "Material",
+        "classMatches": true,
+        "packageName": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+        "objectPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      }
+    ]
+  },
+  "unrealEngineFactEvidence": {
+    "matched": false,
+    "expectedFactCount": 4,
+    "matchedFactCount": 3,
+    "missingFactCount": 1,
+    "assetWrites": 1,
+    "assetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+    "facts": {
+      "sourceImportData": {
+        "assetImportDataPresent": true,
+        "sourceFiles": [
+          "<repo>/dcc-hosts/unreal-handoff-inspector/fixtures/unreal_sources/SM_HeroPanel_A.obj"
+        ],
+        "expectedSourceFile": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj",
+        "sourceFileMatched": true,
+        "errors": []
+      },
+      "materialSlots": {
+        "slotCount": 1,
+        "expectedMaterialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+        "expectedMaterialAssigned": true,
+        "materialPaths": [
+          "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        ],
+        "rows": [
+          {
+            "index": 0,
+            "slotName": "WorldGridMaterial",
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          }
+        ]
+      },
+      "lod": {
+        "lodCount": -1,
+        "sourceModelCount": null,
+        "lod0VertexCount": 0,
+        "lod0TriangleCount": null,
+        "errors": []
+      },
+      "collision": {
+        "bodySetupPresent": true,
+        "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+        "simpleShapeCount": 1,
+        "shapeCounts": {
+          "box_elems": 0,
+          "sphere_elems": 0,
+          "sphyl_elems": 0,
+          "convex_elems": 1,
+          "tapered_capsule_elems": 0
+        },
+        "editorStaticMeshLibraryCollisionComplexity": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+        "editorStaticMeshLibraryConvexCount": -1,
+        "errors": []
+      }
+    },
+    "rows": [
+      {
+        "id": "source-import-data",
+        "matched": true,
+        "evidence": "sourceFiles=<repo>/dcc-hosts/unreal-handoff-inspector/fixtures/unreal_sources/SM_HeroPanel_A.obj expected=<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\unreal_sources\\SM_HeroPanel_A.obj"
+      },
+      {
+        "id": "material-slot",
+        "matched": true,
+        "evidence": "slots=1 assigned=/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      },
+      {
+        "id": "lod-count",
+        "matched": false,
+        "evidence": "lodCount=-1 sourceModelCount=None"
+      },
+      {
+        "id": "collision-settings",
+        "matched": true,
+        "evidence": "bodySetup=True trace=<CollisionTraceFlag.CTF_USE_DEFAULT: 0> simpleShapes=1"
+      }
+    ],
+    "errors": [],
+    "apiProbe": {
+      "editorStaticMeshLibraryAvailable": true,
+      "editorStaticMeshLibraryMethods": [
+        "add_simple_collisions",
+        "add_simple_collisions_with_notification",
+        "bulk_set_convex_decomposition_collisions",
+        "bulk_set_convex_decomposition_collisions_with_notification",
+        "enable_section_collision",
+        "get_collision_complexity",
+        "get_convex_collision_count",
+        "get_lod_build_settings",
+        "get_lod_count",
+        "get_lod_reduction_settings",
+        "get_lod_screen_sizes",
+        "get_number_materials",
+        "get_number_verts",
+        "get_simple_collision_count",
+        "has_instance_vertex_colors",
+        "has_vertex_colors",
+        "import_lod",
+        "is_section_collision_enabled",
+        "remove_collisions",
+        "remove_collisions_with_notification",
+        "remove_lods",
+        "set_convex_decomposition_collisions",
+        "set_convex_decomposition_collisions_with_notification",
+        "set_lod_build_settings",
+        "set_lod_from_static_mesh",
+        "set_lod_reduction_settings",
+        "set_lods",
+        "set_lods_with_notification"
+      ]
+    }
+  },
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\fixtures\\synthetic_unreal_handoff.json",
+    "schema": "synthetic-unreal-handoff@0.1.0",
+    "intent": "Public-safe Unreal-side fixture proving that DCC import intents still need engine content registry, import task, dependency, platform and owner-state inspection."
+  },
+  "adapter": {
+    "id": "unreal-handoff-inspector",
+    "name": "Unreal Handoff Inspector",
+    "methodSource": "Maya Engine Handoff Preflight / Unreal Python import task inspection",
+    "protocolCarrier": "DCC import sidecar + Unreal content path + asset import metadata",
+    "boundary": {
+      "mutation": "public_test_project_fixture_write",
+      "engineWrites": 0,
+      "assetWrites": 1,
+      "nextStep": "Expand registry comparison to source import-data, material slots, LOD count and collision settings."
+    }
+  },
+  "projectSnapshot": {
+    "engine": "Unreal",
+    "engineVersion": "5.3",
+    "mountRoots": [
+      "/Game/AI_Tool_TA/"
+    ],
+    "pythonPluginEnabled": true,
+    "assetCount": 2
+  },
+  "evaluation": {
+    "schema": "unreal-handoff-inspector-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "intentCount": 2,
+      "importReady": 1,
+      "review": 0,
+      "blocked": 1,
+      "dryRunCommands": 1,
+      "passChecks": 14,
+      "reviewChecks": 2,
+      "blockedChecks": 4
+    },
+    "rows": [
+      {
+        "id": "unreal-inspect-maya-asset-001",
+        "assetId": "maya-asset-001",
+        "label": "Ready PC hero panel",
+        "platformPreset": "pc",
+        "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "state": "import_ready",
+        "checks": [
+          {
+            "id": "owner-state",
+            "label": "Owner State",
+            "status": "pass",
+            "evidence": "state=ready_for_import owner=accepted",
+            "fixPreview": "None"
+          },
+          {
+            "id": "mount-root",
+            "label": "Mount Root",
+            "status": "pass",
+            "evidence": "path=/Game/AI_Tool_TA/Props/SM_HeroPanel_A roots=/Game/AI_Tool_TA/",
+            "fixPreview": "None"
+          },
+          {
+            "id": "platform-preset",
+            "label": "Platform Preset",
+            "status": "pass",
+            "evidence": "intent=pc preset=pc",
+            "fixPreview": "None"
+          },
+          {
+            "id": "asset-class",
+            "label": "Asset Class",
+            "status": "pass",
+            "evidence": "assetClass=StaticMesh allowed=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "source-fingerprint",
+            "label": "Source Fingerprint",
+            "status": "pass",
+            "evidence": "source=sha1:hero-panel-a sidecar=sha1:hero-panel-a",
+            "fixPreview": "None"
+          },
+          {
+            "id": "content-conflict",
+            "label": "Content Conflict",
+            "status": "pass",
+            "evidence": "existing=sha1:hero-panel-a",
+            "fixPreview": "None"
+          },
+          {
+            "id": "material-dependencies",
+            "label": "Material Dependencies",
+            "status": "pass",
+            "evidence": "deps=/Game/AI_Tool_TA/Materials/M_HeroPanel,/Game/AI_Tool_TA/Textures/T_panel_body_D,/Game/AI_Tool_TA/Textures/T_panel_body_N,/Game/AI_Tool_TA/Textures/T_panel_trim_MRA",
+            "fixPreview": "None"
+          },
+          {
+            "id": "lod-policy",
+            "label": "LOD Policy",
+            "status": "pass",
+            "evidence": "lods=2 min=2",
+            "fixPreview": "None"
+          },
+          {
+            "id": "collision-policy",
+            "label": "Collision Policy",
+            "status": "pass",
+            "evidence": "collision=proxy allowed=simple,complex,proxy",
+            "fixPreview": "None"
+          },
+          {
+            "id": "python-plugin",
+            "label": "Python Plugin",
+            "status": "pass",
+            "evidence": "pythonPluginEnabled=True",
+            "fixPreview": "None"
+          }
+        ],
+        "existingAsset": {
+          "path": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+          "assetClass": "StaticMesh",
+          "sourceFingerprint": "sha1:hero-panel-a"
+        },
+        "dryRunCommand": {
+          "id": "dry-run-import-maya-asset-001",
+          "mutationAllowed": false,
+          "commandPreview": "AssetImportTask(filename=D:/public-fixtures/exports/SM_HeroPanel_A.fbx, destination_path=/Game/AI_Tool_TA/Props/SM_HeroPanel_A, automated=True, save=False)",
+          "expectedFactory": "StaticMesh",
+          "targetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A"
+        },
+        "disposition": "create_unreal_import_task_preview"
+      },
+      {
+        "id": "unreal-inspect-maya-asset-002",
+        "assetId": "maya-asset-002",
+        "label": "Held mobile prop",
+        "platformPreset": "mobile",
+        "enginePath": "/Game/AI_Tool_TA/Mobile/Props/SM_HeroPanel_B",
+        "state": "blocked",
+        "checks": [
+          {
+            "id": "owner-state",
+            "label": "Owner State",
+            "status": "blocked",
+            "evidence": "state=held_for_owner_disposition owner=pending",
+            "fixPreview": "Keep intent held until owner disposition and DCC gate are accepted."
+          },
+          {
+            "id": "mount-root",
+            "label": "Mount Root",
+            "status": "pass",
+            "evidence": "path=/Game/AI_Tool_TA/Mobile/Props/SM_HeroPanel_B roots=/Game/AI_Tool_TA/",
+            "fixPreview": "None"
+          },
+          {
+            "id": "platform-preset",
+            "label": "Platform Preset",
+            "status": "pass",
+            "evidence": "intent=mobile preset=mobile",
+            "fixPreview": "None"
+          },
+          {
+            "id": "asset-class",
+            "label": "Asset Class",
+            "status": "pass",
+            "evidence": "assetClass=StaticMesh allowed=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "source-fingerprint",
+            "label": "Source Fingerprint",
+            "status": "blocked",
+            "evidence": "source=sha1:hero-panel-b sidecar=sha1:hero-panel-b-dcc-drift",
+            "fixPreview": "Regenerate the sidecar from the exported DCC source file."
+          },
+          {
+            "id": "content-conflict",
+            "label": "Content Conflict",
+            "status": "review",
+            "evidence": "existing=sha1:stale-mobile-b",
+            "fixPreview": "Require reviewer confirmation before replacing an existing Unreal asset."
+          },
+          {
+            "id": "material-dependencies",
+            "label": "Material Dependencies",
+            "status": "blocked",
+            "evidence": "deps=/Game/AI_Tool_TA/Materials/M_MobilePanel,/Game/AI_Tool_TA/Textures/T_mobile_body_D",
+            "fixPreview": "Import or relink material dependencies before asset import."
+          },
+          {
+            "id": "lod-policy",
+            "label": "LOD Policy",
+            "status": "review",
+            "evidence": "lods=1 min=2",
+            "fixPreview": "Generate required LODs or attach a platform exception."
+          },
+          {
+            "id": "collision-policy",
+            "label": "Collision Policy",
+            "status": "blocked",
+            "evidence": "collision=missing allowed=simple,proxy",
+            "fixPreview": "Author collision or attach an approved no-collision waiver."
+          },
+          {
+            "id": "python-plugin",
+            "label": "Python Plugin",
+            "status": "pass",
+            "evidence": "pythonPluginEnabled=True",
+            "fixPreview": "None"
+          }
+        ],
+        "existingAsset": {
+          "path": "/Game/AI_Tool_TA/Mobile/Props/SM_HeroPanel_B",
+          "assetClass": "StaticMesh",
+          "sourceFingerprint": "sha1:stale-mobile-b"
+        },
+        "dryRunCommand": null,
+        "disposition": "hold_unreal_import"
+      }
+    ],
+    "dryRunCommands": [
+      {
+        "id": "dry-run-import-maya-asset-001",
+        "mutationAllowed": false,
+        "commandPreview": "AssetImportTask(filename=D:/public-fixtures/exports/SM_HeroPanel_A.fbx, destination_path=/Game/AI_Tool_TA/Props/SM_HeroPanel_A, automated=True, save=False)",
+        "expectedFactory": "StaticMesh",
+        "targetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A"
+      }
+    ],
+    "blockedReasons": [
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "owner-state",
+        "status": "blocked",
+        "evidence": "state=held_for_owner_disposition owner=pending",
+        "fixPreview": "Keep intent held until owner disposition and DCC gate are accepted."
+      },
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "source-fingerprint",
+        "status": "blocked",
+        "evidence": "source=sha1:hero-panel-b sidecar=sha1:hero-panel-b-dcc-drift",
+        "fixPreview": "Regenerate the sidecar from the exported DCC source file."
+      },
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "content-conflict",
+        "status": "review",
+        "evidence": "existing=sha1:stale-mobile-b",
+        "fixPreview": "Require reviewer confirmation before replacing an existing Unreal asset."
+      },
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "material-dependencies",
+        "status": "blocked",
+        "evidence": "deps=/Game/AI_Tool_TA/Materials/M_MobilePanel,/Game/AI_Tool_TA/Textures/T_mobile_body_D",
+        "fixPreview": "Import or relink material dependencies before asset import."
+      },
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "lod-policy",
+        "status": "review",
+        "evidence": "lods=1 min=2",
+        "fixPreview": "Generate required LODs or attach a platform exception."
+      },
+      {
+        "assetId": "maya-asset-002",
+        "checkId": "collision-policy",
+        "status": "blocked",
+        "evidence": "collision=missing allowed=simple,proxy",
+        "fixPreview": "Author collision or attach an approved no-collision waiver."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Engine handoff is checked after DCC preflight: the inspector validates Unreal path, import class, source fingerprint, platform preset, material dependencies, LOD/collision policy, and owner hold state.",
+    "Ready and blocked paths are both present in the fixture, so the reviewer can inspect failure behavior instead of only a happy path.",
+    "Unreal Python runtime evidence is included when available; any asset write is limited to the public test project fixture path.",
+    "L3++ evidence reads source import data, material slots, LOD count and collision settings from the generated Unreal StaticMesh fixture."
+  ]
+}

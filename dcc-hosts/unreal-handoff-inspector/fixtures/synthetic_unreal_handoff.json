@@ -1,0 +1,120 @@
+{
+  "schema": "synthetic-unreal-handoff@0.1.0",
+  "intent": "Public-safe Unreal-side fixture proving that DCC import intents still need engine content registry, import task, dependency, platform and owner-state inspection.",
+  "project": {
+    "engine": "Unreal",
+    "engineVersion": "5.3",
+    "projectName": "AI_Tool_TA_Portfolio_Synthetic",
+    "mountRoots": [
+      "/Game/AI_Tool_TA/"
+    ],
+    "pythonPluginEnabled": true
+  },
+  "platformPresets": [
+    {
+      "id": "pc",
+      "platform": "pc",
+      "pathPrefix": "/Game/AI_Tool_TA/",
+      "allowedAssetClasses": [
+        "StaticMesh"
+      ],
+      "minLods": 2,
+      "allowedCollision": [
+        "simple",
+        "complex",
+        "proxy"
+      ]
+    },
+    {
+      "id": "mobile",
+      "platform": "mobile",
+      "pathPrefix": "/Game/AI_Tool_TA/Mobile/",
+      "allowedAssetClasses": [
+        "StaticMesh"
+      ],
+      "minLods": 2,
+      "allowedCollision": [
+        "simple",
+        "proxy"
+      ]
+    }
+  ],
+  "exceptionWaivers": [
+    {
+      "id": "waiver-pc-single-lod-public-fixture",
+      "assetId": "maya-asset-001",
+      "preset": "pc",
+      "factId": "lod-count",
+      "state": "approved",
+      "owner": "tool-ta",
+      "expiresOn": "2026-09-30",
+      "reason": "The public OBJ fixture intentionally imports as one LOD; production assets must generate the full LOD chain before release."
+    }
+  ],
+  "contentRegistry": {
+    "dependencyPaths": [
+      "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+      "/Game/AI_Tool_TA/Textures/T_panel_body_D",
+      "/Game/AI_Tool_TA/Textures/T_panel_body_N",
+      "/Game/AI_Tool_TA/Textures/T_panel_trim_MRA"
+    ],
+    "assets": [
+      {
+        "path": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "assetClass": "StaticMesh",
+        "sourceFingerprint": "sha1:hero-panel-a"
+      },
+      {
+        "path": "/Game/AI_Tool_TA/Mobile/Props/SM_HeroPanel_B",
+        "assetClass": "StaticMesh",
+        "sourceFingerprint": "sha1:stale-mobile-b"
+      }
+    ]
+  },
+  "importIntents": [
+    {
+      "assetId": "maya-asset-001",
+      "label": "Ready PC hero panel",
+      "state": "ready_for_import",
+      "ownerState": "accepted",
+      "platformPreset": "pc",
+      "platform": "pc",
+      "assetClass": "StaticMesh",
+      "sourceFile": "D:/public-fixtures/exports/SM_HeroPanel_A.fbx",
+      "sourceFingerprint": "sha1:hero-panel-a",
+      "sidecarFingerprint": "sha1:hero-panel-a",
+      "enginePath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "materialDependencies": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+        "/Game/AI_Tool_TA/Textures/T_panel_body_D",
+        "/Game/AI_Tool_TA/Textures/T_panel_body_N",
+        "/Game/AI_Tool_TA/Textures/T_panel_trim_MRA"
+      ],
+      "lodCount": 2,
+      "triangles": 6200,
+      "textures": 3,
+      "collision": "proxy"
+    },
+    {
+      "assetId": "maya-asset-002",
+      "label": "Held mobile prop",
+      "state": "held_for_owner_disposition",
+      "ownerState": "pending",
+      "platformPreset": "mobile",
+      "platform": "mobile",
+      "assetClass": "StaticMesh",
+      "sourceFile": "D:/public-fixtures/exports/SM_HeroPanel_B.fbx",
+      "sourceFingerprint": "sha1:hero-panel-b",
+      "sidecarFingerprint": "sha1:hero-panel-b-dcc-drift",
+      "enginePath": "/Game/AI_Tool_TA/Mobile/Props/SM_HeroPanel_B",
+      "materialDependencies": [
+        "/Game/AI_Tool_TA/Materials/M_MobilePanel",
+        "/Game/AI_Tool_TA/Textures/T_mobile_body_D"
+      ],
+      "lodCount": 1,
+      "triangles": 9100,
+      "textures": 4,
+      "collision": "missing"
+    }
+  ]
+}

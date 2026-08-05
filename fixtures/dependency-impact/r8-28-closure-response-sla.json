@@ -1,0 +1,1102 @@
+{
+  "fixtureVersion": "impact-closure-response-sla-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "sourceReportVersion": "task-orchestrator-report@1.22.0",
+  "impactReportVersion": "asset-dependency-impact@1.18.0",
+  "packageId": "release_candidate_VEH_Trailer_B_console_bundle",
+  "reports": {
+    "closureAcceptanceReplay": {
+      "reportVersion": "impact-closure-acceptance-replay@0.1.0",
+      "replayId": "closurereplay_71oge3",
+      "mode": "closure_acceptance_replay",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "replayedRows": 2,
+        "acceptanceRequiredRows": 2,
+        "ownerHoldRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Replay only accepted closure packets; open and owner-held packets remain review pressure."
+      },
+      "rows": [
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "label": "Lock public package report unchanged accepted freezes into release packet remains ready can promote accepted rollback is previewable bundle matches approval handoff closed accepted replayed",
+          "state": "replayed",
+          "gate": "Ready",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "owner": "Portfolio TA",
+          "reviewer": "Release Reviewer",
+          "replayKey": "closureacceptreplay_j0pjr8",
+          "replayScope": "accepted-closure-packet, replayed-approval, public-incident-handoff",
+          "replayResult": "closure acceptance replay reproduced the accepted packet boundary",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-public-package-report",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-public-package-report",
+            "bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "seal-approval-release-note-readiness-accept-lock-public-package-report",
+            "rollback-preview-readiness-accept-lock-public-package-report",
+            "approval-release-note-readiness-accept-lock-public-package-report"
+          ],
+          "nextAction": "Attach replayed closure acceptance to incident SLA scoreboard."
+        },
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "label": "Lock task orchestrator report unchanged accepted freezes into release packet remains ready can promote accepted rollback is previewable bundle matches approval handoff closed accepted replayed",
+          "state": "replayed",
+          "gate": "Ready",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "owner": "Release TA",
+          "reviewer": "Release Reviewer",
+          "replayKey": "closureacceptreplay_q26ise",
+          "replayScope": "accepted-closure-packet, replayed-approval, public-incident-handoff",
+          "replayResult": "closure acceptance replay reproduced the accepted packet boundary",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-task-report",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-task-report",
+            "bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "seal-approval-release-note-readiness-accept-lock-task-report",
+            "rollback-preview-readiness-accept-lock-task-report",
+            "approval-release-note-readiness-accept-lock-task-report"
+          ],
+          "nextAction": "Attach replayed closure acceptance to incident SLA scoreboard."
+        },
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "label": "Decision screenshot changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review rollback waits for diff acceptance bundle needs review incident remains open acceptance open still requires acceptance",
+          "state": "acceptance_required",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "owner": "Portfolio TA",
+          "reviewer": "Release Reviewer",
+          "replayKey": "closureacceptopen_1rkikf2",
+          "replayScope": "open closure acceptance packet",
+          "replayResult": "closure replay cannot pass until incident handoff and approval replay both close",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-decision-screenshot",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-decision-screenshot",
+            "bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "seal-approval-release-note-readiness-accept-lock-decision-screenshot",
+            "rollback-preview-readiness-accept-lock-decision-screenshot",
+            "approval-release-note-readiness-accept-lock-decision-screenshot"
+          ],
+          "nextAction": "Resolve closure acceptance before the incident can count as replayed."
+        },
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "label": "Fixture package changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review rollback waits for diff acceptance bundle needs review incident remains open acceptance open still requires acceptance",
+          "state": "acceptance_required",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "owner": "Release TA",
+          "reviewer": "Release Reviewer",
+          "replayKey": "closureacceptopen_1mlr0mi",
+          "replayScope": "open closure acceptance packet",
+          "replayResult": "closure replay cannot pass until incident handoff and approval replay both close",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-fixture",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-fixture",
+            "bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "seal-approval-release-note-readiness-accept-lock-fixture",
+            "rollback-preview-readiness-accept-lock-fixture",
+            "approval-release-note-readiness-accept-lock-fixture"
+          ],
+          "nextAction": "Resolve closure acceptance before the incident can count as replayed."
+        },
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "label": "Endpoint route lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held rollback remains owner-held bundle remains owner-held owner handoff required owner acceptance required remains owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "reviewer": "Owner",
+          "replayKey": "closureacceptowner_ucdl48",
+          "replayScope": "redacted owner-held closure acceptance packet",
+          "replayResult": "owner-held closure packet cannot be replayed from public evidence",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-endpoint-route",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-endpoint-route",
+            "bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "seal-approval-release-note-readiness-accept-lock-endpoint-route",
+            "rollback-preview-readiness-accept-lock-endpoint-route",
+            "approval-release-note-readiness-accept-lock-endpoint-route"
+          ],
+          "nextAction": "Import public owner replacement evidence before closure replay."
+        },
+        {
+          "id": "closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "label": "Emergency unfreeze lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held rollback remains owner-held bundle remains owner-held owner handoff required owner acceptance required remains owner-held",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "owner": "Release TA",
+          "reviewer": "Owner",
+          "replayKey": "closureacceptowner_wikoie",
+          "replayScope": "redacted owner-held closure acceptance packet",
+          "replayResult": "owner-held closure packet cannot be replayed from public evidence",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-owner-unfreeze",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-owner-unfreeze",
+            "bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "seal-approval-release-note-readiness-accept-lock-owner-unfreeze",
+            "rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "approval-release-note-readiness-accept-lock-owner-unfreeze"
+          ],
+          "nextAction": "Import public owner replacement evidence before closure replay."
+        }
+      ],
+      "guardrails": [
+        "Closure acceptance replay cannot accept an incident or create owner signoff.",
+        "Open closure packets stay Review until their source packet passes.",
+        "Owner-held closure packets remain redacted."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-28-closure-response-sla.json",
+        "assets/task-orchestrator-r8-28-exported-report.json"
+      ]
+    },
+    "waiverOwnerResponseImporter": {
+      "reportVersion": "impact-waiver-owner-response-importer@0.1.0",
+      "importerId": "waiverresponse_174z7b5",
+      "mode": "waiver_owner_response_importer",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "importedRows": 2,
+        "waitingOwnerRows": 2,
+        "deferredRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Import only public owner responses; waiting and deferred rows remain visible SLA pressure."
+      },
+      "rows": [
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+          "label": "Close public baseline exception response imports is reconciled needs no waiver is clear needs no renewal burned down response imported",
+          "state": "imported",
+          "gate": "Ready",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "responseSource": "public-waiver-closure-response",
+          "importRule": "burned-down waiver rows may import public owner response evidence",
+          "importResult": "owner response evidence imported without renewing or approving the waiver",
+          "requiredEvidence": "public owner response id plus burned-down waiver row",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "sla-waiver-sla-owner-response-burndown-closeout-public-baseline"
+          ],
+          "nextAction": "Use imported waiver response as SLA scoreboard input."
+        },
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+          "label": "Close rollback preview exception response imports is reconciled needs no waiver is clear needs no renewal burned down response imported",
+          "state": "imported",
+          "gate": "Ready",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "responseSource": "public-waiver-closure-response",
+          "importRule": "burned-down waiver rows may import public owner response evidence",
+          "importResult": "owner response evidence imported without renewing or approving the waiver",
+          "requiredEvidence": "public owner response id plus burned-down waiver row",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "sla-waiver-sla-owner-response-burndown-closeout-rollback-preview"
+          ],
+          "nextAction": "Use imported waiver response as SLA scoreboard input."
+        },
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-monitor-watch",
+          "label": "Monitor watch closeout needs owner waits for owner is overdue needs waiver request expires soon renewal requested renewal still open waits for owner response",
+          "state": "waiting_owner",
+          "gate": "Review",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-monitor-watch",
+          "owner": "Platform TA",
+          "responseSource": "owner-response-needed",
+          "importRule": "open renewal pressure cannot be converted into response evidence",
+          "importResult": "waiver response import is waiting on public owner evidence",
+          "requiredEvidence": "owner response or waiver replacement",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-monitor-watch",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-monitor-watch",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-monitor-watch",
+            "sla-waiver-sla-owner-response-burndown-closeout-monitor-watch"
+          ],
+          "nextAction": "Collect owner response evidence before import can pass."
+        },
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-security-alias",
+          "label": "Security alias closeout needs owner waits for owner is overdue needs waiver request expires soon renewal requested renewal still open waits for owner response",
+          "state": "waiting_owner",
+          "gate": "Review",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-security-alias",
+          "owner": "Security TA",
+          "responseSource": "owner-response-needed",
+          "importRule": "open renewal pressure cannot be converted into response evidence",
+          "importResult": "waiver response import is waiting on public owner evidence",
+          "requiredEvidence": "owner response or waiver replacement",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-security-alias",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-security-alias",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-security-alias",
+            "sla-waiver-sla-owner-response-burndown-closeout-security-alias"
+          ],
+          "nextAction": "Collect owner response evidence before import can pass."
+        },
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+          "label": "Endpoint route closeout deferred stays deferred remains deferred waiver is deferred remains deferred renewal deferred burn-down deferred response deferred",
+          "state": "deferred",
+          "gate": "Review",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "responseSource": "redacted-owner-held-waiver",
+          "importRule": "deferred waiver rows cannot import private owner response data",
+          "importResult": "response import remains deferred until replacement evidence is public",
+          "requiredEvidence": "redacted owner replacement evidence",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+            "sla-waiver-sla-owner-response-burndown-closeout-endpoint-route"
+          ],
+          "nextAction": "Replace owner-held waiver response with public evidence before import."
+        },
+        {
+          "id": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze",
+          "label": "Emergency unfreeze closeout deferred stays deferred remains deferred waiver is deferred remains deferred renewal deferred burn-down deferred response deferred",
+          "state": "deferred",
+          "gate": "Review",
+          "sourceBurnDownRowId": "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze",
+          "owner": "Release TA",
+          "responseSource": "redacted-owner-held-waiver",
+          "importRule": "deferred waiver rows cannot import private owner response data",
+          "importResult": "response import remains deferred until replacement evidence is public",
+          "requiredEvidence": "redacted owner replacement evidence",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze",
+            "sla-waiver-sla-owner-response-burndown-closeout-owner-unfreeze"
+          ],
+          "nextAction": "Replace owner-held waiver response with public evidence before import."
+        }
+      ],
+      "guardrails": [
+        "Waiver owner response importer cannot approve, renew, or extend a waiver.",
+        "Waiting-owner rows remain Review until public evidence arrives.",
+        "Deferred response rows never expose private owner content."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-28-closure-response-sla.json",
+        "assets/task-orchestrator-r8-28-exported-report.json"
+      ]
+    },
+    "incidentSlaScoreboard": {
+      "reportVersion": "impact-incident-sla-scoreboard@0.1.0",
+      "scoreboardId": "incidentsla_1kr5ghb",
+      "mode": "incident_sla_scoreboard",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 6,
+        "withinSlaRows": 2,
+        "dueTodayRows": 2,
+        "ownerHoldRows": 2,
+        "blockedRows": 0,
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Use SLA scoreboard to prioritize closure follow-up without mutating incident systems."
+      },
+      "rows": [
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "label": "Lock public package report unchanged accepted freezes into release packet remains ready can promote accepted rollback is previewable bundle matches approval handoff closed accepted within SLA",
+          "state": "within_sla",
+          "gate": "Ready",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "slaTarget": "T+1 release review closeout",
+          "slaSignal": "accepted closure packet and imported owner response are both public",
+          "scoreboardRule": "accepted closure plus imported waiver response counts as within SLA",
+          "scoreboardResult": "incident SLA row is within target and ready for package review",
+          "escalationOwner": "none",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-public-package-report",
+            "bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+            "seal-approval-release-note-readiness-accept-lock-public-package-report",
+            "rollback-preview-readiness-accept-lock-public-package-report",
+            "approval-release-note-readiness-accept-lock-public-package-report",
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "sla-waiver-sla-owner-response-burndown-closeout-public-baseline"
+          ],
+          "nextAction": "Keep row in the public release evidence packet."
+        },
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "label": "Lock task orchestrator report unchanged accepted freezes into release packet remains ready can promote accepted rollback is previewable bundle matches approval handoff closed accepted within SLA",
+          "state": "within_sla",
+          "gate": "Ready",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "slaTarget": "T+1 release review closeout",
+          "slaSignal": "accepted closure packet and imported owner response are both public",
+          "scoreboardRule": "accepted closure plus imported waiver response counts as within SLA",
+          "scoreboardResult": "incident SLA row is within target and ready for package review",
+          "escalationOwner": "none",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-task-report",
+            "bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+            "seal-approval-release-note-readiness-accept-lock-task-report",
+            "rollback-preview-readiness-accept-lock-task-report",
+            "approval-release-note-readiness-accept-lock-task-report",
+            "burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "sla-waiver-sla-owner-response-burndown-closeout-rollback-preview"
+          ],
+          "nextAction": "Keep row in the public release evidence packet."
+        },
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "label": "Decision screenshot changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review rollback waits for diff acceptance bundle needs review incident remains open acceptance open due today",
+          "state": "due_today",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+          "owner": "Portfolio TA",
+          "slaTarget": "T+1 release review closeout",
+          "slaSignal": "closure acceptance or owner response remains open",
+          "scoreboardRule": "open closure acceptance or waiting owner response must stay visible before SLA breach",
+          "scoreboardResult": "incident SLA row is due today and needs reviewer follow-up",
+          "escalationOwner": "Release Reviewer",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-public-baseline",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-decision-screenshot",
+            "bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+            "seal-approval-release-note-readiness-accept-lock-decision-screenshot",
+            "rollback-preview-readiness-accept-lock-decision-screenshot",
+            "approval-release-note-readiness-accept-lock-decision-screenshot"
+          ],
+          "nextAction": "Close acceptance or import owner response before SLA turns overdue."
+        },
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "label": "Fixture package changed needs diff review requires replay waits for diff acceptance changes readiness is blocked by diff needs review rollback waits for diff acceptance bundle needs review incident remains open acceptance open due today",
+          "state": "due_today",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "slaTarget": "T+1 release review closeout",
+          "slaSignal": "closure acceptance or owner response remains open",
+          "scoreboardRule": "open closure acceptance or waiting owner response must stay visible before SLA breach",
+          "scoreboardResult": "incident SLA row is due today and needs reviewer follow-up",
+          "escalationOwner": "Release Reviewer",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-fixture",
+            "bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+            "seal-approval-release-note-readiness-accept-lock-fixture",
+            "rollback-preview-readiness-accept-lock-fixture",
+            "approval-release-note-readiness-accept-lock-fixture"
+          ],
+          "nextAction": "Close acceptance or import owner response before SLA turns overdue."
+        },
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "label": "Endpoint route lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held rollback remains owner-held bundle remains owner-held owner handoff required owner acceptance required owner-held SLA",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+          "owner": "Platform Adapter Owner",
+          "slaTarget": "owner-controlled closure evidence",
+          "slaSignal": "owner-held packet or deferred waiver response cannot be scored from private data",
+          "scoreboardRule": "owner-held SLA rows stay review-only until replacement evidence is public",
+          "scoreboardResult": "incident SLA row is visible but redacted from public package scoring",
+          "escalationOwner": "Platform Adapter Owner",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-endpoint-route",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-endpoint-route",
+            "bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+            "seal-approval-release-note-readiness-accept-lock-endpoint-route",
+            "rollback-preview-readiness-accept-lock-endpoint-route",
+            "approval-release-note-readiness-accept-lock-endpoint-route"
+          ],
+          "nextAction": "Import replacement public evidence before SLA score can close."
+        },
+        {
+          "id": "incident-sla-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "label": "Emergency unfreeze lock owner-held remains owner-held owner-held cannot freeze publicly remains owner-held remains owner-held owner-held rollback remains owner-held bundle remains owner-held owner handoff required owner acceptance required owner-held SLA",
+          "state": "owner_hold",
+          "gate": "Review",
+          "sourcePacketRowId": "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "responseRowId": "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+          "owner": "Release TA",
+          "slaTarget": "owner-controlled closure evidence",
+          "slaSignal": "owner-held packet or deferred waiver response cannot be scored from private data",
+          "scoreboardRule": "owner-held SLA rows stay review-only until replacement evidence is public",
+          "scoreboardResult": "incident SLA row is visible but redacted from public package scoring",
+          "escalationOwner": "Release TA",
+          "liveWrites": 0,
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "waiver-response-burndown-renewal-waiver-expiry-sla-waiver-sla-owner-response-burndown-closeout-rollback-preview",
+            "incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "sealed-replay-seal-approval-release-note-readiness-accept-lock-owner-unfreeze",
+            "bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "seal-approval-release-note-readiness-accept-lock-owner-unfreeze",
+            "rollback-preview-readiness-accept-lock-owner-unfreeze",
+            "approval-release-note-readiness-accept-lock-owner-unfreeze"
+          ],
+          "nextAction": "Import replacement public evidence before SLA score can close."
+        }
+      ],
+      "guardrails": [
+        "Incident SLA scoreboard cannot close incidents or send escalations.",
+        "Due-today rows are review pressure, not automatic owner failure.",
+        "Owner-held SLA rows stay redacted and require public replacement evidence."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-28-closure-response-sla.json",
+        "assets/task-orchestrator-r8-28-exported-report.json"
+      ]
+    },
+    "auditExportDiff": {
+      "reportVersion": "impact-audit-export-diff@1.4.0",
+      "diffId": "exportdiff_1e5mqsy",
+      "mode": "audit_export_diff",
+      "generatedAt": "2026-07-31T23:59:59+08:00",
+      "mutationAllowed": false,
+      "privateDataExposed": false,
+      "gate": "Review",
+      "summary": {
+        "totalRows": 32,
+        "unchangedRows": 26,
+        "addedRows": 3,
+        "changedRows": 3,
+        "blockedRows": 0,
+        "privateFieldsExposed": 0,
+        "gate": "Review",
+        "nextAction": "Keep audit export diff in Review until R8.28 closure replay, owner response import, and SLA pressure close."
+      },
+      "rows": [
+        {
+          "id": "export-diff-report-version",
+          "label": "Report version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "taskOrchestrator.reportVersion",
+          "before": "task-orchestrator-report@1.21.0",
+          "after": "task-orchestrator-report@1.22.0",
+          "diffReason": "R8.28 adds closure acceptance replay, waiver owner response importer, and incident SLA scoreboard",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closurereplay_71oge3"
+          ],
+          "nextAction": "Keep report version diff in every exported package."
+        },
+        {
+          "id": "export-diff-impact-version",
+          "label": "Impact report version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reportVersion",
+          "before": "asset-dependency-impact@1.17.0",
+          "after": "asset-dependency-impact@1.18.0",
+          "diffReason": "impact schema now includes closure acceptance replay, waiver owner response importer, and incident SLA scoreboard reports",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "waiverresponse_174z7b5"
+          ],
+          "nextAction": "Use impact version as machine-readable schema boundary."
+        },
+        {
+          "id": "export-diff-audit-version",
+          "label": "Audit diff version changed",
+          "state": "changed",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+          "before": "impact-audit-export-diff@1.3.0",
+          "after": "impact-audit-export-diff@1.4.0",
+          "diffReason": "audit export diff now records R8.28 closure replay, response import, and SLA scoreboard schema additions",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "incidentsla_1kr5ghb"
+          ],
+          "nextAction": "Keep audit diff version explicit for package review."
+        },
+        {
+          "id": "export-diff-locked-packet-diff-viewer",
+          "label": "Locked packet diff viewer remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.lockedPacketDiffViewer",
+          "before": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+          "after": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+          "diffReason": "R8.22 consumes the R8.21 packet diff without changing the source viewer",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "packetdiffviewer_1qk2uol"
+          ],
+          "nextAction": "Keep packet diff as the input to accepted packet freeze."
+        },
+        {
+          "id": "export-diff-exception-burndown",
+          "label": "Exception burn-down dashboard remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.exceptionBurnDownDashboard",
+          "before": "6 exceptions, 2 closed, 4 remaining",
+          "after": "6 exceptions, 2 closed, 4 remaining",
+          "diffReason": "R8.22 importer reads burn-down state without mutating the dashboard",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "exceptionburndown_g4ppkl"
+          ],
+          "nextAction": "Keep burn-down as the input to owner response import."
+        },
+        {
+          "id": "export-diff-acceptance-replay",
+          "label": "Reviewer acceptance replay remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reviewerAcceptanceReplay",
+          "before": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+          "after": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+          "diffReason": "R8.22 freeze consumes replay state without rewriting acceptance history",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "acceptancereplay_1do593x"
+          ],
+          "nextAction": "Keep reviewer acceptance replay as immutable R8.21 baseline."
+        },
+        {
+          "id": "export-diff-accepted-packet-freeze",
+          "label": "Accepted packet freeze remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.acceptedPacketFreeze",
+          "before": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+          "after": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+          "diffReason": "R8.23 promotion gate reads accepted packet freeze without rewriting freeze state",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "acceptedfreeze_yi72s0"
+          ],
+          "nextAction": "Keep accepted packet freeze as promotion input."
+        },
+        {
+          "id": "export-diff-owner-response-importer",
+          "label": "Exception owner response importer remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.exceptionOwnerResponseImporter",
+          "before": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+          "after": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+          "diffReason": "R8.23 SLA reconciliation reads owner response import state without mutating responses",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "ownerresponse_16r9t75"
+          ],
+          "nextAction": "Keep owner response importer as SLA input."
+        },
+        {
+          "id": "export-diff-readiness-replay-diff",
+          "label": "Release readiness replay diff remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.releaseReadinessReplayDiff",
+          "before": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+          "after": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+          "diffReason": "R8.23 promotion gate consumes readiness diff as immutable release replay input",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessdiff_1v17mdt"
+          ],
+          "nextAction": "Keep readiness replay diff as promotion source of truth."
+        },
+        {
+          "id": "export-diff-frozen-packet-promotion-gate",
+          "label": "Frozen packet promotion gate remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.frozenPacketPromotionGate",
+          "before": "6 rows, 2 promoted, 2 diff-blocked, 2 owner-held",
+          "after": "6 rows, 2 promoted, 2 diff-blocked, 2 owner-held",
+          "diffReason": "R8.24 rollback preview reads promotion state without rewriting the gate",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "promotiongate_x6bmtp"
+          ],
+          "nextAction": "Keep promotion gate as rollback preview input."
+        },
+        {
+          "id": "export-diff-owner-response-sla-reconciliation",
+          "label": "Owner response SLA reconciliation remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.ownerResponseSlaReconciliation",
+          "before": "6 rows, 2 reconciled, 2 overdue, 2 deferred",
+          "after": "6 rows, 2 reconciled, 2 overdue, 2 deferred",
+          "diffReason": "R8.24 waiver ledger reads SLA reconciliation without closing responses",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "ownersla_1k84f7z"
+          ],
+          "nextAction": "Keep SLA reconciliation as waiver input."
+        },
+        {
+          "id": "export-diff-readiness-acceptance-ledger",
+          "label": "Readiness acceptance ledger remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.readinessAcceptanceLedger",
+          "before": "6 rows, 2 accepted, 2 needs-review, 2 owner-held",
+          "after": "6 rows, 2 accepted, 2 needs-review, 2 owner-held",
+          "diffReason": "R8.24 release-note generator reads acceptance ledger as immutable source",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "readinessledger_19x5leh"
+          ],
+          "nextAction": "Keep readiness acceptance ledger as release-note input."
+        },
+        {
+          "id": "export-diff-promotion-rollback-preview",
+          "label": "Promotion rollback preview remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.promotionRollbackPreview",
+          "before": "6 rows, 2 preview-ready, 2 diff-blocked, 2 owner-held",
+          "after": "6 rows, 2 preview-ready, 2 diff-blocked, 2 owner-held",
+          "diffReason": "R8.25 rollback rehearsal bundle diff reads preview state without changing rollback rules",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "rollbackpreview_1taxh7r"
+          ],
+          "nextAction": "Keep rollback preview as bundle diff input."
+        },
+        {
+          "id": "export-diff-sla-exception-waiver-ledger",
+          "label": "SLA exception waiver ledger remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.slaExceptionWaiverLedger",
+          "before": "6 rows, 2 waiver-not-needed, 2 waiver-requested, 2 waiver-deferred",
+          "after": "6 rows, 2 waiver-not-needed, 2 waiver-requested, 2 waiver-deferred",
+          "diffReason": "R8.25 waiver expiry monitor reads waiver ledger state without extending waivers",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "slawaiver_1vfi6p5"
+          ],
+          "nextAction": "Keep waiver ledger as expiry monitor input."
+        },
+        {
+          "id": "export-diff-candidate-packet-release-note",
+          "label": "Candidate packet release note generator remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.candidatePacketReleaseNote",
+          "before": "6 rows, 2 included, 2 needs-review, 2 owner-held",
+          "after": "6 rows, 2 included, 2 needs-review, 2 owner-held",
+          "diffReason": "R8.25 reviewer approval loop reads release-note drafts without signing for owners",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "releasenote_1i15hh1"
+          ],
+          "nextAction": "Keep release-note draft as approval loop input."
+        },
+        {
+          "id": "export-diff-release-note-reviewer-approval-loop",
+          "label": "Release note reviewer approval loop remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.releaseNoteReviewerApprovalLoop",
+          "before": "6 rows, 2 approved, 2 changes-requested, 2 owner-held",
+          "after": "6 rows, 2 approved, 2 changes-requested, 2 owner-held",
+          "diffReason": "R8.26 approval evidence seal reads reviewer approval state without changing approval rules",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "noteapproval_rl9mq"
+          ],
+          "nextAction": "Keep reviewer approval loop as evidence seal input."
+        },
+        {
+          "id": "export-diff-waiver-expiry-monitor",
+          "label": "Waiver expiry monitor remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.waiverExpiryMonitor",
+          "before": "6 rows, 2 clear, 2 expiring, 2 deferred",
+          "after": "6 rows, 2 clear, 2 expiring, 2 deferred",
+          "diffReason": "R8.26 waiver renewal simulator reads expiry state without renewing waivers",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "waiverexpiry_pnvgqt"
+          ],
+          "nextAction": "Keep waiver expiry monitor as renewal simulator input."
+        },
+        {
+          "id": "export-diff-rollback-rehearsal-bundle-diff",
+          "label": "Rollback rehearsal bundle diff remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.rollbackRehearsalBundleDiff",
+          "before": "6 rows, 2 matched, 2 review-diff, 2 owner-held",
+          "after": "6 rows, 2 matched, 2 review-diff, 2 owner-held",
+          "diffReason": "R8.26 incident handoff reads bundle diff without executing rollback",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "bundleDiff_7mbtot"
+          ],
+          "nextAction": "Keep rollback bundle diff as incident handoff input."
+        },
+        {
+          "id": "export-diff-approval-evidence-seal",
+          "label": "Approval evidence seal remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.approvalEvidenceSeal",
+          "before": "6 rows, 2 sealed, 2 changes-open, 2 owner-held",
+          "after": "6 rows, 2 sealed, 2 changes-open, 2 owner-held",
+          "diffReason": "R8.27 sealed approval replay reads approval seal state without creating new seals",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "evseal_1icaevk"
+          ],
+          "nextAction": "Keep approval evidence seal as replay input."
+        },
+        {
+          "id": "export-diff-waiver-renewal-simulator",
+          "label": "Waiver renewal simulator remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.waiverRenewalSimulator",
+          "before": "6 rows, 2 no-renewal, 2 requested, 2 deferred",
+          "after": "6 rows, 2 no-renewal, 2 requested, 2 deferred",
+          "diffReason": "R8.27 waiver expiry burn-down reads renewal simulation without extending waivers",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "waiverrenewal_k4f05p"
+          ],
+          "nextAction": "Keep waiver renewal simulator as burn-down input."
+        },
+        {
+          "id": "export-diff-rollback-drill-incident-handoff",
+          "label": "Rollback drill incident handoff remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.rollbackDrillIncidentHandoff",
+          "before": "6 rows, 2 closed, 2 incident-open, 2 owner-handoff",
+          "after": "6 rows, 2 closed, 2 incident-open, 2 owner-handoff",
+          "diffReason": "R8.27 incident closure acceptance packet reads handoff state without mutating incident systems",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "incidenthandoff_jrnfu9"
+          ],
+          "nextAction": "Keep rollback drill incident handoff as closure packet input."
+        },
+        {
+          "id": "export-diff-sealed-approval-replay",
+          "label": "Sealed approval replay remains stable",
+          "state": "unchanged",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.sealedApprovalReplay",
+          "before": "6 rows, 2 replayed, 2 replay-required, 2 owner-held",
+          "after": "6 rows, 2 replayed, 2 replay-required, 2 owner-held",
+          "diffReason": "R8.28 closure acceptance replay consumes sealed approval replay through the closure packet without changing it",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "sealedreplay_1la5gkl"
+          ],
+          "nextAction": "Keep sealed approval replay as closure packet input."
+        },
+        {
+          "id": "export-diff-waiver-expiry-burn-down",
+          "label": "Waiver expiry burn-down remains stable",
+          "state": "unchanged",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.waiverExpiryBurnDown",
+          "before": "6 rows, 2 burned-down, 2 renewal-open, 2 deferred",
+          "after": "6 rows, 2 burned-down, 2 renewal-open, 2 deferred",
+          "diffReason": "R8.28 owner response importer reads burn-down pressure without extending waiver validity",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "waiverburn_1w05h93"
+          ],
+          "nextAction": "Keep waiver burn-down as owner response input."
+        },
+        {
+          "id": "export-diff-incident-closure-acceptance-packet",
+          "label": "Incident closure acceptance packet remains stable",
+          "state": "unchanged",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.incidentClosureAcceptancePacket",
+          "before": "6 rows, 2 accepted, 2 acceptance-open, 2 owner-held",
+          "after": "6 rows, 2 accepted, 2 acceptance-open, 2 owner-held",
+          "diffReason": "R8.28 closure replay and SLA scoreboard consume closure packets without mutating incident systems",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closurepacket_1l2iezt"
+          ],
+          "nextAction": "Keep closure packet as replay and SLA input."
+        },
+        {
+          "id": "export-diff-closure-acceptance-replay",
+          "label": "Closure acceptance replay was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.closureAcceptanceReplay",
+          "before": "missing",
+          "after": "6 rows, 2 replayed, 2 acceptance-required, 2 owner-held",
+          "diffReason": "accepted incident closure packets can now be replayed while open acceptance and owner-held packets remain review-only",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closurereplay_71oge3"
+          ],
+          "nextAction": "Replay accepted closure packets before SLA scoring."
+        },
+        {
+          "id": "export-diff-waiver-owner-response-importer",
+          "label": "Waiver owner response importer was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.waiverOwnerResponseImporter",
+          "before": "missing",
+          "after": "6 rows, 2 imported, 2 waiting-owner, 2 deferred",
+          "diffReason": "waiver burn-down rows can now import public owner response evidence without approving or renewing waivers",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "waiverresponse_174z7b5"
+          ],
+          "nextAction": "Import public owner response evidence before SLA scoring."
+        },
+        {
+          "id": "export-diff-incident-sla-scoreboard",
+          "label": "Incident SLA scoreboard was added",
+          "state": "added",
+          "gate": "Review",
+          "exportPath": "assetDependencyImpact.incidentSlaScoreboard",
+          "before": "missing",
+          "after": "6 rows, 2 within-SLA, 2 due-today, 2 owner-held",
+          "diffReason": "incident closure and waiver response state can now be scored as SLA pressure without closing incidents",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "incidentsla_1kr5ghb"
+          ],
+          "nextAction": "Use the SLA scoreboard to prioritize closure follow-up."
+        },
+        {
+          "id": "export-diff-evidence-compactor",
+          "label": "Release evidence compactor remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.releaseEvidenceCompactor",
+          "before": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+          "after": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+          "diffReason": "R8.21 consumes the compacted packet but does not change compaction rules",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "evidencecompactor_123vzg9"
+          ],
+          "nextAction": "Keep compactor as the baseline for packet diff."
+        },
+        {
+          "id": "export-diff-reviewer-lockfile",
+          "label": "Reviewer packet lockfile remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.reviewerPacketLockfile",
+          "before": "6 entries, 2 locked, 2 changed, 2 owner-held",
+          "after": "6 entries, 2 locked, 2 changed, 2 owner-held",
+          "diffReason": "R8.21 diff viewer reads the lockfile without rewriting it",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "packetlock_1s002ln"
+          ],
+          "nextAction": "Keep lockfile as immutable R8.20 baseline."
+        },
+        {
+          "id": "export-diff-exception-closeout",
+          "label": "Production readiness exception closeout remains stable",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "assetDependencyImpact.productionReadinessExceptionCloseout",
+          "before": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+          "after": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+          "diffReason": "R8.21 burn-down consumes closeout state without changing the source closeout",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "exceptioncloseout_wfn3c5"
+          ],
+          "nextAction": "Use closeout as source of truth for burn-down."
+        },
+        {
+          "id": "export-diff-private-boundary",
+          "label": "Private boundary remains unchanged",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "privacy.privateDataExposed",
+          "before": "false",
+          "after": "false",
+          "diffReason": "R8.28 closure replay, waiver response import, and SLA scoreboard expose only public evidence ids and redacted owner state",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "lock-endpoint-route",
+            "closurereplay_71oge3",
+            "waiverresponse_174z7b5",
+            "incidentsla_1kr5ghb",
+            "sealedreplay_1la5gkl",
+            "waiverburn_1w05h93",
+            "closurepacket_1l2iezt",
+            "evseal_1icaevk",
+            "waiverrenewal_k4f05p",
+            "incidenthandoff_jrnfu9",
+            "noteapproval_rl9mq",
+            "waiverexpiry_pnvgqt",
+            "bundleDiff_7mbtot",
+            "disputereplay_f37nu8",
+            "ownerexceptions_1yeedp4"
+          ],
+          "nextAction": "Keep private exposure diff at zero."
+        },
+        {
+          "id": "export-diff-live-writes",
+          "label": "Live write boundary remains unchanged",
+          "state": "unchanged",
+          "gate": "Ready",
+          "exportPath": "mutation.liveWrites",
+          "before": "0",
+          "after": "0",
+          "diffReason": "closure acceptance replay, waiver owner response importer, and incident SLA scoreboard stay dry-run",
+          "privateFieldsExposed": 0,
+          "evidence": [
+            "closurereplay_71oge3",
+            "waiverresponse_174z7b5",
+            "incidentsla_1kr5ghb",
+            "sealedreplay_1la5gkl",
+            "waiverburn_1w05h93",
+            "closurepacket_1l2iezt",
+            "rollbackjudge_oehpls"
+          ],
+          "nextAction": "Block the export if liveWrites becomes non-zero."
+        }
+      ],
+      "guardrails": [
+        "Audit export diff records schema and evidence changes explicitly.",
+        "Private exposure and live write boundaries must remain unchanged.",
+        "Added R8.28 reports stay Review until closure replay, owner response import, and SLA pressure close."
+      ],
+      "artifacts": [
+        "fixtures/dependency-impact/r8-28-closure-response-sla.json",
+        "assets/task-orchestrator-r8-28-exported-report.json"
+      ]
+    }
+  },
+  "expectedCounts": {
+    "closureReplayRows": 6,
+    "closureReplayReplayedRows": 2,
+    "closureReplayAcceptanceRequiredRows": 2,
+    "closureReplayOwnerHoldRows": 2,
+    "waiverResponseRows": 6,
+    "waiverResponseImportedRows": 2,
+    "waiverResponseWaitingOwnerRows": 2,
+    "waiverResponseDeferredRows": 2,
+    "incidentSlaRows": 6,
+    "incidentSlaWithinRows": 2,
+    "incidentSlaDueTodayRows": 2,
+    "incidentSlaOwnerHoldRows": 2,
+    "auditRows": 32,
+    "auditAddedRows": 3,
+    "auditChangedRows": 3,
+    "auditUnchangedRows": 26
+  },
+  "privacy": {
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "liveWrites": 0,
+    "privateFieldsExposed": 0
+  }
+}

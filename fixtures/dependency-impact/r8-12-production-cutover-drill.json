@@ -1,0 +1,73 @@
+{
+  "reportVersion": "impact-production-cutover-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "production_adapter_cutover_rehearsal",
+  "mutationAllowed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.6.0",
+    "asset-dependency-impact@1.2.0",
+    "impact-production-adapter-cutover@0.1.0",
+    "impact-post-cutover-receipt-monitor@0.1.0",
+    "impact-emergency-stop-drill@0.1.0"
+  ],
+  "productionAdapterCutoverChecklist": {
+    "summary": {
+      "totalItems": 7,
+      "readyItems": 5,
+      "ownerHoldItems": 2,
+      "blockedItems": 0,
+      "ownerApprovalsNeeded": 2,
+      "dryRunWrites": 0,
+      "gate": "Review"
+    },
+    "ownerHoldItems": [
+      "cutover-service-identity-owner",
+      "cutover-endpoint-route-owner"
+    ]
+  },
+  "postCutoverReceiptMonitor": {
+    "summary": {
+      "totalStreams": 6,
+      "healthyStreams": 4,
+      "watchStreams": 2,
+      "blockedStreams": 0,
+      "sampledReceipts": 14,
+      "missingReceipts": 0,
+      "liveWrites": 0,
+      "gate": "Review"
+    },
+    "watchStreams": [
+      "monitor-owner-held-route",
+      "monitor-texture-import-watch"
+    ]
+  },
+  "emergencyStopDrill": {
+    "summary": {
+      "totalSteps": 6,
+      "verifiedSteps": 4,
+      "armedSteps": 1,
+      "ownerHoldSteps": 1,
+      "blockedSteps": 0,
+      "maxStopLatencyMs": 420,
+      "restoreReceipts": 3,
+      "liveWrites": 0,
+      "gate": "Review"
+    },
+    "ownerControlledSteps": [
+      "emergency-switch-armed",
+      "emergency-owner-unfreeze"
+    ]
+  },
+  "guardrails": [
+    "Public cutover rehearsal cannot contain production endpoint values.",
+    "Post-cutover monitor samples receipts and dry-run events only in the public package.",
+    "Emergency stop drill proves stop and restore behavior without publishing live endpoint details.",
+    "Service identity, endpoint route, and owner unfreeze approvals remain outside public evidence."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-12-cutover-drill-full.png",
+    "assets/task-orchestrator-r8-12-mobile-tall.png",
+    "assets/task-orchestrator-r8-12-exported-report.json",
+    "assets/portfolio-case-study-r8-12-exported-report.json"
+  ]
+}

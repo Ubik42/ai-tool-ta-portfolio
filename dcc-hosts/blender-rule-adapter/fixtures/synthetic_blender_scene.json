@@ -1,0 +1,174 @@
+{
+  "schema": "synthetic-blender-scene@0.1.0",
+  "intent": "Public-safe fixture proving the Blender adapter contract for Cross-DCC Rule Matrix. It contains one ready asset and one intentionally blocked asset.",
+  "scene": {
+    "unitScale": 1.0,
+    "upAxis": "Z",
+    "sourceDcc": "Blender",
+    "expectedBlenderVersion": "4.x"
+  },
+  "assets": [
+    {
+      "id": "blender-asset-001",
+      "label": "Ready modular prop",
+      "platform": "pc",
+      "exportRoot": "EXPORT_blender_asset_001",
+      "collections": [
+        "ASSET_blender_asset_001",
+        "EXPORT_blender_asset_001",
+        "LOD0",
+        "LOD1",
+        "Collision"
+      ],
+      "customProperties": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "role": "modular_prop",
+          "platform": "pc",
+          "collision": "proxy",
+          "lodCount": 2,
+          "budget": {
+            "triangles": 12000,
+            "textures": 3
+          }
+        }
+      },
+      "objects": [
+        {
+          "name": "SM_BlenderAsset001_LOD0",
+          "type": "MESH",
+          "role": "render",
+          "materialSlots": [
+            "MI_panel_body",
+            "MI_panel_trim"
+          ],
+          "materials": [
+            {
+              "name": "MI_panel_body",
+              "textures": [
+                "T_panel_body_D.png",
+                "T_panel_body_N.png"
+              ]
+            },
+            {
+              "name": "MI_panel_trim",
+              "textures": [
+                "T_panel_trim_MRA.png"
+              ]
+            }
+          ],
+          "uvLayers": [
+            {
+              "name": "UVMap",
+              "utilization": 0.78,
+              "overlapRatio": 0.0
+            }
+          ],
+          "meshStats": {
+            "vertices": 320,
+            "faces": 220,
+            "triangles": 440
+          }
+        },
+        {
+          "name": "SM_BlenderAsset001_LOD1",
+          "type": "MESH",
+          "role": "render",
+          "materialSlots": [
+            "MI_panel_body"
+          ],
+          "materials": [
+            {
+              "name": "MI_panel_body",
+              "textures": [
+                "T_panel_body_D.png"
+              ]
+            }
+          ],
+          "uvLayers": [
+            {
+              "name": "UVMap",
+              "utilization": 0.72,
+              "overlapRatio": 0.0
+            }
+          ],
+          "meshStats": {
+            "vertices": 120,
+            "faces": 80,
+            "triangles": 160
+          }
+        },
+        {
+          "name": "UCX_BlenderAsset001_00",
+          "type": "MESH",
+          "role": "collision",
+          "materialSlots": [],
+          "materials": [],
+          "uvLayers": [],
+          "meshStats": {
+            "vertices": 24,
+            "faces": 12,
+            "triangles": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "blender-asset-002",
+      "label": "Blocked mobile prop",
+      "platform": "mobile",
+      "exportRoot": "EXPORT_blender_asset_002",
+      "collections": [
+        "ASSET_blender_asset_002",
+        "EXPORT_blender_asset_002",
+        "LOD0"
+      ],
+      "customProperties": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "role": "mobile_prop",
+          "platform": "mobile",
+          "collision": "missing",
+          "lodCount": 1,
+          "budget": {
+            "triangles": 4500,
+            "textures": 2
+          }
+        }
+      },
+      "objects": [
+        {
+          "name": "SM_BlenderAsset002_LOD0",
+          "type": "MESH",
+          "role": "render",
+          "materialSlots": [
+            "MI_mobile_body",
+            "MI_mobile_glass",
+            "MI_mobile_detail",
+            "MI_mobile_unused"
+          ],
+          "materials": [
+            {
+              "name": "MI_mobile_body",
+              "textures": [
+                "T_mobile_body_D.png"
+              ]
+            }
+          ],
+          "uvLayers": [
+            {
+              "name": "UVMap",
+              "utilization": 0.41,
+              "overlapRatio": 0.08
+            }
+          ],
+          "meshStats": {
+            "vertices": 280,
+            "faces": 190,
+            "triangles": 380
+          }
+        }
+      ]
+    }
+  ]
+}

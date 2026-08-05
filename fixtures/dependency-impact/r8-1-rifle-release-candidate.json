@@ -1,0 +1,37 @@
+{
+  "datasetId": "dependency-impact-r8-1-rifle-release-candidate",
+  "datasetVersion": "dependency-impact-dataset@0.1.0",
+  "generatedAt": "2026-07-30T22:45:00+08:00",
+  "scenario": {
+    "name": "Rifle material and ORM texture release candidate",
+    "packageId": "release_candidate_WPN_Rifle_A_pc_dx12",
+    "baselinePackageId": "approved_WPN_Rifle_A_pc_dx12_20260728",
+    "currentPackageId": "candidate_WPN_Rifle_A_pc_dx12_20260730",
+    "sourceChange": "Material ORM policy and texture approved-package delta changed in the same release candidate."
+  },
+  "counts": {
+    "assetNodes": 5,
+    "impactPaths": 3,
+    "pathSteps": 7,
+    "publishDecisions": 4,
+    "ownerReceipts": 3,
+    "decisionMatrixCells": 8
+  },
+  "releaseGate": "Review",
+  "heldPublishTargets": [
+    "texture_body_orm_pc",
+    "ue_rifle_pc_dx12_import"
+  ],
+  "safePublishTargets": [
+    "visual_turntable_packet"
+  ],
+  "pendingReceipts": [
+    "impact-receipt-material-policy",
+    "impact-receipt-texture-delta"
+  ],
+  "notes": [
+    "Synthetic public dataset for R8.1 portfolio review.",
+    "Canonical data is mirrored in showcases/portfolio-site/src/data/dependencyImpactDataset.ts for the runnable UI.",
+    "The key business rule is gate propagation through dependency paths, not single-asset diff approval."
+  ]
+}

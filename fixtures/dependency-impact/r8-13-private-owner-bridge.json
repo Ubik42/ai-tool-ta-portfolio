@@ -1,0 +1,63 @@
+{
+  "reportVersion": "impact-private-owner-bridge-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "private_owner_receipt_bridge_rehearsal",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.7.0",
+    "asset-dependency-impact@1.3.0",
+    "impact-private-owner-receipt-bridge@0.1.0",
+    "impact-cutover-signoff-diff@0.1.0",
+    "impact-production-route-shadow-replay@0.1.0"
+  ],
+  "privateOwnerReceiptBridge": {
+    "summary": {
+      "totalLinks": 6,
+      "mappedLinks": 2,
+      "redactedLinks": 2,
+      "ownerHoldLinks": 2,
+      "blockedLinks": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Private production approvals can be represented as owner, alias, redaction policy, public reference, and state without copying receipt bodies into public evidence."
+  },
+  "cutoverSignoffDiff": {
+    "summary": {
+      "totalRows": 6,
+      "acceptedRows": 3,
+      "changedRows": 1,
+      "requestedRows": 2,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Reviewer-visible signoff deltas preserve accepted, changed, and requested states instead of narrating production readiness as a single gate."
+  },
+  "productionRouteShadowReplay": {
+    "summary": {
+      "totalSteps": 6,
+      "shadowPassSteps": 4,
+      "watchSteps": 1,
+      "ownerHoldSteps": 1,
+      "blockedSteps": 0,
+      "mirroredReceipts": 16,
+      "liveWrites": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Route shadow replay mirrors receipt state and command intent while keeping endpoint resolution and live writes outside the public package."
+  },
+  "guardrails": [
+    "Private receipt aliases can be referenced, but private values and receipt bodies cannot be embedded.",
+    "Owner-held endpoint route and route unfreeze approvals keep the cutover gate in Review.",
+    "Shadow replay cannot promote watch or owner-held routes even when public lanes pass.",
+    "Any private value exposure or non-zero live write blocks the package."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-13-private-bridge-full.png",
+    "assets/task-orchestrator-r8-13-mobile-tall.png",
+    "assets/task-orchestrator-r8-13-exported-report.json",
+    "assets/portfolio-case-study-r8-13-exported-report.json"
+  ]
+}

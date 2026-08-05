@@ -1,0 +1,1420 @@
+{
+  "fixtureId": "r8-35-release-closeout",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReportVersion": "task-orchestrator-report@1.29.0",
+  "sourceImpactVersion": "asset-dependency-impact@1.25.0",
+  "releaseCloseoutReceiptSeal": {
+    "reportVersion": "impact-release-closeout-receipt-seal@0.1.0",
+    "sealId": "closeoutseal_h43rcm",
+    "mode": "release_closeout_receipt_seal",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "sealedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Seal release closeout receipts only as public review evidence after watch and rollback readiness align."
+    },
+    "rows": [
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Closeout seal wave-0 sealed",
+        "state": "receipt_sealed",
+        "gate": "Ready",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "closeoutLane": "wave-0",
+        "sealRef": "closeout-seal-wave-0",
+        "sealRule": "watch-clear lane plus rollback-ready delta can be sealed as public closeout evidence",
+        "sealResult": "release closeout receipt is sealed for reviewer packet",
+        "closeoutEffect": "lane can enter escalation replay with sealed public evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep sealed closeout receipt as watch escalation replay input."
+      },
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Closeout seal wave-1 sealed",
+        "state": "receipt_sealed",
+        "gate": "Ready",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "closeoutLane": "wave-1",
+        "sealRef": "closeout-seal-wave-1",
+        "sealRule": "watch-clear lane plus rollback-ready delta can be sealed as public closeout evidence",
+        "sealResult": "release closeout receipt is sealed for reviewer packet",
+        "closeoutEffect": "lane can enter escalation replay with sealed public evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep sealed closeout receipt as watch escalation replay input."
+      },
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Closeout seal wave-2 review",
+        "state": "seal_review",
+        "gate": "Review",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "closeoutLane": "wave-2",
+        "sealRef": "review-closeout-seal-wave-2",
+        "sealRule": "watch-review or rollback-review lane cannot be sealed without reviewer disposition",
+        "sealResult": "release closeout receipt remains review evidence",
+        "closeoutEffect": "lane can replay escalation pressure but cannot close release evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve seal-review lane before closeout can become sealed."
+      },
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Closeout seal wave-3 review",
+        "state": "seal_review",
+        "gate": "Review",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "closeoutLane": "wave-3",
+        "sealRef": "review-closeout-seal-wave-3",
+        "sealRule": "watch-review or rollback-review lane cannot be sealed without reviewer disposition",
+        "sealResult": "release closeout receipt remains review evidence",
+        "closeoutEffect": "lane can replay escalation pressure but cannot close release evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve seal-review lane before closeout can become sealed."
+      },
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Closeout seal wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "closeoutLane": "wave-4",
+        "sealRef": "owner-held-closeout-seal-wave-4",
+        "sealRule": "owner-held rollback or watch evidence cannot be sealed from public data",
+        "sealResult": "closeout receipt stays visible but unsealed",
+        "closeoutEffect": "lane remains outside release closeout until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held closeout seal redacted and visible."
+      },
+      {
+        "id": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Closeout seal wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "closeoutLane": "wave-5",
+        "sealRef": "owner-held-closeout-seal-wave-5",
+        "sealRule": "owner-held rollback or watch evidence cannot be sealed from public data",
+        "sealResult": "closeout receipt stays visible but unsealed",
+        "closeoutEffect": "lane remains outside release closeout until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "rollbackdelta_1bss1lx",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held closeout seal redacted and visible."
+      }
+    ],
+    "guardrails": [
+      "Release closeout receipt seal cannot close production release tickets.",
+      "Seal-review lanes require reviewer disposition before becoming sealed evidence.",
+      "Owner-held closeout receipts cannot hide private owner gaps."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-35-release-closeout.json",
+      "assets/task-orchestrator-r8-35-exported-report.json"
+    ]
+  },
+  "watchEscalationReplay": {
+    "reportVersion": "impact-watch-escalation-replay@0.1.0",
+    "replayId": "watchescalation_ad348o",
+    "mode": "watch_escalation_replay",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "replayedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Replay watch escalation from sealed public evidence only; no owner notification is sent."
+    },
+    "rows": [
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Watch escalation wave-0 replayed",
+        "state": "escalation_replayed",
+        "gate": "Ready",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "escalationLane": "wave-0",
+        "escalationRef": "watch-escalation-wave-0",
+        "replayRule": "sealed closeout receipt and clear watch state replay with no escalation",
+        "replayResult": "watch escalation replay closes without owner action",
+        "escalationEffect": "lane can enter rollback drill closeout packet as ready evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep replayed escalation as closeout packet input."
+      },
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Watch escalation wave-1 replayed",
+        "state": "escalation_replayed",
+        "gate": "Ready",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "escalationLane": "wave-1",
+        "escalationRef": "watch-escalation-wave-1",
+        "replayRule": "sealed closeout receipt and clear watch state replay with no escalation",
+        "replayResult": "watch escalation replay closes without owner action",
+        "escalationEffect": "lane can enter rollback drill closeout packet as ready evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep replayed escalation as closeout packet input."
+      },
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Watch escalation wave-2 review",
+        "state": "escalation_review",
+        "gate": "Review",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "escalationLane": "wave-2",
+        "escalationRef": "review-watch-escalation-wave-2",
+        "replayRule": "watch-review or seal-review lane replays escalation pressure without notifying owners",
+        "replayResult": "escalation remains review evidence",
+        "escalationEffect": "lane can enter closeout packet only as review-held",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve watch escalation review before release closeout packet can clear."
+      },
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Watch escalation wave-3 review",
+        "state": "escalation_review",
+        "gate": "Review",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "escalationLane": "wave-3",
+        "escalationRef": "review-watch-escalation-wave-3",
+        "replayRule": "watch-review or seal-review lane replays escalation pressure without notifying owners",
+        "replayResult": "escalation remains review evidence",
+        "escalationEffect": "lane can enter closeout packet only as review-held",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve watch escalation review before release closeout packet can clear."
+      },
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Watch escalation wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "escalationLane": "wave-4",
+        "escalationRef": "owner-held-watch-escalation-wave-4",
+        "replayRule": "owner-held closeout receipt cannot be escalated from public evidence",
+        "replayResult": "watch escalation stays redacted and owner-held",
+        "escalationEffect": "lane remains excluded from closeout packet readiness",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held watch escalation visible without sending escalation."
+      },
+      {
+        "id": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Watch escalation wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceSealRowId": "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceWatchRowId": "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "escalationLane": "wave-5",
+        "escalationRef": "owner-held-watch-escalation-wave-5",
+        "replayRule": "owner-held closeout receipt cannot be escalated from public evidence",
+        "replayResult": "watch escalation stays redacted and owner-held",
+        "escalationEffect": "lane remains excluded from closeout packet readiness",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "closeoutseal_h43rcm",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held watch escalation visible without sending escalation."
+      }
+    ],
+    "guardrails": [
+      "Watch escalation replay cannot send owner messages or open escalation tickets.",
+      "Escalation-review lanes preserve the unresolved watch or seal condition.",
+      "Owner-held escalation rows remain redacted and cannot be converted into closeout readiness."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-35-release-closeout.json",
+      "assets/task-orchestrator-r8-35-exported-report.json"
+    ]
+  },
+  "rollbackDrillCloseoutPacket": {
+    "reportVersion": "impact-rollback-drill-closeout-packet@0.1.0",
+    "packetId": "rollbackcloseout_15exbym",
+    "mode": "rollback_drill_closeout_packet",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "readyRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep rollback drill closeout packet as reviewer evidence; no rollback command is executed."
+    },
+    "rows": [
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Rollback drill wave-0 ready",
+        "state": "closeout_ready",
+        "gate": "Ready",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "closeoutLane": "wave-0",
+        "packetRef": "rollback-drill-closeout-wave-0",
+        "closeoutRule": "replayed escalation plus rollback-ready delta can close the public rollback drill packet",
+        "closeoutResult": "rollback drill closeout packet is ready for reviewer export",
+        "releaseEffect": "lane remains ready in public release closeout without executing rollback",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep closeout-ready rollback drill packet in the public package."
+      },
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Rollback drill wave-1 ready",
+        "state": "closeout_ready",
+        "gate": "Ready",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "closeoutLane": "wave-1",
+        "packetRef": "rollback-drill-closeout-wave-1",
+        "closeoutRule": "replayed escalation plus rollback-ready delta can close the public rollback drill packet",
+        "closeoutResult": "rollback drill closeout packet is ready for reviewer export",
+        "releaseEffect": "lane remains ready in public release closeout without executing rollback",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep closeout-ready rollback drill packet in the public package."
+      },
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Rollback drill wave-2 review",
+        "state": "closeout_review",
+        "gate": "Review",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "closeoutLane": "wave-2",
+        "packetRef": "review-rollback-drill-closeout-wave-2",
+        "closeoutRule": "review escalation or rollback delta keeps the drill closeout packet conditional",
+        "closeoutResult": "rollback drill closeout remains review evidence",
+        "releaseEffect": "lane cannot be marked closeout-ready until review conditions close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve closeout-review lane before final release closeout."
+      },
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Rollback drill wave-3 review",
+        "state": "closeout_review",
+        "gate": "Review",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "closeoutLane": "wave-3",
+        "packetRef": "review-rollback-drill-closeout-wave-3",
+        "closeoutRule": "review escalation or rollback delta keeps the drill closeout packet conditional",
+        "closeoutResult": "rollback drill closeout remains review evidence",
+        "releaseEffect": "lane cannot be marked closeout-ready until review conditions close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Resolve closeout-review lane before final release closeout."
+      },
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Rollback drill wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "closeoutLane": "wave-4",
+        "packetRef": "owner-held-rollback-drill-closeout-wave-4",
+        "closeoutRule": "owner-held escalation or rollback evidence cannot close a rollback drill packet",
+        "closeoutResult": "rollback drill closeout packet stays owner-held and redacted",
+        "releaseEffect": "lane remains outside final release closeout until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held rollback drill closeout visible and unresolved."
+      },
+      {
+        "id": "rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Rollback drill wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceEscalationRowId": "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceRollbackDeltaRowId": "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "closeoutLane": "wave-5",
+        "packetRef": "owner-held-rollback-drill-closeout-wave-5",
+        "closeoutRule": "owner-held escalation or rollback evidence cannot close a rollback drill packet",
+        "closeoutResult": "rollback drill closeout packet stays owner-held and redacted",
+        "releaseEffect": "lane remains outside final release closeout until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "watchescalation_ad348o",
+          "fixtures/dependency-impact/r8-35-release-closeout.json",
+          "assets/task-orchestrator-r8-35-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held rollback drill closeout visible and unresolved."
+      }
+    ],
+    "guardrails": [
+      "Rollback drill closeout packet cannot execute rollback or close production incidents.",
+      "Closeout-review lanes preserve unresolved watch escalation or rollback readiness conditions.",
+      "Owner-held closeout rows remain visible and cannot be summarized away."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-35-release-closeout.json",
+      "assets/task-orchestrator-r8-35-exported-report.json"
+    ]
+  },
+  "auditExportDiff": {
+    "reportVersion": "impact-audit-export-diff@1.11.0",
+    "diffId": "exportdiff_1d7fbbq",
+    "mode": "audit_export_diff",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 53,
+      "unchangedRows": 47,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.35 closeout seal, escalation replay, and rollback drill closeout rows close."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "label": "Report version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.28.0",
+        "after": "task-orchestrator-report@1.29.0",
+        "diffReason": "R8.35 adds release closeout receipt seal, watch escalation replay, and rollback drill closeout packet",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeoutseal_h43rcm"
+        ],
+        "nextAction": "Keep report version diff in every exported package."
+      },
+      {
+        "id": "export-diff-impact-version",
+        "label": "Impact report version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.24.0",
+        "after": "asset-dependency-impact@1.25.0",
+        "diffReason": "impact schema now includes release closeout seal, watch escalation replay, and rollback drill closeout reports",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watchescalation_ad348o"
+        ],
+        "nextAction": "Use impact version as machine-readable schema boundary."
+      },
+      {
+        "id": "export-diff-audit-version",
+        "label": "Audit diff version changed",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@1.10.0",
+        "after": "impact-audit-export-diff@1.11.0",
+        "diffReason": "audit export diff now records R8.35 release closeout additions",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollbackcloseout_15exbym"
+        ],
+        "nextAction": "Keep audit diff version explicit for package review."
+      },
+      {
+        "id": "export-diff-locked-packet-diff-viewer",
+        "label": "Locked packet diff viewer remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.lockedPacketDiffViewer",
+        "before": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+        "after": "6 rows, 2 unchanged, 2 changed, 2 owner-held",
+        "diffReason": "R8.22 consumes the R8.21 packet diff without changing the source viewer",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packetdiffviewer_1qk2uol"
+        ],
+        "nextAction": "Keep packet diff as the input to accepted packet freeze."
+      },
+      {
+        "id": "export-diff-exception-burndown",
+        "label": "Exception burn-down dashboard remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.exceptionBurnDownDashboard",
+        "before": "6 exceptions, 2 closed, 4 remaining",
+        "after": "6 exceptions, 2 closed, 4 remaining",
+        "diffReason": "R8.22 importer reads burn-down state without mutating the dashboard",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "exceptionburndown_g4ppkl"
+        ],
+        "nextAction": "Keep burn-down as the input to owner response import."
+      },
+      {
+        "id": "export-diff-acceptance-replay",
+        "label": "Reviewer acceptance replay remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reviewerAcceptanceReplay",
+        "before": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+        "after": "6 replays, 2 accepted, 2 replay-required, 2 owner-held",
+        "diffReason": "R8.22 freeze consumes replay state without rewriting acceptance history",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptancereplay_1do593x"
+        ],
+        "nextAction": "Keep reviewer acceptance replay as immutable R8.21 baseline."
+      },
+      {
+        "id": "export-diff-accepted-packet-freeze",
+        "label": "Accepted packet freeze remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.acceptedPacketFreeze",
+        "before": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+        "after": "6 entries, 2 frozen, 2 pending-diff, 2 owner-held",
+        "diffReason": "R8.23 promotion gate reads accepted packet freeze without rewriting freeze state",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptedfreeze_yi72s0"
+        ],
+        "nextAction": "Keep accepted packet freeze as promotion input."
+      },
+      {
+        "id": "export-diff-owner-response-importer",
+        "label": "Exception owner response importer remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.exceptionOwnerResponseImporter",
+        "before": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+        "after": "6 responses, 2 imported, 2 waiting-owner, 2 deferred",
+        "diffReason": "R8.23 SLA reconciliation reads owner response import state without mutating responses",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "ownerresponse_16r9t75"
+        ],
+        "nextAction": "Keep owner response importer as SLA input."
+      },
+      {
+        "id": "export-diff-readiness-replay-diff",
+        "label": "Release readiness replay diff remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.releaseReadinessReplayDiff",
+        "before": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+        "after": "6 rows, 2 unchanged-ready, 2 changed-review, 2 owner-held",
+        "diffReason": "R8.23 promotion gate consumes readiness diff as immutable release replay input",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "readinessdiff_1v17mdt"
+        ],
+        "nextAction": "Keep readiness replay diff as promotion source of truth."
+      },
+      {
+        "id": "export-diff-frozen-packet-promotion-gate",
+        "label": "Frozen packet promotion gate remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.frozenPacketPromotionGate",
+        "before": "6 rows, 2 promoted, 2 diff-blocked, 2 owner-held",
+        "after": "6 rows, 2 promoted, 2 diff-blocked, 2 owner-held",
+        "diffReason": "R8.24 rollback preview reads promotion state without rewriting the gate",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "promotiongate_x6bmtp"
+        ],
+        "nextAction": "Keep promotion gate as rollback preview input."
+      },
+      {
+        "id": "export-diff-owner-response-sla-reconciliation",
+        "label": "Owner response SLA reconciliation remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.ownerResponseSlaReconciliation",
+        "before": "6 rows, 2 reconciled, 2 overdue, 2 deferred",
+        "after": "6 rows, 2 reconciled, 2 overdue, 2 deferred",
+        "diffReason": "R8.24 waiver ledger reads SLA reconciliation without closing responses",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "ownersla_1k84f7z"
+        ],
+        "nextAction": "Keep SLA reconciliation as waiver input."
+      },
+      {
+        "id": "export-diff-readiness-acceptance-ledger",
+        "label": "Readiness acceptance ledger remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.readinessAcceptanceLedger",
+        "before": "6 rows, 2 accepted, 2 needs-review, 2 owner-held",
+        "after": "6 rows, 2 accepted, 2 needs-review, 2 owner-held",
+        "diffReason": "R8.24 release-note generator reads acceptance ledger as immutable source",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "readinessledger_19x5leh"
+        ],
+        "nextAction": "Keep readiness acceptance ledger as release-note input."
+      },
+      {
+        "id": "export-diff-promotion-rollback-preview",
+        "label": "Promotion rollback preview remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.promotionRollbackPreview",
+        "before": "6 rows, 2 preview-ready, 2 diff-blocked, 2 owner-held",
+        "after": "6 rows, 2 preview-ready, 2 diff-blocked, 2 owner-held",
+        "diffReason": "R8.25 rollback rehearsal bundle diff reads preview state without changing rollback rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollbackpreview_1taxh7r"
+        ],
+        "nextAction": "Keep rollback preview as bundle diff input."
+      },
+      {
+        "id": "export-diff-sla-exception-waiver-ledger",
+        "label": "SLA exception waiver ledger remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.slaExceptionWaiverLedger",
+        "before": "6 rows, 2 waiver-not-needed, 2 waiver-requested, 2 waiver-deferred",
+        "after": "6 rows, 2 waiver-not-needed, 2 waiver-requested, 2 waiver-deferred",
+        "diffReason": "R8.25 waiver expiry monitor reads waiver ledger state without extending waivers",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "slawaiver_1vfi6p5"
+        ],
+        "nextAction": "Keep waiver ledger as expiry monitor input."
+      },
+      {
+        "id": "export-diff-candidate-packet-release-note",
+        "label": "Candidate packet release note generator remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.candidatePacketReleaseNote",
+        "before": "6 rows, 2 included, 2 needs-review, 2 owner-held",
+        "after": "6 rows, 2 included, 2 needs-review, 2 owner-held",
+        "diffReason": "R8.25 reviewer approval loop reads release-note drafts without signing for owners",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "releasenote_1i15hh1"
+        ],
+        "nextAction": "Keep release-note draft as approval loop input."
+      },
+      {
+        "id": "export-diff-release-note-reviewer-approval-loop",
+        "label": "Release note reviewer approval loop remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.releaseNoteReviewerApprovalLoop",
+        "before": "6 rows, 2 approved, 2 changes-requested, 2 owner-held",
+        "after": "6 rows, 2 approved, 2 changes-requested, 2 owner-held",
+        "diffReason": "R8.26 approval evidence seal reads reviewer approval state without changing approval rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "noteapproval_rl9mq"
+        ],
+        "nextAction": "Keep reviewer approval loop as evidence seal input."
+      },
+      {
+        "id": "export-diff-waiver-expiry-monitor",
+        "label": "Waiver expiry monitor remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.waiverExpiryMonitor",
+        "before": "6 rows, 2 clear, 2 expiring, 2 deferred",
+        "after": "6 rows, 2 clear, 2 expiring, 2 deferred",
+        "diffReason": "R8.26 waiver renewal simulator reads expiry state without renewing waivers",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiverexpiry_pnvgqt"
+        ],
+        "nextAction": "Keep waiver expiry monitor as renewal simulator input."
+      },
+      {
+        "id": "export-diff-rollback-rehearsal-bundle-diff",
+        "label": "Rollback rehearsal bundle diff remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.rollbackRehearsalBundleDiff",
+        "before": "6 rows, 2 matched, 2 review-diff, 2 owner-held",
+        "after": "6 rows, 2 matched, 2 review-diff, 2 owner-held",
+        "diffReason": "R8.26 incident handoff reads bundle diff without executing rollback",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "bundleDiff_7mbtot"
+        ],
+        "nextAction": "Keep rollback bundle diff as incident handoff input."
+      },
+      {
+        "id": "export-diff-approval-evidence-seal",
+        "label": "Approval evidence seal remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.approvalEvidenceSeal",
+        "before": "6 rows, 2 sealed, 2 changes-open, 2 owner-held",
+        "after": "6 rows, 2 sealed, 2 changes-open, 2 owner-held",
+        "diffReason": "R8.27 sealed approval replay reads approval seal state without creating new seals",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "evseal_1icaevk"
+        ],
+        "nextAction": "Keep approval evidence seal as replay input."
+      },
+      {
+        "id": "export-diff-waiver-renewal-simulator",
+        "label": "Waiver renewal simulator remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.waiverRenewalSimulator",
+        "before": "6 rows, 2 no-renewal, 2 requested, 2 deferred",
+        "after": "6 rows, 2 no-renewal, 2 requested, 2 deferred",
+        "diffReason": "R8.27 waiver expiry burn-down reads renewal simulation without extending waivers",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiverrenewal_k4f05p"
+        ],
+        "nextAction": "Keep waiver renewal simulator as burn-down input."
+      },
+      {
+        "id": "export-diff-rollback-drill-incident-handoff",
+        "label": "Rollback drill incident handoff remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.rollbackDrillIncidentHandoff",
+        "before": "6 rows, 2 closed, 2 incident-open, 2 owner-handoff",
+        "after": "6 rows, 2 closed, 2 incident-open, 2 owner-handoff",
+        "diffReason": "R8.27 incident closure acceptance packet reads handoff state without mutating incident systems",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "incidenthandoff_jrnfu9"
+        ],
+        "nextAction": "Keep rollback drill incident handoff as closure packet input."
+      },
+      {
+        "id": "export-diff-sealed-approval-replay",
+        "label": "Sealed approval replay remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.sealedApprovalReplay",
+        "before": "6 rows, 2 replayed, 2 replay-required, 2 owner-held",
+        "after": "6 rows, 2 replayed, 2 replay-required, 2 owner-held",
+        "diffReason": "R8.28 closure acceptance replay consumes sealed approval replay through the closure packet without changing it",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "sealedreplay_1la5gkl"
+        ],
+        "nextAction": "Keep sealed approval replay as closure packet input."
+      },
+      {
+        "id": "export-diff-waiver-expiry-burn-down",
+        "label": "Waiver expiry burn-down remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.waiverExpiryBurnDown",
+        "before": "6 rows, 2 burned-down, 2 renewal-open, 2 deferred",
+        "after": "6 rows, 2 burned-down, 2 renewal-open, 2 deferred",
+        "diffReason": "R8.28 owner response importer reads burn-down pressure without extending waiver validity",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiverburn_1w05h93"
+        ],
+        "nextAction": "Keep waiver burn-down as owner response input."
+      },
+      {
+        "id": "export-diff-incident-closure-acceptance-packet",
+        "label": "Incident closure acceptance packet remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.incidentClosureAcceptancePacket",
+        "before": "6 rows, 2 accepted, 2 acceptance-open, 2 owner-held",
+        "after": "6 rows, 2 accepted, 2 acceptance-open, 2 owner-held",
+        "diffReason": "R8.28 closure replay and SLA scoreboard consume closure packets without mutating incident systems",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closurepacket_1l2iezt"
+        ],
+        "nextAction": "Keep closure packet as replay and SLA input."
+      },
+      {
+        "id": "export-diff-closure-acceptance-replay",
+        "label": "Closure acceptance replay remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.closureAcceptanceReplay",
+        "before": "6 rows, 2 replayed, 2 acceptance-required, 2 owner-held",
+        "after": "6 rows, 2 replayed, 2 acceptance-required, 2 owner-held",
+        "diffReason": "R8.29 incident closure diff viewer consumes closure replay without accepting incidents",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closurereplay_71oge3"
+        ],
+        "nextAction": "Keep closure replay as diff viewer input."
+      },
+      {
+        "id": "export-diff-waiver-owner-response-importer",
+        "label": "Waiver owner response importer remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.waiverOwnerResponseImporter",
+        "before": "6 rows, 2 imported, 2 waiting-owner, 2 deferred",
+        "after": "6 rows, 2 imported, 2 waiting-owner, 2 deferred",
+        "diffReason": "R8.29 waiver SLA reconciliation reads imported response rows without approving waivers",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiverresponse_174z7b5"
+        ],
+        "nextAction": "Keep waiver response importer as SLA reconciliation input."
+      },
+      {
+        "id": "export-diff-incident-sla-scoreboard",
+        "label": "Incident SLA scoreboard remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.incidentSlaScoreboard",
+        "before": "6 rows, 2 within-SLA, 2 due-today, 2 owner-held",
+        "after": "6 rows, 2 within-SLA, 2 due-today, 2 owner-held",
+        "diffReason": "R8.29 closure diff and waiver SLA reconciliation consume scoreboard state without closing incidents",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "incidentsla_1kr5ghb"
+        ],
+        "nextAction": "Keep SLA scoreboard as operations acceptance input."
+      },
+      {
+        "id": "export-diff-incident-closure-diff-viewer",
+        "label": "Incident closure diff viewer remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.incidentClosureDiffViewer",
+        "before": "6 rows, 2 matched, 2 changed-review, 2 owner-held",
+        "after": "6 rows, 2 matched, 2 changed-review, 2 owner-held",
+        "diffReason": "R8.30 operations packet signoff diff consumes closure diff through the operations acceptance ledger",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closurediff_1dby8a0"
+        ],
+        "nextAction": "Keep closure diff viewer as operations acceptance input."
+      },
+      {
+        "id": "export-diff-waiver-sla-reconciliation",
+        "label": "Waiver SLA reconciliation remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.waiverSlaReconciliation",
+        "before": "6 rows, 2 reconciled, 2 due-today, 2 deferred",
+        "after": "6 rows, 2 reconciled, 2 due-today, 2 deferred",
+        "diffReason": "R8.30 train readiness reads waiver SLA state through operations acceptance without renewing waivers",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiverslareconcile_edsfpp"
+        ],
+        "nextAction": "Keep waiver SLA reconciliation as operations acceptance input."
+      },
+      {
+        "id": "export-diff-release-operations-acceptance-ledger",
+        "label": "Release operations acceptance ledger remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseOperationsAcceptanceLedger",
+        "before": "6 rows, 2 accepted, 2 ops-review, 2 owner-held",
+        "after": "6 rows, 2 accepted, 2 ops-review, 2 owner-held",
+        "diffReason": "R8.30 operations packet signoff diff consumes the acceptance ledger without signing for owners",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "opsaccept_fzxz2h"
+        ],
+        "nextAction": "Keep operations acceptance as packet signoff input."
+      },
+      {
+        "id": "export-diff-operations-packet-signoff-diff",
+        "label": "Operations packet signoff diff remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.operationsPacketSignoffDiff",
+        "before": "6 rows, 2 signed-off, 2 diff-review, 2 owner-held",
+        "after": "6 rows, 2 signed-off, 2 diff-review, 2 owner-held",
+        "diffReason": "R8.31 replay receipt consumes packet signoff through train readiness without changing signoff rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "opssignoff_1ysfz3f"
+        ],
+        "nextAction": "Keep packet signoff as release train readiness input."
+      },
+      {
+        "id": "export-diff-release-train-readiness-board",
+        "label": "Release train readiness board remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseTrainReadinessBoard",
+        "before": "6 rows, 2 train-ready, 2 train-review, 2 owner-held",
+        "after": "6 rows, 2 train-ready, 2 train-review, 2 owner-held",
+        "diffReason": "R8.31 release train replay receipt reads train readiness without deploying lanes",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "trainready_18qrs3g"
+        ],
+        "nextAction": "Keep train readiness board as replay receipt input."
+      },
+      {
+        "id": "export-diff-owner-escalation-closeout",
+        "label": "Owner escalation closeout remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.ownerEscalationCloseout",
+        "before": "6 rows, 2 closed, 2 escalated, 2 owner-held",
+        "after": "6 rows, 2 closed, 2 escalated, 2 owner-held",
+        "diffReason": "R8.31 owner closeout aging audit reads closeout state without closing owner work",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "ownercloseout_10fejbd"
+        ],
+        "nextAction": "Keep owner escalation closeout as aging input."
+      },
+      {
+        "id": "export-diff-release-train-replay-receipt",
+        "label": "Release train replay receipt remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseTrainReplayReceipt",
+        "before": "6 rows, 2 replayed, 2 variance-review, 2 owner-held",
+        "after": "6 rows, 2 replayed, 2 variance-review, 2 owner-held",
+        "diffReason": "R8.32 daily digest consumes replay receipt without changing replay acceptance rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "trainreplay_jvaayr"
+        ],
+        "nextAction": "Keep replay receipt as daily digest input."
+      },
+      {
+        "id": "export-diff-owner-closeout-aging-audit",
+        "label": "Owner closeout aging audit remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.ownerCloseoutAgingAudit",
+        "before": "6 rows, 2 fresh, 2 aging-review, 2 owner-held",
+        "after": "6 rows, 2 fresh, 2 aging-review, 2 owner-held",
+        "diffReason": "R8.32 late owner forecast reads aging buckets without refreshing owner tickets",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeoutaging_13adgyb"
+        ],
+        "nextAction": "Keep closeout aging as owner risk input."
+      },
+      {
+        "id": "export-diff-publish-rehearsal-variance-report",
+        "label": "Publish rehearsal variance report remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.publishRehearsalVarianceReport",
+        "before": "6 rows, 2 variance-clear, 2 variance-review, 2 owner-held",
+        "after": "6 rows, 2 variance-clear, 2 variance-review, 2 owner-held",
+        "diffReason": "R8.32 package acceptance freeze diff reads rehearsal variance without rewriting outcomes",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "publishvariance_1wsmzb1"
+        ],
+        "nextAction": "Keep rehearsal variance as package freeze input."
+      },
+      {
+        "id": "export-diff-release-manager-daily-digest",
+        "label": "Release manager daily digest remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseManagerDailyDigest",
+        "before": "6 rows, 2 ready-digest, 2 attention, 2 owner-held",
+        "after": "6 rows, 2 ready-digest, 2 attention, 2 owner-held",
+        "diffReason": "R8.33 waiver summary reads daily digest without changing release-manager actions",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "managerdigest_1d8klk3"
+        ],
+        "nextAction": "Keep daily digest as go/no-go input."
+      },
+      {
+        "id": "export-diff-late-owner-risk-forecast",
+        "label": "Late owner risk forecast remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.lateOwnerRiskForecast",
+        "before": "6 rows, 2 low-risk, 2 rising-risk, 2 late-owner",
+        "after": "6 rows, 2 low-risk, 2 rising-risk, 2 late-owner",
+        "diffReason": "R8.33 waiver summary reads owner risk without recalculating risk scores",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "ownerrisk_y1dggu"
+        ],
+        "nextAction": "Keep risk forecast as waiver summary input."
+      },
+      {
+        "id": "export-diff-package-acceptance-freeze-diff",
+        "label": "Package acceptance freeze diff remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.packageAcceptanceFreezeDiff",
+        "before": "6 rows, 2 freeze-matched, 2 freeze-changed, 2 owner-held",
+        "after": "6 rows, 2 freeze-matched, 2 freeze-changed, 2 owner-held",
+        "diffReason": "R8.33 closure board reads acceptance freeze diff without rewriting freeze state",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "acceptfreeze_1m4sq4j"
+        ],
+        "nextAction": "Keep acceptance freeze diff as waiver and closure input."
+      },
+      {
+        "id": "export-diff-release-acceptance-waiver-summary",
+        "label": "Release acceptance waiver summary remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseAcceptanceWaiverSummary",
+        "before": "6 rows, 2 no-waiver, 2 waiver-review, 2 owner-held",
+        "after": "6 rows, 2 no-waiver, 2 waiver-review, 2 owner-held",
+        "diffReason": "R8.34 consumes waiver summary through go/no-go packet without changing waiver policy",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "waiversummary_18d6z3x"
+        ],
+        "nextAction": "Keep waiver summary as immutable go/no-go input."
+      },
+      {
+        "id": "export-diff-freeze-exception-closure-board",
+        "label": "Freeze exception closure board remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.freezeExceptionClosureBoard",
+        "before": "6 rows, 2 closure-ready, 2 closure-review, 2 owner-held",
+        "after": "6 rows, 2 closure-ready, 2 closure-review, 2 owner-held",
+        "diffReason": "R8.34 consumes closure board through go/no-go packet without closing production tickets",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "freezeclosure_1oy44bt"
+        ],
+        "nextAction": "Keep closure board as immutable go/no-go input."
+      },
+      {
+        "id": "export-diff-publish-go-no-go-packet",
+        "label": "Publish go/no-go packet remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.publishGoNoGoPacket",
+        "before": "6 rows, 2 go, 2 conditional-go, 2 no-go owner-held",
+        "after": "6 rows, 2 go, 2 conditional-go, 2 no-go owner-held",
+        "diffReason": "R8.34 replays go/no-go decisions without changing the release decision packet",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "gonogopacket_1f7mnnt"
+        ],
+        "nextAction": "Keep go/no-go packet as receipt replay input."
+      },
+      {
+        "id": "export-diff-publish-decision-receipt-replay",
+        "label": "Publish decision receipt replay remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.publishDecisionReceiptReplay",
+        "before": "6 rows, 2 replayed, 2 review, 2 owner-held",
+        "after": "6 rows, 2 replayed, 2 review, 2 owner-held",
+        "diffReason": "R8.35 seals closeout receipts from rollback readiness without changing receipt replay",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "decisionreplay_tsxwvu"
+        ],
+        "nextAction": "Keep receipt replay as immutable closeout input."
+      },
+      {
+        "id": "export-diff-post-release-watch-window-board",
+        "label": "Post-release watch window board remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.postReleaseWatchWindowBoard",
+        "before": "6 rows, 2 watch-clear, 2 watch-review, 2 owner-held",
+        "after": "6 rows, 2 watch-clear, 2 watch-review, 2 owner-held",
+        "diffReason": "R8.35 replays watch escalation without opening monitors or mutating watch state",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watchwindow_1ppz2n5"
+        ],
+        "nextAction": "Keep watch window as immutable escalation input."
+      },
+      {
+        "id": "export-diff-rollback-readiness-delta",
+        "label": "Rollback readiness delta remains stable",
+        "state": "unchanged",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.rollbackReadinessDelta",
+        "before": "6 rows, 2 rollback-ready, 2 rollback-review, 2 owner-held",
+        "after": "6 rows, 2 rollback-ready, 2 rollback-review, 2 owner-held",
+        "diffReason": "R8.35 builds rollback drill closeout from rollback delta without executing rollback",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollbackdelta_1bss1lx"
+        ],
+        "nextAction": "Keep rollback readiness delta as immutable closeout input."
+      },
+      {
+        "id": "export-diff-release-closeout-receipt-seal",
+        "label": "Release closeout receipt seal was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseCloseoutReceiptSeal",
+        "before": "missing",
+        "after": "6 rows, 2 sealed, 2 review, 2 owner-held",
+        "diffReason": "R8.35 seals closeout receipts from watch and rollback readiness evidence without closing production tickets",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeoutseal_h43rcm"
+        ],
+        "nextAction": "Resolve seal-review rows before release closeout can be marked ready."
+      },
+      {
+        "id": "export-diff-watch-escalation-replay",
+        "label": "Watch escalation replay was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.watchEscalationReplay",
+        "before": "missing",
+        "after": "6 rows, 2 replayed, 2 review, 2 owner-held",
+        "diffReason": "R8.35 replays escalation pressure from closeout seals without sending owner notifications",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "watchescalation_ad348o"
+        ],
+        "nextAction": "Resolve escalation-review lanes before rollback drill closeout."
+      },
+      {
+        "id": "export-diff-rollback-drill-closeout-packet",
+        "label": "Rollback drill closeout packet was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.rollbackDrillCloseoutPacket",
+        "before": "missing",
+        "after": "6 rows, 2 closeout-ready, 2 closeout-review, 2 owner-held",
+        "diffReason": "R8.35 closes rollback drill evidence as a reviewer packet without executing rollback",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "rollbackcloseout_15exbym"
+        ],
+        "nextAction": "Keep rollback drill closeout packet as review evidence only."
+      },
+      {
+        "id": "export-diff-evidence-compactor",
+        "label": "Release evidence compactor remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.releaseEvidenceCompactor",
+        "before": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+        "after": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+        "diffReason": "R8.21 consumes the compacted packet but does not change compaction rules",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "evidencecompactor_123vzg9"
+        ],
+        "nextAction": "Keep compactor as the baseline for packet diff."
+      },
+      {
+        "id": "export-diff-reviewer-lockfile",
+        "label": "Reviewer packet lockfile remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reviewerPacketLockfile",
+        "before": "6 entries, 2 locked, 2 changed, 2 owner-held",
+        "after": "6 entries, 2 locked, 2 changed, 2 owner-held",
+        "diffReason": "R8.21 diff viewer reads the lockfile without rewriting it",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "packetlock_1s002ln"
+        ],
+        "nextAction": "Keep lockfile as immutable R8.20 baseline."
+      },
+      {
+        "id": "export-diff-exception-closeout",
+        "label": "Production readiness exception closeout remains stable",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.productionReadinessExceptionCloseout",
+        "before": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+        "after": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+        "diffReason": "R8.21 burn-down consumes closeout state without changing the source closeout",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "exceptioncloseout_wfn3c5"
+        ],
+        "nextAction": "Use closeout as source of truth for burn-down."
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "label": "Private boundary remains unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "diffReason": "R8.35 release closeout seal, watch escalation replay, and rollback drill closeout packet expose only public evidence ids and redacted owner state",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "lock-endpoint-route",
+          "closeoutseal_h43rcm",
+          "watchescalation_ad348o",
+          "rollbackcloseout_15exbym",
+          "decisionreplay_tsxwvu",
+          "watchwindow_1ppz2n5",
+          "rollbackdelta_1bss1lx",
+          "waiversummary_18d6z3x",
+          "freezeclosure_1oy44bt",
+          "gonogopacket_1f7mnnt",
+          "managerdigest_1d8klk3",
+          "ownerrisk_y1dggu",
+          "acceptfreeze_1m4sq4j",
+          "trainreplay_jvaayr",
+          "closeoutaging_13adgyb",
+          "publishvariance_1wsmzb1",
+          "opssignoff_1ysfz3f",
+          "trainready_18qrs3g",
+          "ownercloseout_10fejbd",
+          "closurediff_1dby8a0",
+          "waiverslareconcile_edsfpp",
+          "opsaccept_fzxz2h",
+          "closurereplay_71oge3",
+          "waiverresponse_174z7b5",
+          "incidentsla_1kr5ghb",
+          "sealedreplay_1la5gkl",
+          "waiverburn_1w05h93",
+          "closurepacket_1l2iezt",
+          "evseal_1icaevk",
+          "waiverrenewal_k4f05p",
+          "incidenthandoff_jrnfu9",
+          "noteapproval_rl9mq",
+          "waiverexpiry_pnvgqt",
+          "bundleDiff_7mbtot",
+          "disputereplay_f37nu8",
+          "ownerexceptions_1yeedp4"
+        ],
+        "nextAction": "Keep private exposure diff at zero."
+      },
+      {
+        "id": "export-diff-live-writes",
+        "label": "Live write boundary remains unchanged",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "diffReason": "release closeout receipt seal, watch escalation replay, and rollback drill closeout packet stay dry-run",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "closeoutseal_h43rcm",
+          "watchescalation_ad348o",
+          "rollbackcloseout_15exbym",
+          "decisionreplay_tsxwvu",
+          "watchwindow_1ppz2n5",
+          "rollbackdelta_1bss1lx",
+          "waiversummary_18d6z3x",
+          "freezeclosure_1oy44bt",
+          "gonogopacket_1f7mnnt",
+          "managerdigest_1d8klk3",
+          "ownerrisk_y1dggu",
+          "acceptfreeze_1m4sq4j",
+          "trainreplay_jvaayr",
+          "closeoutaging_13adgyb",
+          "publishvariance_1wsmzb1",
+          "opssignoff_1ysfz3f",
+          "trainready_18qrs3g",
+          "ownercloseout_10fejbd",
+          "closurediff_1dby8a0",
+          "waiverslareconcile_edsfpp",
+          "opsaccept_fzxz2h",
+          "closurereplay_71oge3",
+          "waiverresponse_174z7b5",
+          "incidentsla_1kr5ghb",
+          "sealedreplay_1la5gkl",
+          "waiverburn_1w05h93",
+          "closurepacket_1l2iezt",
+          "rollbackjudge_oehpls"
+        ],
+        "nextAction": "Block the export if liveWrites becomes non-zero."
+      }
+    ],
+    "guardrails": [
+      "Audit export diff records schema and evidence changes explicitly.",
+      "Private exposure and live write boundaries must remain unchanged.",
+      "Added R8.34 reports stay Review until receipt replay, watch window, and rollback readiness rows close."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-34-post-release-readiness.json",
+      "assets/task-orchestrator-r8-34-exported-report.json"
+    ]
+  }
+}

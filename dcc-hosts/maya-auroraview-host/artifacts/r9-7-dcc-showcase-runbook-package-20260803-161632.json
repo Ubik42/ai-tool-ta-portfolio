@@ -1,0 +1,227 @@
+{
+  "reportVersion": "maya-dcc-showcase-runbook-package@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:16:32",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "plan": {
+    "ok": true,
+    "schema": "maya-dcc-showcase-runbook@1.0.0",
+    "title": "DCC-first Portfolio Demo Runbook",
+    "mode": "maya-auroraview",
+    "modules": [
+      {
+        "id": "asset-protocol",
+        "label": "Asset Protocol Workbench",
+        "gui_entry": "Right rail Maya Bridge plus Asset Protocol Workbench DCC Evidence",
+        "primary_method": "asset_inspect_protocol",
+        "proof": "custom attr payload written to Maya nodes and recovered as scene evidence"
+      },
+      {
+        "id": "rule-matrix",
+        "label": "Cross-DCC Rule Matrix",
+        "gui_entry": "Cross-DCC Rule Matrix / Maya Scene Rule Run",
+        "primary_method": "rule_matrix_export_report",
+        "proof": "scene facts, validation rows, fix preview and JSON artifact"
+      },
+      {
+        "id": "visual-review",
+        "label": "Visual Review Studio",
+        "gui_entry": "Visual Review Studio / Maya Capture Setup",
+        "primary_method": "visual_review_export_report",
+        "proof": "camera rig, pass manifest, capture preview and JSON artifact"
+      },
+      {
+        "id": "texture-delivery",
+        "label": "Texture Delivery Console",
+        "gui_entry": "Texture Delivery Console / Maya Texture Inspection",
+        "primary_method": "texture_delivery_export_manifest",
+        "proof": "material/file node inspection, color-space validation and manifest artifact"
+      },
+      {
+        "id": "task-orchestrator",
+        "label": "Task Orchestrator",
+        "gui_entry": "Task Orchestrator / Maya Batch Queue",
+        "primary_method": "task_orchestrator_export_report",
+        "proof": "scene asset discovery, dry-run task events, receipts and JSON artifact"
+      }
+    ],
+    "steps": [
+      "Open show_portfolio() in Maya.",
+      "Use DCC Showcase Runbook in the right rail to build the plan.",
+      "Run smoke to create synthetic scene fixtures and execute all module adapters.",
+      "Open each module-specific panel to inspect the same evidence by business domain.",
+      "Export package to hand off a single JSON proof bundle."
+    ],
+    "mutation_policy": "Smoke creates synthetic demo nodes and JSON artifacts only; production scene mutation remains behind module-specific actions."
+  },
+  "smoke": {
+    "ok": true,
+    "schema": "maya-dcc-showcase-smoke@1.0.0",
+    "started_at": "2026-08-03 16:16:32",
+    "finished_at": "2026-08-03 16:16:32",
+    "gate": "Review",
+    "created": [
+      {
+        "kind": "asset_protocol_fixture",
+        "root": "r9_7_asset_protocol_fixture1",
+        "nodes": [
+          "hero_prop_body1",
+          "hero_prop_socket1"
+        ]
+      },
+      {
+        "kind": "texture_fixture",
+        "root": "r9_7_texture_fixture1",
+        "nodes": [
+          "WPN_Rifle_LOD0_texture_body1"
+        ]
+      },
+      {
+        "kind": "task_fixture",
+        "root": "r9_7_task_batch1",
+        "nodes": [
+          "BATCH_Crate_LOD0_ready1",
+          "BATCH_Vehicle_DT_review1"
+        ]
+      },
+      {
+        "kind": "visual_camera_rig",
+        "root": "r9_7_review_rig1",
+        "nodes": [
+          "Camera_Front1",
+          "Camera_Back1",
+          "Camera_Left1",
+          "Camera_Right1",
+          "Camera_Top1",
+          "Camera_Bottom1",
+          "Camera_1",
+          "Camera_2",
+          "Camera_3",
+          "Camera_4"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "id": "asset-protocol",
+        "label": "Asset Protocol Workbench",
+        "gate": "Ready",
+        "summary": {
+          "nodes": 2,
+          "rows": 2
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-asset-protocol-20260803-161632.json"
+      },
+      {
+        "id": "rule-matrix",
+        "label": "Cross-DCC Rule Matrix",
+        "gate": "Ready",
+        "summary": {
+          "facts": 4,
+          "results": 6,
+          "fixes": 1
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-rule-matrix-20260803-161632.json"
+      },
+      {
+        "id": "visual-review",
+        "label": "Visual Review Studio",
+        "gate": "Ready",
+        "summary": {
+          "cameras": 10,
+          "meshes": 5,
+          "images": 50
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-visual-review-20260803-161632.json"
+      },
+      {
+        "id": "texture-delivery",
+        "label": "Texture Delivery Console",
+        "gate": "Review",
+        "summary": {
+          "sources": 4,
+          "materials": 4,
+          "results": 5
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-texture-delivery-20260803-161632.json"
+      },
+      {
+        "id": "task-orchestrator",
+        "label": "Task Orchestrator",
+        "gate": "Review",
+        "summary": {
+          "assets": 5,
+          "tasks": 25,
+          "events": 25,
+          "receipts": 5
+        },
+        "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-task-orchestrator-20260803-161632.json"
+      }
+    ],
+    "artifacts": [
+      {
+        "module_id": "asset-protocol",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-asset-protocol-20260803-161632.json",
+        "bytes": 3099
+      },
+      {
+        "module_id": "rule-matrix",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-rule-matrix-20260803-161632.json",
+        "bytes": 8421
+      },
+      {
+        "module_id": "visual-review",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-visual-review-20260803-161632.json",
+        "bytes": 33652
+      },
+      {
+        "module_id": "texture-delivery",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-texture-delivery-20260803-161632.json",
+        "bytes": 8317
+      },
+      {
+        "module_id": "task-orchestrator",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r9-7-dcc-showcase-runbook-package-task-orchestrator-20260803-161632.json",
+        "bytes": 30789
+      }
+    ],
+    "summary": {
+      "module_count": 5,
+      "ready": 3,
+      "review": 2,
+      "blocked": 0,
+      "artifact_count": 5
+    }
+  },
+  "presentation": {
+    "entry": "from ai_tool_ta_maya_host import show_portfolio; show_portfolio()",
+    "recommended_order": [
+      "asset-protocol",
+      "rule-matrix",
+      "visual-review",
+      "texture-delivery",
+      "task-orchestrator"
+    ],
+    "final_claim": "All portfolio modules have DCC-backed Maya API evidence and exported artifacts."
+  }
+}

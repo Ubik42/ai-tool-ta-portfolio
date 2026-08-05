@@ -1,0 +1,387 @@
+{
+  "reportVersion": "impact-release-hardening-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "release_evidence_lockfile_closeout",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.14.0",
+    "asset-dependency-impact@1.10.0",
+    "impact-release-evidence-compactor@0.1.0",
+    "impact-reviewer-packet-lockfile@0.1.0",
+    "impact-production-readiness-exception-closeout@0.1.0",
+    "impact-audit-export-diff@0.6.0"
+  ],
+  "releaseEvidenceCompactor": {
+    "summary": {
+      "totalBundles": 6,
+      "compactedBundles": 2,
+      "keptBundles": 2,
+      "ownerHoldBundles": 2,
+      "blockedBundles": 0,
+      "originalArtifacts": 18,
+      "compactedArtifacts": 10,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep owner-held and expanded bundles outside the compacted reviewer packet."
+    },
+    "businessSignal": "Evidence compaction reduces reviewer noise while keeping owner-held and private-boundary evidence visible.",
+    "bundles": [
+      {
+        "id": "compact-public-baseline",
+        "state": "compacted",
+        "gate": "Ready",
+        "sourceLane": "wave-0",
+        "originalArtifacts": 4,
+        "compactedArtifacts": 2,
+        "compactionRule": "merge exported report, decision lane, owner SLA, and retained package record into reviewer packet index",
+        "owner": "Portfolio TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "compact-rollback-preview",
+        "state": "compacted",
+        "gate": "Ready",
+        "sourceLane": "wave-1",
+        "originalArtifacts": 4,
+        "compactedArtifacts": 2,
+        "compactionRule": "merge rollback preview screenshot, decision lane, owner SLA, and retained screenshot record",
+        "owner": "Release TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "keep-monitor-watch",
+        "state": "kept",
+        "gate": "Review",
+        "sourceLane": "wave-2",
+        "originalArtifacts": 3,
+        "compactedArtifacts": 3,
+        "compactionRule": "do not compact until queued monitor refresh completes",
+        "owner": "Platform TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "keep-security-alias",
+        "state": "kept",
+        "gate": "Review",
+        "sourceLane": "wave-3",
+        "originalArtifacts": 3,
+        "compactedArtifacts": 3,
+        "compactionRule": "do not compact redacted alias until security counterclaim closes",
+        "owner": "Security TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "hold-endpoint-route",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceLane": "wave-4",
+        "originalArtifacts": 2,
+        "compactedArtifacts": 0,
+        "compactionRule": "owner-held private endpoint evidence cannot enter compacted public packet",
+        "owner": "Platform Adapter Owner",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "hold-owner-unfreeze",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceLane": "wave-5",
+        "originalArtifacts": 2,
+        "compactedArtifacts": 0,
+        "compactionRule": "emergency unfreeze evidence requires explicit closeout before public compaction",
+        "owner": "Release TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "reviewerPacketLockfile": {
+    "summary": {
+      "totalEntries": 6,
+      "lockedEntries": 2,
+      "changedEntries": 2,
+      "ownerHoldEntries": 2,
+      "blockedEntries": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Lock changed public files only after reviewer accepts the R8.20 packet diff."
+    },
+    "businessSignal": "Reviewer packet lockfile freezes public artifact versions and checksums without copying private receipt bodies.",
+    "entries": [
+      {
+        "id": "lock-public-package-report",
+        "state": "locked",
+        "gate": "Ready",
+        "path": "assets/portfolio-case-study-r8-20-exported-report.json",
+        "version": "portfolio-case-study-report@2.7.0",
+        "checksum": "lock_gp44wk",
+        "lockReason": "baseline package report is compacted and owner accepted",
+        "owner": "Portfolio TA",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "lock-task-report",
+        "state": "locked",
+        "gate": "Ready",
+        "path": "assets/task-orchestrator-r8-20-exported-report.json",
+        "version": "task-orchestrator-report@1.14.0",
+        "checksum": "lock_1759p48",
+        "lockReason": "task report contains compacted baseline and rollback preview evidence",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "lock-decision-screenshot",
+        "state": "changed",
+        "gate": "Review",
+        "path": "assets/task-orchestrator-r8-20-evidence-lockfile-full.png",
+        "version": "screenshot@r8-20",
+        "checksum": "lock_rs44k",
+        "lockReason": "new evidence compactor and lockfile panels were added",
+        "owner": "Portfolio TA",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "lock-fixture",
+        "state": "changed",
+        "gate": "Review",
+        "path": "fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json",
+        "version": "impact-release-hardening-package@0.1.0",
+        "checksum": "lock_jjlxkt",
+        "lockReason": "fixture adds compactor, lockfile, and exception closeout records",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "lock-endpoint-route",
+        "state": "owner_hold",
+        "gate": "Review",
+        "path": "private://endpoint-route-policy",
+        "version": "redacted-owner-policy",
+        "checksum": "lock_184wda6",
+        "lockReason": "private endpoint route cannot be represented as public locked packet",
+        "owner": "Platform Adapter Owner",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "lock-owner-unfreeze",
+        "state": "owner_hold",
+        "gate": "Review",
+        "path": "private://emergency-unfreeze-approval",
+        "version": "redacted-owner-approval",
+        "checksum": "lock_1g9296o",
+        "lockReason": "emergency approval cannot be locked in public packet without closeout",
+        "owner": "Release TA",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "productionReadinessExceptionCloseout": {
+    "summary": {
+      "totalCases": 6,
+      "closedCases": 2,
+      "needsOwnerCases": 2,
+      "deferredCases": 2,
+      "blockedCases": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Close owner-needed exceptions before claiming production readiness."
+    },
+    "businessSignal": "Exception closeout distinguishes closed, owner-needed, and deferred production readiness exceptions.",
+    "cases": [
+      {
+        "id": "closeout-public-baseline",
+        "state": "closed",
+        "gate": "Ready",
+        "exceptionRef": "exception-public-package-baseline",
+        "owner": "Portfolio TA",
+        "closeoutRule": "locked report plus accepted owner SLA closes baseline exception",
+        "productionReadinessEffect": "allows public baseline to remain in reviewer packet",
+        "requiredEvidence": "lock-public-package-report",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "closeout-rollback-preview",
+        "state": "closed",
+        "gate": "Ready",
+        "exceptionRef": "exception-rollback-preview",
+        "owner": "Release TA",
+        "closeoutRule": "locked task report plus accepted rollback owner SLA closes preview exception",
+        "productionReadinessEffect": "allows rollback preview to remain dry-run evidence",
+        "requiredEvidence": "lock-task-report",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "closeout-monitor-watch",
+        "state": "needs_owner",
+        "gate": "Review",
+        "exceptionRef": "exception-monitor-watch-refresh",
+        "owner": "Platform TA",
+        "closeoutRule": "changed screenshot must be reviewed after monitor refresh",
+        "productionReadinessEffect": "keeps monitor watch lane conditional",
+        "requiredEvidence": "lock-decision-screenshot",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "closeout-security-alias",
+        "state": "needs_owner",
+        "gate": "Review",
+        "exceptionRef": "exception-security-alias-counterclaim",
+        "owner": "Security TA",
+        "closeoutRule": "fixture diff must be accepted without exposing private alias body",
+        "productionReadinessEffect": "keeps security alias lane conditional",
+        "requiredEvidence": "lock-fixture",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "closeout-endpoint-route",
+        "state": "deferred",
+        "gate": "Review",
+        "exceptionRef": "exception-endpoint-route-owner-refresh",
+        "owner": "Platform Adapter Owner",
+        "closeoutRule": "private endpoint route lock remains owner-held",
+        "productionReadinessEffect": "keeps endpoint route outside production-ready packet",
+        "requiredEvidence": "lock-endpoint-route",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "closeout-owner-unfreeze",
+        "state": "deferred",
+        "gate": "Review",
+        "exceptionRef": "exception-owner-unfreeze-closeout",
+        "owner": "Release TA",
+        "closeoutRule": "emergency approval lock remains owner-held",
+        "productionReadinessEffect": "keeps emergency unfreeze outside production-ready packet",
+        "requiredEvidence": "lock-owner-unfreeze",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 8,
+      "unchangedRows": 2,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.20 compaction, lockfile, and closeout reports are accepted by reviewers."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.13.0",
+        "after": "task-orchestrator-report@1.14.0",
+        "diffReason": "R8.20 adds release evidence compactor, reviewer packet lockfile, and exception closeout reports",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-impact-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.9.0",
+        "after": "asset-dependency-impact@1.10.0",
+        "diffReason": "impact schema now includes three R8.20 release hardening reports",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-audit-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@0.5.0",
+        "after": "impact-audit-export-diff@0.6.0",
+        "diffReason": "audit export diff now records R8.20 schema additions",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-evidence-compactor",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseEvidenceCompactor",
+        "before": "missing",
+        "after": "6 bundles, 2 compacted, 2 kept, 2 owner-held",
+        "diffReason": "reviewers need compacted evidence bundles without losing owner-held context",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-reviewer-lockfile",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.reviewerPacketLockfile",
+        "before": "missing",
+        "after": "6 entries, 2 locked, 2 changed, 2 owner-held",
+        "diffReason": "reviewers need public artifact versions and checksums before packet acceptance",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-exception-closeout",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.productionReadinessExceptionCloseout",
+        "before": "missing",
+        "after": "6 cases, 2 closed, 2 owner-needed, 2 deferred",
+        "diffReason": "reviewers need exception closeout state before production readiness is claimed",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "diffReason": "R8.20 adds compaction, lockfile, and closeout logic without exposing private values",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-live-writes",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "diffReason": "evidence compactor, reviewer lockfile, and exception closeout stay dry-run",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "guardrails": [
+    "Compaction reduces reviewer noise, not release authority.",
+    "Owner-held private evidence cannot enter the compacted public packet.",
+    "Compactor is dry-run and records zero live writes.",
+    "Lockfile records public artifact versions and checksums, not private receipt bodies.",
+    "Changed entries require reviewer acceptance before becoming locked.",
+    "Owner-held entries stay redacted and cannot be used as public proof.",
+    "Exception closeout can lower review noise but cannot grant production authority.",
+    "Deferred private routes stay outside the production-ready packet.",
+    "Closeout emits zero live writes and exposes zero private fields."
+  ],
+  "artifacts": [
+    "fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json",
+    "assets/task-orchestrator-r8-20-exported-report.json",
+    "fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json",
+    "assets/task-orchestrator-r8-20-exported-report.json",
+    "fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json",
+    "assets/task-orchestrator-r8-20-exported-report.json"
+  ]
+}

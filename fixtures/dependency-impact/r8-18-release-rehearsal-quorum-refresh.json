@@ -1,0 +1,336 @@
+{
+  "reportVersion": "impact-release-rehearsal-quorum-refresh-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "release_rehearsal_quorum_refresh",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.12.0",
+    "asset-dependency-impact@1.8.0",
+    "impact-release-rollback-rehearsal@0.1.0",
+    "impact-owner-quorum-simulator@0.1.0",
+    "impact-stale-evidence-auto-refresh@0.1.0",
+    "impact-audit-export-diff@0.4.0"
+  ],
+  "releaseRollbackRehearsal": {
+    "summary": {
+      "totalSteps": 6,
+      "passedSteps": 2,
+      "watchSteps": 2,
+      "ownerHoldSteps": 2,
+      "blockedSteps": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep watch and owner-held rehearsal steps in Review until stale evidence and quorum gaps close."
+    },
+    "businessSignal": "Rollback release authority is rehearsed as ordered dry-run steps; watch and owner-held steps stay reviewable.",
+    "steps": [
+      {
+        "id": "rehearsal-public-baseline",
+        "state": "passed",
+        "gate": "Ready",
+        "phase": "prepare",
+        "owner": "Portfolio TA",
+        "expectedReceipt": "receipt-public-baseline-ready",
+        "liveWrites": 0
+      },
+      {
+        "id": "rehearsal-rollback-preview",
+        "state": "passed",
+        "gate": "Ready",
+        "phase": "dry-run",
+        "owner": "Release TA",
+        "expectedReceipt": "receipt-rollback-preview-dry-run",
+        "liveWrites": 0
+      },
+      {
+        "id": "rehearsal-monitor-watch",
+        "state": "watch",
+        "gate": "Review",
+        "phase": "observe",
+        "owner": "Platform TA",
+        "expectedReceipt": "receipt-monitor-watch-review",
+        "liveWrites": 0
+      },
+      {
+        "id": "rehearsal-security-alias",
+        "state": "watch",
+        "gate": "Review",
+        "phase": "observe",
+        "owner": "Security TA",
+        "expectedReceipt": "receipt-security-alias-review",
+        "liveWrites": 0
+      },
+      {
+        "id": "rehearsal-endpoint-route",
+        "state": "owner_hold",
+        "gate": "Review",
+        "phase": "hold",
+        "owner": "Platform Adapter Owner",
+        "expectedReceipt": "receipt-endpoint-route-owner-refresh",
+        "liveWrites": 0
+      },
+      {
+        "id": "rehearsal-owner-unfreeze",
+        "state": "owner_hold",
+        "gate": "Review",
+        "phase": "hold",
+        "owner": "Release TA",
+        "expectedReceipt": "receipt-owner-unfreeze-closeout",
+        "liveWrites": 0
+      }
+    ]
+  },
+  "ownerQuorumSimulator": {
+    "summary": {
+      "totalVotes": 6,
+      "acceptedVotes": 2,
+      "requestedVotes": 2,
+      "missingVotes": 2,
+      "blockedVotes": 0,
+      "quorumNeeded": 4,
+      "quorumAccepted": 2,
+      "quorumMet": false,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Quorum is not met; requested and missing owner votes must close before release authority can be claimed."
+    },
+    "businessSignal": "Release quorum counts accepted required owner votes only; requested and missing votes keep the release in Review.",
+    "votes": [
+      {
+        "id": "quorum-portfolio-baseline",
+        "state": "accepted",
+        "gate": "Ready",
+        "owner": "Portfolio TA",
+        "required": true,
+        "decisionRef": "exception-public-package-baseline",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "quorum-release-preview",
+        "state": "accepted",
+        "gate": "Ready",
+        "owner": "Release TA",
+        "required": true,
+        "decisionRef": "exception-rollback-preview",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "quorum-monitor-watch",
+        "state": "requested",
+        "gate": "Review",
+        "owner": "Platform TA",
+        "required": true,
+        "decisionRef": "exception-monitor-watch",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "quorum-security-alias",
+        "state": "requested",
+        "gate": "Review",
+        "owner": "Security TA",
+        "required": true,
+        "decisionRef": "exception-security-alias",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "quorum-endpoint-route",
+        "state": "missing",
+        "gate": "Review",
+        "owner": "Platform Adapter Owner",
+        "required": true,
+        "decisionRef": "exception-endpoint-route",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "quorum-unfreeze-owner",
+        "state": "missing",
+        "gate": "Review",
+        "owner": "Release TA",
+        "required": false,
+        "decisionRef": "exception-owner-unfreeze",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "staleEvidenceAutoRefreshQueue": {
+    "summary": {
+      "totalJobs": 6,
+      "refreshedJobs": 2,
+      "queuedJobs": 2,
+      "ownerRequiredJobs": 2,
+      "blockedJobs": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Run queued public refreshes and keep owner-required private evidence outside automatic refresh."
+    },
+    "businessSignal": "Public stale evidence can be refreshed by dry-run adapters; private owner approvals remain owner-required.",
+    "jobs": [
+      {
+        "id": "refresh-public-package-report",
+        "state": "refreshed",
+        "gate": "Ready",
+        "evidenceRef": "portfolio-r8-17-json",
+        "refreshAdapter": "local-report-export",
+        "owner": "Portfolio TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "refresh-rollback-preview-screenshot",
+        "state": "refreshed",
+        "gate": "Ready",
+        "evidenceRef": "task-orchestrator-r8-17-budget-confidence-full",
+        "refreshAdapter": "playwright-screenshot",
+        "owner": "Release TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "refresh-monitor-watch-stream",
+        "state": "queued",
+        "gate": "Review",
+        "evidenceRef": "monitor-owner-held-route",
+        "refreshAdapter": "monitor-dry-run-refresh",
+        "owner": "Platform TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "refresh-security-alias-receipt",
+        "state": "queued",
+        "gate": "Review",
+        "evidenceRef": "private-security-service-identity",
+        "refreshAdapter": "redacted-owner-ping",
+        "owner": "Security TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "refresh-endpoint-route-exception",
+        "state": "owner_required",
+        "gate": "Review",
+        "evidenceRef": "private-endpoint-route-policy",
+        "refreshAdapter": "private-owner-refresh",
+        "owner": "Platform Adapter Owner",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "refresh-owner-unfreeze-exception",
+        "state": "owner_required",
+        "gate": "Review",
+        "evidenceRef": "private-route-unfreeze-approval",
+        "refreshAdapter": "owner-closeout-request",
+        "owner": "Release TA",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 8,
+      "unchangedRows": 2,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.18 rehearsal, quorum, and refresh reports are accepted by reviewers."
+    },
+    "rows": [
+      {
+        "id": "export-diff-report-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "taskOrchestrator.reportVersion",
+        "before": "task-orchestrator-report@1.11.0",
+        "after": "task-orchestrator-report@1.12.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-impact-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.reportVersion",
+        "before": "asset-dependency-impact@1.7.0",
+        "after": "asset-dependency-impact@1.8.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-audit-version",
+        "state": "changed",
+        "gate": "Ready",
+        "exportPath": "assetDependencyImpact.auditExportDiff.reportVersion",
+        "before": "impact-audit-export-diff@0.3.0",
+        "after": "impact-audit-export-diff@0.4.0",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-rollback-rehearsal",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseRollbackRehearsal",
+        "before": "missing",
+        "after": "6 steps, 2 passed, 2 watch, 2 owner-held",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-owner-quorum",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.ownerQuorumSimulator",
+        "before": "missing",
+        "after": "6 votes, 2 accepted, 2 requested, 2 missing, quorum not met",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-stale-refresh",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.staleEvidenceAutoRefreshQueue",
+        "before": "missing",
+        "after": "6 jobs, 2 refreshed, 2 queued, 2 owner-required",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-private-boundary",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "privacy.privateDataExposed",
+        "before": "false",
+        "after": "false",
+        "privateFieldsExposed": 0
+      },
+      {
+        "id": "export-diff-live-writes",
+        "state": "unchanged",
+        "gate": "Ready",
+        "exportPath": "mutation.liveWrites",
+        "before": "0",
+        "after": "0",
+        "privateFieldsExposed": 0
+      }
+    ]
+  },
+  "guardrails": [
+    "Rollback rehearsal emits receipts, not production rollback commands.",
+    "Owner-held rehearsal steps cannot be passed by AI narrative.",
+    "Every rehearsal step preserves liveWrites at zero in the public package.",
+    "Quorum simulation records owner coverage, not actual production approval.",
+    "Missing required owner votes keep the release in Review even when some lanes are Ready.",
+    "Optional unfreeze votes cannot be used to substitute for required endpoint or security owners.",
+    "Auto-refresh can regenerate public evidence, not private owner approvals.",
+    "Owner-required jobs stay Review until an owner action is recorded.",
+    "Refresh jobs preserve liveWrites at zero and expose zero private fields."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-18-release-rehearsal-full.png",
+    "assets/task-orchestrator-r8-18-mobile-tall.png",
+    "assets/task-orchestrator-r8-18-exported-report.json",
+    "assets/portfolio-case-study-r8-18-exported-report.json"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "reportVersion": "asset-protocol-dcc-evidence@1.0.0",
+  "activePayload": {
+    "schema": "asset-protocol@dcc-r9",
+    "sourceModule": "asset-protocol-workbench",
+    "asset": {
+      "id": "evidence_prop",
+      "name": "Evidence Prop"
+    },
+    "readiness": {
+      "status": "Ready",
+      "score": 96
+    },
+    "encodedPayload": {
+      "assetId": "evidence_prop",
+      "customAttrs": {
+        "LB_platform": "PC",
+        "LB_lod_count": 4,
+        "LB_collision": "simple"
+      },
+      "uv3": {
+        "uClass": 0.74,
+        "vMask": 15,
+        "maskBinary": "1111"
+      },
+      "delivery": {
+        "platform": "PC",
+        "lodCount": 4,
+        "materialSlots": 2,
+        "textureSets": 2
+      }
+    },
+    "validationSummary": {
+      "errors": 0,
+      "warnings": 0,
+      "total": 6
+    }
+  },
+  "sceneEvidence": {
+    "rowCount": 2,
+    "rows": [
+      {
+        "node": "hero_prop_body1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"evidence_prop\", \"name\": \"Evidence Prop\"}, \"encodedPayload\": {\"assetId\": \"evidence_prop\", \"customAttrs\": {\"LB_collision\": \"simple\", \"LB_lod_count\": 4, \"LB_platform\": \"PC\"}, \"delivery\": {\"lodCount\": 4, \"materialSlots\": 2, \"platform\": \"PC\", \"textureSets\": 2}, \"uv3\": {\"maskBinary\": \"1111\", \"uClass\": 0.74, \"vMask\": 15}}, \"readiness\": {\"score\": 96, \"status\": \"Ready\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 0, \"total\": 6, \"warnings\": 0}}",
+        "payload": {
+          "asset": {
+            "id": "evidence_prop",
+            "name": "Evidence Prop"
+          },
+          "encodedPayload": {
+            "assetId": "evidence_prop",
+            "customAttrs": {
+              "LB_collision": "simple",
+              "LB_lod_count": 4,
+              "LB_platform": "PC"
+            },
+            "delivery": {
+              "lodCount": 4,
+              "materialSlots": 2,
+              "platform": "PC",
+              "textureSets": 2
+            },
+            "uv3": {
+              "maskBinary": "1111",
+              "uClass": 0.74,
+              "vMask": 15
+            }
+          },
+          "readiness": {
+            "score": 96,
+            "status": "Ready"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 0,
+            "total": 6,
+            "warnings": 0
+          }
+        }
+      },
+      {
+        "node": "hero_prop_socket1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"evidence_prop\", \"name\": \"Evidence Prop\"}, \"encodedPayload\": {\"assetId\": \"evidence_prop\", \"customAttrs\": {\"LB_collision\": \"simple\", \"LB_lod_count\": 4, \"LB_platform\": \"PC\"}, \"delivery\": {\"lodCount\": 4, \"materialSlots\": 2, \"platform\": \"PC\", \"textureSets\": 2}, \"uv3\": {\"maskBinary\": \"1111\", \"uClass\": 0.74, \"vMask\": 15}}, \"readiness\": {\"score\": 96, \"status\": \"Ready\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 0, \"total\": 6, \"warnings\": 0}}",
+        "payload": {
+          "asset": {
+            "id": "evidence_prop",
+            "name": "Evidence Prop"
+          },
+          "encodedPayload": {
+            "assetId": "evidence_prop",
+            "customAttrs": {
+              "LB_collision": "simple",
+              "LB_lod_count": 4,
+              "LB_platform": "PC"
+            },
+            "delivery": {
+              "lodCount": 4,
+              "materialSlots": 2,
+              "platform": "PC",
+              "textureSets": 2
+            },
+            "uv3": {
+              "maskBinary": "1111",
+              "uClass": 0.74,
+              "vMask": 15
+            }
+          },
+          "readiness": {
+            "score": 96,
+            "status": "Ready"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 0,
+            "total": 6,
+            "warnings": 0
+          }
+        }
+      }
+    ]
+  },
+  "validationEvidence": {
+    "errors": 0,
+    "warnings": 0,
+    "total": 6
+  }
+}

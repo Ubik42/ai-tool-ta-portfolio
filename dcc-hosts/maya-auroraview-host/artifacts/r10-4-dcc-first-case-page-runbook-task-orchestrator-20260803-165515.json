@@ -1,0 +1,898 @@
+{
+  "reportVersion": "maya-task-orchestrator-dcc-report@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 16:55:15",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "discovery": {
+    "schema": "maya-task-orchestrator-discovery@1.0.0",
+    "assets": [
+      {
+        "id": "asset-001",
+        "node": "BATCH_Crate_LOD0_ready1",
+        "shapes": [
+          "BATCH_Crate_LOD0_ready1Shape"
+        ],
+        "top_parent": "r9_7_task_batch1",
+        "lod": "lod0",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "triangles": 12,
+        "budget_triangles": 12000,
+        "material_count": 1,
+        "texture_count": 1,
+        "shading_engines": [
+          "SG_Batch_Crate_Body1"
+        ],
+        "materials": [
+          "M_Batch_Crate_Body1"
+        ],
+        "file_nodes": [
+          "T_Batch_Crate_BC_2048_png1"
+        ],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "BATCH_Crate_LOD0_ready1",
+        "visible": true,
+        "gate": "Ready",
+        "blockers": [],
+        "review": []
+      },
+      {
+        "id": "asset-002",
+        "node": "BATCH_Vehicle_DT_review1",
+        "shapes": [
+          "BATCH_Vehicle_DT_review1Shape"
+        ],
+        "top_parent": "r9_7_task_batch1",
+        "lod": "DT",
+        "role": "unknown",
+        "platform": "unknown",
+        "triangles": 760,
+        "budget_triangles": null,
+        "material_count": 1,
+        "texture_count": 0,
+        "shading_engines": [
+          "initialShadingGroup"
+        ],
+        "materials": [
+          "standardSurface1"
+        ],
+        "file_nodes": [],
+        "has_protocol": false,
+        "payload_valid": false,
+        "protocol_carrier": null,
+        "visible": true,
+        "gate": "Review",
+        "blockers": [],
+        "review": [
+          "missing aiToolTaProtocol",
+          "no texture file nodes"
+        ]
+      },
+      {
+        "id": "asset-003",
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "shapes": [
+          "WPN_Rifle_LOD0_texture_body1Shape"
+        ],
+        "top_parent": "r9_7_texture_fixture1",
+        "lod": "lod0",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "triangles": 12,
+        "budget_triangles": 12000,
+        "material_count": 1,
+        "texture_count": 3,
+        "shading_engines": [
+          "SG_AI_Texture_Body1"
+        ],
+        "materials": [
+          "M_AI_Texture_Body1"
+        ],
+        "file_nodes": [
+          "T_Rifle_Body_BC_2048_png1",
+          "T_Rifle_Body_N_2048_tga1",
+          "T_Rifle_Body_ORM_2048_tga1"
+        ],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "WPN_Rifle_LOD0_texture_body1",
+        "visible": true,
+        "gate": "Ready",
+        "blockers": [],
+        "review": []
+      },
+      {
+        "id": "asset-004",
+        "node": "hero_prop_body1",
+        "shapes": [
+          "hero_prop_body1Shape"
+        ],
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "lod": "lod0",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "triangles": 12,
+        "budget_triangles": 12000,
+        "material_count": 1,
+        "texture_count": 0,
+        "shading_engines": [
+          "initialShadingGroup"
+        ],
+        "materials": [
+          "standardSurface1"
+        ],
+        "file_nodes": [],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "hero_prop_body1",
+        "visible": true,
+        "gate": "Review",
+        "blockers": [],
+        "review": [
+          "no texture file nodes"
+        ]
+      },
+      {
+        "id": "asset-005",
+        "node": "hero_prop_socket1",
+        "shapes": [
+          "hero_prop_socket1Shape"
+        ],
+        "top_parent": "r9_7_asset_protocol_fixture1",
+        "lod": "lod0",
+        "role": "showcase_publish_target",
+        "platform": "pc",
+        "triangles": 760,
+        "budget_triangles": 12000,
+        "material_count": 1,
+        "texture_count": 0,
+        "shading_engines": [
+          "initialShadingGroup"
+        ],
+        "materials": [
+          "standardSurface1"
+        ],
+        "file_nodes": [],
+        "has_protocol": true,
+        "payload_valid": true,
+        "protocol_carrier": "hero_prop_socket1",
+        "visible": true,
+        "gate": "Review",
+        "blockers": [],
+        "review": [
+          "no texture file nodes"
+        ]
+      }
+    ],
+    "summary": {
+      "asset_count": 5,
+      "ready": 2,
+      "review": 3,
+      "blocked": 0,
+      "gate": "Review"
+    }
+  },
+  "queue": {
+    "schema": "maya-task-orchestrator-queue@1.0.0",
+    "summary": {
+      "total": 25,
+      "done": 16,
+      "queued": 2,
+      "review": 7,
+      "blocked": 0,
+      "gate": "Review"
+    },
+    "tasks": [
+      {
+        "id": "protocol:BATCH_Crate_LOD0_ready1",
+        "asset_id": "asset-001",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "label": "Collect Protocol Payload",
+        "phase": "collect",
+        "status": "done",
+        "command": "api.asset_inspect_protocol(names=[BATCH_Crate_LOD0_ready1])",
+        "evidence": "protocol carrier=BATCH_Crate_LOD0_ready1",
+        "depends_on": [],
+        "mutation_allowed": false
+      },
+      {
+        "id": "material:BATCH_Crate_LOD0_ready1",
+        "asset_id": "asset-001",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "label": "Validate Material Binding",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.rule_matrix_validate_scene(names=[BATCH_Crate_LOD0_ready1])",
+        "evidence": "materials=1 shadingEngines=1",
+        "depends_on": [
+          "protocol:BATCH_Crate_LOD0_ready1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "texture:BATCH_Crate_LOD0_ready1",
+        "asset_id": "asset-001",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "label": "Validate Texture Delivery",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "evidence": "fileNodes=1",
+        "depends_on": [
+          "material:BATCH_Crate_LOD0_ready1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "visual:BATCH_Crate_LOD0_ready1",
+        "asset_id": "asset-001",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "label": "Build Visual Review Manifest",
+        "phase": "review",
+        "status": "done",
+        "command": "api.visual_review_build_pass_manifest(names=[BATCH_Crate_LOD0_ready1])",
+        "evidence": "visible=True shapes=1",
+        "depends_on": [
+          "material:BATCH_Crate_LOD0_ready1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "publish:BATCH_Crate_LOD0_ready1",
+        "asset_id": "asset-001",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "label": "Export Evidence Packet",
+        "phase": "extract",
+        "status": "queued",
+        "command": "api.task_orchestrator_export_report(names=[BATCH_Crate_LOD0_ready1])",
+        "evidence": "assetGate=Ready review=- blockers=-",
+        "depends_on": [
+          "protocol:BATCH_Crate_LOD0_ready1",
+          "material:BATCH_Crate_LOD0_ready1",
+          "texture:BATCH_Crate_LOD0_ready1",
+          "visual:BATCH_Crate_LOD0_ready1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "protocol:BATCH_Vehicle_DT_review1",
+        "asset_id": "asset-002",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "label": "Collect Protocol Payload",
+        "phase": "collect",
+        "status": "review",
+        "command": "api.asset_inspect_protocol(names=[BATCH_Vehicle_DT_review1])",
+        "evidence": "protocol carrier=-",
+        "depends_on": [],
+        "mutation_allowed": false
+      },
+      {
+        "id": "material:BATCH_Vehicle_DT_review1",
+        "asset_id": "asset-002",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "label": "Validate Material Binding",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.rule_matrix_validate_scene(names=[BATCH_Vehicle_DT_review1])",
+        "evidence": "materials=1 shadingEngines=1",
+        "depends_on": [
+          "protocol:BATCH_Vehicle_DT_review1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "texture:BATCH_Vehicle_DT_review1",
+        "asset_id": "asset-002",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "label": "Validate Texture Delivery",
+        "phase": "validate",
+        "status": "review",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "evidence": "fileNodes=0",
+        "depends_on": [
+          "material:BATCH_Vehicle_DT_review1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "visual:BATCH_Vehicle_DT_review1",
+        "asset_id": "asset-002",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "label": "Build Visual Review Manifest",
+        "phase": "review",
+        "status": "done",
+        "command": "api.visual_review_build_pass_manifest(names=[BATCH_Vehicle_DT_review1])",
+        "evidence": "visible=True shapes=1",
+        "depends_on": [
+          "material:BATCH_Vehicle_DT_review1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "publish:BATCH_Vehicle_DT_review1",
+        "asset_id": "asset-002",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "label": "Export Evidence Packet",
+        "phase": "extract",
+        "status": "review",
+        "command": "api.task_orchestrator_export_report(names=[BATCH_Vehicle_DT_review1])",
+        "evidence": "assetGate=Review review=missing aiToolTaProtocol,no texture file nodes blockers=-",
+        "depends_on": [
+          "protocol:BATCH_Vehicle_DT_review1",
+          "material:BATCH_Vehicle_DT_review1",
+          "texture:BATCH_Vehicle_DT_review1",
+          "visual:BATCH_Vehicle_DT_review1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "protocol:WPN_Rifle_LOD0_texture_body1",
+        "asset_id": "asset-003",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "label": "Collect Protocol Payload",
+        "phase": "collect",
+        "status": "done",
+        "command": "api.asset_inspect_protocol(names=[WPN_Rifle_LOD0_texture_body1])",
+        "evidence": "protocol carrier=WPN_Rifle_LOD0_texture_body1",
+        "depends_on": [],
+        "mutation_allowed": false
+      },
+      {
+        "id": "material:WPN_Rifle_LOD0_texture_body1",
+        "asset_id": "asset-003",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "label": "Validate Material Binding",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.rule_matrix_validate_scene(names=[WPN_Rifle_LOD0_texture_body1])",
+        "evidence": "materials=1 shadingEngines=1",
+        "depends_on": [
+          "protocol:WPN_Rifle_LOD0_texture_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "texture:WPN_Rifle_LOD0_texture_body1",
+        "asset_id": "asset-003",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "label": "Validate Texture Delivery",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "evidence": "fileNodes=3",
+        "depends_on": [
+          "material:WPN_Rifle_LOD0_texture_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "visual:WPN_Rifle_LOD0_texture_body1",
+        "asset_id": "asset-003",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "label": "Build Visual Review Manifest",
+        "phase": "review",
+        "status": "done",
+        "command": "api.visual_review_build_pass_manifest(names=[WPN_Rifle_LOD0_texture_body1])",
+        "evidence": "visible=True shapes=1",
+        "depends_on": [
+          "material:WPN_Rifle_LOD0_texture_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "publish:WPN_Rifle_LOD0_texture_body1",
+        "asset_id": "asset-003",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "label": "Export Evidence Packet",
+        "phase": "extract",
+        "status": "queued",
+        "command": "api.task_orchestrator_export_report(names=[WPN_Rifle_LOD0_texture_body1])",
+        "evidence": "assetGate=Ready review=- blockers=-",
+        "depends_on": [
+          "protocol:WPN_Rifle_LOD0_texture_body1",
+          "material:WPN_Rifle_LOD0_texture_body1",
+          "texture:WPN_Rifle_LOD0_texture_body1",
+          "visual:WPN_Rifle_LOD0_texture_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "protocol:hero_prop_body1",
+        "asset_id": "asset-004",
+        "asset": "hero_prop_body1",
+        "label": "Collect Protocol Payload",
+        "phase": "collect",
+        "status": "done",
+        "command": "api.asset_inspect_protocol(names=[hero_prop_body1])",
+        "evidence": "protocol carrier=hero_prop_body1",
+        "depends_on": [],
+        "mutation_allowed": false
+      },
+      {
+        "id": "material:hero_prop_body1",
+        "asset_id": "asset-004",
+        "asset": "hero_prop_body1",
+        "label": "Validate Material Binding",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.rule_matrix_validate_scene(names=[hero_prop_body1])",
+        "evidence": "materials=1 shadingEngines=1",
+        "depends_on": [
+          "protocol:hero_prop_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "texture:hero_prop_body1",
+        "asset_id": "asset-004",
+        "asset": "hero_prop_body1",
+        "label": "Validate Texture Delivery",
+        "phase": "validate",
+        "status": "review",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "evidence": "fileNodes=0",
+        "depends_on": [
+          "material:hero_prop_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "visual:hero_prop_body1",
+        "asset_id": "asset-004",
+        "asset": "hero_prop_body1",
+        "label": "Build Visual Review Manifest",
+        "phase": "review",
+        "status": "done",
+        "command": "api.visual_review_build_pass_manifest(names=[hero_prop_body1])",
+        "evidence": "visible=True shapes=1",
+        "depends_on": [
+          "material:hero_prop_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "publish:hero_prop_body1",
+        "asset_id": "asset-004",
+        "asset": "hero_prop_body1",
+        "label": "Export Evidence Packet",
+        "phase": "extract",
+        "status": "review",
+        "command": "api.task_orchestrator_export_report(names=[hero_prop_body1])",
+        "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+        "depends_on": [
+          "protocol:hero_prop_body1",
+          "material:hero_prop_body1",
+          "texture:hero_prop_body1",
+          "visual:hero_prop_body1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "protocol:hero_prop_socket1",
+        "asset_id": "asset-005",
+        "asset": "hero_prop_socket1",
+        "label": "Collect Protocol Payload",
+        "phase": "collect",
+        "status": "done",
+        "command": "api.asset_inspect_protocol(names=[hero_prop_socket1])",
+        "evidence": "protocol carrier=hero_prop_socket1",
+        "depends_on": [],
+        "mutation_allowed": false
+      },
+      {
+        "id": "material:hero_prop_socket1",
+        "asset_id": "asset-005",
+        "asset": "hero_prop_socket1",
+        "label": "Validate Material Binding",
+        "phase": "validate",
+        "status": "done",
+        "command": "api.rule_matrix_validate_scene(names=[hero_prop_socket1])",
+        "evidence": "materials=1 shadingEngines=1",
+        "depends_on": [
+          "protocol:hero_prop_socket1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "texture:hero_prop_socket1",
+        "asset_id": "asset-005",
+        "asset": "hero_prop_socket1",
+        "label": "Validate Texture Delivery",
+        "phase": "validate",
+        "status": "review",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "evidence": "fileNodes=0",
+        "depends_on": [
+          "material:hero_prop_socket1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "visual:hero_prop_socket1",
+        "asset_id": "asset-005",
+        "asset": "hero_prop_socket1",
+        "label": "Build Visual Review Manifest",
+        "phase": "review",
+        "status": "done",
+        "command": "api.visual_review_build_pass_manifest(names=[hero_prop_socket1])",
+        "evidence": "visible=True shapes=1",
+        "depends_on": [
+          "material:hero_prop_socket1"
+        ],
+        "mutation_allowed": false
+      },
+      {
+        "id": "publish:hero_prop_socket1",
+        "asset_id": "asset-005",
+        "asset": "hero_prop_socket1",
+        "label": "Export Evidence Packet",
+        "phase": "extract",
+        "status": "review",
+        "command": "api.task_orchestrator_export_report(names=[hero_prop_socket1])",
+        "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+        "depends_on": [
+          "protocol:hero_prop_socket1",
+          "material:hero_prop_socket1",
+          "texture:hero_prop_socket1",
+          "visual:hero_prop_socket1"
+        ],
+        "mutation_allowed": false
+      }
+    ]
+  },
+  "dryRun": {
+    "schema": "maya-task-orchestrator-dry-run@1.0.0",
+    "summary": {
+      "events": 25,
+      "done": 18,
+      "review": 7,
+      "blocked": 0,
+      "gate": "Review"
+    },
+    "events": [
+      {
+        "id": "event-001",
+        "task_id": "protocol:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "phase": "collect",
+        "status": "done",
+        "duration_ms": 15,
+        "evidence": "protocol carrier=BATCH_Crate_LOD0_ready1",
+        "command": "api.asset_inspect_protocol(names=[BATCH_Crate_LOD0_ready1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-002",
+        "task_id": "material:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 18,
+        "evidence": "materials=1 shadingEngines=1",
+        "command": "api.rule_matrix_validate_scene(names=[BATCH_Crate_LOD0_ready1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-003",
+        "task_id": "texture:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 21,
+        "evidence": "fileNodes=1",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-004",
+        "task_id": "visual:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "phase": "review",
+        "status": "done",
+        "duration_ms": 24,
+        "evidence": "visible=True shapes=1",
+        "command": "api.visual_review_build_pass_manifest(names=[BATCH_Crate_LOD0_ready1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-005",
+        "task_id": "publish:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "phase": "extract",
+        "status": "done",
+        "duration_ms": 27,
+        "evidence": "assetGate=Ready review=- blockers=-",
+        "command": "api.task_orchestrator_export_report(names=[BATCH_Crate_LOD0_ready1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-006",
+        "task_id": "protocol:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "phase": "collect",
+        "status": "review",
+        "duration_ms": 30,
+        "evidence": "protocol carrier=-",
+        "command": "api.asset_inspect_protocol(names=[BATCH_Vehicle_DT_review1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-007",
+        "task_id": "material:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 33,
+        "evidence": "materials=1 shadingEngines=1",
+        "command": "api.rule_matrix_validate_scene(names=[BATCH_Vehicle_DT_review1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-008",
+        "task_id": "texture:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "phase": "validate",
+        "status": "review",
+        "duration_ms": 36,
+        "evidence": "fileNodes=0",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-009",
+        "task_id": "visual:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "phase": "review",
+        "status": "done",
+        "duration_ms": 39,
+        "evidence": "visible=True shapes=1",
+        "command": "api.visual_review_build_pass_manifest(names=[BATCH_Vehicle_DT_review1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-010",
+        "task_id": "publish:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "phase": "extract",
+        "status": "review",
+        "duration_ms": 42,
+        "evidence": "assetGate=Review review=missing aiToolTaProtocol,no texture file nodes blockers=-",
+        "command": "api.task_orchestrator_export_report(names=[BATCH_Vehicle_DT_review1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-011",
+        "task_id": "protocol:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "phase": "collect",
+        "status": "done",
+        "duration_ms": 45,
+        "evidence": "protocol carrier=WPN_Rifle_LOD0_texture_body1",
+        "command": "api.asset_inspect_protocol(names=[WPN_Rifle_LOD0_texture_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-012",
+        "task_id": "material:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 48,
+        "evidence": "materials=1 shadingEngines=1",
+        "command": "api.rule_matrix_validate_scene(names=[WPN_Rifle_LOD0_texture_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-013",
+        "task_id": "texture:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 51,
+        "evidence": "fileNodes=3",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-014",
+        "task_id": "visual:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "phase": "review",
+        "status": "done",
+        "duration_ms": 54,
+        "evidence": "visible=True shapes=1",
+        "command": "api.visual_review_build_pass_manifest(names=[WPN_Rifle_LOD0_texture_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-015",
+        "task_id": "publish:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "phase": "extract",
+        "status": "done",
+        "duration_ms": 57,
+        "evidence": "assetGate=Ready review=- blockers=-",
+        "command": "api.task_orchestrator_export_report(names=[WPN_Rifle_LOD0_texture_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-016",
+        "task_id": "protocol:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "phase": "collect",
+        "status": "done",
+        "duration_ms": 60,
+        "evidence": "protocol carrier=hero_prop_body1",
+        "command": "api.asset_inspect_protocol(names=[hero_prop_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-017",
+        "task_id": "material:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 63,
+        "evidence": "materials=1 shadingEngines=1",
+        "command": "api.rule_matrix_validate_scene(names=[hero_prop_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-018",
+        "task_id": "texture:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "phase": "validate",
+        "status": "review",
+        "duration_ms": 66,
+        "evidence": "fileNodes=0",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-019",
+        "task_id": "visual:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "phase": "review",
+        "status": "done",
+        "duration_ms": 69,
+        "evidence": "visible=True shapes=1",
+        "command": "api.visual_review_build_pass_manifest(names=[hero_prop_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-020",
+        "task_id": "publish:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "phase": "extract",
+        "status": "review",
+        "duration_ms": 72,
+        "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+        "command": "api.task_orchestrator_export_report(names=[hero_prop_body1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-021",
+        "task_id": "protocol:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "phase": "collect",
+        "status": "done",
+        "duration_ms": 75,
+        "evidence": "protocol carrier=hero_prop_socket1",
+        "command": "api.asset_inspect_protocol(names=[hero_prop_socket1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-022",
+        "task_id": "material:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "phase": "validate",
+        "status": "done",
+        "duration_ms": 78,
+        "evidence": "materials=1 shadingEngines=1",
+        "command": "api.rule_matrix_validate_scene(names=[hero_prop_socket1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-023",
+        "task_id": "texture:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "phase": "validate",
+        "status": "review",
+        "duration_ms": 81,
+        "evidence": "fileNodes=0",
+        "command": "api.texture_delivery_validate_scene(include_all=True)",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-024",
+        "task_id": "visual:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "phase": "review",
+        "status": "done",
+        "duration_ms": 84,
+        "evidence": "visible=True shapes=1",
+        "command": "api.visual_review_build_pass_manifest(names=[hero_prop_socket1])",
+        "mutation_allowed": false
+      },
+      {
+        "id": "event-025",
+        "task_id": "publish:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "phase": "extract",
+        "status": "review",
+        "duration_ms": 87,
+        "evidence": "assetGate=Review review=no texture file nodes blockers=-",
+        "command": "api.task_orchestrator_export_report(names=[hero_prop_socket1])",
+        "mutation_allowed": false
+      }
+    ],
+    "receipts": [
+      {
+        "id": "receipt:BATCH_Crate_LOD0_ready1",
+        "asset": "BATCH_Crate_LOD0_ready1",
+        "state": "accepted",
+        "gate": "Ready",
+        "evidence_count": 5,
+        "next_action": "Eligible for evidence packet export."
+      },
+      {
+        "id": "receipt:BATCH_Vehicle_DT_review1",
+        "asset": "BATCH_Vehicle_DT_review1",
+        "state": "held_for_review",
+        "gate": "Review",
+        "evidence_count": 5,
+        "next_action": "TA review required before publish."
+      },
+      {
+        "id": "receipt:WPN_Rifle_LOD0_texture_body1",
+        "asset": "WPN_Rifle_LOD0_texture_body1",
+        "state": "accepted",
+        "gate": "Ready",
+        "evidence_count": 5,
+        "next_action": "Eligible for evidence packet export."
+      },
+      {
+        "id": "receipt:hero_prop_body1",
+        "asset": "hero_prop_body1",
+        "state": "held_for_review",
+        "gate": "Review",
+        "evidence_count": 5,
+        "next_action": "TA review required before publish."
+      },
+      {
+        "id": "receipt:hero_prop_socket1",
+        "asset": "hero_prop_socket1",
+        "state": "held_for_review",
+        "gate": "Review",
+        "evidence_count": 5,
+        "next_action": "TA review required before publish."
+      }
+    ]
+  },
+  "boundary": {
+    "mutation": "dry_run_only",
+    "sceneWrites": 0,
+    "nextIntegration": "replace dry-run command strings with real module adapters"
+  }
+}

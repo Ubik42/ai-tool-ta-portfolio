@@ -1,0 +1,169 @@
+{
+  "schema": "synthetic-animation-continuity-scene@0.1.0",
+  "intent": "Public-safe fixture proving deterministic animation handoff checks for rig identity, take range, sample rate, channel identity, sub-frame keys, root motion and animation layer boundaries.",
+  "scene": {
+    "sourceDcc": "Maya",
+    "unit": "centimeter",
+    "timeUnit": "ntsc",
+    "fps": 30,
+    "playbackStart": 1001,
+    "playbackEnd": 2048
+  },
+  "assets": [
+    {
+      "id": "anim-hero-run-001",
+      "label": "Ready locomotion take",
+      "namespace": "heroRun",
+      "actualRigId": "HeroRig_A",
+      "actualSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+      "rootNode": "Hips",
+      "protocol": {
+        "schema": "animation-continuity@dcc-r23",
+        "expectedRigId": "HeroRig_A",
+        "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+        "takeName": "RunStart",
+        "startFrame": 1001,
+        "endFrame": 1048,
+        "sampleRate": 30,
+        "allowSubFrameKeys": false,
+        "rootMotion": "required",
+        "additiveLayersAllowed": false,
+        "requiredChannels": [
+          "Hips.translateX",
+          "Hips.translateZ",
+          "Hips.rotateY",
+          "LeftFoot.rotateX",
+          "RightFoot.rotateX"
+        ]
+      },
+      "animationLayers": [],
+      "channels": [
+        {
+          "node": "Hips",
+          "attr": "translateX",
+          "keys": [
+            { "frame": 1001, "value": 0.0 },
+            { "frame": 1024, "value": 0.2 },
+            { "frame": 1048, "value": 0.0 }
+          ]
+        },
+        {
+          "node": "Hips",
+          "attr": "translateZ",
+          "keys": [
+            { "frame": 1001, "value": 0.0 },
+            { "frame": 1024, "value": 2.8 },
+            { "frame": 1048, "value": 5.6 }
+          ]
+        },
+        {
+          "node": "Hips",
+          "attr": "rotateY",
+          "keys": [
+            { "frame": 1001, "value": 0.0 },
+            { "frame": 1024, "value": 1.5 },
+            { "frame": 1048, "value": 0.0 }
+          ]
+        },
+        {
+          "node": "LeftFoot",
+          "attr": "rotateX",
+          "keys": [
+            { "frame": 1001, "value": -8.0 },
+            { "frame": 1024, "value": 11.0 },
+            { "frame": 1048, "value": -6.0 }
+          ]
+        },
+        {
+          "node": "RightFoot",
+          "attr": "rotateX",
+          "keys": [
+            { "frame": 1001, "value": 9.0 },
+            { "frame": 1024, "value": -10.0 },
+            { "frame": 1048, "value": 7.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anim-hero-attack-002",
+      "label": "Blocked retargeted attack take",
+      "namespace": "heroAttack",
+      "actualRigId": "HeroRig_TMP",
+      "actualSkeletonFingerprint": "skel:hero:v002:spine61:face12",
+      "rootNode": "Hips",
+      "protocol": {
+        "schema": "animation-continuity@dcc-r23",
+        "expectedRigId": "HeroRig_A",
+        "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+        "takeName": "Attack_A",
+        "startFrame": 2001,
+        "endFrame": 2040,
+        "sampleRate": 24,
+        "allowSubFrameKeys": false,
+        "rootMotion": "disabled",
+        "additiveLayersAllowed": false,
+        "requiredChannels": [
+          "Hips.translateZ",
+          "Hips.rotateY",
+          "RightFoot.rotateX",
+          "WeaponSocket.rotateY"
+        ]
+      },
+      "animationLayers": [
+        {
+          "name": "retargetOffset",
+          "mode": "additive",
+          "muted": false,
+          "owner": ""
+        }
+      ],
+      "channels": [
+        {
+          "node": "Hips",
+          "attr": "translateZ",
+          "keys": [
+            { "frame": 2001, "value": 0.0 },
+            { "frame": 2020.5, "value": 4.0 },
+            { "frame": 2042, "value": 8.0 }
+          ]
+        },
+        {
+          "namespace": "heroAttackRetarget",
+          "node": "Hips",
+          "attr": "translateZ",
+          "keys": [
+            { "frame": 2001, "value": 0.0 },
+            { "frame": 2040, "value": 1.0 }
+          ]
+        },
+        {
+          "node": "Hips",
+          "attr": "rotateY",
+          "keys": [
+            { "frame": 2001, "value": 0.0 },
+            { "frame": 2025, "value": 92.0 },
+            { "frame": 2040, "value": 88.0 }
+          ]
+        },
+        {
+          "node": "WeaponSocket",
+          "attr": "rotateY",
+          "keys": [
+            { "frame": 2000, "value": 0.0 },
+            { "frame": 2020, "value": 45.0 },
+            { "frame": 2040, "value": 90.0 }
+          ]
+        },
+        {
+          "node": "Hips",
+          "attr": "scaleX",
+          "keys": [
+            { "frame": 2001, "value": 1.0 },
+            { "frame": 2040, "value": 1.08 }
+          ]
+        }
+      ]
+    }
+  ]
+}

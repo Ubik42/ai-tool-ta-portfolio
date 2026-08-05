@@ -1,0 +1,65 @@
+{
+  "reportVersion": "impact-production-drift-freeze-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "production_drift_freeze_rehearsal",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.8.0",
+    "asset-dependency-impact@1.4.0",
+    "impact-production-drift-audit@0.1.0",
+    "impact-owner-sla-monitor@0.1.0",
+    "impact-release-freeze-replay@0.1.0"
+  ],
+  "productionDriftAudit": {
+    "summary": {
+      "totalChecks": 6,
+      "inSyncChecks": 3,
+      "driftChecks": 2,
+      "ownerHoldChecks": 1,
+      "blockedChecks": 0,
+      "unresolvedFindings": 3,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Post-cutover evidence can be audited for public state drift without resolving private endpoints or copying private receipt payloads."
+  },
+  "ownerSlaMonitor": {
+    "summary": {
+      "totalRows": 6,
+      "withinSlaRows": 2,
+      "dueSoonRows": 2,
+      "overdueRows": 2,
+      "blockedRows": 0,
+      "maxAgeHours": 42,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Owner SLA rows make due-soon and overdue responsibility visible while leaving receipt closure authority outside the public package."
+  },
+  "releaseFreezeReplay": {
+    "summary": {
+      "totalSteps": 6,
+      "frozenSteps": 2,
+      "dryRunSteps": 2,
+      "ownerHoldSteps": 2,
+      "blockedSteps": 0,
+      "liveWrites": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Release freeze can replay pause, write-deny, rollback preview, emergency stop, and SLA notice without production writes."
+  },
+  "guardrails": [
+    "Drift audit compares public evidence state only.",
+    "Owner SLA monitor escalates responsibility but cannot close receipts.",
+    "Release freeze replay cannot unfreeze endpoint routes without private owner approval.",
+    "Any private value exposure or non-zero live write blocks the package."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-14-drift-freeze-full.png",
+    "assets/task-orchestrator-r8-14-mobile-tall.png",
+    "assets/task-orchestrator-r8-14-exported-report.json",
+    "assets/portfolio-case-study-r8-14-exported-report.json"
+  ]
+}

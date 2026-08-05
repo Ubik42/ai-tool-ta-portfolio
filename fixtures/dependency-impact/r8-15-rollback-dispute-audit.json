@@ -1,0 +1,63 @@
+{
+  "reportVersion": "impact-rollback-dispute-audit-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "rollback_dispute_audit_rehearsal",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.9.0",
+    "asset-dependency-impact@1.5.0",
+    "impact-adapter-rollback-adjudicator@0.1.0",
+    "impact-receipt-dispute-replay@0.1.0",
+    "impact-audit-export-diff@0.1.0"
+  ],
+  "adapterRollbackAdjudicator": {
+    "summary": {
+      "totalDecisions": 6,
+      "approvedDecisions": 2,
+      "disputedDecisions": 2,
+      "ownerHoldDecisions": 2,
+      "blockedDecisions": 0,
+      "liveWrites": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Rollback is represented as a reviewer ruling over dry-run rollback previews, not as an automatic production rollback command."
+  },
+  "receiptDisputeReplay": {
+    "summary": {
+      "totalCases": 6,
+      "resolvedCases": 2,
+      "counterclaimCases": 2,
+      "ownerHoldCases": 2,
+      "blockedCases": 0,
+      "privateValuesExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Public evidence claims can be replayed, resolved, or counterclaimed while private receipt bodies remain outside the package."
+  },
+  "auditExportDiff": {
+    "summary": {
+      "totalRows": 6,
+      "unchangedRows": 2,
+      "addedRows": 2,
+      "changedRows": 2,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review"
+    },
+    "businessSignal": "Export schema changes are made explicit as added, changed, or unchanged rows with private fields still redacted."
+  },
+  "guardrails": [
+    "Rollback adjudication can approve only dry-run rollback previews.",
+    "Receipt dispute replay cannot expose private owner receipt bodies.",
+    "Audit export diff must keep privateFieldsExposed at zero.",
+    "Any private value exposure or non-zero live write blocks the package."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-15-rollback-dispute-full.png",
+    "assets/task-orchestrator-r8-15-mobile-tall.png",
+    "assets/task-orchestrator-r8-15-exported-report.json",
+    "assets/portfolio-case-study-r8-15-exported-report.json"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "reportVersion": "impact-adapter-failure-lineage-package@0.1.0",
+  "generatedAt": "2026-07-30T23:59:59+08:00",
+  "mode": "adapter_failure_lineage_review",
+  "mutationAllowed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.4.0",
+    "asset-dependency-impact@1.0.0",
+    "impact-adapter-failure-injection@0.1.0",
+    "impact-receipt-lineage-graph@0.1.0",
+    "impact-reviewer-packet-diff@0.1.0"
+  ],
+  "adapterFailureInjectionMatrix": {
+    "summary": {
+      "totalCases": 5,
+      "containedCases": 3,
+      "reviewCases": 2,
+      "blockedCases": 0,
+      "retryableCases": 3,
+      "rollbackLinkedCases": 5,
+      "gate": "Review"
+    },
+    "ownerReviewCases": [
+      "failure-credential-scope-denied",
+      "failure-rollback-owner-gap"
+    ]
+  },
+  "receiptLineageGraph": {
+    "summary": {
+      "totalNodes": 7,
+      "linkedNodes": 3,
+      "reviewNodes": 4,
+      "orphanedNodes": 0,
+      "maxDepth": 4,
+      "gate": "Review"
+    },
+    "reviewNodes": [
+      "lineage-rollback-review",
+      "lineage-credential-scope",
+      "lineage-retention-review",
+      "lineage-release-platform"
+    ]
+  },
+  "reviewerPacketDiff": {
+    "summary": {
+      "totalRows": 5,
+      "addedRows": 3,
+      "changedRows": 1,
+      "unchangedRows": 0,
+      "reviewRows": 1,
+      "gate": "Review"
+    },
+    "reviewRows": [
+      "packet-review-owner-probes"
+    ]
+  },
+  "guardrails": [
+    "Failure injection uses synthetic failures and never enables live writes.",
+    "Receipt lineage blocks orphaned or untraceable adapter claims.",
+    "Reviewer packet diff cannot close owner probes by itself."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-10-failure-lineage-full.png",
+    "assets/task-orchestrator-r8-10-mobile-tall.png",
+    "assets/task-orchestrator-r8-10-exported-report.json",
+    "assets/portfolio-case-study-r8-10-exported-report.json"
+  ]
+}

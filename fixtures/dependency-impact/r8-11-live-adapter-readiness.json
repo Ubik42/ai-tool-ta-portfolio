@@ -1,0 +1,68 @@
+{
+  "reportVersion": "impact-live-adapter-readiness-package@0.1.0",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "mode": "live_adapter_readiness_rehearsal",
+  "mutationAllowed": false,
+  "sourceReports": [
+    "task-orchestrator-report@1.5.0",
+    "asset-dependency-impact@1.1.0",
+    "impact-live-adapter-readiness@0.1.0",
+    "impact-owner-approval-closeout@0.1.0",
+    "impact-mutation-replay-rehearsal@0.1.0"
+  ],
+  "liveAdapterReadinessSimulator": {
+    "summary": {
+      "totalChecks": 6,
+      "readyChecks": 4,
+      "reviewChecks": 2,
+      "blockedChecks": 0,
+      "ownerApprovalsNeeded": 2,
+      "liveWrites": 0,
+      "gate": "Review"
+    },
+    "ownerReviewChecks": [
+      "readiness-credential-scope",
+      "readiness-endpoint-owner"
+    ]
+  },
+  "ownerApprovalCloseout": {
+    "summary": {
+      "totalApprovals": 5,
+      "closedApprovals": 3,
+      "requestedApprovals": 2,
+      "blockedApprovals": 0,
+      "requiredApprovals": 5,
+      "gate": "Review"
+    },
+    "requestedApprovals": [
+      "closeout-security-scope",
+      "closeout-endpoint-owner"
+    ]
+  },
+  "mutationReplayRehearsal": {
+    "summary": {
+      "totalSteps": 6,
+      "rehearsedSteps": 4,
+      "ownerHoldSteps": 2,
+      "blockedSteps": 0,
+      "liveWrites": 0,
+      "replayReceipts": 6,
+      "gate": "Review"
+    },
+    "ownerHoldSteps": [
+      "replay-texture-owner-hold",
+      "replay-platform-owner-hold"
+    ]
+  },
+  "guardrails": [
+    "Live adapter readiness simulation uses credential aliases only.",
+    "Owner approval closeout can reference private approvals but cannot embed secrets.",
+    "Mutation replay rehearsal emits receipts and dry-run commands, not production writes."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-11-readiness-replay-full.png",
+    "assets/task-orchestrator-r8-11-mobile-tall.png",
+    "assets/task-orchestrator-r8-11-exported-report.json",
+    "assets/portfolio-case-study-r8-11-exported-report.json"
+  ]
+}

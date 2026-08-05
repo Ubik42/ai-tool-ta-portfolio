@@ -1,0 +1,300 @@
+{
+  "reportVersion": "maya-asset-handoff-gate@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 17:22:41",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": false
+    }
+  },
+  "summary": {
+    "asset_count": 0,
+    "ready": 0,
+    "review": 0,
+    "blocked": 0,
+    "gate": "Review"
+  },
+  "assets": [],
+  "collect": {
+    "ok": true,
+    "adapter": "maya",
+    "schema": "maya-asset-handoff-collect@0.1.0",
+    "assets": [],
+    "discovery": {
+      "schema": "maya-task-orchestrator-discovery@1.0.0",
+      "assets": [],
+      "summary": {
+        "asset_count": 0,
+        "ready": 0,
+        "review": 0,
+        "blocked": 0,
+        "gate": "Review"
+      }
+    },
+    "protocol": {
+      "ok": true,
+      "rows": [],
+      "count": 0
+    },
+    "ruleMatrix": {
+      "summary": {
+        "score": 68,
+        "pass": 0,
+        "warning": 0,
+        "error": 1,
+        "skipped": 0,
+        "gate": "Blocked"
+      },
+      "results": [
+        {
+          "rule_id": "scene-has-targets",
+          "name": "Scene Targets",
+          "stage": "Collect",
+          "severity": "blocker",
+          "status": "error",
+          "message": "No mesh targets were found for rule matrix collection.",
+          "evidence": "selection=0, meshTransforms=0",
+          "nodes": [],
+          "fix_preview": "Create or select a publishable mesh asset before validation."
+        }
+      ],
+      "fixPreview": {
+        "total": 0,
+        "safe_auto": 0,
+        "manual_only": 0,
+        "gate": "Blocked"
+      },
+      "previews": []
+    },
+    "textureDelivery": {
+      "inspection": {
+        "schema": "maya-texture-delivery-inspection@1.0.0",
+        "mesh_summary": {
+          "LOD0": [],
+          "DT": [],
+          "other": [],
+          "total": 0
+        },
+        "meshes": [],
+        "materials": [
+          {
+            "name": "standardSurface1",
+            "shading_engine": "initialParticleSE",
+            "file_nodes": []
+          },
+          {
+            "name": "standardSurface1",
+            "shading_engine": "initialShadingGroup",
+            "file_nodes": []
+          }
+        ],
+        "file_nodes": []
+      },
+      "validation": {
+        "schema": "maya-texture-delivery-validation@1.0.0",
+        "summary": {
+          "gate": "Ready",
+          "pass": 5,
+          "warning": 0,
+          "error": 0,
+          "source_count": 0,
+          "material_count": 2
+        },
+        "results": [
+          {
+            "rule_id": "material-binding",
+            "label": "Material Binding",
+            "status": "pass",
+            "evidence": "materials=2 fileNodes=0",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-source-paths",
+            "label": "Texture Source Paths",
+            "status": "pass",
+            "evidence": "missing=-",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-role-naming",
+            "label": "Texture Role Naming",
+            "status": "pass",
+            "evidence": "unknown=-",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-color-space",
+            "label": "Texture Color Space",
+            "status": "pass",
+            "evidence": "mismatch=-",
+            "fix_preview": "No fix needed."
+          },
+          {
+            "rule_id": "texture-platform-budget",
+            "label": "Texture Platform Budget",
+            "status": "pass",
+            "evidence": "over4096=-",
+            "fix_preview": "No fix needed."
+          }
+        ]
+      }
+    },
+    "visualReview": {
+      "manifest": {
+        "schema": "maya-visual-review-pass-manifest@1.0.0",
+        "resolution": {
+          "width": 1024,
+          "height": 1024
+        },
+        "camera_groups": [
+          "basic",
+          "detail"
+        ],
+        "cameras": [],
+        "mesh_summary": {
+          "total": 0,
+          "lod0": 0,
+          "dt": 0,
+          "other": 0
+        },
+        "meshes": [],
+        "passes": [
+          {
+            "id": "rb_lod0",
+            "label": "Red / Blue LOD0",
+            "status": "skipped",
+            "reason": "No review cameras were discovered.",
+            "required_bucket": "LOD0",
+            "material_contract": "A red 45% transparent, B cyan 45% transparent",
+            "camera_count": 0,
+            "image_count": 0,
+            "shots": []
+          },
+          {
+            "id": "wb_lod0",
+            "label": "White / Blue LOD0",
+            "status": "skipped",
+            "reason": "No review cameras were discovered.",
+            "required_bucket": "LOD0",
+            "material_contract": "A lambert white, B cyan",
+            "camera_count": 0,
+            "image_count": 0,
+            "shots": []
+          },
+          {
+            "id": "rb_dt",
+            "label": "Red / Blue DT",
+            "status": "skipped",
+            "reason": "No review cameras were discovered.",
+            "required_bucket": "DT",
+            "material_contract": "A red 45% transparent, B cyan 45% transparent",
+            "camera_count": 0,
+            "image_count": 0,
+            "shots": []
+          },
+          {
+            "id": "wb_dt",
+            "label": "White / Blue DT",
+            "status": "skipped",
+            "reason": "No review cameras were discovered.",
+            "required_bucket": "DT",
+            "material_contract": "A lambert white, B cyan",
+            "camera_count": 0,
+            "image_count": 0,
+            "shots": []
+          },
+          {
+            "id": "solo_b",
+            "label": "Variant Dual LOD",
+            "status": "skipped",
+            "reason": "No review cameras were discovered.",
+            "required_bucket": "variant_lod0_or_dt",
+            "material_contract": "B LOD0 dark grey, B DT light grey, A hidden",
+            "camera_count": 0,
+            "image_count": 0,
+            "shots": []
+          }
+        ],
+        "summary": {
+          "run": 0,
+          "skipped": 5,
+          "image_count": 0,
+          "gate": "Review"
+        }
+      },
+      "summary": {
+        "run": 0,
+        "skipped": 5,
+        "image_count": 0,
+        "gate": "Review"
+      }
+    },
+    "taskQueue": {
+      "queue": {
+        "schema": "maya-task-orchestrator-queue@1.0.0",
+        "summary": {
+          "total": 0,
+          "done": 0,
+          "queued": 0,
+          "review": 0,
+          "blocked": 0,
+          "gate": "Ready"
+        },
+        "tasks": []
+      },
+      "dryRun": {
+        "schema": "maya-task-orchestrator-dry-run@1.0.0",
+        "summary": {
+          "events": 0,
+          "done": 0,
+          "review": 0,
+          "blocked": 0,
+          "gate": "Ready"
+        },
+        "events": [],
+        "receipts": []
+      }
+    },
+    "summary": {
+      "asset_count": 0,
+      "ready": 0,
+      "review": 0,
+      "blocked": 0,
+      "rule_gate": "Blocked",
+      "texture_gate": "Ready",
+      "visual_gate": "Review",
+      "queue_gate": "Ready"
+    }
+  },
+  "actions": [
+    {
+      "id": "handoff-packet-export",
+      "asset": "<batch>",
+      "kind": "safe_auto",
+      "label": "Export batch handoff packet",
+      "phase": "extract",
+      "preview": "Export all asset gates, evidence summaries, actions, receipts and residual risk as JSON."
+    }
+  ],
+  "boundary": {
+    "mutation": "preview_and_packet_export_only",
+    "sceneWrites": "fixture creation writes synthetic demo assets only",
+    "ownerAuthority": "Review rows require TA/owner disposition before promotion"
+  }
+}

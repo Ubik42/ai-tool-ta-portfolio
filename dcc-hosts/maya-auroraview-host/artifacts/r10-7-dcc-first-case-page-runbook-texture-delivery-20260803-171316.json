@@ -1,0 +1,262 @@
+{
+  "reportVersion": "maya-texture-delivery-dcc-report@1.0.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 17:13:16",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "inspection": {
+    "schema": "maya-texture-delivery-inspection@1.0.0",
+    "mesh_summary": {
+      "LOD0": [
+        "BATCH_Crate_LOD0_ready1",
+        "WPN_Rifle_LOD0_texture_body1"
+      ],
+      "DT": [
+        "BATCH_Vehicle_DT_review1"
+      ],
+      "other": [
+        "hero_prop_body1",
+        "hero_prop_socket1"
+      ],
+      "total": 5
+    },
+    "meshes": [
+      {
+        "node": "BATCH_Crate_LOD0_ready1",
+        "shapes": [
+          "BATCH_Crate_LOD0_ready1Shape"
+        ],
+        "bucket": "LOD0",
+        "slot": "B",
+        "parent": "r9_7_task_batch1"
+      },
+      {
+        "node": "BATCH_Vehicle_DT_review1",
+        "shapes": [
+          "BATCH_Vehicle_DT_review1Shape"
+        ],
+        "bucket": "DT",
+        "slot": "B",
+        "parent": "r9_7_task_batch1"
+      },
+      {
+        "node": "WPN_Rifle_LOD0_texture_body1",
+        "shapes": [
+          "WPN_Rifle_LOD0_texture_body1Shape"
+        ],
+        "bucket": "LOD0",
+        "slot": "B",
+        "parent": "r9_7_texture_fixture1"
+      },
+      {
+        "node": "hero_prop_body1",
+        "shapes": [
+          "hero_prop_body1Shape"
+        ],
+        "bucket": "other",
+        "slot": "B",
+        "parent": "r9_7_asset_protocol_fixture1"
+      },
+      {
+        "node": "hero_prop_socket1",
+        "shapes": [
+          "hero_prop_socket1Shape"
+        ],
+        "bucket": "other",
+        "slot": "A",
+        "parent": "r9_7_asset_protocol_fixture1"
+      }
+    ],
+    "materials": [
+      {
+        "name": "M_AI_Texture_Body1",
+        "shading_engine": "SG_AI_Texture_Body1",
+        "file_nodes": [
+          "T_Rifle_Body_BC_2048_png1",
+          "T_Rifle_Body_N_2048_tga1",
+          "T_Rifle_Body_ORM_2048_tga1"
+        ]
+      },
+      {
+        "name": "M_Batch_Crate_Body1",
+        "shading_engine": "SG_Batch_Crate_Body1",
+        "file_nodes": [
+          "T_Batch_Crate_BC_2048_png1"
+        ]
+      },
+      {
+        "name": "standardSurface1",
+        "shading_engine": "initialParticleSE",
+        "file_nodes": []
+      },
+      {
+        "name": "standardSurface1",
+        "shading_engine": "initialShadingGroup",
+        "file_nodes": []
+      }
+    ],
+    "file_nodes": [
+      {
+        "node": "T_Batch_Crate_BC_2048_png1",
+        "file_name": "T_Batch_Crate_BC_2048.png",
+        "path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Batch_Crate_BC_2048.png",
+        "exists": false,
+        "role": "baseColor",
+        "color_space": "sRGB",
+        "expected_color_space": "sRGB",
+        "resolution": 2048,
+        "materials": [
+          "M_Batch_Crate_Body1"
+        ]
+      },
+      {
+        "node": "T_Rifle_Body_BC_2048_png1",
+        "file_name": "T_Rifle_Body_BC_2048.png",
+        "path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_BC_2048.png",
+        "exists": false,
+        "role": "baseColor",
+        "color_space": "sRGB",
+        "expected_color_space": "sRGB",
+        "resolution": 2048,
+        "materials": [
+          "M_AI_Texture_Body1"
+        ]
+      },
+      {
+        "node": "T_Rifle_Body_N_2048_tga1",
+        "file_name": "T_Rifle_Body_N_2048.tga",
+        "path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_N_2048.tga",
+        "exists": false,
+        "role": "normal",
+        "color_space": "Raw",
+        "expected_color_space": "Raw",
+        "resolution": 2048,
+        "materials": [
+          "M_AI_Texture_Body1"
+        ]
+      },
+      {
+        "node": "T_Rifle_Body_ORM_2048_tga1",
+        "file_name": "T_Rifle_Body_ORM_2048.tga",
+        "path": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_ORM_2048.tga",
+        "exists": false,
+        "role": "roughness",
+        "color_space": "Raw",
+        "expected_color_space": "Raw",
+        "resolution": 2048,
+        "materials": [
+          "M_AI_Texture_Body1"
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "schema": "maya-texture-delivery-validation@1.0.0",
+    "summary": {
+      "gate": "Review",
+      "pass": 4,
+      "warning": 1,
+      "error": 0,
+      "source_count": 4,
+      "material_count": 4
+    },
+    "results": [
+      {
+        "rule_id": "material-binding",
+        "label": "Material Binding",
+        "status": "pass",
+        "evidence": "materials=4 fileNodes=4",
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "texture-source-paths",
+        "label": "Texture Source Paths",
+        "status": "warning",
+        "evidence": "missing=T_Batch_Crate_BC_2048_png1,T_Rifle_Body_BC_2048_png1,T_Rifle_Body_N_2048_tga1,T_Rifle_Body_ORM_2048_tga1",
+        "fix_preview": "Relink missing sourceimages paths before launching external packers."
+      },
+      {
+        "rule_id": "texture-role-naming",
+        "label": "Texture Role Naming",
+        "status": "pass",
+        "evidence": "unknown=-",
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "texture-color-space",
+        "label": "Texture Color Space",
+        "status": "pass",
+        "evidence": "mismatch=-",
+        "fix_preview": "No fix needed."
+      },
+      {
+        "rule_id": "texture-platform-budget",
+        "label": "Texture Platform Budget",
+        "status": "pass",
+        "evidence": "over4096=-",
+        "fix_preview": "No fix needed."
+      }
+    ]
+  },
+  "manifest": {
+    "schema": "maya-texture-delivery-manifest@1.0.0",
+    "items": [
+      {
+        "textureName": "T_Batch_Crate_BC_2048.png",
+        "sourcePath": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Batch_Crate_BC_2048.png",
+        "role": "baseColor",
+        "colorSpace": "sRGB",
+        "expectedColorSpace": "sRGB",
+        "exists": false,
+        "resolution": 2048
+      },
+      {
+        "textureName": "T_Rifle_Body_BC_2048.png",
+        "sourcePath": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_BC_2048.png",
+        "role": "baseColor",
+        "colorSpace": "sRGB",
+        "expectedColorSpace": "sRGB",
+        "exists": false,
+        "resolution": 2048
+      },
+      {
+        "textureName": "T_Rifle_Body_N_2048.tga",
+        "sourcePath": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_N_2048.tga",
+        "role": "normal",
+        "colorSpace": "Raw",
+        "expectedColorSpace": "Raw",
+        "exists": false,
+        "resolution": 2048
+      },
+      {
+        "textureName": "T_Rifle_Body_ORM_2048.tga",
+        "sourcePath": "<repo>\\fixtures\\public_texture_crate\\sourceimages\\T_Rifle_Body_ORM_2048.tga",
+        "role": "roughness",
+        "colorSpace": "Raw",
+        "expectedColorSpace": "Raw",
+        "exists": false,
+        "resolution": 2048
+      }
+    ],
+    "gate": "Review"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "draftId": "impactdraft_r8_4_vehicle_trailer_authoring",
+  "datasetVersion": "dependency-impact-authoring-draft@0.1.0",
+  "sourceScenarioId": "dependency-impact-r8-3-vehicle-trailer-release",
+  "targetDatasetId": "dependency-impact-r8-4-authoring-draft",
+  "targetPublicPath": "fixtures/dependency-impact/r8-4-authoring-draft.json",
+  "authoringState": "draft",
+  "generatedAt": "2026-07-30T23:45:00+08:00",
+  "purpose": "Public portfolio fixture draft that documents how a high-value dependency impact scenario should be shaped before it becomes a regression dataset.",
+  "previewCounts": {
+    "assetNodes": 6,
+    "impactPaths": 4,
+    "pathSteps": 8,
+    "publishDecisions": 5,
+    "ownerReceipts": 4,
+    "decisionMatrixCells": 9,
+    "heldPublishes": 3,
+    "pendingReceipts": 3
+  },
+  "requiredFields": [
+    "scenario.name",
+    "scenario.packageId",
+    "scenario.baselinePackageId",
+    "scenario.currentPackageId",
+    "scenario.sourceChange",
+    "assetNodes[].id/kind/gate/publishAction/riskScore",
+    "impactPaths[].requiredReceiptIds",
+    "pathSteps[].receiptId",
+    "publishDecisions[].requiredEvidence",
+    "ownerReceipts[].state/nextAction",
+    "decisionMatrix[].receiptId/receiptState"
+  ],
+  "validationChecklist": [
+    {
+      "id": "count_shape",
+      "label": "Fixture shape",
+      "status": "pass",
+      "note": "6 assets, 4 impact paths, 8 path steps, and 9 matrix cells exercise downstream fan-out."
+    },
+    {
+      "id": "receipt_wiring",
+      "label": "Receipt wiring",
+      "status": "pass",
+      "note": "Every path step and matrix cell points at an owner receipt."
+    },
+    {
+      "id": "publish_pressure",
+      "label": "Publish pressure",
+      "status": "pass",
+      "note": "3 held or rollback targets and 3 pending receipts keep the gate in Review."
+    },
+    {
+      "id": "public_boundary",
+      "label": "Public boundary",
+      "status": "pass",
+      "note": "Synthetic ids and relative public paths only."
+    },
+    {
+      "id": "owner_review",
+      "label": "Owner review",
+      "status": "review",
+      "note": "Real production fixtures still need TA owner acceptance before regression promotion."
+    }
+  ],
+  "guardrails": [
+    "Keep source asset ids synthetic; do not encode project, depot, or DCC scene paths.",
+    "Every Review gate must explain the owner-visible decision, not just a numeric failure.",
+    "AI text can summarize the fixture, but gate, receipt state, and publish action must come from deterministic rows.",
+    "A scenario is not high-value until it exercises downstream fan-out and at least one held publish target."
+  ]
+}

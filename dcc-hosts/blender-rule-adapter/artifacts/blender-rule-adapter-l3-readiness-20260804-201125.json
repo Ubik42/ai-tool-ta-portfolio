@@ -1,0 +1,55 @@
+{
+  "reportVersion": "blender-rule-adapter-l3-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Blender Rule Adapter",
+  "generatedAt": "2026-08-04 20:11:25",
+  "evidenceLevel": "L2+",
+  "gate": "Blocked",
+  "l3Status": "blocked_by_missing_blender_cli",
+  "blenderCli": {
+    "available": false,
+    "path": null,
+    "searched": [
+      "C:\\Program Files\\Blender Foundation\\Blender 4.4\\blender.exe",
+      "C:\\Program Files\\Blender Foundation\\Blender 4.3\\blender.exe",
+      "C:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe",
+      "C:\\Program Files\\Blender Foundation\\Blender 4.1\\blender.exe",
+      "C:\\Program Files\\Blender Foundation\\Blender 4.0\\blender.exe",
+      "C:\\Program Files\\Blender Foundation\\Blender 3.6\\blender.exe",
+      "D:\\Program Files\\Blender Foundation\\Blender 4.4\\blender.exe",
+      "D:\\Program Files\\Blender Foundation\\Blender 4.3\\blender.exe",
+      "D:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe",
+      "D:\\Blender\\blender.exe",
+      "C:\\Blender\\blender.exe"
+    ]
+  },
+  "collector": {
+    "script": "<repo>\\dcc-hosts\\blender-rule-adapter\\scripts\\run_blender_l3.py",
+    "ready": true,
+    "expectedCommand": "blender --background --python <repo>\\dcc-hosts\\blender-rule-adapter\\scripts\\run_blender_l3.py",
+    "reportWhenAvailable": "blender-rule-adapter-bpy-l3@0.1.0"
+  },
+  "boundary": {
+    "mutation": "no_blender_runtime_invoked",
+    "sceneWrites": 0,
+    "assetWrites": 0,
+    "productionWrites": 0
+  },
+  "nextActions": [
+    {
+      "id": "install-or-locate-blender-cli",
+      "state": "blocked",
+      "owner": "tool-ta",
+      "reason": "Blender CLI was not found in PATH or standard install locations."
+    },
+    {
+      "id": "run-bpy-l3-smoke",
+      "state": "ready_after_blender_cli",
+      "command": "python <repo>\\dcc-hosts\\blender-rule-adapter\\scripts\\run_l3_smoke.py"
+    }
+  ],
+  "reviewerClaims": [
+    "The bpy collector and background launcher are present and compile in normal Python.",
+    "The current machine cannot complete Blender L3 because blender.exe is not installed or discoverable.",
+    "No production asset or Blender scene mutation is attempted without a Blender runtime."
+  ]
+}

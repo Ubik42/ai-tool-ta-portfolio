@@ -1,0 +1,479 @@
+{
+  "reportVersion": "maya-engine-handoff-preset-comparison@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Maya AuroraView Host",
+  "environment": {
+    "ok": true,
+    "paths": {
+      "host_root": "<repo>\\dcc-hosts\\maya-auroraview-host",
+      "portfolio_root": "<repo>",
+      "frontend_root": "<repo>\\showcases\\portfolio-site",
+      "frontend_dist": "<repo>\\showcases\\portfolio-site\\dist",
+      "frontend_index": "<repo>\\showcases\\portfolio-site\\dist\\index.html",
+      "frontend_ready": true,
+      "artifacts_dir": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts"
+    },
+    "time": "2026-08-03 17:29:01",
+    "auroraview_version": "0.5.10",
+    "auroraview_has_qt": true,
+    "auroraview_core_error": null,
+    "maya": {
+      "version": "2024",
+      "api_version": 20240204,
+      "scene": "Untitled",
+      "modified": true
+    }
+  },
+  "summary": {
+    "gate": "Review",
+    "preset_count": 2,
+    "asset_count": 2,
+    "platform_split": 1,
+    "same_state": 1,
+    "held_across_presets": 0,
+    "ready_sidecars": 1,
+    "blocked_presets": 1,
+    "review_presets": 1,
+    "presets": [
+      "pc",
+      "mobile"
+    ]
+  },
+  "sourceDecisionPacket": {
+    "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-9-engine-preset-comparison-decision-source-20260803-172901.json",
+    "bytes": 52979,
+    "reportVersion": "maya-asset-handoff-decision-packet@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "asset_count": 2,
+      "ready": 1,
+      "review": 1,
+      "blocked": 0,
+      "repair_action_count": 2,
+      "safe_auto": 1,
+      "manual_only": 1,
+      "blocked_actions": 0,
+      "owner_dispositions": 2,
+      "owner_required": 1,
+      "engine_ready": 1,
+      "engine_held": 1
+    }
+  },
+  "comparisonPacket": {
+    "ok": true,
+    "adapter": "maya",
+    "schema": "maya-engine-handoff-preset-comparison@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "preset_count": 2,
+      "asset_count": 2,
+      "platform_split": 1,
+      "same_state": 1,
+      "held_across_presets": 0,
+      "ready_sidecars": 1,
+      "blocked_presets": 1,
+      "review_presets": 1,
+      "presets": [
+        "pc",
+        "mobile"
+      ]
+    },
+    "presetSummaries": [
+      {
+        "preset": "pc",
+        "label": "PC Unreal Import",
+        "gate": "Review",
+        "preflight_ready": 1,
+        "held": 1,
+        "review": 0,
+        "blocked": 0,
+        "import_sidecars": 1,
+        "pass_checks": 8,
+        "review_checks": 0,
+        "hold_checks": 1,
+        "blocked_checks": 0
+      },
+      {
+        "preset": "mobile",
+        "label": "Mobile Preview Import",
+        "gate": "Blocked",
+        "preflight_ready": 0,
+        "held": 1,
+        "review": 0,
+        "blocked": 1,
+        "import_sidecars": 0,
+        "pass_checks": 6,
+        "review_checks": 1,
+        "hold_checks": 1,
+        "blocked_checks": 1
+      }
+    ],
+    "comparisonRows": [
+      {
+        "asset_id": "asset-001",
+        "asset": "AH_Crate_LOD0_publish_ready1",
+        "presetStates": {
+          "pc": "preflight_ready",
+          "mobile": "blocked"
+        },
+        "presetDispositions": {
+          "pc": "create_import_sidecar",
+          "mobile": "hold_engine_import"
+        },
+        "blockingReasons": {
+          "pc": [],
+          "mobile": [
+            "Engine Path:blocked:path=/Game/AI_Tool_TA/asset-001 prefix=/Game/AI_Tool_TA/Mobile/",
+            "Platform Preset:review:assetPlatform=pc preset=mobile"
+          ]
+        },
+        "delta": "platform_split"
+      },
+      {
+        "asset_id": "asset-002",
+        "asset": "AH_Vehicle_DT_needs_texture_review1",
+        "presetStates": {
+          "pc": "held_for_owner_disposition",
+          "mobile": "held_for_owner_disposition"
+        },
+        "presetDispositions": {
+          "pc": "hold_engine_import",
+          "mobile": "hold_engine_import"
+        },
+        "blockingReasons": {
+          "pc": [
+            "Decision State:hold:held_for_review / no texture file nodes"
+          ],
+          "mobile": [
+            "Decision State:hold:held_for_review / no texture file nodes"
+          ]
+        },
+        "delta": "same_state"
+      }
+    ],
+    "preflightPackets": [
+      {
+        "ok": true,
+        "adapter": "maya",
+        "schema": "maya-engine-handoff-preflight@0.1.0",
+        "summary": {
+          "gate": "Review",
+          "asset_count": 2,
+          "preflight_ready": 1,
+          "held": 1,
+          "review": 0,
+          "blocked": 0,
+          "import_sidecars": 1,
+          "pass_checks": 8,
+          "review_checks": 0,
+          "hold_checks": 1,
+          "blocked_checks": 0,
+          "platform_preset": "pc"
+        },
+        "platformPreset": {
+          "id": "pc",
+          "label": "PC Unreal Import",
+          "engine": "Unreal",
+          "path_prefix": "/Game/AI_Tool_TA/",
+          "platform": "pc",
+          "allowed_lods": [
+            "lod0"
+          ],
+          "max_triangles": 12000,
+          "min_textures": 1,
+          "max_textures": 4,
+          "requires_receipt": "accepted"
+        },
+        "decisionSummary": {
+          "gate": "Review",
+          "asset_count": 2,
+          "ready": 1,
+          "review": 1,
+          "blocked": 0,
+          "repair_action_count": 2,
+          "safe_auto": 1,
+          "manual_only": 1,
+          "blocked_actions": 0,
+          "owner_dispositions": 2,
+          "owner_required": 1,
+          "engine_ready": 1,
+          "engine_held": 1
+        },
+        "preflightRows": [
+          {
+            "id": "preflight-asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "state": "preflight_ready",
+            "preset": "pc",
+            "engine_path": "/Game/AI_Tool_TA/asset-001",
+            "checks": [
+              {
+                "id": "decision-state",
+                "label": "Decision State",
+                "status": "pass",
+                "evidence": "intent=ready_for_import sourceGate=Ready"
+              },
+              {
+                "id": "engine-path",
+                "label": "Engine Path",
+                "status": "pass",
+                "evidence": "path=/Game/AI_Tool_TA/asset-001 prefix=/Game/AI_Tool_TA/"
+              },
+              {
+                "id": "platform-preset",
+                "label": "Platform Preset",
+                "status": "pass",
+                "evidence": "assetPlatform=pc preset=pc"
+              },
+              {
+                "id": "lod-policy",
+                "label": "LOD Policy",
+                "status": "pass",
+                "evidence": "lod=lod0 allowed=lod0"
+              },
+              {
+                "id": "triangle-budget",
+                "label": "Triangle Budget",
+                "status": "pass",
+                "evidence": "triangles=12 max=12000"
+              },
+              {
+                "id": "texture-budget",
+                "label": "Texture Budget",
+                "status": "pass",
+                "evidence": "textures=1 range=1-4"
+              },
+              {
+                "id": "protocol-carrier",
+                "label": "Protocol Carrier",
+                "status": "pass",
+                "evidence": "carrier=AH_Crate_LOD0_publish_ready1"
+              },
+              {
+                "id": "receipt-state",
+                "label": "Receipt State",
+                "status": "pass",
+                "evidence": "receipt=accepted required=accepted"
+              }
+            ],
+            "import_preview": {
+              "id": "engine-sidecar-asset-001-pc",
+              "asset": "AH_Crate_LOD0_publish_ready1",
+              "engine_path": "/Game/AI_Tool_TA/asset-001",
+              "platform_preset": "pc",
+              "mutation_allowed": false,
+              "preview_command": "Create Unreal import sidecar for /Game/AI_Tool_TA/asset-001.",
+              "payload": {
+                "asset_id": "asset-001",
+                "source_node": "AH_Crate_LOD0_publish_ready1",
+                "role": "handoff_publish_ready",
+                "lod": "lod0",
+                "platform": "pc",
+                "triangles": 12,
+                "textures": 1,
+                "source_gate": "Ready",
+                "engine_path": "/Game/AI_Tool_TA/asset-001",
+                "dry_run_only": true
+              }
+            },
+            "disposition": "create_import_sidecar"
+          },
+          {
+            "id": "preflight-asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "state": "held_for_owner_disposition",
+            "preset": "pc",
+            "engine_path": null,
+            "checks": [
+              {
+                "id": "decision-state",
+                "label": "Decision State",
+                "status": "hold",
+                "evidence": "held_for_review / no texture file nodes"
+              }
+            ],
+            "import_preview": null,
+            "disposition": "hold_engine_import"
+          }
+        ],
+        "importSidecars": [
+          {
+            "id": "engine-sidecar-asset-001-pc",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "engine_path": "/Game/AI_Tool_TA/asset-001",
+            "platform_preset": "pc",
+            "mutation_allowed": false,
+            "preview_command": "Create Unreal import sidecar for /Game/AI_Tool_TA/asset-001.",
+            "payload": {
+              "asset_id": "asset-001",
+              "source_node": "AH_Crate_LOD0_publish_ready1",
+              "role": "handoff_publish_ready",
+              "lod": "lod0",
+              "platform": "pc",
+              "triangles": 12,
+              "textures": 1,
+              "source_gate": "Ready",
+              "engine_path": "/Game/AI_Tool_TA/asset-001",
+              "dry_run_only": true
+            }
+          }
+        ],
+        "policy": {
+          "scene_mutation": "none",
+          "engine_writes": 0,
+          "ready_rule": "Only decision-ready rows with passing preset checks produce import sidecars.",
+          "held_rule": "Review or owner-required rows stay visible as held preflight rows."
+        }
+      },
+      {
+        "ok": true,
+        "adapter": "maya",
+        "schema": "maya-engine-handoff-preflight@0.1.0",
+        "summary": {
+          "gate": "Blocked",
+          "asset_count": 2,
+          "preflight_ready": 0,
+          "held": 1,
+          "review": 0,
+          "blocked": 1,
+          "import_sidecars": 0,
+          "pass_checks": 6,
+          "review_checks": 1,
+          "hold_checks": 1,
+          "blocked_checks": 1,
+          "platform_preset": "mobile"
+        },
+        "platformPreset": {
+          "id": "mobile",
+          "label": "Mobile Preview Import",
+          "engine": "Unreal",
+          "path_prefix": "/Game/AI_Tool_TA/Mobile/",
+          "platform": "mobile",
+          "allowed_lods": [
+            "lod0",
+            "dt"
+          ],
+          "max_triangles": 8000,
+          "min_textures": 1,
+          "max_textures": 2,
+          "requires_receipt": "accepted"
+        },
+        "decisionSummary": {
+          "gate": "Review",
+          "asset_count": 2,
+          "ready": 1,
+          "review": 1,
+          "blocked": 0,
+          "repair_action_count": 2,
+          "safe_auto": 1,
+          "manual_only": 1,
+          "blocked_actions": 0,
+          "owner_dispositions": 2,
+          "owner_required": 1,
+          "engine_ready": 1,
+          "engine_held": 1
+        },
+        "preflightRows": [
+          {
+            "id": "preflight-asset-001",
+            "asset": "AH_Crate_LOD0_publish_ready1",
+            "asset_id": "asset-001",
+            "state": "blocked",
+            "preset": "mobile",
+            "engine_path": "/Game/AI_Tool_TA/asset-001",
+            "checks": [
+              {
+                "id": "decision-state",
+                "label": "Decision State",
+                "status": "pass",
+                "evidence": "intent=ready_for_import sourceGate=Ready"
+              },
+              {
+                "id": "engine-path",
+                "label": "Engine Path",
+                "status": "blocked",
+                "evidence": "path=/Game/AI_Tool_TA/asset-001 prefix=/Game/AI_Tool_TA/Mobile/"
+              },
+              {
+                "id": "platform-preset",
+                "label": "Platform Preset",
+                "status": "review",
+                "evidence": "assetPlatform=pc preset=mobile"
+              },
+              {
+                "id": "lod-policy",
+                "label": "LOD Policy",
+                "status": "pass",
+                "evidence": "lod=lod0 allowed=lod0,dt"
+              },
+              {
+                "id": "triangle-budget",
+                "label": "Triangle Budget",
+                "status": "pass",
+                "evidence": "triangles=12 max=8000"
+              },
+              {
+                "id": "texture-budget",
+                "label": "Texture Budget",
+                "status": "pass",
+                "evidence": "textures=1 range=1-2"
+              },
+              {
+                "id": "protocol-carrier",
+                "label": "Protocol Carrier",
+                "status": "pass",
+                "evidence": "carrier=AH_Crate_LOD0_publish_ready1"
+              },
+              {
+                "id": "receipt-state",
+                "label": "Receipt State",
+                "status": "pass",
+                "evidence": "receipt=accepted required=accepted"
+              }
+            ],
+            "import_preview": null,
+            "disposition": "hold_engine_import"
+          },
+          {
+            "id": "preflight-asset-002",
+            "asset": "AH_Vehicle_DT_needs_texture_review1",
+            "asset_id": "asset-002",
+            "state": "held_for_owner_disposition",
+            "preset": "mobile",
+            "engine_path": null,
+            "checks": [
+              {
+                "id": "decision-state",
+                "label": "Decision State",
+                "status": "hold",
+                "evidence": "held_for_review / no texture file nodes"
+              }
+            ],
+            "import_preview": null,
+            "disposition": "hold_engine_import"
+          }
+        ],
+        "importSidecars": [],
+        "policy": {
+          "scene_mutation": "none",
+          "engine_writes": 0,
+          "ready_rule": "Only decision-ready rows with passing preset checks produce import sidecars.",
+          "held_rule": "Review or owner-required rows stay visible as held preflight rows."
+        }
+      }
+    ],
+    "policy": {
+      "scene_mutation": "none",
+      "engine_writes": 0,
+      "comparison_rule": "Preset comparison explains why the same DCC decision can produce different engine handoff outcomes per platform.",
+      "owner_rule": "Owner-held rows remain held across every preset until explicit disposition changes."
+    }
+  },
+  "boundary": {
+    "mutation": "comparison_and_packet_export_only",
+    "sceneWrites": "source fixture creation only when caller asks for fixture",
+    "engineWrites": 0,
+    "ownerAuthority": "Preset comparison cannot approve owner-held rows."
+  }
+}

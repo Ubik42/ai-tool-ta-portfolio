@@ -1,0 +1,710 @@
+{
+  "reportVersion": "animation-continuity-contract@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Animation Continuity Lab",
+  "generatedAt": "2026-08-05 16:03:46",
+  "evidenceLevel": "L2",
+  "l3Status": "contract_fixture_collected",
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\animation-continuity-lab\\fixtures\\synthetic_animation_scene.json",
+    "schema": "synthetic-animation-continuity-scene@0.1.0",
+    "intent": "Public-safe fixture proving deterministic animation handoff checks for rig identity, take range, sample rate, channel identity, sub-frame keys, root motion and animation layer boundaries."
+  },
+  "adapter": {
+    "id": "animation-continuity",
+    "name": "Animation Continuity Lab",
+    "methodSource": "Lightbox animation export / MotionBuilder handoff / Unreal animation import continuity",
+    "protocolCarrier": "animation continuity protocol + take metadata + keyed channel facts",
+    "boundary": {
+      "mutation": "contract_validation_only",
+      "sceneWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "animation-continuity-input@0.1.0",
+    "scene": {
+      "sourceDcc": "Fixture",
+      "unit": "centimeter",
+      "timeUnit": "ntsc",
+      "fps": 30,
+      "playbackStart": 1001,
+      "playbackEnd": 2048,
+      "assetCount": 2,
+      "runtimeCollected": false
+    },
+    "assets": [
+      {
+        "assetId": "anim-hero-run-001",
+        "assetLabel": "Ready locomotion take",
+        "sourceDcc": "Fixture",
+        "normalizedSchema": "animation-continuity-input@0.1.0",
+        "protocolCarrier": "animation continuity protocol + take metadata + keyed channel facts",
+        "sourceFields": {
+          "rigIdentity": "root.aiToolTaRigId + root.aiToolTaSkeletonFingerprint",
+          "take": "root.aiToolTaAnimProtocol takeName/start/end/sampleRate",
+          "channels": "animCurve target node + attr + key frames",
+          "subFrame": "keyframe time values",
+          "rootMotion": "root translateX/translateZ curve deltas",
+          "layers": "animation layer payload"
+        },
+        "normalized": {
+          "animation.protocol.schema": "animation-continuity@dcc-r23",
+          "character.rigId": "HeroRig_A",
+          "character.expectedRigId": "HeroRig_A",
+          "character.skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "character.expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "take.name": "RunStart",
+          "take.startFrame": 1001,
+          "take.endFrame": 1048,
+          "take.actualFirstKey": 1001.0,
+          "take.actualLastKey": 1048.0,
+          "take.sampleRate": 30,
+          "scene.fps": 30,
+          "take.allowSubFrameKeys": false,
+          "channels.requiredCount": 5,
+          "channels.actualCount": 5,
+          "channels.missing": [],
+          "channels.duplicates": [],
+          "keys.subFrameCount": 0,
+          "keys.outsideRangeCount": 0,
+          "rootMotion.policy": "required",
+          "rootMotion.delta": 5.6,
+          "scale.maxDrift": 0.0,
+          "animationLayers.additiveActive": 0,
+          "animationLayers.additiveWithoutOwner": 0
+        },
+        "raw": {
+          "namespace": "heroRun",
+          "rootNode": "Hips",
+          "requiredChannels": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ],
+          "channelIdentities": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ],
+          "duplicateChannelIdentities": [],
+          "missingChannels": [],
+          "subFrameKeys": [],
+          "keysOutsideRange": [],
+          "rootMotionChannels": [
+            "Hips.translateX",
+            "Hips.translateZ"
+          ],
+          "animationLayers": [],
+          "channels": [
+            {
+              "node": "Hips",
+              "fullNode": "heroRun:Hips",
+              "attr": "translateX",
+              "identity": "Hips.translateX",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 1001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 1024.0,
+                  "value": 0.2
+                },
+                {
+                  "frame": 1048.0,
+                  "value": 0.0
+                }
+              ]
+            },
+            {
+              "node": "Hips",
+              "fullNode": "heroRun:Hips",
+              "attr": "translateZ",
+              "identity": "Hips.translateZ",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 1001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 1024.0,
+                  "value": 2.8
+                },
+                {
+                  "frame": 1048.0,
+                  "value": 5.6
+                }
+              ]
+            },
+            {
+              "node": "Hips",
+              "fullNode": "heroRun:Hips",
+              "attr": "rotateY",
+              "identity": "Hips.rotateY",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 1001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 1024.0,
+                  "value": 1.5
+                },
+                {
+                  "frame": 1048.0,
+                  "value": 0.0
+                }
+              ]
+            },
+            {
+              "node": "LeftFoot",
+              "fullNode": "heroRun:LeftFoot",
+              "attr": "rotateX",
+              "identity": "LeftFoot.rotateX",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 1001.0,
+                  "value": -8.0
+                },
+                {
+                  "frame": 1024.0,
+                  "value": 11.0
+                },
+                {
+                  "frame": 1048.0,
+                  "value": -6.0
+                }
+              ]
+            },
+            {
+              "node": "RightFoot",
+              "fullNode": "heroRun:RightFoot",
+              "attr": "rotateX",
+              "identity": "RightFoot.rotateX",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 1001.0,
+                  "value": 9.0
+                },
+                {
+                  "frame": 1024.0,
+                  "value": -10.0
+                },
+                {
+                  "frame": 1048.0,
+                  "value": 7.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "assetId": "anim-hero-attack-002",
+        "assetLabel": "Blocked retargeted attack take",
+        "sourceDcc": "Fixture",
+        "normalizedSchema": "animation-continuity-input@0.1.0",
+        "protocolCarrier": "animation continuity protocol + take metadata + keyed channel facts",
+        "sourceFields": {
+          "rigIdentity": "root.aiToolTaRigId + root.aiToolTaSkeletonFingerprint",
+          "take": "root.aiToolTaAnimProtocol takeName/start/end/sampleRate",
+          "channels": "animCurve target node + attr + key frames",
+          "subFrame": "keyframe time values",
+          "rootMotion": "root translateX/translateZ curve deltas",
+          "layers": "animation layer payload"
+        },
+        "normalized": {
+          "animation.protocol.schema": "animation-continuity@dcc-r23",
+          "character.rigId": "HeroRig_TMP",
+          "character.expectedRigId": "HeroRig_A",
+          "character.skeletonFingerprint": "skel:hero:v002:spine61:face12",
+          "character.expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "take.name": "Attack_A",
+          "take.startFrame": 2001,
+          "take.endFrame": 2040,
+          "take.actualFirstKey": 2000.0,
+          "take.actualLastKey": 2042.0,
+          "take.sampleRate": 24,
+          "scene.fps": 30,
+          "take.allowSubFrameKeys": false,
+          "channels.requiredCount": 4,
+          "channels.actualCount": 4,
+          "channels.missing": [
+            "RightFoot.rotateX"
+          ],
+          "channels.duplicates": [
+            "Hips.translateZ"
+          ],
+          "keys.subFrameCount": 1,
+          "keys.outsideRangeCount": 2,
+          "rootMotion.policy": "disabled",
+          "rootMotion.delta": 9.0,
+          "scale.maxDrift": 0.08000000000000007,
+          "animationLayers.additiveActive": 1,
+          "animationLayers.additiveWithoutOwner": 1
+        },
+        "raw": {
+          "namespace": "heroAttack",
+          "rootNode": "Hips",
+          "requiredChannels": [
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "RightFoot.rotateX",
+            "WeaponSocket.rotateY"
+          ],
+          "channelIdentities": [
+            "Hips.translateZ",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "WeaponSocket.rotateY",
+            "Hips.scaleX"
+          ],
+          "duplicateChannelIdentities": [
+            "Hips.translateZ"
+          ],
+          "missingChannels": [
+            "RightFoot.rotateX"
+          ],
+          "subFrameKeys": [
+            {
+              "identity": "Hips.translateZ",
+              "frame": 2020.5
+            }
+          ],
+          "keysOutsideRange": [
+            {
+              "identity": "Hips.translateZ",
+              "frame": 2042.0
+            },
+            {
+              "identity": "WeaponSocket.rotateY",
+              "frame": 2000.0
+            }
+          ],
+          "rootMotionChannels": [
+            "Hips.translateZ",
+            "Hips.translateZ"
+          ],
+          "animationLayers": [
+            {
+              "name": "retargetOffset",
+              "mode": "additive",
+              "muted": false,
+              "owner": ""
+            }
+          ],
+          "channels": [
+            {
+              "node": "Hips",
+              "fullNode": "heroAttack:Hips",
+              "attr": "translateZ",
+              "identity": "Hips.translateZ",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 2001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 2020.5,
+                  "value": 4.0
+                },
+                {
+                  "frame": 2042.0,
+                  "value": 8.0
+                }
+              ]
+            },
+            {
+              "node": "Hips",
+              "fullNode": "heroAttackRetarget:Hips",
+              "attr": "translateZ",
+              "identity": "Hips.translateZ",
+              "keyCount": 2,
+              "keys": [
+                {
+                  "frame": 2001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 2040.0,
+                  "value": 1.0
+                }
+              ]
+            },
+            {
+              "node": "Hips",
+              "fullNode": "heroAttack:Hips",
+              "attr": "rotateY",
+              "identity": "Hips.rotateY",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 2001.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 2025.0,
+                  "value": 92.0
+                },
+                {
+                  "frame": 2040.0,
+                  "value": 88.0
+                }
+              ]
+            },
+            {
+              "node": "WeaponSocket",
+              "fullNode": "heroAttack:WeaponSocket",
+              "attr": "rotateY",
+              "identity": "WeaponSocket.rotateY",
+              "keyCount": 3,
+              "keys": [
+                {
+                  "frame": 2000.0,
+                  "value": 0.0
+                },
+                {
+                  "frame": 2020.0,
+                  "value": 45.0
+                },
+                {
+                  "frame": 2040.0,
+                  "value": 90.0
+                }
+              ]
+            },
+            {
+              "node": "Hips",
+              "fullNode": "heroAttack:Hips",
+              "attr": "scaleX",
+              "identity": "Hips.scaleX",
+              "keyCount": 2,
+              "keys": [
+                {
+                  "frame": 2001.0,
+                  "value": 1.0
+                },
+                {
+                  "frame": 2040.0,
+                  "value": 1.08
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "animation-continuity-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 11,
+      "warning": 3,
+      "error": 6,
+      "readyAssetIds": [
+        "anim-hero-run-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "anim-hero-attack-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "anim-hero-run-001:protocol-carrier",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "protocol-carrier",
+        "label": "Animation protocol carrier",
+        "status": "pass",
+        "reason": "Animation take must expose animation-continuity@dcc-r23 before handoff.",
+        "evidence": "animation-continuity@dcc-r23",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:rig-identity",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "rig-identity",
+        "label": "Rig identity / skeleton fingerprint",
+        "status": "pass",
+        "reason": "Retargeting is only deterministic when rig id and skeleton fingerprint match the declared take.",
+        "evidence": "rig=HeroRig_A expected=HeroRig_A skeleton=skel:hero:v003:spine62:face18",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:sample-rate",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "sample-rate",
+        "label": "Sample rate",
+        "status": "pass",
+        "reason": "Take sample rate must match scene FPS so MotionBuilder and Unreal do not resample silently.",
+        "evidence": "sampleRate=30 sceneFps=30",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:required-channel-coverage",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "required-channel-coverage",
+        "label": "Required channel coverage",
+        "status": "pass",
+        "reason": "Gameplay-critical channels must be present after retarget/export.",
+        "evidence": "-",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:channel-identity",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "channel-identity",
+        "label": "Channel identity collision",
+        "status": "pass",
+        "reason": "Two curves cannot resolve to the same normalized joint.attr identity.",
+        "evidence": "-",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:sub-frame-boundary",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "sub-frame-boundary",
+        "label": "Sub-frame key boundary",
+        "status": "pass",
+        "reason": "Sub-frame keys must be explicit because game import can quantize them differently.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:curve-range",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "curve-range",
+        "label": "Curve range",
+        "status": "pass",
+        "reason": "Keys outside declared take range can leak poses into neighboring clips.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:root-motion-contract",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "root-motion-contract",
+        "label": "Root motion contract",
+        "status": "pass",
+        "reason": "Root motion policy must match root translate curve evidence.",
+        "evidence": "policy=required delta=5.6000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:scale-clean",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "scale-clean",
+        "label": "Scale clean",
+        "status": "pass",
+        "reason": "Animated scale usually indicates retarget or rig compensation leakage.",
+        "evidence": "0.0000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:animation-layer-boundary",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "animation-layer-boundary",
+        "label": "Animation layer boundary",
+        "status": "pass",
+        "reason": "Active additive layers need owner attribution before deterministic export.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:protocol-carrier",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "protocol-carrier",
+        "label": "Animation protocol carrier",
+        "status": "pass",
+        "reason": "Animation take must expose animation-continuity@dcc-r23 before handoff.",
+        "evidence": "animation-continuity@dcc-r23",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:rig-identity",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "rig-identity",
+        "label": "Rig identity / skeleton fingerprint",
+        "status": "error",
+        "reason": "Retargeting is only deterministic when rig id and skeleton fingerprint match the declared take.",
+        "evidence": "rig=HeroRig_TMP expected=HeroRig_A skeleton=skel:hero:v002:spine61:face12",
+        "fixPreview": "Re-export from the approved rig or attach a retarget owner waiver."
+      },
+      {
+        "id": "anim-hero-attack-002:sample-rate",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sample-rate",
+        "label": "Sample rate",
+        "status": "error",
+        "reason": "Take sample rate must match scene FPS so MotionBuilder and Unreal do not resample silently.",
+        "evidence": "sampleRate=24 sceneFps=30",
+        "fixPreview": "Resample curves to scene FPS and re-export the take receipt."
+      },
+      {
+        "id": "anim-hero-attack-002:required-channel-coverage",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "required-channel-coverage",
+        "label": "Required channel coverage",
+        "status": "error",
+        "reason": "Gameplay-critical channels must be present after retarget/export.",
+        "evidence": "RightFoot.rotateX",
+        "fixPreview": "Restore missing channels or mark the take owner-held."
+      },
+      {
+        "id": "anim-hero-attack-002:channel-identity",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "channel-identity",
+        "label": "Channel identity collision",
+        "status": "error",
+        "reason": "Two curves cannot resolve to the same normalized joint.attr identity.",
+        "evidence": "Hips.translateZ",
+        "fixPreview": "Resolve namespace/source merge before export."
+      },
+      {
+        "id": "anim-hero-attack-002:sub-frame-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sub-frame-boundary",
+        "label": "Sub-frame key boundary",
+        "status": "error",
+        "reason": "Sub-frame keys must be explicit because game import can quantize them differently.",
+        "evidence": "[{'identity': 'Hips.translateZ', 'frame': 2020.5}]",
+        "fixPreview": "Bake or document sub-frame keys with owner approval."
+      },
+      {
+        "id": "anim-hero-attack-002:curve-range",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "curve-range",
+        "label": "Curve range",
+        "status": "warning",
+        "reason": "Keys outside declared take range can leak poses into neighboring clips.",
+        "evidence": "[{'identity': 'Hips.translateZ', 'frame': 2042.0}, {'identity': 'WeaponSocket.rotateY', 'frame': 2000.0}]",
+        "fixPreview": "Trim keys to take range or split the take."
+      },
+      {
+        "id": "anim-hero-attack-002:root-motion-contract",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "root-motion-contract",
+        "label": "Root motion contract",
+        "status": "error",
+        "reason": "Root motion policy must match root translate curve evidence.",
+        "evidence": "policy=disabled delta=9.0000",
+        "fixPreview": "Bake root motion into the approved root or remove it from in-place clips."
+      },
+      {
+        "id": "anim-hero-attack-002:scale-clean",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "scale-clean",
+        "label": "Scale clean",
+        "status": "warning",
+        "reason": "Animated scale usually indicates retarget or rig compensation leakage.",
+        "evidence": "0.0800",
+        "fixPreview": "Remove scale curves or route the exception to rig owner review."
+      },
+      {
+        "id": "anim-hero-attack-002:animation-layer-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "animation-layer-boundary",
+        "label": "Animation layer boundary",
+        "status": "warning",
+        "reason": "Active additive layers need owner attribution before deterministic export.",
+        "evidence": "[{'name': 'retargetOffset', 'mode': 'additive', 'muted': False, 'owner': ''}]",
+        "fixPreview": "Bake approved layers or add owner attribution to the handoff packet."
+      }
+    ],
+    "fixPreview": [
+      {
+        "id": "fix:anim-hero-attack-002:rig-identity",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "rig-identity",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Re-export from the approved rig or attach a retarget owner waiver."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:sample-rate",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sample-rate",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Resample curves to scene FPS and re-export the take receipt."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:required-channel-coverage",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "required-channel-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Restore missing channels or mark the take owner-held."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:channel-identity",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "channel-identity",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Resolve namespace/source merge before export."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:sub-frame-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "sub-frame-boundary",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Bake or document sub-frame keys with owner approval."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:curve-range",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "curve-range",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Trim keys to take range or split the take."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:root-motion-contract",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "root-motion-contract",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Bake root motion into the approved root or remove it from in-place clips."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:scale-clean",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "scale-clean",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Remove scale curves or route the exception to rig owner review."
+      },
+      {
+        "id": "fix:anim-hero-attack-002:animation-layer-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "animation-layer-boundary",
+        "status": "warning",
+        "mutationScope": "manual_only",
+        "preview": "Bake approved layers or add owner attribution to the handoff packet."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Animation Continuity Lab turns take handoff into explicit business facts: rig identity, skeleton fingerprint, sample rate, channel ownership, sub-frame keys and root motion.",
+    "The fixture includes one ready locomotion take and one intentionally blocked retargeted take, exposing the exact failure modes a TA must catch before engine import.",
+    "The contract pass is public-safe and performs no production scene, asset or engine writes."
+  ]
+}

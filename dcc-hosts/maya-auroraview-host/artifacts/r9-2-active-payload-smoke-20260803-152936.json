@@ -1,0 +1,154 @@
+{
+  "fixture": {
+    "ok": true,
+    "root": "ai_tool_ta_fixture1",
+    "nodes": [
+      "hero_prop_body1",
+      "hero_prop_socket1"
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "role": "synthetic_fixture",
+      "platform": "pc",
+      "lod": "lod0",
+      "budget": {
+        "triangles": 12000,
+        "textures": 4
+      }
+    }
+  },
+  "applied": {
+    "ok": true,
+    "changed": [
+      {
+        "node": "hero_prop_body1",
+        "attr": "aiToolTaProtocol"
+      },
+      {
+        "node": "hero_prop_socket1",
+        "attr": "aiToolTaProtocol"
+      }
+    ],
+    "payload": {
+      "schema": "asset-protocol@dcc-r9",
+      "sourceModule": "asset-protocol-workbench",
+      "asset": {
+        "id": "mobile_crate_risky",
+        "name": "Mobile Crate"
+      },
+      "readiness": {
+        "status": "Blocked",
+        "score": 62
+      },
+      "encodedPayload": {
+        "assetId": "mobile_crate_risky",
+        "customAttrs": {
+          "LB_platform": "Mobile",
+          "LB_lod_count": 1
+        },
+        "uv3": {
+          "uClass": 0.22,
+          "vMask": 5,
+          "maskBinary": "0101"
+        },
+        "delivery": {
+          "platform": "Mobile",
+          "lodCount": 1,
+          "materialSlots": 5,
+          "textureSets": 4
+        }
+      },
+      "validationSummary": {
+        "errors": 1,
+        "warnings": 2,
+        "total": 6
+      }
+    }
+  },
+  "inspect": {
+    "ok": true,
+    "rows": [
+      {
+        "node": "hero_prop_body1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"mobile_crate_risky\", \"name\": \"Mobile Crate\"}, \"encodedPayload\": {\"assetId\": \"mobile_crate_risky\", \"customAttrs\": {\"LB_lod_count\": 1, \"LB_platform\": \"Mobile\"}, \"delivery\": {\"lodCount\": 1, \"materialSlots\": 5, \"platform\": \"Mobile\", \"textureSets\": 4}, \"uv3\": {\"maskBinary\": \"0101\", \"uClass\": 0.22, \"vMask\": 5}}, \"readiness\": {\"score\": 62, \"status\": \"Blocked\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 1, \"total\": 6, \"warnings\": 2}}",
+        "payload": {
+          "asset": {
+            "id": "mobile_crate_risky",
+            "name": "Mobile Crate"
+          },
+          "encodedPayload": {
+            "assetId": "mobile_crate_risky",
+            "customAttrs": {
+              "LB_lod_count": 1,
+              "LB_platform": "Mobile"
+            },
+            "delivery": {
+              "lodCount": 1,
+              "materialSlots": 5,
+              "platform": "Mobile",
+              "textureSets": 4
+            },
+            "uv3": {
+              "maskBinary": "0101",
+              "uClass": 0.22,
+              "vMask": 5
+            }
+          },
+          "readiness": {
+            "score": 62,
+            "status": "Blocked"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 1,
+            "total": 6,
+            "warnings": 2
+          }
+        }
+      },
+      {
+        "node": "hero_prop_socket1",
+        "has_protocol": true,
+        "raw": "{\"asset\": {\"id\": \"mobile_crate_risky\", \"name\": \"Mobile Crate\"}, \"encodedPayload\": {\"assetId\": \"mobile_crate_risky\", \"customAttrs\": {\"LB_lod_count\": 1, \"LB_platform\": \"Mobile\"}, \"delivery\": {\"lodCount\": 1, \"materialSlots\": 5, \"platform\": \"Mobile\", \"textureSets\": 4}, \"uv3\": {\"maskBinary\": \"0101\", \"uClass\": 0.22, \"vMask\": 5}}, \"readiness\": {\"score\": 62, \"status\": \"Blocked\"}, \"schema\": \"asset-protocol@dcc-r9\", \"sourceModule\": \"asset-protocol-workbench\", \"validationSummary\": {\"errors\": 1, \"total\": 6, \"warnings\": 2}}",
+        "payload": {
+          "asset": {
+            "id": "mobile_crate_risky",
+            "name": "Mobile Crate"
+          },
+          "encodedPayload": {
+            "assetId": "mobile_crate_risky",
+            "customAttrs": {
+              "LB_lod_count": 1,
+              "LB_platform": "Mobile"
+            },
+            "delivery": {
+              "lodCount": 1,
+              "materialSlots": 5,
+              "platform": "Mobile",
+              "textureSets": 4
+            },
+            "uv3": {
+              "maskBinary": "0101",
+              "uClass": 0.22,
+              "vMask": 5
+            }
+          },
+          "readiness": {
+            "score": 62,
+            "status": "Blocked"
+          },
+          "schema": "asset-protocol@dcc-r9",
+          "sourceModule": "asset-protocol-workbench",
+          "validationSummary": {
+            "errors": 1,
+            "total": 6,
+            "warnings": 2
+          }
+        }
+      }
+    ],
+    "count": 2
+  }
+}

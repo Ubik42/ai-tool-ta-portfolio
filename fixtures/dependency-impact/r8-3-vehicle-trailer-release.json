@@ -1,0 +1,44 @@
+{
+  "datasetId": "dependency-impact-r8-3-vehicle-trailer-release",
+  "datasetVersion": "dependency-impact-dataset@0.2.0",
+  "generatedAt": "2026-07-30T23:20:00+08:00",
+  "scenario": {
+    "name": "Vehicle trailer LOD, collision, and console texture release",
+    "packageId": "release_candidate_VEH_Trailer_B_console_bundle",
+    "baselinePackageId": "approved_VEH_Trailer_B_console_20260726",
+    "currentPackageId": "candidate_VEH_Trailer_B_console_20260730",
+    "sourceChange": "LOD fallback, collision proxy, normal map compression, and Switch import preset changed in one console candidate."
+  },
+  "counts": {
+    "assetNodes": 6,
+    "impactPaths": 4,
+    "pathSteps": 8,
+    "publishDecisions": 5,
+    "ownerReceipts": 4,
+    "decisionMatrixCells": 9
+  },
+  "releaseGate": "Review",
+  "heldPublishTargets": [
+    "trailer_collision_proxy",
+    "trailer_body_normal_astc",
+    "ue_trailer_switch_import"
+  ],
+  "safePublishTargets": [
+    "trailer_review_packet"
+  ],
+  "pendingReceipts": [
+    "impact-receipt-trailer-lod",
+    "impact-receipt-trailer-collision",
+    "impact-receipt-trailer-texture"
+  ],
+  "scenarioSwitch": {
+    "defaultScenario": true,
+    "pairedScenario": "dependency-impact-r8-1-rifle-release-candidate",
+    "businessPurpose": "Proves the impact analyzer is scenario-driven instead of hard-coded to one rifle material package."
+  },
+  "notes": [
+    "Synthetic public dataset for R8.3 portfolio review.",
+    "Canonical runnable data is mirrored in showcases/portfolio-site/src/data/dependencyImpactDataset.ts.",
+    "The key business rule is per-target publish decision plus owner receipt drilldown."
+  ]
+}

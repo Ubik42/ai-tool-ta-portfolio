@@ -1,0 +1,640 @@
+{
+  "fixtureId": "r8-42-query-approval-retention",
+  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "taskReportVersion": "task-orchestrator-report@1.36.0",
+  "impactReportVersion": "asset-dependency-impact@1.32.0",
+  "auditDiffVersion": "impact-audit-export-diff@1.18.0",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "releaseMemoryQueryReplay": {
+    "reportVersion": "impact-release-memory-query-replay@0.1.0",
+    "replayId": "memoryquery_vwl50b",
+    "mode": "release_memory_query_replay",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "replayedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Replay only public release memory queries; private systems and owner receipt bodies stay out of scope."
+    },
+    "rows": [
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Release memory query wave-0 replayed",
+        "state": "query_replayed",
+        "gate": "Ready",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Audit Reviewer",
+        "queryLane": "wave-0",
+        "queryRef": "query-notary_19eqv",
+        "queryScope": "release:wave-0 status archive-ready integrity-passed",
+        "queryRule": "notarized restore memory digest plus public memory search result can replay query eligibility",
+        "queryResult": "release memory query replay is ready without querying private systems",
+        "replayEffect": "lane can feed restore approval comparison as query-replayed evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep replayed query lane available for restore approval comparison."
+      },
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Release memory query wave-1 replayed",
+        "state": "query_replayed",
+        "gate": "Ready",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Audit Reviewer",
+        "queryLane": "wave-1",
+        "queryRef": "query-notary_19km0fr",
+        "queryScope": "release:wave-1 status archive-ready integrity-passed",
+        "queryRule": "notarized restore memory digest plus public memory search result can replay query eligibility",
+        "queryResult": "release memory query replay is ready without querying private systems",
+        "replayEffect": "lane can feed restore approval comparison as query-replayed evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep replayed query lane available for restore approval comparison."
+      },
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Release memory query wave-2 review",
+        "state": "query_review",
+        "gate": "Review",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Audit Reviewer",
+        "queryLane": "wave-2",
+        "queryRef": "review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-2",
+        "queryScope": "release:wave-2 status review",
+        "queryRule": "query replay requires notarized evidence and public memory search result",
+        "queryResult": "release memory query replay remains under review",
+        "replayEffect": "lane cannot feed approval comparison until notary and memory review close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close notary and memory search review before replaying query evidence."
+      },
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Release memory query wave-3 review",
+        "state": "query_review",
+        "gate": "Review",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Audit Reviewer",
+        "queryLane": "wave-3",
+        "queryRef": "review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-3",
+        "queryScope": "release:wave-3 status review",
+        "queryRule": "query replay requires notarized evidence and public memory search result",
+        "queryResult": "release memory query replay remains under review",
+        "replayEffect": "lane cannot feed approval comparison until notary and memory review close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close notary and memory search review before replaying query evidence."
+      },
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Release memory query wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Owner Required",
+        "queryLane": "wave-4",
+        "queryRef": "owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "queryScope": "owner-redacted",
+        "queryRule": "owner-held notary or memory rows cannot replay release memory query from public package data",
+        "queryResult": "release memory query replay stays owner-held and redacted",
+        "replayEffect": "lane remains outside approval comparison until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held query lane visible without querying private release memory."
+      },
+      {
+        "id": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Release memory query wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceNotaryRowId": "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Owner Required",
+        "queryLane": "wave-5",
+        "queryRef": "owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "queryScope": "owner-redacted",
+        "queryRule": "owner-held notary or memory rows cannot replay release memory query from public package data",
+        "queryResult": "release memory query replay stays owner-held and redacted",
+        "replayEffect": "lane remains outside approval comparison until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "memorynotary_1my045",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held query lane visible without querying private release memory."
+      }
+    ],
+    "guardrails": [
+      "Release memory query replay cannot query private production systems.",
+      "Query-review rows require notarized public digest and public memory search evidence.",
+      "Owner-held query rows remain redacted and cannot feed restore approval comparison."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+      "assets/task-orchestrator-r8-42-exported-report.json"
+    ]
+  },
+  "restoreApprovalComparison": {
+    "reportVersion": "impact-restore-approval-comparison@0.1.0",
+    "comparisonId": "restorecompare_18wdmgh",
+    "mode": "restore_approval_comparison",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "matchedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Compare public restore approval evidence without approving restore or exposing owner receipt bodies."
+    },
+    "rows": [
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Restore approval comparison wave-0 matched",
+        "state": "approval_matched",
+        "gate": "Ready",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Audit Reviewer",
+        "comparisonLane": "wave-0",
+        "comparisonRef": "compare-query-notary_19eqv",
+        "comparisonRule": "query-replayed memory evidence plus approval-ready packet can be compared as public restore evidence",
+        "comparisonResult": "restore approval comparison matches public query and approval packet evidence",
+        "deltaSummary": "no public evidence delta; approval packet remains explainable from replayed query",
+        "comparisonEffect": "lane can feed retention renewal dashboard as approval-matched evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep matched approval comparison available for audit packet retention renewal."
+      },
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Restore approval comparison wave-1 matched",
+        "state": "approval_matched",
+        "gate": "Ready",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Audit Reviewer",
+        "comparisonLane": "wave-1",
+        "comparisonRef": "compare-query-notary_19km0fr",
+        "comparisonRule": "query-replayed memory evidence plus approval-ready packet can be compared as public restore evidence",
+        "comparisonResult": "restore approval comparison matches public query and approval packet evidence",
+        "deltaSummary": "no public evidence delta; approval packet remains explainable from replayed query",
+        "comparisonEffect": "lane can feed retention renewal dashboard as approval-matched evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep matched approval comparison available for audit packet retention renewal."
+      },
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Restore approval comparison wave-2 review",
+        "state": "approval_review",
+        "gate": "Review",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Audit Reviewer",
+        "comparisonLane": "wave-2",
+        "comparisonRef": "review-compare-review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-2",
+        "comparisonRule": "comparison requires query replay and approval-ready restore packet evidence",
+        "comparisonResult": "restore approval comparison remains under review",
+        "deltaSummary": "public evidence delta needs reviewer attention before retention renewal",
+        "comparisonEffect": "lane cannot feed renewal dashboard until query or approval review closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close query replay or approval packet review before comparing restore evidence."
+      },
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Restore approval comparison wave-3 review",
+        "state": "approval_review",
+        "gate": "Review",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Audit Reviewer",
+        "comparisonLane": "wave-3",
+        "comparisonRef": "review-compare-review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-3",
+        "comparisonRule": "comparison requires query replay and approval-ready restore packet evidence",
+        "comparisonResult": "restore approval comparison remains under review",
+        "deltaSummary": "public evidence delta needs reviewer attention before retention renewal",
+        "comparisonEffect": "lane cannot feed renewal dashboard until query or approval review closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close query replay or approval packet review before comparing restore evidence."
+      },
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Restore approval comparison wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Owner Required",
+        "comparisonLane": "wave-4",
+        "comparisonRef": "owner-held-compare-owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "comparisonRule": "owner-held query or approval packet rows cannot be compared from public package data",
+        "comparisonResult": "restore approval comparison stays owner-held and redacted",
+        "deltaSummary": "private approval delta remains outside public package",
+        "comparisonEffect": "lane remains outside retention renewal dashboard until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held approval comparison redacted until owner evidence is supplied."
+      },
+      {
+        "id": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Restore approval comparison wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceQueryRowId": "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceApprovalRowId": "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Owner Required",
+        "comparisonLane": "wave-5",
+        "comparisonRef": "owner-held-compare-owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "comparisonRule": "owner-held query or approval packet rows cannot be compared from public package data",
+        "comparisonResult": "restore approval comparison stays owner-held and redacted",
+        "deltaSummary": "private approval delta remains outside public package",
+        "comparisonEffect": "lane remains outside retention renewal dashboard until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "memoryquery_vwl50b",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held approval comparison redacted until owner evidence is supplied."
+      }
+    ],
+    "guardrails": [
+      "Restore approval comparison cannot approve production restore.",
+      "Approval-review rows require public query replay and approval packet closure.",
+      "Owner-held comparison rows stay redacted and cannot feed retention renewal."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+      "assets/task-orchestrator-r8-42-exported-report.json"
+    ]
+  },
+  "auditPacketRetentionRenewalDashboard": {
+    "reportVersion": "impact-audit-packet-retention-renewal-dashboard@0.1.0",
+    "dashboardId": "retentionrenewal_9sjmcj",
+    "mode": "audit_packet_retention_renewal_dashboard",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "renewedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Review audit packet retention renewal as dashboard evidence, not as live archive retention mutation."
+    },
+    "rows": [
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Audit packet retention wave-0 renewed",
+        "state": "retention_renewed",
+        "gate": "Ready",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Audit Reviewer",
+        "dashboardLane": "wave-0",
+        "renewalRef": "retention-renewal-compare-query-notary_19eqv",
+        "retentionWindow": "keep-public-release-memory",
+        "dashboardRule": "matched approval comparison plus retained archive policy can renew public audit packet retention evidence",
+        "dashboardResult": "audit packet retention renewal is ready as public dashboard evidence",
+        "renewalEffect": "lane proves retention continuity without extending live archive permission or deleting evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep renewed retention lane visible in the public audit dashboard."
+      },
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Audit packet retention wave-1 renewed",
+        "state": "retention_renewed",
+        "gate": "Ready",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Audit Reviewer",
+        "dashboardLane": "wave-1",
+        "renewalRef": "retention-renewal-compare-query-notary_19km0fr",
+        "retentionWindow": "keep-public-release-memory",
+        "dashboardRule": "matched approval comparison plus retained archive policy can renew public audit packet retention evidence",
+        "dashboardResult": "audit packet retention renewal is ready as public dashboard evidence",
+        "renewalEffect": "lane proves retention continuity without extending live archive permission or deleting evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep renewed retention lane visible in the public audit dashboard."
+      },
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Audit packet retention wave-2 review",
+        "state": "retention_review",
+        "gate": "Review",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Audit Reviewer",
+        "dashboardLane": "wave-2",
+        "renewalRef": "review-retention-renewal-review-compare-review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-2",
+        "retentionWindow": "review-before-retention-change",
+        "dashboardRule": "retention renewal dashboard requires approval-matched comparison and retained policy evidence",
+        "dashboardResult": "audit packet retention renewal remains under review",
+        "renewalEffect": "lane cannot be counted as renewed until approval comparison and retention review close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close approval comparison or retention review before renewal dashboard marks this lane renewed."
+      },
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Audit packet retention wave-3 review",
+        "state": "retention_review",
+        "gate": "Review",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Audit Reviewer",
+        "dashboardLane": "wave-3",
+        "renewalRef": "review-retention-renewal-review-compare-review-query-review-notary-review-renewal-review-signoff-review-audit-bundle-expiring-review-readiness-review-transfer-review-drill-review-access-review-approval-review-timeline-review-retention-review-restore-review-memory-review-integrity-review-final-release-archive-wave-3",
+        "retentionWindow": "review-before-retention-change",
+        "dashboardRule": "retention renewal dashboard requires approval-matched comparison and retained policy evidence",
+        "dashboardResult": "audit packet retention renewal remains under review",
+        "renewalEffect": "lane cannot be counted as renewed until approval comparison and retention review close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Close approval comparison or retention review before renewal dashboard marks this lane renewed."
+      },
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Audit packet retention wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Owner Required",
+        "dashboardLane": "wave-4",
+        "renewalRef": "owner-held-retention-renewal-owner-held-compare-owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "retentionWindow": "owner-redacted",
+        "dashboardRule": "owner-held approval or retention rows cannot renew audit packet retention from public package data",
+        "dashboardResult": "audit packet retention renewal stays owner-held and redacted",
+        "renewalEffect": "lane remains visible as redacted dashboard evidence until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held retention renewal row visible without mutating archive retention."
+      },
+      {
+        "id": "retention-renewal-approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Audit packet retention wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceComparisonRowId": "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceRetentionRowId": "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Owner Required",
+        "dashboardLane": "wave-5",
+        "renewalRef": "owner-held-retention-renewal-owner-held-compare-owner-held-query-owner-held-notary-owner-held-renewal-owner-held-signoff-owner-held-audit-bundle-owner-held-expiry-owner-held-readiness-owner-held-transfer-owner-held-drill-owner-held-access-owner-held-approval-owner-held-timeline-owner-held-retention-owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "retentionWindow": "owner-redacted",
+        "dashboardRule": "owner-held approval or retention rows cannot renew audit packet retention from public package data",
+        "dashboardResult": "audit packet retention renewal stays owner-held and redacted",
+        "renewalEffect": "lane remains visible as redacted dashboard evidence until owner evidence closes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "approval-compare-query-replay-notarize-renewal-replay-audit-signoff-audit-bundle-permission-expiry-readiness-replay-memory-transfer-restore-drill-archive-access-restore-approval-memory-timeline-archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "archive-retention-archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "restorecompare_18wdmgh",
+          "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+          "assets/task-orchestrator-r8-42-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held retention renewal row visible without mutating archive retention."
+      }
+    ],
+    "guardrails": [
+      "Audit packet retention renewal dashboard cannot extend live permissions or delete archive evidence.",
+      "Retention-review rows require approval comparison and policy evidence closure.",
+      "Owner-held renewal rows remain redacted and visible in dashboard counts."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+      "assets/task-orchestrator-r8-42-exported-report.json"
+    ]
+  },
+  "auditExportDiff": {
+    "reportVersion": "impact-audit-export-diff@1.18.0",
+    "diffId": "exportdiff_uw8fy0",
+    "mode": "audit_export_diff",
+    "summary": {
+      "totalRows": 74,
+      "unchangedRows": 68,
+      "addedRows": 3,
+      "changedRows": 3,
+      "blockedRows": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep audit export diff in Review until R8.42 query replay, approval comparison, and retention renewal rows close."
+    },
+    "rows": [
+      {
+        "id": "export-diff-release-memory-query-replay",
+        "label": "Release memory query replay was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.releaseMemoryQueryReplay",
+        "before": "missing",
+        "after": "6 rows, 2 query-replayed, 2 query-review, 2 owner-held",
+        "diffReason": "R8.42 replays public release memory query eligibility from notarized digest and memory search evidence",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "memoryquery_vwl50b"
+        ],
+        "nextAction": "Close query-review rows before restore approval comparison treats them as replayed evidence."
+      },
+      {
+        "id": "export-diff-restore-approval-comparison",
+        "label": "Restore approval comparison was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.restoreApprovalComparison",
+        "before": "missing",
+        "after": "6 rows, 2 approval-matched, 2 approval-review, 2 owner-held",
+        "diffReason": "R8.42 compares replayed query evidence against restore approval packets without approving production restore",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "restorecompare_18wdmgh"
+        ],
+        "nextAction": "Keep approval-review rows out of retention renewal until query and approval evidence close."
+      },
+      {
+        "id": "export-diff-audit-packet-retention-renewal-dashboard",
+        "label": "Audit packet retention renewal dashboard was added",
+        "state": "added",
+        "gate": "Review",
+        "exportPath": "assetDependencyImpact.auditPacketRetentionRenewalDashboard",
+        "before": "missing",
+        "after": "6 rows, 2 retention-renewed, 2 retention-review, 2 owner-held",
+        "diffReason": "R8.42 surfaces audit packet retention renewal as dashboard evidence without mutating archive retention",
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "retentionrenewal_9sjmcj"
+        ],
+        "nextAction": "Keep retention-review rows visible before public package counts them as renewed."
+      }
+    ],
+    "guardrails": [
+      "Audit export diff records schema and evidence changes explicitly.",
+      "Private exposure and live write boundaries must remain unchanged.",
+      "Added R8.42 reports stay Review until query replay, approval comparison, and retention renewal rows close."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-42-query-approval-retention.json",
+      "assets/task-orchestrator-r8-42-exported-report.json"
+    ]
+  },
+  "guardrails": [
+    "Release memory query replay cannot query private production systems.",
+    "Query-review rows require notarized public digest and public memory search evidence.",
+    "Owner-held query rows remain redacted and cannot feed restore approval comparison.",
+    "Restore approval comparison cannot approve production restore.",
+    "Approval-review rows require public query replay and approval packet closure.",
+    "Owner-held comparison rows stay redacted and cannot feed retention renewal.",
+    "Audit packet retention renewal dashboard cannot extend live permissions or delete archive evidence.",
+    "Retention-review rows require approval comparison and policy evidence closure.",
+    "Owner-held renewal rows remain redacted and visible in dashboard counts."
+  ],
+  "artifacts": [
+    "assets/task-orchestrator-r8-42-query-approval-retention-full.png",
+    "assets/task-orchestrator-r8-42-mobile-tall.png",
+    "assets/task-orchestrator-r8-42-exported-report.json",
+    "assets/portfolio-case-study-r8-42-exported-report.json"
+  ]
+}

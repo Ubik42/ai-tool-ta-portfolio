@@ -1,0 +1,325 @@
+# AI Tool TA Portfolio Site
+
+Runnable product shell for the AI Tool TA portfolio.
+
+```bash
+npm install
+npm run dev -- --host 127.0.0.1 --port 5181
+```
+
+The first screen is a production workbench for the five portfolio modules. Each module turns a high-value Lightbox tool pattern into public synthetic fixtures, deterministic logic, AI-assisted explanation, and exportable evidence.
+
+## Module Docs
+
+- [Texture Delivery Console](docs/modules/texture-delivery-console.md)
+- [Task Orchestrator](docs/modules/task-orchestrator.md)
+- [Portfolio Case Study Index](docs/modules/portfolio-case-study-index.md)
+
+## Current Evidence
+
+R4 Texture Delivery Console:
+
+- `assets/texture-delivery-r4-1-console-full.png`
+- `assets/texture-delivery-r4-1-mobile-tall.png`
+- `assets/texture-delivery-r4-1-exported-report.json`
+- `assets/texture-delivery-r4-2-preset-editor-full.png`
+- `assets/texture-delivery-r4-2-mobile-tall.png`
+- `assets/texture-delivery-r4-2-exported-report.json`
+- `assets/texture-delivery-r4-3-queue-recovery-full.png`
+- `assets/texture-delivery-r4-3-mobile-tall.png`
+- `assets/texture-delivery-r4-3-exported-report.json`
+- `assets/texture-delivery-r4-4-preset-versioning-full.png`
+- `assets/texture-delivery-r4-4-mobile-tall.png`
+- `assets/texture-delivery-r4-4-exported-report.json`
+- `assets/texture-delivery-r4-5-publish-gate-full.png`
+- `assets/texture-delivery-r4-5-mobile-tall.png`
+- `assets/texture-delivery-r4-5-exported-report.json`
+- `assets/texture-delivery-r4-5-review-packet.json`
+- `assets/texture-delivery-r4-6-adapter-layer-full.png`
+- `assets/texture-delivery-r4-6-mobile-tall.png`
+- `assets/texture-delivery-r4-6-exported-report.json`
+- `assets/texture-delivery-r4-6-adapter-plan.json`
+- `assets/texture-delivery-r4-7-public-fixture-delta-full.png`
+- `assets/texture-delivery-r4-7-mobile-tall.png`
+- `assets/texture-delivery-r4-7-exported-report.json`
+- `assets/texture-delivery-r4-7-committed-manifest.json`
+
+R5 Task Orchestrator:
+
+- `assets/task-orchestrator-r5-1-workbench-full.png`
+- `assets/task-orchestrator-r5-1-mobile-tall.png`
+- `assets/task-orchestrator-r5-1-exported-report.json`
+- `assets/task-orchestrator-r5-2-workbench-full.png`
+- `assets/task-orchestrator-r5-2-mobile-tall.png`
+- `assets/task-orchestrator-r5-2-exported-report.json`
+- `assets/task-orchestrator-r5-3-workbench-full.png`
+- `assets/task-orchestrator-r5-3-mobile-tall.png`
+- `assets/task-orchestrator-r5-3-exported-report.json`
+- `assets/task-orchestrator-r5-4-workbench-full.png`
+- `assets/task-orchestrator-r5-4-mobile-tall.png`
+- `assets/task-orchestrator-r5-4-exported-report.json`
+
+R6 Portfolio Case Study Index:
+
+- `assets/portfolio-case-study-r6-1-index-full.png`
+- `assets/portfolio-case-study-r6-1-mobile-tall.png`
+- `assets/portfolio-case-study-r6-1-exported-report.json`
+- `assets/portfolio-case-study-r6-2-acceptance-full.png`
+- `assets/portfolio-case-study-r6-2-mobile-tall.png`
+- `assets/portfolio-case-study-r6-2-exported-report.json`
+- `assets/portfolio-case-study-r6-3-manifest-full.png`
+- `assets/portfolio-case-study-r6-3-mobile-tall.png`
+- `assets/portfolio-case-study-r6-3-exported-report.json`
+
+R7 Portfolio Case Study Index:
+
+- `assets/portfolio-case-study-r7-1-pending-receipts-full.png`
+- `assets/portfolio-case-study-r7-1-mobile-tall.png`
+- `assets/portfolio-case-study-r7-1-exported-report.json`
+- `assets/cross-dcc-rule-matrix-r2-4-fix-diff-full.png`
+- `assets/cross-dcc-rule-matrix-r2-4-mobile-tall.png`
+- `assets/cross-dcc-rule-matrix-r2-4-exported-report.json`
+- `assets/portfolio-case-study-r7-2-exported-report.json`
+- `assets/portfolio-case-study-r7-3-exported-report.json`
+- `assets/portfolio-case-study-r7-4-owner-signoff-full.png`
+- `assets/portfolio-case-study-r7-4-mobile-tall.png`
+- `assets/portfolio-case-study-r7-4-exported-report.json`
+- `assets/portfolio-case-study-r7-5-public-package-full.png`
+- `assets/portfolio-case-study-r7-5-mobile-tall.png`
+- `assets/portfolio-case-study-r7-5-exported-report.json`
+- `public-case-package/README.md`
+- `public-case-package/MODULES.md`
+- `public-case-package/EVIDENCE_INDEX.md`
+- `public-case-package/SIGNOFFS.md`
+- `public-case-package/VALIDATION.md`
+- `public-case-package/package-manifest.json`
+
+R8 Task Orchestrator:
+
+- `assets/task-orchestrator-r8-0-impact-full.png`
+- `assets/task-orchestrator-r8-0-mobile-tall.png`
+- `assets/task-orchestrator-r8-0-exported-report.json`
+- `assets/task-orchestrator-r8-1-impact-paths-full.png`
+- `assets/task-orchestrator-r8-1-impact-panel.png`
+- `assets/task-orchestrator-r8-1-mobile-tall.png`
+- `assets/task-orchestrator-r8-1-exported-report.json`
+- `fixtures/dependency-impact/r8-1-rifle-release-candidate.json`
+- `assets/portfolio-case-study-r8-2-impact-signoff-full.png`
+- `assets/portfolio-case-study-r8-2-mobile-tall.png`
+- `assets/portfolio-case-study-r8-2-exported-report.json`
+- `assets/task-orchestrator-r8-3-scenario-switch-full.png`
+- `assets/task-orchestrator-r8-3-mobile-tall.png`
+- `assets/task-orchestrator-r8-3-exported-report.json`
+- `fixtures/dependency-impact/r8-3-vehicle-trailer-release.json`
+- `assets/portfolio-case-study-r8-3-exported-report.json`
+- `assets/task-orchestrator-r8-4-comparison-authoring-full.png`
+- `assets/task-orchestrator-r8-4-mobile-tall.png`
+- `assets/task-orchestrator-r8-4-exported-report.json`
+- `fixtures/dependency-impact/r8-4-authoring-draft.json`
+- `assets/portfolio-case-study-r8-4-exported-report.json`
+- `assets/task-orchestrator-r8-5-replay-trend-full.png`
+- `assets/task-orchestrator-r8-5-mobile-tall.png`
+- `assets/task-orchestrator-r8-5-exported-report.json`
+- `fixtures/dependency-impact/r8-5-batch-variants.json`
+- `assets/portfolio-case-study-r8-5-exported-report.json`
+- `assets/task-orchestrator-r8-6-contract-sync-full.png`
+- `assets/task-orchestrator-r8-6-mobile-tall.png`
+- `assets/task-orchestrator-r8-6-exported-report.json`
+- `fixtures/dependency-impact/r8-6-adapter-contract-replay.json`
+- `assets/portfolio-case-study-r8-6-exported-report.json`
+- `assets/task-orchestrator-r8-7-handoff-diff-full.png`
+- `assets/task-orchestrator-r8-7-mobile-tall.png`
+- `assets/task-orchestrator-r8-7-exported-report.json`
+- `fixtures/dependency-impact/r8-7-production-handoff.json`
+- `assets/portfolio-case-study-r8-7-exported-report.json`
+- `assets/task-orchestrator-r8-8-signed-receipt-full.png`
+- `assets/task-orchestrator-r8-8-mobile-tall.png`
+- `assets/task-orchestrator-r8-8-exported-report.json`
+- `fixtures/dependency-impact/r8-8-signed-receipt-sandbox.json`
+- `assets/portfolio-case-study-r8-8-exported-report.json`
+- `assets/task-orchestrator-r8-9-credential-drill-full.png`
+- `assets/task-orchestrator-r8-9-mobile-tall.png`
+- `assets/task-orchestrator-r8-9-exported-report.json`
+- `fixtures/dependency-impact/r8-9-credential-release-drill.json`
+- `assets/portfolio-case-study-r8-9-exported-report.json`
+- `assets/task-orchestrator-r8-10-failure-lineage-full.png`
+- `assets/task-orchestrator-r8-10-mobile-tall.png`
+- `assets/task-orchestrator-r8-10-exported-report.json`
+- `fixtures/dependency-impact/r8-10-adapter-failure-lineage.json`
+- `assets/portfolio-case-study-r8-10-exported-report.json`
+- `assets/task-orchestrator-r8-11-readiness-replay-full.png`
+- `assets/task-orchestrator-r8-11-mobile-tall.png`
+- `assets/task-orchestrator-r8-11-exported-report.json`
+- `fixtures/dependency-impact/r8-11-live-adapter-readiness.json`
+- `assets/portfolio-case-study-r8-11-exported-report.json`
+- `assets/task-orchestrator-r8-12-cutover-drill-full.png`
+- `assets/task-orchestrator-r8-12-mobile-tall.png`
+- `assets/task-orchestrator-r8-12-exported-report.json`
+- `fixtures/dependency-impact/r8-12-production-cutover-drill.json`
+- `assets/portfolio-case-study-r8-12-exported-report.json`
+- `assets/task-orchestrator-r8-13-private-bridge-full.png`
+- `assets/task-orchestrator-r8-13-mobile-tall.png`
+- `assets/task-orchestrator-r8-13-exported-report.json`
+- `fixtures/dependency-impact/r8-13-private-owner-bridge.json`
+- `assets/portfolio-case-study-r8-13-exported-report.json`
+- `assets/task-orchestrator-r8-14-drift-freeze-full.png`
+- `assets/task-orchestrator-r8-14-mobile-tall.png`
+- `assets/task-orchestrator-r8-14-exported-report.json`
+- `fixtures/dependency-impact/r8-14-production-drift-freeze.json`
+- `assets/portfolio-case-study-r8-14-exported-report.json`
+- `assets/task-orchestrator-r8-15-rollback-dispute-full.png`
+- `assets/task-orchestrator-r8-15-mobile-tall.png`
+- `assets/task-orchestrator-r8-15-exported-report.json`
+- `fixtures/dependency-impact/r8-15-rollback-dispute-audit.json`
+- `assets/portfolio-case-study-r8-15-exported-report.json`
+- `assets/task-orchestrator-r8-16-rollout-incident-full.png`
+- `assets/task-orchestrator-r8-16-mobile-tall.png`
+- `assets/task-orchestrator-r8-16-exported-report.json`
+- `fixtures/dependency-impact/r8-16-rollout-incident-exception.json`
+- `assets/portfolio-case-study-r8-16-exported-report.json`
+- `assets/task-orchestrator-r8-17-budget-confidence-full.png`
+- `assets/task-orchestrator-r8-17-mobile-tall.png`
+- `assets/task-orchestrator-r8-17-exported-report.json`
+- `fixtures/dependency-impact/r8-17-budget-confidence-aging.json`
+- `assets/portfolio-case-study-r8-17-exported-report.json`
+- `assets/task-orchestrator-r8-18-release-rehearsal-full.png`
+- `assets/task-orchestrator-r8-18-mobile-tall.png`
+- `assets/task-orchestrator-r8-18-exported-report.json`
+- `fixtures/dependency-impact/r8-18-release-rehearsal-quorum-refresh.json`
+- `assets/portfolio-case-study-r8-18-exported-report.json`
+- `assets/task-orchestrator-r8-19-decision-sla-full.png`
+- `assets/task-orchestrator-r8-19-mobile-tall.png`
+- `assets/task-orchestrator-r8-19-exported-report.json`
+- `fixtures/dependency-impact/r8-19-release-decision-sla-retention.json`
+- `assets/portfolio-case-study-r8-19-exported-report.json`
+- `assets/task-orchestrator-r8-20-evidence-lockfile-full.png`
+- `assets/task-orchestrator-r8-20-mobile-tall.png`
+- `assets/task-orchestrator-r8-20-exported-report.json`
+- `fixtures/dependency-impact/r8-20-evidence-lockfile-closeout.json`
+- `assets/portfolio-case-study-r8-20-exported-report.json`
+- `assets/task-orchestrator-r8-21-acceptance-replay-full.png`
+- `assets/task-orchestrator-r8-21-mobile-tall.png`
+- `assets/task-orchestrator-r8-21-exported-report.json`
+- `fixtures/dependency-impact/r8-21-packet-diff-exception-acceptance.json`
+- `assets/portfolio-case-study-r8-21-exported-report.json`
+- `assets/task-orchestrator-r8-22-readiness-replay-full.png`
+- `assets/task-orchestrator-r8-22-mobile-tall.png`
+- `assets/task-orchestrator-r8-22-exported-report.json`
+- `fixtures/dependency-impact/r8-22-freeze-owner-response-readiness.json`
+- `assets/portfolio-case-study-r8-22-exported-report.json`
+- `assets/task-orchestrator-r8-23-promotion-acceptance-full.png`
+- `assets/task-orchestrator-r8-23-mobile-tall.png`
+- `assets/task-orchestrator-r8-23-exported-report.json`
+- `fixtures/dependency-impact/r8-23-promotion-sla-acceptance.json`
+- `assets/portfolio-case-study-r8-23-exported-report.json`
+- `assets/task-orchestrator-r8-24-rollback-waiver-note-full.png`
+- `assets/task-orchestrator-r8-24-mobile-tall.png`
+- `assets/task-orchestrator-r8-24-exported-report.json`
+- `fixtures/dependency-impact/r8-24-rollback-waiver-release-note.json`
+- `assets/portfolio-case-study-r8-24-exported-report.json`
+- `assets/task-orchestrator-r8-25-approval-expiry-bundle-full.png`
+- `assets/task-orchestrator-r8-25-mobile-tall.png`
+- `assets/task-orchestrator-r8-25-exported-report.json`
+- `fixtures/dependency-impact/r8-25-approval-expiry-rollback-bundle.json`
+- `assets/portfolio-case-study-r8-25-exported-report.json`
+- `assets/task-orchestrator-r8-26-seal-renewal-handoff-full.png`
+- `assets/task-orchestrator-r8-26-mobile-tall.png`
+- `assets/task-orchestrator-r8-26-exported-report.json`
+- `fixtures/dependency-impact/r8-26-seal-renewal-incident-handoff.json`
+- `assets/portfolio-case-study-r8-26-exported-report.json`
+- `assets/task-orchestrator-r8-27-replay-burndown-closure-full.png`
+- `assets/task-orchestrator-r8-27-mobile-tall.png`
+- `assets/task-orchestrator-r8-27-exported-report.json`
+- `fixtures/dependency-impact/r8-27-replay-burndown-closure.json`
+- `assets/portfolio-case-study-r8-27-exported-report.json`
+- `assets/task-orchestrator-r8-28-closure-response-sla-full.png`
+- `assets/task-orchestrator-r8-28-mobile-tall.png`
+- `assets/task-orchestrator-r8-28-exported-report.json`
+- `fixtures/dependency-impact/r8-28-closure-response-sla.json`
+- `assets/portfolio-case-study-r8-28-exported-report.json`
+- `assets/task-orchestrator-r8-29-operations-acceptance-full.png`
+- `assets/task-orchestrator-r8-29-mobile-tall.png`
+- `assets/task-orchestrator-r8-29-exported-report.json`
+- `fixtures/dependency-impact/r8-29-operations-acceptance.json`
+- `assets/portfolio-case-study-r8-29-exported-report.json`
+- `assets/task-orchestrator-r8-30-release-train-closeout-full.png`
+- `assets/task-orchestrator-r8-30-mobile-tall.png`
+- `assets/task-orchestrator-r8-30-exported-report.json`
+- `fixtures/dependency-impact/r8-30-release-train-closeout.json`
+- `assets/portfolio-case-study-r8-30-exported-report.json`
+- `assets/task-orchestrator-r8-31-replay-aging-variance-full.png`
+- `assets/task-orchestrator-r8-31-mobile-tall.png`
+- `assets/task-orchestrator-r8-31-exported-report.json`
+- `fixtures/dependency-impact/r8-31-replay-aging-variance.json`
+- `assets/portfolio-case-study-r8-31-exported-report.json`
+- `assets/task-orchestrator-r8-32-release-manager-freeze-full.png`
+- `assets/task-orchestrator-r8-32-mobile-tall.png`
+- `assets/task-orchestrator-r8-32-exported-report.json`
+- `fixtures/dependency-impact/r8-32-release-manager-freeze.json`
+- `assets/portfolio-case-study-r8-32-exported-report.json`
+- `assets/task-orchestrator-r8-33-go-no-go-packet-full.png`
+- `assets/task-orchestrator-r8-33-mobile-tall.png`
+- `assets/task-orchestrator-r8-33-exported-report.json`
+- `fixtures/dependency-impact/r8-33-go-no-go-packet.json`
+- `assets/portfolio-case-study-r8-33-exported-report.json`
+- `assets/task-orchestrator-r8-34-post-release-readiness-full.png`
+- `assets/task-orchestrator-r8-34-mobile-tall.png`
+- `assets/task-orchestrator-r8-34-exported-report.json`
+- `fixtures/dependency-impact/r8-34-post-release-readiness.json`
+- `assets/portfolio-case-study-r8-34-exported-report.json`
+- `assets/task-orchestrator-r8-35-release-closeout-full.png`
+- `assets/task-orchestrator-r8-35-mobile-tall.png`
+- `assets/task-orchestrator-r8-35-exported-report.json`
+- `fixtures/dependency-impact/r8-35-release-closeout.json`
+- `assets/portfolio-case-study-r8-35-exported-report.json`
+- `assets/task-orchestrator-r8-36-final-archive-full.png`
+- `assets/task-orchestrator-r8-36-mobile-tall.png`
+- `assets/task-orchestrator-r8-36-exported-report.json`
+- `fixtures/dependency-impact/r8-36-final-archive.json`
+- `assets/portfolio-case-study-r8-36-exported-report.json`
+- `assets/task-orchestrator-r8-37-release-memory-full.png`
+- `assets/task-orchestrator-r8-37-mobile-tall.png`
+- `assets/task-orchestrator-r8-37-exported-report.json`
+- `fixtures/dependency-impact/r8-37-release-memory.json`
+- `assets/portfolio-case-study-r8-37-exported-report.json`
+- `assets/task-orchestrator-r8-38-retention-approval-full.png`
+- `assets/task-orchestrator-r8-38-mobile-tall.png`
+- `assets/task-orchestrator-r8-38-exported-report.json`
+- `fixtures/dependency-impact/r8-38-retention-approval.json`
+- `assets/portfolio-case-study-r8-38-exported-report.json`
+- `assets/task-orchestrator-r8-39-access-drillbook-full.png`
+- `assets/task-orchestrator-r8-39-mobile-tall.png`
+- `assets/task-orchestrator-r8-39-exported-report.json`
+- `fixtures/dependency-impact/r8-39-access-drillbook-transfer.json`
+- `assets/portfolio-case-study-r8-39-exported-report.json`
+- `assets/task-orchestrator-r8-40-readiness-expiry-bundle-full.png`
+- `assets/task-orchestrator-r8-40-mobile-tall.png`
+- `assets/task-orchestrator-r8-40-exported-report.json`
+- `fixtures/dependency-impact/r8-40-readiness-expiry-bundle.json`
+- `assets/portfolio-case-study-r8-40-exported-report.json`
+- `assets/task-orchestrator-r8-41-reviewer-renewal-notary-full.png`
+- `assets/task-orchestrator-r8-41-mobile-tall.png`
+- `assets/task-orchestrator-r8-41-exported-report.json`
+- `fixtures/dependency-impact/r8-41-reviewer-renewal-notary.json`
+- `assets/portfolio-case-study-r8-41-exported-report.json`
+- `assets/task-orchestrator-r8-42-query-approval-retention-full.png`
+- `assets/task-orchestrator-r8-42-mobile-tall.png`
+- `assets/task-orchestrator-r8-42-exported-report.json`
+- `fixtures/dependency-impact/r8-42-query-approval-retention.json`
+- `assets/portfolio-case-study-r8-42-exported-report.json`
+- `assets/task-orchestrator-r8-43-exception-response-handoff-full.png`
+- `assets/task-orchestrator-r8-43-mobile-tall.png`
+- `assets/task-orchestrator-r8-43-exported-report.json`
+- `fixtures/dependency-impact/r8-43-exception-response-handoff.json`
+- `assets/portfolio-case-study-r8-43-exported-report.json`
+- `assets/task-orchestrator-r8-44-acceptance-sla-drill-full.png`
+- `assets/task-orchestrator-r8-44-mobile-tall.png`
+- `assets/task-orchestrator-r8-44-exported-report.json`
+- `fixtures/dependency-impact/r8-44-acceptance-sla-drill.json`
+- `assets/portfolio-case-study-r8-44-exported-report.json`
+- `assets/task-orchestrator-r8-45-restoration-ops-readiness-full.png`
+- `assets/task-orchestrator-r8-45-mobile-tall.png`
+- `assets/task-orchestrator-r8-45-exported-report.json`
+- `fixtures/dependency-impact/r8-45-restoration-ops-readiness.json`
+- `assets/portfolio-case-study-r8-45-exported-report.json`
+- `public-case-package/package-manifest.json`

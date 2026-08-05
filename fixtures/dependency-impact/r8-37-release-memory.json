@@ -1,0 +1,708 @@
+{
+  "fixtureId": "dependency-impact-r8-37-release-memory",
+  "fixtureVersion": "dependency-impact-release-memory@0.1.0",
+  "mutationAllowed": false,
+  "privateDataExposed": false,
+  "sourceTaskReportVersion": "task-orchestrator-report@1.31.0",
+  "sourceImpactReportVersion": "asset-dependency-impact@1.27.0",
+  "sourceAuditDiffVersion": "impact-audit-export-diff@1.13.0",
+  "finalReleaseArchivePacket": {
+    "reportVersion": "impact-final-release-archive-packet@0.1.0",
+    "packetId": "finalarchive_p3ckhw",
+    "mode": "final_release_archive_packet",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "readyRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep final release archive packet as public evidence; it cannot publish, tag, or close production release state."
+    },
+    "rows": [
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Final archive wave-0 ready",
+        "state": "archive_ready",
+        "gate": "Ready",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "archiveLane": "wave-0",
+        "archiveRef": "final-release-archive-wave-0",
+        "archiveRule": "aging-clear lane plus replayed closeout acceptance can enter final public archive",
+        "archiveResult": "final release archive packet is ready for reviewer export",
+        "releaseEffect": "lane is archived as public evidence without publishing or tagging production",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Keep archive-ready lane in the public package."
+      },
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Final archive wave-1 ready",
+        "state": "archive_ready",
+        "gate": "Ready",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "archiveLane": "wave-1",
+        "archiveRef": "final-release-archive-wave-1",
+        "archiveRule": "aging-clear lane plus replayed closeout acceptance can enter final public archive",
+        "archiveResult": "final release archive packet is ready for reviewer export",
+        "releaseEffect": "lane is archived as public evidence without publishing or tagging production",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Keep archive-ready lane in the public package."
+      },
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Final archive wave-2 review",
+        "state": "archive_review",
+        "gate": "Review",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "archiveLane": "wave-2",
+        "archiveRef": "review-final-release-archive-wave-2",
+        "archiveRule": "aging-review or acceptance-review lane keeps final archive conditional",
+        "archiveResult": "final release archive remains review evidence",
+        "releaseEffect": "lane cannot be archived until acceptance and aging conditions close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Resolve archive-review lane before final release archive is public-ready."
+      },
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Final archive wave-3 review",
+        "state": "archive_review",
+        "gate": "Review",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "archiveLane": "wave-3",
+        "archiveRef": "review-final-release-archive-wave-3",
+        "archiveRule": "aging-review or acceptance-review lane keeps final archive conditional",
+        "archiveResult": "final release archive remains review evidence",
+        "releaseEffect": "lane cannot be archived until acceptance and aging conditions close",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Resolve archive-review lane before final release archive is public-ready."
+      },
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Final archive wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "archiveLane": "wave-4",
+        "archiveRef": "owner-held-final-release-archive-wave-4",
+        "archiveRule": "owner-held acceptance or aging evidence cannot enter final archive from public data",
+        "archiveResult": "final release archive packet stays owner-held and redacted",
+        "releaseEffect": "lane remains outside the public archive until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held archive lane visible and unresolved."
+      },
+      {
+        "id": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Final archive wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceAgingRowId": "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceAcceptanceRowId": "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "archiveLane": "wave-5",
+        "archiveRef": "owner-held-final-release-archive-wave-5",
+        "archiveRule": "owner-held acceptance or aging evidence cannot enter final archive from public data",
+        "archiveResult": "final release archive packet stays owner-held and redacted",
+        "releaseEffect": "lane remains outside the public archive until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "escalationaging_bmnks9",
+          "fixtures/dependency-impact/r8-36-final-archive.json",
+          "assets/task-orchestrator-r8-36-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held archive lane visible and unresolved."
+      }
+    ],
+    "guardrails": [
+      "Final release archive packet cannot publish packages, tag releases, or close production release state.",
+      "Archive-review lanes must preserve unresolved acceptance and aging evidence.",
+      "Owner-held archive rows stay visible and cannot be hidden by final archive summary."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-36-final-archive.json",
+      "assets/task-orchestrator-r8-36-exported-report.json"
+    ]
+  },
+  "archiveIntegrityAudit": {
+    "reportVersion": "impact-archive-integrity-audit@0.1.0",
+    "auditId": "archiveintegrity_nt21ra",
+    "mode": "archive_integrity_audit",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "passedRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Audit archive integrity from public packet evidence only; do not rewrite archives."
+    },
+    "rows": [
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Archive integrity wave-0 passed",
+        "state": "integrity_passed",
+        "gate": "Ready",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "auditLane": "wave-0",
+        "integrityRef": "integrity-final-release-archive-wave-0",
+        "integrityRule": "archive-ready row has public archive ref, source acceptance, source aging, and no private exposure",
+        "integrityResult": "archive integrity passed for release memory indexing",
+        "archiveEffect": "lane can enter release memory search as public immutable evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Index integrity-passed lane in release memory search."
+      },
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Archive integrity wave-1 passed",
+        "state": "integrity_passed",
+        "gate": "Ready",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "auditLane": "wave-1",
+        "integrityRef": "integrity-final-release-archive-wave-1",
+        "integrityRule": "archive-ready row has public archive ref, source acceptance, source aging, and no private exposure",
+        "integrityResult": "archive integrity passed for release memory indexing",
+        "archiveEffect": "lane can enter release memory search as public immutable evidence",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Index integrity-passed lane in release memory search."
+      },
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Archive integrity wave-2 review",
+        "state": "integrity_review",
+        "gate": "Review",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "auditLane": "wave-2",
+        "integrityRef": "review-integrity-review-final-release-archive-wave-2",
+        "integrityRule": "archive-review row keeps unresolved acceptance or aging evidence open",
+        "integrityResult": "archive integrity requires reviewer confirmation before memory indexing",
+        "archiveEffect": "lane can be searchable only as review memory, not immutable release memory",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve archive integrity review before immutable indexing."
+      },
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Archive integrity wave-3 review",
+        "state": "integrity_review",
+        "gate": "Review",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "auditLane": "wave-3",
+        "integrityRef": "review-integrity-review-final-release-archive-wave-3",
+        "integrityRule": "archive-review row keeps unresolved acceptance or aging evidence open",
+        "integrityResult": "archive integrity requires reviewer confirmation before memory indexing",
+        "archiveEffect": "lane can be searchable only as review memory, not immutable release memory",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve archive integrity review before immutable indexing."
+      },
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Archive integrity wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "auditLane": "wave-4",
+        "integrityRef": "owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "integrityRule": "owner-held archive row cannot pass integrity from public evidence",
+        "integrityResult": "archive integrity remains owner-held and redacted",
+        "archiveEffect": "lane stays outside immutable release memory until owner evidence changes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held integrity row visible without fetching private archive state."
+      },
+      {
+        "id": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Archive integrity wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "auditLane": "wave-5",
+        "integrityRef": "owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "integrityRule": "owner-held archive row cannot pass integrity from public evidence",
+        "integrityResult": "archive integrity remains owner-held and redacted",
+        "archiveEffect": "lane stays outside immutable release memory until owner evidence changes",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "finalarchive_p3ckhw",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held integrity row visible without fetching private archive state."
+      }
+    ],
+    "guardrails": [
+      "Archive integrity audit cannot rewrite archive packets or delete release evidence.",
+      "Integrity-review lanes remain searchable only as review memory.",
+      "Owner-held integrity rows stay redacted and outside immutable release memory."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-37-release-memory.json",
+      "assets/task-orchestrator-r8-37-exported-report.json"
+    ]
+  },
+  "releaseMemorySearch": {
+    "reportVersion": "impact-release-memory-search@0.1.0",
+    "searchId": "releasememory_152e8dy",
+    "mode": "release_memory_search",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "foundRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Search only public release memory; private owner systems remain outside the public package."
+    },
+    "rows": [
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Release memory wave-0 found",
+        "state": "memory_found",
+        "gate": "Ready",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "queryLane": "wave-0",
+        "memoryQuery": "release:wave-0 status archive-ready integrity-passed",
+        "memoryRef": "memory-integrity-final-release-archive-wave-0",
+        "searchRule": "integrity-passed archive-ready lane can be retrieved from public release memory",
+        "searchResult": "release memory found with public evidence refs only",
+        "retrievalEffect": "reviewer can retrieve release memory without querying private owner systems",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Use memory-found lane as restore rehearsal input."
+      },
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Release memory wave-1 found",
+        "state": "memory_found",
+        "gate": "Ready",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "queryLane": "wave-1",
+        "memoryQuery": "release:wave-1 status archive-ready integrity-passed",
+        "memoryRef": "memory-integrity-final-release-archive-wave-1",
+        "searchRule": "integrity-passed archive-ready lane can be retrieved from public release memory",
+        "searchResult": "release memory found with public evidence refs only",
+        "retrievalEffect": "reviewer can retrieve release memory without querying private owner systems",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Use memory-found lane as restore rehearsal input."
+      },
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Release memory wave-2 review",
+        "state": "memory_review",
+        "gate": "Review",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "queryLane": "wave-2",
+        "memoryQuery": "release:wave-2 status review",
+        "memoryRef": "review-memory-review-integrity-review-final-release-archive-wave-2",
+        "searchRule": "integrity-review or archive-review lane can be retrieved only as review memory",
+        "searchResult": "release memory search returns review result with unresolved evidence",
+        "retrievalEffect": "reviewer can see the release memory gap without promoting it",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve memory-review lane before restore rehearsal can be ready."
+      },
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Release memory wave-3 review",
+        "state": "memory_review",
+        "gate": "Review",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "queryLane": "wave-3",
+        "memoryQuery": "release:wave-3 status review",
+        "memoryRef": "review-memory-review-integrity-review-final-release-archive-wave-3",
+        "searchRule": "integrity-review or archive-review lane can be retrieved only as review memory",
+        "searchResult": "release memory search returns review result with unresolved evidence",
+        "retrievalEffect": "reviewer can see the release memory gap without promoting it",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve memory-review lane before restore rehearsal can be ready."
+      },
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Release memory wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "queryLane": "wave-4",
+        "memoryQuery": "release:wave-4 status owner-held",
+        "memoryRef": "owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "searchRule": "owner-held archive memory cannot be retrieved from public evidence as a complete release memory",
+        "searchResult": "release memory search stays owner-held and redacted",
+        "retrievalEffect": "lane cannot feed restore rehearsal until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held memory lane visible without querying private owner systems."
+      },
+      {
+        "id": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Release memory wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceArchiveRowId": "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "queryLane": "wave-5",
+        "memoryQuery": "release:wave-5 status owner-held",
+        "memoryRef": "owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "searchRule": "owner-held archive memory cannot be retrieved from public evidence as a complete release memory",
+        "searchResult": "release memory search stays owner-held and redacted",
+        "retrievalEffect": "lane cannot feed restore rehearsal until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "archiveintegrity_nt21ra",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held memory lane visible without querying private owner systems."
+      }
+    ],
+    "guardrails": [
+      "Release memory search cannot query private production systems or expose owner receipt bodies.",
+      "Memory-review rows cannot feed restore rehearsal as complete release memory.",
+      "Owner-held memory rows remain searchable only by redacted public status."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-37-release-memory.json",
+      "assets/task-orchestrator-r8-37-exported-report.json"
+    ]
+  },
+  "archivedPacketRestoreRehearsal": {
+    "reportVersion": "impact-archived-packet-restore-rehearsal@0.1.0",
+    "rehearsalId": "archiverestore_1ug8tyi",
+    "mode": "archived_packet_restore_rehearsal",
+    "generatedAt": "2026-07-31T23:59:59+08:00",
+    "mutationAllowed": false,
+    "privateDataExposed": false,
+    "gate": "Review",
+    "summary": {
+      "totalRows": 6,
+      "readyRows": 2,
+      "reviewRows": 2,
+      "ownerHoldRows": 2,
+      "blockedRows": 0,
+      "liveWrites": 0,
+      "privateFieldsExposed": 0,
+      "gate": "Review",
+      "nextAction": "Keep archived packet restore as rehearsal evidence; do not restore production state."
+    },
+    "rows": [
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "label": "Archived restore wave-0 ready",
+        "state": "restore_ready",
+        "gate": "Ready",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+        "owner": "Portfolio TA",
+        "restoreLane": "wave-0",
+        "restoreRef": "restore-memory-integrity-final-release-archive-wave-0",
+        "restoreRule": "memory-found lane plus passed archive integrity can rehearse packet restore from public evidence",
+        "restoreResult": "archived packet restore rehearsal is ready",
+        "productionEffect": "restore is rehearsal-only and does not write production release state",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-public-package-report",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep restore-ready lane as public restore rehearsal evidence."
+      },
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "label": "Archived restore wave-1 ready",
+        "state": "restore_ready",
+        "gate": "Ready",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+        "owner": "Release TA",
+        "restoreLane": "wave-1",
+        "restoreRef": "restore-memory-integrity-final-release-archive-wave-1",
+        "restoreRule": "memory-found lane plus passed archive integrity can rehearse packet restore from public evidence",
+        "restoreResult": "archived packet restore rehearsal is ready",
+        "productionEffect": "restore is rehearsal-only and does not write production release state",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-task-report",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep restore-ready lane as public restore rehearsal evidence."
+      },
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "label": "Archived restore wave-2 review",
+        "state": "restore_review",
+        "gate": "Review",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+        "owner": "Portfolio TA",
+        "restoreLane": "wave-2",
+        "restoreRef": "review-restore-review-memory-review-integrity-review-final-release-archive-wave-2",
+        "restoreRule": "memory-review or integrity-review lane can rehearse restore only as review evidence",
+        "restoreResult": "archived packet restore rehearsal remains review-held",
+        "productionEffect": "restore rehearsal cannot reopen release state or restore production payloads",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-decision-screenshot",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve restore-review lane before archive restore rehearsal is complete."
+      },
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "label": "Archived restore wave-3 review",
+        "state": "restore_review",
+        "gate": "Review",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+        "owner": "Release TA",
+        "restoreLane": "wave-3",
+        "restoreRef": "review-restore-review-memory-review-integrity-review-final-release-archive-wave-3",
+        "restoreRule": "memory-review or integrity-review lane can rehearse restore only as review evidence",
+        "restoreResult": "archived packet restore rehearsal remains review-held",
+        "productionEffect": "restore rehearsal cannot reopen release state or restore production payloads",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-fixture",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Resolve restore-review lane before archive restore rehearsal is complete."
+      },
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "label": "Archived restore wave-4 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+        "owner": "Platform Adapter Owner",
+        "restoreLane": "wave-4",
+        "restoreRef": "owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-4",
+        "restoreRule": "owner-held memory or integrity lane cannot rehearse complete restore from public evidence",
+        "restoreResult": "archived packet restore rehearsal stays owner-held and redacted",
+        "productionEffect": "lane cannot restore or reopen production state until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-endpoint-route",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held restore lane visible without production restore calls."
+      },
+      {
+        "id": "archived-restore-release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "label": "Archived restore wave-5 owner-held",
+        "state": "owner_hold",
+        "gate": "Review",
+        "sourceMemoryRowId": "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "sourceIntegrityRowId": "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+        "owner": "Release TA",
+        "restoreLane": "wave-5",
+        "restoreRef": "owner-held-restore-owner-held-memory-owner-held-integrity-owner-held-final-release-archive-wave-5",
+        "restoreRule": "owner-held memory or integrity lane cannot rehearse complete restore from public evidence",
+        "restoreResult": "archived packet restore rehearsal stays owner-held and redacted",
+        "productionEffect": "lane cannot restore or reopen production state until owner evidence is replaced",
+        "liveWrites": 0,
+        "privateFieldsExposed": 0,
+        "evidence": [
+          "release-memory-archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "archive-integrity-final-release-archive-escalation-aging-closeout-acceptance-replay-rollback-drill-closeout-watch-escalation-replay-release-closeout-seal-rollback-readiness-delta-post-release-watch-publish-decision-receipt-replay-publish-go-no-go-release-manager-digest-publish-rehearsal-variance-release-train-replay-receipt-release-train-ready-ops-signoff-diff-release-ops-accept-incident-closure-diff-closure-replay-closure-packet-incident-handoff-bundle-diff-rollback-preview-readiness-accept-lock-owner-unfreeze",
+          "releasememory_152e8dy",
+          "fixtures/dependency-impact/r8-37-release-memory.json",
+          "assets/task-orchestrator-r8-37-exported-report.json"
+        ],
+        "nextAction": "Keep owner-held restore lane visible without production restore calls."
+      }
+    ],
+    "guardrails": [
+      "Archived packet restore rehearsal cannot restore production payloads or reopen releases.",
+      "Restore-review rows cannot be promoted without complete public release memory.",
+      "Owner-held restore rows remain redacted and require external owner evidence."
+    ],
+    "artifacts": [
+      "fixtures/dependency-impact/r8-37-release-memory.json",
+      "assets/task-orchestrator-r8-37-exported-report.json"
+    ]
+  },
+  "guardrails": [
+    "Archive integrity audit cannot rewrite archive packets or delete release evidence.",
+    "Release memory search cannot query private production systems or expose owner receipt bodies.",
+    "Archived packet restore rehearsal cannot restore production payloads or reopen releases."
+  ]
+}

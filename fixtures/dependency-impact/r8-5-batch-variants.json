@@ -1,0 +1,101 @@
+{
+  "generatorId": "impactvariants_r8_5_vehicle_trailer_batch",
+  "datasetVersion": "dependency-impact-batch-variants@0.1.0",
+  "sourceScenarioId": "dependency-impact-r8-3-vehicle-trailer-release",
+  "targetPublicPath": "fixtures/dependency-impact/r8-5-batch-variants.json",
+  "generatedAt": "2026-07-30T23:59:00+08:00",
+  "strategy": "Generate small synthetic scenario variants by mutating receipt state, platform pressure, and LOD policy while preserving public ids and deterministic gate math.",
+  "summary": {
+    "variantCount": 4,
+    "readyVariants": 1,
+    "reviewVariants": 2,
+    "blockedVariants": 1,
+    "maxExpectedRiskScore": 6,
+    "nextAction": "Promote one Review variant and one Blocked variant into replay fixtures before adding any more visual examples."
+  },
+  "variants": [
+    {
+      "variantId": "variant-trailer-lod-tight-threshold",
+      "label": "LOD fallback threshold tightened",
+      "gate": "Review",
+      "mutationKind": "lod_threshold",
+      "expectedAffectedAssets": 6,
+      "expectedImpactPaths": 4,
+      "expectedHeldPublishes": 3,
+      "expectedPendingReceipts": 3,
+      "expectedMaxRiskScore": 5,
+      "seedReceipts": ["impact-receipt-trailer-lod"],
+      "derivedScenarioPatch": [
+        "raise LOD2 fallback severity from review note to publish pressure",
+        "keep collision and texture receipts pending",
+        "expect package readiness to inherit Vehicle TA review"
+      ]
+    },
+    {
+      "variantId": "variant-trailer-collision-accepted-texture-pending",
+      "label": "Collision accepted, texture still pending",
+      "gate": "Review",
+      "mutationKind": "receipt_mix",
+      "expectedAffectedAssets": 6,
+      "expectedImpactPaths": 4,
+      "expectedHeldPublishes": 2,
+      "expectedPendingReceipts": 2,
+      "expectedMaxRiskScore": 5,
+      "seedReceipts": ["impact-receipt-trailer-collision", "impact-receipt-trailer-texture"],
+      "derivedScenarioPatch": [
+        "mark collision receipt accepted",
+        "keep ASTC normal map receipt pending",
+        "verify Switch import remains held by texture dependency"
+      ]
+    },
+    {
+      "variantId": "variant-trailer-texture-platform-regression",
+      "label": "Texture preset regression blocks Switch import",
+      "gate": "Blocked",
+      "mutationKind": "texture_platform",
+      "expectedAffectedAssets": 7,
+      "expectedImpactPaths": 5,
+      "expectedHeldPublishes": 4,
+      "expectedPendingReceipts": 3,
+      "expectedMaxRiskScore": 6,
+      "seedReceipts": ["impact-receipt-trailer-texture"],
+      "derivedScenarioPatch": [
+        "introduce ASTC preset mismatch",
+        "add platform import validation rule",
+        "expect adapter replay to stop before package handoff"
+      ]
+    },
+    {
+      "variantId": "variant-trailer-release-ready-after-closure",
+      "label": "All receipts closed release rehearsal",
+      "gate": "Ready",
+      "mutationKind": "release_ready",
+      "expectedAffectedAssets": 6,
+      "expectedImpactPaths": 4,
+      "expectedHeldPublishes": 0,
+      "expectedPendingReceipts": 0,
+      "expectedMaxRiskScore": 4,
+      "seedReceipts": [
+        "impact-receipt-trailer-lod",
+        "impact-receipt-trailer-collision",
+        "impact-receipt-trailer-texture"
+      ],
+      "derivedScenarioPatch": [
+        "close all owner receipts",
+        "preserve rerun_check targets for deterministic validator execution",
+        "expect platform handoff to become ready only after replay evidence"
+      ]
+    }
+  ],
+  "selectionRules": [
+    "Keep at least one variant where partial receipt closure still leaves the platform gate in Review.",
+    "Keep at least one variant where platform import is Blocked before any publish packet is generated.",
+    "Prefer variants that change downstream publish targets, not only asset labels or counts.",
+    "Every generated variant must preserve synthetic public ids and relative artifact paths."
+  ],
+  "rejectionRules": [
+    "Reject variants that make all publish targets Ready without adapter replay evidence.",
+    "Reject variants whose only change is AI narrative text.",
+    "Reject variants that remove owner receipts or hide residual risk."
+  ]
+}
