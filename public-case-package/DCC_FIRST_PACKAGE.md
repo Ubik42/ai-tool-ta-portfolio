@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R38 Cross-DCC / Engine / Animation / Character / Spatial Socket / Platform Variant Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R39 Cross-DCC / Engine / Animation / Character / Spatial Socket / Platform Variant Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r38` |
-| Version | `dcc-first-package@1.35.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r39` |
+| Version | `dcc-first-package@1.36.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 23 |
+| DCC artifacts | 24 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 35 / 35 present |
+| Presenter pack evidence files | 36 / 36 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 27 |
+| Presenter demo route steps | 28 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -118,6 +118,11 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Platform variant executor expansion receipts | 5 receipts across LOD / Nanite / collision |
 | Platform variant executor expansion states | no-op/approval-ready/readiness-only/blocked = 2 / 1 / 2 / 0 |
 | Platform variant executor expansion approvals / rollback receipts | 3 / 3 |
+| Platform variant StaticMesh post-check | `Review` L3 |
+| Platform variant StaticMesh post-check receipts / targets | 5 / 2 |
+| Platform variant StaticMesh post-check no-op matched / owner held | 2 / 3 |
+| Platform variant StaticMesh post-check checks pass/warn/error | 32 / 3 / 0 |
+| Platform variant StaticMesh post-check writes | assetWrites=0 / productionWrites=0 |
 | Blocked modules | 0 |
 | Host | Maya 2024 / AuroraView |
 
@@ -159,19 +164,20 @@ Then follow the Presenter Pack route:
 20. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
 21. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
 22. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_executor_expansion.py`.
-23. Review the Blender Rule Adapter artifact.
-24. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
-25. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
-26. Audit GUI media after final Maya screenshots and recording are captured.
-27. Export and hand off the Presenter Pack.
+23. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_staticmesh_postcheck.py`.
+24. Review the Blender Rule Adapter artifact.
+25. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
+26. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+27. Audit GUI media after final Maya screenshots and recording are captured.
+28. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 27-step demo route, 7-step business route, public package manifest, 35 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 28-step demo route, 7-step business route, public package manifest, 36 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -420,6 +426,14 @@ This is the R33 controlled execution layer above the public Texture2D payload fi
 
 This is the R34 execution-planning layer above the controlled executor. It reads R30 generation operations and the R33 rolled-back Unreal write proof, then turns LOD, Nanite and collision work into reviewable approval / rollback receipts. The artifact reports `L3-derived`, gate `Review`, 5 receipts across LOD / Nanite / collision, 2 no-op verified rows, 1 approval-ready Nanite row, 2 LOD readiness-only rows, 0 blocked rows, 3 required owner approvals, 3 rollback receipts and 0 production writes. This is the portfolio proof that heavier platform changes are not hidden behind a generic execute button: they expose deterministic params, writeSet, owner and rollback boundaries first.
 
+## Platform Variant StaticMesh Post-check
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json
+```
+
+This is the R39 read-only post-check layer above the executor expansion receipts. It reads the 5 R34 LOD / Nanite / collision receipts, enters Unreal 5.3.2, collects the actual target StaticMesh LOD, Nanite and collision facts, and verifies which receipts are already runtime-matched versus still owner-held. The artifact reports L3, gate `Review`, 5 receipts, 2 runtime targets, 2 target assets present, 2 / 2 no-op receipts matched, 1 approval-ready Nanite receipt, 2 readiness-only LOD receipts, 3 owner actions, 32 pass checks, 3 warnings, 0 errors, assetWrites=0 and productionWrites=0.
+
 ## Blender Rule Adapter
 
 ```text
@@ -455,10 +469,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
-The Presenter Pack is the R38 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 35 / 35 evidence files present, 0 missing required files, 27 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R39 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 36 / 36 evidence files present, 0 missing required files, 28 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -698,4 +712,4 @@ Maya 2024 `mayapy` smoke:
 
 ## Legacy Package
 
-The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R38 Maya Cross-DCC / Engine / Animation / Character Drilldown / Unreal Control Rig / Spatial Socket / Platform Variant Reviewer Pack.
+The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R39 Maya Cross-DCC / Engine / Animation / Character Drilldown / Unreal Control Rig / Spatial Socket / Platform Variant Reviewer Pack.

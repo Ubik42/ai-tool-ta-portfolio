@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r39-platform-variant-staticmesh-postcheck` | `python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py` | Unreal 5.3.2 Python validates 5 R34 StaticMesh LOD / Nanite / collision receipts against read-only runtime facts: 2 target assets present, 2 / 2 no-op receipts matched, 3 owner-held rows, 32 pass, 3 warning, 0 error and assetWrites=0. |
+| `validate-r39-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r39-platform-variant-staticmesh-postcheck-presentation-pack")` | DCC Presenter Pack probes 36 key evidence files including Platform Variant StaticMesh Post-check, reports 36 present / 0 missing required files, and exports 28 demo route steps. |
 | `validate-r38-unreal-socket-import-checker` | `python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python collects SkeletalMesh/Skeleton socket API readiness and expected socket coverage from Spatial Authoring drilldown facts, reporting L3 / Blocked with 9 pass, 2 warnings, 9 errors and assetWrites=0. |
 | `validate-r38-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r38-unreal-socket-import-checker-presentation-pack")` | DCC Presenter Pack probes 35 key evidence files including Unreal Socket Import Checker, reports 35 present / 0 missing required files, and exports 27 demo route steps. |
 | `validate-r37-unreal-control-rig-bridge` | `python dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python collects Control Rig API, SkeletalMesh/Skeleton binding and expected Control Rig asset coverage from Character Calibration drilldown facts, reporting L3 / Blocked with 8 pass, 1 warning, 7 errors and assetWrites=0. |
@@ -187,7 +189,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 ## Commands

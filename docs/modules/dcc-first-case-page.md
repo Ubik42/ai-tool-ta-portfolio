@@ -39,7 +39,7 @@ Maya API：
 
 React 入口：
 
-- `Task Orchestrator` 证据视图顶部的 `R38 Cross-DCC / Engine Reviewer Pack`
+- `Task Orchestrator` 证据视图顶部的 `R39 Cross-DCC / Engine Reviewer Pack`
 - `Export Case Page` 按钮
 - `Presenter Pack` 按钮
 - `Preset Facts` 按钮
@@ -141,7 +141,7 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 Unreal Control Rig Bridge：
@@ -295,3 +295,8 @@ Handoff decision packet：
 ## 下一轮
 
 下一轮优先做 Control Rig asset authoring / runtime hierarchy，或把 Platform Variant receipts 转成更细的 StaticMesh LOD/Nanite runtime post-check。Maya GUI 截图/录屏保留到最后集中采集。
+
+
+## R39 Platform Variant StaticMesh Post-check
+
+当前 Presenter Pack 已接入 `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json`，demo route 增至 28 步，evidence probe 增至 36 个。

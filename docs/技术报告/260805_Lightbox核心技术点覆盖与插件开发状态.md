@@ -10,7 +10,7 @@
 
 R38 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json`
 - Unreal Control Rig Bridge：`<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json`
 - Unreal Socket Import Checker：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json`
 - Spatial Authoring Drilldown：`<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json`
@@ -28,7 +28,7 @@ R38 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json`
-- Presenter Pack 结果：35 / 35 evidence files present，0 missing required files，27 demo route steps。
+- Presenter Pack 结果：36 / 36 evidence files present，0 missing required files，28 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断或 runtime drift，不是 runtime 缺失。
 
 ## 2. Lightbox核心技术点覆盖
@@ -126,7 +126,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r38-unreal-socket-import-checker-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r39-platform-variant-staticmesh-postcheck-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -138,3 +138,9 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 ## 6. 下一步建议
 
 下一轮不要再围绕 Blender/Max readiness 或 Unreal missing fixture 打转，它们已进入真实 runtime 证据。`Character Calibration Studio` 已有 Maya L3、R35 drilldown 和 R37 Unreal Control Rig Bridge；`Spatial Authoring Workbench` 已有 Maya L3 和 R36 drilldown；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor 和 executor receipts；后续优先把 R37/R38 加深到 public Control Rig / socket asset authoring 的 write+rollback fixture，或把 R34 receipts 转成更细的 StaticMesh LOD/Nanite public runtime post-check。
+
+
+## R39 补充
+
+- Platform Variant StaticMesh Post-check：`<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json`
+- 结果：L3 / `Review` / `unreal_staticmesh_postcheck_collected`，5 receipts，2 runtime targets，2 no-op matched，3 owner-held，32 pass / 3 warning / 0 error，assetWrites=0，productionWrites=0。

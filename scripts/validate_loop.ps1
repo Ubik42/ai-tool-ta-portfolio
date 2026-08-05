@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -100,6 +100,7 @@ $QuickPythonFiles = @(
     (Join-Path $PlatformVariant "platform_variant_forge\texture_runtime.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\controlled_executor.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\executor_expansion.py"),
+    (Join-Path $PlatformVariant "platform_variant_forge\staticmesh_postcheck.py"),
     (Join-Path $PlatformVariant "scripts\run_smoke.py"),
     (Join-Path $PlatformVariant "scripts\run_unreal_runtime_probe.py"),
     (Join-Path $PlatformVariant "scripts\run_generation_plan.py"),
@@ -107,9 +108,11 @@ $QuickPythonFiles = @(
     (Join-Path $PlatformVariant "scripts\run_texture_payload_probe.py"),
     (Join-Path $PlatformVariant "scripts\run_controlled_executor.py"),
     (Join-Path $PlatformVariant "scripts\run_executor_expansion.py"),
+    (Join-Path $PlatformVariant "scripts\run_staticmesh_postcheck.py"),
     (Join-Path $PlatformVariant "scripts\unreal_python\probe_variant_runtime.py"),
     (Join-Path $PlatformVariant "scripts\unreal_python\collect_texture_runtime.py"),
-    (Join-Path $PlatformVariant "scripts\unreal_python\execute_controlled_variant.py")
+    (Join-Path $PlatformVariant "scripts\unreal_python\execute_controlled_variant.py"),
+    (Join-Path $PlatformVariant "scripts\unreal_python\collect_staticmesh_postcheck.py")
 )
 
 $CoreJsonFiles = @(
@@ -134,11 +137,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r38-unreal-socket-import-checker-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r39-platform-variant-staticmesh-postcheck-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 35, summary
+assert summary["present_evidence_files"] == 36, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 27, summary
+assert summary["demo_route_steps"] == 28, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -255,6 +258,12 @@ if ($Tier -in @("platform-variant-executor", "full")) {
 if ($Tier -in @("platform-variant-executor-expansion", "full")) {
     Invoke-Step "platform variant executor expansion" {
         python (Join-Path $PlatformVariant "scripts\run_executor_expansion.py")
+    }
+}
+
+if ($Tier -in @("platform-variant-staticmesh-postcheck", "full")) {
+    Invoke-Step "platform variant StaticMesh post-check" {
+        python (Join-Path $PlatformVariant "scripts\run_staticmesh_postcheck.py")
     }
 }
 

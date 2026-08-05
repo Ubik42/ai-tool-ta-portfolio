@@ -1,0 +1,1301 @@
+{
+  "reportVersion": "platform-variant-staticmesh-postcheck@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 21:55:08",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_staticmesh_postcheck_collected",
+  "sourceExecutorExpansion": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
+    "reportVersion": "platform-variant-executor-expansion@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "executor_receipts_linked_to_rolled_back_unreal_write",
+    "gate": "Review"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only /Game/AI_Tool_TA public fixture facts"
+  },
+  "runtimeFacts": {
+    "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M": {
+      "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "lodCount": 1,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "simpleShapeCount": 1,
+      "complexAsSimple": false,
+      "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+      "naniteEnabled": false,
+      "raw": {
+        "lod": {
+          "lodCount": 1,
+          "lodScreenSizes": [],
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "collision": {
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "complexAsSimple": false
+        }
+      }
+    },
+    "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A": {
+      "assetPath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "lodCount": 1,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "simpleShapeCount": 1,
+      "complexAsSimple": false,
+      "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+      "naniteEnabled": false,
+      "raw": {
+        "lod": {
+          "lodCount": 1,
+          "lodScreenSizes": [],
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "collision": {
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "complexAsSimple": false
+        }
+      }
+    }
+  },
+  "apiAvailability": {
+    "EditorAssetLibrary": true,
+    "EditorStaticMeshLibrary": true,
+    "StaticMesh": true,
+    "StaticMeshEditorSubsystem": false
+  },
+  "postcheck": {
+    "schema": "platform-variant-staticmesh-postcheck@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "receiptCount": 5,
+      "runtimeTargets": 2,
+      "targetAssetsPresent": 2,
+      "noOpVerified": 2,
+      "runtimeNoOpMatched": 2,
+      "approvalReady": 1,
+      "readinessOnly": 2,
+      "executorReady": 0,
+      "runtimeSatisfied": 2,
+      "runtimeHeld": 3,
+      "runtimeDrift": 0,
+      "blockedReceipts": 0,
+      "ownerActions": 3,
+      "pass": 32,
+      "warning": 3,
+      "error": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "receipts": [
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "platform": "mobile",
+        "category": "nanite",
+        "action": "disable-nanite",
+        "receiptStatus": "NoOpVerified",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "runtimeFact": {
+          "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+          "exists": true,
+          "className": "StaticMesh",
+          "pathMatched": true,
+          "lodCount": 1,
+          "vertexCount": 0,
+          "triangleCount": 0,
+          "materialSlotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "simpleShapeCount": 1,
+          "complexAsSimple": false,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "naniteEnabled": false,
+          "raw": {
+            "lod": {
+              "lodCount": 1,
+              "lodScreenSizes": [],
+              "sourceModelCount": null,
+              "lod0VertexCount": 0,
+              "lod0TriangleCount": 0
+            },
+            "material": {
+              "slotCount": 1,
+              "materialPaths": [
+                "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+              ],
+              "rows": [
+                {
+                  "index": 0,
+                  "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+                }
+              ]
+            },
+            "collision": {
+              "simpleShapeCount": 1,
+              "shapeCounts": {
+                "box_elems": 0,
+                "sphere_elems": 0,
+                "sphyl_elems": 0,
+                "convex_elems": 1,
+                "tapered_capsule_elems": 0
+              },
+              "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+              "complexAsSimple": false
+            }
+          }
+        },
+        "semanticState": "RuntimeMatched",
+        "semanticReason": "No-op receipt matches runtime state.",
+        "checks": [
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-target-present",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "runtime-target-present",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-target-staticmesh",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "runtime-target-staticmesh",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-path-scope",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "runtime-path-scope",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-geometry-readable",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "runtime-geometry-readable",
+            "status": "pass",
+            "evidence": "lodCount=1 triangles=0 verts=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-nanite-policy",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "runtime-nanite-policy",
+            "status": "pass",
+            "evidence": "actual=False expected=False",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:rollback-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "rollback-boundary",
+            "status": "pass",
+            "evidence": "receiptStatus=NoOpVerified writeSet=[] rollbackRequired=False productionWrites=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:approval-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "nanite",
+            "ruleId": "approval-boundary",
+            "status": "pass",
+            "evidence": "approvalRequired=False owner=None publicDecision=no-op-verified",
+            "fixPreview": "None"
+          }
+        ]
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "platform": "mobile",
+        "category": "lod",
+        "action": "generate-lod2",
+        "receiptStatus": "ReadinessOnly",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "runtimeFact": {
+          "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+          "exists": true,
+          "className": "StaticMesh",
+          "pathMatched": true,
+          "lodCount": 1,
+          "vertexCount": 0,
+          "triangleCount": 0,
+          "materialSlotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "simpleShapeCount": 1,
+          "complexAsSimple": false,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "naniteEnabled": false,
+          "raw": {
+            "lod": {
+              "lodCount": 1,
+              "lodScreenSizes": [],
+              "sourceModelCount": null,
+              "lod0VertexCount": 0,
+              "lod0TriangleCount": 0
+            },
+            "material": {
+              "slotCount": 1,
+              "materialPaths": [
+                "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+              ],
+              "rows": [
+                {
+                  "index": 0,
+                  "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+                }
+              ]
+            },
+            "collision": {
+              "simpleShapeCount": 1,
+              "shapeCounts": {
+                "box_elems": 0,
+                "sphere_elems": 0,
+                "sphyl_elems": 0,
+                "convex_elems": 1,
+                "tapered_capsule_elems": 0
+              },
+              "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+              "complexAsSimple": false
+            }
+          }
+        },
+        "semanticState": "ReadinessHeld",
+        "semanticReason": "Geometry is readable; execution waits for approval and visual review.",
+        "checks": [
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-target-present",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "runtime-target-present",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-target-staticmesh",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "runtime-target-staticmesh",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-path-scope",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "runtime-path-scope",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-geometry-readable",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "runtime-geometry-readable",
+            "status": "pass",
+            "evidence": "lodCount=1 triangles=0 verts=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-lod-coverage",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "runtime-lod-coverage",
+            "status": "warning",
+            "evidence": "actualLodCount=1 expectedLods=['LOD0', 'LOD1', 'LOD2'] missing=['LOD1', 'LOD2']",
+            "fixPreview": "Generate the missing runtime LODs from receipt reduction settings after owner approval."
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:rollback-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "rollback-boundary",
+            "status": "pass",
+            "evidence": "receiptStatus=ReadinessOnly writeSet=['/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M'] rollbackRequired=True productionWrites=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:approval-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "lod",
+            "ruleId": "approval-boundary",
+            "status": "pass",
+            "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+            "fixPreview": "None"
+          }
+        ]
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "platform": "mobile",
+        "category": "collision",
+        "action": "simplify-collision",
+        "receiptStatus": "NoOpVerified",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "runtimeFact": {
+          "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+          "exists": true,
+          "className": "StaticMesh",
+          "pathMatched": true,
+          "lodCount": 1,
+          "vertexCount": 0,
+          "triangleCount": 0,
+          "materialSlotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "simpleShapeCount": 1,
+          "complexAsSimple": false,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "naniteEnabled": false,
+          "raw": {
+            "lod": {
+              "lodCount": 1,
+              "lodScreenSizes": [],
+              "sourceModelCount": null,
+              "lod0VertexCount": 0,
+              "lod0TriangleCount": 0
+            },
+            "material": {
+              "slotCount": 1,
+              "materialPaths": [
+                "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+              ],
+              "rows": [
+                {
+                  "index": 0,
+                  "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+                }
+              ]
+            },
+            "collision": {
+              "simpleShapeCount": 1,
+              "shapeCounts": {
+                "box_elems": 0,
+                "sphere_elems": 0,
+                "sphyl_elems": 0,
+                "convex_elems": 1,
+                "tapered_capsule_elems": 0
+              },
+              "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+              "complexAsSimple": false
+            }
+          }
+        },
+        "semanticState": "RuntimeMatched",
+        "semanticReason": "No-op receipt matches runtime state.",
+        "checks": [
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-target-present",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "runtime-target-present",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-target-staticmesh",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "runtime-target-staticmesh",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-path-scope",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "runtime-path-scope",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-geometry-readable",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "runtime-geometry-readable",
+            "status": "pass",
+            "evidence": "lodCount=1 triangles=0 verts=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-collision-policy",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "runtime-collision-policy",
+            "status": "pass",
+            "evidence": "simpleShapes=1 expected<=3 complexAsSimple=False",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:rollback-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "rollback-boundary",
+            "status": "pass",
+            "evidence": "receiptStatus=NoOpVerified writeSet=[] rollbackRequired=False productionWrites=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:approval-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+            "assetId": "variant-hero-panel-001",
+            "platform": "mobile",
+            "category": "collision",
+            "ruleId": "approval-boundary",
+            "status": "pass",
+            "evidence": "approvalRequired=False owner=None publicDecision=no-op-verified",
+            "fixPreview": "None"
+          }
+        ]
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "platform": "pc",
+        "category": "nanite",
+        "action": "apply-runtime-nanite-policy",
+        "receiptStatus": "ApprovalReady",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "runtimeFact": {
+          "assetPath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+          "exists": true,
+          "className": "StaticMesh",
+          "pathMatched": true,
+          "lodCount": 1,
+          "vertexCount": 0,
+          "triangleCount": 0,
+          "materialSlotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "simpleShapeCount": 1,
+          "complexAsSimple": false,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "naniteEnabled": false,
+          "raw": {
+            "lod": {
+              "lodCount": 1,
+              "lodScreenSizes": [],
+              "sourceModelCount": null,
+              "lod0VertexCount": 0,
+              "lod0TriangleCount": 0
+            },
+            "material": {
+              "slotCount": 1,
+              "materialPaths": [
+                "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+              ],
+              "rows": [
+                {
+                  "index": 0,
+                  "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+                }
+              ]
+            },
+            "collision": {
+              "simpleShapeCount": 1,
+              "shapeCounts": {
+                "box_elems": 0,
+                "sphere_elems": 0,
+                "sphyl_elems": 0,
+                "convex_elems": 1,
+                "tapered_capsule_elems": 0
+              },
+              "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+              "complexAsSimple": false
+            }
+          }
+        },
+        "semanticState": "OwnerHeld",
+        "semanticReason": "Runtime change is deterministic but still owner-held.",
+        "checks": [
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-target-present",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "runtime-target-present",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-target-staticmesh",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "runtime-target-staticmesh",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-path-scope",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "runtime-path-scope",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A pathMatched=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-geometry-readable",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "runtime-geometry-readable",
+            "status": "pass",
+            "evidence": "lodCount=1 triangles=0 verts=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-nanite-policy",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "runtime-nanite-policy",
+            "status": "warning",
+            "evidence": "actual=False expected=True",
+            "fixPreview": "Apply or disable Nanite according to platform policy after approval."
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:rollback-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "rollback-boundary",
+            "status": "pass",
+            "evidence": "receiptStatus=ApprovalReady writeSet=['/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A'] rollbackRequired=True productionWrites=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:approval-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "nanite",
+            "ruleId": "approval-boundary",
+            "status": "pass",
+            "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+            "fixPreview": "None"
+          }
+        ]
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "assetLabel": "Hero Panel Platform Variant",
+        "platform": "pc",
+        "category": "lod",
+        "action": "generate-missing-runtime-lods",
+        "receiptStatus": "ReadinessOnly",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "runtimeFact": {
+          "assetPath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+          "exists": true,
+          "className": "StaticMesh",
+          "pathMatched": true,
+          "lodCount": 1,
+          "vertexCount": 0,
+          "triangleCount": 0,
+          "materialSlotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "simpleShapeCount": 1,
+          "complexAsSimple": false,
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "naniteEnabled": false,
+          "raw": {
+            "lod": {
+              "lodCount": 1,
+              "lodScreenSizes": [],
+              "sourceModelCount": null,
+              "lod0VertexCount": 0,
+              "lod0TriangleCount": 0
+            },
+            "material": {
+              "slotCount": 1,
+              "materialPaths": [
+                "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+              ],
+              "rows": [
+                {
+                  "index": 0,
+                  "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+                }
+              ]
+            },
+            "collision": {
+              "simpleShapeCount": 1,
+              "shapeCounts": {
+                "box_elems": 0,
+                "sphere_elems": 0,
+                "sphyl_elems": 0,
+                "convex_elems": 1,
+                "tapered_capsule_elems": 0
+              },
+              "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+              "complexAsSimple": false
+            }
+          }
+        },
+        "semanticState": "ReadinessHeld",
+        "semanticReason": "Geometry is readable; execution waits for approval and visual review.",
+        "checks": [
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-target-present",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "runtime-target-present",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-target-staticmesh",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "runtime-target-staticmesh",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A class=StaticMesh",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-path-scope",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "runtime-path-scope",
+            "status": "pass",
+            "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A pathMatched=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-geometry-readable",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "runtime-geometry-readable",
+            "status": "pass",
+            "evidence": "lodCount=1 triangles=0 verts=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-lod-coverage",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "runtime-lod-coverage",
+            "status": "warning",
+            "evidence": "actualLodCount=1 expectedLods=['LOD0', 'LOD1'] missing=['LOD1']",
+            "fixPreview": "Generate the missing runtime LODs from receipt reduction settings after owner approval."
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:rollback-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "rollback-boundary",
+            "status": "pass",
+            "evidence": "receiptStatus=ReadinessOnly writeSet=['/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A'] rollbackRequired=True productionWrites=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:approval-boundary",
+            "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+            "assetId": "variant-hero-panel-001",
+            "platform": "pc",
+            "category": "lod",
+            "ruleId": "approval-boundary",
+            "status": "pass",
+            "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+            "fixPreview": "None"
+          }
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-target-present",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "runtime-target-present",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-target-staticmesh",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "runtime-target-staticmesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-path-scope",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "runtime-path-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-geometry-readable",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "runtime-geometry-readable",
+        "status": "pass",
+        "evidence": "lodCount=1 triangles=0 verts=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:runtime-nanite-policy",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "runtime-nanite-policy",
+        "status": "pass",
+        "evidence": "actual=False expected=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:rollback-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "rollback-boundary",
+        "status": "pass",
+        "evidence": "receiptStatus=NoOpVerified writeSet=[] rollbackRequired=False productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite:approval-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "nanite",
+        "ruleId": "approval-boundary",
+        "status": "pass",
+        "evidence": "approvalRequired=False owner=None publicDecision=no-op-verified",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-target-present",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "runtime-target-present",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-target-staticmesh",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "runtime-target-staticmesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-path-scope",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "runtime-path-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-geometry-readable",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "runtime-geometry-readable",
+        "status": "pass",
+        "evidence": "lodCount=1 triangles=0 verts=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:runtime-lod-coverage",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "runtime-lod-coverage",
+        "status": "warning",
+        "evidence": "actualLodCount=1 expectedLods=['LOD0', 'LOD1', 'LOD2'] missing=['LOD1', 'LOD2']",
+        "fixPreview": "Generate the missing runtime LODs from receipt reduction settings after owner approval."
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:rollback-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "rollback-boundary",
+        "status": "pass",
+        "evidence": "receiptStatus=ReadinessOnly writeSet=['/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M'] rollbackRequired=True productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2:approval-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "ruleId": "approval-boundary",
+        "status": "pass",
+        "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-target-present",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "runtime-target-present",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-target-staticmesh",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "runtime-target-staticmesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-path-scope",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "runtime-path-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M pathMatched=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-geometry-readable",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "runtime-geometry-readable",
+        "status": "pass",
+        "evidence": "lodCount=1 triangles=0 verts=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:runtime-collision-policy",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "runtime-collision-policy",
+        "status": "pass",
+        "evidence": "simpleShapes=1 expected<=3 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:rollback-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "rollback-boundary",
+        "status": "pass",
+        "evidence": "receiptStatus=NoOpVerified writeSet=[] rollbackRequired=False productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision:approval-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "collision",
+        "ruleId": "approval-boundary",
+        "status": "pass",
+        "evidence": "approvalRequired=False owner=None publicDecision=no-op-verified",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-target-present",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "runtime-target-present",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-target-staticmesh",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "runtime-target-staticmesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-path-scope",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "runtime-path-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A pathMatched=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-geometry-readable",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "runtime-geometry-readable",
+        "status": "pass",
+        "evidence": "lodCount=1 triangles=0 verts=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:runtime-nanite-policy",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "runtime-nanite-policy",
+        "status": "warning",
+        "evidence": "actual=False expected=True",
+        "fixPreview": "Apply or disable Nanite according to platform policy after approval."
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:rollback-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "rollback-boundary",
+        "status": "pass",
+        "evidence": "receiptStatus=ApprovalReady writeSet=['/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A'] rollbackRequired=True productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy:approval-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "ruleId": "approval-boundary",
+        "status": "pass",
+        "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-target-present",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "runtime-target-present",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-target-staticmesh",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "runtime-target-staticmesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A class=StaticMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-path-scope",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "runtime-path-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A pathMatched=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-geometry-readable",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "runtime-geometry-readable",
+        "status": "pass",
+        "evidence": "lodCount=1 triangles=0 verts=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:runtime-lod-coverage",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "runtime-lod-coverage",
+        "status": "warning",
+        "evidence": "actualLodCount=1 expectedLods=['LOD0', 'LOD1'] missing=['LOD1']",
+        "fixPreview": "Generate the missing runtime LODs from receipt reduction settings after owner approval."
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:rollback-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "rollback-boundary",
+        "status": "pass",
+        "evidence": "receiptStatus=ReadinessOnly writeSet=['/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A'] rollbackRequired=True productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods:approval-boundary",
+        "receiptId": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "ruleId": "approval-boundary",
+        "status": "pass",
+        "evidence": "approvalRequired=True owner=art-lead publicDecision=preview-only",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "staticmesh-postcheck-action:executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "category": "lod",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "state": "ReadinessHeld",
+        "preview": "Geometry is readable; execution waits for approval and visual review."
+      },
+      {
+        "id": "staticmesh-postcheck-action:executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "nanite",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "state": "OwnerHeld",
+        "preview": "Runtime change is deterministic but still owner-held."
+      },
+      {
+        "id": "staticmesh-postcheck-action:executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "category": "lod",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "state": "ReadinessHeld",
+        "preview": "Geometry is readable; execution waits for approval and visual review."
+      }
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-staticmesh-postcheck",
+    "name": "Platform Variant StaticMesh Post-check",
+    "methodSource": "R34 executor receipt semantics + Unreal StaticMesh runtime facts",
+    "protocolCarrier": "approval receipt, rollback receipt, read-only Unreal Python facts",
+    "boundary": {
+      "mutation": "read_only_runtime_postcheck",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture facts only"
+    }
+  },
+  "reviewerClaims": [
+    "R39 checks R34 LOD, Nanite and collision executor receipts against actual Unreal StaticMesh runtime facts.",
+    "No-op receipts must match runtime state; owner-held receipts remain visible as approval/readiness work instead of being marked done.",
+    "The probe is read-only: assetWrites, engineWrites and productionWrites stay at zero.",
+    "This proves the business loop from runtime drift to executable receipt to post-checkable state."
+  ]
+}

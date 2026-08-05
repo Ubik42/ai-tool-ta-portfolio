@@ -33,7 +33,7 @@ R38 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose 
 
 ```text
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 当前结果：
@@ -55,3 +55,8 @@ Blocked 是业务门禁，不是 runtime 缺失：`Rifle Socket Authoring Approv
 ## 后续
 
 下一步不要只做更多只读检查。更高价值的是做 public Unreal socket creation controlled executor：在 `/Game/AI_Tool_TA` public fixture 中创建 socket、post-check、输出 writeSet / owner approval / rollback receipt，并证明 persistent mutation 边界。
+
+
+## R39 Presenter Pack
+
+当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json`；Unreal Socket Import Checker 仍是空间作者线的 R38 L3 证据。

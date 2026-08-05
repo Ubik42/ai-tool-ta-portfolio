@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r38-unreal-socket-import-checker-presentation-pack",
+        label: str = "r39-platform-variant-staticmesh-postcheck-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4128,6 +4128,12 @@ class MayaPortfolioApi:
                 "Platform Variant Executor Expansion Receipts artifact",
                 "artifact",
                 manifest.get("platformVariantExecutorExpansionArtifact"),
+            ),
+            _probe_file(
+                "platform-variant-staticmesh-postcheck",
+                "Platform Variant StaticMesh Post-check artifact",
+                "artifact",
+                manifest.get("platformVariantStaticMeshPostcheckArtifact"),
             ),
         ]
 
@@ -4275,31 +4281,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "LOD, Nanite and collision operations become approval receipts with deterministic params, writeSet and rollback boundaries.",
             },
             {
-                "id": "23-review-blender-adapter",
+                "id": "23-run-platform-variant-staticmesh-postcheck",
+                "label": "Run platform variant StaticMesh post-check",
+                "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py.",
+                "evidence_expected": "R34 LOD, Nanite and collision receipts are checked against read-only Unreal StaticMesh runtime facts.",
+            },
+            {
+                "id": "24-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "24-run-blender-l3-harness",
+                "id": "25-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "25-run-3dsmax-adapter-harness",
+                "id": "26-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "26-audit-gui-media",
+                "id": "27-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "27-handoff-presenter-pack",
+                "id": "28-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4557,6 +4569,24 @@ class MayaPortfolioApi:
                 "platform_variant_executor_expansion_owner_approvals": manifest_summary.get("platformVariantExecutorExpansionOwnerApprovalsRequired"),
                 "platform_variant_executor_expansion_rollback_receipts": manifest_summary.get("platformVariantExecutorExpansionRollbackReceiptsRequired"),
                 "platform_variant_executor_expansion_production_writes": manifest_summary.get("platformVariantExecutorExpansionProductionWrites"),
+                "platform_variant_staticmesh_postcheck_gate": manifest_summary.get("platformVariantStaticMeshPostcheckGate"),
+                "platform_variant_staticmesh_postcheck_evidence_level": manifest_summary.get("platformVariantStaticMeshPostcheckEvidenceLevel"),
+                "platform_variant_staticmesh_postcheck_l3_status": manifest_summary.get("platformVariantStaticMeshPostcheckL3Status"),
+                "platform_variant_staticmesh_postcheck_engine_version": manifest_summary.get("platformVariantStaticMeshPostcheckEngineVersion"),
+                "platform_variant_staticmesh_postcheck_receipts": manifest_summary.get("platformVariantStaticMeshPostcheckReceipts"),
+                "platform_variant_staticmesh_postcheck_targets": manifest_summary.get("platformVariantStaticMeshPostcheckTargets"),
+                "platform_variant_staticmesh_postcheck_target_assets_present": manifest_summary.get("platformVariantStaticMeshPostcheckTargetAssetsPresent"),
+                "platform_variant_staticmesh_postcheck_no_op": manifest_summary.get("platformVariantStaticMeshPostcheckNoOpVerified"),
+                "platform_variant_staticmesh_postcheck_runtime_no_op_matched": manifest_summary.get("platformVariantStaticMeshPostcheckRuntimeNoOpMatched"),
+                "platform_variant_staticmesh_postcheck_approval_ready": manifest_summary.get("platformVariantStaticMeshPostcheckApprovalReady"),
+                "platform_variant_staticmesh_postcheck_readiness_only": manifest_summary.get("platformVariantStaticMeshPostcheckReadinessOnly"),
+                "platform_variant_staticmesh_postcheck_runtime_held": manifest_summary.get("platformVariantStaticMeshPostcheckRuntimeHeld"),
+                "platform_variant_staticmesh_postcheck_owner_actions": manifest_summary.get("platformVariantStaticMeshPostcheckOwnerActions"),
+                "platform_variant_staticmesh_postcheck_pass_checks": manifest_summary.get("platformVariantStaticMeshPostcheckPassChecks"),
+                "platform_variant_staticmesh_postcheck_warning_checks": manifest_summary.get("platformVariantStaticMeshPostcheckWarningChecks"),
+                "platform_variant_staticmesh_postcheck_error_checks": manifest_summary.get("platformVariantStaticMeshPostcheckErrorChecks"),
+                "platform_variant_staticmesh_postcheck_asset_writes": manifest_summary.get("platformVariantStaticMeshPostcheckAssetWrites"),
+                "platform_variant_staticmesh_postcheck_production_writes": manifest_summary.get("platformVariantStaticMeshPostcheckProductionWrites"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4627,6 +4657,7 @@ class MayaPortfolioApi:
                 "Platform Variant Public Texture2D Payload Fixture imports a generated public texture, wires it to Unreal material, and proves PC/Mobile texture budgets against real Texture2D facts.",
                 "Platform Variant Controlled Executor performs an Unreal public-fixture write, verifies post-state, and rolls back to the preflight fingerprint.",
                 "Platform Variant Executor Expansion turns LOD, Nanite and collision operations into approval and rollback receipts linked to the controlled executor proof.",
+                "Platform Variant StaticMesh Post-check validates those receipts against read-only Unreal StaticMesh LOD, collision and Nanite facts.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4650,7 +4681,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r38-unreal-socket-import-checker-presentation-pack",
+        label: str = "r39-platform-variant-staticmesh-postcheck-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

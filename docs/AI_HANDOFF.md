@@ -7,9 +7,9 @@
 最终 reviewer 应看到：
 
 - Maya 2024 内通过 AuroraView 打开工具面板。
-- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、空间作者、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor 和 executor expansion receipts 等模块。
+- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、空间作者、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor 和 executor expansion receipts、StaticMesh post-check 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown 和 Unreal Control Rig Bridge L3；空间作者线已有 Spatial Authoring Maya L3 和 Spatial Authoring Drilldown；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact 和 LOD/Nanite/collision executor receipt artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown 和 Unreal Control Rig Bridge L3；空间作者线已有 Spatial Authoring Maya L3 和 Spatial Authoring Drilldown；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact 和 LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+dcc-hosts/maya-auroraview-host/artifacts/r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R38。
+稳定基线：R39。
 
 已完成：
 
@@ -50,6 +50,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presen
 - Platform Variant Public Texture2D Payload Fixture L3
 - Platform Variant Controlled Executor L3
 - Platform Variant Executor Expansion Receipts L3-derived
+- Platform Variant StaticMesh Post-check L3
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -60,7 +61,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presen
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
 - MotionBuilder、Houdini、Unreal animation fact deepening、Control Rig / socket asset authoring controlled executor、Platform Variant StaticMesh LOD/Nanite runtime post-check 等后续工具线。
 
-## 3. R38 当前断点与已完成工具线
+## 3. R39 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -91,6 +92,8 @@ dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presen
 `Platform Variant Controlled Executor` 已完成 R33 受控执行闭环：读取 R30 generation plan 和 R32 texture payload artifact，选择 HeroPanel Mobile texture downscale 的 public-safe max texture size clamp，记录 preflight fingerprint，执行 `0 -> 2048`，验证 post-state，再 rollback 到 `0` 并确认 fingerprint 回到 `2502b08c541495a4`。结果为 L3 / `Ready` / `unreal_texture_budget_executor_rolled_back`，7 pass / 0 warning / 0 error，1 executed operation，1 post-check pass，1 rollback pass，assetWrites=2，persistentMutation=false。
 
 `Platform Variant Executor Expansion Receipts` 已完成 R34 闭环：读取 R30 generation operations 和 R33 rolled-back executor proof，把 LOD / Nanite / collision 后续操作转成 approval / rollback receipts。结果为 L3-derived / `Review` / `executor_receipts_linked_to_rolled_back_unreal_write`，5 receipts，2 no-op verified，1 approval-ready，2 readiness-only，0 blocked，3 owner approvals required，3 rollback receipts，productionWrites=0。
+
+`Platform Variant StaticMesh Post-check` 已完成 R39 闭环：读取 R34 executor receipts，通过 UnrealEditor-Cmd 进入 public `.uproject`，只读采集 2 个目标 StaticMesh 的 LOD / Nanite / collision facts，并验证 5 条 receipt 的当前状态。结果为 L3 / `Review` / `unreal_staticmesh_postcheck_collected`，5 receipts，2 targets，2 target assets present，2 / 2 no-op matched，1 approval-ready，2 readiness-only，3 owner actions，32 pass，3 warning，0 error，assetWrites=0，productionWrites=0。
 
 核心文件：
 
@@ -140,6 +143,7 @@ dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py
 dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py
 dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py
 dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py
+dcc-hosts/platform-variant-forge/platform_variant_forge/staticmesh_postcheck.py
 dcc-hosts/platform-variant-forge/scripts/run_smoke.py
 dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py
 dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py
@@ -147,9 +151,11 @@ dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py
 dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py
 dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py
 dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py
+dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py
 dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py
 dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py
 dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py
+dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_staticmesh_postcheck.py
 ```
 
 已生成首个 L2 artifact：
@@ -260,10 +266,10 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-controlled-executor-
 dcc-hosts/platform-variant-forge/artifacts/platform-variant-executor-expansion-20260805-201222.json
 ```
 
-当前 R38 Presenter Pack：
+当前 R39 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+dcc-hosts/maya-auroraview-host/artifacts/r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 这条线的最终效果：
@@ -271,9 +277,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r38-unreal-socket-import-checker-presen
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown 和 R37 Unreal Control Rig Bridge；Spatial Authoring 已有 Maya L3、R36 drilldown 和 R38 Unreal Socket Import Checker；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Control Rig / socket asset authoring controlled executor、StaticMesh LOD/Nanite public runtime post-check 或更细的 Unreal curve/compression facts。
+- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown 和 R37 Unreal Control Rig Bridge；Spatial Authoring 已有 Maya L3、R36 drilldown 和 R38 Unreal Socket Import Checker；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Control Rig / socket asset authoring controlled executor 或更细的 Unreal curve/compression facts。
 
-继续开发时优先做 Control Rig / Socket Authoring Controlled Executor，或把 R34 receipts 转成更细的 StaticMesh LOD/Nanite public runtime post-check。如果只验证当前 R38，运行：
+继续开发时优先做 Control Rig / Socket Authoring Controlled Executor，或补 Unreal animation curve/compression facts。如果只验证当前 R39，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -291,9 +297,10 @@ python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py
 python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py
 python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py
 python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py
+dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py
 ```
 
-当前 R38 public package 为 `ai-tool-ta-dcc-first-showcase-r38` / `dcc-first-package@1.35.0`，Presenter Pack 35 / 35 evidence files present，0 missing required files，27 demo route steps；Character Calibration Drilldown 已到 `L3-derived` / `Blocked` / `maya_character_calibration_rows_to_drilldown`，2 character drilldowns，14 panels，8 owner actions，6 owner-required，2 manual-review；Unreal Control Rig Bridge 已到 `L3` / `Blocked` / `unreal_control_rig_bridge_facts_collected`，2 character rows，0 Ready，0 Review，2 Blocked，8 pass，1 warning，7 error，assetWrites=0；Unreal Socket Import Checker 已到 `L3` / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，assetWrites=0；Spatial Authoring Drilldown 已到 `L3-derived` / `Blocked` / `maya_spatial_authoring_rows_to_drilldown`，2 spatial drilldowns，18 panels，9 owner actions，7 owner-required，2 manual-review；Platform Variant Forge 已到 `L3-linked` / `platform_variant_plan_joined_to_unreal_facts`，Platform Variant Unreal Runtime Probe 已到 `L3` / `unreal_variant_runtime_assets_collected`，Platform Variant Generation Planner 已到 `L3-derived` / `runtime_drift_to_generation_plan`，Platform Variant Texture Runtime Collector 已到 `L3` / `unreal_material_texture_facts_collected`，Platform Variant Public Texture2D Payload Fixture 已到 `L3` / `unreal_texture_payload_fixture_collected`，Platform Variant Controlled Executor 已到 `L3` / `Ready` / `unreal_texture_budget_executor_rolled_back`，Platform Variant Executor Expansion Receipts 已到 `L3-derived` / `Review` / `executor_receipts_linked_to_rolled_back_unreal_write`。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R39 public package 为 `ai-tool-ta-dcc-first-showcase-r39` / `dcc-first-package@1.36.0`，Presenter Pack 36 / 36 evidence files present，0 missing required files，28 demo route steps；Character Calibration Drilldown 已到 `L3-derived` / `Blocked` / `maya_character_calibration_rows_to_drilldown`，2 character drilldowns，14 panels，8 owner actions，6 owner-required，2 manual-review；Unreal Control Rig Bridge 已到 `L3` / `Blocked` / `unreal_control_rig_bridge_facts_collected`，2 character rows，0 Ready，0 Review，2 Blocked，8 pass，1 warning，7 error，assetWrites=0；Unreal Socket Import Checker 已到 `L3` / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，assetWrites=0；Spatial Authoring Drilldown 已到 `L3-derived` / `Blocked` / `maya_spatial_authoring_rows_to_drilldown`，2 spatial drilldowns，18 panels，9 owner actions，7 owner-required，2 manual-review；Platform Variant Forge 已到 `L3-linked` / `platform_variant_plan_joined_to_unreal_facts`，Platform Variant Unreal Runtime Probe 已到 `L3` / `unreal_variant_runtime_assets_collected`，Platform Variant Generation Planner 已到 `L3-derived` / `runtime_drift_to_generation_plan`，Platform Variant Texture Runtime Collector 已到 `L3` / `unreal_material_texture_facts_collected`，Platform Variant Public Texture2D Payload Fixture 已到 `L3` / `unreal_texture_payload_fixture_collected`，Platform Variant Controlled Executor 已到 `L3` / `Ready` / `unreal_texture_budget_executor_rolled_back`，Platform Variant Executor Expansion Receipts 已到 `L3-derived` / `Review` / `executor_receipts_linked_to_rolled_back_unreal_write`，Platform Variant StaticMesh Post-check 已到 `L3` / `Review` / `unreal_staticmesh_postcheck_collected`。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

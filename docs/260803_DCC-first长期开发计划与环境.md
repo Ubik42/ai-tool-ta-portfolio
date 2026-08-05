@@ -1397,7 +1397,7 @@ R38 已完成 `Unreal Socket Import Checker` L3：
 
 ```text
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
 ```
 
 R38 结果：`run_l3_smoke.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R36 Spatial Authoring Drilldown artifact，采集 SkeletalMesh / Skeleton / SkeletalMeshSocket API、目标资产存在性和 expected socket coverage。结果为 L3 / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，socket API ready，4 expected sockets，0 runtime sockets，assetWrites=0，productionWrites=0。Blocked 是业务门禁：approved rifle 行缺 `SK_Hand_L` / `SK_Hand_R`，TMP backpack 行同时被 Maya 源头缺陷和 Unreal 目标缺失阻断。
@@ -1418,7 +1418,7 @@ python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py
 .\scripts\validate_loop.ps1 -Tier package
 ```
 
-默认下一轮开发 `Control Rig / Socket Authoring Controlled Executor` 或 `Platform Variant StaticMesh LOD/Nanite Runtime Post-check`：
+默认下一轮开发 `Control Rig / Socket Authoring Controlled Executor` 或 `Unreal AnimSequence Fact Deepening`：
 
 ```text
 R37/R38/R34 artifacts -> public Unreal runtime facts -> controlled write or post-check contract -> rollback / owner receipt -> Presenter Pack row -> docs

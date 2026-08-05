@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R39 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json` | Maya-hosted package probes 36 key evidence files, exports 28 demo route steps, and adds Platform Variant StaticMesh Post-check evidence. |
+| Platform Variant StaticMesh Post-check | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json` | Unreal 5.3.2 Python validates R34 LOD, Nanite and collision receipts against read-only StaticMesh runtime facts: 2 / 2 no-op receipts matched, 3 owner-held rows, 32 pass, 3 warning, 0 error. |
 | R38 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json` | Maya-hosted package probes 35 key evidence files, exports 27 demo route steps, and adds Unreal Socket Import Checker evidence. |
 | Unreal Socket Import Checker L3 | `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json` | Unreal 5.3.2 Python checks SkeletalMesh/Skeleton socket API readiness and expected socket coverage from Maya Spatial Authoring drilldown facts. |
 | R37 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json` | Maya-hosted package probes 34 key evidence files, exports 26 demo route steps, and adds Unreal Control Rig Bridge evidence. |

@@ -136,9 +136,9 @@ Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
 Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
 
-Core secret: model variant work as a gate plus operation contracts. The module joins planned variants to Unreal runtime facts, converts drift into generation operations, executes only public-safe texture work, and records rollback receipts for heavier LOD/Nanite/collision steps.
+Core secret: model variant work as a gate plus operation contracts. The module joins planned variants to Unreal runtime facts, converts drift into generation operations, executes only public-safe texture work, records rollback receipts for heavier LOD/Nanite/collision steps, and post-checks those receipts against read-only Unreal StaticMesh runtime facts.
 
-Deterministic core: variant fixture, Unreal runtime probes, generation plan, texture runtime collector, public Texture2D payload, controlled executor, executor expansion receipts and Presenter Pack probes.
+Deterministic core: variant fixture, Unreal runtime probes, generation plan, texture runtime collector, public Texture2D payload, controlled executor, executor expansion receipts, StaticMesh post-check and Presenter Pack probes.
 
 AI boundary: AI can explain platform drift and draft operation notes. It cannot mutate production assets or bypass owner approval for high-risk variant generation.
 

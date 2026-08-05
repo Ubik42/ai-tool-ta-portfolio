@@ -1,6 +1,6 @@
 # Platform Variant Forge
 
-R28-R34 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路、真实 public Texture2D payload、受控执行 / 回滚 evidence，以及 LOD / Nanite / collision executor approval receipts。
+R28-R39 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路、真实 public Texture2D payload、受控执行 / 回滚 evidence，以及 LOD / Nanite / collision executor approval receipts，再用 Unreal StaticMesh runtime facts 做 read-only post-check。
 
 ## 核心业务逻辑
 
@@ -15,6 +15,7 @@ R28-R34 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - Unreal 里实际生成/复制出来的 StaticMesh variant 是否符合计划，而不是只在 JSON 里“看起来通过”。
 - 检测到 drift 后，哪些操作可自动执行，哪些因为缺源资产、缺几何/贴图事实或 owner approval 必须停住。
 - 材质槽是否真的能追到 Unreal material dependency / Texture2D payload，而不是只在计划里写了 texture budget。
+- LOD / Nanite / collision receipt 是否真的和 Unreal StaticMesh 当前状态一致，哪些仍然 owner-held。
 
 ## 当前实现
 
@@ -27,6 +28,7 @@ R28-R34 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py`
+- `dcc-hosts/platform-variant-forge/platform_variant_forge/staticmesh_postcheck.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_smoke.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py`
@@ -34,9 +36,11 @@ R28-R34 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py`
+- `dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py`
+- `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_staticmesh_postcheck.py`
 
 R28 首版完成：
 
@@ -93,6 +97,13 @@ R34 executor expansion receipts 完成：
 - 每条 receipt 带 deterministic params、Unreal Python preview、owner approval reason、writeSet 和 rollback receipt。
 - gate 为 `Review`，原因是 3 个操作需要 owner approval / geometry readability，不是 runtime 缺失；productionWrites=0。
 
+R39 StaticMesh post-check 完成：
+
+- 读取 R34 executor receipts，不重新生成计划，也不执行写入。
+- 通过 `UnrealEditor-Cmd.exe` 进入公开 test `.uproject`，只读采集 2 个目标 StaticMesh 的 LOD count、Nanite flag、simple collision、class/path scope。
+- 输出 5 receipts：2 条 no-op verified 与 runtime 匹配，1 条 approval-ready Nanite 和 2 条 LOD readiness-only 保持 owner-held。
+- 结果为 L3 / `Review` / `unreal_staticmesh_postcheck_collected`，32 pass / 3 warning / 0 error，assetWrites=0，productionWrites=0。
+
 ## 证据
 
 当前 artifact：
@@ -105,8 +116,9 @@ R34 executor expansion receipts 完成：
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-executor-expansion-20260805-201222.json
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json
 ```
 
 ## 后续
 
-下一步可以把 Character Calibration / Spatial Authoring 做成 Maya UI drilldown 与 Unreal 对照，或者继续把 Platform Variant executor 的 receipt 转成更细的 StaticMesh LOD/Nanite public runtime post-check。
+下一步适合做 Control Rig / Socket Authoring Controlled Executor，或补 Unreal animation curve/compression fact deepening。Platform Variant 的 StaticMesh post-check 已完成首轮闭环。
