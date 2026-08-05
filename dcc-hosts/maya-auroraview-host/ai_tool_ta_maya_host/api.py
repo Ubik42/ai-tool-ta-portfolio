@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r57-blender-controlled-repair-presentation-pack",
+        label: str = "r58-max-controlled-repair-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4020,6 +4020,12 @@ class MayaPortfolioApi:
             ),
             _probe_file("max-rule-adapter", "3ds Max Rule Adapter artifact", "artifact", manifest.get("maxRuleAdapterArtifact")),
             _probe_file("max-l3-harness", "3ds Max L3 Harness readiness artifact", "artifact", manifest.get("maxRuleAdapterL3HarnessArtifact")),
+            _probe_file(
+                "max-controlled-repair",
+                "3ds Max Controlled Repair Executor artifact",
+                "artifact",
+                manifest.get("maxControlledRepairArtifact"),
+            ),
             _probe_file(
                 "max-texture-manifest-link",
                 "3ds Max Material Texture Manifest Link artifact",
@@ -4515,31 +4521,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "42-run-max-texture-manifest-link",
+                "id": "42-run-max-controlled-repair",
+                "label": "Run Max controlled repair",
+                "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_controlled_repair.py 600.",
+                "evidence_expected": "3ds Max batch executes public fixture repair receipts for UCX collision, LOD1, material/texture semantics, UV/map channels and transform/vertex color, post-checks Ready, then rolls back without saving a .max file.",
+            },
+            {
+                "id": "43-run-max-texture-manifest-link",
                 "label": "Run Max texture manifest link",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_texture_manifest_link.py.",
                 "evidence_expected": "Max pymxs material bitmap slots are checked against package entries, channel semantics, color-space policy and platform resolution budgets.",
             },
             {
-                "id": "43-review-houdini-adapter",
+                "id": "44-review-houdini-adapter",
                 "label": "Review Houdini rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Houdini Rule Adapter contract artifact.",
                 "evidence_expected": "HDA metadata, detail attributes, OUT_* role nodes, packed prototypes, PDG wedges and bake receipts normalize into Cross-DCC rule input.",
             },
             {
-                "id": "44-run-houdini-l3-readiness",
+                "id": "45-run-houdini-l3-readiness",
                 "label": "Run Houdini hython L3 readiness",
                 "operator_action": "Run python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "The launcher either runs hython collection or exports a clear blocked readiness gate when hython.exe is not available.",
             },
             {
-                "id": "45-audit-gui-media",
+                "id": "46-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "46-handoff-presenter-pack",
+                "id": "47-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -5082,6 +5094,18 @@ class MayaPortfolioApi:
                 "max_rule_adapter_l3_harness_gate": manifest_summary.get("maxRuleAdapterL3HarnessGate"),
                 "max_rule_adapter_l3_harness_runtime_found": manifest_summary.get("maxRuleAdapterL3HarnessRuntimeFound"),
                 "max_rule_adapter_l3_harness_collector_ready": manifest_summary.get("maxRuleAdapterL3HarnessCollectorReady"),
+                "max_controlled_repair_gate": manifest_summary.get("maxControlledRepairGate"),
+                "max_controlled_repair_evidence_level": manifest_summary.get("maxControlledRepairEvidenceLevel"),
+                "max_controlled_repair_l3_status": manifest_summary.get("maxControlledRepairL3Status"),
+                "max_controlled_repair_pre_gate": manifest_summary.get("maxControlledRepairPreGate"),
+                "max_controlled_repair_post_gate": manifest_summary.get("maxControlledRepairPostGate"),
+                "max_controlled_repair_rollback_passed": manifest_summary.get("maxControlledRepairRollbackPassed"),
+                "max_controlled_repair_selected_operations": manifest_summary.get("maxControlledRepairSelectedOperations"),
+                "max_controlled_repair_executed_operations": manifest_summary.get("maxControlledRepairExecutedOperations"),
+                "max_controlled_repair_post_ready": manifest_summary.get("maxControlledRepairPostReadyAssets"),
+                "max_controlled_repair_post_blocked": manifest_summary.get("maxControlledRepairPostBlockedAssets"),
+                "max_controlled_repair_asset_writes": manifest_summary.get("maxControlledRepairAssetWrites"),
+                "max_controlled_repair_production_writes": manifest_summary.get("maxControlledRepairProductionWrites"),
                 "max_texture_manifest_link_gate": manifest_summary.get("maxTextureManifestLinkGate"),
                 "max_texture_manifest_link_evidence_level": manifest_summary.get("maxTextureManifestLinkEvidenceLevel"),
                 "max_texture_manifest_link_l3_status": manifest_summary.get("maxTextureManifestLinkL3Status"),
@@ -5182,6 +5206,7 @@ class MayaPortfolioApi:
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "Blender Controlled Repair Executor turns blocked collision, LOD, UV and material/texture sync rows into public fixture repair receipts, post-checks Ready, then rolls back without saving a .blend file.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
+                "3ds Max Controlled Repair Executor turns blocked UCX collision, LOD, material/texture, UV/map channel and transform/vertex-color rows into public fixture repair receipts, post-checks Ready, then rolls back without saving a .max file.",
                 "3ds Max Material Texture Manifest Link joins pymxs material bitmap slots to package texture entries, channel semantics, color-space policy and platform budgets.",
                 "Houdini Rule Adapter normalizes HDA state, detail attributes, OUT_* role nodes, packed instance prototypes, PDG wedge summaries and frozen bake receipts into the shared Cross-DCC rule matrix.",
                 "Blender, 3ds Max and Houdini adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -5205,7 +5230,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r57-blender-controlled-repair-presentation-pack",
+        label: str = "r58-max-controlled-repair-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

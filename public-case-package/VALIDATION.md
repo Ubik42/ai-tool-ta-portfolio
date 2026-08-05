@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r58-max-controlled-repair` | `python dcc-hosts/3dsmax-rule-adapter/scripts/run_controlled_repair.py 600` | 3ds Max 2022 batch runtime executes 5 public fixture repair receipts, turns preGate `Blocked` into postGate `Ready`, verifies rollbackPassed=true and keeps assetWrites=0 / productionWrites=0. |
+| `validate-r58-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r58-max-controlled-repair-presentation-pack")` | DCC Presenter Pack probes 57 key evidence files including 3ds Max Controlled Repair Executor, reports 57 present / 0 missing required files, and exports 47 demo route steps. |
 | `validate-r57-blender-controlled-repair` | `python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py` | Blender 5.2 background runtime executes 4 public fixture repair receipts, turns preGate `Blocked` into postGate `Ready`, verifies rollbackPassed=true and keeps assetWrites=0 / productionWrites=0. |
 | `validate-r57-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r57-blender-controlled-repair-presentation-pack")` | DCC Presenter Pack probes 56 key evidence files including Blender Controlled Repair Executor, reports 56 present / 0 missing required files, and exports 46 demo route steps. |
 | `validate-r56-houdini-rule-adapter` | `python dcc-hosts/houdini-rule-adapter/scripts/run_smoke.py` | Houdini Rule Adapter exports L2+ contract evidence from public fixtures: HDA metadata, detail attributes, `OUT_*` roles, packed prototypes, PDG wedges and frozen bake receipts normalize into Cross-DCC rule rows; 2 assets, 1 Ready, 1 Blocked, 11 / 2 / 5 checks. |
