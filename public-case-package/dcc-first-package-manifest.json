@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r22",
-  "packageVersion": "dcc-first-package@1.19.0",
-  "generatedAt": "2026-08-05T15:36:02+08:00",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r23",
+  "packageVersion": "dcc-first-package@1.20.0",
+  "generatedAt": "2026-08-05T16:29:28+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 19,
-    "presentationPackPresentEvidenceFiles": 19,
+    "presentationPackEvidenceFiles": 20,
+    "presentationPackPresentEvidenceFiles": 20,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 12,
+    "presentationPackDemoRouteSteps": 13,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -139,7 +139,20 @@
     "maxRuleAdapterMaxBatchAvailable": true,
     "maxRuleAdapterL3HarnessGate": "Blocked",
     "maxRuleAdapterL3HarnessRuntimeFound": true,
-    "maxRuleAdapterL3HarnessCollectorReady": true
+    "maxRuleAdapterL3HarnessCollectorReady": true,
+    "animationContinuityGate": "Blocked",
+    "animationContinuityEvidenceLevel": "L3",
+    "animationContinuityL3Status": "maya_anim_curves_collected",
+    "animationContinuityMayaVersion": "2026",
+    "animationContinuityRuntimeCollected": true,
+    "animationContinuityAssets": 2,
+    "animationContinuityReady": 1,
+    "animationContinuityReview": 0,
+    "animationContinuityBlocked": 1,
+    "animationContinuityPassChecks": 11,
+    "animationContinuityWarningChecks": 3,
+    "animationContinuityErrorChecks": 6,
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json"
   },
   "moduleOrder": [
     "asset-protocol",
@@ -253,16 +266,22 @@
       "required": true
     },
     {
-      "id": "dcc-first-presentation-pack",
-      "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r22-blender-max-l3-presentation-pack-20260805-153957.json",
-      "required": true
-    },
-    {
       "id": "legacy-public-package",
       "kind": "legacy-index",
       "path": "README.md",
       "required": false
+    },
+    {
+      "id": "dcc-first-animation-continuity-l3",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-presentation-pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
+      "required": true
     }
   ],
   "validation": [
@@ -287,11 +306,15 @@
     "python -m py_compile dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/contract.py dcc-hosts/3dsmax-rule-adapter/max_rule_adapter/runtime_collector.py dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py dcc-hosts/3dsmax-rule-adapter/scripts/run_3dsmax_l3.py",
     "python dcc-hosts/3dsmax-rule-adapter/scripts/run_smoke.py",
     "python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600",
-    "Maya 2024 mayapy dcc_presentation_export_pack R22 smoke"
+    "Maya mayapy dcc_presentation_export_pack R23 smoke",
+    "python -m py_compile dcc-hosts/animation-continuity-lab/animation_continuity_lab/contract.py dcc-hosts/animation-continuity-lab/animation_continuity_lab/maya_collector.py dcc-hosts/animation-continuity-lab/scripts/run_smoke.py dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py dcc-hosts/animation-continuity-lab/scripts/run_maya_l3.py",
+    "python dcc-hosts/animation-continuity-lab/scripts/run_smoke.py",
+    "python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py"
   ],
   "notes": [
+    "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
     "R22 upgrades Blender and 3ds Max from readiness gates to real runtime L3 evidence: bpy_scene_collected and pymxs_scene_collected.",
-    "Current final presentation route is DCC-first through the R22 Presenter Pack.",
+    "Current final presentation route is DCC-first through the R23 Presenter Pack.",
     "R21 adds 3ds Max Rule Adapter L2+ contract and opt-in 3dsmaxbatch readiness harness.",
     "R20 adds Blender L3 bpy collector harness and readiness gate for blender --background smoke.",
     "Current final presentation route is DCC-first through the R20 Presenter Pack.",
@@ -338,7 +361,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r22-blender-max-l3-presentation-pack-20260805-153957.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -383,5 +406,20 @@
   "maxRuleAdapterL3HarnessGate": "Blocked",
   "maxRuleAdapterL3HarnessRuntimeFound": true,
   "maxRuleAdapterL3HarnessCollectorReady": true,
-  "maxRuleAdapterL3HarnessExpectedReport": "max-rule-adapter-pymxs-l3@0.1.0"
+  "maxRuleAdapterL3HarnessExpectedReport": "max-rule-adapter-pymxs-l3@0.1.0",
+  "animationContinuityReportVersion": "animation-continuity-maya-l3@0.1.0",
+  "animationContinuityArtifact": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+  "animationContinuityEvidenceLevel": "L3",
+  "animationContinuityL3Status": "maya_anim_curves_collected",
+  "animationContinuityGate": "Blocked",
+  "animationContinuityAssets": 2,
+  "animationContinuityReady": 1,
+  "animationContinuityReview": 0,
+  "animationContinuityBlocked": 1,
+  "animationContinuityPassChecks": 11,
+  "animationContinuityWarningChecks": 3,
+  "animationContinuityErrorChecks": 6,
+  "animationContinuityMayaVersion": "2026",
+  "animationContinuityMayaApiVersion": 20260302,
+  "animationContinuityRuntimeCollected": true
 }

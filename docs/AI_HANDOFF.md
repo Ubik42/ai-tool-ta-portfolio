@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已经有 Maya `mayapy` L3 keyed animCurve 证据。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r22-blender-max-l3-presentation-pack-20260805-153957.json
+dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R22。
+稳定基线：R23。
 
 已完成：
 
@@ -35,6 +35,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r22-blender-max-l3-presentation-pack-20
 - Asset Handoff Gate
 - Unreal Handoff Inspector
 - Scene Transaction Guard
+- Animation Continuity Lab Maya L3
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -43,13 +44,13 @@ dcc-hosts/maya-auroraview-host/artifacts/r22-blender-max-l3-presentation-pack-20
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder / Houdini / Character Calibration / Spatial Authoring 等后续工具线。
+- MotionBuilder / Unreal Animation Bridge、Houdini、Character Calibration、Spatial Authoring 等后续工具线。
 
-## 3. R23 半成品断点
+## 3. R23 当前断点
 
-用户暂停时，`Animation Continuity Lab` 已开始建骨架；当前 L2 contract smoke 已通过，但未接入 Presenter Pack。
+`Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
-已新增本地文件：
+核心文件：
 
 ```text
 dcc-hosts/animation-continuity-lab/fixtures/synthetic_animation_scene.json
@@ -66,6 +67,18 @@ dcc-hosts/animation-continuity-lab/scripts/run_maya_l3.py
 dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-contract-20260805-160346.json
 ```
 
+当前 L3 artifact：
+
+```text
+dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-20260805-162744.json
+```
+
+当前 R23 Presenter Pack：
+
+```text
+dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
+```
+
 这条线的最终效果：
 
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
@@ -73,13 +86,13 @@ dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-contract-20260
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
 - 后续再接入 MotionBuilder / Unreal animation import 对照。
 
-继续开发时先做 Maya L3：
+继续开发时优先做 MotionBuilder / Unreal Animation Bridge。如果只验证当前 R23，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
 ```
 
-通过后再接 Presenter Pack 和 public manifest。
+当前 R23 public package 为 `ai-tool-ta-dcc-first-showcase-r23` / `dcc-first-package@1.20.0`，Presenter Pack 20 / 20 evidence files present，0 missing required files，13 demo route steps；gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

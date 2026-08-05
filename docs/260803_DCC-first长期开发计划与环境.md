@@ -993,10 +993,19 @@ python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --expo
 <repo>\docs\技术报告\260805_长期循环开发框架与轻量验证策略.md
 ```
 
-默认下一轮开发 `Animation Continuity Lab`：
+R23 已完成 `Animation Continuity Lab` Maya L3：
 
 ```text
-schema -> synthetic animation fixture -> Maya animation fact collector -> validation rows -> artifact -> Presenter Pack row -> docs
+<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json
+```
+
+R23 结果：Maya 2026 `mayapy` keyed animCurve facts collected，2 animation takes，1 Ready / 1 Blocked，11 pass / 3 warning / 6 error；Presenter Pack 20 / 20 evidence files present，0 missing required files，13 demo route steps。
+
+默认下一轮开发 `MotionBuilder / Unreal Animation Bridge`：
+
+```text
+choose runtime -> synthetic animation bridge fixture -> collector/readiness artifact -> continuity comparison -> Presenter Pack row -> docs
 ```
 
 只有修改 runtime adapter 时才跑对应 DCC runtime；只有发布里程碑才跑 `full`；只改文档或 manifest 时不跑 Blender/Max/Unreal。

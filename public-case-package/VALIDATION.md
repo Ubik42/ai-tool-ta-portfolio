@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r23-animation-continuity-l3` | `python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py` | Maya 2026 `mayapy` runs the public synthetic animation fixture, exports `animation-continuity-maya-l3@0.1.0`, reports 2 animation takes, 1 Ready, 1 Blocked, 11 pass checks, 3 warnings, 6 errors, and real keyed animCurve collection. |
+| `validate-r23-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r23-animation-continuity-l3-presentation-pack")` | DCC Presenter Pack probes 20 key evidence files including Animation Continuity, Blender, 3ds Max and Unreal runtime artifacts, reports 20 present / 0 missing required files, and exports 13 demo route steps. |
 | `validate-r10-dcc-build` | `npm run build` | Current embedded React UI compiles for Maya/AuroraView. |
 | `validate-r10-dcc-api` | `python -m py_compile dcc-hosts/maya-auroraview-host/ai_tool_ta_maya_host/api.py` | Maya host API surface is syntactically valid. |
 | `validate-r10-7-case-page` | `Maya 2024 mayapy showcase_runbook_export_case_page(label="r10-7-dcc-first-case-page")` | Case page exports 6 sections, 7 business route steps, 7 live demo script steps, 9 GUI shots, 1 recording, 4 artifact rows, and 6 reviewer claims. |
@@ -136,10 +138,16 @@ Latest Scene Transaction Guard:
 <repo>\dcc-hosts\maya-auroraview-host\artifacts\r19-scene-transaction-guard-20260804-195730.json
 ```
 
+Latest Animation Continuity L3:
+
+```text
+<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json
+```
+
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r22-blender-max-l3-presentation-pack-20260805-153957.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json
 ```
 
 ## Commands

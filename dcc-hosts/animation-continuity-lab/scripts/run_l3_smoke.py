@@ -12,6 +12,16 @@ from typing import Dict, List
 HOST_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = HOST_ROOT / "scripts" / "run_maya_l3.py"
 ARTIFACTS = HOST_ROOT / "artifacts"
+PORTFOLIO_ROOT = HOST_ROOT.parents[1]
+
+
+def public_path(path: str | Path) -> str:
+    path_obj = Path(path)
+    try:
+        relative = path_obj.resolve().relative_to(PORTFOLIO_ROOT.resolve())
+    except Exception:
+        return str(path_obj)
+    return "<repo>\\" + str(relative)
 
 
 def _candidate_paths() -> List[Path]:
@@ -54,9 +64,9 @@ def write_readiness_report(search: Dict[str, object]) -> Path:
         "l3Status": "blocked_by_missing_mayapy",
         "mayaRuntime": search,
         "collector": {
-            "script": str(SCRIPT),
+            "script": public_path(SCRIPT),
             "ready": SCRIPT.exists(),
-            "expectedCommand": "mayapy %s" % SCRIPT,
+            "expectedCommand": "mayapy %s" % public_path(SCRIPT),
             "reportWhenAvailable": "animation-continuity-maya-l3@0.1.0",
         },
         "boundary": {

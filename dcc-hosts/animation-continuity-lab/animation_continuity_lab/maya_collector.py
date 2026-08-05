@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
-from .contract import build_facts_from_assets, evaluate_scene, load_fixture
+from .contract import build_facts_from_assets, evaluate_scene, load_fixture, public_path
 
 
 L3_REPORT_VERSION = "animation-continuity-maya-l3@0.1.0"
@@ -33,7 +33,7 @@ def build_maya_report(fixture_path: str | Path) -> Dict[str, Any]:
             "batch": bool(_safe(lambda: cmds.about(batch=True), False)),
         },
         "fixture": {
-            "path": str(Path(fixture_path)),
+            "path": public_path(fixture_path),
             "schema": fixture.get("schema"),
             "intent": fixture.get("intent"),
         },

@@ -1,4 +1,4 @@
-# AI Tool TA Public Case Package R8.54
+# AI Tool TA Public Case Package R23
 
 ## Current DCC-first Entry
 
@@ -22,24 +22,25 @@ The current final presentation route is now Maya-hosted:
 - Unreal Preset Fact Comparison: `<repo>\dcc-hosts\unreal-handoff-inspector\artifacts\unreal-preset-fact-comparison-20260803-185302.json`
 - Unreal Preset Fact Review: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r18-unreal-preset-fact-review-20260803-190519.json`
 - Scene Transaction Guard: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r19-scene-transaction-guard-20260804-195730.json`
-- R22 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r22-blender-max-l3-presentation-pack-20260805-153957.json`
+- Animation Continuity Maya L3 evidence: `<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
+- R23 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json`
 
-Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R22 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
+Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R23 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
 
 This package is the public reviewer entry point for the AI Tool TA portfolio.
-It presents five runnable tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
+It presents DCC / engine tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
 
 ## Reading Order
 
 1. `DCC_FIRST_PACKAGE.md` - current Maya/AuroraView case page route.
 2. `dcc-first-package-manifest.json` - machine-readable DCC-first package proof.
-3. `MODULES.md` - what each tool does, the business scenario, and the core TA lesson.
+3. `MODULES.md` - what each DCC / engine tool line does, the business scenario, and the core TA lesson.
 4. `EVIDENCE_INDEX.md` - where screenshots, exported JSON, and module docs live.
 5. `SIGNOFFS.md` - what owner decisions were closed and what guardrails remain.
 6. `VALIDATION.md` - commands used to prove the package is repeatable.
 7. `package-manifest.json` - legacy R8 machine-readable package id, counts, gates, and file list.
 
-## Package State
+## Package Manifest State
 
 | Field | Value |
 | --- | --- |
@@ -50,8 +51,8 @@ It presents five runnable tool modules as production-style case studies, with sy
 | Evidence manifest | `portfolio-evidence-manifest-r8-54` |
 | Release gate | `Ready` |
 | Modules | 5 |
-| Indexed evidence | 311 |
-| Required evidence | 245 |
+| Indexed evidence | 312 |
+| Required evidence | 246 |
 | Validation commands | 64 |
 | Owner signoffs | 3 |
 

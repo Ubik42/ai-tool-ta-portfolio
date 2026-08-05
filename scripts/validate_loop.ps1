@@ -28,7 +28,22 @@ $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
-$Mayapy = "C:\Program Files\Autodesk\Maya2024\bin\mayapy.exe"
+$MayapyCandidates = @(
+    "C:\Program Files\Autodesk\Maya2026\bin\mayapy.exe",
+    "C:\Program Files\Autodesk\Maya2025\bin\mayapy.exe",
+    "C:\Program Files\Autodesk\Maya2024\bin\mayapy.exe",
+    "C:\Program Files\Autodesk\Maya2023\bin\mayapy.exe",
+    "D:\Program Files\Autodesk\Maya2026\bin\mayapy.exe",
+    "D:\Program Files\Autodesk\Maya2025\bin\mayapy.exe",
+    "D:\Program Files\Autodesk\Maya2024\bin\mayapy.exe"
+)
+$Mayapy = $MayapyCandidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if (-not $Mayapy) {
+    $MayapyCommand = Get-Command mayapy -ErrorAction SilentlyContinue
+    if ($MayapyCommand) {
+        $Mayapy = $MayapyCommand.Source
+    }
+}
 
 $QuickPythonFiles = @(
     (Join-Path $MayaHost "ai_tool_ta_maya_host\api.py"),
@@ -61,19 +76,22 @@ Invoke-Step "json manifests" {
 
 if ($Tier -in @("package", "full")) {
     Invoke-Step "maya presenter pack build smoke" {
-        if (-not (Test-Path $Mayapy)) {
-            throw "Maya mayapy not found: $Mayapy"
+        if (-not $Mayapy -or -not (Test-Path $Mayapy)) {
+            throw "Maya mayapy not found. Searched: $($MayapyCandidates -join ', ')"
         }
         @"
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r22-blender-max-l3-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r23-animation-continuity-l3-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 19, summary
+assert summary["present_evidence_files"] == 20, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
+        if ($LASTEXITCODE -ne 0) {
+            throw "Maya presenter pack build smoke failed with exit code $LASTEXITCODE"
+        }
     }
 }
 

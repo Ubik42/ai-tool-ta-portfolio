@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from .config import PORTFOLIO_ROOT, ensure_artifacts_dir, paths_report
+from .config import PORTFOLIO_ROOT, display_path, ensure_artifacts_dir, paths_report
 
 
 PROTOCOL_ATTR = "aiToolTaProtocol"
@@ -91,6 +91,9 @@ def _resolve_package_path(path_value: Any, base_dir: Path) -> Optional[Path]:
         return path_value
     if not isinstance(path_value, str) or not path_value:
         return None
+    if path_value.startswith("<repo>"):
+        suffix = path_value[len("<repo>") :].lstrip("\\/")
+        return PORTFOLIO_ROOT / suffix
     path = Path(path_value)
     return path if path.is_absolute() else base_dir / path
 
@@ -111,7 +114,7 @@ def _probe_file(
         "id": file_id,
         "label": label,
         "kind": kind,
-        "path": str(resolved) if resolved else None,
+        "path": display_path(resolved) if resolved else None,
         "required": required,
         "exists": exists,
         "bytes": bytes_size,
@@ -3985,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r22-blender-max-l3-presentation-pack",
+        label: str = "r23-animation-continuity-l3-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4029,6 +4032,12 @@ class MayaPortfolioApi:
                 "Scene Transaction Guard artifact",
                 "artifact",
                 manifest.get("sceneTransactionGuardArtifact"),
+            ),
+            _probe_file(
+                "animation-continuity-maya-l3",
+                "Animation Continuity Maya L3 artifact",
+                "artifact",
+                manifest.get("animationContinuityArtifact"),
             ),
         ]
 
@@ -4086,31 +4095,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "Before/after scene fingerprints, mutation risk rows and rollback preview are exported from Maya.",
             },
             {
-                "id": "08-review-blender-adapter",
+                "id": "08-run-animation-continuity-l3",
+                "label": "Run animation continuity L3",
+                "operator_action": "Run python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py.",
+                "evidence_expected": "Maya mayapy runtime exports keyed animCurve facts for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
+            },
+            {
+                "id": "09-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "09-run-blender-l3-harness",
+                "id": "10-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "10-run-3dsmax-adapter-harness",
+                "id": "11-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "11-audit-gui-media",
+                "id": "12-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "12-handoff-presenter-pack",
+                "id": "13-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4191,6 +4206,17 @@ class MayaPortfolioApi:
                 "scene_transaction_guard_modified": manifest_summary.get("sceneTransactionGuardModified"),
                 "scene_transaction_guard_rollback_actions": manifest_summary.get("sceneTransactionGuardRollbackActions"),
                 "scene_transaction_guard_risk_rows": manifest_summary.get("sceneTransactionGuardRiskRows"),
+                "animation_continuity_gate": manifest_summary.get("animationContinuityGate"),
+                "animation_continuity_evidence_level": manifest_summary.get("animationContinuityEvidenceLevel"),
+                "animation_continuity_l3_status": manifest_summary.get("animationContinuityL3Status"),
+                "animation_continuity_maya_version": manifest_summary.get("animationContinuityMayaVersion"),
+                "animation_continuity_runtime_collected": manifest_summary.get("animationContinuityRuntimeCollected"),
+                "animation_continuity_assets": manifest_summary.get("animationContinuityAssets"),
+                "animation_continuity_ready": manifest_summary.get("animationContinuityReady"),
+                "animation_continuity_blocked": manifest_summary.get("animationContinuityBlocked"),
+                "animation_continuity_pass_checks": manifest_summary.get("animationContinuityPassChecks"),
+                "animation_continuity_warning_checks": manifest_summary.get("animationContinuityWarningChecks"),
+                "animation_continuity_error_checks": manifest_summary.get("animationContinuityErrorChecks"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4246,6 +4272,7 @@ class MayaPortfolioApi:
                 "Unreal Preset Fact Comparison joins runtime engine facts with PC/Mobile preset policy and exception waiver rows.",
                 "Unreal Preset Fact Review projects the comparison rows into a Maya-hosted reviewer queue with owner actions.",
                 "Scene Transaction Guard captures DCC before/after scene mutation, risk rows and rollback preview from Maya.",
+                "Animation Continuity Lab is now backed by Maya mayapy L3 animCurve evidence for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4260,8 +4287,8 @@ class MayaPortfolioApi:
                 "proprietaryData": "not included",
             },
             "public_case_package": {
-                "manifest": str(manifest_path),
-                "readme": str(public_package_dir / "DCC_FIRST_PACKAGE.md"),
+                "manifest": display_path(manifest_path),
+                "readme": display_path(public_package_dir / "DCC_FIRST_PACKAGE.md"),
                 "package_id": manifest.get("packageId"),
                 "package_version": manifest.get("packageVersion"),
             },
@@ -4269,7 +4296,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r22-blender-max-l3-presentation-pack",
+        label: str = "r23-animation-continuity-l3-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

@@ -14,6 +14,15 @@ FRONTEND_INDEX = FRONTEND_DIST / "index.html"
 ARTIFACTS_DIR = HOST_ROOT / "artifacts"
 
 
+def display_path(path: str | Path) -> str:
+    path_obj = Path(path)
+    try:
+        relative = path_obj.resolve().relative_to(PORTFOLIO_ROOT.resolve())
+    except Exception:
+        return str(path_obj)
+    return "<repo>\\" + str(relative)
+
+
 def ensure_artifacts_dir() -> Path:
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     return ARTIFACTS_DIR
@@ -25,11 +34,11 @@ def frontend_ready() -> bool:
 
 def paths_report() -> dict:
     return {
-        "host_root": str(HOST_ROOT),
-        "portfolio_root": str(PORTFOLIO_ROOT),
-        "frontend_root": str(FRONTEND_ROOT),
-        "frontend_dist": str(FRONTEND_DIST),
-        "frontend_index": str(FRONTEND_INDEX),
+        "host_root": display_path(HOST_ROOT),
+        "portfolio_root": "<repo>",
+        "frontend_root": display_path(FRONTEND_ROOT),
+        "frontend_dist": display_path(FRONTEND_DIST),
+        "frontend_index": display_path(FRONTEND_INDEX),
         "frontend_ready": frontend_ready(),
-        "artifacts_dir": str(ARTIFACTS_DIR),
+        "artifacts_dir": display_path(ARTIFACTS_DIR),
     }

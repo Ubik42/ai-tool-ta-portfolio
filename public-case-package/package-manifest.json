@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r22",
-    "packageVersion": "dcc-first-package@1.19.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r23",
+    "packageVersion": "dcc-first-package@1.20.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r22-blender-max-l3-presentation-pack-20260805-153957.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 19,
-    "presentationPackPresentEvidenceFiles": 19,
+    "presentationPackEvidenceFiles": 20,
+    "presentationPackPresentEvidenceFiles": 20,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 12,
+    "presentationPackDemoRouteSteps": 13,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -181,16 +181,32 @@
     "maxRuleAdapterMaxBatchAvailable": true,
     "maxRuleAdapterL3HarnessGate": "Blocked",
     "maxRuleAdapterL3HarnessRuntimeFound": true,
-    "maxRuleAdapterL3HarnessCollectorReady": true
+    "maxRuleAdapterL3HarnessCollectorReady": true,
+    "animationContinuityReportVersion": "animation-continuity-maya-l3@0.1.0",
+    "animationContinuityArtifact": "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
+    "animationContinuityEvidenceLevel": "L3",
+    "animationContinuityL3Status": "maya_anim_curves_collected",
+    "animationContinuityGate": "Blocked",
+    "animationContinuityAssets": 2,
+    "animationContinuityReady": 1,
+    "animationContinuityReview": 0,
+    "animationContinuityBlocked": 1,
+    "animationContinuityPassChecks": 11,
+    "animationContinuityWarningChecks": 3,
+    "animationContinuityErrorChecks": 6,
+    "animationContinuityMayaVersion": "2026",
+    "animationContinuityMayaApiVersion": 20260302,
+    "animationContinuityRuntimeCollected": true,
+    "generatedAt": "2026-08-05T16:29:28+08:00"
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 311,
-    "requiredEvidenceCount": 245,
+    "evidenceCount": 312,
+    "requiredEvidenceCount": 246,
     "packageFileCount": 6,
     "ownerSignoffCount": 3,
     "validationCommandCount": 64,
-    "manifestArtifactCount": 375
+    "manifestArtifactCount": 376
   },
   "moduleOrder": [
     "asset-protocol",
@@ -247,9 +263,17 @@
       "kind": "manifest",
       "path": "dcc-first-package-manifest.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-presentation-pack",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
+      "required": true
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
+    "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r22-blender-max-l3-presentation-pack-20260805-153957.json",
     "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-contract-20260804-220959.json",
     "<repo>\\dcc-hosts\\3dsmax-rule-adapter\\artifacts\\max-rule-adapter-l3-20260805-153232.json",
@@ -306,6 +330,7 @@
     "accept-impact-r8"
   ],
   "notes": [
+    "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
     "R22 upgrades Blender and 3ds Max to real runtime L3 evidence through bpy and pymxs synthetic fixtures.",
     "R21 adds 3ds Max Rule Adapter L2+ contract and opt-in 3dsmaxbatch readiness harness to the DCC-first package.",
     "R20 adds Blender L3 bpy collector harness and readiness gate for blender --background smoke.",

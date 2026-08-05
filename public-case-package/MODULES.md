@@ -59,3 +59,15 @@ Deterministic core: evidence index, reviewer acceptance, pending receipt review,
 AI boundary: AI can generate summaries and reviewer-facing narratives. It cannot mark required evidence present or release a package without deterministic checks.
 
 Key evidence: `../docs/modules/task-orchestrator.md`
+
+## 6. Animation Continuity Lab
+
+Business scenario: animation handoff breaks when Maya, MotionBuilder and Unreal disagree on rig identity, take range, sample rate, root motion, additive layers or channel ownership.
+
+Core secret: treat an animation clip as deterministic facts, not just an FBX file. The module records rig id, skeleton fingerprint, declared take, real keyed animCurves, sub-frame keys, duplicate channel identities, root motion policy and owner-only fixes.
+
+Deterministic core: public synthetic Maya fixture, `mayapy` keyed curve collector, normalized animation-continuity input, rule evaluation, fix preview, and Presenter Pack evidence probe.
+
+AI boundary: AI can explain why a failed take is risky or draft handoff notes. It cannot resample, retarget, delete additive layers or approve owner waivers without deterministic evidence.
+
+Key evidence: `../docs/modules/animation-continuity-lab.md`

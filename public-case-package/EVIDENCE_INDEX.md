@@ -5,6 +5,16 @@ Full machine-readable evidence is exported from the site report:
 - `../assets/portfolio-case-study-r8-54-exported-report.json`
 - `../showcases/portfolio-site/src/data/portfolioCaseStudy.ts`
 
+## Current DCC-first Evidence
+
+| Evidence | Path | Proves |
+| --- | --- | --- |
+| R23 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r23-animation-continuity-l3-presentation-pack-20260805-163040.json` | Maya-hosted package probes 20 key evidence files, exports 13 demo route steps, and keeps the media gate at `CapturePending` until real Maya screenshots/recording are captured. |
+| Animation Continuity Maya L3 | `<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json` | Maya 2026 `mayapy` collected keyed animCurve facts for rig identity, take range, sample rate, required channels, channel collision, sub-frame keys, root motion, scale drift and additive layers. |
+| Blender L3 runtime | `<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json` | Blender 5.2 `bpy` collected object custom properties, collections, material slots, UVs and collision proxy facts into the Cross-DCC rule input. |
+| 3ds Max L3 runtime | `<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json` | 3ds Max 2022 `pymxs` collected user props, layer/export root, LOD suffixes, material, UV, transform and collision facts. |
+| Unreal L3++ runtime | `<repo>\dcc-hosts\unreal-handoff-inspector\artifacts\unreal-handoff-inspector-l3-20260803-184208.json` | Unreal Python matched imported StaticMesh path/class, source import data, material slot, LOD count and simple collision facts. |
+
 ## Coverage
 
 | Module | Total | Required | Screenshots | JSON | Docs |

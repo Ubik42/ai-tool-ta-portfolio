@@ -18,6 +18,16 @@ from typing import Any, Dict, Iterable, List
 REPORT_VERSION = "animation-continuity-contract@0.1.0"
 NORMALIZED_SCHEMA = "animation-continuity-input@0.1.0"
 FIXTURE_SCHEMA = "synthetic-animation-continuity-scene@0.1.0"
+PORTFOLIO_ROOT = Path(__file__).resolve().parents[3]
+
+
+def public_path(path: str | Path) -> str:
+    path_obj = Path(path)
+    try:
+        relative = path_obj.resolve().relative_to(PORTFOLIO_ROOT.resolve())
+    except Exception:
+        return str(path_obj)
+    return "<repo>\\" + str(relative)
 
 
 def load_fixture(path: str | Path) -> Dict[str, Any]:
@@ -86,7 +96,7 @@ def build_report(fixture_path: str | Path) -> Dict[str, Any]:
         "evidenceLevel": "L2",
         "l3Status": "contract_fixture_collected",
         "fixture": {
-            "path": str(Path(fixture_path)),
+            "path": public_path(fixture_path),
             "schema": fixture.get("schema"),
             "intent": fixture.get("intent"),
         },
