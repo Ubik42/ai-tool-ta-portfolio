@@ -114,13 +114,25 @@ Business scenario: sockets, hotspots, pose frames and mirror transfer rules ofte
 
 Core secret: make spatial authoring data explicit: parent joint, local offset, mirror pair, hotspot semantic, owner, pose frame range, local-space consistency and preview locator state.
 
-Deterministic core: public Maya joint/locator fixture, `mayapy` collector, spatial validation rows, drilldown panels, owner actions and fix preview.
+Deterministic core: public Maya joint/locator fixture, `mayapy` collector, spatial validation rows, drilldown panels, owner actions, fix preview, and Unreal socket import checker evidence.
 
 AI boundary: AI can explain socket risk and propose handoff text. It cannot approve a gameplay socket or pose transfer without source and engine facts.
 
 Key evidence: `../docs/modules/spatial-authoring-workbench.md`
 
-## 11. Platform Variant Forge
+## 11. Unreal Socket Import Checker
+
+Business scenario: a socket can be clean in Maya but still absent or bound to the wrong target in Unreal. Gameplay, VFX, camera and attach logic need engine-side facts, not just DCC locators.
+
+Core secret: compare source spatial intent against actual SkeletalMesh/Skeleton socket readiness. The tool keeps approved rows blocked until expected engine sockets and parent bindings exist.
+
+Deterministic core: Spatial Authoring Drilldown source artifact, Unreal 5.3.2 Python probe, SkeletalMesh/Skeleton/socket API checks, expected socket comparison, owner actions and read-only write boundary.
+
+AI boundary: AI can summarize missing sockets and owner handoff text. It cannot claim socket import success or create gameplay attach points without deterministic Unreal evidence and approval.
+
+Key evidence: `../docs/modules/unreal-socket-import-checker.md`
+
+## 12. Platform Variant Forge
 
 Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
 

@@ -1,6 +1,6 @@
 # Spatial Authoring & Pose Transfer Workbench
 
-R27-R36 目标：把 Lightbox 高价值线里的 socket / hotspot / locator preview / pose frame / mirror transfer，从“规则设想”推进到 Maya runtime L3 证据，并进一步生成 Maya/AuroraView 可消费的 drilldown 数据。
+R27-R38 目标：把 Lightbox 高价值线里的 socket / hotspot / locator preview / pose frame / mirror transfer，从“规则设想”推进到 Maya runtime L3 证据，并进一步生成 Maya/AuroraView 可消费的 drilldown 数据。
 
 ## 核心业务逻辑
 
@@ -40,6 +40,12 @@ R36 完成项：
 - Owner action：把 7 个 owner-required 动作和 2 个 manual-review 动作拆出来，明确 technical-animation-owner、gameplay-vfx-owner、animation-owner 和 reviewer 边界。
 - Presenter Pack 接入：R36 Presenter Pack 探测 Spatial Authoring Drilldown artifact，并把 demo route 扩到 25 步。
 
+R38 完成项：
+
+- Unreal Socket Import Checker：读取 Spatial Authoring Drilldown artifact，通过 UnrealEditor-Cmd 进入 public Unreal project，采集 SkeletalMesh / Skeleton / SkeletalMeshSocket API、目标资产存在性和 expected socket coverage。
+- 业务门禁：approved rifle 行的 Unreal SkeletalMesh / Skeleton 存在，但缺 `SK_Hand_L` / `SK_Hand_R` socket；TMP backpack 行同时被源头 authoring 问题和缺失 Unreal target 阻断。
+- Presenter Pack 接入：R38 Presenter Pack 探测 Unreal Socket Import Checker artifact，并把 demo route 扩到 27 步。
+
 ## 证据
 
 当前 L2 contract artifact：
@@ -60,6 +66,12 @@ R36 完成项：
 <repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-drilldown-20260805-203713.json
 ```
 
+当前 Unreal Socket Import Checker artifact：
+
+```text
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
+```
+
 关键结果以最新 manifest 为准：
 
 - report version：`spatial-authoring-maya-l3@0.1.0`
@@ -70,6 +82,11 @@ R36 完成项：
 - drilldown evidence / L3 status：L3-derived / `maya_spatial_authoring_rows_to_drilldown`
 - drilldown assets / panels：2 / 18
 - drilldown owner actions / owner required / manual review：9 / 7 / 2
+- Unreal socket checker evidence / L3 status：L3 / `unreal_socket_facts_collected`
+- Unreal socket rows ready / review / blocked：0 / 0 / 2
+- Unreal socket checks pass / warning / error：9 / 2 / 9
+- Unreal socket API / expected sockets / runtime sockets：ready / 4 / 0
+- Unreal socket writes：assetWrites=0，productionWrites=0
 
 Gate 为 `Blocked` 是正确状态：`Rifle Socket Authoring Approved` Ready；`Backpack Socket Temporary Blocked` 保留 missing joints、world-space socket、large offset、missing mirror pair、bad hotspot owner/semantic、duplicate/out-of-range pose frame、missing preview locator 和 unapproved pose transfer 等业务故障。
 
@@ -77,5 +94,5 @@ Gate 为 `Blocked` 是正确状态：`Rifle Socket Authoring Approved` Ready；`
 
 下一阶段可以继续做：
 
-- Unreal socket import checker：把 Maya socket facts 对照到 Unreal Skeleton / StaticMesh sockets。
+- Socket creation / write+rollback fixture：在 public Unreal project 中受控创建 socket、post-check，再 rollback 或输出 approval receipt。
 - Pose transfer repair preview：生成只读修复计划，区分可自动 mirror 的 locator 和必须 owner 确认的 transfer。

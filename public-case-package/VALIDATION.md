@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r38-unreal-socket-import-checker` | `python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python collects SkeletalMesh/Skeleton socket API readiness and expected socket coverage from Spatial Authoring drilldown facts, reporting L3 / Blocked with 9 pass, 2 warnings, 9 errors and assetWrites=0. |
+| `validate-r38-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r38-unreal-socket-import-checker-presentation-pack")` | DCC Presenter Pack probes 35 key evidence files including Unreal Socket Import Checker, reports 35 present / 0 missing required files, and exports 27 demo route steps. |
 | `validate-r37-unreal-control-rig-bridge` | `python dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python collects Control Rig API, SkeletalMesh/Skeleton binding and expected Control Rig asset coverage from Character Calibration drilldown facts, reporting L3 / Blocked with 8 pass, 1 warning, 7 errors and assetWrites=0. |
 | `validate-r37-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r37-unreal-control-rig-bridge-presentation-pack")` | DCC Presenter Pack probes 34 key evidence files including Unreal Control Rig Bridge, reports 34 present / 0 missing required files, and exports 26 demo route steps. |
 | `validate-r36-spatial-authoring-drilldown` | `python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py` | Maya L3 spatial authoring facts are converted into 2 UI-ready drilldowns, 18 panels, 9 issue rows, 9 owner actions, 7 owner-required actions and 2 manual-review actions. |

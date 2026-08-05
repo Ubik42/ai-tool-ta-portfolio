@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -29,6 +29,7 @@ $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
 $UnrealControlRig = Join-Path $Root "dcc-hosts\unreal-control-rig-bridge"
 $SpatialAuthoring = Join-Path $Root "dcc-hosts\spatial-authoring-workbench"
+$UnrealSocket = Join-Path $Root "dcc-hosts\unreal-socket-import-checker"
 $PlatformVariant = Join-Path $Root "dcc-hosts\platform-variant-forge"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
@@ -89,6 +90,10 @@ $QuickPythonFiles = @(
     (Join-Path $SpatialAuthoring "scripts\run_l3_smoke.py"),
     (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py"),
     (Join-Path $SpatialAuthoring "scripts\run_drilldown.py"),
+    (Join-Path $UnrealSocket "unreal_socket_import_checker\contract.py"),
+    (Join-Path $UnrealSocket "scripts\run_smoke.py"),
+    (Join-Path $UnrealSocket "scripts\run_l3_smoke.py"),
+    (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_import_checker.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\runtime_contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\generation_plan.py"),
@@ -129,11 +134,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r37-unreal-control-rig-bridge-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r38-unreal-socket-import-checker-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 34, summary
+assert summary["present_evidence_files"] == 35, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 26, summary
+assert summary["demo_route_steps"] == 27, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -202,6 +207,12 @@ if ($Tier -in @("spatial-authoring", "full")) {
 if ($Tier -in @("spatial-drilldown", "full")) {
     Invoke-Step "spatial authoring drilldown" {
         python (Join-Path $SpatialAuthoring "scripts\run_drilldown.py")
+    }
+}
+
+if ($Tier -in @("unreal-socket", "full")) {
+    Invoke-Step "unreal socket import checker L3" {
+        python (Join-Path $UnrealSocket "scripts\run_l3_smoke.py")
     }
 }
 

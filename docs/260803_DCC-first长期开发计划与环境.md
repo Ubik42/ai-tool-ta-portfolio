@@ -1389,3 +1389,37 @@ Presenter Pack evidence: 34 / 34 present, 0 missing, 26 route steps
 ```text
 spatial-authoring-drilldown artifact -> public Unreal Skeleton / socket facts -> socket / hotspot / pose transfer comparison -> owner actions / rollback boundary -> Presenter Pack row -> docs
 ```
+
+
+## R38 循环开发断点：Unreal Socket Import Checker
+
+R38 已完成 `Unreal Socket Import Checker` L3：
+
+```text
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+```
+
+R38 结果：`run_l3_smoke.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R36 Spatial Authoring Drilldown artifact，采集 SkeletalMesh / Skeleton / SkeletalMeshSocket API、目标资产存在性和 expected socket coverage。结果为 L3 / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，socket API ready，4 expected sockets，0 runtime sockets，assetWrites=0，productionWrites=0。Blocked 是业务门禁：approved rifle 行缺 `SK_Hand_L` / `SK_Hand_R`，TMP backpack 行同时被 Maya 源头缺陷和 Unreal 目标缺失阻断。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r38 / dcc-first-package@1.35.0
+Presenter Pack evidence: 35 / 35 present, 0 missing, 27 route steps
+```
+
+验证命令：
+
+```powershell
+python -m py_compile dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/contract.py dcc-hosts/unreal-socket-import-checker/scripts/run_smoke.py dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_import_checker.py
+python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Control Rig / Socket Authoring Controlled Executor` 或 `Platform Variant StaticMesh LOD/Nanite Runtime Post-check`：
+
+```text
+R37/R38/R34 artifacts -> public Unreal runtime facts -> controlled write or post-check contract -> rollback / owner receipt -> Presenter Pack row -> docs
+```

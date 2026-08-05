@@ -1,6 +1,6 @@
 # DCC-first Case Page / Presenter Pack
 
-R37 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
+R38 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
 
 ## 核心业务逻辑
 
@@ -12,7 +12,7 @@ R37 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 M
 - Composite gate：把 Asset Handoff Gate 的 Ready / Review / Blocked 作为最终业务判定。
 - Owner / Engine decision：把 repair preview、owner disposition、engine handoff mock 放进主案例。
 - Media plan：把 9 张截图和 1 段录屏变成明确采集清单。
-- Presenter Pack：探测 34 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
+- Presenter Pack：探测 35 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
 - Preset Fact Review：把 Unreal preset comparison 的 blocked / drift / waived / matched rows 投影成 Maya 内 reviewer queue。
 - Scene Transaction Guard：把 Maya 工具运行前后的 scene mutation 输出为 fingerprint、risk rows 和 rollback preview。
 
@@ -39,7 +39,7 @@ Maya API：
 
 React 入口：
 
-- `Task Orchestrator` 证据视图顶部的 `R37 Cross-DCC / Engine Reviewer Pack`
+- `Task Orchestrator` 证据视图顶部的 `R38 Cross-DCC / Engine Reviewer Pack`
 - `Export Case Page` 按钮
 - `Presenter Pack` 按钮
 - `Preset Facts` 按钮
@@ -47,7 +47,7 @@ React 入口：
 - 7 段 business route
 - Composite Gate 摘要
 - Owner / Engine Decision 摘要
-- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Spatial Authoring、Spatial Authoring Drilldown、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
+- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Spatial Authoring、Spatial Authoring Drilldown、Unreal Socket Import Checker、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
 - GUI evidence plan
 - GUI media audit
 - Presenter Pack evidence file probes
@@ -82,7 +82,7 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r37` / `dcc-first-package@1.34.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r38` / `dcc-first-package@1.35.0`
   - gate：`CapturePending`
   - demo route steps：26
   - key evidence files：34
@@ -141,7 +141,7 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
 ```
 
 Unreal Control Rig Bridge：
@@ -294,4 +294,4 @@ Handoff decision packet：
 
 ## 下一轮
 
-下一轮优先做 Unreal Socket Import Checker，把已完成的 Spatial Authoring drilldown 接到引擎 Skeleton / socket facts；也可以把 R37 继续加深到 public Control Rig asset fixture / runtime control hierarchy，或转 Platform Variant StaticMesh LOD/Nanite runtime post-check。Maya GUI 截图/录屏保留到最后集中采集。
+下一轮优先做 Control Rig asset authoring / runtime hierarchy，或把 Platform Variant receipts 转成更细的 StaticMesh LOD/Nanite runtime post-check。Maya GUI 截图/录屏保留到最后集中采集。

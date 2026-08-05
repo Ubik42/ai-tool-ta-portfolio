@@ -1,0 +1,1456 @@
+{
+  "reportVersion": "unreal-socket-import-checker@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "generatedAt": "2026-08-05 21:21:38",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_socket_facts_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-drilldown-20260805-203713.json",
+    "reportVersion": "spatial-authoring-drilldown@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "maya_spatial_authoring_rows_to_drilldown",
+    "gate": "Blocked"
+  },
+  "sourceMayaL3": {
+    "available": true,
+    "reportVersion": "spatial-authoring-maya-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "maya_spatial_authoring_collected",
+    "runtimeCollected": true
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "SkeletalMesh": true,
+        "Skeleton": true,
+        "SkeletalMeshSocket": true,
+        "EditorAssetLibrary": true,
+        "AssetRegistryHelpers": true
+      },
+      "skeletalMeshMethods": [
+        "add_socket",
+        "default_mesh_deformer",
+        "find_socket",
+        "find_socket_and_index",
+        "find_socket_info",
+        "get_socket_by_index",
+        "mesh_clothing_assets",
+        "num_sockets",
+        "skeleton"
+      ],
+      "skeletonMethods": [
+        "add_compatible_skeleton",
+        "add_compatible_skeleton_soft",
+        "compatible_skeletons",
+        "get_reference_pose"
+      ],
+      "skeletalMeshSocketMethods": [
+        "bone_name",
+        "get_fname",
+        "get_full_name",
+        "get_name",
+        "get_path_name",
+        "get_socket_location",
+        "initialize_socket_from_location",
+        "relative_location",
+        "relative_rotation",
+        "relative_scale",
+        "rename",
+        "socket_name"
+      ]
+    },
+    "assetRegistryScanned": true,
+    "engineWrites": 0,
+    "assetWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public fixture only"
+  },
+  "facts": {
+    "schema": "unreal-socket-import-checker-input@0.1.0",
+    "sourceRows": 2,
+    "runtimeCollected": true,
+    "assets": [
+      {
+        "assetId": "spatial-backpack-tmp-002",
+        "assetLabel": "Backpack Socket Temporary Blocked",
+        "sourceStatus": "Blocked",
+        "sourceIssueCount": 9,
+        "ownerState": "temporary",
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "bindingPolicy": "read_existing_public_fixture_assets",
+          "socketContainer": "SkeletalMesh or Skeleton sockets under /Game/AI_Tool_TA/Characters"
+        },
+        "sourceSockets": [
+          {
+            "sourceName": "hand_R_socket",
+            "exportName": "SK_Hand_R",
+            "parentJoint": "Hand_R",
+            "mirrorOf": "hand_L_socket",
+            "side": "R",
+            "space": "local",
+            "previewLocator": true,
+            "translate": [
+              5.0,
+              -1.0,
+              0.0
+            ],
+            "rotate": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "offsetCm": 5.099
+          },
+          {
+            "sourceName": "shoulder_R_socket",
+            "exportName": "SK_Shoulder_R",
+            "parentJoint": "Shoulder_R",
+            "mirrorOf": "shoulder_L_socket",
+            "side": "R",
+            "space": "world",
+            "previewLocator": false,
+            "translate": [
+              8.5,
+              2.0,
+              1.0
+            ],
+            "rotate": [
+              0.0,
+              20.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.2,
+              1.0
+            ],
+            "offsetCm": 8.7892
+          }
+        ],
+        "sourceHotspots": [
+          {
+            "sourceName": "strap_attach_fx",
+            "semantic": "gear.unknown",
+            "owner": "",
+            "parentJoint": "Hand_R",
+            "space": "world",
+            "previewLocator": false
+          }
+        ],
+        "sourcePanels": {
+          "parentJoint": {
+            "status": "Blocked",
+            "label": "Parent Joint",
+            "metrics": {
+              "expectedCount": 6,
+              "actualCount": 4,
+              "missingJoints": [
+                "Hand_L",
+                "Hand_R",
+                "Shoulder_L"
+              ],
+              "temporaryJoints": [
+                "TMP_AttachProxy"
+              ],
+              "parentIssues": [
+                {
+                  "kind": "socket",
+                  "name": "hand_R_socket",
+                  "parentJoint": "Hand_R"
+                },
+                {
+                  "kind": "hotspot",
+                  "name": "strap_attach_fx",
+                  "parentJoint": "Hand_R"
+                }
+              ]
+            }
+          },
+          "sockets": {
+            "status": "Blocked",
+            "label": "Sockets",
+            "metrics": {
+              "count": 2,
+              "names": [
+                "hand_R_socket",
+                "shoulder_R_socket"
+              ],
+              "offsetViolations": [
+                {
+                  "name": "hand_R_socket",
+                  "offsetCm": 5.099,
+                  "limitCm": 3.0
+                },
+                {
+                  "name": "shoulder_R_socket",
+                  "offsetCm": 8.7892,
+                  "limitCm": 3.0
+                }
+              ],
+              "maxSocketOffsetCm": 3.0,
+              "sockets": [
+                {
+                  "kind": "socket",
+                  "name": "hand_R_socket",
+                  "exportName": "SK_Hand_R",
+                  "parentJoint": "Hand_R",
+                  "mirrorOf": "hand_L_socket",
+                  "side": "R",
+                  "semantic": null,
+                  "owner": null,
+                  "role": null,
+                  "frame": 0,
+                  "space": "local",
+                  "previewLocator": true,
+                  "translate": [
+                    5.0,
+                    -1.0,
+                    0.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "offsetCm": 5.099
+                },
+                {
+                  "kind": "socket",
+                  "name": "shoulder_R_socket",
+                  "exportName": "SK_Shoulder_R",
+                  "parentJoint": "Shoulder_R",
+                  "mirrorOf": "shoulder_L_socket",
+                  "side": "R",
+                  "semantic": null,
+                  "owner": null,
+                  "role": null,
+                  "frame": 0,
+                  "space": "world",
+                  "previewLocator": false,
+                  "translate": [
+                    8.5,
+                    2.0,
+                    1.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    20.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.2,
+                    1.0
+                  ],
+                  "offsetCm": 8.7892
+                }
+              ]
+            }
+          },
+          "hotspots": {
+            "status": "Blocked",
+            "label": "Hotspots",
+            "metrics": {
+              "count": 1,
+              "semanticIssues": [
+                {
+                  "name": "strap_attach_fx",
+                  "semantic": "gear.unknown",
+                  "owner": ""
+                }
+              ],
+              "allowedSemantics": [
+                "gear.attach",
+                "vfx.spark"
+              ],
+              "requiredOwners": [
+                "gear-tech",
+                "animation"
+              ],
+              "hotspots": [
+                {
+                  "kind": "hotspot",
+                  "name": "strap_attach_fx",
+                  "exportName": null,
+                  "parentJoint": "Hand_R",
+                  "mirrorOf": null,
+                  "side": null,
+                  "semantic": "gear.unknown",
+                  "owner": "",
+                  "role": null,
+                  "frame": 0,
+                  "space": "world",
+                  "previewLocator": false,
+                  "translate": [
+                    0.0,
+                    7.5,
+                    0.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "offsetCm": 7.5
+                }
+              ]
+            }
+          },
+          "transforms": {
+            "status": "Blocked",
+            "label": "Transforms",
+            "metrics": {
+              "scaleIssues": [
+                {
+                  "kind": "socket",
+                  "name": "shoulder_R_socket",
+                  "scale": [
+                    1.0,
+                    1.2,
+                    1.0
+                  ]
+                }
+              ],
+              "spaceIssues": [
+                {
+                  "kind": "socket",
+                  "name": "shoulder_R_socket",
+                  "space": "world"
+                },
+                {
+                  "kind": "hotspot",
+                  "name": "strap_attach_fx",
+                  "space": "world"
+                },
+                {
+                  "kind": "poseFrame",
+                  "name": "equip",
+                  "space": "world"
+                }
+              ],
+              "allowedSpaces": [
+                "local"
+              ],
+              "requireUniformScale": true
+            }
+          },
+          "poseTransfer": {
+            "status": "Blocked",
+            "label": "Pose Transfer",
+            "metrics": {
+              "requiredPairs": [
+                [
+                  "shoulder_R_socket",
+                  "shoulder_L_socket"
+                ],
+                [
+                  "hand_R_socket",
+                  "hand_L_socket"
+                ]
+              ],
+              "issues": {
+                "space": "world",
+                "missingPairs": [
+                  [
+                    "shoulder_R_socket",
+                    "shoulder_L_socket"
+                  ],
+                  [
+                    "hand_R_socket",
+                    "hand_L_socket"
+                  ]
+                ],
+                "missingTargetPose": true,
+                "missingApproval": true
+              },
+              "payload": {
+                "approvedBy": "",
+                "mirrorAxis": "X",
+                "requiredPairs": [
+                  [
+                    "shoulder_R_socket",
+                    "shoulder_L_socket"
+                  ],
+                  [
+                    "hand_R_socket",
+                    "hand_L_socket"
+                  ]
+                ],
+                "sourcePose": "equip",
+                "space": "world",
+                "targetPose": "unequip"
+              }
+            }
+          }
+        },
+        "sourceL3": {
+          "assetId": "spatial-backpack-tmp-002",
+          "assetLabel": "Backpack Socket Temporary Blocked",
+          "normalized": {
+            "spatial.protocol.schema": "spatial-authoring@dcc-r27",
+            "asset.ownerState": "temporary",
+            "joints.expectedCount": 6,
+            "joints.actualCount": 4,
+            "joints.missing": [
+              "Hand_L",
+              "Hand_R",
+              "Shoulder_L"
+            ],
+            "joints.tmp": [
+              "TMP_AttachProxy"
+            ],
+            "parentJoint.missing": [
+              {
+                "kind": "socket",
+                "name": "hand_R_socket",
+                "parentJoint": "Hand_R"
+              },
+              {
+                "kind": "hotspot",
+                "name": "strap_attach_fx",
+                "parentJoint": "Hand_R"
+              }
+            ],
+            "sockets.count": 2,
+            "sockets.names": [
+              "hand_R_socket",
+              "shoulder_R_socket"
+            ],
+            "sockets.offsetViolations": [
+              {
+                "name": "hand_R_socket",
+                "offsetCm": 5.099,
+                "limitCm": 3.0
+              },
+              {
+                "name": "shoulder_R_socket",
+                "offsetCm": 8.7892,
+                "limitCm": 3.0
+              }
+            ],
+            "mirror.pairs": [
+              {
+                "pair": [
+                  "hand_R_socket",
+                  "hand_L_socket"
+                ],
+                "state": "missing",
+                "deltaCm": null
+              },
+              {
+                "pair": [
+                  "shoulder_R_socket",
+                  "shoulder_L_socket"
+                ],
+                "state": "missing",
+                "deltaCm": null
+              }
+            ],
+            "mirror.missingPairs": [
+              {
+                "pair": [
+                  "hand_R_socket",
+                  "hand_L_socket"
+                ],
+                "state": "missing",
+                "deltaCm": null
+              },
+              {
+                "pair": [
+                  "shoulder_R_socket",
+                  "shoulder_L_socket"
+                ],
+                "state": "missing",
+                "deltaCm": null
+              }
+            ],
+            "mirror.symmetryViolations": [],
+            "hotspots.count": 1,
+            "hotspots.semanticIssues": [
+              {
+                "name": "strap_attach_fx",
+                "semantic": "gear.unknown",
+                "owner": ""
+              }
+            ],
+            "poseFrames.count": 3,
+            "poseFrames.required": [
+              "idle",
+              "equip",
+              "unequip"
+            ],
+            "poseFrames.issues": {
+              "missing": [
+                "unequip"
+              ],
+              "duplicates": [
+                "equip"
+              ],
+              "outsideRange": [
+                {
+                  "name": "equip",
+                  "frame": 144,
+                  "range": [
+                    1,
+                    120
+                  ]
+                }
+              ],
+              "missingOwner": [
+                "equip"
+              ]
+            },
+            "transforms.scaleIssues": [
+              {
+                "kind": "socket",
+                "name": "shoulder_R_socket",
+                "scale": [
+                  1.0,
+                  1.2,
+                  1.0
+                ]
+              }
+            ],
+            "transforms.spaceIssues": [
+              {
+                "kind": "socket",
+                "name": "shoulder_R_socket",
+                "space": "world"
+              },
+              {
+                "kind": "hotspot",
+                "name": "strap_attach_fx",
+                "space": "world"
+              },
+              {
+                "kind": "poseFrame",
+                "name": "equip",
+                "space": "world"
+              }
+            ],
+            "previewLocator.missing": [
+              {
+                "kind": "socket",
+                "name": "shoulder_R_socket"
+              },
+              {
+                "kind": "hotspot",
+                "name": "strap_attach_fx"
+              },
+              {
+                "kind": "poseFrame",
+                "name": "equip"
+              }
+            ],
+            "poseTransfer.requiredPairs": [
+              [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "poseTransfer.issues": {
+              "space": "world",
+              "missingPairs": [
+                [
+                  "shoulder_R_socket",
+                  "shoulder_L_socket"
+                ],
+                [
+                  "hand_R_socket",
+                  "hand_L_socket"
+                ]
+              ],
+              "missingTargetPose": true,
+              "missingApproval": true
+            }
+          }
+        },
+        "runtime": {
+          "assetId": "spatial-backpack-tmp-002",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "skeletalMeshExists": false,
+          "skeletonExists": false,
+          "skeletalMeshClass": null,
+          "skeletonClass": null,
+          "socketApiReady": false,
+          "skeletalMeshSocketCount": 0,
+          "skeletonSocketCount": 0,
+          "skeletalMeshSocketNames": [],
+          "skeletonSocketNames": [],
+          "socketDetailsByName": {},
+          "skeletalMeshFacts": {},
+          "skeletonFacts": {}
+        },
+        "normalized": {
+          "source.status": "Blocked",
+          "source.parentPanelStatus": "Blocked",
+          "source.socketPanelStatus": "Blocked",
+          "source.hotspotPanelStatus": "Blocked",
+          "source.transformPanelStatus": "Blocked",
+          "source.poseTransferPanelStatus": "Blocked",
+          "source.parentIssues": [
+            {
+              "kind": "socket",
+              "name": "hand_R_socket",
+              "parentJoint": "Hand_R"
+            },
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx",
+              "parentJoint": "Hand_R"
+            }
+          ],
+          "source.offsetViolations": [
+            {
+              "name": "hand_R_socket",
+              "offsetCm": 5.099,
+              "limitCm": 3.0
+            },
+            {
+              "name": "shoulder_R_socket",
+              "offsetCm": 8.7892,
+              "limitCm": 3.0
+            }
+          ],
+          "source.spaceIssues": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket",
+              "space": "world"
+            },
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx",
+              "space": "world"
+            },
+            {
+              "kind": "poseFrame",
+              "name": "equip",
+              "space": "world"
+            }
+          ],
+          "source.scaleIssues": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket",
+              "scale": [
+                1.0,
+                1.2,
+                1.0
+              ]
+            }
+          ],
+          "source.hotspotSemanticIssues": [
+            {
+              "name": "strap_attach_fx",
+              "semantic": "gear.unknown",
+              "owner": ""
+            }
+          ],
+          "source.poseTransferIssues": {
+            "space": "world",
+            "missingPairs": [
+              [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "missingTargetPose": true,
+            "missingApproval": true
+          },
+          "runtime.executed": true,
+          "runtime.socketApiReady": false,
+          "runtime.skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP",
+          "runtime.skeletalMeshExists": false,
+          "runtime.skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_TMP_Skeleton",
+          "runtime.skeletonExists": false,
+          "runtime.expectedSocketNames": [
+            "SK_Hand_R",
+            "SK_Shoulder_R"
+          ],
+          "runtime.socketNames": [],
+          "runtime.missingSockets": [
+            "SK_Hand_R",
+            "SK_Shoulder_R"
+          ],
+          "runtime.parentMismatches": [],
+          "runtime.assetRegistryScanned": true
+        }
+      },
+      {
+        "assetId": "spatial-rifle-authoring-001",
+        "assetLabel": "Rifle Socket Authoring Approved",
+        "sourceStatus": "Ready",
+        "sourceIssueCount": 0,
+        "ownerState": "approved",
+        "expectedUnreal": {
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "bindingPolicy": "read_existing_public_fixture_assets",
+          "socketContainer": "SkeletalMesh or Skeleton sockets under /Game/AI_Tool_TA/Characters"
+        },
+        "sourceSockets": [
+          {
+            "sourceName": "hand_L_socket",
+            "exportName": "SK_Hand_L",
+            "parentJoint": "Hand_L",
+            "mirrorOf": "hand_R_socket",
+            "side": "L",
+            "space": "local",
+            "previewLocator": true,
+            "translate": [
+              -2.0,
+              1.0,
+              0.0
+            ],
+            "rotate": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "offsetCm": 2.2361
+          },
+          {
+            "sourceName": "hand_R_socket",
+            "exportName": "SK_Hand_R",
+            "parentJoint": "Hand_R",
+            "mirrorOf": "hand_L_socket",
+            "side": "R",
+            "space": "local",
+            "previewLocator": true,
+            "translate": [
+              2.0,
+              1.0,
+              0.0
+            ],
+            "rotate": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "offsetCm": 2.2361
+          }
+        ],
+        "sourceHotspots": [
+          {
+            "sourceName": "muzzle_flash",
+            "semantic": "weapon.muzzle",
+            "owner": "combat-fx",
+            "parentJoint": "Weapon_R",
+            "space": "local",
+            "previewLocator": true
+          }
+        ],
+        "sourcePanels": {
+          "parentJoint": {
+            "status": "Ready",
+            "label": "Parent Joint",
+            "metrics": {
+              "expectedCount": 5,
+              "actualCount": 5,
+              "missingJoints": [],
+              "temporaryJoints": [],
+              "parentIssues": []
+            }
+          },
+          "sockets": {
+            "status": "Ready",
+            "label": "Sockets",
+            "metrics": {
+              "count": 2,
+              "names": [
+                "hand_L_socket",
+                "hand_R_socket"
+              ],
+              "offsetViolations": [],
+              "maxSocketOffsetCm": 4.0,
+              "sockets": [
+                {
+                  "kind": "socket",
+                  "name": "hand_L_socket",
+                  "exportName": "SK_Hand_L",
+                  "parentJoint": "Hand_L",
+                  "mirrorOf": "hand_R_socket",
+                  "side": "L",
+                  "semantic": null,
+                  "owner": null,
+                  "role": null,
+                  "frame": 0,
+                  "space": "local",
+                  "previewLocator": true,
+                  "translate": [
+                    -2.0,
+                    1.0,
+                    0.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "offsetCm": 2.2361
+                },
+                {
+                  "kind": "socket",
+                  "name": "hand_R_socket",
+                  "exportName": "SK_Hand_R",
+                  "parentJoint": "Hand_R",
+                  "mirrorOf": "hand_L_socket",
+                  "side": "R",
+                  "semantic": null,
+                  "owner": null,
+                  "role": null,
+                  "frame": 0,
+                  "space": "local",
+                  "previewLocator": true,
+                  "translate": [
+                    2.0,
+                    1.0,
+                    0.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "offsetCm": 2.2361
+                }
+              ]
+            }
+          },
+          "hotspots": {
+            "status": "Ready",
+            "label": "Hotspots",
+            "metrics": {
+              "count": 1,
+              "semanticIssues": [],
+              "allowedSemantics": [
+                "weapon.muzzle",
+                "weapon.shell",
+                "vfx.spark"
+              ],
+              "requiredOwners": [
+                "combat-fx",
+                "animation"
+              ],
+              "hotspots": [
+                {
+                  "kind": "hotspot",
+                  "name": "muzzle_flash",
+                  "exportName": null,
+                  "parentJoint": "Weapon_R",
+                  "mirrorOf": null,
+                  "side": null,
+                  "semantic": "weapon.muzzle",
+                  "owner": "combat-fx",
+                  "role": null,
+                  "frame": 0,
+                  "space": "local",
+                  "previewLocator": true,
+                  "translate": [
+                    3.5,
+                    0.4,
+                    0.0
+                  ],
+                  "rotate": [
+                    0.0,
+                    90.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "offsetCm": 3.5228
+                }
+              ]
+            }
+          },
+          "transforms": {
+            "status": "Ready",
+            "label": "Transforms",
+            "metrics": {
+              "scaleIssues": [],
+              "spaceIssues": [],
+              "allowedSpaces": [
+                "local"
+              ],
+              "requireUniformScale": true
+            }
+          },
+          "poseTransfer": {
+            "status": "Ready",
+            "label": "Pose Transfer",
+            "metrics": {
+              "requiredPairs": [
+                [
+                  "hand_R_socket",
+                  "hand_L_socket"
+                ]
+              ],
+              "issues": {
+                "space": "local",
+                "missingPairs": [],
+                "missingTargetPose": false,
+                "missingApproval": false
+              },
+              "payload": {
+                "approvedBy": "animation",
+                "mirrorAxis": "X",
+                "requiredPairs": [
+                  [
+                    "hand_R_socket",
+                    "hand_L_socket"
+                  ]
+                ],
+                "sourcePose": "grip",
+                "space": "local",
+                "targetPose": "grip"
+              }
+            }
+          }
+        },
+        "sourceL3": {
+          "assetId": "spatial-rifle-authoring-001",
+          "assetLabel": "Rifle Socket Authoring Approved",
+          "normalized": {
+            "spatial.protocol.schema": "spatial-authoring@dcc-r27",
+            "asset.ownerState": "approved",
+            "joints.expectedCount": 5,
+            "joints.actualCount": 5,
+            "joints.missing": [],
+            "joints.tmp": [],
+            "parentJoint.missing": [],
+            "sockets.count": 2,
+            "sockets.names": [
+              "hand_L_socket",
+              "hand_R_socket"
+            ],
+            "sockets.offsetViolations": [],
+            "mirror.pairs": [
+              {
+                "pair": [
+                  "hand_L_socket",
+                  "hand_R_socket"
+                ],
+                "state": "matched",
+                "deltaCm": 0.0,
+                "limitCm": 0.35
+              }
+            ],
+            "mirror.missingPairs": [],
+            "mirror.symmetryViolations": [],
+            "hotspots.count": 1,
+            "hotspots.semanticIssues": [],
+            "poseFrames.count": 3,
+            "poseFrames.required": [
+              "idle",
+              "grip",
+              "fire"
+            ],
+            "poseFrames.issues": {
+              "missing": [],
+              "duplicates": [],
+              "outsideRange": [],
+              "missingOwner": []
+            },
+            "transforms.scaleIssues": [],
+            "transforms.spaceIssues": [],
+            "previewLocator.missing": [],
+            "poseTransfer.requiredPairs": [
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "poseTransfer.issues": {
+              "space": "local",
+              "missingPairs": [],
+              "missingTargetPose": false,
+              "missingApproval": false
+            }
+          }
+        },
+        "runtime": {
+          "assetId": "spatial-rifle-authoring-001",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "skeletalMeshExists": true,
+          "skeletonExists": true,
+          "skeletalMeshClass": "SkeletalMesh",
+          "skeletonClass": "Skeleton",
+          "socketApiReady": true,
+          "skeletalMeshSocketCount": 0,
+          "skeletonSocketCount": 0,
+          "skeletalMeshSocketNames": [],
+          "skeletonSocketNames": [],
+          "socketDetailsByName": {},
+          "skeletalMeshFacts": {
+            "pathName": "/Game/AI_Tool_TA/Characters/SK_Hero.SK_Hero",
+            "class": "SkeletalMesh",
+            "availableMethods": [
+              "add_socket",
+              "default_mesh_deformer",
+              "find_socket",
+              "find_socket_and_index",
+              "find_socket_info",
+              "get_socket_by_index",
+              "mesh_clothing_assets",
+              "num_sockets",
+              "skeleton"
+            ]
+          },
+          "skeletonFacts": {
+            "pathName": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton",
+            "class": "Skeleton",
+            "availableMethods": [
+              "add_compatible_skeleton",
+              "add_compatible_skeleton_soft",
+              "compatible_skeletons",
+              "get_reference_pose"
+            ]
+          }
+        },
+        "normalized": {
+          "source.status": "Ready",
+          "source.parentPanelStatus": "Ready",
+          "source.socketPanelStatus": "Ready",
+          "source.hotspotPanelStatus": "Ready",
+          "source.transformPanelStatus": "Ready",
+          "source.poseTransferPanelStatus": "Ready",
+          "source.parentIssues": [],
+          "source.offsetViolations": [],
+          "source.spaceIssues": [],
+          "source.scaleIssues": [],
+          "source.hotspotSemanticIssues": [],
+          "source.poseTransferIssues": {
+            "space": "local",
+            "missingPairs": [],
+            "missingTargetPose": false,
+            "missingApproval": false
+          },
+          "runtime.executed": true,
+          "runtime.socketApiReady": true,
+          "runtime.skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "runtime.skeletalMeshExists": true,
+          "runtime.skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "runtime.skeletonExists": true,
+          "runtime.expectedSocketNames": [
+            "SK_Hand_L",
+            "SK_Hand_R"
+          ],
+          "runtime.socketNames": [],
+          "runtime.missingSockets": [
+            "SK_Hand_L",
+            "SK_Hand_R"
+          ],
+          "runtime.parentMismatches": [],
+          "runtime.assetRegistryScanned": true
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-socket-import-checker-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "spatialRows": 2,
+      "readyRows": 0,
+      "reviewRows": 0,
+      "blockedRows": 2,
+      "pass": 9,
+      "warning": 2,
+      "error": 9,
+      "readyAssetIds": [],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "spatial-backpack-tmp-002",
+        "spatial-rifle-authoring-001"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "spatial-backpack-tmp-002:source-drilldown-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-drilldown-ready",
+        "label": "Source Spatial Drilldown",
+        "status": "error",
+        "reason": "Only Ready Maya spatial authoring rows should proceed to Unreal socket approval.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve Maya spatial drilldown owner actions before engine socket approval."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:unreal-python-runtime",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The checker must collect engine socket facts through Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-backpack-tmp-002:socket-api-availability",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "socket-api-availability",
+        "label": "Socket API",
+        "status": "error",
+        "reason": "SkeletalMesh or Skeleton socket APIs must be visible before attach points are trusted.",
+        "evidence": "{'SkeletalMesh': True, 'Skeleton': True, 'SkeletalMeshSocket': True, 'EditorAssetLibrary': True, 'AssetRegistryHelpers': True}",
+        "fixPreview": "Use a public Unreal project with Python, Editor Scripting and SkeletalMesh/Skeleton socket APIs available."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:skeletal-target-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "skeletal-target-presence",
+        "label": "Skeletal Target Presence",
+        "status": "error",
+        "reason": "Expected SkeletalMesh and Skeleton targets must exist before socket coverage can be checked.",
+        "evidence": "mesh=False skeleton=False",
+        "fixPreview": "Import or relink the public SkeletalMesh/Skeleton before socket approval."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:source-parent-joints-clean",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-parent-joints-clean",
+        "label": "Source Parent Joints",
+        "status": "error",
+        "reason": "Socket and hotspot locators must bind to approved runtime joints in Maya.",
+        "evidence": "[{'kind': 'socket', 'name': 'hand_R_socket', 'parentJoint': 'Hand_R'}, {'kind': 'hotspot', 'name': 'strap_attach_fx', 'parentJoint': 'Hand_R'}]",
+        "fixPreview": "Restore missing joints or remap locators to approved parent joints."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:source-socket-authoring-clean",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-socket-authoring-clean",
+        "label": "Source Socket Authoring",
+        "status": "error",
+        "reason": "Socket offsets, local space and scale must be within export policy before engine import.",
+        "evidence": "offset=[{'name': 'hand_R_socket', 'offsetCm': 5.099, 'limitCm': 3.0}, {'name': 'shoulder_R_socket', 'offsetCm': 8.7892, 'limitCm': 3.0}] space=[{'kind': 'socket', 'name': 'shoulder_R_socket', 'space': 'world'}, {'kind': 'hotspot', 'name': 'strap_attach_fx', 'space': 'world'}, {'kind': 'poseFrame', 'name': 'equip', 'space': 'world'}] scale=[{'kind': 'socket', 'name': 'shoulder_R_socket', 'scale': [1.0, 1.2, 1.0]}]",
+        "fixPreview": "Fix source socket offsets, space and scale before engine import."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:engine-socket-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "engine-socket-presence",
+        "label": "Engine Socket Presence",
+        "status": "error",
+        "reason": "Every exported Maya socket name must exist on the Unreal SkeletalMesh or Skeleton.",
+        "evidence": "['SK_Hand_R', 'SK_Shoulder_R']",
+        "fixPreview": "Create or import the expected public engine sockets under the approved SkeletalMesh/Skeleton target."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:engine-socket-parent-binding",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "engine-socket-parent-binding",
+        "label": "Engine Socket Parent Binding",
+        "status": "error",
+        "reason": "Engine sockets must bind back to the same parent joints as the Maya authoring rows.",
+        "evidence": "['SK_Hand_R', 'SK_Shoulder_R']",
+        "fixPreview": "Relink engine sockets to the matching Skeleton bones or hold for owner review."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:hotspot-owner-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "hotspot-owner-ready",
+        "label": "Hotspot Owner Readiness",
+        "status": "warning",
+        "reason": "Gameplay hotspots need approved semantic and owner metadata before engine handoff.",
+        "evidence": "[{'name': 'strap_attach_fx', 'semantic': 'gear.unknown', 'owner': ''}]",
+        "fixPreview": "Assign hotspot semantic and owner or add an explicit waiver."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:pose-transfer-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-transfer-ready",
+        "label": "Pose Transfer Readiness",
+        "status": "warning",
+        "reason": "Pose transfer requires local-space pairs, target pose and owner approval.",
+        "evidence": "{'space': 'world', 'missingPairs': [['shoulder_R_socket', 'shoulder_L_socket'], ['hand_R_socket', 'hand_L_socket']], 'missingTargetPose': True, 'missingApproval': True}",
+        "fixPreview": "Complete pose transfer pair, target pose and approval before downstream use."
+      },
+      {
+        "id": "spatial-rifle-authoring-001:source-drilldown-ready",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "source-drilldown-ready",
+        "label": "Source Spatial Drilldown",
+        "status": "pass",
+        "reason": "Only Ready Maya spatial authoring rows should proceed to Unreal socket approval.",
+        "evidence": "Ready",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:unreal-python-runtime",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "The checker must collect engine socket facts through Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:socket-api-availability",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "socket-api-availability",
+        "label": "Socket API",
+        "status": "pass",
+        "reason": "SkeletalMesh or Skeleton socket APIs must be visible before attach points are trusted.",
+        "evidence": "{'SkeletalMesh': True, 'Skeleton': True, 'SkeletalMeshSocket': True, 'EditorAssetLibrary': True, 'AssetRegistryHelpers': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:skeletal-target-presence",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "skeletal-target-presence",
+        "label": "Skeletal Target Presence",
+        "status": "pass",
+        "reason": "Expected SkeletalMesh and Skeleton targets must exist before socket coverage can be checked.",
+        "evidence": "mesh=True skeleton=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:source-parent-joints-clean",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "source-parent-joints-clean",
+        "label": "Source Parent Joints",
+        "status": "pass",
+        "reason": "Socket and hotspot locators must bind to approved runtime joints in Maya.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:source-socket-authoring-clean",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "source-socket-authoring-clean",
+        "label": "Source Socket Authoring",
+        "status": "pass",
+        "reason": "Socket offsets, local space and scale must be within export policy before engine import.",
+        "evidence": "offset=[] space=[] scale=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:engine-socket-presence",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "engine-socket-presence",
+        "label": "Engine Socket Presence",
+        "status": "error",
+        "reason": "Every exported Maya socket name must exist on the Unreal SkeletalMesh or Skeleton.",
+        "evidence": "['SK_Hand_L', 'SK_Hand_R']",
+        "fixPreview": "Create or import the expected public engine sockets under the approved SkeletalMesh/Skeleton target."
+      },
+      {
+        "id": "spatial-rifle-authoring-001:engine-socket-parent-binding",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "engine-socket-parent-binding",
+        "label": "Engine Socket Parent Binding",
+        "status": "error",
+        "reason": "Engine sockets must bind back to the same parent joints as the Maya authoring rows.",
+        "evidence": "['SK_Hand_L', 'SK_Hand_R']",
+        "fixPreview": "Relink engine sockets to the matching Skeleton bones or hold for owner review."
+      },
+      {
+        "id": "spatial-rifle-authoring-001:hotspot-owner-ready",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "hotspot-owner-ready",
+        "label": "Hotspot Owner Readiness",
+        "status": "pass",
+        "reason": "Gameplay hotspots need approved semantic and owner metadata before engine handoff.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:pose-transfer-ready",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "pose-transfer-ready",
+        "label": "Pose Transfer Readiness",
+        "status": "pass",
+        "reason": "Pose transfer requires local-space pairs, target pose and owner approval.",
+        "evidence": "{'space': 'local', 'missingPairs': [], 'missingTargetPose': False, 'missingApproval': False}",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:source-drilldown-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-drilldown-ready",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "spatial-owner",
+        "preview": "Resolve Maya spatial drilldown owner actions before engine socket approval.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:socket-api-availability",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "socket-api-availability",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Use a public Unreal project with Python, Editor Scripting and SkeletalMesh/Skeleton socket APIs available.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:skeletal-target-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "skeletal-target-presence",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Import or relink the public SkeletalMesh/Skeleton before socket approval.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:source-parent-joints-clean",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-parent-joints-clean",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "spatial-owner",
+        "preview": "Restore missing joints or remap locators to approved parent joints.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:source-socket-authoring-clean",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-socket-authoring-clean",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "spatial-owner",
+        "preview": "Fix source socket offsets, space and scale before engine import.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:engine-socket-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "engine-socket-presence",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Create or import the expected public engine sockets under the approved SkeletalMesh/Skeleton target.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:engine-socket-parent-binding",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "engine-socket-parent-binding",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Relink engine sockets to the matching Skeleton bones or hold for owner review.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:hotspot-owner-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "hotspot-owner-ready",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "gameplay-owner",
+        "preview": "Assign hotspot semantic and owner or add an explicit waiver.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-backpack-tmp-002:pose-transfer-ready",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-transfer-ready",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "animation-owner",
+        "preview": "Complete pose transfer pair, target pose and approval before downstream use.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-rifle-authoring-001:engine-socket-presence",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "engine-socket-presence",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Create or import the expected public engine sockets under the approved SkeletalMesh/Skeleton target.",
+        "writeBoundary": "preview_only"
+      },
+      {
+        "id": "owner-action:spatial-rifle-authoring-001:engine-socket-parent-binding",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "engine-socket-parent-binding",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Relink engine sockets to the matching Skeleton bones or hold for owner review.",
+        "writeBoundary": "preview_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-socket-import-checker",
+    "name": "Unreal Socket Import Checker",
+    "methodSource": "Maya spatial authoring / sockets / hotspots / pose transfer to Unreal socket readiness",
+    "protocolCarrier": "Spatial Authoring drilldown + Unreal Python SkeletalMesh/Skeleton socket facts",
+    "boundary": {
+      "mutation": "public_unreal_test_project_read_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R38 joins Maya socket and hotspot authoring facts to Unreal SkeletalMesh/Skeleton socket readiness.",
+    "The checker separates source authoring defects, runtime target presence, socket API readiness and missing engine socket coverage.",
+    "The first Unreal socket pass is read-only; expected missing sockets become owner actions instead of silent engine mutation."
+  ]
+}

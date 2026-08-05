@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r37-unreal-control-rig-bridge-presentation-pack",
+        label: str = "r38-unreal-socket-import-checker-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4080,6 +4080,12 @@ class MayaPortfolioApi:
                 "Spatial Authoring Drilldown artifact",
                 "artifact",
                 manifest.get("spatialAuthoringDrilldownArtifact"),
+            ),
+            _probe_file(
+                "unreal-socket-import-checker",
+                "Unreal Socket Import Checker artifact",
+                "artifact",
+                manifest.get("unrealSocketImportCheckerArtifact"),
             ),
             _probe_file(
                 "platform-variant-forge",
@@ -4221,73 +4227,79 @@ class MayaPortfolioApi:
                 "evidence_expected": "Maya L3 spatial authoring facts become UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
             },
             {
-                "id": "15-run-platform-variant-forge",
+                "id": "15-run-unreal-socket-import-checker",
+                "label": "Run Unreal socket import checker",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py.",
+                "evidence_expected": "Unreal Python checks SkeletalMesh/Skeleton socket API readiness and expected engine socket coverage from Spatial Authoring drilldown facts.",
+            },
+            {
+                "id": "16-run-platform-variant-forge",
                 "label": "Run platform variant forge",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_smoke.py.",
                 "evidence_expected": "PC and Mobile variant plans are checked against LOD, material, texture, collision, path, owner and Unreal preset fact evidence.",
             },
             {
-                "id": "16-run-platform-variant-unreal-runtime",
+                "id": "17-run-platform-variant-unreal-runtime",
                 "label": "Run platform variant Unreal runtime",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py.",
                 "evidence_expected": "Unreal Python collects runtime StaticMesh facts for planned PC/Mobile variants and compares them against the R28 variant plan.",
             },
             {
-                "id": "17-run-platform-variant-generation-plan",
+                "id": "18-run-platform-variant-generation-plan",
                 "label": "Run platform variant generation plan",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py.",
                 "evidence_expected": "Runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction boundaries.",
             },
             {
-                "id": "18-run-platform-variant-texture-runtime",
+                "id": "19-run-platform-variant-texture-runtime",
                 "label": "Run platform variant texture runtime",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py.",
                 "evidence_expected": "Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for PC/Mobile variants.",
             },
             {
-                "id": "19-run-platform-variant-texture-payload",
+                "id": "20-run-platform-variant-texture-payload",
                 "label": "Run platform variant texture payload",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py.",
                 "evidence_expected": "A generated public 2048 Texture2D payload is imported, wired to the material, and rechecked against PC/Mobile texture budgets.",
             },
             {
-                "id": "20-run-platform-variant-controlled-executor",
+                "id": "21-run-platform-variant-controlled-executor",
                 "label": "Run platform variant controlled executor",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py.",
                 "evidence_expected": "Unreal Python executes a public texture max-size clamp, verifies post-state, and rolls back to the preflight fingerprint.",
             },
             {
-                "id": "21-run-platform-variant-executor-expansion",
+                "id": "22-run-platform-variant-executor-expansion",
                 "label": "Run platform variant executor expansion",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py.",
                 "evidence_expected": "LOD, Nanite and collision operations become approval receipts with deterministic params, writeSet and rollback boundaries.",
             },
             {
-                "id": "22-review-blender-adapter",
+                "id": "23-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "23-run-blender-l3-harness",
+                "id": "24-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "24-run-3dsmax-adapter-harness",
+                "id": "25-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "25-audit-gui-media",
+                "id": "26-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "26-handoff-presenter-pack",
+                "id": "27-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4449,6 +4461,21 @@ class MayaPortfolioApi:
                 "spatial_authoring_drilldown_owner_required": manifest_summary.get("spatialAuthoringDrilldownOwnerRequired"),
                 "spatial_authoring_drilldown_manual_review": manifest_summary.get("spatialAuthoringDrilldownManualReview"),
                 "spatial_authoring_drilldown_issues": manifest_summary.get("spatialAuthoringDrilldownIssues"),
+                "unreal_socket_import_checker_gate": manifest_summary.get("unrealSocketImportCheckerGate"),
+                "unreal_socket_import_checker_evidence_level": manifest_summary.get("unrealSocketImportCheckerEvidenceLevel"),
+                "unreal_socket_import_checker_l3_status": manifest_summary.get("unrealSocketImportCheckerL3Status"),
+                "unreal_socket_import_checker_engine_version": manifest_summary.get("unrealSocketImportCheckerEngineVersion"),
+                "unreal_socket_import_checker_spatial_rows": manifest_summary.get("unrealSocketImportCheckerSpatialRows"),
+                "unreal_socket_import_checker_ready": manifest_summary.get("unrealSocketImportCheckerReady"),
+                "unreal_socket_import_checker_review": manifest_summary.get("unrealSocketImportCheckerReview"),
+                "unreal_socket_import_checker_blocked": manifest_summary.get("unrealSocketImportCheckerBlocked"),
+                "unreal_socket_import_checker_pass_checks": manifest_summary.get("unrealSocketImportCheckerPassChecks"),
+                "unreal_socket_import_checker_warning_checks": manifest_summary.get("unrealSocketImportCheckerWarningChecks"),
+                "unreal_socket_import_checker_error_checks": manifest_summary.get("unrealSocketImportCheckerErrorChecks"),
+                "unreal_socket_import_checker_socket_api_ready": manifest_summary.get("unrealSocketImportCheckerSocketApiReady"),
+                "unreal_socket_import_checker_expected_sockets": manifest_summary.get("unrealSocketImportCheckerExpectedSockets"),
+                "unreal_socket_import_checker_runtime_sockets": manifest_summary.get("unrealSocketImportCheckerRuntimeSockets"),
+                "unreal_socket_import_checker_asset_writes": manifest_summary.get("unrealSocketImportCheckerAssetWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -4592,6 +4619,7 @@ class MayaPortfolioApi:
                 "Unreal Control Rig Bridge joins Maya character mapping facts to Unreal Control Rig API readiness, SkeletalMesh/Skeleton binding and expected CR asset coverage.",
                 "Spatial Authoring Workbench is now backed by Maya mayapy L3 socket, hotspot, pose frame, mirror pair and pose transfer evidence.",
                 "Spatial Authoring Drilldown projects Maya L3 spatial facts into UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
+                "Unreal Socket Import Checker joins Maya spatial authoring facts to Unreal SkeletalMesh/Skeleton socket API readiness and expected socket coverage.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -4622,7 +4650,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r37-unreal-control-rig-bridge-presentation-pack",
+        label: str = "r38-unreal-socket-import-checker-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

@@ -1,0 +1,57 @@
+# Unreal Socket Import Checker
+
+R38 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
+
+## 核心业务逻辑
+
+这个工具解决的是 gameplay attach point 的交付可信度：
+
+- Maya 源头声明了哪些 socket export names。
+- socket 是否挂在有效 parent joint，offset / space / mirror / preview 是否干净。
+- Unreal public project 里目标 SkeletalMesh / Skeleton 是否存在。
+- Unreal Python 是否能访问 SkeletalMesh / Skeleton / SkeletalMeshSocket API。
+- expected socket names 是否真的在 engine asset 上可见。
+- 缺失 socket 只输出 owner action 和 fix preview，不自动写引擎资产。
+
+核心秘诀是把 DCC authoring readiness 和 engine socket readiness 分开判定。一个 Maya Ready 行如果 Unreal 没有对应 socket，仍然必须 Blocked；一个 TMP 行如果源头和 engine target 都有问题，也要同时暴露两层阻断。
+
+## 当前实现
+
+代码入口：
+
+- `dcc-hosts/unreal-socket-import-checker/unreal_socket_import_checker/contract.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/run_smoke.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_import_checker.py`
+
+数据来源：
+
+- `dcc-hosts/spatial-authoring-workbench/artifacts/spatial-authoring-drilldown-20260805-203713.json`
+- public Unreal project：`dcc-hosts/unreal-handoff-inspector/projects/AI_Tool_TA_Unreal_L3/AI_Tool_TA_Unreal_L3.uproject`
+
+## 证据
+
+```text
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
+```
+
+当前结果：
+
+- report version：`unreal-socket-import-checker@0.1.0`
+- evidence level：L3
+- l3 status：`unreal_socket_facts_collected`
+- gate：`Blocked`
+- runtime：Unreal 5.3.2 Python
+- rows ready / review / blocked：0 / 0 / 2
+- checks pass / warning / error：9 / 2 / 9
+- socket API：ready
+- expected / runtime sockets：4 / 0
+- owner actions：11
+- assetWrites / productionWrites：0 / 0
+
+Blocked 是业务门禁，不是 runtime 缺失：`Rifle Socket Authoring Approved` 的 `/Game/AI_Tool_TA/Characters/SK_Hero` 和 Skeleton 存在，但缺 `SK_Hand_L`、`SK_Hand_R` socket；`Backpack Socket Temporary Blocked` 的 Unreal target 缺失，且 Maya 源头仍有 missing joints、world-space socket、offset、hotspot owner 和 pose transfer approval 问题。
+
+## 后续
+
+下一步不要只做更多只读检查。更高价值的是做 public Unreal socket creation controlled executor：在 `/Game/AI_Tool_TA` public fixture 中创建 socket、post-check、输出 writeSet / owner approval / rollback receipt，并证明 persistent mutation 边界。
