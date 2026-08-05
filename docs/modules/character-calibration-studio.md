@@ -107,7 +107,7 @@ R45 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r46-groom-export-inspector-presentation-pack-20260806-004101.json
 ```
 
 关键结果：

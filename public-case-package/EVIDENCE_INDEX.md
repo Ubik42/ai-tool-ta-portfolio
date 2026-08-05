@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R46 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r46-groom-export-inspector-presentation-pack-20260806-004101.json` | Maya-hosted package probes 44 key evidence files, exports 35 demo route steps, and adds Groom Export Inspector Maya L3 evidence. |
+| Groom Export Inspector Maya L3 | `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-export-inspector-maya-l3-20260806-003711.json` | Maya 2026 mayapy creates public groom curves and validates root UV, strand ID, guide curve, Alembic payload and Unreal binding readiness: 2 groom rows, 1 Ready, 1 Blocked, 11 strands, 2 guides, 9 owner actions, assetWrites=0. |
 | R45 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json` | Maya-hosted package probes 43 key evidence files, exports 34 demo route steps, and adds Unreal Control Rig Compile Status Bridge evidence. |
 | Unreal Control Rig Compile Status Bridge | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-compile-status-20260806-001504.json` | Unreal 5.3.2 Python invokes public `CR_HeroFace` compile methods, confirms compile method visible / invoked / succeeded = 1 / 1 / 1, records direct status 0, diagnostics 0, compile settings 1, dirtyAfter 0, assetWrites=0, productionWrites=0. |
 | R44 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json` | Maya-hosted package probes 42 key evidence files, exports 33 demo route steps, and adds Unreal Control Rig Face Skeleton Fixture evidence. |

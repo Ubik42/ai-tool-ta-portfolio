@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-public-case-package-r8-69",
-  "packageVersion": "public-case-package@3.39.0",
-  "generatedAt": "2026-08-06 00:20:04",
+  "packageId": "ai-tool-ta-public-case-package-r8-70",
+  "packageVersion": "public-case-package@3.40.0",
+  "generatedAt": "2026-08-06 00:42:01",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,9 +9,9 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r45",
-    "packageVersion": "dcc-first-package@1.42.0",
-    "generatedAt": "2026-08-06 00:19:04",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r46",
+    "packageVersion": "dcc-first-package@1.43.0",
+    "generatedAt": "2026-08-06 00:40:45",
     "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
     "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
     "host": {
@@ -24,7 +24,7 @@
     "sourceCaseGate": "Review",
     "summary": {
       "moduleCount": 5,
-      "artifactCount": 31,
+      "artifactCount": 32,
       "casePageSections": 6,
       "casePageArtifactRows": 4,
       "ready": 3,
@@ -109,10 +109,10 @@
       "unrealHandoffInspectorReviewChecks": 2,
       "unrealHandoffInspectorBlockedChecks": 4,
       "presentationPackGate": "CapturePending",
-      "presentationPackEvidenceFiles": 43,
-      "presentationPackPresentEvidenceFiles": 43,
+      "presentationPackEvidenceFiles": 44,
+      "presentationPackPresentEvidenceFiles": 44,
       "presentationPackMissingRequiredFiles": 0,
-      "presentationPackDemoRouteSteps": 34,
+      "presentationPackDemoRouteSteps": 35,
       "unrealPresetFactComparisonGate": "Blocked",
       "unrealPresetFactComparisonPresets": 2,
       "unrealPresetFactComparisonAssets": 1,
@@ -162,7 +162,7 @@
       "animationContinuityPassChecks": 11,
       "animationContinuityWarningChecks": 3,
       "animationContinuityErrorChecks": 6,
-      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
       "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
       "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
       "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -553,7 +553,30 @@
       "unrealControlRigCompileStatusWarningChecks": 2,
       "unrealControlRigCompileStatusErrorChecks": 4,
       "unrealControlRigCompileStatusAssetWrites": 0,
-      "unrealControlRigCompileStatusProductionWrites": 0
+      "unrealControlRigCompileStatusProductionWrites": 0,
+      "groomExportInspectorReportVersion": "groom-export-inspector-maya-l3@0.1.0",
+      "groomExportInspectorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+      "groomExportInspectorEvidenceLevel": "L3",
+      "groomExportInspectorL3Status": "maya_groom_export_facts_collected",
+      "groomExportInspectorGate": "Blocked",
+      "groomExportInspectorMayaVersion": "2026",
+      "groomExportInspectorMayaApiVersion": 20260302,
+      "groomExportInspectorRuntimeCollected": true,
+      "groomExportInspectorAssets": 2,
+      "groomExportInspectorReady": 1,
+      "groomExportInspectorReview": 0,
+      "groomExportInspectorBlocked": 1,
+      "groomExportInspectorPassChecks": 11,
+      "groomExportInspectorWarningChecks": 2,
+      "groomExportInspectorErrorChecks": 7,
+      "groomExportInspectorStrands": 11,
+      "groomExportInspectorGuides": 2,
+      "groomExportInspectorRootUVMissing": 1,
+      "groomExportInspectorDuplicateStrandIds": 1,
+      "groomExportInspectorOwnerActions": 9,
+      "groomExportInspectorAssetWrites": 0,
+      "groomExportInspectorEngineWrites": 0,
+      "groomExportInspectorProductionWrites": 0
     },
     "moduleOrder": [
       "asset-protocol",
@@ -808,6 +831,18 @@
     ],
     "validation": [
       {
+        "id": "validate-r46-groom-export-inspector",
+        "command": "python dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py",
+        "result": "pass",
+        "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json"
+      },
+      {
+        "id": "validate-r46-dcc-presenter-pack",
+        "command": "Maya mayapy dcc_presentation_build_pack(label=\"r46-groom-export-inspector-presentation-pack\")",
+        "result": "pass",
+        "evidence": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json"
+      },
+      {
         "id": "validate-r45-unreal-control-rig-compile-status",
         "command": "python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py",
         "result": "Unreal 5.3.2 Python invokes public CR_HeroFace compile methods: 2 character rows, approved row Review, TMP row Blocked, compile method visible / invoked / succeeded = 1 / 1 / 1, direct status 0, diagnostics 0, compile settings 1, dirtyAfter=0, assetWrites=0, productionWrites=0."
@@ -982,7 +1017,7 @@
     "unrealHandoffInspectorCollisionSimpleShapes": 1,
     "unrealHandoffInspectorGate": "Blocked",
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
     "presentationPackGate": "CapturePending",
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1059,12 +1094,19 @@
     "unrealAnimationBridgeWarningChecks": 1,
     "unrealAnimationBridgeErrorChecks": 5,
     "unrealAnimationBridgeMissingSequences": 0,
-    "artifactCount": 31,
+    "artifactCount": 32,
     "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
     "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
     "unrealAnimationBridgeImportSuccess": true,
     "unrealAnimationBridgeImportedAssets": 4,
     "artifacts": [
+      {
+        "id": "dcc-first-groom-export-inspector",
+        "label": "Groom Export Inspector Maya L3",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+        "required": true
+      },
       {
         "id": "dcc-first-unreal-control-rig-compile-status",
         "label": "Unreal Control Rig Compile Status Bridge",
@@ -1531,6 +1573,10 @@
     "unrealControlRigDeformationLinkErrorChecks": 5,
     "unrealControlRigDeformationLinkOwnerActions": 7,
     "keyEvidence": [
+      "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+      "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+      "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+      "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
       "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
       "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
       "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
@@ -1538,6 +1584,30 @@
       "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json"
     ],
     "evidence": [
+      {
+        "id": "public-case-r46-presenter-pack",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+        "required": true
+      },
+      {
+        "id": "dcc-first-groom-export-inspector",
+        "label": "Groom Export Inspector Maya L3",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+        "required": true
+      },
+      {
+        "id": "public-case-r45-presenter-pack",
+        "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+        "required": true
+      },
+      {
+        "id": "dcc-first-unreal-control-rig-compile-status",
+        "label": "Unreal Control Rig Compile Status Bridge",
+        "kind": "artifact",
+        "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+        "required": true
+      },
       {
         "id": "public-case-r44-presenter-pack",
         "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
@@ -1609,19 +1679,42 @@
     "unrealControlRigCompileStatusWarningChecks": 2,
     "unrealControlRigCompileStatusErrorChecks": 4,
     "unrealControlRigCompileStatusAssetWrites": 0,
-    "unrealControlRigCompileStatusProductionWrites": 0
+    "unrealControlRigCompileStatusProductionWrites": 0,
+    "groomExportInspectorReportVersion": "groom-export-inspector-maya-l3@0.1.0",
+    "groomExportInspectorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+    "groomExportInspectorEvidenceLevel": "L3",
+    "groomExportInspectorL3Status": "maya_groom_export_facts_collected",
+    "groomExportInspectorGate": "Blocked",
+    "groomExportInspectorMayaVersion": "2026",
+    "groomExportInspectorMayaApiVersion": 20260302,
+    "groomExportInspectorRuntimeCollected": true,
+    "groomExportInspectorAssets": 2,
+    "groomExportInspectorReady": 1,
+    "groomExportInspectorReview": 0,
+    "groomExportInspectorBlocked": 1,
+    "groomExportInspectorPassChecks": 11,
+    "groomExportInspectorWarningChecks": 2,
+    "groomExportInspectorErrorChecks": 7,
+    "groomExportInspectorStrands": 11,
+    "groomExportInspectorGuides": 2,
+    "groomExportInspectorRootUVMissing": 1,
+    "groomExportInspectorDuplicateStrandIds": 1,
+    "groomExportInspectorOwnerActions": 9,
+    "groomExportInspectorAssetWrites": 0,
+    "groomExportInspectorEngineWrites": 0,
+    "groomExportInspectorProductionWrites": 0
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 427,
-    "requiredEvidenceCount": 320,
+    "evidenceCount": 429,
+    "requiredEvidenceCount": 322,
     "packageFileCount": 12,
     "ownerSignoffCount": 3,
     "validationCommandCount": 146,
-    "manifestArtifactCount": 86,
+    "manifestArtifactCount": 87,
     "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
-    "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r45",
-    "currentDccFirstPackageVersion": "dcc-first-package@1.42.0",
+    "currentDccFirstPackageId": "ai-tool-ta-dcc-first-showcase-r46",
+    "currentDccFirstPackageVersion": "dcc-first-package@1.43.0",
     "currentDccFirstPackageArtifactCount": 31,
     "presentationPackEvidenceFiles": 43,
     "presentationPackPresentEvidenceFiles": 43,
@@ -1646,9 +1739,9 @@
     "spatialAuthoringDrilldownSourceError": 7,
     "spatialAuthoringDrilldownProductionWrites": 0,
     "currentDccFirstPackage": {
-      "packageId": "ai-tool-ta-dcc-first-showcase-r45",
-      "packageVersion": "dcc-first-package@1.42.0",
-      "generatedAt": "2026-08-06 00:19:04",
+      "packageId": "ai-tool-ta-dcc-first-showcase-r46",
+      "packageVersion": "dcc-first-package@1.43.0",
+      "generatedAt": "2026-08-06 00:40:45",
       "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
       "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
       "host": {
@@ -1661,7 +1754,7 @@
       "sourceCaseGate": "Review",
       "summary": {
         "moduleCount": 5,
-        "artifactCount": 31,
+        "artifactCount": 32,
         "casePageSections": 6,
         "casePageArtifactRows": 4,
         "ready": 3,
@@ -1746,10 +1839,10 @@
         "unrealHandoffInspectorReviewChecks": 2,
         "unrealHandoffInspectorBlockedChecks": 4,
         "presentationPackGate": "CapturePending",
-        "presentationPackEvidenceFiles": 43,
-        "presentationPackPresentEvidenceFiles": 43,
+        "presentationPackEvidenceFiles": 44,
+        "presentationPackPresentEvidenceFiles": 44,
         "presentationPackMissingRequiredFiles": 0,
-        "presentationPackDemoRouteSteps": 34,
+        "presentationPackDemoRouteSteps": 35,
         "unrealPresetFactComparisonGate": "Blocked",
         "unrealPresetFactComparisonPresets": 2,
         "unrealPresetFactComparisonAssets": 1,
@@ -1799,7 +1892,7 @@
         "animationContinuityPassChecks": 11,
         "animationContinuityWarningChecks": 3,
         "animationContinuityErrorChecks": 6,
-        "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+        "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
         "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
         "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
         "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -2190,7 +2283,30 @@
         "unrealControlRigCompileStatusWarningChecks": 2,
         "unrealControlRigCompileStatusErrorChecks": 4,
         "unrealControlRigCompileStatusAssetWrites": 0,
-        "unrealControlRigCompileStatusProductionWrites": 0
+        "unrealControlRigCompileStatusProductionWrites": 0,
+        "groomExportInspectorReportVersion": "groom-export-inspector-maya-l3@0.1.0",
+        "groomExportInspectorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+        "groomExportInspectorEvidenceLevel": "L3",
+        "groomExportInspectorL3Status": "maya_groom_export_facts_collected",
+        "groomExportInspectorGate": "Blocked",
+        "groomExportInspectorMayaVersion": "2026",
+        "groomExportInspectorMayaApiVersion": 20260302,
+        "groomExportInspectorRuntimeCollected": true,
+        "groomExportInspectorAssets": 2,
+        "groomExportInspectorReady": 1,
+        "groomExportInspectorReview": 0,
+        "groomExportInspectorBlocked": 1,
+        "groomExportInspectorPassChecks": 11,
+        "groomExportInspectorWarningChecks": 2,
+        "groomExportInspectorErrorChecks": 7,
+        "groomExportInspectorStrands": 11,
+        "groomExportInspectorGuides": 2,
+        "groomExportInspectorRootUVMissing": 1,
+        "groomExportInspectorDuplicateStrandIds": 1,
+        "groomExportInspectorOwnerActions": 9,
+        "groomExportInspectorAssetWrites": 0,
+        "groomExportInspectorEngineWrites": 0,
+        "groomExportInspectorProductionWrites": 0
       },
       "moduleOrder": [
         "asset-protocol",
@@ -2445,6 +2561,18 @@
       ],
       "validation": [
         {
+          "id": "validate-r46-groom-export-inspector",
+          "command": "python dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py",
+          "result": "pass",
+          "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json"
+        },
+        {
+          "id": "validate-r46-dcc-presenter-pack",
+          "command": "Maya mayapy dcc_presentation_build_pack(label=\"r46-groom-export-inspector-presentation-pack\")",
+          "result": "pass",
+          "evidence": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json"
+        },
+        {
           "id": "validate-r45-unreal-control-rig-compile-status",
           "command": "python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py",
           "result": "Unreal 5.3.2 Python invokes public CR_HeroFace compile methods: 2 character rows, approved row Review, TMP row Blocked, compile method visible / invoked / succeeded = 1 / 1 / 1, direct status 0, diagnostics 0, compile settings 1, dirtyAfter=0, assetWrites=0, productionWrites=0."
@@ -2619,7 +2747,7 @@
       "unrealHandoffInspectorCollisionSimpleShapes": 1,
       "unrealHandoffInspectorGate": "Blocked",
       "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+      "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
       "presentationPackGate": "CapturePending",
       "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
       "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -2696,12 +2824,19 @@
       "unrealAnimationBridgeWarningChecks": 1,
       "unrealAnimationBridgeErrorChecks": 5,
       "unrealAnimationBridgeMissingSequences": 0,
-      "artifactCount": 31,
+      "artifactCount": 32,
       "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
       "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
       "unrealAnimationBridgeImportSuccess": true,
       "unrealAnimationBridgeImportedAssets": 4,
       "artifacts": [
+        {
+          "id": "dcc-first-groom-export-inspector",
+          "label": "Groom Export Inspector Maya L3",
+          "kind": "artifact",
+          "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+          "required": true
+        },
         {
           "id": "dcc-first-unreal-control-rig-compile-status",
           "label": "Unreal Control Rig Compile Status Bridge",
@@ -3168,6 +3303,10 @@
       "unrealControlRigDeformationLinkErrorChecks": 5,
       "unrealControlRigDeformationLinkOwnerActions": 7,
       "keyEvidence": [
+        "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+        "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+        "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+        "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
         "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
         "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
         "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
@@ -3175,6 +3314,30 @@
         "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json"
       ],
       "evidence": [
+        {
+          "id": "public-case-r46-presenter-pack",
+          "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+          "required": true
+        },
+        {
+          "id": "dcc-first-groom-export-inspector",
+          "label": "Groom Export Inspector Maya L3",
+          "kind": "artifact",
+          "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+          "required": true
+        },
+        {
+          "id": "public-case-r45-presenter-pack",
+          "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+          "required": true
+        },
+        {
+          "id": "dcc-first-unreal-control-rig-compile-status",
+          "label": "Unreal Control Rig Compile Status Bridge",
+          "kind": "artifact",
+          "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+          "required": true
+        },
         {
           "id": "public-case-r44-presenter-pack",
           "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
@@ -3246,7 +3409,30 @@
       "unrealControlRigCompileStatusWarningChecks": 2,
       "unrealControlRigCompileStatusErrorChecks": 4,
       "unrealControlRigCompileStatusAssetWrites": 0,
-      "unrealControlRigCompileStatusProductionWrites": 0
+      "unrealControlRigCompileStatusProductionWrites": 0,
+      "groomExportInspectorReportVersion": "groom-export-inspector-maya-l3@0.1.0",
+      "groomExportInspectorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+      "groomExportInspectorEvidenceLevel": "L3",
+      "groomExportInspectorL3Status": "maya_groom_export_facts_collected",
+      "groomExportInspectorGate": "Blocked",
+      "groomExportInspectorMayaVersion": "2026",
+      "groomExportInspectorMayaApiVersion": 20260302,
+      "groomExportInspectorRuntimeCollected": true,
+      "groomExportInspectorAssets": 2,
+      "groomExportInspectorReady": 1,
+      "groomExportInspectorReview": 0,
+      "groomExportInspectorBlocked": 1,
+      "groomExportInspectorPassChecks": 11,
+      "groomExportInspectorWarningChecks": 2,
+      "groomExportInspectorErrorChecks": 7,
+      "groomExportInspectorStrands": 11,
+      "groomExportInspectorGuides": 2,
+      "groomExportInspectorRootUVMissing": 1,
+      "groomExportInspectorDuplicateStrandIds": 1,
+      "groomExportInspectorOwnerActions": 9,
+      "groomExportInspectorAssetWrites": 0,
+      "groomExportInspectorEngineWrites": 0,
+      "groomExportInspectorProductionWrites": 0
     },
     "unrealControlRigBridgeReportVersion": "unreal-control-rig-bridge@0.1.0",
     "unrealControlRigBridgeArtifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
@@ -3446,7 +3632,17 @@
     "unrealControlRigCompileStatusWarningChecks": 2,
     "unrealControlRigCompileStatusErrorChecks": 4,
     "unrealControlRigCompileStatusAssetWrites": 0,
-    "unrealControlRigCompileStatusProductionWrites": 0
+    "unrealControlRigCompileStatusProductionWrites": 0,
+    "currentDccFirstPresentationPack": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+    "currentDccFirstEvidenceFiles": 44,
+    "currentDccFirstMissingRequiredFiles": 0,
+    "currentDccFirstDemoRouteSteps": 35,
+    "currentDccFirstGroomExportInspectorGate": "Blocked",
+    "currentDccFirstGroomExportInspectorAssets": 2,
+    "currentDccFirstGroomExportInspectorReady": 1,
+    "currentDccFirstGroomExportInspectorBlocked": 1,
+    "currentDccFirstGroomExportInspectorStrands": 11,
+    "currentDccFirstGroomExportInspectorOwnerActions": 9
   },
   "moduleOrder": [
     "asset-protocol",
@@ -3588,6 +3784,8 @@
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+    "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
@@ -3725,6 +3923,18 @@
   ],
   "evidence": [
     {
+      "id": "public-case-r46-presenter-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
+      "required": true
+    },
+    {
+      "id": "public-case-groom-export-inspector",
+      "label": "Groom Export Inspector Maya L3",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+      "required": true
+    },
+    {
       "id": "public-case-r45-presenter-pack",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
       "required": true
@@ -3858,6 +4068,18 @@
   ],
   "validation": [
     {
+      "id": "validate-r46-groom-export-inspector",
+      "command": "python dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py",
+      "result": "pass",
+      "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json"
+    },
+    {
+      "id": "validate-r46-dcc-presenter-pack",
+      "command": "Maya mayapy dcc_presentation_build_pack(label=\"r46-groom-export-inspector-presentation-pack\")",
+      "result": "pass",
+      "evidence": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json"
+    },
+    {
       "id": "validate-r45-unreal-control-rig-compile-status",
       "command": "python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py",
       "result": "Unreal 5.3.2 Python invokes public CR_HeroFace compile methods: 2 character rows, approved row Review, TMP row Blocked, compile method visible / invoked / succeeded = 1 / 1 / 1, direct status 0, diagnostics 0, compile settings 1, dirtyAfter=0, assetWrites=0, productionWrites=0."
@@ -3978,7 +4200,7 @@
   "platformVariantGenerationPlanOwnerRequired": 6,
   "platformVariantGenerationPlanExecutorReady": 1,
   "artifactCount": 88,
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r46-groom-export-inspector-presentation-pack-20260806-004101.json",
   "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
   "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
   "platformVariantTextureRuntimeEvidenceLevel": "L3",
@@ -4254,5 +4476,26 @@
   "unrealControlRigFaceSkeletonFixtureOwnerActions": 1,
   "unrealControlRigFaceSkeletonFixtureAssetWrites": 2,
   "unrealControlRigFaceSkeletonFixtureEngineWrites": 2,
-  "unrealControlRigFaceSkeletonFixtureProductionWrites": 0
+  "unrealControlRigFaceSkeletonFixtureProductionWrites": 0,
+  "groomExportInspectorReportVersion": "groom-export-inspector-maya-l3@0.1.0",
+  "groomExportInspectorArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-export-inspector-maya-l3-20260806-003711.json",
+  "groomExportInspectorEvidenceLevel": "L3",
+  "groomExportInspectorL3Status": "maya_groom_export_facts_collected",
+  "groomExportInspectorGate": "Blocked",
+  "groomExportInspectorMayaVersion": "2026",
+  "groomExportInspectorRuntimeCollected": true,
+  "groomExportInspectorAssets": 2,
+  "groomExportInspectorReady": 1,
+  "groomExportInspectorReview": 0,
+  "groomExportInspectorBlocked": 1,
+  "groomExportInspectorPassChecks": 11,
+  "groomExportInspectorWarningChecks": 2,
+  "groomExportInspectorErrorChecks": 7,
+  "groomExportInspectorStrands": 11,
+  "groomExportInspectorGuides": 2,
+  "groomExportInspectorRootUVMissing": 1,
+  "groomExportInspectorDuplicateStrandIds": 1,
+  "groomExportInspectorOwnerActions": 9,
+  "groomExportInspectorAssetWrites": 0,
+  "groomExportInspectorProductionWrites": 0
 }

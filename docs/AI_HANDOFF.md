@@ -7,9 +7,9 @@
 最终 reviewer 应看到：
 
 - Maya 2024 内通过 AuroraView 打开工具面板。
-- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、空间作者、Unreal socket readiness / authoring readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
+- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、Groom Export Inspector、空间作者、Unreal socket readiness / authoring readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3 和 Unreal Socket Authoring Executor API-limited L3 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3 和 Unreal AnimSequence Deep Facts L3；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3 和 Unreal Socket Authoring Executor API-limited L3 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
+dcc-hosts/maya-auroraview-host/artifacts/r46-groom-export-inspector-presentation-pack-20260806-004101.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R45。
+稳定基线：R46。
 
 已完成：
 
@@ -45,6 +45,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-p
 - Unreal Control Rig Face Skeleton Fixture L3
 - Unreal Control Rig Deformation Link L3
 - Unreal Control Rig Compile Status Bridge L3
+- Groom Export Inspector Maya L3
 - Spatial Authoring Workbench Maya L3
 - Spatial Authoring Drilldown L3-derived
 - Unreal Socket Import Checker L3
@@ -65,9 +66,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-p
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder、Houdini、Control Rig compile status Editor Utility / C++ bridge、socket C++ / Editor Utility Blueprint adapter、Groom Export Inspector 等后续工具线。
+- MotionBuilder、Houdini、Control Rig compile status Editor Utility / C++ bridge、socket C++ / Editor Utility Blueprint adapter、Groom Unreal import readiness 等后续工具线。
 
-## 3. R45 当前断点与已完成工具线
+## 3. R46 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -88,6 +89,8 @@ dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-p
 `Unreal Control Rig Face Skeleton Fixture` 已完成 R44 闭环：Maya 2026 `mayapy` 生成 public face Skeleton FBX，Unreal 5.3.2 导入 `/Game/AI_Tool_TA/Characters/SK_HeroFace` 和 `SK_HeroFace_Skeleton`，确认 required target matches 4 / 4、previous R43 missing resolved 3 / 3、assetWrites=2、productionWrites=0。随后复跑 bridge / deformation-link：post-face deformation link 为 L3 / `Blocked`，2 character rows，10 control links，5 runtime controls，5 Skeleton target matches，approved 行从 Blocked 变 Review，TMP 行继续 Blocked，13 pass / 2 warning / 5 error，assetWrites=0。当前剩余角色线核心缺口是 direct compile status 的 Editor Utility / C++ bridge。
 
 `Unreal Control Rig Compile Status Bridge` 已完成 R45 闭环：读取 R44 post-face deformation-link artifact，通过 Unreal 5.3.2 Python 加载 public `CR_HeroFace`，调用可见的 `ControlRigBlueprint` compile 方法，并记录 direct status / diagnostic 可读性、compile settings、package dirty-state 和 no-save boundary。结果为 L3 / `Blocked` / `unreal_control_rig_compile_status_collected`，2 character rows，approved 行 Review，TMP 行 Blocked，compile candidate / method visible / invoked / succeeded = 1 / 1 / 1 / 1，direct status / diagnostics / settings = 0 / 0 / 1，dirtyAfter=0，10 pass / 2 warning / 4 error，assetWrites=0，productionWrites=0。关键结论：compile 方法可调用，但 UE Python 仍不能提供 direct diagnostic/status，因此不把方法调用包装成完整 compile approval。
+
+`Groom Export Inspector` 已完成 R46 闭环：Maya 2026 `mayapy` 创建 public synthetic scalp planes 和 curve strands，从 Maya 场景回读 root UV、strand ID、guide flag、Alembic payload 和 Unreal Groom / Binding intent。结果为 L3 / `Blocked` / `maya_groom_export_facts_collected`，2 groom rows，approved 行 Ready，TMP 行 Blocked，11 strands，2 guides，root UV missing / duplicate strand IDs = 1 / 1，11 pass / 2 warning / 7 error，9 owner actions，assetWrites=0，productionWrites=0。关键结论：groom 交付不是 mesh 交付，root UV、guide curve、strand ID 和 Alembic payload 是一等发布事实。
 
 `Spatial Authoring Workbench` 已完成 Maya L3 闭环：生成 public synthetic joints / locator attrs，采集 socket parent joint、offset、mirror pair、hotspot semantic/owner、pose frame、local space、preview locator 和 pose transfer approval。
 
@@ -294,10 +297,10 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-controlled-executor-
 dcc-hosts/platform-variant-forge/artifacts/platform-variant-executor-expansion-20260805-201222.json
 ```
 
-当前 R45 Presenter Pack：
+当前 R46 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
+dcc-hosts/maya-auroraview-host/artifacts/r46-groom-export-inspector-presentation-pack-20260806-004101.json
 ```
 
 这条线的最终效果：
@@ -305,9 +308,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r45-unreal-control-rig-compile-status-p
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Editor Utility/C++ diagnostic bridge、socket C++ adapter 或 Groom Export Inspector。
+- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Editor Utility/C++ diagnostic bridge、socket C++ adapter 或 Groom Unreal import readiness。
 
-继续开发时优先做 Control Rig Editor Utility / C++ diagnostic bridge，或补 gameplay attach fixture、Groom Export Inspector、Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning。如果只验证当前 R45，运行：
+继续开发时优先做 Groom Unreal import readiness、gameplay attach fixture、Control Rig Editor Utility / C++ diagnostic bridge，或 Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning。如果只验证当前 R46，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -320,6 +323,7 @@ python dcc-hosts/unreal-control-rig-bridge/scripts/run_face_skeleton_fixture.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_deformation_link.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py
+python dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py
 python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py
 python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py
 python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py
@@ -334,7 +338,7 @@ python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py
 python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py
 ```
 
-当前 R45 public package 为 `ai-tool-ta-dcc-first-showcase-r45` / `dcc-first-package@1.42.0`，Presenter Pack 43 / 43 evidence files present，0 missing required files，34 demo route steps；Unreal Control Rig Compile Status Bridge 已确认 public `CR_HeroFace` compile method visible / invoked / succeeded = 1 / 1 / 1，compile settings readable = 1，direct status / diagnostics = 0 / 0，dirtyAfter=0，assetWrites=0，productionWrites=0。approved 行保持 Review 是正确状态：compile 调用成立，但 UE Python 仍不能提供 direct diagnostic/status；TMP 行继续作为业务阻断样本。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R46 public package 为 `ai-tool-ta-dcc-first-showcase-r46` / `dcc-first-package@1.43.0`，Presenter Pack 44 / 44 evidence files present，0 missing required files，35 demo route steps；Groom Export Inspector 已确认 Maya runtime 可回读 root UV、strand ID、guide curve、Alembic payload 和 Unreal binding intent，2 groom rows，1 Ready，1 Blocked，11 strands，2 guides，9 owner actions，assetWrites=0，productionWrites=0。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

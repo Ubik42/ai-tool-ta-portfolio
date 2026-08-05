@@ -120,7 +120,19 @@ AI boundary: AI can summarize missing controls, missing deformation targets and 
 
 Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
 
-## 11. Spatial Authoring & Pose Transfer Workbench
+## 11. Groom Export Inspector
+
+Business scenario: XGen/groom hair can pass ordinary mesh checks while root UVs, strand IDs, guide curves or Alembic payload flags are missing, making Unreal Groom / Binding import unreliable.
+
+Core secret: treat groom export as a non-mesh publish contract. R46 records root UV coverage, stable strand IDs, guide curve coverage, `.abc` payload flags, target Groom / Binding / SkeletalMesh intent and owner actions from Maya runtime facts.
+
+Deterministic core: public Maya scalp/curve fixture, `mayapy` collector, per-strand custom payload, root UV / strand ID / guide evaluation, Alembic contract rows, Unreal binding target rows, owner actions and zero-write boundary.
+
+AI boundary: AI can explain why a groom export is blocked or draft owner notes. It cannot claim a groom cache is engine-ready without deterministic root UV, ID, guide and binding evidence.
+
+Key evidence: `../docs/modules/groom-export-inspector.md`
+
+## 12. Spatial Authoring & Pose Transfer Workbench
 
 Business scenario: sockets, hotspots, pose frames and mirror transfer rules often live as scene conventions and break when assets move from DCC to gameplay.
 
@@ -132,7 +144,7 @@ AI boundary: AI can explain socket risk and propose handoff text. It cannot appr
 
 Key evidence: `../docs/modules/spatial-authoring-workbench.md`
 
-## 12. Unreal Socket Import Checker
+## 13. Unreal Socket Import Checker
 
 Business scenario: a socket can be clean in Maya but still absent or bound to the wrong target in Unreal. Gameplay, VFX, camera and attach logic need engine-side facts, not just DCC locators.
 
@@ -144,7 +156,7 @@ AI boundary: AI can summarize missing sockets and owner handoff text. It cannot 
 
 Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
-## 13. Unreal Socket Authoring Executor
+## 14. Unreal Socket Authoring Executor
 
 Business scenario: an auto-fix button for missing engine sockets is dangerous unless the runtime API can create a named socket, bind it to a bone, post-check it and roll it back.
 
@@ -156,7 +168,7 @@ AI boundary: AI can recommend owner actions and explain why the auto-fix is bloc
 
 Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
-## 14. Platform Variant Forge
+## 15. Platform Variant Forge
 
 Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
 

@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -28,6 +28,7 @@ $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
 $UnrealControlRig = Join-Path $Root "dcc-hosts\unreal-control-rig-bridge"
+$GroomExportInspector = Join-Path $Root "dcc-hosts\groom-export-inspector"
 $SpatialAuthoring = Join-Path $Root "dcc-hosts\spatial-authoring-workbench"
 $UnrealSocket = Join-Path $Root "dcc-hosts\unreal-socket-import-checker"
 $PlatformVariant = Join-Path $Root "dcc-hosts\platform-variant-forge"
@@ -99,6 +100,11 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealControlRig "scripts\unreal_python\import_face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_deformation_link.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_compile_status.py"),
+    (Join-Path $GroomExportInspector "groom_export_inspector\contract.py"),
+    (Join-Path $GroomExportInspector "groom_export_inspector\maya_collector.py"),
+    (Join-Path $GroomExportInspector "scripts\run_smoke.py"),
+    (Join-Path $GroomExportInspector "scripts\run_l3_smoke.py"),
+    (Join-Path $GroomExportInspector "scripts\run_maya_l3.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\drilldown.py"),
@@ -157,11 +163,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r45-unreal-control-rig-compile-status-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r46-groom-export-inspector-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 43, summary
+assert summary["present_evidence_files"] == 44, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 34, summary
+assert summary["demo_route_steps"] == 35, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -254,6 +260,15 @@ if ($Tier -in @("unreal-control-rig-deformation-link", "full")) {
 if ($Tier -in @("unreal-control-rig-compile-status", "full")) {
     Invoke-Step "unreal control rig compile status bridge" {
         python (Join-Path $UnrealControlRig "scripts\run_compile_status.py")
+    }
+}
+
+if ($Tier -in @("groom-export-inspector", "full")) {
+    Invoke-Step "groom export inspector contract smoke" {
+        python (Join-Path $GroomExportInspector "scripts\run_smoke.py")
+    }
+    Invoke-Step "groom export inspector Maya L3" {
+        python (Join-Path $GroomExportInspector "scripts\run_l3_smoke.py")
     }
 }
 

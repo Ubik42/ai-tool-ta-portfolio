@@ -1,0 +1,814 @@
+{
+  "reportVersion": "groom-export-inspector-maya-l3@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 00:37:11",
+  "evidenceLevel": "L3",
+  "l3Status": "maya_groom_export_facts_collected",
+  "mayaRuntime": {
+    "version": "2026",
+    "apiVersion": 20260302,
+    "batch": true
+  },
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\fixtures\\synthetic_groom_export_scene.json",
+    "schema": "synthetic-groom-export-scene@0.1.0",
+    "intent": "Public synthetic XGen/groom handoff fixture for root UV, strand ID, guide curve and Alembic readiness checks."
+  },
+  "adapter": {
+    "id": "groom-export-inspector",
+    "name": "Groom Export Inspector",
+    "methodSource": "Lightbox XGen to Unreal groom handoff",
+    "protocolCarrier": "Maya groom curves + root UV + strand ID + guide curve + Alembic export payload",
+    "boundary": {
+      "mutation": "synthetic_maya_groom_fixture_only",
+      "sceneWrites": "creates temporary public scalp planes, curve strands and custom attrs in batch scene",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "groom-export-input@0.1.0",
+    "scene": {
+      "sourceDcc": "Maya",
+      "unit": "centimeter",
+      "upAxis": "Y",
+      "timeUnit": "film",
+      "fps": null,
+      "playbackStart": 1000.0,
+      "playbackEnd": 1001.0,
+      "assetCount": 2,
+      "runtimeCollected": true
+    },
+    "assets": [
+      {
+        "assetId": "groom-hero-hair-001",
+        "assetLabel": "Hero Hair Approved",
+        "sourceDcc": "Maya",
+        "normalizedSchema": "groom-export-input@0.1.0",
+        "protocolCarrier": "groom curves + root UV + strand ID + guide curve + Alembic payload",
+        "sourceFields": {
+          "description": "root.aiToolTaGroomDescription",
+          "scalp": "root.aiToolTaGroomScalp + Maya mesh UV set evidence",
+          "strands": "curve aiToolTaGroomStrandPayload custom attrs",
+          "export": "root.aiToolTaGroomExport",
+          "unreal": "root.aiToolTaGroomUnreal"
+        },
+        "normalized": {
+          "groom.protocol.schema": "groom-export@dcc-r46",
+          "groom.ownerState": "approved",
+          "description.name": "xgen_hero_short_hair",
+          "description.type": "xgen-description",
+          "description.collection": "hero_groom_collection",
+          "description.tmpToken": false,
+          "scalp.mesh": "hero_scalp_geo",
+          "scalp.expectedUVSet": "root_uv",
+          "scalp.actualUVSets": [
+            "map1",
+            "root_uv"
+          ],
+          "scalp.rootUVSetPresent": true,
+          "strands.count": 6,
+          "strands.budget": 12,
+          "strands.missingIds": [],
+          "strands.duplicateIds": [],
+          "rootUV.missing": [],
+          "rootUV.invalid": [],
+          "guides.count": 2,
+          "guides.minimum": 2,
+          "guides.required": [
+            "strand_001",
+            "strand_004"
+          ],
+          "guides.actual": [
+            "strand_001",
+            "strand_004"
+          ],
+          "guides.missingRequired": [],
+          "export.cachePath": "D:/public/ai_tool_ta/groom/hero_hair.abc",
+          "export.expectedExtension": ".abc",
+          "export.extensionMatched": true,
+          "export.frameStart": 1001,
+          "export.frameEnd": 1001,
+          "export.includeRootUV": true,
+          "export.includeStrandIds": true,
+          "export.includeGuideCurves": true,
+          "export.writeMode": "dryRun",
+          "unreal.expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+          "unreal.expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+          "unreal.targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "unreal.materialSlot": "M_Hair_Default"
+        },
+        "raw": {
+          "namespace": "heroHair",
+          "description": {
+            "collection": "hero_groom_collection",
+            "name": "xgen_hero_short_hair",
+            "type": "xgen-description"
+          },
+          "scalp": {
+            "actualUVSets": [
+              "map1",
+              "root_uv"
+            ],
+            "expectedUVSet": "root_uv",
+            "mesh": "hero_scalp_geo"
+          },
+          "strands": [
+            {
+              "id": "strand_001",
+              "rootUv": [
+                0.24,
+                0.68
+              ],
+              "guide": true,
+              "width": 0.045,
+              "points": [
+                [
+                  -0.8,
+                  5.1,
+                  0.0
+                ],
+                [
+                  -0.9,
+                  5.6,
+                  0.18
+                ],
+                [
+                  -1.0,
+                  6.0,
+                  0.25
+                ]
+              ]
+            },
+            {
+              "id": "strand_002",
+              "rootUv": [
+                0.35,
+                0.71
+              ],
+              "guide": false,
+              "width": 0.04,
+              "points": [
+                [
+                  -0.35,
+                  5.2,
+                  0.05
+                ],
+                [
+                  -0.38,
+                  5.7,
+                  0.22
+                ],
+                [
+                  -0.42,
+                  6.1,
+                  0.3
+                ]
+              ]
+            },
+            {
+              "id": "strand_003",
+              "rootUv": [
+                0.47,
+                0.76
+              ],
+              "guide": false,
+              "width": 0.039,
+              "points": [
+                [
+                  0.0,
+                  5.25,
+                  0.07
+                ],
+                [
+                  0.0,
+                  5.75,
+                  0.23
+                ],
+                [
+                  0.03,
+                  6.15,
+                  0.32
+                ]
+              ]
+            },
+            {
+              "id": "strand_004",
+              "rootUv": [
+                0.58,
+                0.72
+              ],
+              "guide": true,
+              "width": 0.044,
+              "points": [
+                [
+                  0.42,
+                  5.18,
+                  0.03
+                ],
+                [
+                  0.48,
+                  5.68,
+                  0.2
+                ],
+                [
+                  0.55,
+                  6.08,
+                  0.28
+                ]
+              ]
+            },
+            {
+              "id": "strand_005",
+              "rootUv": [
+                0.68,
+                0.66
+              ],
+              "guide": false,
+              "width": 0.038,
+              "points": [
+                [
+                  0.85,
+                  5.05,
+                  0.0
+                ],
+                [
+                  0.92,
+                  5.55,
+                  0.15
+                ],
+                [
+                  1.02,
+                  5.95,
+                  0.22
+                ]
+              ]
+            },
+            {
+              "id": "strand_006",
+              "rootUv": [
+                0.5,
+                0.58
+              ],
+              "guide": false,
+              "width": 0.036,
+              "points": [
+                [
+                  0.08,
+                  4.95,
+                  -0.18
+                ],
+                [
+                  0.1,
+                  5.45,
+                  -0.05
+                ],
+                [
+                  0.12,
+                  5.88,
+                  0.05
+                ]
+              ]
+            }
+          ],
+          "export": {
+            "cachePath": "D:/public/ai_tool_ta/groom/hero_hair.abc",
+            "expectedExtension": ".abc",
+            "frameRange": [
+              1001,
+              1001
+            ],
+            "includeGuideCurves": true,
+            "includeRootUV": true,
+            "includeStrandIds": true,
+            "writeMode": "dryRun"
+          },
+          "unreal": {
+            "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+            "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+            "materialSlot": "M_Hair_Default",
+            "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace"
+          }
+        }
+      },
+      {
+        "assetId": "groom-hero-hair-tmp-002",
+        "assetLabel": "Hero Hair Temporary Groom",
+        "sourceDcc": "Maya",
+        "normalizedSchema": "groom-export-input@0.1.0",
+        "protocolCarrier": "groom curves + root UV + strand ID + guide curve + Alembic payload",
+        "sourceFields": {
+          "description": "root.aiToolTaGroomDescription",
+          "scalp": "root.aiToolTaGroomScalp + Maya mesh UV set evidence",
+          "strands": "curve aiToolTaGroomStrandPayload custom attrs",
+          "export": "root.aiToolTaGroomExport",
+          "unreal": "root.aiToolTaGroomUnreal"
+        },
+        "normalized": {
+          "groom.protocol.schema": "groom-export@dcc-r46",
+          "groom.ownerState": "temporary",
+          "description.name": "TMP_xgen_hero_hair",
+          "description.type": "xgen-description",
+          "description.collection": "tmp_groom_collection",
+          "description.tmpToken": true,
+          "scalp.mesh": "tmp_scalp_geo",
+          "scalp.expectedUVSet": "root_uv",
+          "scalp.actualUVSets": [
+            "map1"
+          ],
+          "scalp.rootUVSetPresent": false,
+          "strands.count": 5,
+          "strands.budget": 3,
+          "strands.missingIds": [
+            0
+          ],
+          "strands.duplicateIds": [
+            "tmp_001"
+          ],
+          "rootUV.missing": [
+            "row_000"
+          ],
+          "rootUV.invalid": [
+            {
+              "strandId": "tmp_001",
+              "rootUv": [
+                1.18,
+                -0.12
+              ]
+            }
+          ],
+          "guides.count": 0,
+          "guides.minimum": 2,
+          "guides.required": [
+            "tmp_guide_A"
+          ],
+          "guides.actual": [],
+          "guides.missingRequired": [
+            "tmp_guide_A"
+          ],
+          "export.cachePath": "D:/temp/ai_tool_ta/groom/hero_hair_preview.ma",
+          "export.expectedExtension": ".abc",
+          "export.extensionMatched": false,
+          "export.frameStart": 1010,
+          "export.frameEnd": 1001,
+          "export.includeRootUV": false,
+          "export.includeStrandIds": false,
+          "export.includeGuideCurves": false,
+          "export.writeMode": "dryRun",
+          "unreal.expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+          "unreal.expectedBindingAsset": "",
+          "unreal.targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP",
+          "unreal.materialSlot": ""
+        },
+        "raw": {
+          "namespace": "tmpHair",
+          "description": {
+            "collection": "tmp_groom_collection",
+            "name": "TMP_xgen_hero_hair",
+            "type": "xgen-description"
+          },
+          "scalp": {
+            "actualUVSets": [
+              "map1"
+            ],
+            "expectedUVSet": "root_uv",
+            "mesh": "tmp_scalp_geo"
+          },
+          "strands": [
+            {
+              "id": "",
+              "rootUv": null,
+              "guide": false,
+              "width": 0.055,
+              "points": [
+                [
+                  0.1,
+                  4.9,
+                  0.0
+                ],
+                [
+                  0.1,
+                  5.4,
+                  0.12
+                ]
+              ]
+            },
+            {
+              "id": "tmp_001",
+              "rootUv": [
+                0.18,
+                0.44
+              ],
+              "guide": false,
+              "width": 0.065,
+              "points": [
+                [
+                  -0.65,
+                  4.8,
+                  0.0
+                ],
+                [
+                  -0.8,
+                  5.3,
+                  0.12
+                ]
+              ]
+            },
+            {
+              "id": "tmp_001",
+              "rootUv": [
+                1.18,
+                -0.12
+              ],
+              "guide": false,
+              "width": 0.06,
+              "points": [
+                [
+                  -0.25,
+                  4.85,
+                  0.0
+                ],
+                [
+                  -0.3,
+                  5.35,
+                  0.1
+                ]
+              ]
+            },
+            {
+              "id": "tmp_004",
+              "rootUv": [
+                0.55,
+                0.48
+              ],
+              "guide": false,
+              "width": 0.058,
+              "points": [
+                [
+                  0.45,
+                  4.82,
+                  0.0
+                ],
+                [
+                  0.52,
+                  5.32,
+                  0.11
+                ]
+              ]
+            },
+            {
+              "id": "tmp_005",
+              "rootUv": [
+                0.68,
+                0.42
+              ],
+              "guide": false,
+              "width": 0.058,
+              "points": [
+                [
+                  0.82,
+                  4.78,
+                  0.0
+                ],
+                [
+                  0.95,
+                  5.28,
+                  0.1
+                ]
+              ]
+            }
+          ],
+          "export": {
+            "cachePath": "D:/temp/ai_tool_ta/groom/hero_hair_preview.ma",
+            "expectedExtension": ".abc",
+            "frameRange": [
+              1010,
+              1001
+            ],
+            "includeGuideCurves": false,
+            "includeRootUV": false,
+            "includeStrandIds": false,
+            "writeMode": "dryRun"
+          },
+          "unreal": {
+            "expectedBindingAsset": "",
+            "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+            "materialSlot": "",
+            "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP"
+          }
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "groom-export-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 11,
+      "warning": 2,
+      "error": 7,
+      "readyAssetIds": [
+        "groom-hero-hair-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "groom-hero-hair-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "groom-hero-hair-001:protocol-carrier",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "protocol-carrier",
+        "label": "Groom protocol carrier",
+        "status": "pass",
+        "reason": "Groom export needs a typed protocol before guide/root data can be trusted.",
+        "evidence": "groom-export@dcc-r46",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:description-boundary",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "description-boundary",
+        "label": "Description boundary",
+        "status": "pass",
+        "reason": "Temporary XGen descriptions should not silently enter engine groom export.",
+        "evidence": "xgen_hero_short_hair",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:scalp-root-uv-set",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "scalp-root-uv-set",
+        "label": "Scalp root UV set",
+        "status": "pass",
+        "reason": "Unreal groom binding needs a stable root UV set on the scalp mesh.",
+        "evidence": "expected=root_uv actual=['map1', 'root_uv']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:strand-id-coverage",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "strand-id-coverage",
+        "label": "Strand ID coverage",
+        "status": "pass",
+        "reason": "Strand IDs must be present and unique so downstream cache diffs and binding errors are traceable.",
+        "evidence": "missingRows=[] duplicateIds=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:root-uv-coverage",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "root-uv-coverage",
+        "label": "Root UV coverage",
+        "status": "pass",
+        "reason": "Every strand must carry a valid [0,1] root UV before export to Unreal.",
+        "evidence": "missing=[] invalid=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:guide-curve-coverage",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "guide-curve-coverage",
+        "label": "Guide curve coverage",
+        "status": "pass",
+        "reason": "Guide curves are the authored controls for interpolated groom strands and must survive handoff.",
+        "evidence": "actual=['strand_001', 'strand_004'] minimum=2 missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:alembic-payload-contract",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "alembic-payload-contract",
+        "label": "Alembic payload contract",
+        "status": "pass",
+        "reason": "The Alembic handoff must carry root UV, strand ID and guide curves with a .abc cache path.",
+        "evidence": "path=D:/public/ai_tool_ta/groom/hero_hair.abc rootUV=True strandIds=True guides=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:frame-range",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "frame-range",
+        "label": "Frame range",
+        "status": "pass",
+        "reason": "Groom caches need a valid frame range even for single-frame static hair export.",
+        "evidence": "1001-1001",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:strand-budget",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "strand-budget",
+        "label": "Strand budget",
+        "status": "pass",
+        "reason": "Platform groom budgets must be explicit before the asset can be handed to runtime.",
+        "evidence": "count=6 budget=12",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-001:unreal-binding-target",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "unreal-binding-target",
+        "label": "Unreal binding target",
+        "status": "pass",
+        "reason": "Groom export is incomplete without target Groom, Binding, SkeletalMesh and material-slot intent.",
+        "evidence": "groom=/Game/AI_Tool_TA/Grooms/G_HeroHair binding=/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace mesh=/Game/AI_Tool_TA/Characters/SK_HeroFace material=M_Hair_Default",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:protocol-carrier",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "protocol-carrier",
+        "label": "Groom protocol carrier",
+        "status": "pass",
+        "reason": "Groom export needs a typed protocol before guide/root data can be trusted.",
+        "evidence": "groom-export@dcc-r46",
+        "fixPreview": "None"
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:description-boundary",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "description-boundary",
+        "label": "Description boundary",
+        "status": "warning",
+        "reason": "Temporary XGen descriptions should not silently enter engine groom export.",
+        "evidence": "TMP_xgen_hero_hair",
+        "fixPreview": "Rename the description or route the temporary groom to owner review."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:scalp-root-uv-set",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "scalp-root-uv-set",
+        "label": "Scalp root UV set",
+        "status": "error",
+        "reason": "Unreal groom binding needs a stable root UV set on the scalp mesh.",
+        "evidence": "expected=root_uv actual=['map1']",
+        "fixPreview": "Generate or remap the root_uv set before Alembic export."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:strand-id-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-id-coverage",
+        "label": "Strand ID coverage",
+        "status": "error",
+        "reason": "Strand IDs must be present and unique so downstream cache diffs and binding errors are traceable.",
+        "evidence": "missingRows=[0] duplicateIds=['tmp_001']",
+        "fixPreview": "Regenerate stable strand IDs on the groom curves."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:root-uv-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "root-uv-coverage",
+        "label": "Root UV coverage",
+        "status": "error",
+        "reason": "Every strand must carry a valid [0,1] root UV before export to Unreal.",
+        "evidence": "missing=['row_000'] invalid=[{'strandId': 'tmp_001', 'rootUv': [1.18, -0.12]}]",
+        "fixPreview": "Bake root UV from scalp attachment and reject out-of-range samples."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:guide-curve-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "guide-curve-coverage",
+        "label": "Guide curve coverage",
+        "status": "error",
+        "reason": "Guide curves are the authored controls for interpolated groom strands and must survive handoff.",
+        "evidence": "actual=[] minimum=2 missing=['tmp_guide_A']",
+        "fixPreview": "Restore required guide curves or lower the guide requirement with owner approval."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:alembic-payload-contract",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "alembic-payload-contract",
+        "label": "Alembic payload contract",
+        "status": "error",
+        "reason": "The Alembic handoff must carry root UV, strand ID and guide curves with a .abc cache path.",
+        "evidence": "path=D:/temp/ai_tool_ta/groom/hero_hair_preview.ma rootUV=False strandIds=False guides=False",
+        "fixPreview": "Export .abc with root UV, strand ID and guide curve payload enabled."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:frame-range",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "frame-range",
+        "label": "Frame range",
+        "status": "error",
+        "reason": "Groom caches need a valid frame range even for single-frame static hair export.",
+        "evidence": "1010-1001",
+        "fixPreview": "Fix the cache frame range before publishing the Alembic receipt."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:strand-budget",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-budget",
+        "label": "Strand budget",
+        "status": "warning",
+        "reason": "Platform groom budgets must be explicit before the asset can be handed to runtime.",
+        "evidence": "count=5 budget=3",
+        "fixPreview": "Reduce generated strand count or move the groom into a higher-cost platform bucket."
+      },
+      {
+        "id": "groom-hero-hair-tmp-002:unreal-binding-target",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "unreal-binding-target",
+        "label": "Unreal binding target",
+        "status": "error",
+        "reason": "Groom export is incomplete without target Groom, Binding, SkeletalMesh and material-slot intent.",
+        "evidence": "groom=/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP binding= mesh=/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP material=",
+        "fixPreview": "Declare target Unreal groom, binding and material slot before engine import."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:description-boundary",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "description-boundary",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "groom-owner",
+        "preview": "Rename the description or route the temporary groom to owner review."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:scalp-root-uv-set",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "scalp-root-uv-set",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-owner",
+        "preview": "Generate or remap the root_uv set before Alembic export."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:strand-id-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-id-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-owner",
+        "preview": "Regenerate stable strand IDs on the groom curves."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:root-uv-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "root-uv-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-owner",
+        "preview": "Bake root UV from scalp attachment and reject out-of-range samples."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:guide-curve-coverage",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "guide-curve-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "groom-owner",
+        "preview": "Restore required guide curves or lower the guide requirement with owner approval."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:alembic-payload-contract",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "alembic-payload-contract",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Export .abc with root UV, strand ID and guide curve payload enabled."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:frame-range",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "frame-range",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Fix the cache frame range before publishing the Alembic receipt."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:strand-budget",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "strand-budget",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "platform-ta",
+        "preview": "Reduce generated strand count or move the groom into a higher-cost platform bucket."
+      },
+      {
+        "id": "owner-action:groom-hero-hair-tmp-002:unreal-binding-target",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "unreal-binding-target",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Declare target Unreal groom, binding and material slot before engine import."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Maya runtime collection reads actual curve nodes and per-strand custom attributes from the batch scene.",
+    "Root UV, strand ID, guide curve and Alembic payload facts are re-collected from Maya before evaluation.",
+    "The L3 smoke creates only public synthetic groom fixtures and does not export or save production caches."
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "schema": "synthetic-groom-export-scene@0.1.0",
+  "intent": "Public synthetic XGen/groom handoff fixture for root UV, strand ID, guide curve and Alembic readiness checks.",
+  "scene": {
+    "unit": "centimeter",
+    "upAxis": "Y",
+    "timeUnit": "film",
+    "fps": 24,
+    "playbackStart": 1001,
+    "playbackEnd": 1001
+  },
+  "assets": [
+    {
+      "id": "groom-hero-hair-001",
+      "label": "Hero Hair Approved",
+      "namespace": "heroHair",
+      "ownerState": "approved",
+      "protocolSchema": "groom-export@dcc-r46",
+      "description": {
+        "name": "xgen_hero_short_hair",
+        "type": "xgen-description",
+        "collection": "hero_groom_collection"
+      },
+      "scalp": {
+        "mesh": "hero_scalp_geo",
+        "expectedUVSet": "root_uv",
+        "actualUVSets": [
+          "map1",
+          "root_uv"
+        ]
+      },
+      "groom": {
+        "minGuideCount": 2,
+        "requiredGuideIds": [
+          "strand_001",
+          "strand_004"
+        ],
+        "strandBudget": 12,
+        "strands": [
+          {
+            "id": "strand_001",
+            "rootUv": [
+              0.24,
+              0.68
+            ],
+            "guide": true,
+            "width": 0.045,
+            "points": [
+              [
+                -0.8,
+                5.1,
+                0.0
+              ],
+              [
+                -0.9,
+                5.6,
+                0.18
+              ],
+              [
+                -1.0,
+                6.0,
+                0.25
+              ]
+            ]
+          },
+          {
+            "id": "strand_002",
+            "rootUv": [
+              0.35,
+              0.71
+            ],
+            "guide": false,
+            "width": 0.04,
+            "points": [
+              [
+                -0.35,
+                5.2,
+                0.05
+              ],
+              [
+                -0.38,
+                5.7,
+                0.22
+              ],
+              [
+                -0.42,
+                6.1,
+                0.3
+              ]
+            ]
+          },
+          {
+            "id": "strand_003",
+            "rootUv": [
+              0.47,
+              0.76
+            ],
+            "guide": false,
+            "width": 0.039,
+            "points": [
+              [
+                0.0,
+                5.25,
+                0.07
+              ],
+              [
+                0.0,
+                5.75,
+                0.23
+              ],
+              [
+                0.03,
+                6.15,
+                0.32
+              ]
+            ]
+          },
+          {
+            "id": "strand_004",
+            "rootUv": [
+              0.58,
+              0.72
+            ],
+            "guide": true,
+            "width": 0.044,
+            "points": [
+              [
+                0.42,
+                5.18,
+                0.03
+              ],
+              [
+                0.48,
+                5.68,
+                0.2
+              ],
+              [
+                0.55,
+                6.08,
+                0.28
+              ]
+            ]
+          },
+          {
+            "id": "strand_005",
+            "rootUv": [
+              0.68,
+              0.66
+            ],
+            "guide": false,
+            "width": 0.038,
+            "points": [
+              [
+                0.85,
+                5.05,
+                0.0
+              ],
+              [
+                0.92,
+                5.55,
+                0.15
+              ],
+              [
+                1.02,
+                5.95,
+                0.22
+              ]
+            ]
+          },
+          {
+            "id": "strand_006",
+            "rootUv": [
+              0.5,
+              0.58
+            ],
+            "guide": false,
+            "width": 0.036,
+            "points": [
+              [
+                0.08,
+                4.95,
+                -0.18
+              ],
+              [
+                0.1,
+                5.45,
+                -0.05
+              ],
+              [
+                0.12,
+                5.88,
+                0.05
+              ]
+            ]
+          }
+        ]
+      },
+      "export": {
+        "cachePath": "D:/public/ai_tool_ta/groom/hero_hair.abc",
+        "expectedExtension": ".abc",
+        "frameRange": [
+          1001,
+          1001
+        ],
+        "includeRootUV": true,
+        "includeStrandIds": true,
+        "includeGuideCurves": true,
+        "writeMode": "dryRun"
+      },
+      "unreal": {
+        "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "materialSlot": "M_Hair_Default"
+      }
+    },
+    {
+      "id": "groom-hero-hair-tmp-002",
+      "label": "Hero Hair Temporary Groom",
+      "namespace": "tmpHair",
+      "ownerState": "temporary",
+      "protocolSchema": "groom-export@dcc-r46",
+      "description": {
+        "name": "TMP_xgen_hero_hair",
+        "type": "xgen-description",
+        "collection": "tmp_groom_collection"
+      },
+      "scalp": {
+        "mesh": "tmp_scalp_geo",
+        "expectedUVSet": "root_uv",
+        "actualUVSets": [
+          "map1"
+        ]
+      },
+      "groom": {
+        "minGuideCount": 2,
+        "requiredGuideIds": [
+          "tmp_guide_A"
+        ],
+        "strandBudget": 3,
+        "strands": [
+          {
+            "id": "tmp_001",
+            "rootUv": [
+              0.18,
+              0.44
+            ],
+            "guide": false,
+            "width": 0.065,
+            "points": [
+              [
+                -0.65,
+                4.8,
+                0.0
+              ],
+              [
+                -0.8,
+                5.3,
+                0.12
+              ]
+            ]
+          },
+          {
+            "id": "tmp_001",
+            "rootUv": [
+              1.18,
+              -0.12
+            ],
+            "guide": false,
+            "width": 0.06,
+            "points": [
+              [
+                -0.25,
+                4.85,
+                0.0
+              ],
+              [
+                -0.3,
+                5.35,
+                0.1
+              ]
+            ]
+          },
+          {
+            "id": "",
+            "guide": false,
+            "width": 0.055,
+            "points": [
+              [
+                0.1,
+                4.9,
+                0.0
+              ],
+              [
+                0.1,
+                5.4,
+                0.12
+              ]
+            ]
+          },
+          {
+            "id": "tmp_004",
+            "rootUv": [
+              0.55,
+              0.48
+            ],
+            "guide": false,
+            "width": 0.058,
+            "points": [
+              [
+                0.45,
+                4.82,
+                0.0
+              ],
+              [
+                0.52,
+                5.32,
+                0.11
+              ]
+            ]
+          },
+          {
+            "id": "tmp_005",
+            "rootUv": [
+              0.68,
+              0.42
+            ],
+            "guide": false,
+            "width": 0.058,
+            "points": [
+              [
+                0.82,
+                4.78,
+                0.0
+              ],
+              [
+                0.95,
+                5.28,
+                0.1
+              ]
+            ]
+          }
+        ]
+      },
+      "export": {
+        "cachePath": "D:/temp/ai_tool_ta/groom/hero_hair_preview.ma",
+        "expectedExtension": ".abc",
+        "frameRange": [
+          1010,
+          1001
+        ],
+        "includeRootUV": false,
+        "includeStrandIds": false,
+        "includeGuideCurves": false,
+        "writeMode": "dryRun"
+      },
+      "unreal": {
+        "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair_TMP",
+        "expectedBindingAsset": "",
+        "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace_TMP",
+        "materialSlot": ""
+      }
+    }
+  ]
+}

@@ -1589,3 +1589,28 @@ Presenter Pack evidence: 43 / 43 present, 0 missing, 34 route steps
 ```text
 Control Rig Editor Utility / C++ diagnostic bridge，或 gameplay attach fixture / Groom Export Inspector -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R46 循环开发断点：Groom Export Inspector
+
+R46 已完成 `Groom Export Inspector` Maya L3：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-export-inspector-maya-l3-20260806-003711.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r46-groom-export-inspector-presentation-pack-20260806-004101.json
+```
+
+R46 结果：`run_l3_smoke.py` 调用 Maya 2026 `mayapy`，创建 public synthetic scalp planes 和 curve strands，从 Maya 场景回读 root UV、strand ID、guide flag、Alembic payload 和 Unreal Groom / Binding intent。结果为 L3 / `Blocked` / `maya_groom_export_facts_collected`，2 groom rows，1 Ready，1 Blocked，11 strands，2 guides，root UV missing / duplicate strand IDs = 1 / 1，11 pass / 2 warning / 7 error，9 owner actions，assetWrites=0，productionWrites=0。
+
+Public package:
+
+```text
+ai-tool-ta-dcc-first-showcase-r46 / dcc-first-package@1.43.0
+Presenter Pack evidence: 44 / 44 present, 0 missing, 35 route steps
+public-case-package r8-70 / public-case-package@3.40.0
+```
+
+下一轮入口：
+
+```text
+Groom Unreal import readiness 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```
