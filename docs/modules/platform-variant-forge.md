@@ -1,6 +1,6 @@
 # Platform Variant Forge
 
-R28-R33 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路、真实 public Texture2D payload 和受控执行 / 回滚 evidence。
+R28-R34 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路、真实 public Texture2D payload、受控执行 / 回滚 evidence，以及 LOD / Nanite / collision executor approval receipts。
 
 ## 核心业务逻辑
 
@@ -26,12 +26,14 @@ R28-R33 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py`
+- `dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_smoke.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py`
+- `dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py`
@@ -83,6 +85,14 @@ R33 controlled executor 完成：
 - 立刻 rollback 到 `0`，确认最终 fingerprint 回到 `2502b08c541495a4`。
 - 输出 gate `Ready`，1 executed operation，1 post-check pass，1 rollback pass，7 pass / 0 warning / 0 error，persistentMutation=false。
 
+R34 executor expansion receipts 完成：
+
+- 读取 R30 generation operations 和 R33 rolled-back executor proof。
+- 聚焦 LOD / Nanite / collision 三类后续高风险操作，不把它们混进“自动执行”。
+- 输出 5 条 receipt：2 条 no-op verified，1 条 approval-ready，2 条 LOD readiness-only，0 blocked。
+- 每条 receipt 带 deterministic params、Unreal Python preview、owner approval reason、writeSet 和 rollback receipt。
+- gate 为 `Review`，原因是 3 个操作需要 owner approval / geometry readability，不是 runtime 缺失；productionWrites=0。
+
 ## 证据
 
 当前 artifact：
@@ -94,8 +104,9 @@ R33 controlled executor 完成：
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-executor-expansion-20260805-201222.json
 ```
 
 ## 后续
 
-下一步可以把 executor 扩到 LOD / Nanite / collision 的 approval receipts，或转向 Character Calibration / Spatial Authoring 的 Maya UI drilldown 与 Unreal 对照。
+下一步可以把 Character Calibration / Spatial Authoring 做成 Maya UI drilldown 与 Unreal 对照，或者继续把 Platform Variant executor 的 receipt 转成更细的 StaticMesh LOD/Nanite public runtime post-check。

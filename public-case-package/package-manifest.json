@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-public-case-package-r8-57",
-  "packageVersion": "public-case-package@3.27.0",
+  "packageId": "ai-tool-ta-public-case-package-r8-58",
+  "packageVersion": "public-case-package@3.28.0",
   "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r33",
-    "packageVersion": "dcc-first-package@1.30.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r34",
+    "packageVersion": "dcc-first-package@1.31.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -29,7 +29,7 @@
     "gate": "CapturePending",
     "sourceCaseGate": "Review",
     "moduleCount": 5,
-    "artifactCount": 18,
+    "artifactCount": 19,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "businessRouteSteps": 7,
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 30,
-    "presentationPackPresentEvidenceFiles": 30,
+    "presentationPackEvidenceFiles": 31,
+    "presentationPackPresentEvidenceFiles": 31,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 22,
+    "presentationPackDemoRouteSteps": 23,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -337,17 +337,36 @@
     "platformVariantControlledExecutorPersistentMutation": false,
     "platformVariantControlledExecutorPassChecks": 7,
     "platformVariantControlledExecutorWarningChecks": 0,
-    "platformVariantControlledExecutorErrorChecks": 0
+    "platformVariantControlledExecutorErrorChecks": 0,
+    "platformVariantExecutorExpansionReportVersion": "platform-variant-executor-expansion@0.1.0",
+    "platformVariantExecutorExpansionArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
+    "platformVariantExecutorExpansionEvidenceLevel": "L3-derived",
+    "platformVariantExecutorExpansionL3Status": "executor_receipts_linked_to_rolled_back_unreal_write",
+    "platformVariantExecutorExpansionGate": "Review",
+    "platformVariantExecutorExpansionReceipts": 5,
+    "platformVariantExecutorExpansionCategories": [
+      "collision",
+      "lod",
+      "nanite"
+    ],
+    "platformVariantExecutorExpansionNoOpVerified": 2,
+    "platformVariantExecutorExpansionExecutorReady": 0,
+    "platformVariantExecutorExpansionApprovalReady": 1,
+    "platformVariantExecutorExpansionReadinessOnly": 2,
+    "platformVariantExecutorExpansionBlocked": 0,
+    "platformVariantExecutorExpansionOwnerApprovalsRequired": 3,
+    "platformVariantExecutorExpansionRollbackReceiptsRequired": 3,
+    "platformVariantExecutorExpansionProductionWrites": 0
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 410,
-    "requiredEvidenceCount": 303,
+    "evidenceCount": 411,
+    "requiredEvidenceCount": 304,
     "packageFileCount": 12,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 122,
-    "manifestArtifactCount": 73,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json"
+    "validationCommandCount": 124,
+    "manifestArtifactCount": 74,
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json"
   },
   "moduleOrder": [
     "asset-protocol",
@@ -456,9 +475,17 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
       "required": true
+    },
+    {
+      "id": "public-case-platform-variant-executor-expansion",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
+      "required": true
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
+    "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
     "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json",
@@ -529,10 +556,10 @@
     "accept-impact-r8"
   ],
   "notes": [
-    "Current final presentation route is DCC-first through the R33 Presenter Pack.",
+    "Current final presentation route is DCC-first through the R34 Presenter Pack.",
+    "R34 adds Platform Variant Executor Expansion Receipts: LOD, Nanite and collision operations become approval and rollback receipts linked to the rolled-back Unreal executor proof.",
     "R33 adds Platform Variant Controlled Executor: Unreal Python executes and rolls back a public Texture2D max-size clamp with 7/7 pass checks.",
     "R32 adds Platform Variant Public Texture2D Payload Fixture: a generated 2048 public texture is imported into Unreal, wired to M_HeroPanel, and proves PC/Mobile texture budgets against real Texture2D facts.",
-    "Current final presentation route is DCC-first through the R33 Presenter Pack.",
     "R31 adds Platform Variant Texture Runtime Collector: Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for planned PC/Mobile variants.",
     "R30 adds Platform Variant Generation Planner: runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction and approval boundaries.",
     "R28 adds Platform Variant Forge evidence for PC/Mobile asset derivation plans.",
@@ -604,6 +631,11 @@
       "id": "dcc-first-platform-variant-controlled-executor",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
       "required": true
+    },
+    {
+      "id": "public-case-platform-variant-executor-expansion",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
+      "required": true
     }
   ],
   "validation": [
@@ -619,7 +651,9 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py",
-    "python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py"
+    "python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py",
+    "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py",
+    "python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py"
   ],
   "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
   "platformVariantUnrealRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
@@ -647,8 +681,8 @@
   "platformVariantGenerationPlanSatisfied": 5,
   "platformVariantGenerationPlanOwnerRequired": 6,
   "platformVariantGenerationPlanExecutorReady": 1,
-  "artifactCount": 18,
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
+  "artifactCount": 19,
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
   "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
   "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
   "platformVariantTextureRuntimeEvidenceLevel": "L3",
@@ -694,5 +728,24 @@
   "platformVariantControlledExecutorPersistentMutation": false,
   "platformVariantControlledExecutorPassChecks": 7,
   "platformVariantControlledExecutorWarningChecks": 0,
-  "platformVariantControlledExecutorErrorChecks": 0
+  "platformVariantControlledExecutorErrorChecks": 0,
+  "platformVariantExecutorExpansionReportVersion": "platform-variant-executor-expansion@0.1.0",
+  "platformVariantExecutorExpansionArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
+  "platformVariantExecutorExpansionEvidenceLevel": "L3-derived",
+  "platformVariantExecutorExpansionL3Status": "executor_receipts_linked_to_rolled_back_unreal_write",
+  "platformVariantExecutorExpansionGate": "Review",
+  "platformVariantExecutorExpansionReceipts": 5,
+  "platformVariantExecutorExpansionCategories": [
+    "collision",
+    "lod",
+    "nanite"
+  ],
+  "platformVariantExecutorExpansionNoOpVerified": 2,
+  "platformVariantExecutorExpansionExecutorReady": 0,
+  "platformVariantExecutorExpansionApprovalReady": 1,
+  "platformVariantExecutorExpansionReadinessOnly": 2,
+  "platformVariantExecutorExpansionBlocked": 0,
+  "platformVariantExecutorExpansionOwnerApprovalsRequired": 3,
+  "platformVariantExecutorExpansionRollbackReceiptsRequired": 3,
+  "platformVariantExecutorExpansionProductionWrites": 0
 }

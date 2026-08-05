@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R34 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json` | Maya-hosted package probes 31 key evidence files, exports 23 demo route steps, and adds Platform Variant Executor Expansion Receipts evidence. |
+| Platform Variant Executor Expansion Receipts | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-executor-expansion-20260805-201222.json` | LOD, Nanite and collision operations become approval / rollback receipts linked to the R33 rolled-back Unreal executor proof. |
 | R33 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json` | Maya-hosted package probes 30 key evidence files, exports 22 demo route steps, and adds Platform Variant Controlled Executor evidence. |
 | Platform Variant Controlled Executor | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json` | Unreal 5.3.2 Python applies a public Texture2D max-size clamp, verifies the post-state, rolls back to the preflight fingerprint, and reports 7 / 0 / 0 checks with no persistent mutation. |
 | R32 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json` | Maya-hosted package probes 29 key evidence files, exports 21 demo route steps, and adds Platform Variant Public Texture2D Payload Fixture evidence. |

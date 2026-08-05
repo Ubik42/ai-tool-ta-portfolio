@@ -1,0 +1,311 @@
+{
+  "reportVersion": "platform-variant-executor-expansion@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 20:12:22",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "executor_receipts_linked_to_rolled_back_unreal_write",
+  "sourceGenerationPlan": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
+    "reportVersion": "platform-variant-generation-plan@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "runtime_drift_to_generation_plan",
+    "gate": "Blocked"
+  },
+  "sourceControlledExecutor": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
+    "reportVersion": "platform-variant-controlled-executor@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_texture_budget_executor_rolled_back",
+    "gate": "Ready",
+    "postCheckPassed": 1,
+    "rollbackPassed": 1,
+    "persistentMutation": false
+  },
+  "summary": {
+    "gate": "Review",
+    "receiptCount": 5,
+    "categories": [
+      "collision",
+      "lod",
+      "nanite"
+    ],
+    "noOpVerified": 2,
+    "executorReady": 0,
+    "approvalReady": 1,
+    "readinessOnly": 2,
+    "blocked": 0,
+    "ownerApprovalsRequired": 3,
+    "rollbackReceiptsRequired": 3,
+    "productionWrites": 0
+  },
+  "receipts": [
+    {
+      "id": "executor-expansion:variant-hero-panel-001:mobile:disable-nanite",
+      "sourceOperationId": "variant-hero-panel-001:mobile:disable-nanite",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "category": "nanite",
+      "action": "disable-nanite",
+      "sourceStatus": "Satisfied",
+      "receiptStatus": "NoOpVerified",
+      "reason": "Runtime Nanite flag matches policy.",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualNanite": false,
+        "expectedNanite": false
+      },
+      "unrealPythonPreview": "target_mesh.get_editor_property('nanite_settings').enabled = expected_nanite",
+      "approvalReceipt": {
+        "required": false,
+        "owner": null,
+        "reason": "No owner approval required.",
+        "allowedWithoutOwner": true,
+        "publicDemoDecision": "no-op-verified"
+      },
+      "rollbackReceipt": {
+        "requiredBeforeExecution": false,
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "linkedExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+        "linkedExecutorRollbackPassed": 1
+      },
+      "riskControls": [
+        "Capture preflight fingerprint before any write.",
+        "Limit writeSet to declared public fixture or owner-approved project scope.",
+        "Rollback from source control checkout or preflight duplicate.",
+        "Compare platform preset policy and runtime Nanite flag after execution.",
+        "Keep as no-op proof; no executor write should be scheduled."
+      ]
+    },
+    {
+      "id": "executor-expansion:variant-hero-panel-001:mobile:generate-lod2",
+      "sourceOperationId": "variant-hero-panel-001:mobile:generate-lod2",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "category": "lod",
+      "action": "generate-lod2",
+      "sourceStatus": "Review",
+      "receiptStatus": "ReadinessOnly",
+      "reason": "LOD generation needs readable geometry facts and owner approval before execution.",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualLodCount": 1,
+        "expectedLods": [
+          "LOD0",
+          "LOD1",
+          "LOD2"
+        ],
+        "missingLods": [
+          "LOD1",
+          "LOD2"
+        ],
+        "screenSizePolicy": [
+          1.0,
+          0.45,
+          0.18
+        ],
+        "reductionSettings": {
+          "method": "percent_triangles",
+          "targetPercentByMissingLod": {
+            "LOD1": 0.35,
+            "LOD2": 0.175
+          },
+          "recomputeNormals": true,
+          "preserveUVs": true,
+          "preserveVertexColors": true
+        }
+      },
+      "unrealPythonPreview": "StaticMeshEditorSubsystem.set_lods(target_mesh, lod_settings)",
+      "approvalReceipt": {
+        "required": true,
+        "owner": "art-lead",
+        "reason": "LOD reduction can change silhouette, normal quality and gameplay readability.",
+        "allowedWithoutOwner": false,
+        "publicDemoDecision": "preview-only"
+      },
+      "rollbackReceipt": {
+        "requiredBeforeExecution": true,
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "linkedExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+        "linkedExecutorRollbackPassed": 1
+      },
+      "riskControls": [
+        "Capture preflight fingerprint before any write.",
+        "Limit writeSet to declared public fixture or owner-approved project scope.",
+        "Rollback from source control checkout or preflight duplicate.",
+        "Require geometry fact readability and visual silhouette review before execution.",
+        "Hold execution until owner approval receipt is attached."
+      ]
+    },
+    {
+      "id": "executor-expansion:variant-hero-panel-001:mobile:simplify-collision",
+      "sourceOperationId": "variant-hero-panel-001:mobile:simplify-collision",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "category": "collision",
+      "action": "simplify-collision",
+      "sourceStatus": "Satisfied",
+      "receiptStatus": "NoOpVerified",
+      "reason": "Collision policy already matches runtime target.",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "actualSimpleShapes": 1,
+        "expectedSimpleShapes": 3,
+        "complexAsSimple": false
+      },
+      "unrealPythonPreview": "EditorStaticMeshLibrary.remove_collisions(target_mesh); add_simple_collisions(target_mesh)",
+      "approvalReceipt": {
+        "required": false,
+        "owner": null,
+        "reason": "No owner approval required.",
+        "allowedWithoutOwner": true,
+        "publicDemoDecision": "no-op-verified"
+      },
+      "rollbackReceipt": {
+        "requiredBeforeExecution": false,
+        "preflightFingerprint": "required",
+        "writeSet": [],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "linkedExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+        "linkedExecutorRollbackPassed": 1
+      },
+      "riskControls": [
+        "Capture preflight fingerprint before any write.",
+        "Limit writeSet to declared public fixture or owner-approved project scope.",
+        "Rollback from source control checkout or preflight duplicate.",
+        "Compare simple shape count and complex-as-simple state after execution.",
+        "Keep as no-op proof; no executor write should be scheduled."
+      ]
+    },
+    {
+      "id": "executor-expansion:variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+      "sourceOperationId": "variant-hero-panel-001:pc:apply-runtime-nanite-policy",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "category": "nanite",
+      "action": "apply-runtime-nanite-policy",
+      "sourceStatus": "Ready",
+      "receiptStatus": "ApprovalReady",
+      "reason": "Operation has deterministic params and rollback policy, but requires owner approval.",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "actualNanite": false,
+        "expectedNanite": true
+      },
+      "unrealPythonPreview": "target_mesh.get_editor_property('nanite_settings').enabled = expected_nanite",
+      "approvalReceipt": {
+        "required": true,
+        "owner": "art-lead",
+        "reason": "Nanite policy changes platform rendering behavior and memory/runtime tradeoffs.",
+        "allowedWithoutOwner": false,
+        "publicDemoDecision": "preview-only"
+      },
+      "rollbackReceipt": {
+        "requiredBeforeExecution": true,
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "linkedExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+        "linkedExecutorRollbackPassed": 1
+      },
+      "riskControls": [
+        "Capture preflight fingerprint before any write.",
+        "Limit writeSet to declared public fixture or owner-approved project scope.",
+        "Rollback from source control checkout or preflight duplicate.",
+        "Compare platform preset policy and runtime Nanite flag after execution.",
+        "Hold execution until owner approval receipt is attached."
+      ]
+    },
+    {
+      "id": "executor-expansion:variant-hero-panel-001:pc:generate-missing-runtime-lods",
+      "sourceOperationId": "variant-hero-panel-001:pc:generate-missing-runtime-lods",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "pc",
+      "category": "lod",
+      "action": "generate-missing-runtime-lods",
+      "sourceStatus": "Review",
+      "receiptStatus": "ReadinessOnly",
+      "reason": "LOD generation needs readable geometry facts and owner approval before execution.",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "actualLodCount": 1,
+        "expectedLods": [
+          "LOD0",
+          "LOD1"
+        ],
+        "missingLods": [
+          "LOD1"
+        ],
+        "screenSizePolicy": [
+          1.0,
+          0.55
+        ],
+        "reductionSettings": {
+          "method": "percent_triangles",
+          "targetPercentByMissingLod": {
+            "LOD1": 0.55
+          },
+          "recomputeNormals": true,
+          "preserveUVs": true,
+          "preserveVertexColors": true
+        }
+      },
+      "unrealPythonPreview": "StaticMeshEditorSubsystem.set_lods(target_mesh, lod_settings)",
+      "approvalReceipt": {
+        "required": true,
+        "owner": "art-lead",
+        "reason": "LOD reduction can change silhouette, normal quality and gameplay readability.",
+        "allowedWithoutOwner": false,
+        "publicDemoDecision": "preview-only"
+      },
+      "rollbackReceipt": {
+        "requiredBeforeExecution": true,
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "linkedExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+        "linkedExecutorRollbackPassed": 1
+      },
+      "riskControls": [
+        "Capture preflight fingerprint before any write.",
+        "Limit writeSet to declared public fixture or owner-approved project scope.",
+        "Rollback from source control checkout or preflight duplicate.",
+        "Require geometry fact readability and visual silhouette review before execution.",
+        "Hold execution until owner approval receipt is attached."
+      ]
+    }
+  ],
+  "adapter": {
+    "id": "platform-variant-executor-expansion",
+    "name": "Platform Variant Executor Expansion Receipts",
+    "methodSource": "R30 generation operations + R33 rolled-back Unreal executor proof",
+    "protocolCarrier": "operation contract, owner approval receipt, rollback receipt",
+    "boundary": {
+      "mutation": "approval_receipts_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture or owner-approved project scope"
+    }
+  },
+  "reviewerClaims": [
+    "R34 separates safe executor candidates from LOD, Nanite and collision operations that need owner approval.",
+    "Every candidate carries deterministic parameters, expected writeSet, approval receipt and rollback receipt.",
+    "The receipts are linked to the R33 Unreal write/post-check/rollback proof instead of being free-floating plans.",
+    "R34 does not mutate Unreal assets; it prepares the next controlled executor surface."
+  ]
+}
