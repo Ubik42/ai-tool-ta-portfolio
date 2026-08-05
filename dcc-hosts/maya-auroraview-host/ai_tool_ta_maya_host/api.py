@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r24-unreal-animation-bridge-presentation-pack",
+        label: str = "r25-unreal-animation-import-l3-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4040,8 +4040,14 @@ class MayaPortfolioApi:
                 manifest.get("animationContinuityArtifact"),
             ),
             _probe_file(
-                "unreal-animation-bridge-readiness",
-                "Unreal Animation Bridge readiness artifact",
+                "unreal-animation-bridge-contract",
+                "Unreal Animation Bridge contract artifact",
+                "artifact",
+                manifest.get("unrealAnimationBridgeContractArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-bridge-import-l3",
+                "Unreal Animation Bridge import L3 artifact",
                 "artifact",
                 manifest.get("unrealAnimationBridgeArtifact"),
             ),
@@ -4107,10 +4113,10 @@ class MayaPortfolioApi:
                 "evidence_expected": "Maya mayapy runtime exports keyed animCurve facts for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
             },
             {
-                "id": "09-run-unreal-animation-bridge-readiness",
-                "label": "Run Unreal animation bridge readiness",
-                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py.",
-                "evidence_expected": "Unreal Python probes AnimSequence/Skeleton API availability and expected public animation fixture assets without saving packages.",
+                "id": "09-run-unreal-animation-bridge-import-l3",
+                "label": "Run Unreal animation bridge import L3",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py.",
+                "evidence_expected": "Maya mayapy generates public FBX clips, Unreal Python imports synthetic Skeleton/SkeletalMesh/AnimSequence assets, and runtime facts are exported.",
             },
             {
                 "id": "10-review-blender-adapter",
@@ -4242,6 +4248,9 @@ class MayaPortfolioApi:
                 "unreal_animation_bridge_warning_checks": manifest_summary.get("unrealAnimationBridgeWarningChecks"),
                 "unreal_animation_bridge_error_checks": manifest_summary.get("unrealAnimationBridgeErrorChecks"),
                 "unreal_animation_bridge_missing_sequences": manifest_summary.get("unrealAnimationBridgeMissingSequences"),
+                "unreal_animation_bridge_import_success": manifest_summary.get("unrealAnimationBridgeImportSuccess"),
+                "unreal_animation_bridge_imported_assets": manifest_summary.get("unrealAnimationBridgeImportedAssets"),
+                "unreal_animation_bridge_runtime_assets_present": manifest_summary.get("unrealAnimationBridgeRuntimeAssetsPresent"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4298,7 +4307,7 @@ class MayaPortfolioApi:
                 "Unreal Preset Fact Review projects the comparison rows into a Maya-hosted reviewer queue with owner actions.",
                 "Scene Transaction Guard captures DCC before/after scene mutation, risk rows and rollback preview from Maya.",
                 "Animation Continuity Lab is now backed by Maya mayapy L3 animCurve evidence for rig identity, take range, sample rate, channels, sub-frame keys and root motion.",
-                "Unreal Animation Bridge enters Unreal Python and records AnimSequence/Skeleton API readiness without claiming missing animation assets are present.",
+                "Unreal Animation Bridge generates public Maya FBX clips, imports them into Unreal, and records real AnimSequence/Skeleton/SkeletalMesh facts.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4322,7 +4331,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r24-unreal-animation-bridge-presentation-pack",
+        label: str = "r25-unreal-animation-import-l3-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

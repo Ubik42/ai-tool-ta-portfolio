@@ -1018,3 +1018,22 @@ public skeleton/sequence fixture -> Unreal runtime collector -> continuity compa
 ```
 
 只有修改 runtime adapter 时才跑对应 DCC runtime；只有发布里程碑才跑 `full`；只改文档或 manifest 时不跑 Blender/Max/Unreal。
+
+## R25 循环开发断点：Unreal Animation Bridge import L3
+
+R25 已完成 `Unreal Animation Bridge` import L3：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-contract-20260805-173354.json
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-173401.json
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-import-l3-20260805-173309.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
+```
+
+R25 结果：Maya 2026 `mayapy` + `fbxmaya` 生成两段 public synthetic FBX；Unreal 5.3.2 `UnrealEditor-Cmd.exe` 通过 `AssetImportTask` + `FbxImportUI` 导入并保存 synthetic Skeleton / SkeletalMesh / AnimSequence；2 / 2 expected sequences present，4 imported assets，1 Ready clip，1 intentionally Blocked clip。Bridge gate 的 `Blocked` 来自 `Attack_A` 业务故障样本，不是 runtime 或 fixture 缺失。
+
+默认下一轮开发 `Character Calibration & Intent Transfer Studio`：
+
+```text
+topology / joint coverage fixture -> Maya collector -> calibration rule evaluation -> Presenter Pack row -> docs
+```

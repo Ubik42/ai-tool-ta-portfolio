@@ -1,6 +1,6 @@
 # Unreal Animation Bridge
 
-R24 目标：把 R23 的 Maya Animation Continuity L3 证据继续推到引擎侧，证明动画交付不是“DCC 里检查完就结束”，而是要对齐 Unreal AnimSequence / Skeleton 的导入语义。
+R25 目标：把 R23 的 Maya Animation Continuity L3 证据继续推到引擎侧，证明动画交付不是“DCC 里检查完就结束”，而是要用 Unreal 真实导入结果对齐 AnimSequence / Skeleton 语义。
 
 ## 核心业务逻辑
 
@@ -13,7 +13,7 @@ R24 目标：把 R23 的 Maya Animation Continuity L3 证据继续推到引擎�
 - compression 是否允许 trim frame range 或 remove linear keys。
 - 当前公开项目里是否真的有目标 AnimSequence / Skeleton fixture。
 
-R24 的价值是把 Maya keyed animCurve facts 映射成 Unreal runtime readiness，而不是只给一张流程图。工具明确区分三层状态：Maya L3 已有、Unreal Python API 已探测、公开 AnimSequence/Skeleton fixture 仍缺。
+R25 的价值是把 Maya keyed animCurve facts 映射成 Unreal runtime import facts，而不是只给一张流程图。工具明确区分四层状态：Maya L3 已有、L2 合约已建立、Unreal Python API 可进入、公开 AnimSequence/Skeleton fixture 已由脚本自动生成并导入。
 
 ## 当前实现
 
@@ -23,52 +23,64 @@ R24 的价值是把 Maya keyed animCurve facts 映射成 Unreal runtime readines
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
 
-R24 已完成：
+R25 已完成：
 
 - L2 contract：读取 R23 Maya L3 artifact，把两个 Maya take 映射到 Unreal AnimSequence 预期。
-- Unreal runtime readiness：通过 `UnrealEditor-Cmd.exe -run=pythonscript` 进入公开 test `.uproject`，探测 Unreal animation API 和目标资产存在性。
-- Presenter Pack 接入：R24 Presenter Pack 会探测 Unreal Animation Bridge readiness artifact，并把 demo route 扩到 14 步。
-- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r24` / `dcc-first-package@1.21.0`。
+- Maya FBX fixture：通过 Maya 2026 `mayapy` + `fbxmaya` 现场生成两段 public synthetic FBX，不提交二进制源文件。
+- Unreal runtime import：通过 `UnrealEditor-Cmd.exe -run=pythonscript` 进入公开 test `.uproject`，用 `AssetImportTask` + `FbxImportUI` 导入并保存 synthetic Skeleton / SkeletalMesh / AnimSequence。
+- Runtime facts：采集 `AnimSequence` 存在性、绑定 Skeleton、play length、可用 API 方法、导入选项、重命名路径和写入边界。
+- Presenter Pack 接入：R25 Presenter Pack 会探测 Unreal Animation Bridge contract + import L3 artifact，并保持 14 步 demo route。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r25` / `dcc-first-package@1.22.0`。
 
 ## 证据
 
 当前 contract artifact：
 
 ```text
-<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-contract-20260805-164637.json
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-contract-20260805-173354.json
 ```
 
 当前 readiness artifact：
 
 ```text
-<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-164730.json
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-173401.json
+```
+
+当前 import L3 artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-import-l3-20260805-173309.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
 ```
 
 关键结果：
 
-- report version：`unreal-animation-bridge-readiness@0.1.0`
-- evidence level：L3-readiness
-- l3 status：`unreal_animation_api_probe_collected`
+- report version：`unreal-animation-bridge-import-l3@0.1.0`
+- evidence level：L3
+- l3 status：`unreal_animsequence_assets_imported`
 - Unreal runtime：5.3.2 / Python 3.9.7
-- API probe：`AnimSequence`、`AnimSequenceFactory`、`Skeleton`、`SkeletalMesh` 可见；`AnimationBlueprintLibrary` 在当前运行时不可见
+- API probe：`AssetImportTask`、`FbxImportUI`、`FbxSkeletalMeshImportData`、`FbxAnimSequenceImportData`、`AnimSequence`、`Skeleton`、`SkeletalMesh` 可见
 - expected sequences：2
-- present / missing sequences：0 / 2
-- assets ready / review / blocked：0 / 1 / 1
-- checks pass / warning / error：8 / 3 / 5
+- present / missing sequences：2 / 0
+- imported assets：4
+- assets ready / review / blocked：1 / 0 / 1
+- checks pass / warning / error：12 / 1 / 5
 
-Gate 为 `Blocked` 是正确状态：公开 Unreal 项目目前只有 StaticMesh fixture，没有提交 skeletal animation fixture。R24 不把 API readiness 冒充成真实 AnimSequence L3 成功。
+Gate 为 `Blocked` 是正确状态：`RunStart` 已 Ready；`Attack_A` 作为故障样本保留了 rig fingerprint、sample rate、frame range、curve coverage、sub-frame 和 root motion 问题。R25 已证明 Unreal import runtime 能跑通，Blocked 不再代表缺 skeletal animation fixture。
 
 ## 后续
 
 下一阶段有两条可选路径：
 
-- 轻量路径：继续做 Unreal Animation Bridge L3 asset fixture，准备 public Skeleton / AnimSequence 测试资产，再采集真实 sequence length、sample rate、curve names、root motion 和 compression facts。
-- 业务扩展路径：转 Character Calibration & Intent Transfer Studio，把 skeleton fingerprint、joint coverage、topology signature 和 Control Rig mapping 串起来。
+- 轻量深化：补 Unreal AnimSequence frame/sample-rate 更细 facts、曲线 metadata 和 compression settings 的读取。
+- 业务扩展：转 Character Calibration & Intent Transfer Studio，把 skeleton fingerprint、joint coverage、topology signature 和 Control Rig mapping 串起来。

@@ -1,7 +1,7 @@
 {
   "packageId": "ai-tool-ta-public-case-package-r8-54",
   "packageVersion": "public-case-package@3.24.0",
-  "generatedAt": "2026-07-31T23:59:59+08:00",
+  "generatedAt": "2026-08-05T17:35:35+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r24",
-    "packageVersion": "dcc-first-package@1.21.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r25",
+    "packageVersion": "dcc-first-package@1.22.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -126,10 +126,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 21,
-    "presentationPackPresentEvidenceFiles": 21,
+    "presentationPackEvidenceFiles": 22,
+    "presentationPackPresentEvidenceFiles": 22,
     "presentationPackMissingRequiredFiles": 0,
     "presentationPackDemoRouteSteps": 14,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
@@ -198,22 +198,27 @@
     "animationContinuityMayaApiVersion": 20260302,
     "animationContinuityRuntimeCollected": true,
     "generatedAt": "2026-08-05T16:49:28+08:00",
-    "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-readiness@0.1.0",
-    "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-164730.json",
-    "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-164637.json",
-    "unrealAnimationBridgeEvidenceLevel": "L3-readiness",
-    "unrealAnimationBridgeL3Status": "unreal_animation_api_probe_collected",
+    "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
+    "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
+    "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
+    "unrealAnimationBridgeEvidenceLevel": "L3",
+    "unrealAnimationBridgeL3Status": "unreal_animsequence_assets_imported",
     "unrealAnimationBridgeGate": "Blocked",
     "unrealAnimationBridgeEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
-    "unrealAnimationBridgeApiProbe": "AnimSequence/Skeleton/SkeletalMesh available; expected public AnimSequence assets missing",
+    "unrealAnimationBridgeApiProbe": "AssetImportTask/FbxImportUI available; public Skeleton/SkeletalMesh/AnimSequence assets imported",
     "unrealAnimationBridgeAssets": 2,
-    "unrealAnimationBridgeReady": 0,
-    "unrealAnimationBridgeReview": 1,
+    "unrealAnimationBridgeReady": 1,
+    "unrealAnimationBridgeReview": 0,
     "unrealAnimationBridgeBlocked": 1,
-    "unrealAnimationBridgePassChecks": 8,
-    "unrealAnimationBridgeWarningChecks": 3,
+    "unrealAnimationBridgePassChecks": 12,
+    "unrealAnimationBridgeWarningChecks": 1,
     "unrealAnimationBridgeErrorChecks": 5,
-    "unrealAnimationBridgeMissingSequences": 2
+    "unrealAnimationBridgeMissingSequences": 0,
+    "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
+    "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
+    "unrealAnimationBridgeRuntimeAssetsPresent": 2,
+    "unrealAnimationBridgeImportSuccess": true,
+    "unrealAnimationBridgeImportedAssets": 4
   },
   "summary": {
     "moduleCount": 5,
@@ -288,9 +293,9 @@
     }
   ],
   "keyEvidence": [
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
     "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-164637.json",
-    "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-164730.json",
+    "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
     "<repo>\\dcc-hosts\\animation-continuity-lab\\artifacts\\animation-continuity-maya-l3-20260805-162744.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r22-blender-max-l3-presentation-pack-20260805-153957.json",
@@ -365,5 +370,27 @@
     "R8.49 adds restore incident replay notarization, archive restore execution variance report, and post-abort owner evidence reconciliation with zero live writes and zero private field exposure.",
     "Public package references existing assets, fixtures, and docs by relative path.",
     "Synthetic fixtures prove workflow logic and evidence shape, not proprietary asset compatibility."
+  ],
+  "evidence": [
+    {
+      "id": "dcc-first-unreal-animation-bridge-contract",
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-animation-bridge-import-l3",
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-animation-bridge-readiness",
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-presentation-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json",
+      "required": true
+    }
   ]
 }

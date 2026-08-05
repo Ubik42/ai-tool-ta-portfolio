@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r25-unreal-animation-bridge-contract` | `python dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py` | Contract reads the Maya Animation Continuity L3 artifact, maps 2 takes to Unreal AnimSequence/Skeleton expectations, and reports 1 Ready / 1 Blocked before runtime import. |
+| `validate-r25-unreal-animation-bridge-import-l3` | `python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py` | Maya 2026 `mayapy` generates two public FBX clips, Unreal 5.3.2 imports synthetic Skeleton/SkeletalMesh/AnimSequence assets, reports 2 / 2 sequences present, 4 imported assets, 1 Ready clip and 1 Blocked business defect sample. |
+| `validate-r25-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r25-unreal-animation-import-l3-presentation-pack")` | DCC Presenter Pack probes 22 key evidence files including Unreal Animation Bridge import L3, reports 22 present / 0 missing required files, and exports 14 demo route steps. |
 | `validate-r24-unreal-animation-bridge-contract` | `python dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py` | Contract reads the R23 Maya Animation Continuity L3 artifact, maps 2 takes to Unreal AnimSequence expectations, and reports 1 Ready / 1 Blocked before runtime asset probing. |
 | `validate-r24-unreal-animation-bridge-readiness` | `python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python enters the public test project, probes AnimSequence / Skeleton API availability, reports 2 expected sequences missing, and keeps the bridge at L3-readiness instead of claiming full AnimSequence L3. |
 | `validate-r24-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r24-unreal-animation-bridge-presentation-pack")` | DCC Presenter Pack probes 21 key evidence files including Unreal Animation Bridge readiness, reports 21 present / 0 missing required files, and exports 14 demo route steps. |

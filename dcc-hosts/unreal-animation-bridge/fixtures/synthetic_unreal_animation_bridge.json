@@ -11,8 +11,10 @@
     {
       "assetId": "anim-hero-run-001",
       "mayaTakeName": "RunStart",
+      "sourceFbxClipName": "AS_Hero_RunStart.fbx",
       "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
-      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
       "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
       "expectedSampleRate": 30,
       "expectedStartFrame": 1001,
@@ -34,8 +36,10 @@
     {
       "assetId": "anim-hero-attack-002",
       "mayaTakeName": "Attack_A",
+      "sourceFbxClipName": "AS_Hero_Attack_A.fbx",
       "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
-      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
       "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
       "expectedSampleRate": 30,
       "expectedStartFrame": 2001,

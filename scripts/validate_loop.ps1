@@ -63,7 +63,10 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\contract.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_l3_smoke.py"),
-    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py")
+    (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\generate_maya_fbx_fixture.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py")
 )
 
 $CoreJsonFiles = @(
@@ -88,9 +91,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r24-unreal-animation-bridge-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r25-unreal-animation-import-l3-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 21, summary
+assert summary["present_evidence_files"] == 22, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -121,6 +124,9 @@ if ($Tier -in @("animation", "full")) {
 if ($Tier -in @("unreal-animation", "full")) {
     Invoke-Step "unreal animation bridge contract smoke" {
         python (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py")
+    }
+    Invoke-Step "unreal animation bridge import L3 harness" {
+        python (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py")
     }
 }
 

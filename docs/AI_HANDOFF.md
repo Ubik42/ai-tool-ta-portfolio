@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge L3-readiness。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+dcc-hosts/maya-auroraview-host/artifacts/r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R24。
+稳定基线：R25。
 
 已完成：
 
@@ -36,7 +36,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentatio
 - Unreal Handoff Inspector
 - Scene Transaction Guard
 - Animation Continuity Lab Maya L3
-- Unreal Animation Bridge L3-readiness
+- Unreal Animation Bridge import L3
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -45,13 +45,13 @@ dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentatio
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- Unreal AnimSequence/Skeleton public fixture、MotionBuilder、Houdini、Character Calibration、Spatial Authoring 等后续工具线。
+- MotionBuilder、Houdini、Character Calibration、Spatial Authoring、Unreal animation fact deepening 等后续工具线。
 
-## 3. R24 当前断点
+## 3. R25 当前断点
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
-`Unreal Animation Bridge` 已完成首轮 readiness 闭环：读取 R23 Maya L3 artifact，映射 Unreal AnimSequence / Skeleton 预期，通过 UnrealEditor-Cmd 进入公开 test `.uproject`，探测 animation API 和 expected sequence asset presence。
+`Unreal Animation Bridge` 已完成 import L3 闭环：读取 R23 Maya L3 artifact，生成 public Maya FBX clips，通过 UnrealEditor-Cmd 进入公开 test `.uproject`，导入并采集 Skeleton / SkeletalMesh / AnimSequence runtime facts。
 
 核心文件：
 
@@ -66,7 +66,10 @@ dcc-hosts/unreal-animation-bridge/fixtures/synthetic_unreal_animation_bridge.jso
 dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py
 dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py
 dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py
+dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py
+dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py
 dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py
+dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py
 ```
 
 已生成首个 L2 artifact：
@@ -87,16 +90,16 @@ dcc-hosts/animation-continuity-lab/artifacts/animation-continuity-maya-l3-202608
 dcc-hosts/maya-auroraview-host/artifacts/r23-animation-continuity-l3-presentation-pack-20260805-163040.json
 ```
 
-当前 Unreal Animation Bridge readiness：
+当前 Unreal Animation Bridge import L3：
 
 ```text
-dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-bridge-readiness-20260805-164730.json
+dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-bridge-import-l3-20260805-173309.json
 ```
 
-当前 R24 Presenter Pack：
+当前 R25 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+dcc-hosts/maya-auroraview-host/artifacts/r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json
 ```
 
 这条线的最终效果：
@@ -104,16 +107,16 @@ dcc-hosts/maya-auroraview-host/artifacts/r24-unreal-animation-bridge-presentatio
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- 后续再接入 MotionBuilder / Unreal animation import 对照。
+- Unreal 侧已接入 import L3；后续可继续补 MotionBuilder 或更细的 Unreal curve/compression facts。
 
-继续开发时优先做 Unreal AnimSequence/Skeleton public fixture 或 Character Calibration。如果只验证当前 R24，运行：
+继续开发时优先做 Character Calibration & Intent Transfer Studio。如果只验证当前 R25，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
-python dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py
+python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py
 ```
 
-当前 R24 public package 为 `ai-tool-ta-dcc-first-showcase-r24` / `dcc-first-package@1.21.0`，Presenter Pack 21 / 21 evidence files present，0 missing required files，14 demo route steps；gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R25 public package 为 `ai-tool-ta-dcc-first-showcase-r25` / `dcc-first-package@1.22.0`，Presenter Pack 22 / 22 evidence files present，0 missing required files，14 demo route steps；Unreal Animation Bridge 已到 `L3` / `unreal_animsequence_assets_imported`，2 / 2 expected sequences present，4 个 synthetic Unreal assets imported。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

@@ -14,6 +14,7 @@ from typing import Any, Dict, Iterable, List
 
 REPORT_VERSION = "unreal-animation-bridge-contract@0.1.0"
 READINESS_REPORT_VERSION = "unreal-animation-bridge-readiness@0.1.0"
+IMPORT_REPORT_VERSION = "unreal-animation-bridge-import-l3@0.1.0"
 FIXTURE_SCHEMA = "synthetic-unreal-animation-bridge@0.1.0"
 PORTFOLIO_ROOT = Path(__file__).resolve().parents[3]
 
@@ -60,17 +61,30 @@ def build_report(
     facts = build_bridge_facts(fixture, maya_report, runtime_snapshot)
     evaluation = evaluate_bridge(facts)
     runtime_executed = bool(runtime_snapshot and runtime_snapshot.get("executed"))
+    runtime_import = (runtime_snapshot or {}).get("import") or {}
+    import_attempted = bool(runtime_import.get("attempted"))
     runtime_assets = facts.get("unrealRuntime", {}).get("assets", {})
     all_expected_assets_present = bool(runtime_assets.get("allExpectedAssetsPresent"))
-    report_version = READINESS_REPORT_VERSION if runtime_executed else REPORT_VERSION
-    evidence_level = "L3-readiness" if runtime_executed else "L2"
-    l3_status = (
-        "unreal_animation_assets_ready"
-        if runtime_executed and all_expected_assets_present
-        else "unreal_animation_api_probe_collected"
-        if runtime_executed
-        else "contract_fixture_collected"
-    )
+    if import_attempted:
+        report_version = IMPORT_REPORT_VERSION
+        evidence_level = "L3" if all_expected_assets_present else "L3-import-attempt"
+        l3_status = (
+            "unreal_animsequence_assets_imported"
+            if all_expected_assets_present
+            else "unreal_animsequence_import_attempt_collected"
+        )
+    elif runtime_executed:
+        report_version = READINESS_REPORT_VERSION
+        evidence_level = "L3-readiness"
+        l3_status = (
+            "unreal_animation_assets_ready"
+            if all_expected_assets_present
+            else "unreal_animation_api_probe_collected"
+        )
+    else:
+        report_version = REPORT_VERSION
+        evidence_level = "L2"
+        l3_status = "contract_fixture_collected"
     return {
         "reportVersion": report_version,
         "generatedBy": "AI Tool TA Portfolio / Unreal Animation Bridge",
@@ -95,9 +109,15 @@ def build_report(
             "methodSource": "Lightbox animation export / Unreal AnimSequence import continuity",
             "protocolCarrier": "Maya animation-continuity L3 artifact + Unreal AnimSequence/Skeleton facts",
             "boundary": {
-                "mutation": "unreal_runtime_probe_only" if runtime_executed else "contract_validation_only",
-                "engineWrites": 0,
-                "assetWrites": 0,
+                "mutation": (
+                    "public_fixture_engine_import_and_save"
+                    if import_attempted
+                    else "unreal_runtime_probe_only"
+                    if runtime_executed
+                    else "contract_validation_only"
+                ),
+                "engineWrites": int(runtime_import.get("engineWrites") or 0) if import_attempted else 0,
+                "assetWrites": int(runtime_import.get("assetWrites") or 0) if import_attempted else 0,
                 "productionWrites": 0,
             },
         },
@@ -106,6 +126,7 @@ def build_report(
         "reviewerClaims": [
             "The bridge compares Maya keyed animCurve facts with Unreal AnimSequence expectations instead of trusting an FBX handoff label.",
             "Runtime readiness enters Unreal Python and records animation API / asset availability without creating or saving production assets.",
+            "Import L3 generates a public Maya FBX fixture, imports it into the local public Unreal project, saves only synthetic test assets, and records real AnimSequence/Skeleton facts.",
             "Blocked rows are explicit owner or fixture gaps: skeleton binding, sample rate, curve coverage, frame range, root motion and compression boundaries stay auditable.",
         ],
     }
@@ -178,8 +199,10 @@ def _sequence_fact(
     return {
         "assetId": fixture_row.get("assetId"),
         "mayaTakeName": fixture_row.get("mayaTakeName"),
+        "sourceFbxClipName": fixture_row.get("sourceFbxClipName"),
         "expectedAnimSequencePath": fixture_row.get("expectedAnimSequencePath"),
         "expectedSkeletonPath": fixture_row.get("expectedSkeletonPath"),
+        "expectedSkeletalMeshPath": fixture_row.get("expectedSkeletalMeshPath"),
         "ownerState": fixture_row.get("ownerState"),
         "sourceMayaFound": bool(maya_asset),
         "sourceMaya": {
@@ -205,6 +228,9 @@ def _sequence_fact(
         },
         "expectedUnreal": {
             "skeletonFingerprint": fixture_row.get("expectedSkeletonFingerprint"),
+            "skeletalMeshPath": fixture_row.get("expectedSkeletalMeshPath"),
+            "skeletonPath": fixture_row.get("expectedSkeletonPath"),
+            "animSequencePath": fixture_row.get("expectedAnimSequencePath"),
             "sampleRate": fixture_row.get("expectedSampleRate"),
             "startFrame": fixture_row.get("expectedStartFrame"),
             "endFrame": fixture_row.get("expectedEndFrame"),
@@ -221,6 +247,8 @@ def _evaluate_sequence(sequence: Dict[str, Any], facts: Dict[str, Any]) -> List[
     expected = sequence.get("expectedUnreal", {})
     runtime = sequence.get("runtimeUnreal", {})
     runtime_executed = bool(facts.get("unrealRuntime", {}).get("executed"))
+    runtime_import = facts.get("unrealRuntime", {}).get("import", {})
+    import_attempted = bool(runtime_import.get("attempted"))
     required_curves = set(expected.get("requiredCurveNames", []))
     maya_curves = set(source.get("channelIdentities", []))
     missing_unreal_curves = sorted(required_curves - maya_curves)
@@ -310,6 +338,22 @@ def _evaluate_sequence(sequence: Dict[str, Any], facts: Dict[str, Any]) -> List[
             "executed=%s anim=%s skeleton=%s"
             % (runtime_executed, runtime.get("animSequenceExists"), runtime.get("skeletonExists")),
             "Create public skeletal animation fixture assets or keep this row as readiness.",
+        ),
+        _eval(
+            sequence,
+            "runtime-import-status",
+            (not import_attempted) or bool(runtime_import.get("success")),
+            "warning",
+            "Runtime import status",
+            "The import harness should create and save only public synthetic Unreal animation assets before claiming import L3.",
+            "attempted=%s success=%s imported=%s failures=%s"
+            % (
+                import_attempted,
+                runtime_import.get("success"),
+                runtime_import.get("importedAssetCount"),
+                runtime_import.get("failures", []),
+            ),
+            "Fix the Maya FBX fixture or Unreal import options and rerun the import harness.",
         ),
     ]
 
