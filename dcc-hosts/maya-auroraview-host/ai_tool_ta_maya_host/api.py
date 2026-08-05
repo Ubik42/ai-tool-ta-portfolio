@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r64-unreal-socket-native-receipt-dryrun-presentation-pack",
+        label: str = "r65-unreal-socket-native-controlled-write-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4230,6 +4230,12 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Receipt Dry-run artifact",
                 "artifact",
                 manifest.get("unrealSocketNativeReceiptDryrunArtifact"),
+            ),
+            _probe_file(
+                "unreal-socket-native-controlled-write",
+                "Unreal Socket Native Controlled Write artifact",
+                "artifact",
+                manifest.get("unrealSocketNativeControlledWriteArtifact"),
             ),
             _probe_file(
                 "unreal-socket-api-docs",
@@ -4501,6 +4507,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal socket native receipt dry-run",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_receipt_dryrun.py.",
                 "evidence_expected": "The native commandlet parses an approved JSON socket receipt, loads the public Skeleton, reports wouldCreate rows, and keeps asset writes at zero.",
+            },
+            {
+                "id": "28f-run-unreal-socket-native-controlled-write",
+                "label": "Run Unreal socket native controlled write",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_controlled_write.py.",
+                "evidence_expected": "The native commandlet creates the approved sockets in a temp public fixture Skeleton, post-checks runtime presence, rolls them back, and restores the uasset hash.",
             },
             {
                 "id": "29-run-unreal-gameplay-attach-fixture",
@@ -5267,6 +5279,16 @@ class MayaPortfolioApi:
                 "unreal_socket_native_receipt_dryrun_request_count": manifest_summary.get("unrealSocketNativeReceiptDryrunRequestCount"),
                 "unreal_socket_native_receipt_dryrun_would_create": manifest_summary.get("unrealSocketNativeReceiptDryrunWouldCreate"),
                 "unreal_socket_native_receipt_dryrun_error_lines": manifest_summary.get("unrealSocketNativeReceiptDryrunErrorLines"),
+                "unreal_socket_native_controlled_write_gate": manifest_summary.get("unrealSocketNativeControlledWriteGate"),
+                "unreal_socket_native_controlled_write_evidence_level": manifest_summary.get("unrealSocketNativeControlledWriteEvidenceLevel"),
+                "unreal_socket_native_controlled_write_l3_status": manifest_summary.get("unrealSocketNativeControlledWriteL3Status"),
+                "unreal_socket_native_controlled_write_return_code": manifest_summary.get("unrealSocketNativeControlledWriteReturnCode"),
+                "unreal_socket_native_controlled_write_applied": manifest_summary.get("unrealSocketNativeControlledWriteApplied"),
+                "unreal_socket_native_controlled_write_post_check_present": manifest_summary.get("unrealSocketNativeControlledWritePostCheckPresent"),
+                "unreal_socket_native_controlled_write_rollback_removed": manifest_summary.get("unrealSocketNativeControlledWriteRollbackRemoved"),
+                "unreal_socket_native_controlled_write_final_hash_restored": manifest_summary.get("unrealSocketNativeControlledWriteFinalHashRestored"),
+                "unreal_socket_native_controlled_write_asset_writes": manifest_summary.get("unrealSocketNativeControlledWriteAssetWrites"),
+                "unreal_socket_native_controlled_write_production_writes": manifest_summary.get("unrealSocketNativeControlledWriteProductionWrites"),
             },
             "demo_route": demo_route,
             "business_route": runbook_plan["presentation_route"],
@@ -5316,6 +5338,7 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin, records DLL hash evidence and restores the temporary UBT compiler configuration.",
                 "Unreal Socket Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaSocketAuthoring reaches the readiness commandlet contract.",
                 "Unreal Socket Native Receipt Dry-run proves the commandlet can parse approved JSON receipt input, load the public Skeleton and report wouldCreate socket rows without saving assets.",
+                "Unreal Socket Native Controlled Write proves the commandlet can create the approved sockets, save the temp public fixture package, post-check runtime presence, roll back and restore the uasset hash.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
@@ -5352,7 +5375,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r64-unreal-socket-native-receipt-dryrun-presentation-pack",
+        label: str = "r65-unreal-socket-native-controlled-write-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
