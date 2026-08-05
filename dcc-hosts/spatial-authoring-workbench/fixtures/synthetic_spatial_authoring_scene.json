@@ -1,0 +1,250 @@
+{
+  "schema": "synthetic-spatial-authoring-scene@0.1.0",
+  "intent": "Public-safe fixture for socket, hotspot, pose frame and mirror transfer validation.",
+  "scene": {
+    "unit": "centimeter",
+    "upAxis": "Y",
+    "fps": 30,
+    "playbackStart": 1,
+    "playbackEnd": 120
+  },
+  "assets": [
+    {
+      "id": "spatial-rifle-authoring-001",
+      "label": "Rifle Socket Authoring Approved",
+      "namespace": "sp_rifle",
+      "ownerState": "approved",
+      "protocolSchema": "spatial-authoring@dcc-r27",
+      "rootNode": "RifleRoot",
+      "skeleton": {
+        "root": "Root",
+        "expectedJoints": ["Root", "Hand_R", "Hand_L", "Weapon_R", "Weapon_L"],
+        "actualJoints": ["Root", "Hand_R", "Hand_L", "Weapon_R", "Weapon_L"]
+      },
+      "constraints": {
+        "maxSocketOffsetCm": 4.0,
+        "maxMirrorDeltaCm": 0.35,
+        "poseFrameRange": [1, 120],
+        "requiredPoseFrames": ["idle", "grip", "fire"],
+        "allowedHotspotSemantics": ["weapon.muzzle", "weapon.shell", "vfx.spark"],
+        "requiredHotspotOwners": ["combat-fx", "animation"],
+        "allowedSpaces": ["local"],
+        "requireUniformScale": true,
+        "requirePreviewLocator": true
+      },
+      "sockets": [
+        {
+          "name": "hand_R_socket",
+          "exportName": "SK_Hand_R",
+          "parentJoint": "Hand_R",
+          "mirrorOf": "hand_L_socket",
+          "side": "R",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [2.0, 1.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        },
+        {
+          "name": "hand_L_socket",
+          "exportName": "SK_Hand_L",
+          "parentJoint": "Hand_L",
+          "mirrorOf": "hand_R_socket",
+          "side": "L",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [-2.0, 1.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "name": "muzzle_flash",
+          "semantic": "weapon.muzzle",
+          "owner": "combat-fx",
+          "parentJoint": "Weapon_R",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [3.5, 0.4, 0.0],
+            "rotate": [0.0, 90.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "poseFrames": [
+        {
+          "name": "idle",
+          "frame": 1,
+          "role": "base",
+          "owner": "animation",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [0.0, 0.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        },
+        {
+          "name": "grip",
+          "frame": 24,
+          "role": "socket-grip",
+          "owner": "animation",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [0.0, 2.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        },
+        {
+          "name": "fire",
+          "frame": 48,
+          "role": "vfx-trigger",
+          "owner": "combat-fx",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [0.0, 3.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "poseTransfer": {
+        "sourcePose": "grip",
+        "targetPose": "grip",
+        "mirrorAxis": "X",
+        "space": "local",
+        "requiredPairs": [["hand_R_socket", "hand_L_socket"]],
+        "approvedBy": "animation"
+      }
+    },
+    {
+      "id": "spatial-backpack-tmp-002",
+      "label": "Backpack Socket Temporary Blocked",
+      "namespace": "sp_pack_tmp",
+      "ownerState": "temporary",
+      "protocolSchema": "spatial-authoring@dcc-r27",
+      "rootNode": "BackpackRoot",
+      "skeleton": {
+        "root": "Root",
+        "expectedJoints": ["Root", "Spine", "Shoulder_R", "Shoulder_L", "Hand_R", "Hand_L"],
+        "actualJoints": ["Root", "Spine", "Shoulder_R", "TMP_AttachProxy"]
+      },
+      "constraints": {
+        "maxSocketOffsetCm": 3.0,
+        "maxMirrorDeltaCm": 0.35,
+        "poseFrameRange": [1, 120],
+        "requiredPoseFrames": ["idle", "equip", "unequip"],
+        "allowedHotspotSemantics": ["gear.attach", "vfx.spark"],
+        "requiredHotspotOwners": ["gear-tech", "animation"],
+        "allowedSpaces": ["local"],
+        "requireUniformScale": true,
+        "requirePreviewLocator": true
+      },
+      "sockets": [
+        {
+          "name": "shoulder_R_socket",
+          "exportName": "SK_Shoulder_R",
+          "parentJoint": "Shoulder_R",
+          "mirrorOf": "shoulder_L_socket",
+          "side": "R",
+          "space": "world",
+          "previewLocator": false,
+          "local": {
+            "translate": [8.5, 2.0, 1.0],
+            "rotate": [0.0, 20.0, 0.0],
+            "scale": [1.0, 1.2, 1.0]
+          }
+        },
+        {
+          "name": "hand_R_socket",
+          "exportName": "SK_Hand_R",
+          "parentJoint": "Hand_R",
+          "mirrorOf": "hand_L_socket",
+          "side": "R",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [5.0, -1.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "name": "strap_attach_fx",
+          "semantic": "gear.unknown",
+          "owner": "",
+          "parentJoint": "Hand_R",
+          "space": "world",
+          "previewLocator": false,
+          "local": {
+            "translate": [0.0, 7.5, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "poseFrames": [
+        {
+          "name": "idle",
+          "frame": 1,
+          "role": "base",
+          "owner": "animation",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [0.0, 0.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        },
+        {
+          "name": "equip",
+          "frame": 24,
+          "role": "attach",
+          "owner": "animation",
+          "space": "local",
+          "previewLocator": true,
+          "local": {
+            "translate": [0.0, 1.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        },
+        {
+          "name": "equip",
+          "frame": 144,
+          "role": "duplicate-outside-range",
+          "owner": "",
+          "space": "world",
+          "previewLocator": false,
+          "local": {
+            "translate": [0.0, 2.0, 0.0],
+            "rotate": [0.0, 0.0, 0.0],
+            "scale": [1.0, 1.0, 1.0]
+          }
+        }
+      ],
+      "poseTransfer": {
+        "sourcePose": "equip",
+        "targetPose": "unequip",
+        "mirrorAxis": "X",
+        "space": "world",
+        "requiredPairs": [["shoulder_R_socket", "shoulder_L_socket"], ["hand_R_socket", "hand_L_socket"]],
+        "approvedBy": ""
+      }
+    }
+  ]
+}
+

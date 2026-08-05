@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R26 Cross-DCC / Engine / Animation / Character Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R27 Cross-DCC / Engine / Animation / Character / Spatial Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r26` |
-| Version | `dcc-first-package@1.23.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r27` |
+| Version | `dcc-first-package@1.24.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 10 |
+| DCC artifacts | 11 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 23 / 23 present |
+| Presenter pack evidence files | 24 / 24 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 15 |
+| Presenter demo route steps | 16 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -68,6 +68,10 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Character calibration assets ready/review/blocked | 1 / 0 / 1 |
 | Character calibration checks pass/warn/error | 10 / 2 / 6 |
 | Character calibration runtime | `maya_character_calibration_collected`, Maya 2026 |
+| Spatial authoring | `Blocked` L3 |
+| Spatial authoring assets ready/review/blocked | 1 / 0 / 1 |
+| Spatial authoring checks pass/warn/error | 11 / 2 / 7 |
+| Spatial authoring runtime | `maya_spatial_authoring_collected`, Maya 2026 |
 | Blocked modules | 0 |
 | Host | Maya 2024 / AuroraView |
 
@@ -100,17 +104,18 @@ Then use the right rail:
 11. Run `python <repo>\dcc-hosts\animation-continuity-lab\scripts\run_l3_smoke.py` when validating animation handoff continuity.
 12. Run `python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py` when validating Unreal Animation Bridge import L3.
 13. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py` when validating Character Calibration Maya L3.
-14. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py` when validating the Blender runtime L3 evidence.
-15. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600` when validating the Max adapter runtime evidence.
-16. Inspect the module rows, live demo script, GUI checklist, handoff asset rows, decision rows, engine comparison rows, Unreal inspector rows, preset fact review rows, transaction risk rows, rollback preview, Animation Continuity rows, Unreal Animation Bridge rows, Character Calibration rows, Blender adapter rows, Blender runtime L3 gate, 3ds Max adapter rows, Max runtime L3 gate, media audit rows, and generated artifact paths.
+14. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py` when validating Spatial Authoring Maya L3.
+15. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py` when validating the Blender runtime L3 evidence.
+16. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600` when validating the Max adapter runtime evidence.
+17. Inspect the module rows, live demo script, GUI checklist, handoff asset rows, decision rows, engine comparison rows, Unreal inspector rows, preset fact review rows, transaction risk rows, rollback preview, Animation Continuity rows, Unreal Animation Bridge rows, Character Calibration rows, Spatial Authoring rows, Blender adapter rows, Blender runtime L3 gate, 3ds Max adapter rows, Max runtime L3 gate, media audit rows, and generated artifact paths.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 15-step demo route, 7-step business route, public package manifest, 23 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 16-step demo route, 7-step business route, public package manifest, 24 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -263,6 +268,14 @@ This is the R25 animation-to-engine import layer. It reads the R23 Maya Animatio
 
 This is the R26 character transfer evidence layer. It creates public synthetic Maya character meshes and joint DAGs, then checks topology signature, required joint coverage, TMP joint leakage, skin influence budget, calibration delta, face parameter coverage/range, Control Rig mapping and mirror pair coverage. The artifact reports L3, 2 character rows, 1 Ready row, 1 intentionally Blocked row, 10 pass checks, 2 warnings and 6 errors. No production character scene, DNA asset, Control Rig asset or engine asset is mutated.
 
+## Spatial Authoring Workbench
+
+```text
+<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json
+```
+
+This is the R27 socket / hotspot / pose transfer evidence layer. It creates public synthetic Maya joints and locators, then checks parent joint coverage, local offset tolerance, mirror pair symmetry, hotspot semantic and owner, pose frame coverage/range, transform scale, local-space consistency, preview locator presence and pose transfer approval. The artifact reports L3, 2 spatial authoring rows, 1 Ready row, 1 intentionally Blocked row, 11 pass checks, 2 warnings and 7 errors. No production Maya scene, engine socket asset or private gameplay data is mutated.
+
 ## Blender Rule Adapter
 
 ```text
@@ -298,10 +311,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
 ```
 
-The Presenter Pack is the R26 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 23 / 23 evidence files present, 0 missing required files, 15 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R27 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 24 / 24 evidence files present, 0 missing required files, 16 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -352,6 +365,12 @@ python <repo>\dcc-hosts\character-calibration-studio\scripts\run_smoke.py
 python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py
 ```
 
+```powershell
+python -m py_compile <repo>\dcc-hosts\spatial-authoring-workbench\spatial_authoring_workbench\contract.py <repo>\dcc-hosts\spatial-authoring-workbench\spatial_authoring_workbench\maya_collector.py <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_smoke.py <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_maya_l3.py
+python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_smoke.py
+python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py
+```
+
 Maya 2024 `mayapy` smoke:
 
 - case page report: `maya-dcc-portfolio-case-page@1.1.0`
@@ -400,6 +419,10 @@ Maya 2024 `mayapy` smoke:
 - character calibration L3 status: `maya_character_calibration_collected`
 - character calibration assets ready/review/blocked: 1 / 0 / 1
 - character calibration checks pass/warn/error: 10 / 2 / 6
+- spatial authoring report: `spatial-authoring-maya-l3@0.1.0`
+- spatial authoring L3 status: `maya_spatial_authoring_collected`
+- spatial authoring assets ready/review/blocked: 1 / 0 / 1
+- spatial authoring checks pass/warn/error: 11 / 2 / 7
 - blender rule adapter report: `blender-rule-adapter-contract@0.1.0`
 - blender evidence level / L3 status: L3 / `bpy_scene_collected`
 - blender adapter gate: `Blocked`
@@ -427,8 +450,8 @@ Maya 2024 `mayapy` smoke:
 - unreal preset fact platform split / approved waivers: 1 / 1
 - unreal preset fact review report: `maya-unreal-preset-fact-review@0.1.0`
 - unreal preset fact review rows / queue / blocked / waivers: 10 / 3 / 1 / 1
-- presenter pack evidence files present/missing: 23 / 0
-- presenter pack demo route steps: 15
+- presenter pack evidence files present/missing: 24 / 0
+- presenter pack demo route steps: 16
 - reviewer claims: 13
 
 ## Legacy Package

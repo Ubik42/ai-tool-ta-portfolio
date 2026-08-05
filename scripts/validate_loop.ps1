@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -27,6 +27,7 @@ $MayaHost = Join-Path $Root "dcc-hosts\maya-auroraview-host"
 $AnimationLab = Join-Path $Root "dcc-hosts\animation-continuity-lab"
 $UnrealAnimationBridge = Join-Path $Root "dcc-hosts\unreal-animation-bridge"
 $CharacterCalibration = Join-Path $Root "dcc-hosts\character-calibration-studio"
+$SpatialAuthoring = Join-Path $Root "dcc-hosts\spatial-authoring-workbench"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
@@ -72,7 +73,12 @@ $QuickPythonFiles = @(
     (Join-Path $CharacterCalibration "character_calibration_studio\maya_collector.py"),
     (Join-Path $CharacterCalibration "scripts\run_smoke.py"),
     (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py"),
-    (Join-Path $CharacterCalibration "scripts\run_maya_l3.py")
+    (Join-Path $CharacterCalibration "scripts\run_maya_l3.py"),
+    (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
+    (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
+    (Join-Path $SpatialAuthoring "scripts\run_smoke.py"),
+    (Join-Path $SpatialAuthoring "scripts\run_l3_smoke.py"),
+    (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py")
 )
 
 $CoreJsonFiles = @(
@@ -97,9 +103,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r26-character-calibration-l3-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r27-spatial-authoring-l3-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 23, summary
+assert summary["present_evidence_files"] == 24, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -142,6 +148,15 @@ if ($Tier -in @("character-calibration", "full")) {
     }
     Invoke-Step "character calibration Maya L3" {
         python (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("spatial-authoring", "full")) {
+    Invoke-Step "spatial authoring contract smoke" {
+        python (Join-Path $SpatialAuthoring "scripts\run_smoke.py")
+    }
+    Invoke-Step "spatial authoring Maya L3" {
+        python (Join-Path $SpatialAuthoring "scripts\run_l3_smoke.py")
     }
 }
 

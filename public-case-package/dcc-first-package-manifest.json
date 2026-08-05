@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r26",
-  "packageVersion": "dcc-first-package@1.23.0",
-  "generatedAt": "2026-08-05T17:52:16+08:00",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r27",
+  "packageVersion": "dcc-first-package@1.24.0",
+  "generatedAt": "2026-08-05T18:16:28+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 10,
+    "artifactCount": 11,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 23,
-    "presentationPackPresentEvidenceFiles": 23,
+    "presentationPackEvidenceFiles": 24,
+    "presentationPackPresentEvidenceFiles": 24,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 15,
+    "presentationPackDemoRouteSteps": 16,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -189,7 +189,23 @@
     "characterCalibrationBlocked": 1,
     "characterCalibrationPassChecks": 10,
     "characterCalibrationWarningChecks": 2,
-    "characterCalibrationErrorChecks": 6
+    "characterCalibrationErrorChecks": 6,
+    "spatialAuthoringReportVersion": "spatial-authoring-maya-l3@0.1.0",
+    "spatialAuthoringArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
+    "spatialAuthoringContractArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+    "spatialAuthoringEvidenceLevel": "L3",
+    "spatialAuthoringL3Status": "maya_spatial_authoring_collected",
+    "spatialAuthoringGate": "Blocked",
+    "spatialAuthoringMayaVersion": "2026",
+    "spatialAuthoringMayaApiVersion": 20260302,
+    "spatialAuthoringRuntimeCollected": true,
+    "spatialAuthoringAssets": 2,
+    "spatialAuthoringReady": 1,
+    "spatialAuthoringReview": 0,
+    "spatialAuthoringBlocked": 1,
+    "spatialAuthoringPassChecks": 11,
+    "spatialAuthoringWarningChecks": 2,
+    "spatialAuthoringErrorChecks": 7
   },
   "moduleOrder": [
     "asset-protocol",
@@ -329,7 +345,7 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
       "required": true
     },
     {
@@ -348,6 +364,18 @@
       "id": "dcc-first-character-calibration-l3",
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-contract",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-l3",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
       "required": true
     }
   ],
@@ -383,9 +411,14 @@
     "python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py",
     "python -m py_compile dcc-hosts/character-calibration-studio/character_calibration_studio/contract.py dcc-hosts/character-calibration-studio/character_calibration_studio/maya_collector.py dcc-hosts/character-calibration-studio/scripts/run_smoke.py dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py dcc-hosts/character-calibration-studio/scripts/run_maya_l3.py",
     "python dcc-hosts/character-calibration-studio/scripts/run_smoke.py",
-    "python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py"
+    "python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py",
+    "python -m py_compile dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/contract.py dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/maya_collector.py dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_maya_l3.py",
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py",
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py"
   ],
   "notes": [
+    "R27 adds Spatial Authoring Maya L3: socket parent joints, offsets, mirror pairs, hotspots, pose frames, local space, preview locators and pose transfer approval are collected from public synthetic Maya locators.",
+    "Current final presentation route is DCC-first through the R27 Presenter Pack.",
     "R26 adds Character Calibration Maya L3: topology signature, joint coverage, calibration deltas, face parameters, Control Rig mapping and skin influence budget are collected from a public synthetic Maya scene.",
     "R25 upgrades Unreal Animation Bridge to import L3: Maya mayapy generates public FBX clips, Unreal imports synthetic Skeleton/SkeletalMesh/AnimSequence assets, and runtime facts confirm 2/2 sequences present.",
     "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
@@ -437,7 +470,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -572,5 +605,21 @@
   "characterCalibrationBlocked": 1,
   "characterCalibrationPassChecks": 10,
   "characterCalibrationWarningChecks": 2,
-  "characterCalibrationErrorChecks": 6
+  "characterCalibrationErrorChecks": 6,
+  "spatialAuthoringReportVersion": "spatial-authoring-maya-l3@0.1.0",
+  "spatialAuthoringArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
+  "spatialAuthoringContractArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+  "spatialAuthoringEvidenceLevel": "L3",
+  "spatialAuthoringL3Status": "maya_spatial_authoring_collected",
+  "spatialAuthoringGate": "Blocked",
+  "spatialAuthoringMayaVersion": "2026",
+  "spatialAuthoringMayaApiVersion": 20260302,
+  "spatialAuthoringRuntimeCollected": true,
+  "spatialAuthoringAssets": 2,
+  "spatialAuthoringReady": 1,
+  "spatialAuthoringReview": 0,
+  "spatialAuthoringBlocked": 1,
+  "spatialAuthoringPassChecks": 11,
+  "spatialAuthoringWarningChecks": 2,
+  "spatialAuthoringErrorChecks": 7
 }

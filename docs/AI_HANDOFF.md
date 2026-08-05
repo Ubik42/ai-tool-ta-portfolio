@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3；空间作者线已有 Spatial Authoring Maya L3。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r26-character-calibration-l3-presentation-pack-20260805-175238.json
+dcc-hosts/maya-auroraview-host/artifacts/r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R26。
+稳定基线：R27。
 
 已完成：
 
@@ -38,6 +38,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r26-character-calibration-l3-presentati
 - Animation Continuity Lab Maya L3
 - Unreal Animation Bridge import L3
 - Character Calibration Studio Maya L3
+- Spatial Authoring Workbench Maya L3
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -46,15 +47,17 @@ dcc-hosts/maya-auroraview-host/artifacts/r26-character-calibration-l3-presentati
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder、Houdini、Spatial Authoring、Unreal animation fact deepening、Character Calibration UI drilldown 等后续工具线。
+- MotionBuilder、Houdini、Platform Variant、Unreal animation fact deepening、Character Calibration / Spatial Authoring UI drilldown 等后续工具线。
 
-## 3. R26 当前断点
+## 3. R27 当前断点
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
 `Unreal Animation Bridge` 已完成 import L3 闭环：读取 R23 Maya L3 artifact，生成 public Maya FBX clips，通过 UnrealEditor-Cmd 进入公开 test `.uproject`，导入并采集 Skeleton / SkeletalMesh / AnimSequence runtime facts。
 
 `Character Calibration Studio` 已完成 Maya L3 闭环：生成 public synthetic character mesh / joint DAG / calibration attrs，采集 topology signature、joint coverage、skin influence budget、calibration delta、face params、Control Rig mapping 和 mirror pair coverage。
+
+`Spatial Authoring Workbench` 已完成 Maya L3 闭环：生成 public synthetic joints / locator attrs，采集 socket parent joint、offset、mirror pair、hotspot semantic/owner、pose frame、local space、preview locator 和 pose transfer approval。
 
 核心文件：
 
@@ -79,6 +82,12 @@ dcc-hosts/character-calibration-studio/character_calibration_studio/maya_collect
 dcc-hosts/character-calibration-studio/scripts/run_smoke.py
 dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py
 dcc-hosts/character-calibration-studio/scripts/run_maya_l3.py
+dcc-hosts/spatial-authoring-workbench/fixtures/synthetic_spatial_authoring_scene.json
+dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/contract.py
+dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/maya_collector.py
+dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py
+dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py
+dcc-hosts/spatial-authoring-workbench/scripts/run_maya_l3.py
 ```
 
 已生成首个 L2 artifact：
@@ -117,22 +126,35 @@ dcc-hosts/character-calibration-studio/artifacts/character-calibration-maya-l3-2
 dcc-hosts/maya-auroraview-host/artifacts/r26-character-calibration-l3-presentation-pack-20260805-175238.json
 ```
 
+当前 Spatial Authoring Maya L3：
+
+```text
+dcc-hosts/spatial-authoring-workbench/artifacts/spatial-authoring-maya-l3-20260805-181524.json
+```
+
+当前 R27 Presenter Pack：
+
+```text
+dcc-hosts/maya-auroraview-host/artifacts/r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
+```
+
 这条线的最终效果：
 
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；后续可继续补 MotionBuilder 或更细的 Unreal curve/compression facts。
+- Unreal 侧已接入 import L3；Spatial Authoring 已有 Maya L3；后续可继续补 MotionBuilder、Unreal socket 对照或更细的 Unreal curve/compression facts。
 
-继续开发时优先做 Spatial Authoring & Pose Transfer Workbench，或深化 Character Calibration UI drilldown。如果只验证当前 R26，运行：
+继续开发时优先做 Platform Variant Forge，或深化 Character Calibration / Spatial Authoring UI drilldown。如果只验证当前 R27，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
 python dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py
 python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py
+python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py
 ```
 
-当前 R26 public package 为 `ai-tool-ta-dcc-first-showcase-r26` / `dcc-first-package@1.23.0`，Presenter Pack 23 / 23 evidence files present，0 missing required files，15 demo route steps；Character Calibration 已到 `L3` / `maya_character_calibration_collected`，1 Ready / 1 Blocked。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R27 public package 为 `ai-tool-ta-dcc-first-showcase-r27` / `dcc-first-package@1.24.0`，Presenter Pack 24 / 24 evidence files present，0 missing required files，16 demo route steps；Spatial Authoring 已到 `L3` / `maya_spatial_authoring_collected`，1 Ready / 1 Blocked。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

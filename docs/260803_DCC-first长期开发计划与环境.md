@@ -982,6 +982,7 @@ python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --expo
 .\scripts\validate_loop.ps1 -Tier package
 .\scripts\validate_loop.ps1 -Tier ui
 .\scripts\validate_loop.ps1 -Tier animation
+.\scripts\validate_loop.ps1 -Tier spatial-authoring
 .\scripts\validate_loop.ps1 -Tier blender
 .\scripts\validate_loop.ps1 -Tier max
 .\scripts\validate_loop.ps1 -Tier full
@@ -1054,4 +1055,22 @@ R26 结果：Maya 2026 `mayapy` 生成 public synthetic character meshes / joint
 
 ```text
 socket / hotspot / pose frame fixture -> Maya collector -> pose transfer rule evaluation -> Presenter Pack row -> docs
+```
+
+## R27 循环开发断点：Spatial Authoring Maya L3
+
+R27 已完成 `Spatial Authoring & Pose Transfer Workbench` Maya L3：
+
+```text
+<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-contract-20260805-181516.json
+<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
+```
+
+R27 结果：Maya 2026 `mayapy` 生成 public synthetic joints / locator DAG / custom attrs，并采集 socket parent joint、local offset、mirror pair、hotspot semantic/owner、pose frame coverage、local space、preview locator 和 pose transfer approval。结果为 2 spatial authoring rows，1 Ready，1 intentionally Blocked，11 pass / 2 warning / 7 error。Bridge gate 的 `Blocked` 来自临时背包样本的业务故障，不是 Maya runtime 缺失。
+
+默认下一轮开发 `Platform Variant Forge`：
+
+```text
+PC/Mobile policy fixture -> variant plan contract -> preset comparison reuse -> optional Unreal material/LOD fact probe -> Presenter Pack row -> docs
 ```

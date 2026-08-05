@@ -1,0 +1,1083 @@
+{
+  "reportVersion": "spatial-authoring-contract@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Spatial Authoring Workbench",
+  "generatedAt": "2026-08-05 18:15:16",
+  "evidenceLevel": "L2",
+  "l3Status": "contract_fixture_collected",
+  "fixture": {
+    "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\fixtures\\synthetic_spatial_authoring_scene.json",
+    "schema": "synthetic-spatial-authoring-scene@0.1.0",
+    "intent": "Public-safe fixture for socket, hotspot, pose frame and mirror transfer validation."
+  },
+  "adapter": {
+    "id": "spatial-authoring",
+    "name": "Spatial Authoring & Pose Transfer Workbench",
+    "methodSource": "Lightbox socket / hotspot / locator preview / pose transfer authoring",
+    "protocolCarrier": "Maya locators + joint ownership + pose frame custom attrs",
+    "boundary": {
+      "mutation": "contract_validation_only",
+      "sceneWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "spatial-authoring-input@0.1.0",
+    "scene": {
+      "sourceDcc": "Fixture",
+      "unit": "centimeter",
+      "upAxis": "Y",
+      "fps": 30,
+      "playbackStart": 1,
+      "playbackEnd": 120,
+      "assetCount": 2,
+      "runtimeCollected": false
+    },
+    "assets": [
+      {
+        "assetId": "spatial-rifle-authoring-001",
+        "assetLabel": "Rifle Socket Authoring Approved",
+        "sourceDcc": "Fixture",
+        "normalizedSchema": "spatial-authoring-input@0.1.0",
+        "protocolCarrier": "spatial authoring protocol + locators + pose frame attrs",
+        "sourceFields": {
+          "joints": "joint DAG names under asset root",
+          "sockets": "locator transforms tagged as socket payloads",
+          "hotspots": "locator transforms tagged with semantic and owner payloads",
+          "poseFrames": "pose frame locator attrs and frame numbers",
+          "poseTransfer": "mirror axis, source/target pose and required socket pairs"
+        },
+        "normalized": {
+          "spatial.protocol.schema": "spatial-authoring@dcc-r27",
+          "asset.ownerState": "approved",
+          "joints.expectedCount": 5,
+          "joints.actualCount": 5,
+          "joints.missing": [],
+          "joints.tmp": [],
+          "parentJoint.missing": [],
+          "sockets.count": 2,
+          "sockets.names": [
+            "hand_L_socket",
+            "hand_R_socket"
+          ],
+          "sockets.offsetViolations": [],
+          "mirror.pairs": [
+            {
+              "pair": [
+                "hand_R_socket",
+                "hand_L_socket"
+              ],
+              "state": "matched",
+              "deltaCm": 0.0,
+              "limitCm": 0.35
+            }
+          ],
+          "mirror.missingPairs": [],
+          "mirror.symmetryViolations": [],
+          "hotspots.count": 1,
+          "hotspots.semanticIssues": [],
+          "poseFrames.count": 3,
+          "poseFrames.required": [
+            "idle",
+            "grip",
+            "fire"
+          ],
+          "poseFrames.issues": {
+            "missing": [],
+            "duplicates": [],
+            "outsideRange": [],
+            "missingOwner": []
+          },
+          "transforms.scaleIssues": [],
+          "transforms.spaceIssues": [],
+          "previewLocator.missing": [],
+          "poseTransfer.requiredPairs": [
+            [
+              "hand_R_socket",
+              "hand_L_socket"
+            ]
+          ],
+          "poseTransfer.issues": {
+            "space": "local",
+            "missingPairs": [],
+            "missingTargetPose": false,
+            "missingApproval": false
+          }
+        },
+        "raw": {
+          "namespace": "sp_rifle",
+          "rootNode": "RifleRoot",
+          "constraints": {
+            "maxSocketOffsetCm": 4.0,
+            "maxMirrorDeltaCm": 0.35,
+            "poseFrameRange": [
+              1,
+              120
+            ],
+            "requiredPoseFrames": [
+              "idle",
+              "grip",
+              "fire"
+            ],
+            "allowedHotspotSemantics": [
+              "weapon.muzzle",
+              "weapon.shell",
+              "vfx.spark"
+            ],
+            "requiredHotspotOwners": [
+              "combat-fx",
+              "animation"
+            ],
+            "allowedSpaces": [
+              "local"
+            ],
+            "requireUniformScale": true,
+            "requirePreviewLocator": true
+          },
+          "actualJoints": [
+            "Root",
+            "Hand_R",
+            "Hand_L",
+            "Weapon_R",
+            "Weapon_L"
+          ],
+          "sockets": [
+            {
+              "kind": "socket",
+              "name": "hand_R_socket",
+              "exportName": "SK_Hand_R",
+              "parentJoint": "Hand_R",
+              "mirrorOf": "hand_L_socket",
+              "side": "R",
+              "semantic": null,
+              "owner": null,
+              "role": null,
+              "frame": 0,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                2.0,
+                1.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 2.2361
+            },
+            {
+              "kind": "socket",
+              "name": "hand_L_socket",
+              "exportName": "SK_Hand_L",
+              "parentJoint": "Hand_L",
+              "mirrorOf": "hand_R_socket",
+              "side": "L",
+              "semantic": null,
+              "owner": null,
+              "role": null,
+              "frame": 0,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                -2.0,
+                1.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 2.2361
+            }
+          ],
+          "hotspots": [
+            {
+              "kind": "hotspot",
+              "name": "muzzle_flash",
+              "exportName": null,
+              "parentJoint": "Weapon_R",
+              "mirrorOf": null,
+              "side": null,
+              "semantic": "weapon.muzzle",
+              "owner": "combat-fx",
+              "role": null,
+              "frame": 0,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                3.5,
+                0.4,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                90.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 3.5228
+            }
+          ],
+          "poseFrames": [
+            {
+              "kind": "poseFrame",
+              "name": "idle",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "animation",
+              "role": "base",
+              "frame": 1,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 0.0
+            },
+            {
+              "kind": "poseFrame",
+              "name": "grip",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "animation",
+              "role": "socket-grip",
+              "frame": 24,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                0.0,
+                2.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 2.0
+            },
+            {
+              "kind": "poseFrame",
+              "name": "fire",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "combat-fx",
+              "role": "vfx-trigger",
+              "frame": 48,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                0.0,
+                3.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 3.0
+            }
+          ],
+          "poseTransfer": {
+            "sourcePose": "grip",
+            "targetPose": "grip",
+            "mirrorAxis": "X",
+            "space": "local",
+            "requiredPairs": [
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "approvedBy": "animation"
+          }
+        }
+      },
+      {
+        "assetId": "spatial-backpack-tmp-002",
+        "assetLabel": "Backpack Socket Temporary Blocked",
+        "sourceDcc": "Fixture",
+        "normalizedSchema": "spatial-authoring-input@0.1.0",
+        "protocolCarrier": "spatial authoring protocol + locators + pose frame attrs",
+        "sourceFields": {
+          "joints": "joint DAG names under asset root",
+          "sockets": "locator transforms tagged as socket payloads",
+          "hotspots": "locator transforms tagged with semantic and owner payloads",
+          "poseFrames": "pose frame locator attrs and frame numbers",
+          "poseTransfer": "mirror axis, source/target pose and required socket pairs"
+        },
+        "normalized": {
+          "spatial.protocol.schema": "spatial-authoring@dcc-r27",
+          "asset.ownerState": "temporary",
+          "joints.expectedCount": 6,
+          "joints.actualCount": 4,
+          "joints.missing": [
+            "Hand_L",
+            "Hand_R",
+            "Shoulder_L"
+          ],
+          "joints.tmp": [
+            "TMP_AttachProxy"
+          ],
+          "parentJoint.missing": [
+            {
+              "kind": "socket",
+              "name": "hand_R_socket",
+              "parentJoint": "Hand_R"
+            },
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx",
+              "parentJoint": "Hand_R"
+            }
+          ],
+          "sockets.count": 2,
+          "sockets.names": [
+            "hand_R_socket",
+            "shoulder_R_socket"
+          ],
+          "sockets.offsetViolations": [
+            {
+              "name": "shoulder_R_socket",
+              "offsetCm": 8.7892,
+              "limitCm": 3.0
+            },
+            {
+              "name": "hand_R_socket",
+              "offsetCm": 5.099,
+              "limitCm": 3.0
+            }
+          ],
+          "mirror.pairs": [
+            {
+              "pair": [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              "state": "missing",
+              "deltaCm": null
+            },
+            {
+              "pair": [
+                "hand_R_socket",
+                "hand_L_socket"
+              ],
+              "state": "missing",
+              "deltaCm": null
+            }
+          ],
+          "mirror.missingPairs": [
+            {
+              "pair": [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              "state": "missing",
+              "deltaCm": null
+            },
+            {
+              "pair": [
+                "hand_R_socket",
+                "hand_L_socket"
+              ],
+              "state": "missing",
+              "deltaCm": null
+            }
+          ],
+          "mirror.symmetryViolations": [],
+          "hotspots.count": 1,
+          "hotspots.semanticIssues": [
+            {
+              "name": "strap_attach_fx",
+              "semantic": "gear.unknown",
+              "owner": ""
+            }
+          ],
+          "poseFrames.count": 3,
+          "poseFrames.required": [
+            "idle",
+            "equip",
+            "unequip"
+          ],
+          "poseFrames.issues": {
+            "missing": [
+              "unequip"
+            ],
+            "duplicates": [
+              "equip"
+            ],
+            "outsideRange": [
+              {
+                "name": "equip",
+                "frame": 144,
+                "range": [
+                  1,
+                  120
+                ]
+              }
+            ],
+            "missingOwner": [
+              "equip"
+            ]
+          },
+          "transforms.scaleIssues": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket",
+              "scale": [
+                1.0,
+                1.2,
+                1.0
+              ]
+            }
+          ],
+          "transforms.spaceIssues": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket",
+              "space": "world"
+            },
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx",
+              "space": "world"
+            },
+            {
+              "kind": "poseFrame",
+              "name": "equip",
+              "space": "world"
+            }
+          ],
+          "previewLocator.missing": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket"
+            },
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx"
+            },
+            {
+              "kind": "poseFrame",
+              "name": "equip"
+            }
+          ],
+          "poseTransfer.requiredPairs": [
+            [
+              "shoulder_R_socket",
+              "shoulder_L_socket"
+            ],
+            [
+              "hand_R_socket",
+              "hand_L_socket"
+            ]
+          ],
+          "poseTransfer.issues": {
+            "space": "world",
+            "missingPairs": [
+              [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "missingTargetPose": true,
+            "missingApproval": true
+          }
+        },
+        "raw": {
+          "namespace": "sp_pack_tmp",
+          "rootNode": "BackpackRoot",
+          "constraints": {
+            "maxSocketOffsetCm": 3.0,
+            "maxMirrorDeltaCm": 0.35,
+            "poseFrameRange": [
+              1,
+              120
+            ],
+            "requiredPoseFrames": [
+              "idle",
+              "equip",
+              "unequip"
+            ],
+            "allowedHotspotSemantics": [
+              "gear.attach",
+              "vfx.spark"
+            ],
+            "requiredHotspotOwners": [
+              "gear-tech",
+              "animation"
+            ],
+            "allowedSpaces": [
+              "local"
+            ],
+            "requireUniformScale": true,
+            "requirePreviewLocator": true
+          },
+          "actualJoints": [
+            "Root",
+            "Spine",
+            "Shoulder_R",
+            "TMP_AttachProxy"
+          ],
+          "sockets": [
+            {
+              "kind": "socket",
+              "name": "shoulder_R_socket",
+              "exportName": "SK_Shoulder_R",
+              "parentJoint": "Shoulder_R",
+              "mirrorOf": "shoulder_L_socket",
+              "side": "R",
+              "semantic": null,
+              "owner": null,
+              "role": null,
+              "frame": 0,
+              "space": "world",
+              "previewLocator": false,
+              "translate": [
+                8.5,
+                2.0,
+                1.0
+              ],
+              "rotate": [
+                0.0,
+                20.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.2,
+                1.0
+              ],
+              "offsetCm": 8.7892
+            },
+            {
+              "kind": "socket",
+              "name": "hand_R_socket",
+              "exportName": "SK_Hand_R",
+              "parentJoint": "Hand_R",
+              "mirrorOf": "hand_L_socket",
+              "side": "R",
+              "semantic": null,
+              "owner": null,
+              "role": null,
+              "frame": 0,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                5.0,
+                -1.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 5.099
+            }
+          ],
+          "hotspots": [
+            {
+              "kind": "hotspot",
+              "name": "strap_attach_fx",
+              "exportName": null,
+              "parentJoint": "Hand_R",
+              "mirrorOf": null,
+              "side": null,
+              "semantic": "gear.unknown",
+              "owner": "",
+              "role": null,
+              "frame": 0,
+              "space": "world",
+              "previewLocator": false,
+              "translate": [
+                0.0,
+                7.5,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 7.5
+            }
+          ],
+          "poseFrames": [
+            {
+              "kind": "poseFrame",
+              "name": "idle",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "animation",
+              "role": "base",
+              "frame": 1,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 0.0
+            },
+            {
+              "kind": "poseFrame",
+              "name": "equip",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "animation",
+              "role": "attach",
+              "frame": 24,
+              "space": "local",
+              "previewLocator": true,
+              "translate": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 1.0
+            },
+            {
+              "kind": "poseFrame",
+              "name": "equip",
+              "exportName": null,
+              "parentJoint": null,
+              "mirrorOf": null,
+              "side": null,
+              "semantic": null,
+              "owner": "",
+              "role": "duplicate-outside-range",
+              "frame": 144,
+              "space": "world",
+              "previewLocator": false,
+              "translate": [
+                0.0,
+                2.0,
+                0.0
+              ],
+              "rotate": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "offsetCm": 2.0
+            }
+          ],
+          "poseTransfer": {
+            "sourcePose": "equip",
+            "targetPose": "unequip",
+            "mirrorAxis": "X",
+            "space": "world",
+            "requiredPairs": [
+              [
+                "shoulder_R_socket",
+                "shoulder_L_socket"
+              ],
+              [
+                "hand_R_socket",
+                "hand_L_socket"
+              ]
+            ],
+            "approvedBy": ""
+          }
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "spatial-authoring-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 11,
+      "warning": 2,
+      "error": 7,
+      "readyAssetIds": [
+        "spatial-rifle-authoring-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "spatial-backpack-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "spatial-rifle-authoring-001:protocol-carrier",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "protocol-carrier",
+        "label": "Spatial protocol carrier",
+        "status": "pass",
+        "reason": "Sockets, hotspots and pose frames must expose a typed authoring protocol before export.",
+        "evidence": "spatial-authoring@dcc-r27",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:parent-joint-coverage",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "parent-joint-coverage",
+        "label": "Parent joint coverage",
+        "status": "pass",
+        "reason": "Socket and hotspot locators must bind to real runtime joints before engine attach points are trusted.",
+        "evidence": "missingJoints=[] parentIssues=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:socket-offset-tolerance",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "socket-offset-tolerance",
+        "label": "Socket offset tolerance",
+        "status": "pass",
+        "reason": "Large local offsets usually mean the locator was authored in the wrong space or copied from a different rig.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:mirror-pair-symmetry",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "mirror-pair-symmetry",
+        "label": "Mirror pair symmetry",
+        "status": "pass",
+        "reason": "Left/right sockets must exist as explicit pairs before pose or attach rules are mirrored.",
+        "evidence": "missing=[] mismatch=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:hotspot-semantic-owner",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "hotspot-semantic-owner",
+        "label": "Hotspot semantic and owner",
+        "status": "pass",
+        "reason": "Gameplay and VFX hookups need stable semantic names plus an accountable owner.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:pose-frame-coverage-range",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "pose-frame-coverage-range",
+        "label": "Pose frame coverage and range",
+        "status": "pass",
+        "reason": "Pose transfer depends on unique, owned frame markers inside the exported take range.",
+        "evidence": "{'missing': [], 'duplicates': [], 'outsideRange': [], 'missingOwner': []}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:transform-scale-lock",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "transform-scale-lock",
+        "label": "Transform scale lock",
+        "status": "pass",
+        "reason": "Non-uniform locator scale can create misleading preview handles and bad engine offsets.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:local-space-consistency",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "local-space-consistency",
+        "label": "Local space consistency",
+        "status": "pass",
+        "reason": "Authoring facts must stay in parent-local space before they are converted to engine attach transforms.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:preview-locator-presence",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "preview-locator-presence",
+        "label": "Preview locator presence",
+        "status": "pass",
+        "reason": "Reviewers need visible locator handles for socket, hotspot and pose frame authoring.",
+        "evidence": "[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-rifle-authoring-001:pose-transfer-boundary",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "pose-transfer-boundary",
+        "label": "Pose transfer boundary",
+        "status": "pass",
+        "reason": "Pose copy and mirror transfer need approved pair coverage and local-space source/target poses.",
+        "evidence": "{'space': 'local', 'missingPairs': [], 'missingTargetPose': False, 'missingApproval': False}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-backpack-tmp-002:protocol-carrier",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "protocol-carrier",
+        "label": "Spatial protocol carrier",
+        "status": "pass",
+        "reason": "Sockets, hotspots and pose frames must expose a typed authoring protocol before export.",
+        "evidence": "spatial-authoring@dcc-r27",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-backpack-tmp-002:parent-joint-coverage",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "parent-joint-coverage",
+        "label": "Parent joint coverage",
+        "status": "error",
+        "reason": "Socket and hotspot locators must bind to real runtime joints before engine attach points are trusted.",
+        "evidence": "missingJoints=['Hand_L', 'Hand_R', 'Shoulder_L'] parentIssues=[{'kind': 'socket', 'name': 'hand_R_socket', 'parentJoint': 'Hand_R'}, {'kind': 'hotspot', 'name': 'strap_attach_fx', 'parentJoint': 'Hand_R'}]",
+        "fixPreview": "Restore missing joints or remap the locator to an approved parent joint."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:socket-offset-tolerance",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "socket-offset-tolerance",
+        "label": "Socket offset tolerance",
+        "status": "error",
+        "reason": "Large local offsets usually mean the locator was authored in the wrong space or copied from a different rig.",
+        "evidence": "[{'name': 'shoulder_R_socket', 'offsetCm': 8.7892, 'limitCm': 3.0}, {'name': 'hand_R_socket', 'offsetCm': 5.099, 'limitCm': 3.0}]",
+        "fixPreview": "Rebuild the socket under the intended parent joint and re-freeze the local offset."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:mirror-pair-symmetry",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "mirror-pair-symmetry",
+        "label": "Mirror pair symmetry",
+        "status": "error",
+        "reason": "Left/right sockets must exist as explicit pairs before pose or attach rules are mirrored.",
+        "evidence": "missing=[{'pair': ['shoulder_R_socket', 'shoulder_L_socket'], 'state': 'missing', 'deltaCm': None}, {'pair': ['hand_R_socket', 'hand_L_socket'], 'state': 'missing', 'deltaCm': None}] mismatch=[]",
+        "fixPreview": "Create the missing mirror locator or correct mirrored local transform values."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:hotspot-semantic-owner",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "hotspot-semantic-owner",
+        "label": "Hotspot semantic and owner",
+        "status": "error",
+        "reason": "Gameplay and VFX hookups need stable semantic names plus an accountable owner.",
+        "evidence": "[{'name': 'strap_attach_fx', 'semantic': 'gear.unknown', 'owner': ''}]",
+        "fixPreview": "Assign an approved hotspot semantic and owner before export."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:pose-frame-coverage-range",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-frame-coverage-range",
+        "label": "Pose frame coverage and range",
+        "status": "error",
+        "reason": "Pose transfer depends on unique, owned frame markers inside the exported take range.",
+        "evidence": "{'missing': ['unequip'], 'duplicates': ['equip'], 'outsideRange': [{'name': 'equip', 'frame': 144, 'range': [1, 120]}], 'missingOwner': ['equip']}",
+        "fixPreview": "Restore missing pose frames, remove duplicates and keep frame markers inside range."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:transform-scale-lock",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "transform-scale-lock",
+        "label": "Transform scale lock",
+        "status": "warning",
+        "reason": "Non-uniform locator scale can create misleading preview handles and bad engine offsets.",
+        "evidence": "[{'kind': 'socket', 'name': 'shoulder_R_socket', 'scale': [1.0, 1.2, 1.0]}]",
+        "fixPreview": "Reset locator scale to 1,1,1 or mark the locator as visual-only."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:local-space-consistency",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "local-space-consistency",
+        "label": "Local space consistency",
+        "status": "error",
+        "reason": "Authoring facts must stay in parent-local space before they are converted to engine attach transforms.",
+        "evidence": "[{'kind': 'socket', 'name': 'shoulder_R_socket', 'space': 'world'}, {'kind': 'hotspot', 'name': 'strap_attach_fx', 'space': 'world'}, {'kind': 'poseFrame', 'name': 'equip', 'space': 'world'}]",
+        "fixPreview": "Convert world-space locators back to parent-local transforms."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:preview-locator-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "preview-locator-presence",
+        "label": "Preview locator presence",
+        "status": "warning",
+        "reason": "Reviewers need visible locator handles for socket, hotspot and pose frame authoring.",
+        "evidence": "[{'kind': 'socket', 'name': 'shoulder_R_socket'}, {'kind': 'hotspot', 'name': 'strap_attach_fx'}, {'kind': 'poseFrame', 'name': 'equip'}]",
+        "fixPreview": "Create preview locators or attach an explicit no-preview waiver."
+      },
+      {
+        "id": "spatial-backpack-tmp-002:pose-transfer-boundary",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-transfer-boundary",
+        "label": "Pose transfer boundary",
+        "status": "error",
+        "reason": "Pose copy and mirror transfer need approved pair coverage and local-space source/target poses.",
+        "evidence": "{'space': 'world', 'missingPairs': [['shoulder_R_socket', 'shoulder_L_socket'], ['hand_R_socket', 'hand_L_socket']], 'missingTargetPose': True, 'missingApproval': True}",
+        "fixPreview": "Complete transfer pairs, add owner approval and keep transfer data in local space."
+      }
+    ],
+    "fixPreview": [
+      {
+        "id": "fix:spatial-backpack-tmp-002:parent-joint-coverage",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "parent-joint-coverage",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Restore missing joints or remap the locator to an approved parent joint."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:socket-offset-tolerance",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "socket-offset-tolerance",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Rebuild the socket under the intended parent joint and re-freeze the local offset."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:mirror-pair-symmetry",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "mirror-pair-symmetry",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Create the missing mirror locator or correct mirrored local transform values."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:hotspot-semantic-owner",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "hotspot-semantic-owner",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Assign an approved hotspot semantic and owner before export."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:pose-frame-coverage-range",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-frame-coverage-range",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Restore missing pose frames, remove duplicates and keep frame markers inside range."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:transform-scale-lock",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "transform-scale-lock",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "preview": "Reset locator scale to 1,1,1 or mark the locator as visual-only."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:local-space-consistency",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "local-space-consistency",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Convert world-space locators back to parent-local transforms."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:preview-locator-presence",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "preview-locator-presence",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "preview": "Create preview locators or attach an explicit no-preview waiver."
+      },
+      {
+        "id": "fix:spatial-backpack-tmp-002:pose-transfer-boundary",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "pose-transfer-boundary",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "preview": "Complete transfer pairs, add owner approval and keep transfer data in local space."
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Spatial authoring checks sockets, hotspots, pose frames and mirror transfer as exportable business facts.",
+    "The fixture includes one approved weapon authoring row and one intentionally blocked temporary backpack row.",
+    "Contract mode performs no scene writes; Maya L3 mode creates only public synthetic joints, locators and custom attributes."
+  ]
+}

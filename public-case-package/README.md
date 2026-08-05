@@ -1,4 +1,4 @@
-# AI Tool TA Public Case Package R26
+# AI Tool TA Public Case Package R27
 
 ## Current DCC-first Entry
 
@@ -27,9 +27,10 @@ The current final presentation route is now Maya-hosted:
 - Unreal Animation Bridge readiness: `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-readiness-20260805-173401.json`
 - Unreal Animation Bridge import L3: `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-import-l3-20260805-173309.json`
 - Character Calibration Maya L3: `<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json`
-- R26 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json`
+- Spatial Authoring Maya L3: `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json`
+- R27 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json`
 
-Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R26 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Character Calibration Maya L3, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
+Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R27 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
 
 This package is the public reviewer entry point for the AI Tool TA portfolio.
 It presents DCC / engine tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
@@ -57,7 +58,7 @@ It presents DCC / engine tool modules as production-style case studies, with syn
 | Modules | 5 |
 | Indexed evidence | 313 |
 | Required evidence | 247 |
-| Validation commands | 104 |
+| Validation commands | 107 |
 | Owner signoffs | 3 |
 
 ## Portfolio Split

@@ -1,7 +1,7 @@
 {
   "packageId": "ai-tool-ta-public-case-package-r8-54",
   "packageVersion": "public-case-package@3.24.0",
-  "generatedAt": "2026-08-05T17:52:16+08:00",
+  "generatedAt": "2026-08-05T18:16:28+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
   "evidenceManifestId": "portfolio-evidence-manifest-r8-54",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r26",
-    "packageVersion": "dcc-first-package@1.23.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r27",
+    "packageVersion": "dcc-first-package@1.24.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 23,
-    "presentationPackPresentEvidenceFiles": 23,
+    "presentationPackEvidenceFiles": 24,
+    "presentationPackPresentEvidenceFiles": 24,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 15,
+    "presentationPackDemoRouteSteps": 16,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -234,16 +234,32 @@
     "characterCalibrationBlocked": 1,
     "characterCalibrationPassChecks": 10,
     "characterCalibrationWarningChecks": 2,
-    "characterCalibrationErrorChecks": 6
+    "characterCalibrationErrorChecks": 6,
+    "spatialAuthoringReportVersion": "spatial-authoring-maya-l3@0.1.0",
+    "spatialAuthoringArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
+    "spatialAuthoringContractArtifact": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+    "spatialAuthoringEvidenceLevel": "L3",
+    "spatialAuthoringL3Status": "maya_spatial_authoring_collected",
+    "spatialAuthoringGate": "Blocked",
+    "spatialAuthoringMayaVersion": "2026",
+    "spatialAuthoringMayaApiVersion": 20260302,
+    "spatialAuthoringRuntimeCollected": true,
+    "spatialAuthoringAssets": 2,
+    "spatialAuthoringReady": 1,
+    "spatialAuthoringReview": 0,
+    "spatialAuthoringBlocked": 1,
+    "spatialAuthoringPassChecks": 11,
+    "spatialAuthoringWarningChecks": 2,
+    "spatialAuthoringErrorChecks": 7
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 313,
-    "requiredEvidenceCount": 247,
-    "packageFileCount": 6,
+    "evidenceCount": 315,
+    "requiredEvidenceCount": 249,
+    "packageFileCount": 11,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 104,
-    "manifestArtifactCount": 377
+    "validationCommandCount": 107,
+    "manifestArtifactCount": 65
   },
   "moduleOrder": [
     "asset-protocol",
@@ -304,11 +320,26 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r23-animation-continuity-l3-presentation-pack-20260805-163040.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-contract",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-l3",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
       "required": true
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
+    "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
+    "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
     "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-164637.json",
     "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
@@ -370,6 +401,7 @@
     "accept-impact-r8"
   ],
   "notes": [
+    "R27 adds Spatial Authoring Maya L3 evidence for socket, hotspot, pose frame and mirror transfer authoring.",
     "R24 adds Unreal Animation Bridge readiness: Unreal Python probes AnimSequence/Skeleton API and expected public animation assets from Maya Animation Continuity facts.",
     "R23 upgrades Animation Continuity Lab from L2 contract to real Maya mayapy L3 evidence with keyed animCurve collection.",
     "R22 upgrades Blender and 3ds Max to real runtime L3 evidence through bpy and pymxs synthetic fixtures.",
@@ -405,7 +437,7 @@
     },
     {
       "id": "dcc-first-presentation-pack",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r26-character-calibration-l3-presentation-pack-20260805-175238.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
       "required": true
     },
     {
@@ -417,6 +449,21 @@
       "id": "dcc-first-character-calibration-l3",
       "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-contract",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-contract-20260805-181516.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-spatial-authoring-l3",
+      "path": "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
+      "required": true
     }
+  ],
+  "validation": [
+    "python -m py_compile dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/contract.py dcc-hosts/spatial-authoring-workbench/spatial_authoring_workbench/maya_collector.py dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py dcc-hosts/spatial-authoring-workbench/scripts/run_maya_l3.py",
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py",
+    "python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py"
   ]
 }

@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R27 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json` | Maya-hosted package probes 24 key evidence files, exports 16 demo route steps, and adds Spatial Authoring Maya L3 evidence. |
+| Spatial Authoring Maya L3 | `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json` | Maya 2026 creates public synthetic joints and locators, then collects socket, hotspot, pose frame, mirror pair and pose transfer facts. |
 | R26 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json` | Maya-hosted package probes 23 key evidence files, exports 15 demo route steps, and adds Character Calibration Maya L3 evidence. |
 | Character Calibration Maya L3 | `<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json` | Maya 2026 creates public synthetic character meshes and joints, then collects topology signature, joint coverage, calibration delta, face parameter, Control Rig mapping and skin influence facts. |
 | R25 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r25-unreal-animation-import-l3-presentation-pack-20260805-173624.json` | Maya-hosted package probes 22 key evidence files, exports 14 demo route steps, and adds true Unreal Animation Bridge import L3 evidence to the DCC-first route. |

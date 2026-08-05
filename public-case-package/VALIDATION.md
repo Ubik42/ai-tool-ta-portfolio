@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r27-spatial-authoring-contract` | `python dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py` | Contract evaluates 2 public spatial authoring rows, reports 1 Ready and 1 Blocked socket/hotspot/pose-transfer sample without entering Maya. |
+| `validate-r27-spatial-authoring-l3` | `python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py` | Maya 2026 `mayapy` creates synthetic joints/locators and exports `spatial-authoring-maya-l3@0.1.0`, reporting 2 assets, 1 Ready, 1 Blocked, 11 pass checks, 2 warnings and 7 errors. |
+| `validate-r27-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r27-spatial-authoring-l3-presentation-pack")` | DCC Presenter Pack probes 24 key evidence files including Spatial Authoring Maya L3, reports 24 present / 0 missing required files, and exports 16 demo route steps. |
 | `validate-r26-character-calibration-contract` | `python dcc-hosts/character-calibration-studio/scripts/run_smoke.py` | Contract evaluates 2 public character calibration rows, reports 1 Ready and 1 Blocked topology/joint/control mapping sample without entering Maya. |
 | `validate-r26-character-calibration-l3` | `python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py` | Maya 2026 `mayapy` creates synthetic character meshes/joints and exports `character-calibration-maya-l3@0.1.0`, reporting 2 assets, 1 Ready, 1 Blocked, 10 pass checks, 2 warnings and 6 errors. |
 | `validate-r26-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r26-character-calibration-l3-presentation-pack")` | DCC Presenter Pack probes 23 key evidence files including Character Calibration Maya L3, reports 23 present / 0 missing required files, and exports 15 demo route steps. |
@@ -162,7 +165,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r24-unreal-animation-bridge-presentation-pack-20260805-164953.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json
 ```
 
 ## Commands
