@@ -1,6 +1,6 @@
 # Groom Export Inspector
 
-R46/R47 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3 和 Unreal runtime readiness 证据，覆盖 root UV、strand ID、guide curve、Alembic payload、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性和零写入边界。
+R46/R47/R48 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness 和真实 Maya Alembic cache receipt，覆盖 root UV、strand ID、guide curve、Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性和零写入边界。
 
 ## 核心业务逻辑
 
@@ -22,10 +22,13 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/contract.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/maya_collector.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/unreal_readiness.py`
+- `dcc-hosts/groom-export-inspector/groom_export_inspector/alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_l3.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_unreal_readiness.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_alembic_payload.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_maya_alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_import_readiness.py`
 
 R46 已完成：
@@ -37,6 +40,9 @@ R46 已完成：
 - R47 Unreal readiness：Unreal 5.3.2 commandlet 读取 R46 Maya groom facts，检查 AssetImportTask、AlembicImportFactory、GroomAsset / GroomBindingAsset API、目标 `SK_HeroFace`、期望 Groom / Binding 资产和 no-write boundary。
 - Presenter Pack 接入：R47 Presenter Pack 探测 Groom Unreal Import Readiness artifact，并把 demo route 扩到 36 步、evidence probes 扩到 45 个。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r47` / `dcc-first-package@1.44.0`。
+- R48 Alembic payload：Maya 2026 `mayapy` 加载 `AbcExport`，只选择 approved groom 行写出 public synthetic `.abc` cache，记录 bytes / sha256，并把 TMP groom 保持 held。
+- Presenter Pack 接入：R48 Presenter Pack 探测 Groom Alembic Payload Receipt 和实际 `.abc` cache，并把 demo route 扩到 37 步、evidence probes 扩到 47 个。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r48` / `dcc-first-package@1.45.0`。
 
 ## 证据
 
@@ -49,7 +55,7 @@ R46 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r47-groom-unreal-readiness-presentation-pack-20260806-010323.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r48-groom-alembic-payload-presentation-pack-20260806-012304.json
 ```
 
 关键结果：
@@ -90,9 +96,30 @@ Gate 为 `Blocked` 是正确状态：`Hero Hair Approved` Ready；`Hero Hair Tem
 
 Gate 为 `Blocked` 是正确状态：R47 已证明 UE runtime 可以进入并读取目标 `SK_HeroFace`，但本 public project 还没有可用的 GroomAsset / GroomBindingAsset API surface，也还没有导入期望的 Groom / Binding 资产；这必须作为 Alembic executor 之前的 readiness gate 暴露。
 
+当前 Alembic Payload artifact：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-payload-20260806-011837.json
+<repo>\dcc-hosts\groom-export-inspector\artifacts\cache\groom-alembic-r48\groom_hero_hair_001.abc
+```
+
+关键结果：
+
+- report version：`groom-alembic-payload@0.1.0`
+- evidence level：L3
+- l3 status：`maya_groom_alembic_payload_exported`
+- Maya runtime：2026
+- selected / held rows：1 / 1
+- cache files / bytes / hashes：1 / 10271 / 1
+- checks pass / warning / error：14 / 0 / 2
+- owner actions：2
+- assetWrites / engineWrites / productionWrites：1 / 0 / 0
+
+Gate 为 `Blocked` 是正确状态：approved groom 已写出真实 public synthetic Alembic cache；TMP groom 仍因 source groom row 和 cache payload contract 不合格被 held，不进入 cache。
+
 ## 后续
 
 下一阶段可以继续做：
 
-- Groom Alembic Executor：在 public temp/cache 边界内生成 `.abc` payload receipt，再做 import/post-check/rollback。
+- Groom Alembic Import/Post-check：基于 R48 `.abc` payload receipt，继续评估 UE Groom 插件/API、import factory、post-check 和 rollback 边界。
 - 如果 UE Python 继续不暴露 GroomAsset / GroomBindingAsset，需要评估 Editor Utility、C++ diagnostic bridge 或启用 Groom 插件后的 public fixture 复验。

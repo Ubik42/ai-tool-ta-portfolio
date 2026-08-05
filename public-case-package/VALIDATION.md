@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r48-groom-alembic-payload` | `python dcc-hosts/groom-export-inspector/scripts/run_alembic_payload.py` | Maya 2026 `mayapy` loads `AbcExport`, writes the approved public groom row to `.abc`, records cache bytes/hash, holds the TMP groom row, and keeps engineWrites=0 / productionWrites=0. |
+| `validate-r48-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r48-groom-alembic-payload-presentation-pack")` | DCC Presenter Pack probes 47 key evidence files including Groom Alembic Payload Receipt and exported cache, reports 47 present / 0 missing required files, and exports 37 demo route steps. |
 | `validate-r47-groom-unreal-readiness` | `python dcc-hosts/groom-export-inspector/scripts/run_unreal_readiness.py` | Unreal 5.3.2 Python enters the public project and exports read-only Groom import readiness: 2 groom rows, source Ready / Blocked = 1 / 1, AssetImportTask and AlembicImportFactory visible, `SK_HeroFace` present, GroomAsset / GroomBindingAsset API not visible, expected Groom / Binding assets absent, 12 pass / 4 warning / 6 error, assetWrites=0. |
 | `validate-r47-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r47-groom-unreal-readiness-presentation-pack")` | DCC Presenter Pack probes 45 key evidence files including Groom Unreal Import Readiness, reports 45 present / 0 missing required files, and exports 36 demo route steps. |
 | `validate-r46-groom-export-inspector` | `python dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py` | Maya 2026 mayapy creates the public groom fixture and exports L3 groom handoff facts: 2 groom rows, 1 Ready, 1 Blocked, 11 strands, 2 guides, 1 missing root UV row, 1 duplicate strand ID row, 11 pass / 2 warning / 7 error, assetWrites=0. |
@@ -287,5 +289,5 @@ Latest DCC Presenter Pack:
 | --- | --- |
 | Release gate | `Ready` |
 | Blocking receipts | `[]` |
-| Package files | 6 |
-| Validation commands | 64 |
+| Package files | 27 |
+| Validation commands | 48 |

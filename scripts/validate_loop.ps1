@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -103,10 +103,13 @@ $QuickPythonFiles = @(
     (Join-Path $GroomExportInspector "groom_export_inspector\contract.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\maya_collector.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\unreal_readiness.py"),
+    (Join-Path $GroomExportInspector "groom_export_inspector\alembic_payload.py"),
     (Join-Path $GroomExportInspector "scripts\run_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_l3_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_maya_l3.py"),
     (Join-Path $GroomExportInspector "scripts\run_unreal_readiness.py"),
+    (Join-Path $GroomExportInspector "scripts\run_alembic_payload.py"),
+    (Join-Path $GroomExportInspector "scripts\run_maya_alembic_payload.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_import_readiness.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
@@ -166,11 +169,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r47-groom-unreal-readiness-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r48-groom-alembic-payload-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 45, summary
+assert summary["present_evidence_files"] == 47, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 36, summary
+assert summary["demo_route_steps"] == 37, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -278,6 +281,12 @@ if ($Tier -in @("groom-export-inspector", "full")) {
 if ($Tier -in @("groom-unreal-readiness", "full")) {
     Invoke-Step "groom Unreal import readiness" {
         python (Join-Path $GroomExportInspector "scripts\run_unreal_readiness.py")
+    }
+}
+
+if ($Tier -in @("groom-alembic-payload", "full")) {
+    Invoke-Step "groom Alembic payload receipt" {
+        python (Join-Path $GroomExportInspector "scripts\run_alembic_payload.py")
     }
 }
 
