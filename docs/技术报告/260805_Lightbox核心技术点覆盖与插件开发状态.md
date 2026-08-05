@@ -2,15 +2,16 @@
 
 更新时间：2026-08-05  
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r40` / `dcc-first-package@1.37.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r41` / `dcc-first-package@1.38.0`
 
 ## 1. 当前结论
 
 当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Unreal Python 和普通 Python fixture 共同生成。
 
-R40 的硬证据：
+R41 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r41-unreal-animation-deep-facts-presentation-pack-20260805-224616.json`
+- Unreal AnimSequence Deep Facts：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json`
 - Unreal Socket Authoring Executor：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json`
 - Unreal Socket API docs probe：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json`
 - Unreal Control Rig Bridge：`<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json`
@@ -30,7 +31,7 @@ R40 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json`
-- Presenter Pack 结果：38 / 38 evidence files present，0 missing required files，29 demo route steps。
+- Presenter Pack 结果：39 / 39 evidence files present，0 missing required files，30 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断或 runtime drift，不是 runtime 缺失。
 
 ## 2. Lightbox核心技术点覆盖
@@ -47,7 +48,7 @@ R40 的硬证据：
 | 复合资产放行门禁 | `Asset Handoff Gate` 合并协议、规则、贴图、视觉、队列，输出 Ready/Review/Blocked 和 Decision Packet | 已覆盖，Maya L3 | 真实资产案例和 reviewer 录屏 |
 | DCC 到引擎 handoff | Maya Engine Preflight + Unreal Handoff Inspector 覆盖 import intent、registry、engine facts、PC/Mobile preset 和 waiver | 覆盖强，Unreal L3++ | 真实 texture/LOD/import preset 扩展 |
 | 场景事务、写入边界和 rollback preview | `Scene Transaction Guard` 输出 before/after fingerprint、created/deleted/modified、risk rows、rollback actions | 已覆盖 Maya L3 首版 | 抽成所有 DCC 工具共用的 transaction middleware |
-| 动画确定性导出、Take、sub-frame、channel identity | `Animation Continuity Lab` 已通过 Maya `mayapy` 采集 keyed animCurve facts；`Unreal Animation Bridge` 已通过 Maya FBX + Unreal Python 导入真实 public AnimSequence/Skeleton facts | Maya L3 + Unreal import L3 | 可继续补 sequence length、sample rate、curve metadata、root motion、compression 细节 |
+| 动画确定性导出、Take、sub-frame、channel identity | `Animation Continuity Lab` 已通过 Maya `mayapy` 采集 keyed animCurve facts；`Unreal Animation Bridge` 已通过 Maya FBX + Unreal Python 导入真实 public AnimSequence/Skeleton facts；R41 已只读采集 AnimSequence duration、derived frame span、frame-rate、curve/root/compression metadata visibility | Maya L3 + Unreal import L3 + Unreal deep facts L3 | curve names 在 UE Python 下仍不可读，后续可走 Animation Blueprint Library / C++ adapter |
 | 角色 DNA、拓扑、joint coverage、面部/肌肉参数迁移 | `Character Calibration Studio` 已通过 Maya `mayapy` 采集 topology / joint / calibration / face params / Control Rig mapping facts；R35 Drilldown 已把 flat rows 转成 topology/skeleton/skin/calibration/face/Control Rig/mirror panels 和 owner actions；R37 Unreal Control Rig Bridge 已把角色 mapping 接到 Unreal Control Rig API、SkeletalMesh/Skeleton binding 和 expected CR asset coverage | Maya L3 + L3-derived drilldown + Unreal L3 | 后续加 public CR asset fixture、runtime hierarchy、deformation target link |
 | 空间热点、Socket、Pose Transfer、mirror、locator preview | `Spatial Authoring Workbench` 已通过 Maya `mayapy` 采集 joint / locator / socket / hotspot / pose frame / mirror / pose transfer facts；R36 Drilldown 已把 flat rows 转成 protocol/parent/socket/mirror/hotspot/pose frame/transform/preview/pose transfer panels 和 owner actions；R38 Unreal Socket Import Checker 已接到 Unreal SkeletalMesh/Skeleton socket API 和 expected socket coverage；R40 Unreal Socket Authoring Executor 已证明 UE 5.3 Python socket identity 字段不可写，能安全阻断自动修复 | Maya L3 + L3-derived drilldown + Unreal L3 + API-limited executor readiness | 真正 socket 写入需换 Unreal C++ / Editor Utility Blueprint adapter |
 | PC -> Mobile 平台派生、LOD/材质/贴图/碰撞生成链 | `Platform Variant Forge` 已生成 PC/Mobile variant plan，用 Unreal runtime probe 对照 StaticMesh facts，把 drift 转成 dry-run generation operations，采集材质/贴图 runtime facts，导入 public Texture2D payload 验证预算，执行 public fixture max-size clamp / post-check / rollback，把 LOD/Nanite/collision 后续动作转成 approval / rollback receipts，并通过 R39 StaticMesh post-check 做只读 runtime 验证 | 已覆盖计划层 + Unreal L3 + L3-derived generation plan + texture runtime L3 + Texture2D payload L3 + controlled executor L3 + executor receipts L3-derived + StaticMesh post-check L3 | 更复杂真实风格资产 fixture、LOD/Nanite 受控写入 |
@@ -57,7 +58,7 @@ R40 的硬证据：
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R40 Presenter Pack 38/38 evidence present；29 步 demo route；新增 Unreal Socket Authoring Executor 和 API docs probe |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R41 Presenter Pack 39/39 evidence present；30 步 demo route；新增 Unreal AnimSequence Deep Facts probe |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
 | 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3 |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
@@ -69,7 +70,7 @@ R40 的硬证据：
 | 10 | Blender Rule Adapter | 从 Blender 采集 custom props、collections、material、UV、collision facts | `bpy` L3 完成 |
 | 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts | `pymxs` L3 完成 |
 | 12 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
-| 13 | Unreal Animation Bridge | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；2/2 sequences present，4 synthetic assets imported |
+| 13 | Unreal Animation Bridge / Deep Facts | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；R41 deep facts 完成，2 runtime rows，2/2 duration frame spans matched，curve metadata warning 清晰暴露 |
 | 14 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成；R35 drilldown 完成；R37 Unreal Control Rig Bridge L3 完成，2 rows / 8 pass / 1 warning / 7 error / assetWrites=0 |
 | 15 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | Maya `mayapy` L3 完成；R36 drilldown 完成；R38 Unreal Socket Import Checker L3 完成；R40 Socket Authoring Executor 给出 API-limited gate |
 | 16 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload + R33 controlled executor + R34 executor receipts + R39 StaticMesh post-check 完成 |
@@ -93,7 +94,7 @@ R40 的硬证据：
 | Blender Rule Adapter | 70% | Blender 5.2 `bpy` L3、custom props/collection/material/UV/collision 采集 | 还缺真实复杂 Blender 资产 fixture |
 | 3ds Max Rule Adapter | 70% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision 采集 | 还缺真实复杂 Max 资产 fixture |
 | Animation Continuity Lab | 45% | Maya `mayapy` L3 keyed animCurve 采集，rig/skeleton/take/sample/channel/sub-frame/root-motion/layer 检查，fix preview 和 Presenter Pack 接入 | 没有 Maya UI drilldown；MotionBuilder/Unreal runtime 对照未做 |
-| Unreal Animation Bridge | 55% | Maya 生成 FBX、Unreal Python 导入 Skeleton/SkeletalMesh/AnimSequence、2/2 sequences present、Maya L3 source comparison | frame/sample-rate/curve/compression facts 还可继续深化 |
+| Unreal Animation Bridge | 62% | Maya 生成 FBX、Unreal Python 导入 Skeleton/SkeletalMesh/AnimSequence、2/2 sequences present；R41 只读采集 duration、derived frame span、frame-rate、root motion、compression metadata visibility，assetWrites=0 | curve names 在 UE Python 下不可读，后续需要 Animation Blueprint Library / C++ adapter |
 | Character Calibration Studio | 65% | Maya `mayapy` L3 采集 topology signature、joint coverage、calibration delta、face params、Control Rig mapping；R35 drilldown 输出 14 个 UI-ready panels、8 条 owner actions；R37 Unreal Control Rig Bridge 检查 API、SkeletalMesh/Skeleton binding、expected CR asset coverage | public CR asset fixture、runtime hierarchy、deformation target link 还可深化 |
 | Spatial Authoring Workbench | 68% | Maya `mayapy` L3 采集 socket parent joint、offset、mirror pair、hotspot semantic/owner、pose frame、local space、preview locator、pose transfer approval；R36 drilldown 输出 18 个 UI-ready panels、9 条 owner actions；R38 Unreal Socket Import Checker 输出 SkeletalMesh/Skeleton socket API 和 expected socket coverage；R40 executor 证明 UE 5.3 Python socket authoring API 边界 | 真正自动写 socket 要换 Unreal C++ / Editor Utility Blueprint adapter；复杂 gameplay attach fixture 未做 |
 | Platform Variant Forge | 90% | PC/Mobile variant plan、Unreal preset fact join、Unreal 5.3 runtime-vs-plan 检查、dry-run generation operation contract、material/texture runtime facts、public 2048 Texture2D payload budget proof、public fixture 受控执行和 rollback、LOD/Nanite/collision approval receipts、StaticMesh post-check | 复杂真实风格资产 fixture、LOD/Nanite 受控写入未做 |
@@ -128,7 +129,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r40-unreal-socket-authoring-executor-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r41-unreal-animation-deep-facts-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -139,7 +140,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness 或 Unreal missing fixture 打转，它们已进入真实 runtime 证据。`Character Calibration Studio` 已有 Maya L3、R35 drilldown 和 R37 Unreal Control Rig Bridge；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 Unreal AnimSequence curve/compression 深化，或 public Control Rig asset fixture / runtime hierarchy。
+下一轮不要再围绕 Blender/Max readiness 或 Unreal missing fixture 打转，它们已进入真实 runtime 证据。`Unreal Animation Bridge` 已有 import L3 和 R41 deep facts；`Character Calibration Studio` 已有 Maya L3、R35 drilldown 和 R37 Unreal Control Rig Bridge；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 public Control Rig asset fixture / runtime hierarchy。
 
 
 ## R39 补充
@@ -152,3 +153,8 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 - Unreal Socket Authoring Executor：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json`
 - Unreal Socket API docs probe：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json`
 - 结果：L3 / `Blocked` / `unreal_socket_authoring_executor_api_limited`，selected/held 1 / 1，expected/created sockets 2 / 0，9 pass / 0 warning / 2 error，assetWrites=0，productionWrites=0。
+
+## R41 补充
+
+- Unreal AnimSequence Deep Facts：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json`
+- 结果：L3 / `Blocked` / `unreal_animsequence_deep_facts_collected`，2 runtime rows，2 / 2 duration frame spans matched，0 Ready / 1 Review / 1 Blocked，15 pass / 2 warning / 1 error，assetWrites=0。

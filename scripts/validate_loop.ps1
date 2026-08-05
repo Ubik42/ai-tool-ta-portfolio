@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -66,12 +66,15 @@ $QuickPythonFiles = @(
     (Join-Path $AnimationLab "scripts\run_l3_smoke.py"),
     (Join-Path $AnimationLab "scripts\run_maya_l3.py"),
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\contract.py"),
+    (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\deep_facts.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\run_deep_facts.py"),
     (Join-Path $UnrealAnimationBridge "scripts\generate_maya_fbx_fixture.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\unreal_python\collect_animsequence_deep_facts.py"),
     (Join-Path $CharacterCalibration "character_calibration_studio\contract.py"),
     (Join-Path $CharacterCalibration "character_calibration_studio\maya_collector.py"),
     (Join-Path $CharacterCalibration "character_calibration_studio\drilldown.py"),
@@ -141,11 +144,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r40-unreal-socket-authoring-executor-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r41-unreal-animation-deep-facts-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 38, summary
+assert summary["present_evidence_files"] == 39, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 29, summary
+assert summary["demo_route_steps"] == 30, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -178,6 +181,12 @@ if ($Tier -in @("unreal-animation", "full")) {
     }
     Invoke-Step "unreal animation bridge import L3 harness" {
         python (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("unreal-animation-deep-facts", "full")) {
+    Invoke-Step "unreal animation deep facts" {
+        python (Join-Path $UnrealAnimationBridge "scripts\run_deep_facts.py")
     }
 }
 

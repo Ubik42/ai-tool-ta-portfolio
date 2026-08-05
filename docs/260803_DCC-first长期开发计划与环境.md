@@ -1466,3 +1466,27 @@ Presenter Pack evidence: 38 / 38 present, 0 missing, 29 route steps
 ```text
 Unreal AnimSequence Fact Deepening 或 public Control Rig asset fixture / runtime hierarchy -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R41 循环开发断点：Unreal AnimSequence Deep Facts
+
+R41 已完成 `Unreal AnimSequence Deep Facts` L3：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r41-unreal-animation-deep-facts-presentation-pack-20260805-224616.json
+```
+
+R41 结果：`run_deep_facts.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，只读读取 R25 已导入的两个 AnimSequence。采集 play length、derived frame span、direct frame-rate、curve metadata API、root motion setting、compression setting 和 write boundary。结果为 L3 / `Blocked` / `unreal_animsequence_deep_facts_collected`，2 runtime rows，2 / 2 duration frame spans matched，0 Ready，1 Review，1 Blocked，15 pass，2 warning，1 error，assetWrites=0，productionWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r41 / dcc-first-package@1.38.0
+Presenter Pack evidence: 39 / 39 present, 0 missing, 30 route steps
+```
+
+下一轮入口：
+
+```text
+public Control Rig asset fixture / runtime hierarchy -> Unreal runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```

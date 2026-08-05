@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R41 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r41-unreal-animation-deep-facts-presentation-pack-20260805-224616.json` | Maya-hosted package probes 39 key evidence files, exports 30 demo route steps, and adds Unreal AnimSequence Deep Facts evidence. |
+| Unreal AnimSequence Deep Facts | `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json` | Unreal 5.3.2 Python reads 2 existing public AnimSequence assets without saving, matches 2 / 2 duration frame spans, and records curve/root/compression metadata visibility. |
 | R40 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json` | Maya-hosted package probes 38 key evidence files, exports 29 demo route steps, and adds Unreal Socket Authoring Executor API-limited readiness evidence. |
 | Unreal Socket Authoring Executor | `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json` | Unreal 5.3.2 Python selects the approved rifle socket row, proves `SkeletalMesh.add_socket` is visible, but blocks auto-authoring because commandlet-created socket name and bone fields are read-only. |
 | Unreal Socket API Docs Probe | `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json` | Captures UE 5.3 Python docstrings and property write attempts: `socket_name` and `bone_name` are read-only, while relative transforms are writable. |

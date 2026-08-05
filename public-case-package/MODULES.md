@@ -84,7 +84,19 @@ AI boundary: AI can explain why a clip is blocked or draft owner handoff notes. 
 
 Key evidence: `../docs/modules/unreal-animation-bridge.md`
 
-## 8. Character Calibration & Intent Transfer Studio
+## 8. Unreal AnimSequence Deep Facts
+
+Business scenario: a clip can import successfully while frame span, runtime curve visibility, root-motion settings or compression settings remain ambiguous.
+
+Core secret: separate asset import success from runtime metadata confidence. R41 reads existing public AnimSequence assets, derives frame spans from play length, and records which curve/root/compression facts Unreal Python can or cannot expose.
+
+Deterministic core: R25 import L3 source artifact, Unreal 5.3.2 read-only collector, duration/frame-span comparison, metadata visibility rows, owner actions, and assetWrites=0 boundary.
+
+AI boundary: AI can explain why a clip is Review or Blocked. It cannot claim curve, root-motion or compression parity when Unreal metadata is not readable.
+
+Key evidence: `../docs/modules/unreal-animation-bridge.md`
+
+## 9. Character Calibration & Intent Transfer Studio
 
 Business scenario: character delivery can pass file checks while topology, joint coverage, face parameters or Control Rig mapping silently break downstream deformation.
 
@@ -96,7 +108,7 @@ AI boundary: AI can explain why a character is blocked or draft owner notes. It 
 
 Key evidence: `../docs/modules/character-calibration-studio.md`
 
-## 9. Unreal Control Rig Bridge
+## 10. Unreal Control Rig Bridge
 
 Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding and target CR asset coverage before it is useful in engine.
 
@@ -108,7 +120,7 @@ AI boundary: AI can summarize missing controls and owner responsibilities. It ca
 
 Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
 
-## 10. Spatial Authoring & Pose Transfer Workbench
+## 11. Spatial Authoring & Pose Transfer Workbench
 
 Business scenario: sockets, hotspots, pose frames and mirror transfer rules often live as scene conventions and break when assets move from DCC to gameplay.
 
@@ -120,7 +132,7 @@ AI boundary: AI can explain socket risk and propose handoff text. It cannot appr
 
 Key evidence: `../docs/modules/spatial-authoring-workbench.md`
 
-## 11. Unreal Socket Import Checker
+## 12. Unreal Socket Import Checker
 
 Business scenario: a socket can be clean in Maya but still absent or bound to the wrong target in Unreal. Gameplay, VFX, camera and attach logic need engine-side facts, not just DCC locators.
 
@@ -132,7 +144,7 @@ AI boundary: AI can summarize missing sockets and owner handoff text. It cannot 
 
 Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
-## 12. Unreal Socket Authoring Executor
+## 13. Unreal Socket Authoring Executor
 
 Business scenario: an auto-fix button for missing engine sockets is dangerous unless the runtime API can create a named socket, bind it to a bone, post-check it and roll it back.
 
@@ -144,7 +156,7 @@ AI boundary: AI can recommend owner actions and explain why the auto-fix is bloc
 
 Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
-## 13. Platform Variant Forge
+## 14. Platform Variant Forge
 
 Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
 

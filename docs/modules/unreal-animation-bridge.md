@@ -21,12 +21,15 @@ R25 的价值是把 Maya keyed animCurve facts 映射成 Unreal runtime import f
 
 - `dcc-hosts/unreal-animation-bridge/fixtures/synthetic_unreal_animation_bridge.json`
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py`
+- `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/deep_facts.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_deep_facts.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/collect_animsequence_deep_facts.py`
 
 R25 已完成：
 
@@ -57,10 +60,16 @@ R25 已完成：
 <repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-bridge-import-l3-20260805-173309.json
 ```
 
+当前 deep facts artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r26-character-calibration-l3-presentation-pack-20260805-175238.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r41-unreal-animation-deep-facts-presentation-pack-20260805-224616.json
 ```
 
 关键结果：
@@ -78,9 +87,21 @@ R25 已完成：
 
 Gate 为 `Blocked` 是正确状态：`RunStart` 已 Ready；`Attack_A` 作为故障样本保留了 rig fingerprint、sample rate、frame range、curve coverage、sub-frame 和 root motion 问题。R25 已证明 Unreal import runtime 能跑通，Blocked 不再代表缺 skeletal animation fixture。
 
+## R41 AnimSequence Deep Facts
+
+R41 不重新导入 FBX，也不保存 Unreal asset。它读取 R25 已生成的 public AnimSequence，采集：
+
+- play length 和按 expected sample rate 推导出的 frame span。
+- direct frame-rate metadata 是否能读到。
+- curve metadata API 是否能暴露曲线名。
+- root motion setting / compression setting 是否能通过 Unreal Python 读取。
+- read-only mutation boundary。
+
+当前结果：L3 / `Blocked` / `unreal_animsequence_deep_facts_collected`，2 runtime rows，2 / 2 duration frame spans matched，0 Ready / 1 Review / 1 Blocked，15 pass / 2 warning / 1 error，assetWrites=0。`RunStart` 进入 Review 是因为 UE Python 没有暴露 curve names；`Attack_A` 保持 Blocked 是因为 R25 source bridge row 仍有 skeleton、sample rate、curve coverage、sub-frame 和 root motion 错误。
+
 ## 后续
 
 下一阶段有两条可选路径：
 
-- 轻量深化：补 Unreal AnimSequence frame/sample-rate 更细 facts、曲线 metadata 和 compression settings 的读取。
-- 业务扩展：转 Character Calibration & Intent Transfer Studio，把 skeleton fingerprint、joint coverage、topology signature 和 Control Rig mapping 串起来。
+- 继续动画线：补 Animation Blueprint Library / C++ adapter 或 Control Rig curve bridge，让 curve names 不再停留在 Python metadata warning。
+- 业务扩展：做 public Control Rig asset fixture / runtime hierarchy，把 skeleton fingerprint、joint coverage、topology signature 和 Control Rig mapping 串起来。

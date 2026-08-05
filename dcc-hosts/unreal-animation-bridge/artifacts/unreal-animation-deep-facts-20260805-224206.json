@@ -1,0 +1,971 @@
+{
+  "reportVersion": "unreal-animation-deep-facts@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Bridge",
+  "generatedAt": "2026-08-05 22:42:14",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_animsequence_deep_facts_collected",
+  "sourceImportL3": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
+    "reportVersion": "unreal-animation-bridge-import-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_animsequence_assets_imported",
+    "gate": "Blocked"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "AnimSequence": true,
+        "AnimationBlueprintLibrary": false,
+        "AnimationDataController": true,
+        "AnimationDataModel": true,
+        "Skeleton": true,
+        "EditorAssetLibrary": true,
+        "AssetRegistryHelpers": true,
+        "FrameRate": true,
+        "RawCurveTrackTypes": true
+      },
+      "animationBlueprintLibraryMethods": [],
+      "animSequenceClassMethods": [
+        "get_anim_pose_at_frame",
+        "get_play_length",
+        "get_skeleton",
+        "sequence_length"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only public AnimSequence metadata probe"
+  },
+  "facts": {
+    "schema": "unreal-animation-deep-facts-input@0.1.0",
+    "sequences": [
+      {
+        "assetId": "anim-hero-run-001",
+        "mayaTakeName": "RunStart",
+        "ownerState": "accepted",
+        "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+        "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+        "expectedUnreal": {
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "sampleRate": 30,
+          "startFrame": 1001,
+          "endFrame": 1048,
+          "rootMotionMode": "enabled",
+          "requiredCurveNames": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ],
+          "compression": {
+            "allowFrameRangeTrim": false,
+            "allowRemoveLinearKeys": true
+          }
+        },
+        "sourceMaya": {
+          "rigId": "HeroRig_A",
+          "expectedRigId": "HeroRig_A",
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "takeName": "RunStart",
+          "startFrame": 1001,
+          "endFrame": 1048,
+          "actualFirstKey": 1001.0,
+          "actualLastKey": 1048.0,
+          "sampleRate": 30,
+          "missingChannels": [],
+          "duplicateChannels": [],
+          "subFrameCount": 0,
+          "outsideRangeCount": 0,
+          "rootMotionPolicy": "required",
+          "rootMotionDelta": 5.6,
+          "scaleMaxDrift": 0.0,
+          "additiveWithoutOwner": 0,
+          "channelIdentities": [
+            "Hips.translateX",
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "LeftFoot.rotateX",
+            "RightFoot.rotateX"
+          ]
+        },
+        "sourceBridgeFailures": [
+          {
+            "id": "anim-hero-run-001:maya-source-l3",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "maya-source-l3",
+            "label": "Maya source L3",
+            "status": "pass",
+            "reason": "Unreal animation bridge must start from real Maya keyed animCurve evidence.",
+            "evidence": "sourceFound=True evidence=L3",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:skeleton-binding",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "skeleton-binding",
+            "label": "Skeleton binding",
+            "status": "pass",
+            "reason": "Unreal AnimSequence must bind to the same approved skeleton fingerprint as the Maya take.",
+            "evidence": "maya=skel:hero:v003:spine62:face18 expected=skel:hero:v003:spine62:face18",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:sample-rate",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "sample-rate",
+            "label": "Sample rate",
+            "status": "pass",
+            "reason": "Unreal import should not silently resample the take.",
+            "evidence": "maya=30 expected=30",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:frame-range",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "frame-range",
+            "label": "Frame range",
+            "status": "pass",
+            "reason": "Keys outside the declared take can leak poses into the imported AnimSequence.",
+            "evidence": "first=1001.0 last=1048.0 expected=1001-1048",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:curve-coverage",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "curve-coverage",
+            "label": "Curve coverage",
+            "status": "pass",
+            "reason": "Gameplay curves required by Unreal must be present and uniquely identified in Maya.",
+            "evidence": "missing=[] duplicates=[]",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:sub-frame-boundary",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "sub-frame-boundary",
+            "label": "Sub-frame boundary",
+            "status": "pass",
+            "reason": "Unreal compression can quantize sub-frame keys differently unless they are explicitly approved.",
+            "evidence": "subFrameCount=0",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:root-motion",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "root-motion",
+            "label": "Root motion",
+            "status": "pass",
+            "reason": "Root motion mode must match the root translate curve evidence before engine import.",
+            "evidence": "mode=enabled delta=5.6000",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:runtime-asset-readiness",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "runtime-asset-readiness",
+            "label": "Runtime asset readiness",
+            "status": "pass",
+            "reason": "Unreal runtime probe should see the expected AnimSequence and Skeleton before claiming full L3.",
+            "evidence": "executed=True anim=True skeleton=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-run-001:runtime-import-status",
+            "assetId": "anim-hero-run-001",
+            "ruleId": "runtime-import-status",
+            "label": "Runtime import status",
+            "status": "pass",
+            "reason": "The import harness should create and save only public synthetic Unreal animation assets before claiming import L3.",
+            "evidence": "attempted=True success=True imported=4 failures=[]",
+            "fixPreview": "None"
+          }
+        ],
+        "runtimeUnreal": {
+          "assetId": "anim-hero-run-001",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "animSequenceExists": true,
+          "deepFacts": {
+            "class": "AnimSequence",
+            "pathName": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+            "playLength": 1.5666667222976685,
+            "expectedSampleRate": 30.0,
+            "expectedFrameSpan": 47,
+            "derivedFrameSpanAtExpectedRate": 47,
+            "frameSpanDelta": 0,
+            "directFrameRateReadable": true,
+            "directFrameRate": 60000.0,
+            "derivedFrameRateSource": "playLength*expectedSampleRate",
+            "samplingFrameRate": [
+              {
+                "property": "sampling_frame_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'sampling_frame_rate' for attribute 'sampling_frame_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "target_frame_rate",
+                "ok": true,
+                "value": {
+                  "text": "<Struct 'FrameRate' (0x00000AF5DC2C8800) {numerator: 60000, denominator: 1}>",
+                  "numerator": 60000,
+                  "denominator": 1
+                },
+                "error": null
+              },
+              {
+                "property": "display_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'display_rate' for attribute 'display_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "imported_sample_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'imported_sample_rate' for attribute 'imported_sample_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "rate_scale",
+                "ok": true,
+                "value": 1.0,
+                "error": null
+              }
+            ],
+            "numberOfFrames": [
+              {
+                "method": "get_number_of_frames",
+                "ok": false,
+                "value": null,
+                "error": "missing"
+              },
+              {
+                "method": "get_number_of_sampled_keys",
+                "ok": false,
+                "value": null,
+                "error": "missing"
+              }
+            ],
+            "availableMethods": [
+              "get_anim_pose_at_frame",
+              "get_play_length",
+              "get_skeleton",
+              "sequence_length"
+            ],
+            "dataModel": {
+              "available": false
+            },
+            "curveMetadata": {
+              "apiAvailable": false,
+              "apiMethods": [],
+              "curveNamesReadable": false,
+              "curveNames": [],
+              "attempts": [],
+              "assetCurveMethods": []
+            },
+            "rootMotion": {
+              "propertiesReadable": true,
+              "properties": [
+                {
+                  "property": "enable_root_motion",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "root_motion_root_lock",
+                  "ok": true,
+                  "value": "<RootMotionRootLock.REF_POSE: 0>",
+                  "error": null
+                },
+                {
+                  "property": "force_root_lock",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "use_normalized_root_motion_scale",
+                  "ok": true,
+                  "value": true,
+                  "error": null
+                },
+                {
+                  "property": "root_motion_settings",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'root_motion_settings' for attribute 'root_motion_settings' on 'AnimSequence'"
+                },
+                {
+                  "property": "b_enable_root_motion",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'b_enable_root_motion' for attribute 'b_enable_root_motion' on 'AnimSequence'"
+                }
+              ],
+              "methods": []
+            },
+            "compression": {
+              "propertiesReadable": true,
+              "properties": [
+                {
+                  "property": "compression_scheme",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'compression_scheme' for attribute 'compression_scheme' on 'AnimSequence'"
+                },
+                {
+                  "property": "bone_compression_settings",
+                  "ok": true,
+                  "value": "<Object '/ACLPlugin/ACLAnimBoneCompressionSettings.ACLAnimBoneCompressionSettings' (0x00000AF5D7ABFD20) Class 'AnimBoneCompressionSettings'>",
+                  "error": null
+                },
+                {
+                  "property": "curve_compression_settings",
+                  "ok": true,
+                  "value": "<Object '/Engine/Animation/DefaultAnimCurveCompressionSettings.DefaultAnimCurveCompressionSettings' (0x00000AF5D78FE340) Class 'AnimCurveCompressionSettings'>",
+                  "error": null
+                },
+                {
+                  "property": "do_not_override_compression",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "remove_redundant_keys",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'remove_redundant_keys' for attribute 'remove_redundant_keys' on 'AnimSequence'"
+                },
+                {
+                  "property": "compress_commandlet_version",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'compress_commandlet_version' for attribute 'compress_commandlet_version' on 'AnimSequence'"
+                }
+              ],
+              "methods": []
+            },
+            "notifies": {
+              "propertiesReadable": false,
+              "properties": [
+                {
+                  "property": "notifies",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read"
+                },
+                {
+                  "property": "anim_notify_tracks",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'"
+                },
+                {
+                  "property": "marker_data",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'"
+                }
+              ],
+              "counts": []
+            },
+            "assetRegistryTags": {
+              "calls": [
+                {
+                  "method": "get_asset_registry_tags",
+                  "ok": false,
+                  "value": null,
+                  "error": "missing"
+                }
+              ],
+              "readable": false
+            }
+          }
+        }
+      },
+      {
+        "assetId": "anim-hero-attack-002",
+        "mayaTakeName": "Attack_A",
+        "ownerState": "requested",
+        "expectedAnimSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+        "expectedSkeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+        "expectedUnreal": {
+          "skeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+          "sampleRate": 30,
+          "startFrame": 2001,
+          "endFrame": 2040,
+          "rootMotionMode": "disabled",
+          "requiredCurveNames": [
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "RightFoot.rotateX",
+            "WeaponSocket.rotateY"
+          ],
+          "compression": {
+            "allowFrameRangeTrim": false,
+            "allowRemoveLinearKeys": false
+          }
+        },
+        "sourceMaya": {
+          "rigId": "HeroRig_TMP",
+          "expectedRigId": "HeroRig_A",
+          "skeletonFingerprint": "skel:hero:v002:spine61:face12",
+          "expectedSkeletonFingerprint": "skel:hero:v003:spine62:face18",
+          "takeName": "Attack_A",
+          "startFrame": 2001,
+          "endFrame": 2040,
+          "actualFirstKey": 2000.0,
+          "actualLastKey": 2042.0,
+          "sampleRate": 24,
+          "missingChannels": [
+            "RightFoot.rotateX"
+          ],
+          "duplicateChannels": [
+            "Hips.translateZ"
+          ],
+          "subFrameCount": 1,
+          "outsideRangeCount": 2,
+          "rootMotionPolicy": "disabled",
+          "rootMotionDelta": 9.0,
+          "scaleMaxDrift": 0.08000000000000007,
+          "additiveWithoutOwner": 1,
+          "channelIdentities": [
+            "Hips.translateZ",
+            "Hips.rotateY",
+            "Hips.scaleX",
+            "WeaponSocket.rotateY",
+            "Hips.translateZ"
+          ]
+        },
+        "sourceBridgeFailures": [
+          {
+            "id": "anim-hero-attack-002:maya-source-l3",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "maya-source-l3",
+            "label": "Maya source L3",
+            "status": "pass",
+            "reason": "Unreal animation bridge must start from real Maya keyed animCurve evidence.",
+            "evidence": "sourceFound=True evidence=L3",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-attack-002:skeleton-binding",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "skeleton-binding",
+            "label": "Skeleton binding",
+            "status": "error",
+            "reason": "Unreal AnimSequence must bind to the same approved skeleton fingerprint as the Maya take.",
+            "evidence": "maya=skel:hero:v002:spine61:face12 expected=skel:hero:v003:spine62:face18",
+            "fixPreview": "Retarget or re-export from the approved skeleton before import."
+          },
+          {
+            "id": "anim-hero-attack-002:sample-rate",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "sample-rate",
+            "label": "Sample rate",
+            "status": "error",
+            "reason": "Unreal import should not silently resample the take.",
+            "evidence": "maya=24 expected=30",
+            "fixPreview": "Resample or bake the Maya take to the target engine sample rate."
+          },
+          {
+            "id": "anim-hero-attack-002:frame-range",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "frame-range",
+            "label": "Frame range",
+            "status": "warning",
+            "reason": "Keys outside the declared take can leak poses into the imported AnimSequence.",
+            "evidence": "first=2000.0 last=2042.0 expected=2001-2040",
+            "fixPreview": "Trim keys or split the take before import."
+          },
+          {
+            "id": "anim-hero-attack-002:curve-coverage",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "curve-coverage",
+            "label": "Curve coverage",
+            "status": "error",
+            "reason": "Gameplay curves required by Unreal must be present and uniquely identified in Maya.",
+            "evidence": "missing=['RightFoot.rotateX'] duplicates=['Hips.translateZ']",
+            "fixPreview": "Restore missing channels and resolve namespace/source collisions."
+          },
+          {
+            "id": "anim-hero-attack-002:sub-frame-boundary",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "sub-frame-boundary",
+            "label": "Sub-frame boundary",
+            "status": "error",
+            "reason": "Unreal compression can quantize sub-frame keys differently unless they are explicitly approved.",
+            "evidence": "subFrameCount=1",
+            "fixPreview": "Bake sub-frame keys or attach an animation owner waiver."
+          },
+          {
+            "id": "anim-hero-attack-002:root-motion",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "root-motion",
+            "label": "Root motion",
+            "status": "error",
+            "reason": "Root motion mode must match the root translate curve evidence before engine import.",
+            "evidence": "mode=disabled delta=9.0000",
+            "fixPreview": "Bake root motion into the approved root or convert the clip to in-place."
+          },
+          {
+            "id": "anim-hero-attack-002:runtime-asset-readiness",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "runtime-asset-readiness",
+            "label": "Runtime asset readiness",
+            "status": "pass",
+            "reason": "Unreal runtime probe should see the expected AnimSequence and Skeleton before claiming full L3.",
+            "evidence": "executed=True anim=True skeleton=True",
+            "fixPreview": "None"
+          },
+          {
+            "id": "anim-hero-attack-002:runtime-import-status",
+            "assetId": "anim-hero-attack-002",
+            "ruleId": "runtime-import-status",
+            "label": "Runtime import status",
+            "status": "pass",
+            "reason": "The import harness should create and save only public synthetic Unreal animation assets before claiming import L3.",
+            "evidence": "attempted=True success=True imported=4 failures=[]",
+            "fixPreview": "None"
+          }
+        ],
+        "runtimeUnreal": {
+          "assetId": "anim-hero-attack-002",
+          "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+          "animSequenceExists": true,
+          "deepFacts": {
+            "class": "AnimSequence",
+            "pathName": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+            "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+            "playLength": 1.2999999523162842,
+            "expectedSampleRate": 30.0,
+            "expectedFrameSpan": 39,
+            "derivedFrameSpanAtExpectedRate": 39,
+            "frameSpanDelta": 0,
+            "directFrameRateReadable": true,
+            "directFrameRate": 60000.0,
+            "derivedFrameRateSource": "playLength*expectedSampleRate",
+            "samplingFrameRate": [
+              {
+                "property": "sampling_frame_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'sampling_frame_rate' for attribute 'sampling_frame_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "target_frame_rate",
+                "ok": true,
+                "value": {
+                  "text": "<Struct 'FrameRate' (0x00000AF5DC2C9400) {numerator: 60000, denominator: 1}>",
+                  "numerator": 60000,
+                  "denominator": 1
+                },
+                "error": null
+              },
+              {
+                "property": "display_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'display_rate' for attribute 'display_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "imported_sample_rate",
+                "ok": false,
+                "value": null,
+                "error": "AnimSequence: Failed to find property 'imported_sample_rate' for attribute 'imported_sample_rate' on 'AnimSequence'"
+              },
+              {
+                "property": "rate_scale",
+                "ok": true,
+                "value": 1.0,
+                "error": null
+              }
+            ],
+            "numberOfFrames": [
+              {
+                "method": "get_number_of_frames",
+                "ok": false,
+                "value": null,
+                "error": "missing"
+              },
+              {
+                "method": "get_number_of_sampled_keys",
+                "ok": false,
+                "value": null,
+                "error": "missing"
+              }
+            ],
+            "availableMethods": [
+              "get_anim_pose_at_frame",
+              "get_play_length",
+              "get_skeleton",
+              "sequence_length"
+            ],
+            "dataModel": {
+              "available": false
+            },
+            "curveMetadata": {
+              "apiAvailable": false,
+              "apiMethods": [],
+              "curveNamesReadable": false,
+              "curveNames": [],
+              "attempts": [],
+              "assetCurveMethods": []
+            },
+            "rootMotion": {
+              "propertiesReadable": true,
+              "properties": [
+                {
+                  "property": "enable_root_motion",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "root_motion_root_lock",
+                  "ok": true,
+                  "value": "<RootMotionRootLock.REF_POSE: 0>",
+                  "error": null
+                },
+                {
+                  "property": "force_root_lock",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "use_normalized_root_motion_scale",
+                  "ok": true,
+                  "value": true,
+                  "error": null
+                },
+                {
+                  "property": "root_motion_settings",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'root_motion_settings' for attribute 'root_motion_settings' on 'AnimSequence'"
+                },
+                {
+                  "property": "b_enable_root_motion",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'b_enable_root_motion' for attribute 'b_enable_root_motion' on 'AnimSequence'"
+                }
+              ],
+              "methods": []
+            },
+            "compression": {
+              "propertiesReadable": true,
+              "properties": [
+                {
+                  "property": "compression_scheme",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'compression_scheme' for attribute 'compression_scheme' on 'AnimSequence'"
+                },
+                {
+                  "property": "bone_compression_settings",
+                  "ok": true,
+                  "value": "<Object '/ACLPlugin/ACLAnimBoneCompressionSettings.ACLAnimBoneCompressionSettings' (0x00000AF5D7ABFD20) Class 'AnimBoneCompressionSettings'>",
+                  "error": null
+                },
+                {
+                  "property": "curve_compression_settings",
+                  "ok": true,
+                  "value": "<Object '/Engine/Animation/DefaultAnimCurveCompressionSettings.DefaultAnimCurveCompressionSettings' (0x00000AF5D78FE340) Class 'AnimCurveCompressionSettings'>",
+                  "error": null
+                },
+                {
+                  "property": "do_not_override_compression",
+                  "ok": true,
+                  "value": false,
+                  "error": null
+                },
+                {
+                  "property": "remove_redundant_keys",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'remove_redundant_keys' for attribute 'remove_redundant_keys' on 'AnimSequence'"
+                },
+                {
+                  "property": "compress_commandlet_version",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'compress_commandlet_version' for attribute 'compress_commandlet_version' on 'AnimSequence'"
+                }
+              ],
+              "methods": []
+            },
+            "notifies": {
+              "propertiesReadable": false,
+              "properties": [
+                {
+                  "property": "notifies",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Property 'Notifies' for attribute 'notifies' on 'AnimSequence' is protected and cannot be read"
+                },
+                {
+                  "property": "anim_notify_tracks",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'anim_notify_tracks' for attribute 'anim_notify_tracks' on 'AnimSequence'"
+                },
+                {
+                  "property": "marker_data",
+                  "ok": false,
+                  "value": null,
+                  "error": "AnimSequence: Failed to find property 'marker_data' for attribute 'marker_data' on 'AnimSequence'"
+                }
+              ],
+              "counts": []
+            },
+            "assetRegistryTags": {
+              "calls": [
+                {
+                  "method": "get_asset_registry_tags",
+                  "ok": false,
+                  "value": null,
+                  "error": "missing"
+                }
+              ],
+              "readable": false
+            }
+          }
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-animation-deep-facts-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 0,
+      "reviewAssets": 1,
+      "blockedAssets": 1,
+      "pass": 15,
+      "warning": 2,
+      "error": 1,
+      "readyAssetIds": [],
+      "reviewAssetIds": [
+        "anim-hero-run-001"
+      ],
+      "blockedAssetIds": [
+        "anim-hero-attack-002"
+      ],
+      "runtimeRowsCollected": 2,
+      "durationRowsMatched": 2,
+      "directFrameRateReadable": 2,
+      "curveMetadataReadable": 0,
+      "rootMotionReadable": 2,
+      "compressionReadable": 2,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "anim-hero-run-001:source-bridge-ready",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "source-bridge-ready",
+        "status": "pass",
+        "evidence": "sourceErrors=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-animsequence-present",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-animsequence-present",
+        "status": "pass",
+        "evidence": "exists=True class=AnimSequence path=/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-skeleton-binding",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-skeleton-binding",
+        "status": "pass",
+        "evidence": "runtime=/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton expected=/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-duration-frame-span",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-duration-frame-span",
+        "status": "pass",
+        "evidence": "playLength=1.5666667222976685 expectedRate=30.0 derivedSpan=47 expectedSpan=47 delta=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-direct-frame-rate",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-direct-frame-rate",
+        "status": "pass",
+        "evidence": "samplingFrameRate=[{'property': 'sampling_frame_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'sampling_frame_rate' for attribute 'sampling_frame_rate' on 'AnimSequence'\"}, {'property': 'target_frame_rate', 'ok': True, 'value': {'text': \"<Struct 'FrameRate' (0x00000AF5DC2C8800) {numerator: 60000, denominator: 1}>\", 'numerator': 60000, 'denominator': 1}, 'error': None}, {'property': 'display_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'display_rate' for attribute 'display_rate' on 'AnimSequence'\"}, {'property': 'imported_sample_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'imported_sample_rate' for attribute 'imported_sample_rate' on 'AnimSequence'\"}, {'property': 'rate_scale', 'ok': True, 'value': 1.0, 'error': None}] readable=True derivedRate=playLength*expectedSampleRate",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-curve-metadata",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-curve-metadata",
+        "status": "warning",
+        "evidence": "required=['Hips.translateX', 'Hips.translateZ', 'Hips.rotateY', 'LeftFoot.rotateX', 'RightFoot.rotateX'] names=[] api=False",
+        "fixPreview": "Expose animation curve names through Unreal Python or keep curve ownership in the Maya L3 source report."
+      },
+      {
+        "id": "anim-hero-run-001:runtime-root-motion-settings",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-root-motion-settings",
+        "status": "pass",
+        "evidence": "expectedMode=enabled properties=[{'property': 'enable_root_motion', 'ok': True, 'value': False, 'error': None}, {'property': 'root_motion_root_lock', 'ok': True, 'value': '<RootMotionRootLock.REF_POSE: 0>', 'error': None}, {'property': 'force_root_lock', 'ok': True, 'value': False, 'error': None}, {'property': 'use_normalized_root_motion_scale', 'ok': True, 'value': True, 'error': None}, {'property': 'root_motion_settings', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'root_motion_settings' for attribute 'root_motion_settings' on 'AnimSequence'\"}, {'property': 'b_enable_root_motion', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'b_enable_root_motion' for attribute 'b_enable_root_motion' on 'AnimSequence'\"}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:runtime-compression-settings",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-compression-settings",
+        "status": "pass",
+        "evidence": "expected={'allowFrameRangeTrim': False, 'allowRemoveLinearKeys': True} properties=[{'property': 'compression_scheme', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'compression_scheme' for attribute 'compression_scheme' on 'AnimSequence'\"}, {'property': 'bone_compression_settings', 'ok': True, 'value': \"<Object '/ACLPlugin/ACLAnimBoneCompressionSettings.ACLAnimBoneCompressionSettings' (0x00000AF5D7ABFD20) Class 'AnimBoneCompressionSettings'>\", 'error': None}, {'property': 'curve_compression_settings', 'ok': True, 'value': \"<Object '/Engine/Animation/DefaultAnimCurveCompressionSettings.DefaultAnimCurveCompressionSettings' (0x00000AF5D78FE340) Class 'AnimCurveCompressionSettings'>\", 'error': None}, {'property': 'do_not_override_compression', 'ok': True, 'value': False, 'error': None}, {'property': 'remove_redundant_keys', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'remove_redundant_keys' for attribute 'remove_redundant_keys' on 'AnimSequence'\"}, {'property': 'compress_commandlet_version', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'compress_commandlet_version' for attribute 'compress_commandlet_version' on 'AnimSequence'\"}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-run-001:read-only-boundary",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "read-only-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:source-bridge-ready",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "source-bridge-ready",
+        "status": "error",
+        "evidence": "sourceErrors=['skeleton-binding', 'sample-rate', 'curve-coverage', 'sub-frame-boundary', 'root-motion']",
+        "fixPreview": "Fix the Maya animation source row before accepting engine metadata."
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-animsequence-present",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-animsequence-present",
+        "status": "pass",
+        "evidence": "exists=True class=AnimSequence path=/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-skeleton-binding",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-skeleton-binding",
+        "status": "pass",
+        "evidence": "runtime=/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton expected=/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-duration-frame-span",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-duration-frame-span",
+        "status": "pass",
+        "evidence": "playLength=1.2999999523162842 expectedRate=30.0 derivedSpan=39 expectedSpan=39 delta=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-direct-frame-rate",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-direct-frame-rate",
+        "status": "pass",
+        "evidence": "samplingFrameRate=[{'property': 'sampling_frame_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'sampling_frame_rate' for attribute 'sampling_frame_rate' on 'AnimSequence'\"}, {'property': 'target_frame_rate', 'ok': True, 'value': {'text': \"<Struct 'FrameRate' (0x00000AF5DC2C9400) {numerator: 60000, denominator: 1}>\", 'numerator': 60000, 'denominator': 1}, 'error': None}, {'property': 'display_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'display_rate' for attribute 'display_rate' on 'AnimSequence'\"}, {'property': 'imported_sample_rate', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'imported_sample_rate' for attribute 'imported_sample_rate' on 'AnimSequence'\"}, {'property': 'rate_scale', 'ok': True, 'value': 1.0, 'error': None}] readable=True derivedRate=playLength*expectedSampleRate",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-curve-metadata",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-curve-metadata",
+        "status": "warning",
+        "evidence": "required=['Hips.translateZ', 'Hips.rotateY', 'RightFoot.rotateX', 'WeaponSocket.rotateY'] names=[] api=False",
+        "fixPreview": "Expose animation curve names through Unreal Python or keep curve ownership in the Maya L3 source report."
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-root-motion-settings",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-root-motion-settings",
+        "status": "pass",
+        "evidence": "expectedMode=disabled properties=[{'property': 'enable_root_motion', 'ok': True, 'value': False, 'error': None}, {'property': 'root_motion_root_lock', 'ok': True, 'value': '<RootMotionRootLock.REF_POSE: 0>', 'error': None}, {'property': 'force_root_lock', 'ok': True, 'value': False, 'error': None}, {'property': 'use_normalized_root_motion_scale', 'ok': True, 'value': True, 'error': None}, {'property': 'root_motion_settings', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'root_motion_settings' for attribute 'root_motion_settings' on 'AnimSequence'\"}, {'property': 'b_enable_root_motion', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'b_enable_root_motion' for attribute 'b_enable_root_motion' on 'AnimSequence'\"}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:runtime-compression-settings",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-compression-settings",
+        "status": "pass",
+        "evidence": "expected={'allowFrameRangeTrim': False, 'allowRemoveLinearKeys': False} properties=[{'property': 'compression_scheme', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'compression_scheme' for attribute 'compression_scheme' on 'AnimSequence'\"}, {'property': 'bone_compression_settings', 'ok': True, 'value': \"<Object '/ACLPlugin/ACLAnimBoneCompressionSettings.ACLAnimBoneCompressionSettings' (0x00000AF5D7ABFD20) Class 'AnimBoneCompressionSettings'>\", 'error': None}, {'property': 'curve_compression_settings', 'ok': True, 'value': \"<Object '/Engine/Animation/DefaultAnimCurveCompressionSettings.DefaultAnimCurveCompressionSettings' (0x00000AF5D78FE340) Class 'AnimCurveCompressionSettings'>\", 'error': None}, {'property': 'do_not_override_compression', 'ok': True, 'value': False, 'error': None}, {'property': 'remove_redundant_keys', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'remove_redundant_keys' for attribute 'remove_redundant_keys' on 'AnimSequence'\"}, {'property': 'compress_commandlet_version', 'ok': False, 'value': None, 'error': \"AnimSequence: Failed to find property 'compress_commandlet_version' for attribute 'compress_commandlet_version' on 'AnimSequence'\"}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-hero-attack-002:read-only-boundary",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "read-only-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "anim-deep-action:anim-hero-run-001:runtime-curve-metadata",
+        "assetId": "anim-hero-run-001",
+        "ruleId": "runtime-curve-metadata",
+        "owner": "engine-ta",
+        "preview": "Expose animation curve names through Unreal Python or keep curve ownership in the Maya L3 source report."
+      },
+      {
+        "id": "anim-deep-action:anim-hero-attack-002:source-bridge-ready",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "source-bridge-ready",
+        "owner": "animation-ta",
+        "preview": "Fix the Maya animation source row before accepting engine metadata."
+      },
+      {
+        "id": "anim-deep-action:anim-hero-attack-002:runtime-curve-metadata",
+        "assetId": "anim-hero-attack-002",
+        "ruleId": "runtime-curve-metadata",
+        "owner": "engine-ta",
+        "preview": "Expose animation curve names through Unreal Python or keep curve ownership in the Maya L3 source report."
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-animation-deep-facts",
+    "name": "Unreal AnimSequence Deep Facts",
+    "methodSource": "R25 imported public AnimSequence assets + Unreal Python read-only metadata probe",
+    "protocolCarrier": "AnimSequence runtime metadata, derived frame span, skeleton binding, curve/root/compression API visibility",
+    "boundary": {
+      "mutation": "read_only_unreal_runtime_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R41 deepens the R25 Unreal Animation Bridge from asset presence to AnimSequence runtime metadata.",
+    "The collector is read-only: it opens existing public Unreal assets, derives frame spans from play length, and records curve/root/compression API visibility without import or save.",
+    "Blocked rows remain tied to source animation business failures; missing Unreal metadata is separated into reviewer warnings instead of hiding behind a green import result."
+  ]
+}

@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r41-unreal-animation-deep-facts` | `python dcc-hosts/unreal-animation-bridge/scripts/run_deep_facts.py` | Unreal 5.3.2 Python reads 2 existing public AnimSequence assets without import/save, matches 2 / 2 duration frame spans, records curve/root/compression metadata visibility, and keeps assetWrites=0. |
+| `validate-r41-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r41-unreal-animation-deep-facts-presentation-pack")` | DCC Presenter Pack probes 39 key evidence files including Unreal AnimSequence Deep Facts, reports 39 present / 0 missing required files, and exports 30 demo route steps. |
 | `validate-r40-unreal-socket-authoring-executor` | `python dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py` | Unreal 5.3.2 Python selects 1 approved socket operation and holds 1 blocked row; the gate is L3 / Blocked / `unreal_socket_authoring_executor_api_limited` because `socket_name` and `bone_name` are read-only in commandlet-created sockets, with 9 pass, 0 warning, 2 error and assetWrites=0. |
 | `validate-r40-unreal-socket-api-docs` | `UnrealEditor-Cmd -run=pythonscript scripts/unreal_python/probe_socket_api_docs.py` | Captures UE 5.3 socket authoring API docstrings and property write attempts, proving `add_socket(socket, add_to_skeleton=False)` is visible while socket identity fields are read-only. |
 | `validate-r40-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r40-unreal-socket-authoring-executor-presentation-pack")` | DCC Presenter Pack probes 38 key evidence files including Unreal Socket Authoring Executor and API docs, reports 38 present / 0 missing required files, and exports 29 demo route steps. |
