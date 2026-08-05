@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r29-platform-variant-unreal-runtime` | `python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py` | Unreal 5.3.2 Python collects runtime StaticMesh facts for 3 planned variants, reports 0 Ready / 2 Review / 1 Blocked runtime variants, and compares runtime path, LOD, material, Nanite and collision state against the variant plan. |
+| `validate-r29-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r29-platform-variant-unreal-runtime-presentation-pack")` | DCC Presenter Pack probes 26 key evidence files including Platform Variant Unreal Runtime Probe, reports 26 present / 0 missing required files, and exports 18 demo route steps. |
 | `validate-r28-platform-variant-forge` | `python dcc-hosts/platform-variant-forge/scripts/run_smoke.py` | Contract evaluates 2 public source assets and 3 platform variants, reports 2 Ready variants and 1 Blocked Mobile variant, and joins the plan to Unreal preset fact comparison evidence. |
 | `validate-r28-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r28-platform-variant-forge-presentation-pack")` | DCC Presenter Pack probes 25 key evidence files including Platform Variant Forge, reports 25 present / 0 missing required files, and exports 17 demo route steps. |
 | `validate-r27-spatial-authoring-contract` | `python dcc-hosts/spatial-authoring-workbench/scripts/run_smoke.py` | Contract evaluates 2 public spatial authoring rows, reports 1 Ready and 1 Blocked socket/hotspot/pose-transfer sample without entering Maya. |
@@ -167,7 +169,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r28-platform-variant-forge-presentation-pack-20260805-183402.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json
 ```
 
 ## Commands

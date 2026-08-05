@@ -1105,3 +1105,34 @@ ai-tool-ta-dcc-first-showcase-r28 / dcc-first-package@1.25.0
 ```text
 variant plan artifact -> Unreal StaticMesh / material / texture / collision fact probe -> runtime-vs-plan comparison -> Presenter Pack row -> docs
 ```
+
+## R29 循环开发断点：Platform Variant Unreal Runtime Probe
+
+R29 已完成 `Platform Variant Unreal Runtime Probe` L3：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json
+```
+
+R29 结果：`run_unreal_runtime_probe.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public test project，读取 R28 variant plan 后用 Unreal Python 采集 StaticMesh / material slot / LOD / Nanite / collision runtime facts。结果为 3 variants，0 Ready，2 Review，1 intentionally Blocked，21 pass / 4 warning / 2 error。`Review` 来自真实 runtime drift：PC/Mobile HeroPanel 已存在但 runtime LOD 数不足，PC Nanite 策略未满足；`Blocked` 来自 synthetic vehicle TMP 样本缺失源资产和目标资产。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r29 / dcc-first-package@1.26.0
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant-unreal
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Auto LOD / Material Bake Planner`：
+
+```text
+runtime drift artifact -> LOD/material/texture fix plan -> Unreal Python generation contract -> Presenter Pack row -> docs
+```

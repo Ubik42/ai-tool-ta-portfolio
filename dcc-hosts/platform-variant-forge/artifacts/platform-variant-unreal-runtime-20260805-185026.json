@@ -1,0 +1,541 @@
+{
+  "reportVersion": "platform-variant-unreal-runtime@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 18:50:34",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_variant_runtime_assets_collected",
+  "sourcePlan": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+    "reportVersion": "platform-variant-forge-contract@0.1.0",
+    "evidenceLevel": "L3-linked",
+    "l3Status": "platform_variant_plan_joined_to_unreal_facts"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public test fixture only"
+  },
+  "runtimeFacts": {
+    "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M": {
+      "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "lodCount": 1,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "simpleShapeCount": 1,
+      "complexAsSimple": false,
+      "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+      "naniteEnabled": false,
+      "raw": {
+        "lod": {
+          "lodCount": 1,
+          "lodScreenSizes": [],
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "collision": {
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "complexAsSimple": false
+        }
+      }
+    },
+    "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A": {
+      "assetPath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "lodCount": 1,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "simpleShapeCount": 1,
+      "complexAsSimple": false,
+      "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+      "naniteEnabled": false,
+      "raw": {
+        "lod": {
+          "lodCount": 1,
+          "lodScreenSizes": [],
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "collision": {
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "complexAsSimple": false
+        }
+      }
+    },
+    "/Game/AI_Tool_TA/Props/SM_HeroPanel_A": {
+      "assetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "lodCount": 1,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "simpleShapeCount": 1,
+      "complexAsSimple": false,
+      "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+      "naniteEnabled": false,
+      "raw": {
+        "lod": {
+          "lodCount": 1,
+          "lodScreenSizes": [],
+          "sourceModelCount": null,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "collision": {
+          "simpleShapeCount": 1,
+          "shapeCounts": {
+            "box_elems": 0,
+            "sphere_elems": 0,
+            "sphyl_elems": 0,
+            "convex_elems": 1,
+            "tapered_capsule_elems": 0
+          },
+          "collisionTraceFlag": "<CollisionTraceFlag.CTF_USE_DEFAULT: 0>",
+          "complexAsSimple": false
+        }
+      }
+    },
+    "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP": {
+      "assetPath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "exists": false,
+      "className": null,
+      "pathMatched": true,
+      "lodCount": 0,
+      "vertexCount": 0,
+      "triangleCount": 0,
+      "materialSlotCount": 0,
+      "materialPaths": [],
+      "simpleShapeCount": 0,
+      "complexAsSimple": false,
+      "collisionTraceFlag": null,
+      "naniteEnabled": null,
+      "raw": {
+        "lod": {
+          "lodCount": 0,
+          "lod0VertexCount": 0,
+          "lod0TriangleCount": 0
+        },
+        "material": {
+          "slotCount": 0,
+          "materialPaths": [],
+          "rows": []
+        },
+        "collision": {
+          "simpleShapeCount": 0,
+          "complexAsSimple": false,
+          "collisionTraceFlag": null
+        }
+      }
+    }
+  },
+  "comparison": {
+    "schema": "platform-variant-unreal-runtime-comparison@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "variantCount": 3,
+      "readyVariants": 0,
+      "reviewVariants": 2,
+      "blockedVariants": 1,
+      "pass": 21,
+      "warning": 4,
+      "error": 2,
+      "readyVariantIds": [],
+      "reviewVariantIds": [
+        "variant-hero-panel-001:mobile",
+        "variant-hero-panel-001:pc"
+      ],
+      "blockedVariantIds": [
+        "variant-vehicle-shell-tmp-002:mobile"
+      ]
+    },
+    "rows": [
+      {
+        "id": "variant-hero-panel-001:pc:runtime-source-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-source-asset",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-target-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-target-asset",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-path-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-path-policy",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-lod-count",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "evidence": "actual=1 expected>=2",
+        "fixPreview": "Generate missing runtime LODs before platform signoff."
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-triangle-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-triangle-budget",
+        "status": "pass",
+        "evidence": "actual=0 expected<=42000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-material-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-material-budget",
+        "status": "pass",
+        "evidence": "actual=1 expected<=4",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-nanite-policy",
+        "status": "warning",
+        "evidence": "actual=False expected=True",
+        "fixPreview": "Apply the platform Nanite policy to the runtime StaticMesh asset."
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-collision-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-collision-policy",
+        "status": "pass",
+        "evidence": "simple=1 expected<=5 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:plan-source-evidence",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "plan-source-evidence",
+        "status": "pass",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-source-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-source-asset",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-target-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-path-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-path-policy",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-lod-count",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "evidence": "actual=1 expected>=3",
+        "fixPreview": "Generate missing runtime LODs before platform signoff."
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-triangle-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-triangle-budget",
+        "status": "pass",
+        "evidence": "actual=0 expected<=9800",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-material-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-material-budget",
+        "status": "pass",
+        "evidence": "actual=1 expected<=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-nanite-policy",
+        "status": "pass",
+        "evidence": "actual=False expected=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-collision-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-collision-policy",
+        "status": "pass",
+        "evidence": "simple=1 expected<=3 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:plan-source-evidence",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "plan-source-evidence",
+        "status": "pass",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-source-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-source-asset",
+        "status": "error",
+        "evidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "fixPreview": "Create or import the source Unreal asset before deriving variants."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-target-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "error",
+        "evidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "fixPreview": "Create the planned platform variant asset under the target path."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-path-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-path-policy",
+        "status": "pass",
+        "evidence": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-lod-count",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "evidence": "actual=0 expected>=1",
+        "fixPreview": "Generate missing runtime LODs before platform signoff."
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-triangle-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-triangle-budget",
+        "status": "pass",
+        "evidence": "actual=0 expected<=55000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-material-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-material-budget",
+        "status": "pass",
+        "evidence": "actual=0 expected<=6",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-nanite-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-nanite-policy",
+        "status": "pass",
+        "evidence": "actual=None expected=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-collision-policy",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-collision-policy",
+        "status": "pass",
+        "evidence": "simple=0 expected<=9 complexAsSimple=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:plan-source-evidence",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "plan-source-evidence",
+        "status": "pass",
+        "evidence": "Blocked",
+        "fixPreview": "None"
+      }
+    ],
+    "runtimeActions": [
+      {
+        "id": "runtime-action:variant-hero-panel-001:pc:runtime-lod-count",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "preview": "Generate missing runtime LODs before platform signoff."
+      },
+      {
+        "id": "runtime-action:variant-hero-panel-001:pc:runtime-nanite-policy",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-nanite-policy",
+        "status": "warning",
+        "preview": "Apply the platform Nanite policy to the runtime StaticMesh asset."
+      },
+      {
+        "id": "runtime-action:variant-hero-panel-001:mobile:runtime-lod-count",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "preview": "Generate missing runtime LODs before platform signoff."
+      },
+      {
+        "id": "runtime-action:variant-vehicle-shell-tmp-002:mobile:runtime-source-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-source-asset",
+        "status": "error",
+        "preview": "Create or import the source Unreal asset before deriving variants."
+      },
+      {
+        "id": "runtime-action:variant-vehicle-shell-tmp-002:mobile:runtime-target-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "error",
+        "preview": "Create the planned platform variant asset under the target path."
+      },
+      {
+        "id": "runtime-action:variant-vehicle-shell-tmp-002:mobile:runtime-lod-count",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-lod-count",
+        "status": "warning",
+        "preview": "Generate missing runtime LODs before platform signoff."
+      }
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-unreal-runtime-probe",
+    "name": "Platform Variant Unreal Runtime Probe",
+    "methodSource": "Platform Variant Forge runtime-vs-plan verification",
+    "protocolCarrier": "variant plan artifact + Unreal Python StaticMesh facts",
+    "boundary": {
+      "mutation": "public_test_project_fixture_write",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public test fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R29 verifies the R28 PC/Mobile variant plan against actual Unreal StaticMesh runtime facts.",
+    "The probe separates plan-ready rows from runtime drift, so reviewer can see whether a generated variant is truly engine-ready.",
+    "Any writes are limited to synthetic public Unreal fixture assets under /Game/AI_Tool_TA."
+  ]
+}

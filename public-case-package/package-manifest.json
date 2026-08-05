@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r28",
-    "packageVersion": "dcc-first-package@1.25.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r29",
+    "packageVersion": "dcc-first-package@1.26.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -29,7 +29,7 @@
     "gate": "CapturePending",
     "sourceCaseGate": "Review",
     "moduleCount": 5,
-    "artifactCount": 12,
+    "artifactCount": 13,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "businessRouteSteps": 7,
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 25,
-    "presentationPackPresentEvidenceFiles": 25,
+    "presentationPackEvidenceFiles": 26,
+    "presentationPackPresentEvidenceFiles": 26,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 17,
+    "presentationPackDemoRouteSteps": 18,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -265,15 +265,29 @@
     "platformVariantForgeWarningChecks": 1,
     "platformVariantForgeErrorChecks": 8,
     "platformVariantForgeSourceGate": "Blocked",
-    "platformVariantForgeSourceFactRows": 10
+    "platformVariantForgeSourceFactRows": 10,
+    "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
+    "platformVariantUnrealRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
+    "platformVariantUnrealRuntimeEvidenceLevel": "L3",
+    "platformVariantUnrealRuntimeL3Status": "unreal_variant_runtime_assets_collected",
+    "platformVariantUnrealRuntimeGate": "Blocked",
+    "platformVariantUnrealRuntimeEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "platformVariantUnrealRuntimeAssetWrites": 0,
+    "platformVariantUnrealRuntimeVariants": 3,
+    "platformVariantUnrealRuntimeReady": 0,
+    "platformVariantUnrealRuntimeReview": 2,
+    "platformVariantUnrealRuntimeBlocked": 1,
+    "platformVariantUnrealRuntimePassChecks": 21,
+    "platformVariantUnrealRuntimeWarningChecks": 4,
+    "platformVariantUnrealRuntimeErrorChecks": 2
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 316,
-    "requiredEvidenceCount": 250,
+    "evidenceCount": 343,
+    "requiredEvidenceCount": 270,
     "packageFileCount": 12,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 109,
+    "validationCommandCount": 112,
     "manifestArtifactCount": 68
   },
   "moduleOrder": [
@@ -335,7 +349,7 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
       "required": true
     },
     {
@@ -358,7 +372,7 @@
     }
   ],
   "keyEvidence": [
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
     "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
     "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
@@ -461,7 +475,7 @@
     },
     {
       "id": "dcc-first-presentation-pack",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r28-platform-variant-forge-presentation-pack-20260805-183402.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r29-platform-variant-unreal-runtime-presentation-pack-20260805-185113.json",
       "required": true
     },
     {
@@ -496,5 +510,19 @@
     "python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_smoke.py"
-  ]
+  ],
+  "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
+  "platformVariantUnrealRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
+  "platformVariantUnrealRuntimeEvidenceLevel": "L3",
+  "platformVariantUnrealRuntimeL3Status": "unreal_variant_runtime_assets_collected",
+  "platformVariantUnrealRuntimeGate": "Blocked",
+  "platformVariantUnrealRuntimeEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "platformVariantUnrealRuntimeAssetWrites": 0,
+  "platformVariantUnrealRuntimeVariants": 3,
+  "platformVariantUnrealRuntimeReady": 0,
+  "platformVariantUnrealRuntimeReview": 2,
+  "platformVariantUnrealRuntimeBlocked": 1,
+  "platformVariantUnrealRuntimePassChecks": 21,
+  "platformVariantUnrealRuntimeWarningChecks": 4,
+  "platformVariantUnrealRuntimeErrorChecks": 2
 }
