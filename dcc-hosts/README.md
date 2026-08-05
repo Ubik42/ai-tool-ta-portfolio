@@ -8,6 +8,7 @@
 maya-auroraview-host/
 blender-rule-adapter/
 3dsmax-rule-adapter/
+houdini-rule-adapter/
 unreal-handoff-inspector/
 animation-continuity-lab/
 unreal-animation-bridge/
@@ -18,6 +19,8 @@ unreal-animation-bridge/
 `blender-rule-adapter` 是当前第一条非 Maya 证据线：用公开 synthetic fixture 把 Blender 的 object custom properties、collections、material slots、UV 和 collision proxy 归一化为 Cross-DCC Rule Matrix 的规则输入。R22 已通过 Blender 5.2.0 LTS `bpy` L3 runtime smoke，导出 `blender-rule-adapter-bpy-l3@0.1.0`。
 
 `3dsmax-rule-adapter` 是 R21/R22 的非 Maya 证据线：用公开 synthetic fixture 把 3ds Max 的 user properties、layer/export root、LOD suffix、material slot、map channel、transform 和 collision proxy 归一化为 Cross-DCC Rule Matrix 输入。R22 已通过 3ds Max 2022 `pymxs` L3 runtime smoke，导出 `max-rule-adapter-pymxs-l3@0.1.0`。
+
+`houdini-rule-adapter` 是 R56 新增的程序化资产证据线：用公开 synthetic fixture 把 Houdini HDA metadata、detail attributes、`OUT_*` role nodes、packed instance prototypes、PDG wedge summaries 和 frozen bake receipts 归一化为 Cross-DCC Rule Matrix 输入。当前已导出 `houdini-rule-adapter-contract@0.1.0` 和 hython L3 readiness artifact；本机未发现 `hython.exe`，所以 gate 正确保持 `Blocked`，collector / launcher 已 ready。
 
 `unreal-handoff-inspector` 是当前第一条 engine-side 证据线：用公开 synthetic fixture 把 DCC import intent 放到 Unreal Content Registry / AssetImportTask 语义下检查。当前已通过 `UnrealEditor-Cmd.exe -run=pythonscript` 跑通 L3++ smoke，公开 test project 内生成 `SM_HeroPanel_A` StaticMesh 和 `M_HeroPanel` Material，并从 StaticMesh 读取 source import data、material slot、LOD count 和 collision settings 四类 engine facts。R17 继续把这些 facts 接到 PC / Mobile preset policy 和 exception waiver，输出 10 条 matched / drift / waived / blocked 证据行。
 

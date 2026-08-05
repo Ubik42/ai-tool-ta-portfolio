@@ -1,0 +1,53 @@
+{
+  "reportVersion": "houdini-rule-adapter-l3-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Houdini Rule Adapter",
+  "generatedAt": "2026-08-06 04:19:56",
+  "evidenceLevel": "L2+",
+  "gate": "Blocked",
+  "l3Status": "blocked_by_missing_hython",
+  "houdiniRuntime": {
+    "runner": "hython.exe",
+    "available": false,
+    "path": null,
+    "searched": [
+      "C:\\Program Files\\Side Effects Software\\Houdini 21.0.440\\bin\\hython.exe",
+      "C:\\Program Files\\Side Effects Software\\Houdini 20.5.654\\bin\\hython.exe",
+      "C:\\Program Files\\Side Effects Software\\Houdini 20.0.724\\bin\\hython.exe",
+      "C:\\Program Files\\Side Effects Software\\Houdini 19.5.805\\bin\\hython.exe",
+      "D:\\Program Files\\Side Effects Software\\Houdini 21.0.440\\bin\\hython.exe",
+      "D:\\Program Files\\Side Effects Software\\Houdini 20.5.654\\bin\\hython.exe",
+      "D:\\Program Files\\Side Effects Software\\Houdini 20.0.724\\bin\\hython.exe"
+    ],
+    "runtimeLaunchPolicy": "automatic_when_hython_discovered"
+  },
+  "collector": {
+    "script": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\houdini-rule-adapter\\scripts\\run_houdini_l3.py",
+    "ready": true,
+    "expectedCommand": "hython D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\houdini-rule-adapter\\scripts\\run_houdini_l3.py",
+    "reportWhenAvailable": "houdini-rule-adapter-hython-l3@0.1.0"
+  },
+  "boundary": {
+    "mutation": "no_houdini_runtime_invoked",
+    "sceneWrites": 0,
+    "assetWrites": 0,
+    "productionWrites": 0
+  },
+  "nextActions": [
+    {
+      "id": "install-or-locate-hython",
+      "state": "blocked",
+      "owner": "tool-ta",
+      "reason": "hython.exe was not found in PATH, AI_TOOL_TA_HYTHON, or standard Houdini install locations."
+    },
+    {
+      "id": "run-hython-l3-smoke",
+      "state": "ready_after_hython",
+      "command": "python D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\houdini-rule-adapter\\scripts\\run_l3_smoke.py"
+    }
+  ],
+  "reviewerClaims": [
+    "The Houdini contract, hython launcher and hou collector are present and compile in normal Python.",
+    "The current machine cannot complete Houdini L3 because hython.exe is not installed or discoverable.",
+    "No production HIP, cache, asset or engine data is mutated without a Houdini runtime."
+  ]
+}

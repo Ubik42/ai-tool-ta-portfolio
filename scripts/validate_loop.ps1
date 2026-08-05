@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -34,6 +34,7 @@ $UnrealSocket = Join-Path $Root "dcc-hosts\unreal-socket-import-checker"
 $PlatformVariant = Join-Path $Root "dcc-hosts\platform-variant-forge"
 $BlenderAdapter = Join-Path $Root "dcc-hosts\blender-rule-adapter"
 $MaxAdapter = Join-Path $Root "dcc-hosts\3dsmax-rule-adapter"
+$HoudiniAdapter = Join-Path $Root "dcc-hosts\houdini-rule-adapter"
 $PortfolioSite = Join-Path $Root "showcases\portfolio-site"
 $MayapyCandidates = @(
     "C:\Program Files\Autodesk\Maya2026\bin\mayapy.exe",
@@ -63,6 +64,11 @@ $QuickPythonFiles = @(
     (Join-Path $MaxAdapter "max_rule_adapter\texture_manifest_link.py"),
     (Join-Path $MaxAdapter "scripts\run_l3_smoke.py"),
     (Join-Path $MaxAdapter "scripts\run_texture_manifest_link.py"),
+    (Join-Path $HoudiniAdapter "houdini_rule_adapter\contract.py"),
+    (Join-Path $HoudiniAdapter "houdini_rule_adapter\hou_collector.py"),
+    (Join-Path $HoudiniAdapter "scripts\run_smoke.py"),
+    (Join-Path $HoudiniAdapter "scripts\run_houdini_l3.py"),
+    (Join-Path $HoudiniAdapter "scripts\run_l3_smoke.py"),
     (Join-Path $AnimationLab "animation_continuity_lab\contract.py"),
     (Join-Path $AnimationLab "animation_continuity_lab\maya_collector.py"),
     (Join-Path $AnimationLab "scripts\run_smoke.py"),
@@ -186,12 +192,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r55-groom-runtime-facts-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r56-houdini-rule-adapter-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.52.0", summary
-assert summary["present_evidence_files"] == 53, summary
+assert summary["package_version"] == "dcc-first-package@1.53.0", summary
+assert summary["present_evidence_files"] == 55, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 43, summary
+assert summary["demo_route_steps"] == 45, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -435,6 +441,15 @@ if ($Tier -in @("max", "full")) {
 if ($Tier -in @("max-texture-manifest-link", "full")) {
     Invoke-Step "3ds Max material texture manifest link" {
         python (Join-Path $MaxAdapter "scripts\run_texture_manifest_link.py")
+    }
+}
+
+if ($Tier -in @("houdini", "full")) {
+    Invoke-Step "Houdini rule adapter contract smoke" {
+        python (Join-Path $HoudiniAdapter "scripts\run_smoke.py")
+    }
+    Invoke-Step "Houdini hython L3 readiness" {
+        python (Join-Path $HoudiniAdapter "scripts\run_l3_smoke.py")
     }
 }
 

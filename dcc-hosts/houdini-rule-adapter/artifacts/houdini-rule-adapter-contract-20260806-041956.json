@@ -1,0 +1,488 @@
+{
+  "reportVersion": "houdini-rule-adapter-contract@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Houdini Rule Adapter",
+  "generatedAt": "2026-08-06 04:19:56",
+  "evidenceLevel": "L2+",
+  "l3Status": "blocked_by_missing_hython",
+  "houdiniRuntime": {
+    "runner": "hython.exe",
+    "available": false,
+    "path": null,
+    "version": null
+  },
+  "fixture": {
+    "path": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\houdini-rule-adapter\\fixtures\\synthetic_houdini_scene.json",
+    "schema": "synthetic-houdini-scene@0.1.0",
+    "intent": "Public-safe fixture proving the Houdini procedural asset adapter contract for Cross-DCC Rule Matrix. It contains one ready HDA output and one intentionally blocked procedural asset."
+  },
+  "adapter": {
+    "id": "houdini",
+    "name": "Houdini Rule Adapter",
+    "methodSource": "procedural HDA publish checks / Cross-DCC Rule Matrix",
+    "protocolCarrier": "HDA metadata + detail attrs + output SOP groups + PDG bake receipts",
+    "boundary": {
+      "mutation": "contract_validation_only",
+      "sceneWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "facts": {
+    "schema": "cross-dcc-rule-input@0.1.0",
+    "scene": {
+      "sourceDcc": "Houdini",
+      "unitScale": 1.0,
+      "upAxis": "Y",
+      "assetCount": 2,
+      "runtimeCollected": false,
+      "runtimeNodeCount": 0,
+      "houdiniVersion": null
+    },
+    "assets": [
+      {
+        "assetId": "houdini-prop-001",
+        "assetLabel": "Ready procedural cliff kit",
+        "sourceDcc": "Houdini",
+        "normalizedSchema": "cross-dcc-rule-input@0.1.0",
+        "protocolCarrier": "HDA node metadata + detail attributes + SOP output nodes + PDG bake receipt",
+        "sourceFields": {
+          "protocol": "detail attribute aiToolTaProtocol",
+          "hda": "hou.Node type / locked state / parms fingerprint",
+          "outputs": "OUT_* SOP nodes and role groups",
+          "attributes": "geometry point/prim/detail attributes",
+          "pdg": "TOP graph wedge result summary",
+          "bake": "frozen bgeo/cache receipt"
+        },
+        "normalized": {
+          "asset.protocol.schema": "asset-protocol@dcc-r9",
+          "asset.delivery.platform": "pc",
+          "asset.delivery.collision": "proxy",
+          "asset.delivery.lodCount": 2,
+          "asset.render.materialSlots": 2,
+          "asset.render.hasUv": true,
+          "asset.render.hasMaterialPath": true,
+          "asset.render.primitives": 10300,
+          "asset.render.packedPrimitives": 128,
+          "asset.procedural.hdaLocked": true,
+          "asset.procedural.nodePath": "/obj/AI_TOOL_TA_CLF_001",
+          "asset.procedural.typeName": "ai_tool_ta::cliff_kit::1.0",
+          "asset.procedural.parmFingerprint": "seed=42;variant=pc;lod=auto;scatter=approved",
+          "asset.procedural.stablePrototypeCount": 2,
+          "asset.procedural.prototypeCount": 2,
+          "asset.procedural.pdgWedgeCount": 2,
+          "asset.procedural.pdgApprovedWedges": 2,
+          "asset.procedural.pdgFailedWedges": 0,
+          "asset.procedural.bakeFrozen": true,
+          "asset.procedural.bakeExists": true,
+          "asset.procedural.bakeSha256": "public-fixture-houdini-prop-001"
+        },
+        "raw": {
+          "outputs": [
+            "OUT_RENDER_LOD0",
+            "OUT_RENDER_LOD1",
+            "OUT_COLLISION"
+          ],
+          "renderOutputs": [
+            "OUT_RENDER_LOD0",
+            "OUT_RENDER_LOD1"
+          ],
+          "collisionOutputs": [
+            "OUT_COLLISION"
+          ],
+          "lods": [
+            "LOD0",
+            "LOD1"
+          ],
+          "groups": [
+            "UCX_cliff_001",
+            "collision_proxy",
+            "mat_cliff_body",
+            "render"
+          ],
+          "attributes": [
+            "N",
+            "P",
+            "ai_lod",
+            "ai_variant",
+            "collision_complexity",
+            "name",
+            "shop_materialpath",
+            "uv"
+          ],
+          "materialSlots": [
+            "MI_Cliff_Body",
+            "MI_Cliff_Moss"
+          ],
+          "packedInstancePrototypes": [
+            {
+              "name": "rock_a",
+              "stableId": "proto-rock-a",
+              "approved": true
+            },
+            {
+              "name": "rock_b",
+              "stableId": "proto-rock-b",
+              "approved": true
+            }
+          ],
+          "pdg": {
+            "graph": "/tasks/asset_publish",
+            "wedgeCount": 2,
+            "approvedWedges": 2,
+            "failedWedges": 0
+          },
+          "bakeReceipt": {
+            "path": "<repo>/fixtures/houdini/cache/houdini-prop-001.bgeo.sc",
+            "exists": true,
+            "sha256": "public-fixture-houdini-prop-001",
+            "frozen": true
+          }
+        }
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "assetLabel": "Blocked temporary fracture setup",
+        "sourceDcc": "Houdini",
+        "normalizedSchema": "cross-dcc-rule-input@0.1.0",
+        "protocolCarrier": "HDA node metadata + detail attributes + SOP output nodes + PDG bake receipt",
+        "sourceFields": {
+          "protocol": "detail attribute aiToolTaProtocol",
+          "hda": "hou.Node type / locked state / parms fingerprint",
+          "outputs": "OUT_* SOP nodes and role groups",
+          "attributes": "geometry point/prim/detail attributes",
+          "pdg": "TOP graph wedge result summary",
+          "bake": "frozen bgeo/cache receipt"
+        },
+        "normalized": {
+          "asset.protocol.schema": "asset-protocol@dcc-r9",
+          "asset.delivery.platform": "mobile",
+          "asset.delivery.collision": "missing",
+          "asset.delivery.lodCount": 1,
+          "asset.render.materialSlots": 2,
+          "asset.render.hasUv": false,
+          "asset.render.hasMaterialPath": true,
+          "asset.render.primitives": 9800,
+          "asset.render.packedPrimitives": 240,
+          "asset.procedural.hdaLocked": false,
+          "asset.procedural.nodePath": "/obj/TMP_fracture_test",
+          "asset.procedural.typeName": "ai_tool_ta::fracture_wall::wip",
+          "asset.procedural.parmFingerprint": "seed=$F;variant=temp;lod=none;scatter=wip",
+          "asset.procedural.stablePrototypeCount": 0,
+          "asset.procedural.prototypeCount": 2,
+          "asset.procedural.pdgWedgeCount": 6,
+          "asset.procedural.pdgApprovedWedges": 1,
+          "asset.procedural.pdgFailedWedges": 2,
+          "asset.procedural.bakeFrozen": false,
+          "asset.procedural.bakeExists": false,
+          "asset.procedural.bakeSha256": ""
+        },
+        "raw": {
+          "outputs": [
+            "OUT_RENDER"
+          ],
+          "renderOutputs": [
+            "OUT_RENDER"
+          ],
+          "collisionOutputs": [],
+          "lods": [
+            "LOD0"
+          ],
+          "groups": [
+            "render"
+          ],
+          "attributes": [
+            "N",
+            "P",
+            "shop_materialpath"
+          ],
+          "materialSlots": [
+            "MI_Dust",
+            "TEMP_Fracture_Mat"
+          ],
+          "packedInstancePrototypes": [
+            {
+              "name": "piece_001",
+              "stableId": "",
+              "approved": false
+            },
+            {
+              "name": "tmp_chunk",
+              "stableId": "tmp",
+              "approved": false
+            }
+          ],
+          "pdg": {
+            "graph": "/tasks/tmp_fracture_cache",
+            "wedgeCount": 6,
+            "approvedWedges": 1,
+            "failedWedges": 2
+          },
+          "bakeReceipt": {
+            "path": "",
+            "exists": false,
+            "sha256": "",
+            "frozen": false
+          }
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "houdini-rule-adapter-evaluation@0.1.0",
+    "summary": {
+      "assets": 2,
+      "ready": 1,
+      "review": 0,
+      "blocked": 1,
+      "pass": 11,
+      "warning": 2,
+      "error": 5,
+      "gate": "Blocked"
+    },
+    "evaluations": [
+      {
+        "id": "houdini-prop-001:protocol-carrier",
+        "assetId": "houdini-prop-001",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:unit-up-axis",
+        "assetId": "houdini-prop-001",
+        "ruleId": "unit-up-axis",
+        "label": "Unit / up axis",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "unitScale=1.0 upAxis=Y",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:hda-definition-locked",
+        "assetId": "houdini-prop-001",
+        "ruleId": "hda-definition-locked",
+        "label": "HDA locked definition",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "locked=True node=/obj/AI_TOOL_TA_CLF_001 type=ai_tool_ta::cliff_kit::1.0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:output-role-contract",
+        "assetId": "houdini-prop-001",
+        "ruleId": "output-role-contract",
+        "label": "Output role contract",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "render=['OUT_RENDER_LOD0', 'OUT_RENDER_LOD1'] collision=['OUT_COLLISION']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:geometry-attribute-contract",
+        "assetId": "houdini-prop-001",
+        "ruleId": "geometry-attribute-contract",
+        "label": "Geometry attributes",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "attrs=N,P,ai_lod,ai_variant,collision_complexity,name,shop_materialpath,uv",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:lod-and-variant-contract",
+        "assetId": "houdini-prop-001",
+        "ruleId": "lod-and-variant-contract",
+        "label": "LOD / PDG variants",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "lods=['LOD0', 'LOD1'] wedges=2/2 failed=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:packed-instance-stability",
+        "assetId": "houdini-prop-001",
+        "ruleId": "packed-instance-stability",
+        "label": "Packed instance stability",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "2/2 stable",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:triangle-budget",
+        "assetId": "houdini-prop-001",
+        "ruleId": "triangle-budget",
+        "label": "Triangle budget",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "renderPrimitives=10300 budget=20000",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-prop-001:bake-receipt-frozen",
+        "assetId": "houdini-prop-001",
+        "ruleId": "bake-receipt-frozen",
+        "label": "Bake receipt",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "frozen=True exists=True sha=public-fixture-houdini-prop-001",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-fx-002:protocol-carrier",
+        "assetId": "houdini-fx-002",
+        "ruleId": "protocol-carrier",
+        "label": "Protocol carrier",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "asset-protocol@dcc-r9",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-fx-002:unit-up-axis",
+        "assetId": "houdini-fx-002",
+        "ruleId": "unit-up-axis",
+        "label": "Unit / up axis",
+        "status": "pass",
+        "reason": "ok",
+        "evidence": "unitScale=1.0 upAxis=Y",
+        "fixPreview": "None"
+      },
+      {
+        "id": "houdini-fx-002:hda-definition-locked",
+        "assetId": "houdini-fx-002",
+        "ruleId": "hda-definition-locked",
+        "label": "HDA locked definition",
+        "status": "error",
+        "reason": "Publishable procedural assets need a locked HDA definition and non-TMP node path.",
+        "evidence": "locked=False node=/obj/TMP_fracture_test type=ai_tool_ta::fracture_wall::wip",
+        "fixPreview": "Lock the HDA definition and move TMP nodes into owner review."
+      },
+      {
+        "id": "houdini-fx-002:output-role-contract",
+        "assetId": "houdini-fx-002",
+        "ruleId": "output-role-contract",
+        "label": "Output role contract",
+        "status": "error",
+        "reason": "Houdini publish branch must expose render and collision outputs.",
+        "evidence": "render=['OUT_RENDER'] collision=[]",
+        "fixPreview": "Create OUT_RENDER_* and OUT_COLLISION SOP nodes or attach a collision waiver."
+      },
+      {
+        "id": "houdini-fx-002:geometry-attribute-contract",
+        "assetId": "houdini-fx-002",
+        "ruleId": "geometry-attribute-contract",
+        "label": "Geometry attributes",
+        "status": "error",
+        "reason": "Geometry must carry uv and shop_materialpath attributes before handoff.",
+        "evidence": "attrs=N,P,shop_materialpath",
+        "fixPreview": "Author uv attribute and material path attributes on render outputs."
+      },
+      {
+        "id": "houdini-fx-002:lod-and-variant-contract",
+        "assetId": "houdini-fx-002",
+        "ruleId": "lod-and-variant-contract",
+        "label": "LOD / PDG variants",
+        "status": "warning",
+        "reason": "Procedural assets need at least two LOD render outputs and no failed PDG wedges.",
+        "evidence": "lods=['LOD0'] wedges=1/6 failed=2",
+        "fixPreview": "Cook approved wedges and publish LOD1 before export."
+      },
+      {
+        "id": "houdini-fx-002:packed-instance-stability",
+        "assetId": "houdini-fx-002",
+        "ruleId": "packed-instance-stability",
+        "label": "Packed instance stability",
+        "status": "error",
+        "reason": "Packed prototypes require stable ids and owner-approved prototype rows.",
+        "evidence": "0/2 stable",
+        "fixPreview": "Assign stable prototype ids and remove TMP prototype rows."
+      },
+      {
+        "id": "houdini-fx-002:triangle-budget",
+        "assetId": "houdini-fx-002",
+        "ruleId": "triangle-budget",
+        "label": "Triangle budget",
+        "status": "warning",
+        "reason": "Render primitive count must fit the platform budget.",
+        "evidence": "renderPrimitives=9800 budget=5000",
+        "fixPreview": "Lower scatter density, publish LOD, or request platform waiver."
+      },
+      {
+        "id": "houdini-fx-002:bake-receipt-frozen",
+        "assetId": "houdini-fx-002",
+        "ruleId": "bake-receipt-frozen",
+        "label": "Bake receipt",
+        "status": "error",
+        "reason": "Procedural outputs must have a frozen cache/bake receipt before engine handoff.",
+        "evidence": "frozen=False exists=False sha=",
+        "fixPreview": "Freeze cache and write bgeo/USD receipt with sha256."
+      }
+    ],
+    "fixPreview": [
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "hda-definition-locked",
+        "status": "error",
+        "preview": "Lock the HDA definition and move TMP nodes into owner review.",
+        "safeAuto": false,
+        "ownerRequired": true
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "output-role-contract",
+        "status": "error",
+        "preview": "Create OUT_RENDER_* and OUT_COLLISION SOP nodes or attach a collision waiver.",
+        "safeAuto": false,
+        "ownerRequired": true
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "geometry-attribute-contract",
+        "status": "error",
+        "preview": "Author uv attribute and material path attributes on render outputs.",
+        "safeAuto": false,
+        "ownerRequired": true
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "lod-and-variant-contract",
+        "status": "warning",
+        "preview": "Cook approved wedges and publish LOD1 before export.",
+        "safeAuto": true,
+        "ownerRequired": false
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "packed-instance-stability",
+        "status": "error",
+        "preview": "Assign stable prototype ids and remove TMP prototype rows.",
+        "safeAuto": false,
+        "ownerRequired": true
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "triangle-budget",
+        "status": "warning",
+        "preview": "Lower scatter density, publish LOD, or request platform waiver.",
+        "safeAuto": true,
+        "ownerRequired": false
+      },
+      {
+        "assetId": "houdini-fx-002",
+        "ruleId": "bake-receipt-frozen",
+        "status": "error",
+        "preview": "Freeze cache and write bgeo/USD receipt with sha256.",
+        "safeAuto": false,
+        "ownerRequired": true
+      }
+    ]
+  },
+  "reviewerClaims": [
+    "Houdini adapter normalizes HDA state, detail attributes, OUT_* role nodes, packed instance prototypes, PDG wedge results and bake receipts into the same Cross-DCC rule input shape.",
+    "The fixture separates a publishable procedural environment asset from a TMP fracture setup blocked by unstable parms, missing collision, missing UV and unfrozen bake receipt.",
+    "No production HIP, cache, asset or engine data is mutated by the contract pass."
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema": "synthetic-houdini-scene@0.1.0",
+  "intent": "Public-safe fixture proving the Houdini procedural asset adapter contract for Cross-DCC Rule Matrix. It contains one ready HDA output and one intentionally blocked procedural asset.",
+  "scene": {
+    "sourceDcc": "Houdini",
+    "unitScale": 1.0,
+    "upAxis": "Y",
+    "expectedHoudiniVersion": "20.x/21.x",
+    "hipName": "ai_tool_ta_houdini_rule_fixture.hip"
+  },
+  "assets": [
+    {
+      "id": "houdini-prop-001",
+      "label": "Ready procedural cliff kit",
+      "hda": {
+        "nodePath": "/obj/AI_TOOL_TA_CLF_001",
+        "typeName": "ai_tool_ta::cliff_kit::1.0",
+        "definitionLocked": true,
+        "parmFingerprint": "seed=42;variant=pc;lod=auto;scatter=approved"
+      },
+      "detailAttributes": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "role": "procedural_environment",
+          "platform": "pc",
+          "collision": "proxy",
+          "owner": "world-art",
+          "budget": {
+            "triangles": 18000,
+            "textures": 4,
+            "instances": 120
+          }
+        },
+        "asset_id": "houdini-prop-001",
+        "variant_id": "pc_cliff_a",
+        "source_seed": 42
+      },
+      "outputs": [
+        {
+          "name": "OUT_RENDER_LOD0",
+          "role": "render",
+          "lod": "LOD0",
+          "groups": ["render", "mat_cliff_body"],
+          "attributes": ["P", "N", "uv", "shop_materialpath", "ai_lod", "ai_variant"],
+          "primitives": 8200,
+          "packedPrimitives": 96,
+          "materialSlots": ["MI_Cliff_Body", "MI_Cliff_Moss"]
+        },
+        {
+          "name": "OUT_RENDER_LOD1",
+          "role": "render",
+          "lod": "LOD1",
+          "groups": ["render", "mat_cliff_body"],
+          "attributes": ["P", "N", "uv", "shop_materialpath", "ai_lod", "ai_variant"],
+          "primitives": 2100,
+          "packedPrimitives": 32,
+          "materialSlots": ["MI_Cliff_Body"]
+        },
+        {
+          "name": "OUT_COLLISION",
+          "role": "collision",
+          "lod": "collision",
+          "groups": ["collision_proxy", "UCX_cliff_001"],
+          "attributes": ["P", "name", "collision_complexity"],
+          "primitives": 64,
+          "packedPrimitives": 0,
+          "materialSlots": []
+        }
+      ],
+      "packedInstancePrototypes": [
+        {"name": "rock_a", "stableId": "proto-rock-a", "approved": true},
+        {"name": "rock_b", "stableId": "proto-rock-b", "approved": true}
+      ],
+      "pdg": {
+        "graph": "/tasks/asset_publish",
+        "wedgeCount": 2,
+        "approvedWedges": 2,
+        "failedWedges": 0
+      },
+      "bakeReceipt": {
+        "path": "<repo>/fixtures/houdini/cache/houdini-prop-001.bgeo.sc",
+        "exists": true,
+        "sha256": "public-fixture-houdini-prop-001",
+        "frozen": true
+      }
+    },
+    {
+      "id": "houdini-fx-002",
+      "label": "Blocked temporary fracture setup",
+      "hda": {
+        "nodePath": "/obj/TMP_fracture_test",
+        "typeName": "ai_tool_ta::fracture_wall::wip",
+        "definitionLocked": false,
+        "parmFingerprint": "seed=$F;variant=temp;lod=none;scatter=wip"
+      },
+      "detailAttributes": {
+        "aiToolTaProtocol": {
+          "schema": "asset-protocol@dcc-r9",
+          "role": "destruction_setpiece",
+          "platform": "mobile",
+          "collision": "missing",
+          "owner": "fx",
+          "budget": {
+            "triangles": 4500,
+            "textures": 2,
+            "instances": 32
+          }
+        },
+        "asset_id": "houdini-fx-002",
+        "variant_id": "tmp_fracture",
+        "source_seed": "$F"
+      },
+      "outputs": [
+        {
+          "name": "OUT_RENDER",
+          "role": "render",
+          "lod": "LOD0",
+          "groups": ["render"],
+          "attributes": ["P", "N", "shop_materialpath"],
+          "primitives": 9800,
+          "packedPrimitives": 240,
+          "materialSlots": ["TEMP_Fracture_Mat", "MI_Dust"]
+        }
+      ],
+      "packedInstancePrototypes": [
+        {"name": "piece_001", "stableId": "", "approved": false},
+        {"name": "tmp_chunk", "stableId": "tmp", "approved": false}
+      ],
+      "pdg": {
+        "graph": "/tasks/tmp_fracture_cache",
+        "wedgeCount": 6,
+        "approvedWedges": 1,
+        "failedWedges": 2
+      },
+      "bakeReceipt": {
+        "path": "",
+        "exists": false,
+        "sha256": "",
+        "frozen": false
+      }
+    }
+  ]
+}

@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r55-groom-runtime-facts-presentation-pack",
+        label: str = "r56-houdini-rule-adapter-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4019,6 +4019,18 @@ class MayaPortfolioApi:
                 "3ds Max Material Texture Manifest Link artifact",
                 "artifact",
                 manifest.get("maxTextureManifestLinkArtifact"),
+            ),
+            _probe_file(
+                "houdini-rule-adapter",
+                "Houdini Rule Adapter contract artifact",
+                "artifact",
+                manifest.get("houdiniRuleAdapterArtifact"),
+            ),
+            _probe_file(
+                "houdini-l3-readiness",
+                "Houdini hython L3 readiness artifact",
+                "artifact",
+                manifest.get("houdiniRuleAdapterL3HarnessArtifact"),
             ),
             _probe_file("unreal-handoff-inspector", "Unreal Handoff Inspector artifact", "artifact", manifest.get("unrealHandoffInspectorArtifact")),
             _probe_file(
@@ -4497,13 +4509,25 @@ class MayaPortfolioApi:
                 "evidence_expected": "Max pymxs material bitmap slots are checked against package entries, channel semantics, color-space policy and platform resolution budgets.",
             },
             {
-                "id": "42-audit-gui-media",
+                "id": "42-review-houdini-adapter",
+                "label": "Review Houdini rule adapter",
+                "operator_action": "Open the Presenter Pack or public package and inspect the Houdini Rule Adapter contract artifact.",
+                "evidence_expected": "HDA metadata, detail attributes, OUT_* role nodes, packed prototypes, PDG wedges and bake receipts normalize into Cross-DCC rule input.",
+            },
+            {
+                "id": "43-run-houdini-l3-readiness",
+                "label": "Run Houdini hython L3 readiness",
+                "operator_action": "Run python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py.",
+                "evidence_expected": "The launcher either runs hython collection or exports a clear blocked readiness gate when hython.exe is not available.",
+            },
+            {
+                "id": "44-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "43-handoff-presenter-pack",
+                "id": "45-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -5045,6 +5069,20 @@ class MayaPortfolioApi:
                 "max_texture_manifest_link_pass_checks": manifest_summary.get("maxTextureManifestLinkPassChecks"),
                 "max_texture_manifest_link_warning_checks": manifest_summary.get("maxTextureManifestLinkWarningChecks"),
                 "max_texture_manifest_link_error_checks": manifest_summary.get("maxTextureManifestLinkErrorChecks"),
+                "houdini_rule_adapter_gate": manifest_summary.get("houdiniRuleAdapterGate"),
+                "houdini_rule_adapter_evidence_level": manifest_summary.get("houdiniRuleAdapterEvidenceLevel"),
+                "houdini_rule_adapter_l3_status": manifest_summary.get("houdiniRuleAdapterL3Status"),
+                "houdini_rule_adapter_assets": manifest_summary.get("houdiniRuleAdapterAssets"),
+                "houdini_rule_adapter_ready": manifest_summary.get("houdiniRuleAdapterReady"),
+                "houdini_rule_adapter_review": manifest_summary.get("houdiniRuleAdapterReview"),
+                "houdini_rule_adapter_blocked": manifest_summary.get("houdiniRuleAdapterBlocked"),
+                "houdini_rule_adapter_pass_checks": manifest_summary.get("houdiniRuleAdapterPassChecks"),
+                "houdini_rule_adapter_warning_checks": manifest_summary.get("houdiniRuleAdapterWarningChecks"),
+                "houdini_rule_adapter_error_checks": manifest_summary.get("houdiniRuleAdapterErrorChecks"),
+                "houdini_rule_adapter_hython_available": manifest_summary.get("houdiniRuleAdapterHythonAvailable"),
+                "houdini_rule_adapter_l3_harness_gate": manifest_summary.get("houdiniRuleAdapterL3HarnessGate"),
+                "houdini_rule_adapter_l3_harness_hython_found": manifest_summary.get("houdiniRuleAdapterL3HarnessHythonFound"),
+                "houdini_rule_adapter_l3_harness_collector_ready": manifest_summary.get("houdiniRuleAdapterL3HarnessCollectorReady"),
                 "unreal_handoff_inspector_gate": manifest_summary.get("unrealHandoffInspectorGate"),
                 "unreal_handoff_inspector_evidence_level": manifest_summary.get("unrealHandoffInspectorEvidenceLevel"),
                 "unreal_handoff_inspector_l3_status": manifest_summary.get("unrealHandoffInspectorL3Status"),
@@ -5120,7 +5158,8 @@ class MayaPortfolioApi:
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "3ds Max Material Texture Manifest Link joins pymxs material bitmap slots to package texture entries, channel semantics, color-space policy and platform budgets.",
-                "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
+                "Houdini Rule Adapter normalizes HDA state, detail attributes, OUT_* role nodes, packed instance prototypes, PDG wedge summaries and frozen bake receipts into the shared Cross-DCC rule matrix.",
+                "Blender, 3ds Max and Houdini adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
                 "GUI screenshots and recording are tracked by audit gate instead of being implied complete.",
             ],
             "next_actions": capture_next_actions,
@@ -5141,7 +5180,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r55-groom-runtime-facts-presentation-pack",
+        label: str = "r56-houdini-rule-adapter-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

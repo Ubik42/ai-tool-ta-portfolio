@@ -2,15 +2,17 @@
 
 更新时间：2026-08-06
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r55` / `dcc-first-package@1.52.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r56` / `dcc-first-package@1.53.0`
 
 ## 1. 当前结论
 
-当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Unreal Python 和普通 Python fixture 共同生成。
+当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Houdini contract / hython readiness、Unreal Python 和普通 Python fixture 共同生成。
 
-R55 的硬证据：
+R56 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r55-groom-runtime-facts-presentation-pack-20260806-040806.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json`
+- Houdini Rule Adapter：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-contract-20260806-041956.json`
+- Houdini hython L3 readiness：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-l3-readiness-20260806-041956.json`
 - Groom Runtime Fact Collector：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-runtime-facts-20260806-040118.json`
 - Unreal Gameplay Attach Fixture：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json`
 - 3ds Max Material Texture Manifest Link：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json`
@@ -47,16 +49,16 @@ R55 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`
-- Presenter Pack 结果：53 / 53 evidence files present，0 missing required files，43 demo route steps。
-- Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断或 runtime drift，不是 runtime 缺失。
+- Presenter Pack 结果：55 / 55 evidence files present，0 missing required files，45 demo route steps。
+- Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Houdini/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断、runtime drift 或本机缺少 `hython.exe` 的明确 readiness gate。
 
 ## 2. Lightbox核心技术点覆盖
 
 | Lightbox提炼点 | 当前覆盖 | 状态 | 后续缺口 |
 | --- | --- | --- | --- |
 | 业务语义进入资产数据：custom attr / UV / vertex color / sets | `Asset Protocol Workbench` 已在 Maya 写入和回读 `aiToolTaProtocol` custom attr | 已覆盖核心，Maya L3 | UV / vertex color 语义 carrier 可作为后续子功能 |
-| Pyblish式 Collect / Validate / Fix / Extract | `Cross-DCC Rule Matrix`、`Asset Handoff Gate`、Blender/Max adapter 已实现 collect、validate、fix preview、report export | 已覆盖，Maya/Blender/Max 均有 runtime 证据 | Houdini adapter、共享 transaction recorder |
-| 规则和 DCC adapter 分层 | Maya adapter、Blender `bpy`、3ds Max `pymxs` 已归一化到 shared rule input | 已覆盖主要方法 | Houdini、MotionBuilder、Photoshop/Substance adapter |
+| Pyblish式 Collect / Validate / Fix / Extract | `Cross-DCC Rule Matrix`、`Asset Handoff Gate`、Blender/Max/Houdini adapter 已实现 collect、validate、fix preview、report export | 已覆盖，Maya/Blender/Max 有 runtime 证据，Houdini 有 contract/readiness 证据 | 共享 transaction recorder、更多 DCC auto-fix receipt |
+| 规则和 DCC adapter 分层 | Maya adapter、Blender `bpy`、3ds Max `pymxs`、Houdini HDA/PDG/bake receipt contract 已归一化到 shared rule input | 已覆盖主要方法 | MotionBuilder、Photoshop/Substance adapter |
 | 资产协议作为工作台底座 | `Asset Protocol` 串起 LOD、platform、collision、budget、handoff | 已覆盖 | 扩到 platform variant、character LOD、animation intent |
 | 固定相机/固定 pass 的视觉评审 | `Visual Review Studio` 已生成 Maya camera rig、pass manifest、capture preview、report | 部分覆盖 | 真实 Maya playblast/截图和视觉 diff media |
 | 贴图/材质交付检查 | `Texture Delivery Console` 已扫描 Maya material / file node / role / colorSpace / path / budget；R53 已把 3ds Max material bitmap slots 与 texture delivery manifest、BC/N/ORM channel 语义、sRGB/linear、平台尺寸预算做 join | 覆盖加深，Maya + Max L3-derived | Substance、Photoshop、DDS、SpriteSheet、真实 UE texture import |
@@ -68,15 +70,16 @@ R55 的硬证据：
 | 角色 DNA、拓扑、joint coverage、面部/肌肉参数迁移 | `Character Calibration Studio` 已通过 Maya `mayapy` 采集 topology / joint / calibration / face params / Control Rig mapping facts；R35 Drilldown 已把 flat rows 转成 topology/skeleton/skin/calibration/face/Control Rig/mirror panels 和 owner actions；R42 已通过 Unreal Python 创建 public `CR_HeroFace`、写入 5 个 runtime controls，并复跑 Control Rig Bridge 让 approved 行 Ready；R43 继续只读检查 control -> deformation target -> Unreal Skeleton link 和 compile API surface；R44 用 Maya FBX + Unreal import 建立 public `SK_HeroFace_Skeleton`，把 `Eye_L` / `Eye_R` / `Jaw` target 缺口 3 / 3 resolved；R45 调用 public `CR_HeroFace` compile 方法，记录 diagnostic/status、dirty-state 和 no-save 边界 | Maya L3 + L3-derived drilldown + Unreal Control Rig authoring L3 + face skeleton fixture L3 + deformation link L3 + compile status L3 | direct diagnostic/status Editor Utility / C++ bridge、owner waiver |
 | 空间热点、Socket、Pose Transfer、mirror、locator preview | `Spatial Authoring Workbench` 已通过 Maya `mayapy` 采集 joint / locator / socket / hotspot / pose frame / mirror / pose transfer facts；R36 Drilldown 已把 flat rows 转成 protocol/parent/socket/mirror/hotspot/pose frame/transform/preview/pose transfer panels 和 owner actions；R38 Unreal Socket Import Checker 已接到 Unreal SkeletalMesh/Skeleton socket API 和 expected socket coverage；R40 Unreal Socket Authoring Executor 已证明 UE 5.3 Python socket identity 字段不可写，能安全阻断自动修复；R54 Unreal Gameplay Attach Fixture 已把 socket/hotspot intent、attachable asset、animation context 和 attach API 连成 gameplay equip gate，证明缺 runtime socket 会阻断玩法挂接 | Maya L3 + L3-derived drilldown + Unreal L3 + API-limited executor readiness | 真正 socket 写入需换 Unreal C++ / Editor Utility Blueprint adapter |
 | PC -> Mobile 平台派生、LOD/材质/贴图/碰撞生成链 | `Platform Variant Forge` 已生成 PC/Mobile variant plan，用 Unreal runtime probe 对照 StaticMesh facts，把 drift 转成 dry-run generation operations，采集材质/贴图 runtime facts，导入 public Texture2D payload 验证预算，执行 public fixture max-size clamp / post-check / rollback，把 LOD/Nanite/collision 后续动作转成 approval / rollback receipts，并通过 R39 StaticMesh post-check 做只读 runtime 验证 | 已覆盖计划层 + Unreal L3 + L3-derived generation plan + texture runtime L3 + Texture2D payload L3 + controlled executor L3 + executor receipts L3-derived + StaticMesh post-check L3 | 更复杂真实风格资产 fixture、LOD/Nanite 受控写入 |
+| Houdini 程序化资产、HDA、PDG、bake receipt | `Houdini Rule Adapter` 已把 HDA locked state、detail attributes、`OUT_*` 输出角色、geometry attributes、packed prototypes、PDG wedges 和 frozen bake receipts 归一化到 Cross-DCC Rule Matrix | L2+ contract + hython readiness；collector ready | 安装或定位 `hython.exe` 后升级真实 Houdini L3 |
 | Groom/XGen 到 Unreal | `Groom Export Inspector` 已通过 Maya `mayapy` 采集 synthetic scalp / curve strand facts，检查 root UV、strand ID、guide curve、Alembic payload 和 Unreal binding intent；R47 `Groom Unreal Import Readiness` 已通过 Unreal 5.3.2 采集 Groom/Alembic API visibility、target SkeletalMesh presence、expected Groom / Binding assets 和 zero-write boundary；R52 `Groom Alembic Payload Receipt` 已通过 Maya `AbcExport` 写出 approved curve-only public groom `.abc` cache，记录 bytes/hash，并证明 schemaCompatibleRows=1、meshShapeRows=0；R52 `Groom Alembic Import/Post-check Readiness` 已通过 Unreal 5.3.2 读取 `.abc`、验证 sha256 continuity、dry-run AssetImportTask、检查 HairStrandsFactory / Alembic factory / Groom API / target assets / no-write boundary；R50 `Groom Plugin/API Public Fixture` 已显式启用 public Unreal 项目的 HairStrands/Alembic hair stack并证明 Groom import API ready；R52 `Groom Controlled Executor` 已真实执行 approved curve-only `.abc` 的 `HairStrandsFactory` import，产物为 `GroomAsset`，BindingAsset 创建并 post-check=true，rollback clean；R55 `Groom Runtime Fact Collector` 已在资产存在期间回读 3 个 runtime assets、23 个属性、40 个方法面和 11 个 callable facts，再 rollback clean | Maya L3 + Unreal readiness L3 + Maya curve-only Alembic cache L3 + Unreal post-check readiness L3 + Groom plugin/API fixture L3 Ready + controlled executor L3 Ready rollback proof + runtime facts L3 Ready | 更多 group/root projection 细分；必要时做 Editor Utility / C++ bridge |
 
 ## 3. 计划中的插件线
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R55 Presenter Pack 53/53 evidence present；43 步 demo route；新增 Groom runtime facts probe |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R56 Presenter Pack 55/55 evidence present；45 步 demo route；新增 Houdini adapter probes |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
-| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3；Max texture manifest link L3-derived |
+| 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max/Houdini 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3；Max texture manifest link L3-derived；Houdini L2+ contract / hython readiness |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
 | 5 | Texture Delivery Console | 检查材质球、贴图路径、色彩空间、命名和平台预算 | Maya material/file node inspection 已完成 |
 | 6 | Task Orchestrator | 把一批资产变成可 dry-run 的发布任务队列和收据 | Maya scene discovery、queue、receipt 已完成 |
@@ -85,22 +88,23 @@ R55 的硬证据：
 | 9 | Scene Transaction Guard | 记录工具运行前后到底改了场景什么，并给 rollback preview | Maya L3 首版完成 |
 | 10 | Blender Rule Adapter | 从 Blender 采集 custom props、collections、material、UV、collision facts | `bpy` L3 完成 |
 | 11 | 3ds Max Rule Adapter | 从 Max 采集 user props、layer/export root、LOD、material、UV、transform、collision facts，并把 material bitmap slot 连接到贴图交付 manifest | `pymxs` L3 完成；R53 Max texture manifest link 完成 |
-| 12 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
-| 13 | Unreal Animation Bridge / Deep Facts | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；R41 deep facts 完成，2 runtime rows，2/2 duration frame spans matched，curve metadata warning 清晰暴露 |
-| 14 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成；R35 drilldown 完成；R42 Unreal Control Rig Fixture Authoring Ready；R44 Face Skeleton Fixture 已补齐 approved 行 Skeleton targets；R45 compile 方法可调用但 diagnostic/status 仍 Review |
-| 15 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | Maya `mayapy` L3 完成；R36 drilldown 完成；R38 Unreal Socket Import Checker L3 完成；R40 Socket Authoring Executor 给出 API-limited gate；R54 Gameplay Attach Fixture 完成 |
-| 16 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload + R33 controlled executor + R34 executor receipts + R39 StaticMesh post-check 完成 |
-| 17 | Unreal Socket Import Checker / Authoring Executor / Gameplay Attach Fixture | 把 Maya socket / hotspot / pose transfer facts 对照到 Unreal Skeleton / socket runtime facts，并继续判断玩法 equip attach 是否可交付 | R38 runtime checker 完成；R40 controlled executor 证明 UE 5.3 Python socket identity 字段不可写；R54 gameplay attach 完成，2 attachable/animation assets present，但 4 runtime sockets 缺失导致 2 intents Blocked，assetWrites=0 |
-| 18 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
-| 19 | Groom Export Inspector / Unreal Readiness / Alembic Payload / Import Post-check / Plugin API Fixture / Controlled Executor / Runtime Fact Collector | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、curve-only Alembic payload、Groom/Alembic API、目标 SkeletalMesh、cache receipt、import/post-check readiness、public plugin/API surface、真实 executor rollback 和 runtime fact readback | R46 Maya L3 完成；R47 Unreal readiness L3 完成；R52 Maya `AbcExport` curve-only payload receipt 完成；R52 Unreal post-check readiness 完成，cache hash matched，AssetImportTask/HairStrandsFactory/Alembic factory 可 dry-run；R50 Groom Plugin/API Fixture Ready；R52 controlled executor 已真实 import approved `.abc` 为 `GroomAsset`，BindingAsset 创建并回滚 clean；R55 runtime fact collector Ready，3 runtime assets / 23 properties / 40 methods / 11 callable facts |
+| 12 | Houdini Rule Adapter | 检查 procedural HDA 资产是否有稳定协议、输出角色、packed prototype、PDG wedge 和 frozen bake receipt | R56 L2+ contract 完成；hython L3 readiness 完成但本机缺 `hython.exe` |
+| 13 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
+| 14 | Unreal Animation Bridge / Deep Facts | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；R41 deep facts 完成，2 runtime rows，2/2 duration frame spans matched，curve metadata warning 清晰暴露 |
+| 15 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成；R35 drilldown 完成；R42 Unreal Control Rig Fixture Authoring Ready；R44 Face Skeleton Fixture 已补齐 approved 行 Skeleton targets；R45 compile 方法可调用但 diagnostic/status 仍 Review |
+| 16 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | Maya `mayapy` L3 完成；R36 drilldown 完成；R38 Unreal Socket Import Checker L3 完成；R40 Socket Authoring Executor 给出 API-limited gate；R54 Gameplay Attach Fixture 完成 |
+| 17 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload + R33 controlled executor + R34 executor receipts + R39 StaticMesh post-check 完成 |
+| 18 | Unreal Socket Import Checker / Authoring Executor / Gameplay Attach Fixture | 把 Maya socket / hotspot / pose transfer facts 对照到 Unreal Skeleton / socket runtime facts，并继续判断玩法 equip attach 是否可交付 | R38 runtime checker 完成；R40 controlled executor 证明 UE 5.3 Python socket identity 字段不可写；R54 gameplay attach 完成，2 attachable/animation assets present，但 4 runtime sockets 缺失导致 2 intents Blocked，assetWrites=0 |
+| 19 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
+| 20 | Groom Export Inspector / Unreal Readiness / Alembic Payload / Import Post-check / Plugin API Fixture / Controlled Executor / Runtime Fact Collector | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、curve-only Alembic payload、Groom/Alembic API、目标 SkeletalMesh、cache receipt、import/post-check readiness、public plugin/API surface、真实 executor rollback 和 runtime fact readback | R46 Maya L3 完成；R47 Unreal readiness L3 完成；R52 Maya `AbcExport` curve-only payload receipt 完成；R52 Unreal post-check readiness 完成，cache hash matched，AssetImportTask/HairStrandsFactory/Alembic factory 可 dry-run；R50 Groom Plugin/API Fixture Ready；R52 controlled executor 已真实 import approved `.abc` 为 `GroomAsset`，BindingAsset 创建并回滚 clean；R55 runtime fact collector Ready，3 runtime assets / 23 properties / 40 methods / 11 callable facts |
 
 ## 4. 当前开发进度
 
 | 插件/工具线 | 完成度判断 | 能展示什么 | 不能展示什么 |
 | --- | --- | --- | --- |
-| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、43 步 demo route、53 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
+| Maya Host / Presenter Pack | 98% | Maya 内打开工具、外部 command bridge、45 步 demo route、55 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
 | Asset Protocol Workbench | 75% | Maya 节点 custom attr 协议写入、inspect、DCC evidence report | UV/vertex color 语义 carrier 未实装 |
-| Cross-DCC Rule Matrix | 80% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter | Houdini adapter 未做；规则覆盖仍可加深 |
+| Cross-DCC Rule Matrix | 86% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter、Houdini HDA/PDG/bake receipt contract | Houdini 缺真实 hython L3；规则覆盖仍可加深 |
 | Visual Review Studio | 55% | camera rig、pass manifest、capture preview path、review report | 真实 playblast/截图、图片 diff、HTML 视觉报告未进入 DCC-first media |
 | Texture Delivery Console | 62% | Maya 材质/贴图节点扫描、色彩空间和路径检查、manifest；R53 从 Max material slot 反查 texture package coverage、BC/N/ORM 语义和 Mobile 预算 | DDS/SP/Photoshop/SpriteSheet/UE texture import |
 | Task Orchestrator | 55% | dry-run 队列、per-asset receipts、report export | 真实任务平台 adapter 和附件同步 |
@@ -109,6 +113,7 @@ R55 的硬证据：
 | Scene Transaction Guard | 65% | Maya scene diff、risk rows、rollback preview | 还不是所有工具共享的 transaction middleware |
 | Blender Rule Adapter | 70% | Blender 5.2 `bpy` L3、custom props/collection/material/UV/collision 采集 | 还缺真实复杂 Blender 资产 fixture |
 | 3ds Max Rule Adapter | 78% | 3ds Max 2022 `pymxs` L3、user props/layer/LOD/material/UV/transform/collision/material texture rows 采集；R53 material slot -> texture manifest link 已完成 | 还缺真实复杂 Max 资产 fixture、Max side auto-fix/receipt |
+| Houdini Rule Adapter | 55% | HDA locked state、detail attributes、`OUT_*` 输出角色、geometry attrs、packed prototypes、PDG wedges、frozen bake receipt 已归一到 Cross-DCC Rule Matrix；hython launcher / collector ready | 本机缺 `hython.exe`，真实 Houdini L3 待升级；还缺复杂 HDA fixture |
 | Animation Continuity Lab | 45% | Maya `mayapy` L3 keyed animCurve 采集，rig/skeleton/take/sample/channel/sub-frame/root-motion/layer 检查，fix preview 和 Presenter Pack 接入 | 没有 Maya UI drilldown；MotionBuilder 对照未做 |
 | Unreal Animation Bridge | 62% | Maya 生成 FBX、Unreal Python 导入 Skeleton/SkeletalMesh/AnimSequence、2/2 sequences present；R41 只读采集 duration、derived frame span、frame-rate、root motion、compression metadata visibility，assetWrites=0 | curve names 在 UE Python 下不可读，后续需要 Animation Blueprint Library / C++ adapter |
 | Character Calibration Studio | 84% | Maya `mayapy` L3 采集 topology signature、joint coverage、calibration delta、face params、Control Rig mapping；R35 drilldown 输出 14 个 UI-ready panels、8 条 owner actions；R42 创建 public `CR_HeroFace`，写入 5 个 runtime controls；R44 创建 public `SK_HeroFace_Skeleton` 并复跑 deformation-link；R45 调用 compile 方法并证明无 dirty/save 副作用 | direct diagnostic/status bridge、owner waiver 还可深化 |
@@ -145,7 +150,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r55-groom-runtime-facts-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r56-houdini-rule-adapter-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -156,7 +161,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness 或 Groom StaticMesh importer 打转，它们已进入真实 runtime 证据。`3ds Max Rule Adapter` 已有 `pymxs` L3 和 R53 material slot -> texture manifest link；`Unreal Animation Bridge` 已有 import L3 和 R41 deep facts；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture 和 R52 controlled executor Ready rollback proof；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 Houdini 非 Maya adapter、Control Rig Editor Utility / C++ diagnostic bridge、socket C++ / Editor Utility adapter 或 Groom group/root projection 细分 fixture。
+下一轮不要再围绕 Blender/Max readiness 或 Groom StaticMesh importer 打转，它们已进入真实 runtime 证据。`3ds Max Rule Adapter` 已有 `pymxs` L3 和 R53 material slot -> texture manifest link；`Houdini Rule Adapter` 已有 R56 HDA/PDG/bake receipt contract 和 hython readiness，只有在能定位 `hython.exe` 时才升级真实 L3；`Unreal Animation Bridge` 已有 import L3 和 R41 deep facts；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture、R52 controlled executor Ready rollback proof 和 R55 runtime fact collector；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 Socket Authoring Executor API-limited gate；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做 MotionBuilder adapter、Control Rig Editor Utility / C++ diagnostic bridge、socket C++ / Editor Utility adapter 或 Groom group/root projection 细分 fixture。
 
 
 ## R39 补充
@@ -243,3 +248,22 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`，新增 `materialTextureRows`，3 条 material bitmap slot facts 来自真实 Max 2022 `pymxs` batch。
 - 3ds Max Material Texture Manifest Link：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-texture-manifest-link-20260806-032426.json`
 - 结果：L3-derived / `Blocked` / `max_material_texture_manifest_linked`，2 assets，1 Ready / 1 Blocked，slotTextures=4，manifestTextures=4，missingManifestTextures=0，missingRequiredSemantics=2，13 pass / 1 warning / 2 error，assetWrites=0，productionWrites=0。核心业务发现：真实贴图交付判断要把 DCC material slot、交付包 manifest、channel 语义、色彩空间和平台预算放在同一个 gate 里，不能只做路径存在检查。
+
+## R54 补充
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r54-unreal-gameplay-attach-fixture-presentation-pack-20260806-035002.json`，52/52 evidence files present，0 missing required files，42 demo route steps。
+- Unreal Gameplay Attach Fixture：`<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json`
+- 结果：L3-linked / `Blocked` / `unreal_gameplay_attach_fixture_linked`，2 gameplay intents，0 Ready / 0 Review / 2 Blocked，attachable assets present=2，animation assets present=2，required/missing runtime sockets=4 / 4，required/missing hotspot semantics=2 / 1，15 pass / 1 warning / 6 error，assetWrites=0，productionWrites=0。核心业务发现：道具和动画都在引擎里存在，也不能说明 gameplay equip 可用；角色 socket 合约缺失必须阻断。
+
+## R55 补充
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r55-groom-runtime-facts-presentation-pack-20260806-040806.json`，53/53 evidence files present，0 missing required files，43 demo route steps。
+- Groom Runtime Fact Collector：`<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-runtime-facts-20260806-040118.json`
+- 结果：L3 / `Ready` / `unreal_groom_runtime_facts_collected`，Unreal 5.3.2 在 GroomAsset / GroomBindingAsset public fixture 存在期间读取 3 个 runtime assets、23 个属性、40 个方法面、11 个 callable facts，再 rollback clean，residual assets=0，11 pass / 0 warning / 0 error，assetWrites=6，productionWrites=0。核心业务发现：受控执行后还要读取 runtime object surface，证明资产不是只“导入成功”，而是能被引擎侧业务继续校验。
+
+## R56 补充
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r56-houdini-rule-adapter-presentation-pack-20260806-042654.json`，55/55 evidence files present，0 missing required files，45 demo route steps。
+- Houdini Rule Adapter：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-contract-20260806-041956.json`
+- Houdini hython L3 readiness：`<repo>\dcc-hosts\houdini-rule-adapter\artifacts\houdini-rule-adapter-l3-readiness-20260806-041956.json`
+- 结果：L2+ / `Blocked` / `blocked_by_missing_hython`，2 procedural assets，1 Ready / 0 Review / 1 Blocked，11 pass / 2 warning / 5 error，HDA locked state、detail attributes、`OUT_*` role nodes、geometry attrs、packed prototypes、PDG wedges 和 frozen bake receipt 全部进入 `cross-dcc-rule-input@0.1.0`。本机未发现 `hython.exe`，collector ready，sceneWrites / assetWrites / productionWrites 全为 0。核心业务发现：Houdini 程序化资产的交付秘诀不是只看最终 mesh，而是证明 procedural network 可冻结、可复现、可拆 role、可追踪 cook/wedge/bake 收据。
