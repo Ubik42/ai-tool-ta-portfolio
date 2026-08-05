@@ -2,14 +2,14 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R50 Cross-DCC / Engine / Animation / Character / Groom / Spatial Socket / Platform Variant Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R51 Cross-DCC / Engine / Animation / Character / Groom / Spatial Socket / Platform Variant Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r50` |
-| Version | `dcc-first-package@1.47.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r51` |
+| Version | `dcc-first-package@1.48.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
@@ -18,9 +18,9 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 49 / 49 present |
+| Presenter pack evidence files | 50 / 50 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 39 |
+| Presenter demo route steps | 40 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -140,6 +140,11 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Groom Plugin/API descriptors / project requests | 4 / 4 |
 | Groom Plugin/API class rows Groom/Hair/Alembic/GeometryCache | 47 / 56 / 14 / 16 |
 | Groom Plugin/API import readiness / writes | Groom import API ready=true, AlembicImportFactory=true, writes=0 / 0 / 0 |
+| Groom Controlled Executor | `Blocked` L3 |
+| Groom Controlled Executor runtime | `unreal_groom_executor_wrong_asset_class_rolled_back`, Unreal 5.3.2 |
+| Groom Controlled Executor import | selected=1, attempted=true, succeeded=true, imported class=`StaticMesh` |
+| Groom Controlled Executor binding | attempted=false, `GroomLibrary.create_new_groom_binding_asset_with_path` visible, held because imported asset is not `GroomAsset` |
+| Groom Controlled Executor rollback / writes | rollback=true, residual assets=0, assetWrites=4, engineWrites=0, productionWrites=0, persistentMutation=false |
 | Spatial authoring | `Blocked` L3 |
 | Spatial authoring assets ready/review/blocked | 1 / 0 / 1 |
 | Spatial authoring checks pass/warn/error | 11 / 2 / 7 |
@@ -234,28 +239,29 @@ Then follow the Presenter Pack route:
 20. Run `python <repo>\dcc-hosts\groom-export-inspector\scripts\run_alembic_payload.py`.
 21. Run `python <repo>\dcc-hosts\groom-export-inspector\scripts\run_alembic_import_postcheck.py`.
 22. Run `python <repo>\dcc-hosts\groom-export-inspector\scripts\run_groom_plugin_api_fixture.py`.
-23. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py`.
-24. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_drilldown.py`.
-25. Run `python <repo>\dcc-hosts\unreal-socket-import-checker\scripts\run_l3_smoke.py`.
-26. Run `python <repo>\dcc-hosts\unreal-socket-import-checker\scripts\run_socket_authoring_executor.py`.
-27. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py`.
-28. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_unreal_runtime_probe.py`.
-29. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py`.
-30. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py`.
-31. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
-32. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
-33. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_executor_expansion.py`.
-34. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_staticmesh_postcheck.py`.
-35. Review the Blender Rule Adapter artifact.
-36. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
-37. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
-38. Audit GUI media after final Maya screenshots and recording are captured.
-39. Export and hand off the Presenter Pack.
+23. Run `python <repo>\dcc-hosts\groom-export-inspector\scripts\run_groom_controlled_executor.py`.
+24. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py`.
+25. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_drilldown.py`.
+26. Run `python <repo>\dcc-hosts\unreal-socket-import-checker\scripts\run_l3_smoke.py`.
+27. Run `python <repo>\dcc-hosts\unreal-socket-import-checker\scripts\run_socket_authoring_executor.py`.
+28. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py`.
+29. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_unreal_runtime_probe.py`.
+30. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py`.
+31. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py`.
+32. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
+33. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
+34. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_executor_expansion.py`.
+35. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_staticmesh_postcheck.py`.
+36. Review the Blender Rule Adapter artifact.
+37. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
+38. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+39. Audit GUI media after final Maya screenshots and recording are captured.
+40. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r51-groom-controlled-executor-presentation-pack-20260806-022956.json
 ```
 
 The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 39-step demo route, 7-step business route, public package manifest, 49 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
@@ -635,10 +641,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r51-groom-controlled-executor-presentation-pack-20260806-022956.json
 ```
 
-The Presenter Pack is the R50 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 49 / 49 evidence files present, 0 missing required files, 39 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R51 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Groom Alembic Payload Receipt, Groom Alembic Import/Post-check Readiness, Groom Plugin/API Public Fixture Readiness, Groom Controlled Executor, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 50 / 50 evidence files present, 0 missing required files, 40 demo route steps, and `CapturePending` media status.
 
 ## Validation
 

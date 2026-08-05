@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -106,6 +106,7 @@ $QuickPythonFiles = @(
     (Join-Path $GroomExportInspector "groom_export_inspector\alembic_payload.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\alembic_import_postcheck.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\plugin_api_fixture.py"),
+    (Join-Path $GroomExportInspector "groom_export_inspector\controlled_executor.py"),
     (Join-Path $GroomExportInspector "scripts\run_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_l3_smoke.py"),
     (Join-Path $GroomExportInspector "scripts\run_maya_l3.py"),
@@ -113,10 +114,12 @@ $QuickPythonFiles = @(
     (Join-Path $GroomExportInspector "scripts\run_alembic_payload.py"),
     (Join-Path $GroomExportInspector "scripts\run_alembic_import_postcheck.py"),
     (Join-Path $GroomExportInspector "scripts\run_groom_plugin_api_fixture.py"),
+    (Join-Path $GroomExportInspector "scripts\run_groom_controlled_executor.py"),
     (Join-Path $GroomExportInspector "scripts\run_maya_alembic_payload.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_import_readiness.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_alembic_import_postcheck.py"),
     (Join-Path $GroomExportInspector "scripts\unreal_python\probe_groom_plugin_api_fixture.py"),
+    (Join-Path $GroomExportInspector "scripts\unreal_python\execute_groom_controlled_executor.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\drilldown.py"),
@@ -175,11 +178,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r50-groom-plugin-api-fixture-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r51-groom-controlled-executor-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 49, summary
+assert summary["present_evidence_files"] == 50, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 39, summary
+assert summary["demo_route_steps"] == 40, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -305,6 +308,12 @@ if ($Tier -in @("groom-alembic-import-postcheck", "full")) {
 if ($Tier -in @("groom-plugin-api-fixture", "full")) {
     Invoke-Step "groom plugin/API fixture readiness" {
         python (Join-Path $GroomExportInspector "scripts\run_groom_plugin_api_fixture.py")
+    }
+}
+
+if ($Tier -in @("groom-controlled-executor", "full")) {
+    Invoke-Step "groom controlled executor" {
+        python (Join-Path $GroomExportInspector "scripts\run_groom_controlled_executor.py")
     }
 }
 

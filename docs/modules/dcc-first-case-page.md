@@ -1,6 +1,6 @@
 # DCC-first Case Page / Presenter Pack
 
-R50 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after face Skeleton fixture、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector Maya L3、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Public Fixture Readiness、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
+R51 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after face Skeleton fixture、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector Maya L3、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Public Fixture Readiness、Groom Controlled Executor、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
 
 ## 核心业务逻辑
 
@@ -12,7 +12,7 @@ R50 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 M
 - Composite gate：把 Asset Handoff Gate 的 Ready / Review / Blocked 作为最终业务判定。
 - Owner / Engine decision：把 repair preview、owner disposition、engine handoff mock 放进主案例。
 - Media plan：把 9 张截图和 1 段录屏变成明确采集清单。
-- Presenter Pack：探测 48 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
+- Presenter Pack：探测 50 个关键证据文件是否存在，并把总体 gate 压成 `CapturePending` / `Review` / `Ready`。
 - Preset Fact Review：把 Unreal preset comparison 的 blocked / drift / waived / matched rows 投影成 Maya 内 reviewer queue。
 - Scene Transaction Guard：把 Maya 工具运行前后的 scene mutation 输出为 fingerprint、risk rows 和 rollback preview。
 
@@ -39,7 +39,7 @@ Maya API：
 
 React 入口：
 
-- `Task Orchestrator` 证据视图顶部的 `R50 Cross-DCC / Engine Reviewer Pack`
+- `Task Orchestrator` 证据视图顶部的 `R51 Cross-DCC / Engine Reviewer Pack`
 - `Export Case Page` 按钮
 - `Presenter Pack` 按钮
 - `Preset Facts` 按钮
@@ -47,7 +47,7 @@ React 入口：
 - 7 段 business route
 - Composite Gate 摘要
 - Owner / Engine Decision 摘要
-- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Unreal AnimSequence Deep Facts、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Spatial Authoring、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Unreal Socket API docs probe、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
+- Evidence artifact rows：case page、handoff、decision、GUI manifest、engine preflight、engine preset comparison、Animation Continuity Lab、Unreal Animation Bridge、Unreal AnimSequence Deep Facts、Character Calibration、Character Calibration Drilldown、Unreal Control Rig Bridge、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Public Fixture、Groom Controlled Executor、Spatial Authoring、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Unreal Socket API docs probe、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender rule adapter、Blender L3 harness、3ds Max rule adapter、3ds Max L3 harness、Unreal handoff inspector、Unreal preset fact comparison、Unreal preset fact review、Scene Transaction Guard
 - GUI evidence plan
 - GUI media audit
 - Presenter Pack evidence file probes
@@ -82,11 +82,11 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r50` / `dcc-first-package@1.47.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r51` / `dcc-first-package@1.48.0`
   - gate：`CapturePending`
-  - demo route steps：38
-  - key evidence files：48
-  - present/missing required evidence files：48 / 0
+  - demo route steps：40
+  - key evidence files：50
+  - present/missing required evidence files：50 / 0
   - Animation Continuity：L3 / `Blocked` / `maya_anim_curves_collected`
   - Animation Continuity assets ready/blocked：1 / 1
   - Unreal Animation Bridge：L3 / `Blocked` / `unreal_animsequence_assets_imported`
@@ -162,13 +162,16 @@ React 入口：
   - Unreal preset review rows / queue / blocked / waivers：10 / 3 / 1 / 1
   - Scene transaction gate / rollback / risk rows：Review / 9 / 4
   - GUI media present/review/missing：0 / 0 / 10
+  - Groom Controlled Executor：L3 / `Blocked` / `unreal_groom_executor_wrong_asset_class_rolled_back`
+  - Groom Controlled Executor import：selected=1，attempted=true，succeeded=true，imported class=`StaticMesh`
+  - Groom Controlled Executor binding / rollback：binding attempted=false，rollback=true，residual assets=0，persistentMutation=false
 
 ## 当前 artifact
 
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r51-groom-controlled-executor-presentation-pack-20260806-022956.json
 ```
 
 Unreal Control Rig Bridge original R37：
@@ -351,7 +354,7 @@ Handoff decision packet：
 
 ## 下一轮
 
-下一轮优先转向 Groom controlled executor、gameplay attach fixture 或 Houdini 非 Maya adapter。Maya GUI 截图/录屏保留到最后集中采集。
+下一轮优先解决 Groom `.abc` 导入为 `StaticMesh` 的 importer mode/schema/桥接问题、gameplay attach fixture 或 Houdini 非 Maya adapter。Maya GUI 截图/录屏保留到最后集中采集。
 
 
 ## R39 Platform Variant StaticMesh Post-check
@@ -403,3 +406,7 @@ R42 Presenter Pack 接入 `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\
 ## R50 Groom Plugin/API Public Fixture Readiness
 
 当前 Presenter Pack 已接入 `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-plugin-api-fixture-20260806-020048.json`，demo route 增至 39 步，evidence probe 增至 49 个。R50 在 public Unreal `.uproject` 显式启用 `GeometryCache`、`AlembicImporter`、`HairStrands`、`AlembicHairImporter`，再通过 Unreal 5.3.2 commandlet 采集 plugin descriptor、project request 和 Python API class surface。结果为 L3 / `Ready`，4/4 plugin descriptors found，4/4 project plugin requests，Groom / Hair / Alembic / GeometryCache class rows = 47 / 56 / 14 / 16，Groom import API ready=true，AlembicImportFactory visible=true，10 pass / 0 warning / 0 error，assetWrites=0，engineWrites=0，productionWrites=0。核心业务发现：R49 的 Groom API 缺口可以通过 public fixture plugin 配置消除，下一步应进入 controlled executor 的真实导入、post-check 和 rollback receipt。
+
+## R51 Groom Controlled Executor
+
+当前 Presenter Pack 已接入 `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-022310.json`，demo route 增至 40 步，evidence probe 增至 50 个。R51 读取 R49 post-check 和 R50 plugin/API fixture，只选择 approved public `.abc` cache，进入 Unreal 5.3.2 执行 `AssetImportTask`，再检查导入 class、binding method、post-check 和 rollback receipt。结果为 L3 / `Blocked` / `unreal_groom_executor_wrong_asset_class_rolled_back`，import attempted/succeeded=true/true，imported asset class=`StaticMesh`，wrongImportedClass=true，BindingAsset 未创建，rollback=true，residual assets=0，assetWrites=4，engineWrites=0，productionWrites=0，persistentMutation=false。核心业务发现：当前缺口已收窄到 Alembic hair importer 的 mode/schema 或 Editor Utility / C++ bridge，不再是 plugin/API readiness。
