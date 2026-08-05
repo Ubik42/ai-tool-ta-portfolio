@@ -1293,3 +1293,35 @@ Presenter Pack evidence: 31 / 31 present, 0 missing, 23 route steps
 ```text
 existing Maya L3 artifact -> select one character calibration or spatial authoring business row -> build AuroraView drilldown data/API -> export artifact -> Presenter Pack row -> docs
 ```
+
+## R35 循环开发断点：Character Calibration Drilldown
+
+R35 已完成 `Character Calibration Drilldown`：
+
+```text
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json
+```
+
+R35 结果：`run_drilldown.py` 读取 `character-calibration-maya-l3-20260805-175057.json`，把 Character Calibration Maya L3 的 flat validation rows 转成 AuroraView / Maya 面板可直接消费的 topology、skeleton、skin、calibration、face、Control Rig 和 mirror drilldown panels。结果为 L3-derived / `Blocked` / `maya_character_calibration_rows_to_drilldown`，2 character drilldowns，14 panels，1 Ready，1 intentionally Blocked，8 issue rows，8 owner actions，6 owner-required，2 manual-review，productionWrites=0。这个 gate 继承自 synthetic temp sculpt 的业务阻断，不是 runtime 缺失。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r35 / dcc-first-package@1.32.0
+Presenter Pack evidence: 32 / 32 present, 0 missing, 24 route steps
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier character-drilldown
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Spatial Authoring Drilldown`：
+
+```text
+spatial-authoring-maya-l3 artifact -> socket / hotspot / pose transfer panels -> owner actions / fix previews -> Presenter Pack row -> docs
+```

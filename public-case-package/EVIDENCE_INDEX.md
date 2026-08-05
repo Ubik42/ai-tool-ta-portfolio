@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R35 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json` | Maya-hosted package probes 32 key evidence files, exports 24 demo route steps, and adds Character Calibration Drilldown evidence. |
+| Character Calibration Drilldown | `<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json` | Maya L3 character calibration facts become UI-ready topology, skeleton, skin, calibration, face, Control Rig and mirror panels with 8 owner actions. |
 | R34 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json` | Maya-hosted package probes 31 key evidence files, exports 23 demo route steps, and adds Platform Variant Executor Expansion Receipts evidence. |
 | Platform Variant Executor Expansion Receipts | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-executor-expansion-20260805-201222.json` | LOD, Nanite and collision operations become approval / rollback receipts linked to the R33 rolled-back Unreal executor proof. |
 | R33 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json` | Maya-hosted package probes 30 key evidence files, exports 22 demo route steps, and adds Platform Variant Controlled Executor evidence. |

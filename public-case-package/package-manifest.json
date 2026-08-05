@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-public-case-package-r8-58",
-  "packageVersion": "public-case-package@3.28.0",
+  "packageId": "ai-tool-ta-public-case-package-r8-59",
+  "packageVersion": "public-case-package@3.29.0",
   "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r34",
-    "packageVersion": "dcc-first-package@1.31.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r35",
+    "packageVersion": "dcc-first-package@1.32.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -29,7 +29,7 @@
     "gate": "CapturePending",
     "sourceCaseGate": "Review",
     "moduleCount": 5,
-    "artifactCount": 19,
+    "artifactCount": 20,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "businessRouteSteps": 7,
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 31,
-    "presentationPackPresentEvidenceFiles": 31,
+    "presentationPackEvidenceFiles": 32,
+    "presentationPackPresentEvidenceFiles": 32,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 23,
+    "presentationPackDemoRouteSteps": 24,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -356,17 +356,35 @@
     "platformVariantExecutorExpansionBlocked": 0,
     "platformVariantExecutorExpansionOwnerApprovalsRequired": 3,
     "platformVariantExecutorExpansionRollbackReceiptsRequired": 3,
-    "platformVariantExecutorExpansionProductionWrites": 0
+    "platformVariantExecutorExpansionProductionWrites": 0,
+    "characterCalibrationDrilldownReportVersion": "character-calibration-drilldown@0.1.0",
+    "characterCalibrationDrilldownArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+    "characterCalibrationDrilldownEvidenceLevel": "L3-derived",
+    "characterCalibrationDrilldownL3Status": "maya_character_calibration_rows_to_drilldown",
+    "characterCalibrationDrilldownGate": "Blocked",
+    "characterCalibrationDrilldownAssets": 2,
+    "characterCalibrationDrilldownPanels": 14,
+    "characterCalibrationDrilldownReady": 1,
+    "characterCalibrationDrilldownReview": 0,
+    "characterCalibrationDrilldownBlocked": 1,
+    "characterCalibrationDrilldownIssues": 8,
+    "characterCalibrationDrilldownOwnerActions": 8,
+    "characterCalibrationDrilldownOwnerRequired": 6,
+    "characterCalibrationDrilldownManualReview": 2,
+    "characterCalibrationDrilldownSourcePass": 10,
+    "characterCalibrationDrilldownSourceWarning": 2,
+    "characterCalibrationDrilldownSourceError": 6,
+    "characterCalibrationDrilldownProductionWrites": 0
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 411,
-    "requiredEvidenceCount": 304,
+    "evidenceCount": 412,
+    "requiredEvidenceCount": 305,
     "packageFileCount": 12,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 124,
-    "manifestArtifactCount": 74,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json"
+    "validationCommandCount": 126,
+    "manifestArtifactCount": 75,
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json"
   },
   "moduleOrder": [
     "asset-protocol",
@@ -481,9 +499,17 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
       "required": true
+    },
+    {
+      "id": "public-case-character-calibration-drilldown",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+      "required": true
     }
   ],
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json",
+    "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
     "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
@@ -556,7 +582,8 @@
     "accept-impact-r8"
   ],
   "notes": [
-    "Current final presentation route is DCC-first through the R34 Presenter Pack.",
+    "Current final presentation route is DCC-first through the R35 Presenter Pack.",
+    "R35 adds Character Calibration Drilldown: Maya L3 character facts become UI-ready panels, owner actions and fix previews.",
     "R34 adds Platform Variant Executor Expansion Receipts: LOD, Nanite and collision operations become approval and rollback receipts linked to the rolled-back Unreal executor proof.",
     "R33 adds Platform Variant Controlled Executor: Unreal Python executes and rolls back a public Texture2D max-size clamp with 7/7 pass checks.",
     "R32 adds Platform Variant Public Texture2D Payload Fixture: a generated 2048 public texture is imported into Unreal, wired to M_HeroPanel, and proves PC/Mobile texture budgets against real Texture2D facts.",
@@ -636,6 +663,11 @@
       "id": "public-case-platform-variant-executor-expansion",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-executor-expansion-20260805-201222.json",
       "required": true
+    },
+    {
+      "id": "public-case-character-calibration-drilldown",
+      "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+      "required": true
     }
   ],
   "validation": [
@@ -653,7 +685,9 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/executor_expansion.py dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py",
-    "python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py"
+    "python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py",
+    "python -m py_compile dcc-hosts/character-calibration-studio/character_calibration_studio/drilldown.py dcc-hosts/character-calibration-studio/scripts/run_drilldown.py",
+    "python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py"
   ],
   "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
   "platformVariantUnrealRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
@@ -681,8 +715,8 @@
   "platformVariantGenerationPlanSatisfied": 5,
   "platformVariantGenerationPlanOwnerRequired": 6,
   "platformVariantGenerationPlanExecutorReady": 1,
-  "artifactCount": 19,
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json",
+  "artifactCount": 20,
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json",
   "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
   "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
   "platformVariantTextureRuntimeEvidenceLevel": "L3",
@@ -747,5 +781,23 @@
   "platformVariantExecutorExpansionBlocked": 0,
   "platformVariantExecutorExpansionOwnerApprovalsRequired": 3,
   "platformVariantExecutorExpansionRollbackReceiptsRequired": 3,
-  "platformVariantExecutorExpansionProductionWrites": 0
+  "platformVariantExecutorExpansionProductionWrites": 0,
+  "characterCalibrationDrilldownReportVersion": "character-calibration-drilldown@0.1.0",
+  "characterCalibrationDrilldownArtifact": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-drilldown-20260805-202259.json",
+  "characterCalibrationDrilldownEvidenceLevel": "L3-derived",
+  "characterCalibrationDrilldownL3Status": "maya_character_calibration_rows_to_drilldown",
+  "characterCalibrationDrilldownGate": "Blocked",
+  "characterCalibrationDrilldownAssets": 2,
+  "characterCalibrationDrilldownPanels": 14,
+  "characterCalibrationDrilldownReady": 1,
+  "characterCalibrationDrilldownReview": 0,
+  "characterCalibrationDrilldownBlocked": 1,
+  "characterCalibrationDrilldownIssues": 8,
+  "characterCalibrationDrilldownOwnerActions": 8,
+  "characterCalibrationDrilldownOwnerRequired": 6,
+  "characterCalibrationDrilldownManualReview": 2,
+  "characterCalibrationDrilldownSourcePass": 10,
+  "characterCalibrationDrilldownSourceWarning": 2,
+  "characterCalibrationDrilldownSourceError": 6,
+  "characterCalibrationDrilldownProductionWrites": 0
 }

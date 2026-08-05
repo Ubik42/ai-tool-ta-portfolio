@@ -1,6 +1,6 @@
 # Character Calibration & Intent Transfer Studio
 
-R26 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据。
+R26-R35 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据，并进一步生成 Maya/AuroraView 可消费的 drilldown 数据。
 
 ## 核心业务逻辑
 
@@ -21,9 +21,11 @@ R26 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Ri
 - `dcc-hosts/character-calibration-studio/fixtures/synthetic_character_calibration_scene.json`
 - `dcc-hosts/character-calibration-studio/character_calibration_studio/contract.py`
 - `dcc-hosts/character-calibration-studio/character_calibration_studio/maya_collector.py`
+- `dcc-hosts/character-calibration-studio/character_calibration_studio/drilldown.py`
 - `dcc-hosts/character-calibration-studio/scripts/run_smoke.py`
 - `dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py`
 - `dcc-hosts/character-calibration-studio/scripts/run_maya_l3.py`
+- `dcc-hosts/character-calibration-studio/scripts/run_drilldown.py`
 
 R26 已完成：
 
@@ -31,6 +33,13 @@ R26 已完成：
 - Maya L3：Maya 2026 `mayapy` 创建 synthetic mesh / joint DAG / custom attrs，再从 Maya 场景采集真实 topology counts、joint names 和 calibration payload。
 - Presenter Pack 接入：R26 Presenter Pack 探测 Character Calibration Maya L3 artifact，并把 demo route 扩到 15 步。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r26` / `dcc-first-package@1.23.0`。
+
+R35 已完成：
+
+- 读取 Maya L3 artifact，把 flat evaluation rows 投影成 topology / skeleton / skin / calibration / face / Control Rig / mirror panels。
+- 输出 asset selector、default blocked asset、owner action rows、fix preview、mutation boundary 和 productionWrites=0。
+- 结果为 2 character drilldowns，14 panels，8 issue rows，8 owner actions，6 owner_required，2 manual_review。
+- Presenter Pack 接入：R35 Presenter Pack 探测 Character Calibration Drilldown artifact，并把 demo route 扩到 24 步。
 
 ## 证据
 
@@ -44,6 +53,12 @@ R26 已完成：
 
 ```text
 <repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-maya-l3-20260805-175057.json
+```
+
+当前 Drilldown artifact：
+
+```text
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json
 ```
 
 当前 Presenter Pack：
@@ -60,6 +75,8 @@ R26 已完成：
 - Maya runtime：2026
 - assets ready / review / blocked：1 / 0 / 1
 - checks pass / warning / error：10 / 2 / 6
+- drilldown assets / panels：2 / 14
+- owner actions / owner required / manual review：8 / 6 / 2
 
 Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Temporary Sculpt` 保留 topology mismatch、missing Eye_R/Jaw、TMP joint、skin influence overflow、calibration delta overflow、face param missing/out-of-range、Control Rig mapping mismatch 等业务故障。
 
@@ -67,6 +84,5 @@ Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Tem
 
 下一阶段可以继续做：
 
-- Character Calibration UI drilldown：在 Maya/AuroraView 中展示 topology/joint/control mapping 差异。
 - Unreal Control Rig bridge：把 Maya mapping facts 对照到 Unreal Control Rig / Skeleton 资产。
 - Character LOD Bake Planner：把 topology / normal / tangent / vertex color payload 接到角色 LOD 生成链。

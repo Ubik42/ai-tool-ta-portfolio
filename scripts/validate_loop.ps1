@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "spatial-authoring", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "spatial-authoring", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -72,9 +72,11 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py"),
     (Join-Path $CharacterCalibration "character_calibration_studio\contract.py"),
     (Join-Path $CharacterCalibration "character_calibration_studio\maya_collector.py"),
+    (Join-Path $CharacterCalibration "character_calibration_studio\drilldown.py"),
     (Join-Path $CharacterCalibration "scripts\run_smoke.py"),
     (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py"),
     (Join-Path $CharacterCalibration "scripts\run_maya_l3.py"),
+    (Join-Path $CharacterCalibration "scripts\run_drilldown.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "scripts\run_smoke.py"),
@@ -120,9 +122,9 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r34-platform-variant-executor-expansion-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r35-character-calibration-drilldown-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 31, summary
+assert summary["present_evidence_files"] == 32, summary
 assert summary["missing_required_files"] == 0, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"])
 "@ | & $Mayapy -
@@ -165,6 +167,12 @@ if ($Tier -in @("character-calibration", "full")) {
     }
     Invoke-Step "character calibration Maya L3" {
         python (Join-Path $CharacterCalibration "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("character-drilldown", "full")) {
+    Invoke-Step "character calibration drilldown" {
+        python (Join-Path $CharacterCalibration "scripts\run_drilldown.py")
     }
 }
 

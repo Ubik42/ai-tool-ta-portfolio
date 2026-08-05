@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R34 Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Executor Expansion Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R35 Cross-DCC / Engine / Animation / Character Drilldown / Spatial / Platform Variant Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r34` |
-| Version | `dcc-first-package@1.31.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r35` |
+| Version | `dcc-first-package@1.32.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 19 |
+| DCC artifacts | 20 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 31 / 31 present |
+| Presenter pack evidence files | 32 / 32 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 23 |
+| Presenter demo route steps | 24 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -68,6 +68,9 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Character calibration assets ready/review/blocked | 1 / 0 / 1 |
 | Character calibration checks pass/warn/error | 10 / 2 / 6 |
 | Character calibration runtime | `maya_character_calibration_collected`, Maya 2026 |
+| Character calibration drilldown | `Blocked` L3-derived |
+| Character calibration drilldown assets / panels | 2 / 14 |
+| Character calibration drilldown owner actions | 8 total, 6 owner required, 2 manual review |
 | Spatial authoring | `Blocked` L3 |
 | Spatial authoring assets ready/review/blocked | 1 / 0 / 1 |
 | Spatial authoring checks pass/warn/error | 11 / 2 / 7 |
@@ -129,27 +132,28 @@ Then follow the Presenter Pack route:
 8. Run `python <repo>\dcc-hosts\animation-continuity-lab\scripts\run_l3_smoke.py`.
 9. Run `python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py`.
 10. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py`.
-11. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py`.
-12. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py`.
-13. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_unreal_runtime_probe.py`.
-14. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py`.
-15. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py`.
-16. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
-17. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
-18. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_executor_expansion.py`.
-19. Review the Blender Rule Adapter artifact.
-20. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
-21. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
-22. Audit GUI media after final Maya screenshots and recording are captured.
-23. Export and hand off the Presenter Pack.
+11. Run `python <repo>\dcc-hosts\character-calibration-studio\scripts\run_drilldown.py`.
+12. Run `python <repo>\dcc-hosts\spatial-authoring-workbench\scripts\run_l3_smoke.py`.
+13. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_smoke.py`.
+14. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_unreal_runtime_probe.py`.
+15. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py`.
+16. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py`.
+17. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
+18. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
+19. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_executor_expansion.py`.
+20. Review the Blender Rule Adapter artifact.
+21. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
+22. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+23. Audit GUI media after final Maya screenshots and recording are captured.
+24. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 23-step demo route, 7-step business route, public package manifest, 31 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 24-step demo route, 7-step business route, public package manifest, 32 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -302,6 +306,14 @@ This is the R25 animation-to-engine import layer. It reads the R23 Maya Animatio
 
 This is the R26 character transfer evidence layer. It creates public synthetic Maya character meshes and joint DAGs, then checks topology signature, required joint coverage, TMP joint leakage, skin influence budget, calibration delta, face parameter coverage/range, Control Rig mapping and mirror pair coverage. The artifact reports L3, 2 character rows, 1 Ready row, 1 intentionally Blocked row, 10 pass checks, 2 warnings and 6 errors. No production character scene, DNA asset, Control Rig asset or engine asset is mutated.
 
+## Character Calibration Drilldown
+
+```text
+<repo>\dcc-hosts\character-calibration-studio\artifacts\character-calibration-drilldown-20260805-202259.json
+```
+
+This is the R35 Maya-facing drilldown layer above Character Calibration Studio. It reads the Maya L3 artifact and projects flat rule rows into UI-ready panels for topology, skeleton, skin, calibration delta, face params, Control Rig and mirror pairs. The artifact reports L3-derived, 2 character drilldowns, 14 panels, 1 Ready character, 1 intentionally Blocked temporary sculpt, 8 issue rows, 8 owner actions, 6 owner-required actions and 2 manual-review actions. It is a projection artifact only: fix previews and owner actions are exposed without mutating production character assets.
+
 ## Spatial Authoring Workbench
 
 ```text
@@ -401,10 +413,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r34-platform-variant-executor-expansion-presentation-pack-20260805-201419.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r35-character-calibration-drilldown-presentation-pack-20260805-202448.json
 ```
 
-The Presenter Pack is the R34 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 31 / 31 evidence files present, 0 missing required files, 23 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R35 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Character Calibration Drilldown, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 32 / 32 evidence files present, 0 missing required files, 24 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -453,6 +465,11 @@ python <repo>\dcc-hosts\unreal-animation-bridge\scripts\run_import_l3_smoke.py
 python -m py_compile <repo>\dcc-hosts\character-calibration-studio\character_calibration_studio\contract.py <repo>\dcc-hosts\character-calibration-studio\character_calibration_studio\maya_collector.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_smoke.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_maya_l3.py
 python <repo>\dcc-hosts\character-calibration-studio\scripts\run_smoke.py
 python <repo>\dcc-hosts\character-calibration-studio\scripts\run_l3_smoke.py
+```
+
+```powershell
+python -m py_compile <repo>\dcc-hosts\character-calibration-studio\character_calibration_studio\drilldown.py <repo>\dcc-hosts\character-calibration-studio\scripts\run_drilldown.py
+python <repo>\dcc-hosts\character-calibration-studio\scripts\run_drilldown.py
 ```
 
 ```powershell
@@ -540,6 +557,10 @@ Maya 2024 `mayapy` smoke:
 - character calibration L3 status: `maya_character_calibration_collected`
 - character calibration assets ready/review/blocked: 1 / 0 / 1
 - character calibration checks pass/warn/error: 10 / 2 / 6
+- character calibration drilldown report: `character-calibration-drilldown@0.1.0`
+- character calibration drilldown evidence / L3 status: L3-derived / `maya_character_calibration_rows_to_drilldown`
+- character calibration drilldown assets / panels: 2 / 14
+- character calibration drilldown owner actions / owner required / manual review: 8 / 6 / 2
 - spatial authoring report: `spatial-authoring-maya-l3@0.1.0`
 - spatial authoring L3 status: `maya_spatial_authoring_collected`
 - spatial authoring assets ready/review/blocked: 1 / 0 / 1
@@ -609,10 +630,10 @@ Maya 2024 `mayapy` smoke:
 - unreal preset fact platform split / approved waivers: 1 / 1
 - unreal preset fact review report: `maya-unreal-preset-fact-review@0.1.0`
 - unreal preset fact review rows / queue / blocked / waivers: 10 / 3 / 1 / 1
-- presenter pack evidence files present/missing: 31 / 0
-- presenter pack demo route steps: 23
-- reviewer claims: 24
+- presenter pack evidence files present/missing: 32 / 0
+- presenter pack demo route steps: 24
+- reviewer claims: 25
 
 ## Legacy Package
 
-The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R34 Maya Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Executor Expansion Reviewer Pack.
+The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R35 Maya Cross-DCC / Engine / Animation / Character Drilldown / Spatial / Platform Variant Reviewer Pack.

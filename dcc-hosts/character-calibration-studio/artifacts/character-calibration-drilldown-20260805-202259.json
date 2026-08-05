@@ -1,0 +1,582 @@
+{
+  "reportVersion": "character-calibration-drilldown@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Character Calibration Studio",
+  "generatedAt": "2026-08-05 20:22:59",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "maya_character_calibration_rows_to_drilldown",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+    "reportVersion": "character-calibration-maya-l3@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "maya_character_calibration_collected",
+    "gate": "Blocked"
+  },
+  "summary": {
+    "gate": "Blocked",
+    "assetDrilldowns": 2,
+    "panelCount": 14,
+    "readyAssets": 1,
+    "reviewAssets": 0,
+    "blockedAssets": 1,
+    "issueCount": 8,
+    "ownerActions": 8,
+    "ownerRequiredActions": 6,
+    "manualReviewActions": 2,
+    "sourcePass": 10,
+    "sourceWarning": 2,
+    "sourceError": 6,
+    "productionWrites": 0
+  },
+  "uiContract": {
+    "schema": "character-calibration-drilldown-ui@0.1.0",
+    "defaultAssetId": "char-hero-head-tmp-002",
+    "assetSelector": [
+      {
+        "assetId": "char-hero-head-001",
+        "label": "Hero Head Approved",
+        "status": "Ready",
+        "issueCount": 0
+      },
+      {
+        "assetId": "char-hero-head-tmp-002",
+        "label": "Hero Head Temporary Sculpt",
+        "status": "Blocked",
+        "issueCount": 8
+      }
+    ],
+    "tabs": [
+      "topology",
+      "skeleton",
+      "skin",
+      "calibration",
+      "face",
+      "controlRig",
+      "mirror",
+      "ownerActions"
+    ]
+  },
+  "drilldowns": [
+    {
+      "assetId": "char-hero-head-001",
+      "assetLabel": "Hero Head Approved",
+      "status": "Ready",
+      "sourceDcc": "Maya",
+      "ownerState": "accepted",
+      "issueCount": 0,
+      "errorCount": 0,
+      "warningCount": 0,
+      "panels": [
+        {
+          "id": "topology",
+          "label": "Topology",
+          "status": "Ready",
+          "metrics": {
+            "actualSignature": "topo:head:v8:e12:f6",
+            "expectedSignature": "topo:head:v8:e12:f6",
+            "vertexCount": 8,
+            "edgeCount": 12,
+            "faceCount": 6
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:topology-signature",
+              "assetId": "char-hero-head-001",
+              "ruleId": "topology-signature",
+              "label": "Topology signature",
+              "status": "pass",
+              "reason": "DNA, blendshape and facial calibration data require stable vertex/edge/face topology.",
+              "evidence": "actual=topo:head:v8:e12:f6 expected=topo:head:v8:e12:f6",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "skeleton",
+          "label": "Skeleton",
+          "status": "Ready",
+          "metrics": {
+            "expectedCount": 6,
+            "actualCount": 6,
+            "missing": [],
+            "extra": [],
+            "temporary": []
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:joint-coverage",
+              "assetId": "char-hero-head-001",
+              "ruleId": "joint-coverage",
+              "label": "Joint coverage",
+              "status": "pass",
+              "reason": "Required deformation and face joints must exist before Control Rig mapping is trusted.",
+              "evidence": "missing=[] actual=6",
+              "fixPreview": "None"
+            },
+            {
+              "id": "char-hero-head-001:tmp-joint-boundary",
+              "assetId": "char-hero-head-001",
+              "ruleId": "tmp-joint-boundary",
+              "label": "Temporary joint boundary",
+              "status": "pass",
+              "reason": "TMP joints are review-only and should not enter downstream character runtime.",
+              "evidence": "[]",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "status": "Ready",
+          "metrics": {
+            "maxInfluences": 4,
+            "influenceBudget": 4
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:skin-influence-budget",
+              "assetId": "char-hero-head-001",
+              "ruleId": "skin-influence-budget",
+              "label": "Skin influence budget",
+              "status": "pass",
+              "reason": "Runtime character assets must stay within the agreed influence budget.",
+              "evidence": "max=4 budget=4",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "calibration",
+          "label": "Calibration Delta",
+          "status": "Ready",
+          "metrics": {
+            "maxDelta": 0.021,
+            "allowedMaxDelta": 0.035
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:calibration-delta",
+              "assetId": "char-hero-head-001",
+              "ruleId": "calibration-delta",
+              "label": "Calibration delta",
+              "status": "pass",
+              "reason": "Sculpt or wrap deltas beyond tolerance can invalidate face DNA / expression transfer.",
+              "evidence": "maxDelta=0.0210 allowed=0.0350",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "face",
+          "label": "Face Params",
+          "status": "Ready",
+          "metrics": {
+            "requiredCount": 5,
+            "actualCount": 5,
+            "missing": [],
+            "outOfRange": []
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:face-param-coverage",
+              "assetId": "char-hero-head-001",
+              "ruleId": "face-param-coverage",
+              "label": "Face parameter coverage",
+              "status": "pass",
+              "reason": "Required face parameters must exist and stay within the declared control range.",
+              "evidence": "missing=[] outOfRange=[]",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "controlRig",
+          "label": "Control Rig",
+          "status": "Ready",
+          "metrics": {
+            "requiredCount": 5,
+            "actualCount": 5,
+            "missingControls": [],
+            "targetMismatches": [],
+            "unresolvedTargets": []
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:control-rig-mapping",
+              "assetId": "char-hero-head-001",
+              "ruleId": "control-rig-mapping",
+              "label": "Control Rig mapping",
+              "status": "pass",
+              "reason": "Every required runtime control must resolve to an existing deformation target.",
+              "evidence": "missing=[] mismatch=[] unresolved=[]",
+              "fixPreview": "None"
+            }
+          ]
+        },
+        {
+          "id": "mirror",
+          "label": "Mirror Pairs",
+          "status": "Ready",
+          "metrics": {
+            "missingPairs": []
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-001:mirror-pair-coverage",
+              "assetId": "char-hero-head-001",
+              "ruleId": "mirror-pair-coverage",
+              "label": "Mirror pair coverage",
+              "status": "pass",
+              "reason": "Left/right face controls need mirrored target coverage to avoid asymmetric transfer defects.",
+              "evidence": "[]",
+              "fixPreview": "None"
+            }
+          ]
+        }
+      ],
+      "ownerActions": [],
+      "mutationBoundary": {
+        "canAutoFix": false,
+        "ownerRequiredActions": 0,
+        "manualReviewActions": 0,
+        "productionWrites": 0
+      }
+    },
+    {
+      "assetId": "char-hero-head-tmp-002",
+      "assetLabel": "Hero Head Temporary Sculpt",
+      "status": "Blocked",
+      "sourceDcc": "Maya",
+      "ownerState": "requested",
+      "issueCount": 8,
+      "errorCount": 6,
+      "warningCount": 2,
+      "panels": [
+        {
+          "id": "topology",
+          "label": "Topology",
+          "status": "Blocked",
+          "metrics": {
+            "actualSignature": "topo:head:v12:e20:f10",
+            "expectedSignature": "topo:head:v8:e12:f6",
+            "vertexCount": 12,
+            "edgeCount": 20,
+            "faceCount": 10
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:topology-signature",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "topology-signature",
+              "label": "Topology signature",
+              "status": "error",
+              "reason": "DNA, blendshape and facial calibration data require stable vertex/edge/face topology.",
+              "evidence": "actual=topo:head:v12:e20:f10 expected=topo:head:v8:e12:f6",
+              "fixPreview": "Rebuild from the approved head topology or regenerate downstream calibration."
+            }
+          ]
+        },
+        {
+          "id": "skeleton",
+          "label": "Skeleton",
+          "status": "Blocked",
+          "metrics": {
+            "expectedCount": 6,
+            "actualCount": 6,
+            "missing": [
+              "Eye_R",
+              "Jaw"
+            ],
+            "extra": [
+              "Jaw_TMP",
+              "TmpSocket"
+            ],
+            "temporary": [
+              "Jaw_TMP",
+              "TmpSocket"
+            ]
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:joint-coverage",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "joint-coverage",
+              "label": "Joint coverage",
+              "status": "error",
+              "reason": "Required deformation and face joints must exist before Control Rig mapping is trusted.",
+              "evidence": "missing=['Eye_R', 'Jaw'] actual=6",
+              "fixPreview": "Restore missing joints or attach an owner-approved retarget map."
+            },
+            {
+              "id": "char-hero-head-tmp-002:tmp-joint-boundary",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "tmp-joint-boundary",
+              "label": "Temporary joint boundary",
+              "status": "warning",
+              "reason": "TMP joints are review-only and should not enter downstream character runtime.",
+              "evidence": "['Jaw_TMP', 'TmpSocket']",
+              "fixPreview": "Rename, delete, or explicitly waive temporary joints before export."
+            }
+          ]
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "status": "Blocked",
+          "metrics": {
+            "maxInfluences": 6,
+            "influenceBudget": 4
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:skin-influence-budget",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "skin-influence-budget",
+              "label": "Skin influence budget",
+              "status": "error",
+              "reason": "Runtime character assets must stay within the agreed influence budget.",
+              "evidence": "max=6 budget=4",
+              "fixPreview": "Prune weights or move this asset to a higher-cost platform bucket."
+            }
+          ]
+        },
+        {
+          "id": "calibration",
+          "label": "Calibration Delta",
+          "status": "Blocked",
+          "metrics": {
+            "maxDelta": 0.064,
+            "allowedMaxDelta": 0.035
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:calibration-delta",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "calibration-delta",
+              "label": "Calibration delta",
+              "status": "error",
+              "reason": "Sculpt or wrap deltas beyond tolerance can invalidate face DNA / expression transfer.",
+              "evidence": "maxDelta=0.0640 allowed=0.0350",
+              "fixPreview": "Re-wrap the sculpt or regenerate calibration deltas from the approved base."
+            }
+          ]
+        },
+        {
+          "id": "face",
+          "label": "Face Params",
+          "status": "Blocked",
+          "metrics": {
+            "requiredCount": 5,
+            "actualCount": 3,
+            "missing": [
+              "browRaise_R",
+              "eyeBlink_R"
+            ],
+            "outOfRange": [
+              {
+                "name": "jawOpen",
+                "value": 1.2,
+                "range": [
+                  0.0,
+                  1.0
+                ]
+              }
+            ]
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:face-param-coverage",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "face-param-coverage",
+              "label": "Face parameter coverage",
+              "status": "error",
+              "reason": "Required face parameters must exist and stay within the declared control range.",
+              "evidence": "missing=['browRaise_R', 'eyeBlink_R'] outOfRange=[{'name': 'jawOpen', 'value': 1.2, 'range': [0.0, 1.0]}]",
+              "fixPreview": "Restore missing controls and clamp or remap out-of-range parameters."
+            }
+          ]
+        },
+        {
+          "id": "controlRig",
+          "label": "Control Rig",
+          "status": "Blocked",
+          "metrics": {
+            "requiredCount": 5,
+            "actualCount": 3,
+            "missingControls": [
+              "CTRL_brow_R",
+              "CTRL_eye_R"
+            ],
+            "targetMismatches": [
+              {
+                "control": "CTRL_jaw",
+                "expected": "Jaw",
+                "actual": "Jaw_TMP"
+              }
+            ],
+            "unresolvedTargets": []
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:control-rig-mapping",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "control-rig-mapping",
+              "label": "Control Rig mapping",
+              "status": "error",
+              "reason": "Every required runtime control must resolve to an existing deformation target.",
+              "evidence": "missing=['CTRL_brow_R', 'CTRL_eye_R'] mismatch=[{'control': 'CTRL_jaw', 'expected': 'Jaw', 'actual': 'Jaw_TMP'}] unresolved=[]",
+              "fixPreview": "Complete Control Rig mapping or block the transfer."
+            }
+          ]
+        },
+        {
+          "id": "mirror",
+          "label": "Mirror Pairs",
+          "status": "Review",
+          "metrics": {
+            "missingPairs": [
+              [
+                "Eye_L",
+                "Eye_R"
+              ]
+            ]
+          },
+          "evidenceRows": [
+            {
+              "id": "char-hero-head-tmp-002:mirror-pair-coverage",
+              "assetId": "char-hero-head-tmp-002",
+              "ruleId": "mirror-pair-coverage",
+              "label": "Mirror pair coverage",
+              "status": "warning",
+              "reason": "Left/right face controls need mirrored target coverage to avoid asymmetric transfer defects.",
+              "evidence": "[['Eye_L', 'Eye_R']]",
+              "fixPreview": "Restore missing mirror targets or mark the expression as intentionally asymmetric."
+            }
+          ]
+        }
+      ],
+      "ownerActions": [
+        {
+          "id": "owner-action:char-hero-head-tmp-002:topology-signature",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "topology-signature",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "actual=topo:head:v12:e20:f10 expected=topo:head:v8:e12:f6",
+          "reason": "DNA, blendshape and facial calibration data require stable vertex/edge/face topology.",
+          "fixPreview": "Rebuild from the approved head topology or regenerate downstream calibration.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:joint-coverage",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "joint-coverage",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "missing=['Eye_R', 'Jaw'] actual=6",
+          "reason": "Required deformation and face joints must exist before Control Rig mapping is trusted.",
+          "fixPreview": "Restore missing joints or attach an owner-approved retarget map.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:tmp-joint-boundary",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "tmp-joint-boundary",
+          "status": "warning",
+          "mutationScope": "manual_review",
+          "owner": "reviewer",
+          "evidence": "['Jaw_TMP', 'TmpSocket']",
+          "reason": "TMP joints are review-only and should not enter downstream character runtime.",
+          "fixPreview": "Rename, delete, or explicitly waive temporary joints before export.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:skin-influence-budget",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "skin-influence-budget",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "max=6 budget=4",
+          "reason": "Runtime character assets must stay within the agreed influence budget.",
+          "fixPreview": "Prune weights or move this asset to a higher-cost platform bucket.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:calibration-delta",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "calibration-delta",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "maxDelta=0.0640 allowed=0.0350",
+          "reason": "Sculpt or wrap deltas beyond tolerance can invalidate face DNA / expression transfer.",
+          "fixPreview": "Re-wrap the sculpt or regenerate calibration deltas from the approved base.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:face-param-coverage",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "face-param-coverage",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "missing=['browRaise_R', 'eyeBlink_R'] outOfRange=[{'name': 'jawOpen', 'value': 1.2, 'range': [0.0, 1.0]}]",
+          "reason": "Required face parameters must exist and stay within the declared control range.",
+          "fixPreview": "Restore missing controls and clamp or remap out-of-range parameters.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:control-rig-mapping",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "control-rig-mapping",
+          "status": "error",
+          "mutationScope": "owner_required",
+          "owner": "character-owner",
+          "evidence": "missing=['CTRL_brow_R', 'CTRL_eye_R'] mismatch=[{'control': 'CTRL_jaw', 'expected': 'Jaw', 'actual': 'Jaw_TMP'}] unresolved=[]",
+          "reason": "Every required runtime control must resolve to an existing deformation target.",
+          "fixPreview": "Complete Control Rig mapping or block the transfer.",
+          "writeBoundary": "preview_only"
+        },
+        {
+          "id": "owner-action:char-hero-head-tmp-002:mirror-pair-coverage",
+          "assetId": "char-hero-head-tmp-002",
+          "ruleId": "mirror-pair-coverage",
+          "status": "warning",
+          "mutationScope": "manual_review",
+          "owner": "reviewer",
+          "evidence": "[['Eye_L', 'Eye_R']]",
+          "reason": "Left/right face controls need mirrored target coverage to avoid asymmetric transfer defects.",
+          "fixPreview": "Restore missing mirror targets or mark the expression as intentionally asymmetric.",
+          "writeBoundary": "preview_only"
+        }
+      ],
+      "mutationBoundary": {
+        "canAutoFix": false,
+        "ownerRequiredActions": 6,
+        "manualReviewActions": 2,
+        "productionWrites": 0
+      }
+    }
+  ],
+  "adapter": {
+    "id": "character-calibration-drilldown",
+    "name": "Character Calibration Maya Drilldown",
+    "methodSource": "Maya L3 character calibration facts to UI drilldown and owner action rows",
+    "protocolCarrier": "Maya topology, joint DAG, skin, face params, Control Rig mapping and fix preview evidence",
+    "boundary": {
+      "mutation": "drilldown_projection_only",
+      "sceneWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R35 turns Maya L3 character calibration rows into reviewer-oriented drilldown data instead of another flat checklist.",
+    "Every blocked character shows the exact topology, joint, skin, face parameter and Control Rig reasons behind the hold.",
+    "Owner actions keep mutation scope explicit: owner_required and manual_review are separated.",
+    "The drilldown is derived from Maya runtime facts and does not mutate production character assets."
+  ]
+}

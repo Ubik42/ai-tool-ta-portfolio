@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r35-character-calibration-drilldown` | `python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py` | Maya L3 character calibration facts are converted into 2 UI-ready drilldowns, 14 panels, 8 issue rows, 8 owner actions, 6 owner-required actions and 2 manual-review actions. |
+| `validate-r35-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r35-character-calibration-drilldown-presentation-pack")` | DCC Presenter Pack probes 32 key evidence files including Character Calibration Drilldown, reports 32 present / 0 missing required files, and exports 24 demo route steps. |
 | `validate-r34-platform-variant-executor-expansion` | `python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py` | R30 LOD/Nanite/collision generation operations are converted into 5 approval / rollback receipts linked to the R33 rolled-back Unreal executor proof: 2 no-op verified, 1 approval-ready, 2 readiness-only, 0 blocked. |
 | `validate-r34-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r34-platform-variant-executor-expansion-presentation-pack")` | DCC Presenter Pack probes 31 key evidence files including Platform Variant Executor Expansion Receipts, reports 31 present / 0 missing required files, and exports 23 demo route steps. |
 | `validate-r33-platform-variant-controlled-executor` | `python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py` | Unreal 5.3.2 Python applies `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor` max texture size 0 -> 2048, verifies the post-state, rolls back to fingerprint `2502b08c541495a4`, and reports 7 pass checks, 0 warnings and 0 errors. |
