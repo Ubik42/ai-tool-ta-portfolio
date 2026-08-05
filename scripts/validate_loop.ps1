@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -83,9 +83,12 @@ $QuickPythonFiles = @(
     (Join-Path $CharacterCalibration "scripts\run_maya_l3.py"),
     (Join-Path $CharacterCalibration "scripts\run_drilldown.py"),
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\contract.py"),
+    (Join-Path $UnrealControlRig "unreal_control_rig_bridge\fixture_authoring.py"),
     (Join-Path $UnrealControlRig "scripts\run_smoke.py"),
     (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py"),
+    (Join-Path $UnrealControlRig "scripts\run_fixture_authoring.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\probe_control_rig_bridge.py"),
+    (Join-Path $UnrealControlRig "scripts\unreal_python\author_control_rig_fixture.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\drilldown.py"),
@@ -144,11 +147,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r41-unreal-animation-deep-facts-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r42-unreal-control-rig-fixture-authoring-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 39, summary
+assert summary["present_evidence_files"] == 40, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 30, summary
+assert summary["demo_route_steps"] == 31, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -207,6 +210,15 @@ if ($Tier -in @("character-drilldown", "full")) {
 
 if ($Tier -in @("unreal-control-rig", "full")) {
     Invoke-Step "unreal control rig bridge L3" {
+        python (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("unreal-control-rig-fixture-authoring", "full")) {
+    Invoke-Step "unreal control rig fixture authoring" {
+        python (Join-Path $UnrealControlRig "scripts\run_fixture_authoring.py")
+    }
+    Invoke-Step "unreal control rig bridge L3 after fixture authoring" {
         python (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py")
     }
 }

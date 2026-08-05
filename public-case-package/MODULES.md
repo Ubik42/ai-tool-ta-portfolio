@@ -108,15 +108,15 @@ AI boundary: AI can explain why a character is blocked or draft owner notes. It 
 
 Key evidence: `../docs/modules/character-calibration-studio.md`
 
-## 10. Unreal Control Rig Bridge
+## 10. Unreal Control Rig Bridge / Fixture Authoring
 
 Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding and target CR asset coverage before it is useful in engine.
 
-Core secret: separate source mapping readiness from engine binding readiness. A clean Maya row can still be blocked by a missing engine Control Rig asset, and a TMP row should be blocked at both source and engine layers.
+Core secret: separate source mapping readiness, engine binding readiness and controlled fixture authoring. R42 proves the approved row can create `CR_HeroFace`, add the five required runtime controls and become Ready, while the TMP row stays blocked at both source and engine layers.
 
-Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, asset registry checks, evaluation rows, owner actions and read-only write boundary.
+Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, AssetTools authoring harness, hierarchy controller control creation, post-authoring bridge recheck, evaluation rows, owner actions and public-fixture write boundary.
 
-AI boundary: AI can summarize missing controls and owner responsibilities. It cannot create or approve Control Rig assets without deterministic engine evidence and owner approval.
+AI boundary: AI can summarize missing controls and owner responsibilities. It cannot approve Control Rig coverage without deterministic engine evidence, hierarchy facts and explicit write boundary.
 
 Key evidence: `../docs/modules/unreal-control-rig-bridge.md`
 

@@ -104,4 +104,4 @@ R41 不重新导入 FBX，也不保存 Unreal asset。它读取 R25 已生成的
 下一阶段有两条可选路径：
 
 - 继续动画线：补 Animation Blueprint Library / C++ adapter 或 Control Rig curve bridge，让 curve names 不再停留在 Python metadata warning。
-- 业务扩展：做 public Control Rig asset fixture / runtime hierarchy，把 skeleton fingerprint、joint coverage、topology signature 和 Control Rig mapping 串起来。
+- 业务扩展：继续做 Animation Blueprint Library / C++ adapter 读取 curve names，或接 R42 Control Rig fixture 做 deformation target link / compile status。

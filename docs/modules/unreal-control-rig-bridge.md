@@ -1,6 +1,6 @@
 # Unreal Control Rig Bridge
 
-R37 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
+R37-R42 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，并继续推进到 public Control Rig fixture authoring / hierarchy coverage，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -16,9 +16,12 @@ R37 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到
 代码入口：
 
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/contract.py`
+- `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/fixture_authoring.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/probe_control_rig_bridge.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/author_control_rig_fixture.py`
 - `dcc-hosts/unreal-handoff-inspector/projects/AI_Tool_TA_Unreal_L3/AI_Tool_TA_Unreal_L3.uproject`
 
 R37 已完成：
@@ -29,22 +32,38 @@ R37 已完成：
 - 输出 source mapping、runtime binding、missing CR asset、runtime control coverage、deformation target coverage 的 evaluation rows。
 - 输出 owner actions，owner 分配到 `character-owner`、`control-rig-owner`、`engine-ta`，所有 action 都是 `preview_only`。
 
+R42 已完成：
+
+- 读取 R37 bridge artifact，只选择 approved public 角色行进入 controlled fixture authoring，TMP 行 held / no mutation。
+- 通过 Unreal 5.3.2 `ControlRigBlueprintFactory` / `AssetTools` 创建 `/Game/AI_Tool_TA/Characters/CR_HeroFace`。
+- 通过 `RigHierarchyController.add_control` 写入 `CTRL_brow_L`、`CTRL_brow_R`、`CTRL_eye_L`、`CTRL_eye_R`、`CTRL_jaw`。
+- 保存 1 个 public fixture asset；`.uasset` 受 `.gitignore` 排除，仓库交付 deterministic authoring harness + JSON receipt。
+- 复跑 bridge 后 approved 行变成 Ready，TMP 行继续被源头缺陷和 Unreal 目标缺失阻断。
+
 ## 证据
 
-当前 L3 artifact：
+当前 L3 artifacts：
 
 ```text
-<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-205656.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r37-unreal-control-rig-bridge-presentation-pack-20260805-205922.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json
 ```
 
 关键结果：
 
+- fixture authoring report version：`unreal-control-rig-fixture-authoring@0.1.0`
+- fixture gate：`Ready`
+- fixture operations / held：1 / 1
+- fixture created / saved assets：1 / 1
+- fixture hierarchy readable rows：1
+- fixture required / runtime / missing controls：5 / 5 / 0
+- fixture assetWrites / productionWrites：1 / 0
 - report version：`unreal-control-rig-bridge@0.1.0`
 - evidence level：L3
 - l3 status：`unreal_control_rig_bridge_facts_collected`
@@ -52,13 +71,13 @@ R37 已完成：
 - Unreal runtime：5.3.2 / Python 3.9.7
 - Control Rig API ready：true
 - character rows：2
-- ready / review / blocked：0 / 0 / 2
-- checks pass / warning / error：8 / 1 / 7
-- skeletal bindings / Control Rig assets：1 / 0
+- ready / review / blocked：1 / 0 / 1
+- checks pass / warning / error：10 / 1 / 5
+- skeletal bindings / Control Rig assets：1 / 1
 - assetWrites / productionWrites：0 / 0
 
-Gate 为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping 和 Unreal SkeletalMesh/Skeleton binding 都通过，但 public test project 里还没有 `CR_HeroFace`；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
+Gate 仍为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping、Unreal SkeletalMesh/Skeleton binding、`CR_HeroFace` asset 和 5 个 runtime controls 已经通过；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
 
 ## 后续
 
-下一步可以生成或导入 public `CR_HeroFace` fixture，再做 runtime control hierarchy、deformation target link、Control Rig compile status 和 owner waiver 检查；也可以并行开发 Spatial Authoring 的 Unreal socket 对照，把挂点/pose transfer 的 Maya drilldown 接到引擎 Skeleton / socket facts。
+下一步可以继续做 deformation target link、Control Rig compile status、control shape / offset policy 和 owner waiver；也可以并行深化 Spatial Authoring 的 gameplay attach fixture。

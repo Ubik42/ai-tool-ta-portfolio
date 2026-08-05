@@ -9,6 +9,9 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R42 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json` | Maya-hosted package probes 40 key evidence files, exports 31 demo route steps, and adds Unreal Control Rig Fixture Authoring evidence. |
+| Unreal Control Rig Fixture Authoring | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json` | Unreal 5.3.2 Python creates the public `CR_HeroFace` fixture, adds 5 required Maya controls to the runtime hierarchy, saves 1 public fixture asset, and keeps productionWrites=0. |
+| Unreal Control Rig Bridge L3 after fixture authoring | `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json` | Post-authoring Unreal bridge marks approved `char-hero-head-001` Ready while the TMP row remains Blocked by source defects. |
 | R41 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r41-unreal-animation-deep-facts-presentation-pack-20260805-224616.json` | Maya-hosted package probes 39 key evidence files, exports 30 demo route steps, and adds Unreal AnimSequence Deep Facts evidence. |
 | Unreal AnimSequence Deep Facts | `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-deep-facts-20260805-224206.json` | Unreal 5.3.2 Python reads 2 existing public AnimSequence assets without saving, matches 2 / 2 duration frame spans, and records curve/root/compression metadata visibility. |
 | R40 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json` | Maya-hosted package probes 38 key evidence files, exports 29 demo route steps, and adds Unreal Socket Authoring Executor API-limited readiness evidence. |

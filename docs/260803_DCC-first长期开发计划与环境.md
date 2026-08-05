@@ -1490,3 +1490,28 @@ Presenter Pack evidence: 39 / 39 present, 0 missing, 30 route steps
 ```text
 public Control Rig asset fixture / runtime hierarchy -> Unreal runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R42 循环开发断点：Unreal Control Rig Fixture Authoring
+
+R42 已完成 `Unreal Control Rig Fixture Authoring` 和 post-authoring `Unreal Control Rig Bridge` 复验：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-fixture-authoring-20260805-230323.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-230343.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r42-unreal-control-rig-fixture-authoring-presentation-pack-20260805-230853.json
+```
+
+R42 结果：`run_fixture_authoring.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，只选择 R37 approved 角色行，使用 `ControlRigBlueprintFactory` / `AssetTools` 创建 `/Game/AI_Tool_TA/Characters/CR_HeroFace`，用 `RigHierarchyController.add_control` 写入 `CTRL_brow_L`、`CTRL_brow_R`、`CTRL_eye_L`、`CTRL_eye_R`、`CTRL_jaw`，保存 1 个 public fixture asset，productionWrites=0。fixture authoring 为 L3 / `Ready` / `unreal_control_rig_fixture_authoring_collected`，operations/held 1 / 1，required/runtime/missing controls 5 / 5 / 0。复跑 bridge 后 approved 行 Ready，TMP 行 Blocked，整体 L3 / `Blocked`，10 pass / 1 warning / 5 error，assetWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r42 / dcc-first-package@1.39.0
+Presenter Pack evidence: 40 / 40 present, 0 missing, 31 route steps
+```
+
+下一轮入口：
+
+```text
+Control Rig deformation target link / compile status 或 gameplay attach fixture -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```

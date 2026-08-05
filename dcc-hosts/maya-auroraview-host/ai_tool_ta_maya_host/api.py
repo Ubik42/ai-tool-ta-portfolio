@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r41-unreal-animation-deep-facts-presentation-pack",
+        label: str = "r42-unreal-control-rig-fixture-authoring-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4074,6 +4074,12 @@ class MayaPortfolioApi:
                 "Unreal Control Rig Bridge artifact",
                 "artifact",
                 manifest.get("unrealControlRigBridgeArtifact"),
+            ),
+            _probe_file(
+                "unreal-control-rig-fixture-authoring",
+                "Unreal Control Rig Fixture Authoring artifact",
+                "artifact",
+                manifest.get("unrealControlRigFixtureAuthoringArtifact"),
             ),
             _probe_file(
                 "spatial-authoring-maya-l3",
@@ -4245,103 +4251,109 @@ class MayaPortfolioApi:
                 "evidence_expected": "Unreal Python verifies Control Rig API readiness, public SkeletalMesh/Skeleton binding and expected CR asset coverage from Character Calibration drilldown facts.",
             },
             {
-                "id": "14-run-spatial-authoring-l3",
+                "id": "14-run-unreal-control-rig-fixture-authoring",
+                "label": "Run Unreal Control Rig fixture authoring",
+                "operator_action": "Run python dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py, then rerun run_l3_smoke.py.",
+                "evidence_expected": "Unreal Python creates the public CR_HeroFace fixture, adds required Maya controls to the runtime hierarchy, saves only /Game/AI_Tool_TA content, and proves the approved bridge row becomes Ready.",
+            },
+            {
+                "id": "15-run-spatial-authoring-l3",
                 "label": "Run spatial authoring L3",
                 "operator_action": "Run python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Maya mayapy creates synthetic joints and locators, then exports socket, hotspot, pose frame, mirror pair and pose transfer facts.",
             },
             {
-                "id": "15-run-spatial-authoring-drilldown",
+                "id": "16-run-spatial-authoring-drilldown",
                 "label": "Run spatial authoring drilldown",
                 "operator_action": "Run python dcc-hosts/spatial-authoring-workbench/scripts/run_drilldown.py.",
                 "evidence_expected": "Maya L3 spatial authoring facts become UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
             },
             {
-                "id": "16-run-unreal-socket-import-checker",
+                "id": "17-run-unreal-socket-import-checker",
                 "label": "Run Unreal socket import checker",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Unreal Python checks SkeletalMesh/Skeleton socket API readiness and expected engine socket coverage from Spatial Authoring drilldown facts.",
             },
             {
-                "id": "17-run-unreal-socket-authoring-executor",
+                "id": "18-run-unreal-socket-authoring-executor",
                 "label": "Run Unreal socket authoring executor",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py.",
                 "evidence_expected": "Approved socket rows enter a controlled Unreal execution gate; UE 5.3 Python socket authoring limits and no-write rollback boundary are exported.",
             },
             {
-                "id": "18-run-platform-variant-forge",
+                "id": "19-run-platform-variant-forge",
                 "label": "Run platform variant forge",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_smoke.py.",
                 "evidence_expected": "PC and Mobile variant plans are checked against LOD, material, texture, collision, path, owner and Unreal preset fact evidence.",
             },
             {
-                "id": "19-run-platform-variant-unreal-runtime",
+                "id": "20-run-platform-variant-unreal-runtime",
                 "label": "Run platform variant Unreal runtime",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py.",
                 "evidence_expected": "Unreal Python collects runtime StaticMesh facts for planned PC/Mobile variants and compares them against the R28 variant plan.",
             },
             {
-                "id": "20-run-platform-variant-generation-plan",
+                "id": "21-run-platform-variant-generation-plan",
                 "label": "Run platform variant generation plan",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py.",
                 "evidence_expected": "Runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction boundaries.",
             },
             {
-                "id": "21-run-platform-variant-texture-runtime",
+                "id": "22-run-platform-variant-texture-runtime",
                 "label": "Run platform variant texture runtime",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py.",
                 "evidence_expected": "Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for PC/Mobile variants.",
             },
             {
-                "id": "22-run-platform-variant-texture-payload",
+                "id": "23-run-platform-variant-texture-payload",
                 "label": "Run platform variant texture payload",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py.",
                 "evidence_expected": "A generated public 2048 Texture2D payload is imported, wired to the material, and rechecked against PC/Mobile texture budgets.",
             },
             {
-                "id": "23-run-platform-variant-controlled-executor",
+                "id": "24-run-platform-variant-controlled-executor",
                 "label": "Run platform variant controlled executor",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py.",
                 "evidence_expected": "Unreal Python executes a public texture max-size clamp, verifies post-state, and rolls back to the preflight fingerprint.",
             },
             {
-                "id": "24-run-platform-variant-executor-expansion",
+                "id": "25-run-platform-variant-executor-expansion",
                 "label": "Run platform variant executor expansion",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py.",
                 "evidence_expected": "LOD, Nanite and collision operations become approval receipts with deterministic params, writeSet and rollback boundaries.",
             },
             {
-                "id": "25-run-platform-variant-staticmesh-postcheck",
+                "id": "26-run-platform-variant-staticmesh-postcheck",
                 "label": "Run platform variant StaticMesh post-check",
                 "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py.",
                 "evidence_expected": "R34 LOD, Nanite and collision receipts are checked against read-only Unreal StaticMesh runtime facts.",
             },
             {
-                "id": "26-review-blender-adapter",
+                "id": "27-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "27-run-blender-l3-harness",
+                "id": "28-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "28-run-3dsmax-adapter-harness",
+                "id": "29-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "29-audit-gui-media",
+                "id": "30-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "30-handoff-presenter-pack",
+                "id": "31-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4499,6 +4511,20 @@ class MayaPortfolioApi:
                 "unreal_control_rig_bridge_warning_checks": manifest_summary.get("unrealControlRigBridgeWarningChecks"),
                 "unreal_control_rig_bridge_error_checks": manifest_summary.get("unrealControlRigBridgeErrorChecks"),
                 "unreal_control_rig_bridge_asset_writes": manifest_summary.get("unrealControlRigBridgeAssetWrites"),
+                "unreal_control_rig_fixture_authoring_gate": manifest_summary.get("unrealControlRigFixtureAuthoringGate"),
+                "unreal_control_rig_fixture_authoring_evidence_level": manifest_summary.get("unrealControlRigFixtureAuthoringEvidenceLevel"),
+                "unreal_control_rig_fixture_authoring_l3_status": manifest_summary.get("unrealControlRigFixtureAuthoringL3Status"),
+                "unreal_control_rig_fixture_authoring_engine_version": manifest_summary.get("unrealControlRigFixtureAuthoringEngineVersion"),
+                "unreal_control_rig_fixture_authoring_operations": manifest_summary.get("unrealControlRigFixtureAuthoringOperations"),
+                "unreal_control_rig_fixture_authoring_held_rows": manifest_summary.get("unrealControlRigFixtureAuthoringHeldRows"),
+                "unreal_control_rig_fixture_authoring_created_assets": manifest_summary.get("unrealControlRigFixtureAuthoringCreatedAssets"),
+                "unreal_control_rig_fixture_authoring_saved_assets": manifest_summary.get("unrealControlRigFixtureAuthoringSavedAssets"),
+                "unreal_control_rig_fixture_authoring_hierarchy_readable": manifest_summary.get("unrealControlRigFixtureAuthoringHierarchyReadable"),
+                "unreal_control_rig_fixture_authoring_required_controls": manifest_summary.get("unrealControlRigFixtureAuthoringRequiredControls"),
+                "unreal_control_rig_fixture_authoring_runtime_controls": manifest_summary.get("unrealControlRigFixtureAuthoringRuntimeControls"),
+                "unreal_control_rig_fixture_authoring_missing_controls": manifest_summary.get("unrealControlRigFixtureAuthoringMissingControls"),
+                "unreal_control_rig_fixture_authoring_asset_writes": manifest_summary.get("unrealControlRigFixtureAuthoringAssetWrites"),
+                "unreal_control_rig_fixture_authoring_production_writes": manifest_summary.get("unrealControlRigFixtureAuthoringProductionWrites"),
                 "spatial_authoring_gate": manifest_summary.get("spatialAuthoringGate"),
                 "spatial_authoring_evidence_level": manifest_summary.get("spatialAuthoringEvidenceLevel"),
                 "spatial_authoring_l3_status": manifest_summary.get("spatialAuthoringL3Status"),
@@ -4746,7 +4772,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r41-unreal-animation-deep-facts-presentation-pack",
+        label: str = "r42-unreal-control-rig-fixture-authoring-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

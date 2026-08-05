@@ -1,0 +1,471 @@
+{
+  "reportVersion": "unreal-control-rig-fixture-authoring@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Fixture Authoring",
+  "generatedAt": "2026-08-05 23:03:30",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_control_rig_fixture_authoring_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-205656.json",
+    "reportVersion": "unreal-control-rig-bridge@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_bridge_facts_collected",
+    "gate": "Blocked"
+  },
+  "sourceBridgeSummary": {
+    "gate": "Blocked",
+    "characterRows": 2,
+    "readyRows": 0,
+    "reviewRows": 0,
+    "blockedRows": 2,
+    "pass": 8,
+    "warning": 1,
+    "error": 7,
+    "readyAssetIds": [],
+    "reviewAssetIds": [],
+    "blockedAssetIds": [
+      "char-hero-head-001",
+      "char-hero-head-tmp-002"
+    ]
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "ControlRig": true,
+        "ControlRigBlueprint": true,
+        "ControlRigBlueprintFactory": true,
+        "RigControlSettings": true,
+        "RigControlValue": true,
+        "RigElementKey": true,
+        "RigElementType": true,
+        "RigHierarchy": true,
+        "RigHierarchyController": true,
+        "AssetToolsHelpers": true,
+        "EditorAssetLibrary": true
+      },
+      "controlRigBlueprintMethods": [
+        "create_control_rig",
+        "create_rig_vm_host",
+        "get_auto_vm_recompile",
+        "get_available_rig_vm_structs",
+        "get_control_rig_class",
+        "get_controller",
+        "get_controller_by_name",
+        "get_currently_open_rig_blueprints",
+        "get_hierarchy_controller",
+        "get_or_create_controller",
+        "get_rig_vm_host_class",
+        "hierarchy",
+        "recompile_vm",
+        "recompile_vm_if_required",
+        "request_auto_vm_recompilation",
+        "request_rig_vm_init",
+        "set_auto_vm_recompile",
+        "vm_compile_settings"
+      ],
+      "factoryMethods": [
+        "create_control_rig_from_skeletal_mesh_or_skeleton",
+        "create_new_control_rig_asset",
+        "script_factory_can_import",
+        "script_factory_create_file"
+      ]
+    },
+    "assetWrites": 1,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public fixture only; .uasset remains local ignored fixture evidence"
+  },
+  "fixtureAuthoring": {
+    "schema": "unreal-control-rig-fixture-authoring@0.1.0",
+    "operations": [
+      {
+        "id": "control-rig-fixture:char-hero-head-001",
+        "assetId": "char-hero-head-001",
+        "assetLabel": "Hero Head Approved",
+        "selected": true,
+        "sourceStatus": "Ready",
+        "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+        "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "skeletalMeshExists": true,
+        "skeletonExists": true,
+        "requiredControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "apiReady": true,
+        "preflight": {
+          "exists": false,
+          "class": null,
+          "pathName": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+          "hierarchyReadable": false,
+          "hierarchyKeyCount": 0,
+          "hierarchyKeys": [],
+          "runtimeControls": [],
+          "missingControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "availableMethods": [],
+          "hierarchyMethods": []
+        },
+        "authoring": {
+          "attempted": true,
+          "created": true,
+          "saved": true,
+          "method": "AssetTools.create_asset(ControlRigBlueprintFactory)",
+          "attempts": [
+            {
+              "method": "AssetTools.create_asset(ControlRigBlueprintFactory)",
+              "ok": true,
+              "error": null,
+              "factoryProperties": [
+                {
+                  "property": "preview_skeletal_mesh",
+                  "set": false,
+                  "error": "ControlRigBlueprintFactory: Failed to find property 'preview_skeletal_mesh' for attribute 'preview_skeletal_mesh' on 'ControlRigBlueprintFactory'"
+                },
+                {
+                  "property": "target_skeletal_mesh",
+                  "set": false,
+                  "error": "ControlRigBlueprintFactory: Failed to find property 'target_skeletal_mesh' for attribute 'target_skeletal_mesh' on 'ControlRigBlueprintFactory'"
+                },
+                {
+                  "property": "skeletal_mesh",
+                  "set": false,
+                  "error": "ControlRigBlueprintFactory: Failed to find property 'skeletal_mesh' for attribute 'skeletal_mesh' on 'ControlRigBlueprintFactory'"
+                }
+              ]
+            }
+          ],
+          "controlAttempts": [
+            {
+              "control": "CTRL_brow_L",
+              "method": "RigHierarchyController.add_control",
+              "ok": true,
+              "errors": [],
+              "callIndex": 1,
+              "result": "<Struct 'RigElementKey' (0x00000760790E27B0) {type: Control, name: \"CTRL_brow_L\"}>"
+            },
+            {
+              "control": "CTRL_brow_R",
+              "method": "RigHierarchyController.add_control",
+              "ok": true,
+              "errors": [],
+              "callIndex": 1,
+              "result": "<Struct 'RigElementKey' (0x00000760790E2840) {type: Control, name: \"CTRL_brow_R\"}>"
+            },
+            {
+              "control": "CTRL_eye_L",
+              "method": "RigHierarchyController.add_control",
+              "ok": true,
+              "errors": [],
+              "callIndex": 1,
+              "result": "<Struct 'RigElementKey' (0x00000760790E28B0) {type: Control, name: \"CTRL_eye_L\"}>"
+            },
+            {
+              "control": "CTRL_eye_R",
+              "method": "RigHierarchyController.add_control",
+              "ok": true,
+              "errors": [],
+              "callIndex": 1,
+              "result": "<Struct 'RigElementKey' (0x00000760790E2920) {type: Control, name: \"CTRL_eye_R\"}>"
+            },
+            {
+              "control": "CTRL_jaw",
+              "method": "RigHierarchyController.add_control",
+              "ok": true,
+              "errors": [],
+              "callIndex": 1,
+              "result": "<Struct 'RigElementKey' (0x00000760790E2990) {type: Control, name: \"CTRL_jaw\"}>"
+            }
+          ],
+          "createdControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "errors": []
+        },
+        "postcheck": {
+          "exists": true,
+          "class": "ControlRigBlueprint",
+          "pathName": "/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace",
+          "hierarchyReadable": true,
+          "hierarchyKeyCount": 5,
+          "hierarchyKeys": [
+            {
+              "name": "CTRL_brow_L",
+              "type": "<RigElementType.CONTROL: 4>",
+              "repr": "<Struct 'RigElementKey' (0x00000760790E2A80) {type: Control, name: \"CTRL_brow_L\"}>"
+            },
+            {
+              "name": "CTRL_brow_R",
+              "type": "<RigElementType.CONTROL: 4>",
+              "repr": "<Struct 'RigElementKey' (0x00000760790E2B20) {type: Control, name: \"CTRL_brow_R\"}>"
+            },
+            {
+              "name": "CTRL_eye_L",
+              "type": "<RigElementType.CONTROL: 4>",
+              "repr": "<Struct 'RigElementKey' (0x00000760790E2C00) {type: Control, name: \"CTRL_eye_L\"}>"
+            },
+            {
+              "name": "CTRL_eye_R",
+              "type": "<RigElementType.CONTROL: 4>",
+              "repr": "<Struct 'RigElementKey' (0x00000760790E2D00) {type: Control, name: \"CTRL_eye_R\"}>"
+            },
+            {
+              "name": "CTRL_jaw",
+              "type": "<RigElementType.CONTROL: 4>",
+              "repr": "<Struct 'RigElementKey' (0x00000760790E2D10) {type: Control, name: \"CTRL_jaw\"}>"
+            }
+          ],
+          "runtimeControls": [
+            "CTRL_brow_L",
+            "CTRL_brow_R",
+            "CTRL_eye_L",
+            "CTRL_eye_R",
+            "CTRL_jaw"
+          ],
+          "missingControls": [],
+          "availableMethods": [
+            "create_control_rig",
+            "create_rig_vm_host",
+            "get_auto_vm_recompile",
+            "get_available_rig_vm_structs",
+            "get_control_rig_class",
+            "get_controller",
+            "get_controller_by_name",
+            "get_currently_open_rig_blueprints",
+            "get_hierarchy_controller",
+            "get_or_create_controller",
+            "get_rig_vm_host_class",
+            "hierarchy",
+            "recompile_vm",
+            "recompile_vm_if_required",
+            "request_auto_vm_recompilation",
+            "request_rig_vm_init",
+            "set_auto_vm_recompile",
+            "vm_compile_settings"
+          ],
+          "hierarchyMethods": [
+            "acquire_editor_element_handle",
+            "copy_hierarchy",
+            "find_control",
+            "get_all_keys",
+            "get_control_preferred_euler_angles",
+            "get_control_preferred_euler_angles_by_index",
+            "get_control_preferred_euler_rotation_order",
+            "get_control_preferred_euler_rotation_order_by_index",
+            "get_control_preferred_rotator",
+            "get_control_preferred_rotator_by_index",
+            "get_control_value",
+            "get_control_value_by_index",
+            "get_controller",
+            "get_controls",
+            "get_euler_transform_from_control_value",
+            "get_float_from_control_value",
+            "get_global_control_offset_transform",
+            "get_global_control_offset_transform_by_index",
+            "get_global_control_shape_transform",
+            "get_global_control_shape_transform_by_index",
+            "get_int_from_control_value",
+            "get_key",
+            "get_keys",
+            "get_local_control_shape_transform",
+            "get_local_control_shape_transform_by_index",
+            "get_rig_element_key_array_metadata",
+            "get_rig_element_key_metadata",
+            "get_root_elements",
+            "get_rotator_from_control_value",
+            "get_selected_keys",
+            "get_transform_from_control_value",
+            "get_transform_no_scale_from_control_value",
+            "get_vector2d_from_control_value",
+            "get_vector_from_control_value",
+            "is_controller_available",
+            "make_control_value_from_bool",
+            "make_control_value_from_euler_transform",
+            "make_control_value_from_float",
+            "make_control_value_from_int",
+            "make_control_value_from_rotator",
+            "make_control_value_from_transform",
+            "make_control_value_from_transform_no_scale",
+            "make_control_value_from_vector",
+            "make_control_value_from_vector2d",
+            "send_auto_key_event",
+            "set_control_offset_transform",
+            "set_control_offset_transform_by_index",
+            "set_control_preferred_euler_angles",
+            "set_control_preferred_euler_angles_by_index",
+            "set_control_preferred_rotation_order",
+            "set_control_preferred_rotation_order_by_index",
+            "set_control_preferred_rotator",
+            "set_control_preferred_rotator_by_index",
+            "set_control_settings",
+            "set_control_settings_by_index",
+            "set_control_shape_transform",
+            "set_control_shape_transform_by_index",
+            "set_control_value",
+            "set_control_value_by_index",
+            "set_control_visibility",
+            "set_control_visibility_by_index",
+            "set_rig_element_key_array_metadata",
+            "set_rig_element_key_metadata",
+            "sort_keys"
+          ]
+        }
+      }
+    ],
+    "heldRows": [
+      {
+        "id": "held:char-hero-head-tmp-002",
+        "assetId": "char-hero-head-tmp-002",
+        "assetLabel": "Hero Head Temporary Sculpt",
+        "sourceStatus": "Blocked",
+        "skeletalMeshExists": false,
+        "skeletonExists": false,
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "requiredControls": [
+          "CTRL_brow_L",
+          "CTRL_brow_R",
+          "CTRL_eye_L",
+          "CTRL_eye_R",
+          "CTRL_jaw"
+        ],
+        "reason": "Row is not an approved public fixture authoring candidate.",
+        "mutated": false
+      }
+    ],
+    "summary": {
+      "gate": "Ready",
+      "operationRows": 1,
+      "heldRows": 1,
+      "createdAssets": 1,
+      "existingAssets": 0,
+      "savedAssets": 1,
+      "hierarchyReadableRows": 1,
+      "requiredControlCount": 5,
+      "runtimeControlCount": 5,
+      "missingControlCount": 0,
+      "assetWrites": 1,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-fixture-evaluation@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "pass": 7,
+      "warning": 0,
+      "error": 0,
+      "blockedRuleIds": [],
+      "reviewRuleIds": []
+    },
+    "evaluations": [
+      {
+        "id": "char-hero-head-001:source-bridge-selected",
+        "assetId": "char-hero-head-001",
+        "ruleId": "source-bridge-selected",
+        "label": "Source Bridge Selection",
+        "status": "pass",
+        "reason": "Only Ready Maya source rows with Unreal SkeletalMesh/Skeleton binding should be allowed to author Control Rig fixtures.",
+        "evidence": "source=Ready mesh=True skeleton=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:public-fixture-scope",
+        "assetId": "char-hero-head-001",
+        "ruleId": "public-fixture-scope",
+        "label": "Public Fixture Scope",
+        "status": "pass",
+        "reason": "The authoring harness may only write under the public AI_Tool_TA test project namespace.",
+        "evidence": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-authoring-api",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-authoring-api",
+        "label": "Control Rig Authoring API",
+        "status": "pass",
+        "reason": "ControlRigBlueprintFactory, AssetTools and EditorAssetLibrary must be visible for controlled fixture authoring.",
+        "evidence": "{'ControlRig': True, 'ControlRigBlueprint': True, 'ControlRigBlueprintFactory': True, 'RigControlSettings': True, 'RigControlValue': True, 'RigElementKey': True, 'RigElementType': True, 'RigHierarchy': True, 'RigHierarchyController': True, 'AssetToolsHelpers': True, 'EditorAssetLibrary': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-asset-presence",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-asset-presence",
+        "label": "Control Rig Asset Presence",
+        "status": "pass",
+        "reason": "The public Control Rig asset must exist after authoring before runtime hierarchy facts can be trusted.",
+        "evidence": "pre=False created=True post=True errors=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-hierarchy-readable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-hierarchy-readable",
+        "label": "Runtime Hierarchy Readability",
+        "status": "pass",
+        "reason": "The harness should be able to read Control Rig hierarchy keys from the generated or existing asset.",
+        "evidence": "hierarchyKeys=5 methods=['acquire_editor_element_handle', 'copy_hierarchy', 'find_control', 'get_all_keys', 'get_control_preferred_euler_angles', 'get_control_preferred_euler_angles_by_index', 'get_control_preferred_euler_rotation_order', 'get_control_preferred_euler_rotation_order_by_index', 'get_control_preferred_rotator', 'get_control_preferred_rotator_by_index', 'get_control_value', 'get_control_value_by_index']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:required-control-coverage",
+        "assetId": "char-hero-head-001",
+        "ruleId": "required-control-coverage",
+        "label": "Required Control Coverage",
+        "status": "pass",
+        "reason": "The public Control Rig fixture should expose every required Maya control mapping before approval.",
+        "evidence": "required=['CTRL_brow_L', 'CTRL_brow_R', 'CTRL_eye_L', 'CTRL_eye_R', 'CTRL_jaw'] runtime=['CTRL_brow_L', 'CTRL_brow_R', 'CTRL_eye_L', 'CTRL_eye_R', 'CTRL_jaw'] missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:public-write-boundary",
+        "assetId": "char-hero-head-001",
+        "ruleId": "public-write-boundary",
+        "label": "Public Write Boundary",
+        "status": "pass",
+        "reason": "Controlled authoring may save public fixture assets but must never touch production content.",
+        "evidence": "assetWrites=1 productionWrites=0 writeScope=/Game/AI_Tool_TA public fixture only; .uasset remains local ignored fixture evidence",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": []
+  },
+  "adapter": {
+    "id": "unreal-control-rig-fixture-authoring",
+    "name": "Unreal Control Rig Fixture Authoring",
+    "methodSource": "R37 Control Rig bridge selected rows to controlled public Unreal fixture authoring",
+    "protocolCarrier": "Character Calibration Control Rig mapping + Unreal ControlRigBlueprint runtime hierarchy facts",
+    "boundary": {
+      "mutation": "public_unreal_test_project_fixture_only",
+      "engineWrites": 0,
+      "assetWrites": 1,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public fixture only; .uasset remains local ignored fixture evidence"
+    }
+  },
+  "reviewerClaims": [
+    "R42 attempts the missing public CR_HeroFace fixture through Unreal Python instead of leaving the R37 bridge as a static missing-asset report.",
+    "The authoring harness separates asset creation, save boundary, hierarchy readability and required Maya control coverage.",
+    "All writes are constrained to the public /Game/AI_Tool_TA fixture project; productionWrites remains zero."
+  ]
+}
