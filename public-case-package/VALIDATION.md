@@ -4,6 +4,9 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r40-unreal-socket-authoring-executor` | `python dcc-hosts/unreal-socket-import-checker/scripts/run_socket_authoring_executor.py` | Unreal 5.3.2 Python selects 1 approved socket operation and holds 1 blocked row; the gate is L3 / Blocked / `unreal_socket_authoring_executor_api_limited` because `socket_name` and `bone_name` are read-only in commandlet-created sockets, with 9 pass, 0 warning, 2 error and assetWrites=0. |
+| `validate-r40-unreal-socket-api-docs` | `UnrealEditor-Cmd -run=pythonscript scripts/unreal_python/probe_socket_api_docs.py` | Captures UE 5.3 socket authoring API docstrings and property write attempts, proving `add_socket(socket, add_to_skeleton=False)` is visible while socket identity fields are read-only. |
+| `validate-r40-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r40-unreal-socket-authoring-executor-presentation-pack")` | DCC Presenter Pack probes 38 key evidence files including Unreal Socket Authoring Executor and API docs, reports 38 present / 0 missing required files, and exports 29 demo route steps. |
 | `validate-r39-platform-variant-staticmesh-postcheck` | `python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py` | Unreal 5.3.2 Python validates 5 R34 StaticMesh LOD / Nanite / collision receipts against read-only runtime facts: 2 target assets present, 2 / 2 no-op receipts matched, 3 owner-held rows, 32 pass, 3 warning, 0 error and assetWrites=0. |
 | `validate-r39-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r39-platform-variant-staticmesh-postcheck-presentation-pack")` | DCC Presenter Pack probes 36 key evidence files including Platform Variant StaticMesh Post-check, reports 36 present / 0 missing required files, and exports 28 demo route steps. |
 | `validate-r38-unreal-socket-import-checker` | `python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py` | Unreal 5.3.2 Python collects SkeletalMesh/Skeleton socket API readiness and expected socket coverage from Spatial Authoring drilldown facts, reporting L3 / Blocked with 9 pass, 2 warnings, 9 errors and assetWrites=0. |
@@ -189,7 +192,7 @@ Latest Animation Continuity L3:
 Latest DCC Presenter Pack:
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json
 ```
 
 ## Commands

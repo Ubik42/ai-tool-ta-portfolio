@@ -1397,7 +1397,7 @@ R38 已完成 `Unreal Socket Import Checker` L3：
 
 ```text
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r38-unreal-socket-import-checker-presentation-pack-20260805-213500.json
 ```
 
 R38 结果：`run_l3_smoke.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R36 Spatial Authoring Drilldown artifact，采集 SkeletalMesh / Skeleton / SkeletalMeshSocket API、目标资产存在性和 expected socket coverage。结果为 L3 / `Blocked` / `unreal_socket_facts_collected`，2 spatial rows，0 Ready，0 Review，2 Blocked，9 pass，2 warning，9 error，socket API ready，4 expected sockets，0 runtime sockets，assetWrites=0，productionWrites=0。Blocked 是业务门禁：approved rifle 行缺 `SK_Hand_L` / `SK_Hand_R`，TMP backpack 行同时被 Maya 源头缺陷和 Unreal 目标缺失阻断。
@@ -1422,4 +1422,47 @@ python dcc-hosts/unreal-socket-import-checker/scripts/run_l3_smoke.py
 
 ```text
 R37/R38/R34 artifacts -> public Unreal runtime facts -> controlled write or post-check contract -> rollback / owner receipt -> Presenter Pack row -> docs
+```
+
+## R39 循环开发断点：Platform Variant StaticMesh Post-check
+
+R39 已完成 `Platform Variant StaticMesh Post-check` L3：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-staticmesh-postcheck-20260805-215500.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r39-platform-variant-staticmesh-postcheck-presentation-pack-20260805-215900.json
+```
+
+R39 结果：UnrealEditor-Cmd 5.3 进入 public `AI_Tool_TA_Unreal_L3.uproject`，只读采集 2 个目标 StaticMesh 的 LOD / Nanite / collision facts，并验证 R34 的 5 条 LOD / Nanite / collision receipts。结果为 L3 / `Review` / `unreal_staticmesh_postcheck_collected`，2 target assets present，2 / 2 no-op receipts matched，1 approval-ready Nanite receipt，2 readiness-only LOD receipts，3 owner-held rows，32 pass，3 warning，0 error，assetWrites=0，productionWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r39 / dcc-first-package@1.36.0
+Presenter Pack evidence: 36 / 36 present, 0 missing, 28 route steps
+```
+
+## R40 循环开发断点：Unreal Socket Authoring Executor
+
+R40 已完成 `Unreal Socket Authoring Executor` L3 readiness：
+
+```text
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r40-unreal-socket-authoring-executor-presentation-pack-20260805-222519.json
+```
+
+R40 结果：读取 R38 socket readiness artifact，只选择 approved rifle 行进入受控 Unreal executor，TMP backpack 行保持 held / no-write。Unreal 5.3 Python 暴露 `SkeletalMesh.add_socket(socket, add_to_skeleton=False)`，但 commandlet-created `SkeletalMeshSocket.socket_name` 和 `bone_name` 不可写；构造参数和 `rename()` 只改 UObject name，不改 socket identity。结果为 L3 / `Blocked` / `unreal_socket_authoring_executor_api_limited`，selected/held 1 / 1，expected/created sockets 2 / 0，9 pass / 0 warning / 2 error，assetWrites=0，productionWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r40 / dcc-first-package@1.37.0
+Presenter Pack evidence: 38 / 38 present, 0 missing, 29 route steps
+```
+
+下一轮入口：
+
+```text
+Unreal AnimSequence Fact Deepening 或 public Control Rig asset fixture / runtime hierarchy -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```

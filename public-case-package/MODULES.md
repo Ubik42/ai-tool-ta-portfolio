@@ -132,7 +132,19 @@ AI boundary: AI can summarize missing sockets and owner handoff text. It cannot 
 
 Key evidence: `../docs/modules/unreal-socket-import-checker.md`
 
-## 12. Platform Variant Forge
+## 12. Unreal Socket Authoring Executor
+
+Business scenario: an auto-fix button for missing engine sockets is dangerous unless the runtime API can create a named socket, bind it to a bone, post-check it and roll it back.
+
+Core secret: separate the execution gate from the fix promise. R40 selects only the approved rifle row, holds the blocked TMP row, enters Unreal 5.3.2, and records the API limitation that prevents safe socket authoring in commandlet Python.
+
+Deterministic core: R38 source artifact, Unreal commandlet executor, `SkeletalMesh.add_socket` docstring probe, property write attempts for `socket_name` / `bone_name`, no-write boundary and Presenter Pack evidence.
+
+AI boundary: AI can recommend owner actions and explain why the auto-fix is blocked. It cannot claim socket creation when UE exposes add_socket but keeps identity fields read-only.
+
+Key evidence: `../docs/modules/unreal-socket-import-checker.md`
+
+## 13. Platform Variant Forge
 
 Business scenario: PC-to-Mobile asset variants fail when LOD, Nanite, material slots, texture budgets, collision and owner approval are treated as separate chores.
 

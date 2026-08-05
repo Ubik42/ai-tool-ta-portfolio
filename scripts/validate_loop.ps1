@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "character-calibration", "character-drilldown", "unreal-control-rig", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -91,9 +91,13 @@ $QuickPythonFiles = @(
     (Join-Path $SpatialAuthoring "scripts\run_maya_l3.py"),
     (Join-Path $SpatialAuthoring "scripts\run_drilldown.py"),
     (Join-Path $UnrealSocket "unreal_socket_import_checker\contract.py"),
+    (Join-Path $UnrealSocket "unreal_socket_import_checker\controlled_executor.py"),
     (Join-Path $UnrealSocket "scripts\run_smoke.py"),
     (Join-Path $UnrealSocket "scripts\run_l3_smoke.py"),
+    (Join-Path $UnrealSocket "scripts\run_socket_authoring_executor.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_import_checker.py"),
+    (Join-Path $UnrealSocket "scripts\unreal_python\execute_socket_authoring.py"),
+    (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_api_docs.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\runtime_contract.py"),
     (Join-Path $PlatformVariant "platform_variant_forge\generation_plan.py"),
@@ -137,11 +141,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r39-platform-variant-staticmesh-postcheck-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r40-unreal-socket-authoring-executor-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 36, summary
+assert summary["present_evidence_files"] == 38, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 28, summary
+assert summary["demo_route_steps"] == 29, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -216,6 +220,12 @@ if ($Tier -in @("spatial-drilldown", "full")) {
 if ($Tier -in @("unreal-socket", "full")) {
     Invoke-Step "unreal socket import checker L3" {
         python (Join-Path $UnrealSocket "scripts\run_l3_smoke.py")
+    }
+}
+
+if ($Tier -in @("unreal-socket-authoring-executor", "full")) {
+    Invoke-Step "unreal socket authoring executor" {
+        python (Join-Path $UnrealSocket "scripts\run_socket_authoring_executor.py")
     }
 }
 

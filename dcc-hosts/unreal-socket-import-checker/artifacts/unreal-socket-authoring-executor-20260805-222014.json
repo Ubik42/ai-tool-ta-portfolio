@@ -1,0 +1,451 @@
+{
+  "reportVersion": "unreal-socket-authoring-executor@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Authoring Executor",
+  "generatedAt": "2026-08-05 22:20:22",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_socket_authoring_executor_api_limited",
+  "sourceSocketImportChecker": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-import-checker-l3-20260805-212131.json",
+    "reportVersion": "unreal-socket-import-checker@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_socket_facts_collected",
+    "gate": "Blocked"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "SkeletalMesh": true,
+        "SkeletalMeshSocket": true,
+        "EditorAssetLibrary": true
+      },
+      "skeletalMeshMethods": [
+        "add_socket",
+        "find_socket",
+        "find_socket_and_index",
+        "find_socket_info",
+        "get_socket_by_index",
+        "num_sockets"
+      ],
+      "skeletalMeshSocketMethods": [
+        "bone_name",
+        "get_fname",
+        "get_full_name",
+        "get_name",
+        "get_path_name",
+        "get_socket_location",
+        "initialize_socket_from_location",
+        "relative_location",
+        "relative_rotation",
+        "relative_scale",
+        "rename",
+        "socket_name"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "inMemoryWrites": 0,
+    "writeScope": "in-memory /Game/AI_Tool_TA public fixture only; rollback verified before exit"
+  },
+  "operations": [
+    {
+      "id": "socket-authoring:spatial-rifle-authoring-001",
+      "assetId": "spatial-rifle-authoring-001",
+      "assetLabel": "Rifle Socket Authoring Approved",
+      "sourceStatus": "Ready",
+      "ownerState": "approved",
+      "skeletalMeshPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "skeletonPath": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+      "targetAssetPath": "/Game/AI_Tool_TA/Characters/SK_Hero",
+      "targetClass": "SkeletalMesh",
+      "targetExists": true,
+      "apiReady": true,
+      "candidateTargets": [
+        {
+          "path": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton",
+          "class": "Skeleton",
+          "exists": true
+        },
+        {
+          "path": "/Game/AI_Tool_TA/Characters/SK_Hero",
+          "class": "SkeletalMesh",
+          "exists": true
+        }
+      ],
+      "expectedSockets": [
+        {
+          "sourceName": "hand_L_socket",
+          "exportName": "SK_Hand_L",
+          "parentJoint": "Hand_L",
+          "mirrorOf": "hand_R_socket",
+          "side": "L",
+          "space": "local",
+          "previewLocator": true,
+          "translate": [
+            -2.0,
+            1.0,
+            0.0
+          ],
+          "rotate": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "offsetCm": 2.2361
+        },
+        {
+          "sourceName": "hand_R_socket",
+          "exportName": "SK_Hand_R",
+          "parentJoint": "Hand_R",
+          "mirrorOf": "hand_L_socket",
+          "side": "R",
+          "space": "local",
+          "previewLocator": true,
+          "translate": [
+            2.0,
+            1.0,
+            0.0
+          ],
+          "rotate": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "offsetCm": 2.2361
+        }
+      ],
+      "expectedSocketNames": [
+        "SK_Hand_L",
+        "SK_Hand_R"
+      ],
+      "preflight": {
+        "apiReady": true,
+        "socketCount": 0,
+        "socketNames": [],
+        "socketDetails": [],
+        "socketDetailsByName": {},
+        "availableMethods": [
+          "add_socket",
+          "find_socket",
+          "find_socket_and_index",
+          "find_socket_info",
+          "get_socket_by_index",
+          "num_sockets"
+        ],
+        "fingerprint": "97d170e1550eee4afc0af065b78cda302a97674c"
+      },
+      "authoring": {
+        "attempted": true,
+        "method": "SkeletalMesh.add_socket",
+        "createdSockets": [],
+        "skippedExisting": [],
+        "errors": [
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:relative_location:SkeletalMeshSocket: Property 'RelativeLocation' for attribute 'relative_location' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:relative_rotation:SkeletalMeshSocket: Property 'RelativeRotation' for attribute 'relative_rotation' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:relative_scale:SkeletalMeshSocket: Property 'RelativeScale' for attribute 'relative_scale' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:relative_location:SkeletalMeshSocket: Property 'RelativeLocation' for attribute 'relative_location' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:relative_rotation:SkeletalMeshSocket: Property 'RelativeRotation' for attribute 'relative_rotation' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:relative_scale:SkeletalMeshSocket: Property 'RelativeScale' for attribute 'relative_scale' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+          "SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set"
+        ]
+      },
+      "postcheck": {
+        "socketNames": [],
+        "socketDetailsByName": {},
+        "expectedSocketDetails": {
+          "SK_Hand_L": null,
+          "SK_Hand_R": null
+        },
+        "fingerprint": "97d170e1550eee4afc0af065b78cda302a97674c",
+        "expectedSocketsPresent": false,
+        "parentBindingsMatched": false,
+        "parentMismatches": []
+      },
+      "rollback": {
+        "attempted": false,
+        "removedSockets": [],
+        "errors": [],
+        "socketNames": [],
+        "fingerprint": "97d170e1550eee4afc0af065b78cda302a97674c",
+        "preflightFingerprint": "97d170e1550eee4afc0af065b78cda302a97674c",
+        "restoredPreflight": true
+      }
+    }
+  ],
+  "heldRows": [
+    {
+      "id": "held:spatial-backpack-tmp-002",
+      "assetId": "spatial-backpack-tmp-002",
+      "assetLabel": "Backpack Socket Temporary Blocked",
+      "sourceStatus": "Blocked",
+      "ownerState": "temporary",
+      "expectedSocketNames": [
+        "SK_Hand_R",
+        "SK_Shoulder_R"
+      ],
+      "held": true,
+      "mutated": false,
+      "owner": "spatial-owner",
+      "reason": "Source row is not approved Ready; executor keeps it out of engine mutation."
+    }
+  ],
+  "executor": {
+    "schema": "unreal-socket-authoring-executor@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "selectedOperations": 1,
+      "heldRows": 1,
+      "expectedSockets": 2,
+      "createdSockets": 0,
+      "postCheckPassed": 0,
+      "rollbackPassed": 1,
+      "heldRowsUntouched": 1,
+      "pass": 9,
+      "warning": 0,
+      "error": 2,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "inMemoryWrites": 0
+    },
+    "rows": [
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:unreal-python-runtime",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "unreal-python-runtime",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:source-row-approved",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "source-row-approved",
+        "status": "pass",
+        "evidence": "sourceStatus=Ready ownerState=approved",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:public-fixture-scope",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "public-fixture-scope",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Characters/SK_Hero",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:target-socket-container-present",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "target-socket-container-present",
+        "status": "pass",
+        "evidence": "exists=True class=SkeletalMesh",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:socket-authoring-api-ready",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "socket-authoring-api-ready",
+        "status": "pass",
+        "evidence": "method=SkeletalMesh.add_socket apiReady=True errors=[\"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:relative_location:SkeletalMeshSocket: Property 'RelativeLocation' for attribute 'relative_location' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:relative_rotation:SkeletalMeshSocket: Property 'RelativeRotation' for attribute 'relative_rotation' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:relative_scale:SkeletalMeshSocket: Property 'RelativeScale' for attribute 'relative_scale' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_L:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:relative_location:SkeletalMeshSocket: Property 'RelativeLocation' for attribute 'relative_location' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:relative_rotation:SkeletalMeshSocket: Property 'RelativeRotation' for attribute 'relative_rotation' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:relative_scale:SkeletalMeshSocket: Property 'RelativeScale' for attribute 'relative_scale' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:set:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:bone_name:attr:SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:set:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\", \"SK_Hand_R:socket_name:attr:SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set\"]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:preflight-fingerprint-captured",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "preflight-fingerprint-captured",
+        "status": "pass",
+        "evidence": "preflightSockets=[] fingerprint=97d170e1550eee4afc0af065b78cda302a97674c",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:socket-authoring-executed",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "socket-authoring-executed",
+        "status": "error",
+        "evidence": "created=[] postSockets=[]",
+        "fixPreview": "Create every missing expected socket before accepting the execution receipt."
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:postcheck-parent-binding",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "postcheck-parent-binding",
+        "status": "error",
+        "evidence": "parentMismatches=[] details={'SK_Hand_L': None, 'SK_Hand_R': None}",
+        "fixPreview": "Bind each runtime socket to the same parent joint carried by the Maya source row."
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:rollback-restored-preflight",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "rollback-restored-preflight",
+        "status": "pass",
+        "evidence": "finalSockets=[] finalFingerprint=97d170e1550eee4afc0af065b78cda302a97674c preflightFingerprint=97d170e1550eee4afc0af065b78cda302a97674c",
+        "fixPreview": "None"
+      },
+      {
+        "id": "socket-authoring:spatial-rifle-authoring-001:write-boundary-clean",
+        "assetId": "spatial-rifle-authoring-001",
+        "operationId": "socket-authoring:spatial-rifle-authoring-001",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0 inMemoryWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "spatial-backpack-tmp-002:held-row-no-write",
+        "assetId": "spatial-backpack-tmp-002",
+        "operationId": "held:spatial-backpack-tmp-002",
+        "ruleId": "held-row-no-write",
+        "status": "pass",
+        "evidence": "held=True mutated=False reason=Source row is not approved Ready; executor keeps it out of engine mutation. productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "socket-authoring-action:socket-authoring:spatial-rifle-authoring-001:socket-authoring-executed",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "socket-authoring-executed",
+        "owner": "engine-ta",
+        "preview": "Create every missing expected socket before accepting the execution receipt."
+      },
+      {
+        "id": "socket-authoring-action:socket-authoring:spatial-rifle-authoring-001:postcheck-parent-binding",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "postcheck-parent-binding",
+        "owner": "engine-ta",
+        "preview": "Bind each runtime socket to the same parent joint carried by the Maya source row."
+      },
+      {
+        "id": "socket-authoring-held:spatial-backpack-tmp-002",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-row-held",
+        "owner": "spatial-owner",
+        "preview": "Source row is not approved Ready; executor keeps it out of engine mutation."
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-socket-authoring-executor",
+    "name": "Unreal Socket Authoring Controlled Executor",
+    "methodSource": "R38 Maya spatial socket intent + Unreal Python SkeletalMesh.add_socket runtime mutation",
+    "protocolCarrier": "approved source socket rows, Unreal in-memory authoring, post-check snapshot and rollback fingerprint",
+    "boundary": {
+      "mutation": "in_memory_public_fixture_rolled_back",
+      "writeScope": "in-memory /Game/AI_Tool_TA public fixture only; rollback verified before exit",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "inMemoryWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R40 converts the R38 approved rifle socket gap into a controlled Unreal execution gate.",
+    "Only approved public fixture rows can execute; temporary or blocked source rows remain held with explicit no-write evidence.",
+    "No package, engine or production asset is saved; assetWrites, engineWrites and productionWrites remain zero.",
+    "The executor records the Unreal Python authoring limitation instead of pretending auto-fix succeeded: UE 5.3 exposes add_socket but keeps socket_name and bone_name read-only for commandlet-created SkeletalMeshSocket objects."
+  ]
+}

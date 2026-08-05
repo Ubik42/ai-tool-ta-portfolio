@@ -1,0 +1,316 @@
+{
+  "reportVersion": "unreal-socket-api-docs@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "classes": {
+    "SkeletalMeshSocket": true,
+    "Name": true,
+    "new_object": true
+  },
+  "mesh": {
+    "class": "SkeletalMesh",
+    "path": "/Game/AI_Tool_TA/Characters/SK_Hero.SK_Hero",
+    "methods": [
+      "add_socket",
+      "find_socket",
+      "find_socket_and_index",
+      "find_socket_info",
+      "get_all_morph_target_names",
+      "get_fname",
+      "get_full_name",
+      "get_name",
+      "get_path_name",
+      "get_socket_by_index",
+      "num_sockets",
+      "rename"
+    ]
+  },
+  "skeleton": {
+    "class": "Skeleton",
+    "path": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton",
+    "methods": [
+      "get_fname",
+      "get_full_name",
+      "get_name",
+      "get_path_name",
+      "rename"
+    ]
+  },
+  "socket": {
+    "class": "SkeletalMeshSocket",
+    "path": "/Game/AI_Tool_TA/Characters/SK_Hero.SK_Hero:SK_Probe",
+    "methods": [
+      "bone_name",
+      "get_fname",
+      "get_full_name",
+      "get_name",
+      "get_path_name",
+      "get_socket_location",
+      "initialize_socket_from_location",
+      "relative_location",
+      "relative_rotation",
+      "relative_scale",
+      "rename",
+      "socket_name"
+    ]
+  },
+  "constructAttempts": [
+    {
+      "label": "default",
+      "result": "ok",
+      "probe": {
+        "class": "SkeletalMeshSocket",
+        "path": "/Engine/Transient.SkeletalMeshSocket_0",
+        "methods": [
+          "bone_name",
+          "get_fname",
+          "get_full_name",
+          "get_name",
+          "get_path_name",
+          "get_socket_location",
+          "initialize_socket_from_location",
+          "relative_location",
+          "relative_rotation",
+          "relative_scale",
+          "rename",
+          "socket_name"
+        ]
+      },
+      "properties": {
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "label": "outer",
+      "result": "ok",
+      "probe": {
+        "class": "SkeletalMeshSocket",
+        "path": "/Game/AI_Tool_TA/Characters/SK_Hero.SK_Hero:SkeletalMeshSocket_0",
+        "methods": [
+          "bone_name",
+          "get_fname",
+          "get_full_name",
+          "get_name",
+          "get_path_name",
+          "get_socket_location",
+          "initialize_socket_from_location",
+          "relative_location",
+          "relative_rotation",
+          "relative_scale",
+          "rename",
+          "socket_name"
+        ]
+      },
+      "properties": {
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "label": "name",
+      "result": "ok",
+      "probe": {
+        "class": "SkeletalMeshSocket",
+        "path": "/Engine/Transient.SK_Ctor",
+        "methods": [
+          "bone_name",
+          "get_fname",
+          "get_full_name",
+          "get_name",
+          "get_path_name",
+          "get_socket_location",
+          "initialize_socket_from_location",
+          "relative_location",
+          "relative_rotation",
+          "relative_scale",
+          "rename",
+          "socket_name"
+        ]
+      },
+      "properties": {
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "label": "outer_name",
+      "result": "ok",
+      "probe": {
+        "class": "SkeletalMeshSocket",
+        "path": "/Game/AI_Tool_TA/Characters/SK_Hero.SK_Hero:SK_Ctor",
+        "methods": [
+          "bone_name",
+          "get_fname",
+          "get_full_name",
+          "get_name",
+          "get_path_name",
+          "get_socket_location",
+          "initialize_socket_from_location",
+          "relative_location",
+          "relative_rotation",
+          "relative_scale",
+          "rename",
+          "socket_name"
+        ]
+      },
+      "properties": {
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "label": "socket_name_kw",
+      "result": "'socket_name' is an invalid keyword argument for call()",
+      "probe": null
+    },
+    {
+      "label": "outer_socket_name_kw",
+      "result": "call() takes at most 2 keyword arguments (3 given)",
+      "probe": null
+    }
+  ],
+  "renameAttempts": [
+    {
+      "args": [
+        "SK_Rename"
+      ],
+      "result": "True",
+      "after": {
+        "name": "SK_Rename",
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "args": [
+        "SK_Rename",
+        "None"
+      ],
+      "result": "True",
+      "after": {
+        "name": "SK_Rename",
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    },
+    {
+      "args": [
+        "SK_Rename",
+        "None",
+        "0"
+      ],
+      "result": "rename() takes at most 2 arguments (3 given)",
+      "after": {
+        "name": "SK_Rename",
+        "socket_name": "None",
+        "bone_name": "None"
+      }
+    }
+  ],
+  "componentAttempts": [
+    {
+      "label": "component_default",
+      "create": "ok",
+      "setMesh": "set_skeletal_mesh",
+      "init": "None",
+      "after": {
+        "socket_name": "None",
+        "bone_name": "None",
+        "relative_location": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 0.000000, y: 0.000000, z: 0.000000}>",
+        "relative_rotation": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>"
+      }
+    },
+    {
+      "label": "component_new_object",
+      "create": "ok",
+      "setMesh": "set_skeletal_mesh",
+      "init": "None",
+      "after": {
+        "socket_name": "None",
+        "bone_name": "None",
+        "relative_location": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 0.000000, y: 0.000000, z: 0.000000}>",
+        "relative_rotation": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>"
+      }
+    }
+  ],
+  "docstrings": {
+    "SkeletalMesh.add_socket": "x.add_socket(socket, add_to_skeleton=False) -> None\r\nAdd a skeletal socket object to this SkeletalMesh, and optionally promotes it to USkeleton socket.\r\n\r\nArgs:\r\n    socket (SkeletalMeshSocket): \r\n    add_to_skeleton (bool):",
+    "SkeletalMesh.find_socket": "x.find_socket(socket_name) -> SkeletalMeshSocket\r\nFind a socket object in this SkeletalMesh by name.\nEntering NAME_None will return NULL. If there are multiple sockets with the same name, will return the first one.\r\n\r\nArgs:\r\n    socket_name (Name): \r\n\r\nReturns:\r\n    SkeletalMeshSocket:",
+    "SkeletalMesh.find_socket_and_index": "x.find_socket_and_index(socket_name) -> (SkeletalMeshSocket, out_index=int32)\r\nFind a socket object in this SkeletalMesh by name.\nEntering NAME_None will return NULL. If there are multiple sockets with the same name, will return the first one.\nAlso returns the index for the socket allowing for future fast access via GetSocketByIndex()\r\n\r\nArgs:\r\n    socket_name (Name): \r\n\r\nReturns:\r\n    int32: \r\n\r\n    out_index (int32):",
+    "SkeletalMeshSocket": "Skeletal Mesh Socket\r\n\r\n**C++ Source:**\r\n\r\n- **Module**: Engine\r\n- **File**: SkeletalMeshSocket.h\r\n\r\n**Editor Properties:** (see get_editor_property/set_editor_property)\r\n\r\n- ``bone_name`` (Name):  [Read-Only]\r\n- ``force_always_animated`` (bool):  [Read-Write] If true then the hierarchy of bones this socket is attached to will always be\r\n            evaluated, even if it had previously been removed due to the current lod setting\r\n- ``relative_location`` (Vector):  [Read-Write]\r\n- ``relative_rotation`` (Rotator):  [Read-Write]\r\n- ``relative_scale`` (Vector):  [Read-Write]\r\n- ``socket_name`` (Name):  [Read-Only] Defines a named attachment location on the USkeletalMesh.\r\n  These are set up in editor and used as a shortcut instead of specifying\r\n  everything explicitly to AttachComponent in the SkeletalMeshComponent.\r\n  The Outer of a SkeletalMeshSocket should always be the USkeletalMesh.",
+    "SkeletalMeshSocket.initialize_socket_from_location": "x.initialize_socket_from_location(skel_comp, world_location, world_normal) -> None\r\nSets BoneName, RelativeLocation and RelativeRotation based on closest bone to WorldLocation and WorldNormal\r\n\r\nArgs:\r\n    skel_comp (SkeletalMeshComponent): \r\n    world_location (Vector): \r\n    world_normal (Vector):"
+  },
+  "signatures": {
+    "SkeletalMesh.add_socket": "no signature found for builtin <built-in method add_socket of SkeletalMesh object at 0x000001F54171B990>",
+    "SkeletalMeshSocket": "no signature found for builtin type <class 'SkeletalMeshSocket'>",
+    "SkeletalMeshSocket.initialize_socket_from_location": "no signature found for builtin <built-in method initialize_socket_from_location of SkeletalMeshSocket object at 0x000001F54200F610>"
+  },
+  "propertyWriteAttempts": [
+    {
+      "property": "socket_name",
+      "setEditor": "SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "setAttr": "SkeletalMeshSocket: Property 'SocketName' for attribute 'socket_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "after": "None"
+    },
+    {
+      "property": "bone_name",
+      "setEditor": "SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "setAttr": "SkeletalMeshSocket: Property 'BoneName' for attribute 'bone_name' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "after": "None"
+    },
+    {
+      "property": "relative_location",
+      "setEditor": "ok",
+      "setAttr": "SkeletalMeshSocket: Property 'RelativeLocation' for attribute 'relative_location' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "after": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 1.000000, y: 2.000000, z: 3.000000}>"
+    },
+    {
+      "property": "relative_rotation",
+      "setEditor": "ok",
+      "setAttr": "SkeletalMeshSocket: Property 'RelativeRotation' for attribute 'relative_rotation' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "after": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>"
+    },
+    {
+      "property": "relative_scale",
+      "setEditor": "ok",
+      "setAttr": "SkeletalMeshSocket: Property 'RelativeScale' for attribute 'relative_scale' on 'SkeletalMeshSocket' is read-only and cannot be set",
+      "after": "<Struct 'Vector' (0x000005F5A998FAF8) {x: 1.000000, y: 1.000000, z: 1.000000}>"
+    }
+  ],
+  "initializeAttempts": [
+    {
+      "label": "vector_rotator",
+      "result": "initialize_socket_from_location() required argument 'world_normal' (pos 3) not found",
+      "after": {
+        "socket_name": "None",
+        "bone_name": "None",
+        "relative_location": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 1.000000, y: 2.000000, z: 3.000000}>",
+        "relative_rotation": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>",
+        "relative_scale": "<Struct 'Vector' (0x000005F5A998FAF8) {x: 1.000000, y: 1.000000, z: 1.000000}>"
+      }
+    },
+    {
+      "label": "mesh_vector_rotator",
+      "result": "SkeletalMeshSocket: Failed to convert parameter 'skel_comp' when calling function 'SkeletalMeshSocket.InitializeSocketFromLocation' on 'SK_Rename'\n  TypeError: NativizeProperty: Cannot nativize 'SkeletalMesh' as 'SkelComp' (ObjectProperty)\n    TypeError: NativizeObject: Cannot nativize 'SkeletalMesh' as 'Object' (allowed Class type: 'SkeletalMeshComponent')",
+      "after": {
+        "socket_name": "None",
+        "bone_name": "None",
+        "relative_location": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 1.000000, y: 2.000000, z: 3.000000}>",
+        "relative_rotation": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>",
+        "relative_scale": "<Struct 'Vector' (0x000005F5A998FAF8) {x: 1.000000, y: 1.000000, z: 1.000000}>"
+      }
+    },
+    {
+      "label": "mesh_vector",
+      "result": "initialize_socket_from_location() required argument 'world_normal' (pos 3) not found",
+      "after": {
+        "socket_name": "None",
+        "bone_name": "None",
+        "relative_location": "<Struct 'Vector' (0x000005F5A998FAC8) {x: 1.000000, y: 2.000000, z: 3.000000}>",
+        "relative_rotation": "<Struct 'Rotator' (0x000005F5A998FAE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>",
+        "relative_scale": "<Struct 'Vector' (0x000005F5A998FAF8) {x: 1.000000, y: 1.000000, z: 1.000000}>"
+      }
+    }
+  ]
+}
