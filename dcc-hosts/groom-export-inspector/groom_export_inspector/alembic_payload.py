@@ -12,16 +12,20 @@ from .contract import evaluate_scene, load_fixture, public_path
 from .maya_collector import collect_maya_scene_facts, create_scene_from_fixture, reset_scene
 
 
-REPORT_VERSION = "groom-alembic-payload@0.1.0"
+REPORT_VERSION = "groom-alembic-payload@0.2.0"
 PORTFOLIO_ROOT = Path(__file__).resolve().parents[3]
+EXPORT_MODE_ASSET_ROOT = "asset_root"
+EXPORT_MODE_CURVE_ONLY = "curve_only"
 
 
 def build_alembic_payload_report(
     fixture_path: str | Path,
     cache_dir: str | Path,
+    export_mode: str = EXPORT_MODE_ASSET_ROOT,
 ) -> Dict[str, Any]:
     import maya.cmds as cmds  # type: ignore
 
+    normalized_export_mode = _normalize_export_mode(export_mode)
     fixture = load_fixture(fixture_path)
     cache_root = Path(cache_dir)
     cache_root.mkdir(parents=True, exist_ok=True)
@@ -30,9 +34,15 @@ def build_alembic_payload_report(
     facts = collect_maya_scene_facts(cmds)
     source_evaluation = evaluate_scene(facts)
     plugin = _load_alembic_exporter(cmds)
-    operations = _export_operations(cmds, facts, source_evaluation, cache_root, plugin)
+    operations = _export_operations(cmds, facts, source_evaluation, cache_root, plugin, normalized_export_mode)
     payload = {
         "schema": "groom-alembic-payload-facts@0.1.0",
+        "exportMode": normalized_export_mode,
+        "unrealHairTranslatorCondition": {
+            "source": "UE 5.3 AlembicHairTranslator CanTranslate",
+            "acceptedBySchemaProbe": "NumCurves > 0 and bHasGeometry == false",
+            "reason": "Groom Alembic import is curve-only; polygon mesh geometry lets the generic Alembic path consume the file as StaticMesh.",
+        },
         "sourceAssets": len(facts.get("assets", [])),
         "operations": operations,
         "summary": _summarize_operations(operations, plugin),
@@ -43,7 +53,7 @@ def build_alembic_payload_report(
         "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
         "generatedAt": time.strftime("%Y-%m-%d %H:%M:%S"),
         "evidenceLevel": "L3" if plugin.get("loadedAfter") else "Blocked",
-        "l3Status": "maya_groom_alembic_payload_exported" if plugin.get("loadedAfter") else "blocked_by_missing_maya_abc_export",
+        "l3Status": _l3_status(plugin, normalized_export_mode),
         "mayaRuntime": {
             "version": _safe(lambda: cmds.about(version=True)),
             "apiVersion": _safe(lambda: cmds.about(apiVersion=True)),
@@ -60,7 +70,7 @@ def build_alembic_payload_report(
         "adapter": {
             "id": "groom-alembic-payload",
             "name": "Groom Alembic Payload Receipt",
-            "methodSource": "Maya AbcExport over public synthetic groom curves",
+            "methodSource": _method_source(normalized_export_mode),
             "protocolCarrier": "Approved R46 groom rows + Maya curve roots + Alembic cache receipt",
             "boundary": {
                 "mutation": "public_synthetic_alembic_cache_write",
@@ -72,9 +82,10 @@ def build_alembic_payload_report(
             },
         },
         "reviewerClaims": [
-            "R48 turns the R46 dry-run Alembic intent into a real Maya AbcExport receipt for the approved public groom row.",
+            "The approved R46 dry-run Alembic intent becomes a real Maya AbcExport receipt for the public groom row.",
             "Blocked/TMP groom rows are held and do not enter the Alembic cache.",
             "The report records cache path, byte size, sha256, source row status and zero production/engine writes.",
+            "R52 records a local Alembic schema inspection so UE Groom import eligibility is tied to mesh/curve facts instead of importer guesswork.",
         ],
     }
 
@@ -85,6 +96,7 @@ def _export_operations(
     source_evaluation: Dict[str, Any],
     cache_root: Path,
     plugin: Dict[str, Any],
+    export_mode: str,
 ) -> List[Dict[str, Any]]:
     operations = []
     ready_ids = set(source_evaluation.get("summary", {}).get("readyAssetIds", []))
@@ -96,14 +108,17 @@ def _export_operations(
         export_selected = source_ready and cache_contract_ready and bool(plugin.get("loadedAfter"))
         root = _root_for_asset(cmds, asset_id)
         cache_path = cache_root / ("%s.abc" % asset_id.replace("-", "_"))
+        curve_roots = _strand_roots_for_asset(cmds, root) if root else []
         operation = {
             "assetId": asset_id,
             "assetLabel": row.get("assetLabel"),
+            "exportMode": export_mode,
             "sourceStatus": "Ready" if source_ready else "Blocked",
             "cacheContractReady": cache_contract_ready,
             "exportSelected": export_selected,
             "heldReason": None if export_selected else _held_reason(source_ready, cache_contract_ready, plugin),
             "rootNode": root,
+            "curveRootNodes": curve_roots,
             "frameStart": normalized.get("export.frameStart"),
             "frameEnd": normalized.get("export.frameEnd"),
             "requestedAttrs": [
@@ -113,6 +128,12 @@ def _export_operations(
                 "aiToolTaGroomExport",
                 "aiToolTaGroomUnreal",
                 "aiToolTaGroomStrandPayload",
+                "groom_root_uv",
+                "groom_width",
+                "groom_id",
+                "groom_guide",
+                "groom_group_id",
+                "groom_group_name",
             ],
             "commandPreview": None,
             "cache": {
@@ -126,6 +147,7 @@ def _export_operations(
                 "succeeded": False,
                 "error": None,
             },
+            "schemaInspection": _empty_schema_inspection(cache_path),
             "writeBoundary": {
                 "cacheWrites": 0,
                 "engineWrites": 0,
@@ -133,25 +155,30 @@ def _export_operations(
             },
         }
         if export_selected:
-            _run_export(cmds, operation, cache_path)
+            _run_export(cmds, operation, cache_path, export_mode)
         operations.append(operation)
+    for operation in operations:
+        if operation.get("cache", {}).get("exists"):
+            operation["schemaInspection"] = _inspect_alembic_cache(cmds, Path(resolve_local_path(operation["cache"]["path"])))
     return operations
 
 
-def _run_export(cmds: Any, operation: Dict[str, Any], cache_path: Path) -> None:
+def _run_export(cmds: Any, operation: Dict[str, Any], cache_path: Path, export_mode: str) -> None:
     root = operation.get("rootNode")
-    if not root:
+    roots = _roots_for_export(operation, export_mode)
+    if not root or not roots:
         operation["exportResult"]["attempted"] = True
-        operation["exportResult"]["error"] = "missing_root_node"
+        operation["exportResult"]["error"] = "missing_export_roots:%s" % export_mode
         return
     frame_start = int(operation.get("frameStart") or 1001)
     frame_end = int(operation.get("frameEnd") or frame_start)
     attrs = " ".join("-attr %s" % attr for attr in operation["requestedAttrs"])
-    job = '-frameRange %s %s -uvWrite -worldSpace -writeVisibility %s -root "%s" -file "%s"' % (
+    root_args = " ".join('-root "%s"' % node for node in roots)
+    job = '-frameRange %s %s -uvWrite -worldSpace -writeVisibility %s %s -file "%s"' % (
         frame_start,
         frame_end,
         attrs,
-        root,
+        root_args,
         cache_path.as_posix(),
     )
     operation["commandPreview"] = "AbcExport -j %s" % job
@@ -173,6 +200,77 @@ def _run_export(cmds: Any, operation: Dict[str, Any], cache_path: Path) -> None:
         operation["writeBoundary"]["cacheWrites"] = 1 if operation["exportResult"]["succeeded"] else 0
     except Exception as exc:
         operation["exportResult"]["error"] = str(exc)
+
+
+def resolve_local_path(path: str | Path) -> Path:
+    text = str(path or "")
+    if text.startswith("<repo>\\"):
+        return PORTFOLIO_ROOT / text.replace("<repo>\\", "", 1)
+    if text.startswith("<repo>/"):
+        return PORTFOLIO_ROOT / text.replace("<repo>/", "", 1)
+    return Path(text)
+
+
+def _empty_schema_inspection(cache_path: Path) -> Dict[str, Any]:
+    return {
+        "schema": "groom-alembic-schema-inspection@0.1.0",
+        "cache": public_path(cache_path),
+        "attempted": False,
+        "succeeded": False,
+        "shapeTypeCounts": {},
+        "meshShapeCount": 0,
+        "curveShapeCount": 0,
+        "transformCount": 0,
+        "meshShapePaths": [],
+        "curveShapePaths": [],
+        "hairTranslatorCompatible": False,
+        "ueCondition": "NumCurves > 0 && bHasGeometry == false",
+        "error": None,
+    }
+
+
+def _inspect_alembic_cache(cmds: Any, cache_path: Path) -> Dict[str, Any]:
+    row = _empty_schema_inspection(cache_path)
+    row["attempted"] = True
+    try:
+        if not cache_path.exists():
+            row["error"] = "missing_cache_file"
+            return row
+        if not bool(cmds.pluginInfo("AbcImport", query=True, loaded=True)):
+            cmds.loadPlugin("AbcImport", quiet=True)
+        cmds.file(new=True, force=True)
+        before = set(cmds.ls(long=True) or [])
+        cmds.AbcImport(str(cache_path), mode="import")
+        after = set(cmds.ls(long=True) or [])
+        new_nodes = sorted(after - before)
+        shape_counts: Dict[str, int] = {}
+        mesh_shapes: List[str] = []
+        curve_shapes: List[str] = []
+        transforms = 0
+        for node in new_nodes:
+            node_type = str(_safe(lambda: cmds.nodeType(node), "unknown"))
+            shape_counts[node_type] = shape_counts.get(node_type, 0) + 1
+            if node_type == "mesh":
+                mesh_shapes.append(node)
+            elif node_type == "nurbsCurve":
+                curve_shapes.append(node)
+            elif node_type == "transform":
+                transforms += 1
+        row.update(
+            {
+                "succeeded": True,
+                "shapeTypeCounts": shape_counts,
+                "meshShapeCount": len(mesh_shapes),
+                "curveShapeCount": len(curve_shapes),
+                "transformCount": transforms,
+                "meshShapePaths": mesh_shapes[:80],
+                "curveShapePaths": curve_shapes[:80],
+                "hairTranslatorCompatible": len(curve_shapes) > 0 and not mesh_shapes,
+            }
+        )
+    except Exception as exc:
+        row["error"] = str(exc)
+    return row
 
 
 def _load_alembic_exporter(cmds: Any) -> Dict[str, Any]:
@@ -207,6 +305,11 @@ def _summarize_operations(operations: Iterable[Dict[str, Any]], plugin: Dict[str
         "cacheFiles": sum(1 for row in rows if row.get("cache", {}).get("exists")),
         "cacheBytes": sum(int(row.get("cache", {}).get("bytes") or 0) for row in rows),
         "cacheHashes": sum(1 for row in rows if row.get("cache", {}).get("sha256")),
+        "curveOnlyRows": sum(1 for row in rows if row.get("exportMode") == EXPORT_MODE_CURVE_ONLY),
+        "schemaInspectedRows": sum(1 for row in rows if row.get("schemaInspection", {}).get("succeeded")),
+        "schemaCompatibleRows": sum(1 for row in rows if row.get("schemaInspection", {}).get("hairTranslatorCompatible")),
+        "meshShapeRows": sum(1 for row in rows if int(row.get("schemaInspection", {}).get("meshShapeCount") or 0) > 0),
+        "curveShapeRows": sum(1 for row in rows if int(row.get("schemaInspection", {}).get("curveShapeCount") or 0) > 0),
         "sourceReadyRows": sum(1 for row in rows if row.get("sourceStatus") == "Ready"),
         "sourceBlockedRows": sum(1 for row in rows if row.get("sourceStatus") == "Blocked"),
         "productionWrites": sum(int(row.get("writeBoundary", {}).get("productionWrites") or 0) for row in rows),
@@ -230,6 +333,7 @@ def _evaluate_operation(row: Dict[str, Any], plugin: Dict[str, Any]) -> List[Dic
     selected = bool(row.get("exportSelected"))
     result = row.get("exportResult", {})
     cache = row.get("cache", {})
+    schema = row.get("schemaInspection", {})
     return [
         _eval(
             row["assetId"],
@@ -303,6 +407,23 @@ def _evaluate_operation(row: Dict[str, Any], plugin: Dict[str, Any]) -> List[Dic
         ),
         _eval(
             row["assetId"],
+            "unreal-hair-schema-compatible",
+            (not selected)
+            or bool(
+                schema.get("succeeded")
+                and schema.get("hairTranslatorCompatible")
+                and int(schema.get("meshShapeCount") or 0) == 0
+                and int(schema.get("curveShapeCount") or 0) > 0
+            ),
+            "error",
+            "Unreal Hair Alembic Schema",
+            "UE Groom Alembic translator accepts curve-only files; polygon mesh geometry can route the cache to StaticMesh import.",
+            "meshShapes=%s curveShapes=%s compatible=%s"
+            % (schema.get("meshShapeCount"), schema.get("curveShapeCount"), schema.get("hairTranslatorCompatible")),
+            "Export only strand/guide curve roots for the Groom cache, and keep scalp mesh for binding metadata instead of the Alembic payload.",
+        ),
+        _eval(
+            row["assetId"],
             "no-production-write",
             int(row.get("writeBoundary", {}).get("productionWrites") or 0) == 0
             and int(row.get("writeBoundary", {}).get("engineWrites") or 0) == 0,
@@ -359,7 +480,13 @@ def _owner_actions(evaluations: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]
 def _owner_for_rule(rule_id: str) -> str:
     if rule_id in ("source-groom-row-ready", "cache-payload-contract", "blocked-row-held"):
         return "groom-ta"
-    if rule_id in ("abc-export-plugin-loaded", "export-command-succeeded", "cache-file-created", "cache-hash-recorded"):
+    if rule_id in (
+        "abc-export-plugin-loaded",
+        "export-command-succeeded",
+        "cache-file-created",
+        "cache-hash-recorded",
+        "unreal-hair-schema-compatible",
+    ):
         return "pipeline-ta"
     if rule_id == "no-production-write":
         return "release-ta"
@@ -374,6 +501,41 @@ def _root_for_asset(cmds: Any, asset_id: str) -> Optional[str]:
         if str(value) == asset_id:
             return node
     return None
+
+
+def _strand_roots_for_asset(cmds: Any, root: str) -> List[str]:
+    descendants = cmds.listRelatives(root, allDescendents=True, type="transform", fullPath=True) or []
+    return sorted(node for node in descendants if _has_attr(cmds, node, "aiToolTaGroomStrandPayload"))
+
+
+def _roots_for_export(operation: Dict[str, Any], export_mode: str) -> List[str]:
+    if export_mode == EXPORT_MODE_CURVE_ONLY:
+        return list(operation.get("curveRootNodes") or [])
+    root = operation.get("rootNode")
+    return [root] if root else []
+
+
+def _normalize_export_mode(export_mode: str) -> str:
+    value = str(export_mode or EXPORT_MODE_ASSET_ROOT).strip().lower().replace("-", "_")
+    if value in {EXPORT_MODE_ASSET_ROOT, "root", "asset"}:
+        return EXPORT_MODE_ASSET_ROOT
+    if value in {EXPORT_MODE_CURVE_ONLY, "curves", "strands", "strand_only"}:
+        return EXPORT_MODE_CURVE_ONLY
+    raise ValueError("Unsupported groom Alembic export mode: %s" % export_mode)
+
+
+def _method_source(export_mode: str) -> str:
+    if export_mode == EXPORT_MODE_CURVE_ONLY:
+        return "Maya AbcExport over strand/guide curve roots only, excluding scalp mesh from the Groom cache"
+    return "Maya AbcExport over public synthetic groom asset root"
+
+
+def _l3_status(plugin: Dict[str, Any], export_mode: str) -> str:
+    if not plugin.get("loadedAfter"):
+        return "blocked_by_missing_maya_abc_export"
+    if export_mode == EXPORT_MODE_CURVE_ONLY:
+        return "maya_groom_curve_only_alembic_payload_exported"
+    return "maya_groom_alembic_payload_exported"
 
 
 def _cache_contract_ready(normalized: Dict[str, Any]) -> bool:

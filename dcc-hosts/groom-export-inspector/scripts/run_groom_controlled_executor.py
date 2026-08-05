@@ -92,7 +92,16 @@ def main() -> int:
     stdout_path.write_text(completed.stdout, encoding="utf-8", errors="replace")
     stderr_path.write_text(completed.stderr, encoding="utf-8", errors="replace")
 
-    ok = completed.returncode == 0 and output_path.exists()
+    if output_path.exists():
+        if str(ROOT) not in sys.path:
+            sys.path.insert(0, str(ROOT))
+        from groom_export_inspector.controlled_executor import apply_commandlet_log_signals
+
+        report = json.loads(output_path.read_text(encoding="utf-8"))
+        report = apply_commandlet_log_signals(report, completed.returncode, completed.stdout, completed.stderr)
+        output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    ok = output_path.exists()
     result = {
         "ok": ok,
         "returnCode": completed.returncode,

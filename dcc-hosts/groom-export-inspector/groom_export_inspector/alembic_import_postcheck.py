@@ -173,7 +173,7 @@ def _merge_operation(
     groom_api_ready = bool(
         (api.get("groomApiVisible") or classes.get("GroomAsset"))
         and (api.get("groomBindingApiVisible") or classes.get("GroomBindingAsset"))
-        and (api.get("groomImportFactoryVisible") or api.get("groomImportOptionsVisible"))
+        and (api.get("hairStrandsFactoryVisible") or api.get("groomImportFactoryVisible") or api.get("groomImportOptionsVisible"))
     )
     import_task_ready = bool(api.get("importTaskVisible") and task_probe.get("taskConstructed"))
     alembic_api_ready = bool(api.get("alembicImportFactoryVisible"))
@@ -216,6 +216,7 @@ def _merge_operation(
             "groomApiVisible": bool(api.get("groomApiVisible")),
             "groomBindingApiVisible": bool(api.get("groomBindingApiVisible")),
             "groomImportFactoryVisible": bool(api.get("groomImportFactoryVisible")),
+            "hairStrandsFactoryVisible": bool(api.get("hairStrandsFactoryVisible")),
             "groomImportOptionsVisible": bool(api.get("groomImportOptionsVisible")),
             "groomImportApiReady": groom_api_ready,
             "alembicImportApiReady": alembic_api_ready,
@@ -391,7 +392,7 @@ def _evaluate_operation(row: Dict[str, Any], runtime_snapshot: Dict[str, Any]) -
             % (
                 api.get("groomApiVisible"),
                 api.get("groomBindingApiVisible"),
-                api.get("groomImportFactoryVisible"),
+                api.get("hairStrandsFactoryVisible") or api.get("groomImportFactoryVisible"),
                 api.get("groomImportOptionsVisible"),
             ),
             "Expose Groom plugin Python API or keep the row in owner-held readiness.",

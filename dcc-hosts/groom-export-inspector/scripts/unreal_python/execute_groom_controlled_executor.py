@@ -206,17 +206,26 @@ def _execute_import_task(unreal, selected: Dict[str, Any], expected_groom: str, 
 
 
 def _build_factory(unreal, result: Dict[str, Any]):
-    for class_name in ("GroomImportFactory", "AlembicImportFactory"):
+    for class_name in ("HairStrandsFactory", "GroomImportFactory", "AlembicImportFactory"):
         cls = getattr(unreal, class_name, None)
         if cls is None:
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": False, "constructable": False, "error": "missing"}
+            )
             continue
         try:
             factory = cls()
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": True, "constructable": True, "selected": True, "error": None}
+            )
             result["factoryClass"] = class_name
             return factory
         except Exception as exc:
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": True, "constructable": False, "selected": False, "error": str(exc)}
+            )
             result["errors"].append("%s_construct_failed:%s" % (class_name, exc))
-    result["errors"].append("no_constructable_groom_or_alembic_factory")
+    result["errors"].append("no_constructable_hair_groom_or_alembic_factory")
     return None
 
 
@@ -264,7 +273,8 @@ def _execute_binding(unreal, expected_groom: str, expected_binding: str, target_
         return result
     result["attempted"] = True
     try:
-        binding = method(expected_binding, groom_asset, mesh_asset, 100, None, 0)
+        binding = method(expected_binding, groom_asset, mesh_asset, 100, mesh_asset, 0)
+        result["sourceSkeletalMeshForTransfer"] = target_mesh
         result["succeeded"] = bool(binding)
         if binding:
             try:

@@ -1,0 +1,430 @@
+{
+  "reportVersion": "groom-controlled-executor@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 03:00:54",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_groom_executor_import_binding_rolled_back",
+  "sourceImportPostcheck": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-alembic-import-postcheck-20260806-030028.json",
+    "reportVersion": "groom-alembic-import-postcheck@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_groom_alembic_import_postcheck_blocked",
+    "gate": "Blocked",
+    "cacheHashMatchedRows": 1,
+    "importCandidateRows": 1
+  },
+  "sourcePluginApiFixture": {
+    "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
+    "reportVersion": "groom-plugin-api-fixture@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_groom_plugin_api_fixture_ready",
+    "gate": "Ready",
+    "groomImportApiReady": true,
+    "alembicImportFactoryVisible": true
+  },
+  "selectedOperation": {
+    "assetId": "groom-hero-hair-001",
+    "assetLabel": "Hero Hair Approved",
+    "selected": true,
+    "sourceImportCandidate": true,
+    "pluginApiReady": true,
+    "alembicImportFactoryVisible": true,
+    "cache": {
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "localPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "exists": true,
+      "bytes": 12808,
+      "sourceSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "runtimeSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "localSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "hashMatches": true
+    },
+    "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+    "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+    "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+    "materialSlot": "M_Hair_Default",
+    "destinationPath": "/Game/AI_Tool_TA/Grooms"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 6,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public Groom fixture only",
+    "commandletReturnCode": 0,
+    "runtimeLogSignals": {
+      "hairStrandsErrors": [],
+      "hairStrandsErrorCount": 0,
+      "commandletHadErrors": false
+    }
+  },
+  "transaction": {
+    "mode": "execute_then_rollback",
+    "preflight": {
+      "expectedGroomAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "exists": false,
+        "className": null,
+        "fingerprint": null,
+        "error": null
+      },
+      "expectedBindingAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "exists": false,
+        "className": null,
+        "fingerprint": null,
+        "error": null
+      },
+      "targetSkeletalMesh": {
+        "path": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "exists": true,
+        "className": "SkeletalMesh",
+        "fingerprint": "a2904fa4a39eeee0",
+        "error": null
+      },
+      "destinationDirectory": {
+        "path": "/Game/AI_Tool_TA/Grooms",
+        "exists": false,
+        "error": null
+      }
+    },
+    "importTask": {
+      "attempted": true,
+      "succeeded": true,
+      "factoryClass": "HairStrandsFactory",
+      "optionsClass": "GroomImportOptions",
+      "destination": "/Game/AI_Tool_TA/Grooms",
+      "destinationName": "G_HeroHair",
+      "propertyRows": [
+        {
+          "property": "filename",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "destination_path",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "destination_name",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "automated",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "replace_existing",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "save",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "factory",
+          "set": true,
+          "error": null
+        },
+        {
+          "property": "options",
+          "set": true,
+          "error": null
+        }
+      ],
+      "importedObjectPaths": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      ],
+      "createdAssets": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      ],
+      "errors": [],
+      "factoryCandidates": [
+        {
+          "className": "HairStrandsFactory",
+          "available": true,
+          "constructable": true,
+          "selected": true,
+          "error": null
+        }
+      ],
+      "optionProperties": []
+    },
+    "bindingAttempt": {
+      "attempted": true,
+      "succeeded": true,
+      "method": "GroomLibrary.create_new_groom_binding_asset_with_path",
+      "methodVisible": true,
+      "candidateMethods": [
+        "create_new_geometry_cache_groom_binding_asset",
+        "create_new_geometry_cache_groom_binding_asset_with_path",
+        "create_new_groom_binding_asset",
+        "create_new_groom_binding_asset_with_path"
+      ],
+      "error": null,
+      "assetPath": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+      "sourceSkeletalMeshForTransfer": "/Game/AI_Tool_TA/Characters/SK_HeroFace"
+    },
+    "postExecution": {
+      "expectedGroomAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "exists": true,
+        "className": "GroomAsset",
+        "fingerprint": "ef25af50d41502f2",
+        "error": null
+      },
+      "expectedBindingAsset": {
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+        "exists": true,
+        "className": "GroomBindingAsset",
+        "fingerprint": "d643d33c3f9a4a6d",
+        "error": null
+      },
+      "targetSkeletalMesh": {
+        "path": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+        "exists": true,
+        "className": "SkeletalMesh",
+        "fingerprint": "a2904fa4a39eeee0",
+        "error": null
+      },
+      "importedObjectPaths": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      ],
+      "midExecution": {
+        "expectedGroomAsset": {
+          "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+          "exists": true,
+          "className": "GroomAsset",
+          "fingerprint": "ef25af50d41502f2",
+          "error": null
+        },
+        "expectedBindingAsset": {
+          "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+          "exists": false,
+          "className": null,
+          "fingerprint": null,
+          "error": null
+        },
+        "targetSkeletalMesh": {
+          "path": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+          "exists": true,
+          "className": "SkeletalMesh",
+          "fingerprint": "a2904fa4a39eeee0",
+          "error": null
+        }
+      }
+    },
+    "rollback": {
+      "passed": true,
+      "deletedAssets": [
+        "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+        "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+      ],
+      "directoryCreated": true,
+      "directoryDeleted": true,
+      "residualAssets": [],
+      "residualAssetCount": 0,
+      "writeCount": 3,
+      "errors": [],
+      "actions": [
+        {
+          "id": "delete-created-groom-asset:G_HeroHair",
+          "kind": "delete_asset",
+          "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+        },
+        {
+          "id": "delete-created-groom-asset:GB_HeroHair_SK_HeroFace",
+          "kind": "delete_asset",
+          "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+        }
+      ]
+    },
+    "writeSet": [
+      "/Game/AI_Tool_TA/Grooms",
+      "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+      "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+    ],
+    "rollbackActions": [
+      {
+        "id": "delete-empty-groom-directory",
+        "kind": "delete_directory",
+        "path": "/Game/AI_Tool_TA/Grooms"
+      },
+      {
+        "id": "delete-created-groom-asset:G_HeroHair",
+        "kind": "delete_asset",
+        "path": "/Game/AI_Tool_TA/Grooms/G_HeroHair"
+      },
+      {
+        "id": "delete-created-groom-asset:GB_HeroHair_SK_HeroFace",
+        "kind": "delete_asset",
+        "path": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace"
+      }
+    ],
+    "errors": [],
+    "runtimeLogSignals": {
+      "hairStrandsErrors": [],
+      "hairStrandsErrorCount": 0,
+      "commandletHadErrors": false
+    }
+  },
+  "facts": {
+    "schema": "groom-controlled-executor-facts@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "rowCount": 11,
+      "pass": 11,
+      "warning": 0,
+      "error": 0,
+      "selectedOperations": 1,
+      "importAttempted": 1,
+      "importSucceeded": 1,
+      "importedAssetClass": "GroomAsset",
+      "wrongImportedClass": false,
+      "groomPostCheckPassed": 1,
+      "bindingAttempted": 1,
+      "bindingSucceeded": 1,
+      "bindingPostCheckPassed": 1,
+      "rollbackPassed": 1,
+      "residualAssetCount": 0,
+      "assetWrites": 6,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false
+    },
+    "selectedAssetId": "groom-hero-hair-001",
+    "expectedGroomAsset": "/Game/AI_Tool_TA/Grooms/G_HeroHair",
+    "expectedBindingAsset": "/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace",
+    "targetSkeletalMesh": "/Game/AI_Tool_TA/Characters/SK_HeroFace",
+    "sourceCache": {
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "localPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+      "exists": true,
+      "bytes": 12808,
+      "sourceSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "runtimeSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "localSha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+      "hashMatches": true
+    }
+  },
+  "evaluation": {
+    "schema": "groom-controlled-executor-evaluation@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "checks": 11,
+      "pass": 11,
+      "warning": 0,
+      "error": 0
+    },
+    "rows": [
+      {
+        "id": "groom-controlled-executor:runtime-available",
+        "ruleId": "runtime-available",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:source-cache-ready",
+        "ruleId": "source-cache-ready",
+        "status": "pass",
+        "evidence": "selected=True hashMatches=True R49 candidates=1",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:plugin-api-ready",
+        "ruleId": "plugin-api-ready",
+        "status": "pass",
+        "evidence": "groomImportApiReady=True alembicImportFactoryVisible=True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:public-write-scope",
+        "ruleId": "public-write-scope",
+        "status": "pass",
+        "evidence": "writeSet=['/Game/AI_Tool_TA/Grooms', '/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace', '/Game/AI_Tool_TA/Grooms/G_HeroHair']",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:preflight-target-mesh",
+        "ruleId": "preflight-target-mesh",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Characters/SK_HeroFace exists=True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:import-task-attempted",
+        "ruleId": "import-task-attempted",
+        "status": "pass",
+        "evidence": "attempted=True factory=HairStrandsFactory",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:groom-import-created",
+        "ruleId": "groom-import-created",
+        "status": "pass",
+        "evidence": "succeeded=True imported=['/Game/AI_Tool_TA/Grooms/G_HeroHair'] postGroom=True class=GroomAsset errors=[]",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:binding-method-visible",
+        "ruleId": "binding-method-visible",
+        "status": "pass",
+        "evidence": "method=GroomLibrary.create_new_groom_binding_asset_with_path visible=True candidates=['create_new_geometry_cache_groom_binding_asset', 'create_new_geometry_cache_groom_binding_asset_with_path', 'create_new_groom_binding_asset', 'create_new_groom_binding_asset_with_path']",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:binding-created",
+        "ruleId": "binding-created",
+        "status": "pass",
+        "evidence": "succeeded=True postBinding=True error=None",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:rollback-clean",
+        "ruleId": "rollback-clean",
+        "status": "pass",
+        "evidence": "passed=True residual=[] deleted=['/Game/AI_Tool_TA/Grooms/G_HeroHair', '/Game/AI_Tool_TA/Grooms/GB_HeroHair_SK_HeroFace']",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-controlled-executor:production-boundary",
+        "ruleId": "production-boundary",
+        "status": "pass",
+        "evidence": "engineWrites=0 productionWrites=0",
+        "fixPreview": "No action."
+      }
+    ],
+    "ownerActions": []
+  },
+  "adapter": {
+    "id": "groom-controlled-executor",
+    "name": "Groom Controlled Executor",
+    "methodSource": "Unreal public fixture AssetImportTask + GroomLibrary binding attempt + rollback receipt",
+    "protocolCarrier": "Curve-only Alembic cache sha256, Unreal import candidate, Groom API surface, Unreal post-check assets",
+    "boundary": {
+      "mutation": "public_fixture_execute_then_rollback",
+      "assetWrites": 6,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public Groom fixture only",
+      "persistentMutation": false
+    }
+  },
+  "reviewerClaims": [
+    "R52 moves Groom from importer readiness into a controlled Unreal GroomAsset and BindingAsset executor receipt.",
+    "Only the approved public groom cache row may enter execution; TMP/blocked rows stay held.",
+    "The report records HairStrandsFactory import, GroomLibrary binding creation, post-check assets and rollback residue.",
+    "A Ready result is usable because commandlet logs, post-check assets and residual asset checks all agree after rollback."
+  ]
+}

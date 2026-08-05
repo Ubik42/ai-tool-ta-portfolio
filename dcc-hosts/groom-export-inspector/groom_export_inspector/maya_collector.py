@@ -182,13 +182,46 @@ def _create_curve(cmds: Any, namespace: str, strand: Dict[str, Any], index: int)
         "points": points,
     }
     _set_string_attr(cmds, curve, "aiToolTaGroomStrandPayload", json.dumps(payload, ensure_ascii=False, sort_keys=True))
+    _set_standard_groom_attrs(cmds, curve, payload)
     return curve
+
+
+def _set_standard_groom_attrs(cmds: Any, curve: str, payload: Dict[str, Any]) -> None:
+    targets = [curve] + (cmds.listRelatives(curve, shapes=True, fullPath=True) or [])
+    root_uv = payload.get("rootUv") if isinstance(payload.get("rootUv"), list) else [0.0, 0.0]
+    strand_id = payload.get("id") or "missing"
+    for node in targets:
+        _set_double2_attr(cmds, node, "groom_root_uv", float(root_uv[0]), float(root_uv[1]))
+        _set_numeric_attr(cmds, node, "groom_width", float(payload.get("width") or 0.0), "double")
+        _set_numeric_attr(cmds, node, "groom_id", index_value(strand_id), "long")
+        _set_numeric_attr(cmds, node, "groom_guide", 1 if payload.get("guide") else 0, "bool")
+        _set_numeric_attr(cmds, node, "groom_group_id", 0, "long")
+        _set_string_attr(cmds, node, "groom_group_name", "HeroHair")
 
 
 def _set_string_attr(cmds: Any, node: str, attr: str, value: str) -> None:
     if not cmds.attributeQuery(attr, node=node, exists=True):
         cmds.addAttr(node, longName=attr, dataType="string")
     cmds.setAttr("%s.%s" % (node, attr), value, type="string")
+
+
+def _set_numeric_attr(cmds: Any, node: str, attr: str, value: Any, attr_type: str) -> None:
+    if not cmds.attributeQuery(attr, node=node, exists=True):
+        cmds.addAttr(node, longName=attr, attributeType=attr_type)
+    cmds.setAttr("%s.%s" % (node, attr), value)
+
+
+def _set_double2_attr(cmds: Any, node: str, attr: str, x_value: float, y_value: float) -> None:
+    if not cmds.attributeQuery(attr, node=node, exists=True):
+        cmds.addAttr(node, longName=attr, attributeType="double2")
+        cmds.addAttr(node, longName="%s_x" % attr, attributeType="double", parent=attr)
+        cmds.addAttr(node, longName="%s_y" % attr, attributeType="double", parent=attr)
+    cmds.setAttr("%s.%s" % (node, attr), x_value, y_value, type="double2")
+
+
+def index_value(value: Any) -> int:
+    digits = "".join(char for char in str(value) if char.isdigit())
+    return int(digits or 0)
 
 
 def _get_string_attr(cmds: Any, node: str, attr: str) -> str:

@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r51-groom-controlled-executor-presentation-pack",
+        label: str = "r52-groom-hair-schema-executor-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -5021,7 +5021,7 @@ class MayaPortfolioApi:
                 "Groom Alembic Payload Receipt turns the approved R46 groom row into a real public Maya AbcExport cache receipt while holding blocked TMP groom rows.",
                 "Groom Alembic Import/Post-check Readiness joins that .abc receipt to Unreal runtime import-task dry-run, cache sha256 continuity, target asset post-check gaps and no-write boundary.",
                 "Groom Plugin/API Public Fixture Readiness proves the public Unreal project requests HairStrands and Alembic hair plugins, exposes Groom import API classes and keeps the probe read-only.",
-                "Groom Controlled Executor imports the approved public .abc through Unreal AssetImportTask, proves the current factory path yields StaticMesh rather than GroomAsset, and rolls back public fixture writes without residue.",
+                "Groom Controlled Executor imports the curve-only public .abc through Unreal HairStrandsFactory, creates the expected GroomAsset and BindingAsset, then rolls back public fixture writes without residue.",
                 "Spatial Authoring Workbench is now backed by Maya mayapy L3 socket, hotspot, pose frame, mirror pair and pose transfer evidence.",
                 "Spatial Authoring Drilldown projects Maya L3 spatial facts into UI-ready socket, hotspot, pose frame, transform and pose transfer panels.",
                 "Unreal Socket Import Checker joins Maya spatial authoring facts to Unreal SkeletalMesh/Skeleton socket API readiness and expected socket coverage.",
@@ -5057,7 +5057,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r51-groom-controlled-executor-presentation-pack",
+        label: str = "r52-groom-hair-schema-executor-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

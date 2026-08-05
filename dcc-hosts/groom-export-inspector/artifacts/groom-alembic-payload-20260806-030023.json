@@ -1,0 +1,450 @@
+{
+  "reportVersion": "groom-alembic-payload@0.2.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 03:00:23",
+  "evidenceLevel": "L3",
+  "l3Status": "maya_groom_curve_only_alembic_payload_exported",
+  "mayaRuntime": {
+    "version": "2026",
+    "apiVersion": 20260302,
+    "batch": true
+  },
+  "sourceArtifact": {
+    "fixture": "<repo>\\dcc-hosts\\groom-export-inspector\\fixtures\\synthetic_groom_export_scene.json",
+    "sourceFactsSchema": "groom-export-input@0.1.0",
+    "sourceEvaluationGate": "Blocked"
+  },
+  "alembicPlugin": {
+    "plugin": "AbcExport",
+    "loadedBefore": false,
+    "loadedAfter": true,
+    "path": "C:/Program Files/Autodesk/Maya2026/bin/plug-ins/AbcExport.mll",
+    "versionBanner": "Maya AbcExport plugin",
+    "error": null
+  },
+  "facts": {
+    "schema": "groom-alembic-payload-facts@0.1.0",
+    "exportMode": "curve_only",
+    "unrealHairTranslatorCondition": {
+      "source": "UE 5.3 AlembicHairTranslator CanTranslate",
+      "acceptedBySchemaProbe": "NumCurves > 0 and bHasGeometry == false",
+      "reason": "Groom Alembic import is curve-only; polygon mesh geometry lets the generic Alembic path consume the file as StaticMesh."
+    },
+    "sourceAssets": 2,
+    "operations": [
+      {
+        "assetId": "groom-hero-hair-001",
+        "assetLabel": "Hero Hair Approved",
+        "exportMode": "curve_only",
+        "sourceStatus": "Ready",
+        "cacheContractReady": true,
+        "exportSelected": true,
+        "heldReason": null,
+        "rootNode": "|heroHair:groom_hero_hair_001_GROOM",
+        "curveRootNodes": [
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_001_CRV",
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_002_CRV",
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_003_CRV",
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_004_CRV",
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_005_CRV",
+          "|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_006_CRV"
+        ],
+        "frameStart": 1001,
+        "frameEnd": 1001,
+        "requestedAttrs": [
+          "aiToolTaGroomAssetId",
+          "aiToolTaGroomLabel",
+          "aiToolTaGroomProtocol",
+          "aiToolTaGroomExport",
+          "aiToolTaGroomUnreal",
+          "aiToolTaGroomStrandPayload",
+          "groom_root_uv",
+          "groom_width",
+          "groom_id",
+          "groom_guide",
+          "groom_group_id",
+          "groom_group_name"
+        ],
+        "commandPreview": "AbcExport -j -frameRange 1001 1001 -uvWrite -worldSpace -writeVisibility -attr aiToolTaGroomAssetId -attr aiToolTaGroomLabel -attr aiToolTaGroomProtocol -attr aiToolTaGroomExport -attr aiToolTaGroomUnreal -attr aiToolTaGroomStrandPayload -attr groom_root_uv -attr groom_width -attr groom_id -attr groom_guide -attr groom_group_id -attr groom_group_name -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_001_CRV\" -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_002_CRV\" -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_003_CRV\" -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_004_CRV\" -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_005_CRV\" -root \"|heroHair:groom_hero_hair_001_GROOM|heroHair:strand_006_CRV\" -file \"D:/cs/AIToolTA_Portfolio/dcc-hosts/groom-export-inspector/artifacts/cache/groom-alembic-r52-hair-schema/groom_hero_hair_001.abc\"",
+        "cache": {
+          "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+          "exists": true,
+          "bytes": 12808,
+          "sha256": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6"
+        },
+        "exportResult": {
+          "attempted": true,
+          "succeeded": true,
+          "error": null
+        },
+        "schemaInspection": {
+          "schema": "groom-alembic-schema-inspection@0.1.0",
+          "cache": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc",
+          "attempted": true,
+          "succeeded": true,
+          "shapeTypeCounts": {
+            "transform": 6,
+            "nurbsCurve": 6
+          },
+          "meshShapeCount": 0,
+          "curveShapeCount": 6,
+          "transformCount": 6,
+          "meshShapePaths": [],
+          "curveShapePaths": [
+            "|strand_001_CRV|curveShape1",
+            "|strand_002_CRV|curveShape2",
+            "|strand_003_CRV|curveShape3",
+            "|strand_004_CRV|curveShape4",
+            "|strand_005_CRV|curveShape5",
+            "|strand_006_CRV|curveShape6"
+          ],
+          "hairTranslatorCompatible": true,
+          "ueCondition": "NumCurves > 0 && bHasGeometry == false",
+          "error": null
+        },
+        "writeBoundary": {
+          "cacheWrites": 1,
+          "engineWrites": 0,
+          "productionWrites": 0
+        }
+      },
+      {
+        "assetId": "groom-hero-hair-tmp-002",
+        "assetLabel": "Hero Hair Temporary Groom",
+        "exportMode": "curve_only",
+        "sourceStatus": "Blocked",
+        "cacheContractReady": false,
+        "exportSelected": false,
+        "heldReason": "source_groom_row_not_ready,cache_contract_not_ready",
+        "rootNode": "|tmpHair:groom_hero_hair_tmp_002_GROOM",
+        "curveRootNodes": [
+          "|tmpHair:groom_hero_hair_tmp_002_GROOM|tmpHair:missing_id_002_CRV",
+          "|tmpHair:groom_hero_hair_tmp_002_GROOM|tmpHair:tmp_001_CRV",
+          "|tmpHair:groom_hero_hair_tmp_002_GROOM|tmpHair:tmp_001_CRV1",
+          "|tmpHair:groom_hero_hair_tmp_002_GROOM|tmpHair:tmp_004_CRV",
+          "|tmpHair:groom_hero_hair_tmp_002_GROOM|tmpHair:tmp_005_CRV"
+        ],
+        "frameStart": 1010,
+        "frameEnd": 1001,
+        "requestedAttrs": [
+          "aiToolTaGroomAssetId",
+          "aiToolTaGroomLabel",
+          "aiToolTaGroomProtocol",
+          "aiToolTaGroomExport",
+          "aiToolTaGroomUnreal",
+          "aiToolTaGroomStrandPayload",
+          "groom_root_uv",
+          "groom_width",
+          "groom_id",
+          "groom_guide",
+          "groom_group_id",
+          "groom_group_name"
+        ],
+        "commandPreview": null,
+        "cache": {
+          "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_tmp_002.abc",
+          "exists": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "exportResult": {
+          "attempted": false,
+          "succeeded": false,
+          "error": null
+        },
+        "schemaInspection": {
+          "schema": "groom-alembic-schema-inspection@0.1.0",
+          "cache": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_tmp_002.abc",
+          "attempted": false,
+          "succeeded": false,
+          "shapeTypeCounts": {},
+          "meshShapeCount": 0,
+          "curveShapeCount": 0,
+          "transformCount": 0,
+          "meshShapePaths": [],
+          "curveShapePaths": [],
+          "hairTranslatorCompatible": false,
+          "ueCondition": "NumCurves > 0 && bHasGeometry == false",
+          "error": null
+        },
+        "writeBoundary": {
+          "cacheWrites": 0,
+          "engineWrites": 0,
+          "productionWrites": 0
+        }
+      }
+    ],
+    "summary": {
+      "assetRows": 2,
+      "pluginLoaded": true,
+      "selectedRows": 1,
+      "heldRows": 1,
+      "exportAttempted": 1,
+      "exportSucceeded": 1,
+      "cacheFiles": 1,
+      "cacheBytes": 12808,
+      "cacheHashes": 1,
+      "curveOnlyRows": 2,
+      "schemaInspectedRows": 1,
+      "schemaCompatibleRows": 1,
+      "meshShapeRows": 0,
+      "curveShapeRows": 1,
+      "sourceReadyRows": 1,
+      "sourceBlockedRows": 1,
+      "productionWrites": 0,
+      "engineWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "groom-alembic-payload-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "assetCount": 2,
+      "readyAssets": 1,
+      "reviewAssets": 0,
+      "blockedAssets": 1,
+      "pass": 16,
+      "warning": 0,
+      "error": 2,
+      "readyAssetIds": [
+        "groom-hero-hair-001"
+      ],
+      "reviewAssetIds": [],
+      "blockedAssetIds": [
+        "groom-hero-hair-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "source-groom-row-ready:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "source-groom-row-ready",
+        "label": "Source Groom Row",
+        "status": "pass",
+        "message": "Source Groom Row is satisfied.",
+        "evidence": "Ready",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-payload-contract:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "cache-payload-contract",
+        "label": "Alembic Payload Contract",
+        "status": "pass",
+        "message": "Alembic Payload Contract is satisfied.",
+        "evidence": "cacheContractReady=True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "abc-export-plugin-loaded:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "abc-export-plugin-loaded",
+        "label": "Maya AbcExport Plugin",
+        "status": "pass",
+        "message": "Maya AbcExport Plugin is satisfied.",
+        "evidence": "C:/Program Files/Autodesk/Maya2026/bin/plug-ins/AbcExport.mll",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "blocked-row-held:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "blocked-row-held",
+        "label": "Blocked Row Hold",
+        "status": "pass",
+        "message": "Blocked Row Hold is satisfied.",
+        "evidence": null,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "export-command-succeeded:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "export-command-succeeded",
+        "label": "Alembic Export Command",
+        "status": "pass",
+        "message": "Alembic Export Command is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-file-created:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "cache-file-created",
+        "label": "Alembic Cache File",
+        "status": "pass",
+        "message": "Alembic Cache File is satisfied.",
+        "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_001.abc bytes=12808",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-hash-recorded:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "cache-hash-recorded",
+        "label": "Alembic Cache Hash",
+        "status": "pass",
+        "message": "Alembic Cache Hash is satisfied.",
+        "evidence": "3cb9ef4e1b0fb5f56b4ab17beabc235d4eb1da066b3378aca3f369e459a961a6",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "unreal-hair-schema-compatible:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "unreal-hair-schema-compatible",
+        "label": "Unreal Hair Alembic Schema",
+        "status": "pass",
+        "message": "Unreal Hair Alembic Schema is satisfied.",
+        "evidence": "meshShapes=0 curveShapes=6 compatible=True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "no-production-write:groom-hero-hair-001",
+        "assetId": "groom-hero-hair-001",
+        "ruleId": "no-production-write",
+        "label": "Write Boundary",
+        "status": "pass",
+        "message": "Write Boundary is satisfied.",
+        "evidence": {
+          "cacheWrites": 1,
+          "engineWrites": 0,
+          "productionWrites": 0
+        },
+        "fixPreview": "No action."
+      },
+      {
+        "id": "source-groom-row-ready:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "source-groom-row-ready",
+        "label": "Source Groom Row",
+        "status": "error",
+        "message": "Only R46 Ready groom rows can be exported to Alembic.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve source groom owner actions before cache export."
+      },
+      {
+        "id": "cache-payload-contract:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-payload-contract",
+        "label": "Alembic Payload Contract",
+        "status": "error",
+        "message": "Selected cache exports must include .abc extension, root UV, strand IDs, guide curves and a valid frame range.",
+        "evidence": "cacheContractReady=False",
+        "fixPreview": "Fix the Maya groom export payload before Alembic export."
+      },
+      {
+        "id": "abc-export-plugin-loaded:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "abc-export-plugin-loaded",
+        "label": "Maya AbcExport Plugin",
+        "status": "pass",
+        "message": "Maya AbcExport Plugin is satisfied.",
+        "evidence": "C:/Program Files/Autodesk/Maya2026/bin/plug-ins/AbcExport.mll",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "blocked-row-held:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "blocked-row-held",
+        "label": "Blocked Row Hold",
+        "status": "pass",
+        "message": "Blocked Row Hold is satisfied.",
+        "evidence": "source_groom_row_not_ready,cache_contract_not_ready",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "export-command-succeeded:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "export-command-succeeded",
+        "label": "Alembic Export Command",
+        "status": "pass",
+        "message": "Alembic Export Command is satisfied.",
+        "evidence": false,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-file-created:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-file-created",
+        "label": "Alembic Cache File",
+        "status": "pass",
+        "message": "Alembic Cache File is satisfied.",
+        "evidence": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema\\groom_hero_hair_tmp_002.abc bytes=0",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "cache-hash-recorded:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-hash-recorded",
+        "label": "Alembic Cache Hash",
+        "status": "pass",
+        "message": "Alembic Cache Hash is satisfied.",
+        "evidence": null,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "unreal-hair-schema-compatible:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "unreal-hair-schema-compatible",
+        "label": "Unreal Hair Alembic Schema",
+        "status": "pass",
+        "message": "Unreal Hair Alembic Schema is satisfied.",
+        "evidence": "meshShapes=0 curveShapes=0 compatible=False",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "no-production-write:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "no-production-write",
+        "label": "Write Boundary",
+        "status": "pass",
+        "message": "Write Boundary is satisfied.",
+        "evidence": {
+          "cacheWrites": 0,
+          "engineWrites": 0,
+          "productionWrites": 0
+        },
+        "fixPreview": "No action."
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:source-groom-row-ready:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "source-groom-row-ready",
+        "status": "error",
+        "owner": "groom-ta",
+        "mutationScope": "owner_required",
+        "preview": "Resolve source groom owner actions before cache export.",
+        "writeBoundary": "public_synthetic_cache_only"
+      },
+      {
+        "id": "owner-action:cache-payload-contract:groom-hero-hair-tmp-002",
+        "assetId": "groom-hero-hair-tmp-002",
+        "ruleId": "cache-payload-contract",
+        "status": "error",
+        "owner": "groom-ta",
+        "mutationScope": "owner_required",
+        "preview": "Fix the Maya groom export payload before Alembic export.",
+        "writeBoundary": "public_synthetic_cache_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "groom-alembic-payload",
+    "name": "Groom Alembic Payload Receipt",
+    "methodSource": "Maya AbcExport over strand/guide curve roots only, excluding scalp mesh from the Groom cache",
+    "protocolCarrier": "Approved R46 groom rows + Maya curve roots + Alembic cache receipt",
+    "boundary": {
+      "mutation": "public_synthetic_alembic_cache_write",
+      "cacheRoot": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\cache\\groom-alembic-r52-hair-schema",
+      "assetWrites": 1,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "public repo artifacts/cache only"
+    }
+  },
+  "reviewerClaims": [
+    "The approved R46 dry-run Alembic intent becomes a real Maya AbcExport receipt for the public groom row.",
+    "Blocked/TMP groom rows are held and do not enter the Alembic cache.",
+    "The report records cache path, byte size, sha256, source row status and zero production/engine writes.",
+    "R52 records a local Alembic schema inspection so UE Groom import eligibility is tied to mesh/curve facts instead of importer guesswork."
+  ]
+}

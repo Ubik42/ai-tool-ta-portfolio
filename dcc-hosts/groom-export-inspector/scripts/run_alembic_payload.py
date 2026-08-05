@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -62,12 +63,13 @@ def write_readiness_report(search: Dict[str, object]) -> Path:
         "evidenceLevel": "L2+",
         "gate": "Blocked",
         "l3Status": "blocked_by_missing_mayapy",
+        "requestedExportMode": os.environ.get("AI_TOOL_TA_GROOM_ALEMBIC_EXPORT_MODE", "curve_only"),
         "mayaRuntime": search,
         "collector": {
             "script": public_path(SCRIPT),
             "ready": SCRIPT.exists(),
             "expectedCommand": "mayapy %s" % public_path(SCRIPT),
-            "reportWhenAvailable": "groom-alembic-payload@0.1.0",
+            "reportWhenAvailable": "groom-alembic-payload@0.2.0",
         },
         "boundary": {
             "mutation": "no_maya_runtime_invoked",

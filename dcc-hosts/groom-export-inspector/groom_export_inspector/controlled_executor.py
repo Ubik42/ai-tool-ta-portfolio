@@ -21,6 +21,35 @@ PORTFOLIO_ROOT = Path(__file__).resolve().parents[3]
 PUBLIC_GAME_PREFIX = "/Game/AI_Tool_TA/"
 
 
+def apply_commandlet_log_signals(
+    report: Dict[str, Any],
+    commandlet_return_code: int,
+    stdout_text: str,
+    stderr_text: str,
+) -> Dict[str, Any]:
+    signals = _extract_commandlet_log_signals(stdout_text, stderr_text)
+    report.setdefault("unrealRuntime", {})["commandletReturnCode"] = commandlet_return_code
+    report["unrealRuntime"]["runtimeLogSignals"] = signals
+    report.setdefault("transaction", {})["runtimeLogSignals"] = signals
+    if signals.get("hairStrandsErrors"):
+        binding = report.setdefault("transaction", {}).setdefault("bindingAttempt", {})
+        binding["buildLogClean"] = False
+        binding["buildLogErrors"] = signals["hairStrandsErrors"]
+        rows = report.setdefault("evaluation", {}).setdefault("rows", [])
+        if not any(row.get("ruleId") == "binding-build-log-clean" for row in rows):
+            rows.append(
+                _row(
+                    "binding-build-log-clean",
+                    False,
+                    "error",
+                    "hairStrandsErrors=%s" % signals["hairStrandsErrors"],
+                    "Fix target SkeletalMesh UV/proximity or source groom root projection before claiming BindingAsset usability.",
+                )
+            )
+        _refresh_report_gate(report, "unreal_groom_executor_binding_build_log_errors_rolled_back")
+    return report
+
+
 def resolve_public_path(path: str | Path | None) -> Path:
     text = str(path or "")
     if text.startswith("<repo>\\"):
@@ -104,7 +133,7 @@ def build_groom_controlled_executor_report(
             "id": "groom-controlled-executor",
             "name": "Groom Controlled Executor",
             "methodSource": "Unreal public fixture AssetImportTask + GroomLibrary binding attempt + rollback receipt",
-            "protocolCarrier": "R48 Alembic cache sha256, R49 import candidate, R50 Groom API surface, Unreal post-check assets",
+            "protocolCarrier": "Curve-only Alembic cache sha256, Unreal import candidate, Groom API surface, Unreal post-check assets",
             "boundary": {
                 "mutation": "public_fixture_execute_then_rollback",
                 "assetWrites": runtime.get("assetWrites", 0),
@@ -115,10 +144,10 @@ def build_groom_controlled_executor_report(
             },
         },
         "reviewerClaims": [
-            "R51 moves Groom from plugin/API readiness into a controlled Unreal executor attempt.",
+            "R52 moves Groom from importer readiness into a controlled Unreal GroomAsset and BindingAsset executor receipt.",
             "Only the approved public groom cache row may enter execution; TMP/blocked rows stay held.",
-            "The report records import task properties, imported object paths, Groom binding method visibility, post-check assets and rollback residue.",
-            "A blocked result is still useful: it exposes the exact Unreal Python or Alembic/Groom importer boundary without leaving persistent public fixture mutations.",
+            "The report records HairStrandsFactory import, GroomLibrary binding creation, post-check assets and rollback residue.",
+            "A Ready result is usable because commandlet logs, post-check assets and residual asset checks all agree after rollback.",
         ],
     }
 
@@ -156,7 +185,7 @@ def _evaluate_execution_rows(
             "error",
             "selected=%s hashMatches=%s R49 candidates=%s"
             % (selected.get("selected"), selected.get("cache", {}).get("hashMatches"), source_summary.get("importCandidateRows")),
-            "Use the approved R48/R49 cache row before executing import.",
+            "Use the approved curve-only Alembic cache row before executing import.",
         ),
         _row(
             "plugin-api-ready",
@@ -339,3 +368,49 @@ def _int(value: Any) -> int:
         return int(value or 0)
     except Exception:
         return 0
+
+
+def _extract_commandlet_log_signals(stdout_text: str, stderr_text: str) -> Dict[str, Any]:
+    lines = (stdout_text + "\n" + stderr_text).splitlines()
+    hair_errors = []
+    for line in lines:
+        if "LogHairStrands: Error:" not in line:
+            continue
+        message = line.split("LogHairStrands: Error:", 1)[-1].strip()
+        if message and message not in hair_errors:
+            hair_errors.append(message)
+    return {
+        "hairStrandsErrors": hair_errors,
+        "hairStrandsErrorCount": len(hair_errors),
+        "commandletHadErrors": bool(hair_errors),
+    }
+
+
+def _refresh_report_gate(report: Dict[str, Any], blocked_status: str) -> None:
+    rows = list(report.get("evaluation", {}).get("rows", []))
+    pass_count = sum(1 for row in rows if row.get("status") == "pass")
+    warning_count = sum(1 for row in rows if row.get("status") == "warning")
+    error_count = sum(1 for row in rows if row.get("status") == "error")
+    gate = "Blocked" if error_count else "Review" if warning_count else "Ready"
+    facts_summary = report.setdefault("facts", {}).setdefault("summary", {})
+    facts_summary.update(
+        {
+            "gate": gate,
+            "rowCount": len(rows),
+            "pass": pass_count,
+            "warning": warning_count,
+            "error": error_count,
+        }
+    )
+    evaluation_summary = report.setdefault("evaluation", {}).setdefault("summary", {})
+    evaluation_summary.update(
+        {
+            "gate": gate,
+            "checks": len(rows),
+            "pass": pass_count,
+            "warning": warning_count,
+            "error": error_count,
+        }
+    )
+    if gate == "Blocked":
+        report["l3Status"] = blocked_status

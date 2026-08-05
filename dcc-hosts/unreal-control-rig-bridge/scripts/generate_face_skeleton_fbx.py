@@ -58,8 +58,9 @@ def _build_face_skeleton(cmds) -> Dict[str, str]:
 
 
 def _build_mesh(cmds, joints: Dict[str, str]) -> str:
-    mesh, _shape = cmds.polyCube(name="SK_HeroFace", width=1.2, height=1.4, depth=0.9)
-    cmds.move(0.0, 5.75, 0.15, mesh)
+    mesh, _shape = cmds.polyCube(name="SK_HeroFace", width=2.2, height=2.2, depth=1.4)
+    cmds.move(0.0, 5.75, 0.1, mesh)
+    cmds.polyAutoProjection(mesh, lm=0, pb=0, ibd=True, cm=False, l=2, sc=1, o=1, ps=0.2, ws=True)
     cmds.makeIdentity(mesh, apply=True, translate=True, rotate=True, scale=True)
     cmds.skinCluster(
         joints["headRoot"],

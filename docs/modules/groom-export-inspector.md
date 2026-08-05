@@ -1,6 +1,6 @@
 # Groom Export Inspector
 
-R46/R47/R48/R49/R50/R51 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness 和 controlled executor rollback proof，覆盖 root UV、strand ID、guide curve、Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 import class post-check 和回滚边界。
+R46/R47/R48/R49/R50/R52 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness、Groom plugin/API public fixture readiness 和 controlled executor rollback proof，覆盖 root UV、strand ID、guide curve、curve-only Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置、真实 `GroomAsset` / `GroomBindingAsset` post-check 和回滚边界。
 
 ## 核心业务逻辑
 
@@ -62,9 +62,9 @@ R46 已完成：
 - R50 plugin/API fixture：public Unreal `.uproject` 显式启用 `GeometryCache`、`AlembicImporter`、`HairStrands`、`AlembicHairImporter`，Unreal 5.3.2 commandlet 进入项目后采集 Groom / Hair / Alembic / GeometryCache class surface。
 - Presenter Pack 接入：R50 Presenter Pack 探测 Groom Plugin/API Public Fixture artifact，并把 demo route 扩到 39 步、evidence probes 扩到 49 个。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r50` / `dcc-first-package@1.47.0`。
-- R51 controlled executor：Unreal 5.3.2 commandlet 只选择 approved groom cache，创建 `/Game/AI_Tool_TA/Grooms` public fixture 目录，执行 `AssetImportTask`，检查导入对象 class、`GroomLibrary` binding API、post-check 和 rollback receipt。
-- Presenter Pack 接入：R51 Presenter Pack 探测 Groom Controlled Executor artifact，并把 demo route 扩到 40 步、evidence probes 扩到 50 个。
-- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r51` / `dcc-first-package@1.48.0`。
+- R52 controlled executor：Unreal 5.3.2 commandlet 只选择 approved curve-only groom cache，创建 `/Game/AI_Tool_TA/Grooms` public fixture 目录，通过 `HairStrandsFactory` 执行 `AssetImportTask`，检查 `GroomAsset`、`GroomLibrary` binding API、`GroomBindingAsset`、commandlet HairStrands logs 和 rollback receipt。
+- Presenter Pack 接入：R52 Presenter Pack 探测 Groom Controlled Executor artifact，并把 demo route 扩到 40 步、evidence probes 扩到 50 个。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r52` / `dcc-first-package@1.49.0`。
 
 ## 证据
 
@@ -77,7 +77,7 @@ R46 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r51-groom-controlled-executor-presentation-pack-20260806-022956.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r52-groom-hair-schema-executor-presentation-pack-20260806-030427.json
 ```
 
 关键结果：
@@ -121,28 +121,29 @@ Gate 为 `Blocked` 是正确状态：R47 已证明 UE runtime 可以进入并读
 当前 Alembic Payload artifact：
 
 ```text
-<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-payload-20260806-011837.json
-<repo>\dcc-hosts\groom-export-inspector\artifacts\cache\groom-alembic-r48\groom_hero_hair_001.abc
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-payload-20260806-030023.json
+<repo>\dcc-hosts\groom-export-inspector\artifacts\cache\groom-alembic-r52-hair-schema\groom_hero_hair_001.abc
 ```
 
 关键结果：
 
-- report version：`groom-alembic-payload@0.1.0`
+- report version：`groom-alembic-payload@0.2.0`
 - evidence level：L3
-- l3 status：`maya_groom_alembic_payload_exported`
+- l3 status：`maya_groom_curve_only_alembic_payload_exported`
 - Maya runtime：2026
 - selected / held rows：1 / 1
-- cache files / bytes / hashes：1 / 10271 / 1
-- checks pass / warning / error：14 / 0 / 2
+- cache files / bytes / hashes：1 / 12808 / 1
+- curve-only / schema inspected / schema compatible / meshShapeRows：2 / 1 / 1 / 0
+- checks pass / warning / error：16 / 0 / 2
 - owner actions：2
 - assetWrites / engineWrites / productionWrites：1 / 0 / 0
 
-Gate 为 `Blocked` 是正确状态：approved groom 已写出真实 public synthetic Alembic cache；TMP groom 仍因 source groom row 和 cache payload contract 不合格被 held，不进入 cache。
+Gate 为 `Blocked` 是正确状态：approved groom 已写出真实 public synthetic curve-only Alembic cache，并通过 Maya AbcImport schema probe 确认 `meshShapeRows=0`；TMP groom 仍因 source groom row 和 cache payload contract 不合格被 held，不进入 cache。
 
 当前 Alembic Import/Post-check artifact：
 
 ```text
-<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-import-postcheck-20260806-013949.json
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-import-postcheck-20260806-030028.json
 ```
 
 关键结果：
@@ -153,15 +154,15 @@ Gate 为 `Blocked` 是正确状态：approved groom 已写出真实 public synth
 - Unreal runtime：5.3.2
 - operations / import candidates：2 / 1
 - cache hash matched rows：1
-- AssetImportTask dry-run / Alembic factory visible / Groom API ready：2 / 2 / 0
+- AssetImportTask dry-run / Alembic factory visible / Groom API ready：2 / 2 / 2
 - target SkeletalMesh present rows：1
 - expected Groom / Binding assets present rows：0 / 0
 - import executed / held：0 / 2
-- checks pass / warning / error：24 / 2 / 2
-- owner actions：4
+- checks pass / warning / error：25 / 2 / 1
+- owner actions：3
 - assetWrites / engineWrites / productionWrites：0 / 0 / 0
 
-Gate 为 `Blocked` 是正确状态：R49 已证明 R48 `.abc` 可以被 Unreal runtime 读取并和 sha256 receipt 对齐，AssetImportTask/Alembic factory 可 dry-run，`SK_HeroFace` 存在；但 GroomAsset / GroomBindingAsset API 和期望 Groom / Binding 资产仍缺失，所以真实 import executor 继续 held。
+Gate 为 `Blocked` 是正确状态：R52 post-check 已证明 curve-only `.abc` 可以被 Unreal runtime 读取并和 sha256 receipt 对齐，AssetImportTask/Alembic factory 可 dry-run，Groom API ready，`SK_HeroFace` 存在；它仍保持 no-write，因为真实导入和 BindingAsset 创建必须进入 controlled executor，而不是在 readiness probe 中偷偷写资产。
 
 当前 Groom Plugin/API Fixture artifact：
 
@@ -181,35 +182,36 @@ Gate 为 `Blocked` 是正确状态：R49 已证明 R48 `.abc` 可以被 Unreal r
 - checks pass / warning / error：10 / 0 / 0
 - assetWrites / engineWrites / productionWrites：0 / 0 / 0
 
-Gate 为 `Ready`：R50 证明 R49 的 Groom API 缺口来自 public project 未显式请求 HairStrands/Alembic hair stack，而不是本机 UE 缺失这些插件。下一步可以把受控 executor 的阻断点收窄到真实 GroomAsset / BindingAsset 创建、post-check 和 rollback receipt。
+Gate 为 `Ready`：R50 证明 R49 的 Groom API 缺口来自 public project 未显式请求 HairStrands/Alembic hair stack，而不是本机 UE 缺失这些插件。R52 已继续进入真实 GroomAsset / BindingAsset 创建、post-check 和 rollback receipt。
 
 当前 Groom Controlled Executor artifact：
 
 ```text
-<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-022310.json
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-controlled-executor-20260806-030046.json
 ```
 
 关键结果：
 
 - report version：`groom-controlled-executor@0.1.0`
 - evidence level：L3
-- l3 status：`unreal_groom_executor_wrong_asset_class_rolled_back`
+- l3 status：`unreal_groom_executor_import_binding_rolled_back`
 - Unreal runtime：5.3.2
 - selected / import attempted / import succeeded：1 / true / true
-- imported asset class：`StaticMesh`
-- wrong imported class：true
-- GroomAsset post-check / BindingAsset post-check：false / false
-- binding attempted：false，因为导入产物不是 `GroomAsset`
+- imported asset class：`GroomAsset`
+- wrong imported class：false
+- GroomAsset post-check / BindingAsset post-check：true / true
+- binding attempted：true，通过 `GroomLibrary.create_new_groom_binding_asset_with_path`
 - rollback passed / residual assets：true / 0
-- checks pass / warning / error：9 / 0 / 2
-- assetWrites / engineWrites / productionWrites：4 / 0 / 0
+- checks pass / warning / error：11 / 0 / 0
+- assetWrites / engineWrites / productionWrites：6 / 0 / 0
 - persistent mutation：false
 
-Gate 为 `Blocked` 是正确状态：R51 已证明执行链路真实进入 Unreal `AssetImportTask`，但当前 Python + AlembicImportFactory + `GroomImportOptions` 组合会把 public `.abc` 走成 `StaticMesh`。这不是 runtime 缺失，也不是 cache 缺失；真正的下一步是补 Groom-specific importer 参数、Alembic hair schema 约束，或用 Editor Utility / C++ bridge 强制走 `GroomAsset` 创建，再进行 BindingAsset post-check。
+Gate 为 `Ready`：R52 证明关键阻断不在 Unreal runtime 或项目插件，而在 Alembic payload schema。旧 asset-root cache 混入 scalp mesh 后会被泛 Alembic 路径消费；curve-only cache 满足 UE Hair translator 条件后，`HairStrandsFactory` 能导入 `GroomAsset`，并能在同一 commandlet 中创建、检查和回滚 `GroomBindingAsset`。
 
 ## 后续
 
 下一阶段可以继续做：
 
-- 深挖 Unreal Alembic hair importer 的具体参数和 schema 要求，解决 R51 `StaticMesh` class mismatch。
-- 若 Python import path 无法稳定指定 Groom import mode，补 Editor Utility / C++ bridge，再做 GroomAsset / BindingAsset 创建、post-check 和 rollback receipt。
+- 增加更多 hair schema 变体：多 group、不同 guide density、宽度/root UV 属性缺失、错误 scalp proximity。
+- 增加导入后 GroomAsset / BindingAsset 的更深 runtime fact collector：curve count、group count、binding target mesh、root projection stats。
+- 将 Groom 证据接入 Maya GUI 的专用 reviewer panel，展示 root UV、guide、curve-only cache hash、import post-check 和 rollback receipt 的闭环。

@@ -85,6 +85,7 @@ def _api_probe(unreal) -> Dict[str, Any]:
         "AssetToolsHelpers",
         "AutomatedAssetImportData",
         "Factory",
+        "HairStrandsFactory",
         "AlembicImportFactory",
         "AlembicImportSettings",
         "AlembicImportType",
@@ -125,6 +126,7 @@ def _api_probe(unreal) -> Dict[str, Any]:
         "importTaskVisible": bool(classes.get("AssetImportTask")),
         "assetToolsVisible": bool(classes.get("AssetToolsHelpers")),
         "groomImportFactoryVisible": bool(classes.get("GroomImportFactory")),
+        "hairStrandsFactoryVisible": bool(classes.get("HairStrandsFactory")),
         "alembicImportFactoryVisible": bool(classes.get("AlembicImportFactory")),
         "groomImportOptionsVisible": bool(classes.get("GroomImportOptions") or classes.get("GroomCacheImportOptions")),
     }
@@ -159,16 +161,25 @@ def _import_task_dry_run(unreal, cache: Dict[str, Any], destination: str, api: D
 
 
 def _build_factory(unreal, api: Dict[str, Any], result: Dict[str, Any]):
-    for class_name in ("GroomImportFactory", "AlembicImportFactory"):
+    for class_name in ("HairStrandsFactory", "GroomImportFactory", "AlembicImportFactory"):
         if not api.get("classes", {}).get(class_name):
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": False, "constructable": False, "error": "missing"}
+            )
             continue
         try:
             factory = getattr(unreal, class_name)()
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": True, "constructable": True, "selected": True, "error": None}
+            )
             result["factoryClass"] = class_name
             return factory
         except Exception as exc:
+            result.setdefault("factoryCandidates", []).append(
+                {"className": class_name, "available": True, "constructable": False, "selected": False, "error": str(exc)}
+            )
             result["errors"].append("%s_construct_failed:%s" % (class_name, exc))
-    result["errors"].append("no_constructable_groom_or_alembic_factory")
+    result["errors"].append("no_constructable_hair_groom_or_alembic_factory")
     return None
 
 

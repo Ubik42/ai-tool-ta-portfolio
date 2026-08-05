@@ -178,7 +178,7 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r51-groom-controlled-executor-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r52-groom-hair-schema-executor-presentation-pack")
 summary = pack["summary"]
 assert summary["present_evidence_files"] == 50, summary
 assert summary["missing_required_files"] == 0, summary
@@ -295,7 +295,14 @@ if ($Tier -in @("groom-unreal-readiness", "full")) {
 
 if ($Tier -in @("groom-alembic-payload", "full")) {
     Invoke-Step "groom Alembic payload receipt" {
-        python (Join-Path $GroomExportInspector "scripts\run_alembic_payload.py")
+        $previousMode = $env:AI_TOOL_TA_GROOM_ALEMBIC_EXPORT_MODE
+        $env:AI_TOOL_TA_GROOM_ALEMBIC_EXPORT_MODE = "curve_only"
+        try {
+            python (Join-Path $GroomExportInspector "scripts\run_alembic_payload.py")
+        }
+        finally {
+            $env:AI_TOOL_TA_GROOM_ALEMBIC_EXPORT_MODE = $previousMode
+        }
     }
 }
 
