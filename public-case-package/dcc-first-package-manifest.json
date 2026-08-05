@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r44",
-  "packageVersion": "dcc-first-package@1.41.0",
-  "generatedAt": "2026-08-05 23:56:40",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r45",
+  "packageVersion": "dcc-first-package@1.42.0",
+  "generatedAt": "2026-08-06 00:19:04",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 30,
+    "artifactCount": 31,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -40,7 +40,7 @@
     "assetHandoffDecisionOwnerRequired": 1,
     "assetHandoffDecisionEngineReady": 1,
     "assetHandoffDecisionEngineHeld": 1,
-    "reviewerClaims": 32,
+    "reviewerClaims": 33,
     "engineHandoffPreflightGate": "Review",
     "engineHandoffPreflightAssets": 2,
     "engineHandoffPreflightReady": 1,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 42,
-    "presentationPackPresentEvidenceFiles": 42,
+    "presentationPackEvidenceFiles": 43,
+    "presentationPackPresentEvidenceFiles": 43,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 33,
+    "presentationPackDemoRouteSteps": 34,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -520,7 +520,30 @@
     "unrealControlRigFaceSkeletonFixtureOwnerActions": 1,
     "unrealControlRigFaceSkeletonFixtureAssetWrites": 2,
     "unrealControlRigFaceSkeletonFixtureEngineWrites": 2,
-    "unrealControlRigFaceSkeletonFixtureProductionWrites": 0
+    "unrealControlRigFaceSkeletonFixtureProductionWrites": 0,
+    "unrealControlRigCompileStatusReportVersion": "unreal-control-rig-compile-status@0.1.0",
+    "unrealControlRigCompileStatusArtifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+    "unrealControlRigCompileStatusEvidenceLevel": "L3",
+    "unrealControlRigCompileStatusL3Status": "unreal_control_rig_compile_status_collected",
+    "unrealControlRigCompileStatusGate": "Blocked",
+    "unrealControlRigCompileStatusEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "unrealControlRigCompileStatusCharacters": 2,
+    "unrealControlRigCompileStatusReady": 0,
+    "unrealControlRigCompileStatusReview": 1,
+    "unrealControlRigCompileStatusBlocked": 1,
+    "unrealControlRigCompileStatusCandidates": 1,
+    "unrealControlRigCompileStatusMethodsVisible": 1,
+    "unrealControlRigCompileStatusInvoked": 1,
+    "unrealControlRigCompileStatusSucceeded": 1,
+    "unrealControlRigCompileStatusDirectStatus": 0,
+    "unrealControlRigCompileStatusDiagnostics": 0,
+    "unrealControlRigCompileStatusSettings": 1,
+    "unrealControlRigCompileStatusDirtyAfter": 0,
+    "unrealControlRigCompileStatusPassChecks": 10,
+    "unrealControlRigCompileStatusWarningChecks": 2,
+    "unrealControlRigCompileStatusErrorChecks": 4,
+    "unrealControlRigCompileStatusAssetWrites": 0,
+    "unrealControlRigCompileStatusProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -775,6 +798,16 @@
   ],
   "validation": [
     {
+      "id": "validate-r45-unreal-control-rig-compile-status",
+      "command": "python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py",
+      "result": "Unreal 5.3.2 Python invokes public CR_HeroFace compile methods: 2 character rows, approved row Review, TMP row Blocked, compile method visible / invoked / succeeded = 1 / 1 / 1, direct status 0, diagnostics 0, compile settings 1, dirtyAfter=0, assetWrites=0, productionWrites=0."
+    },
+    {
+      "id": "validate-r45-dcc-presenter-pack",
+      "command": "Maya mayapy dcc_presentation_build_pack(label=\"r45-unreal-control-rig-compile-status-presentation-pack\")",
+      "result": "DCC Presenter Pack probes 43 key evidence files including Control Rig Compile Status Bridge, reports 43 present / 0 missing required files, and exports 34 demo route steps."
+    },
+    {
       "id": "validate-r44-unreal-control-rig-face-skeleton-fixture",
       "command": "python dcc-hosts/unreal-control-rig-bridge/scripts/run_face_skeleton_fixture.py",
       "result": "Maya 2026 mayapy generated a public face Skeleton FBX; Unreal 5.3.2 imported SK_HeroFace / SK_HeroFace_Skeleton; required target matches 4 / 4, previous R43 missing targets resolved 3 / 3, assetWrites=2, productionWrites=0."
@@ -868,9 +901,11 @@
     "python dcc-hosts/unreal-animation-bridge/scripts/run_deep_facts.py"
   ],
   "notes": [
+    "R45 adds Unreal Control Rig Compile Status Bridge: Unreal Python invokes ControlRigBlueprint compile methods on public CR_HeroFace, records compile invocation success, direct diagnostic/status readability, dirty-state boundary and zero-save evidence.",
+    "R45 result keeps the approved row in Review rather than claiming full compile success: compile method visible 1 / 1, invocation succeeded 1 / 1, direct status 0, diagnostics 0, compile settings 1, dirtyAfter 0, assetWrites=0, productionWrites=0.",
+    "Current final presentation route is DCC-first through the R45 Presenter Pack.",
     "R44 adds Unreal Control Rig Face Skeleton Fixture: Maya mayapy generates a public face Skeleton FBX, Unreal imports SK_HeroFace / SK_HeroFace_Skeleton, and the previous Eye_L / Eye_R / Jaw deformation target misses are resolved.",
     "R44 post-face deformation-link recheck moves the approved character row from Blocked to Review: Skeleton matches improve from 2 to 5, while direct compile status remains Python API-limited and TMP remains intentionally blocked.",
-    "Current final presentation route is DCC-first through the R44 Presenter Pack.",
     "R43 adds Unreal Control Rig Deformation Link: CR_HeroFace runtime controls are joined to Maya deformation targets, Unreal Skeleton bone coverage, hierarchy shape/offset readability and compile-status API visibility with zero asset writes.",
     "R42 adds Unreal Control Rig Fixture Authoring: Unreal Python creates the public CR_HeroFace fixture, adds five required Maya controls to the runtime hierarchy, saves only /Game/AI_Tool_TA content, and the post-authoring bridge marks the approved character row Ready.",
     "R42 presentation route was DCC-first through the R42 Presenter Pack before R43 added deformation-link evidence.",
@@ -937,7 +972,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1014,17 +1049,38 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 30,
+  "artifactCount": 31,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
   "unrealAnimationBridgeImportedAssets": 4,
   "artifacts": [
     {
-      "id": "dcc-first-unreal-control-rig-deformation-link",
-      "label": "Unreal Control Rig Deformation Link",
+      "id": "dcc-first-unreal-control-rig-compile-status",
+      "label": "Unreal Control Rig Compile Status Bridge",
       "kind": "json",
-      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-232729.json",
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-control-rig-deformation-link",
+      "label": "Unreal Control Rig Deformation Link after face skeleton",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-control-rig-face-skeleton-fixture",
+      "label": "Unreal Control Rig Face Skeleton Fixture",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-face-skeleton-fixture-20260805-235115.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-control-rig-bridge",
+      "label": "Unreal Control Rig Bridge L3 after face skeleton",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
       "required": true
     },
     {
@@ -1052,13 +1108,6 @@
       "id": "dcc-first-unreal-socket-api-docs",
       "label": "Unreal Socket API Docs Probe",
       "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-api-docs-20260805-222200.json",
-      "kind": "json",
-      "required": true
-    },
-    {
-      "id": "dcc-first-unreal-control-rig-bridge",
-      "label": "Unreal Control Rig Bridge L3 after fixture authoring",
-      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-230343.json",
       "kind": "json",
       "required": true
     },
@@ -1472,6 +1521,8 @@
   "unrealControlRigDeformationLinkErrorChecks": 5,
   "unrealControlRigDeformationLinkOwnerActions": 7,
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+    "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-bridge-l3-20260805-235140.json",
     "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
@@ -1479,6 +1530,18 @@
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r43-unreal-control-rig-deformation-link-presentation-pack-20260805-233308.json"
   ],
   "evidence": [
+    {
+      "id": "public-case-r45-presenter-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-unreal-control-rig-compile-status",
+      "label": "Unreal Control Rig Compile Status Bridge",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+      "required": true
+    },
     {
       "id": "public-case-r44-presenter-pack",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json",
@@ -1527,5 +1590,28 @@
   "unrealControlRigFaceSkeletonFixtureOwnerActions": 1,
   "unrealControlRigFaceSkeletonFixtureAssetWrites": 2,
   "unrealControlRigFaceSkeletonFixtureEngineWrites": 2,
-  "unrealControlRigFaceSkeletonFixtureProductionWrites": 0
+  "unrealControlRigFaceSkeletonFixtureProductionWrites": 0,
+  "unrealControlRigCompileStatusReportVersion": "unreal-control-rig-compile-status@0.1.0",
+  "unrealControlRigCompileStatusArtifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+  "unrealControlRigCompileStatusEvidenceLevel": "L3",
+  "unrealControlRigCompileStatusL3Status": "unreal_control_rig_compile_status_collected",
+  "unrealControlRigCompileStatusGate": "Blocked",
+  "unrealControlRigCompileStatusEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "unrealControlRigCompileStatusCharacters": 2,
+  "unrealControlRigCompileStatusReady": 0,
+  "unrealControlRigCompileStatusReview": 1,
+  "unrealControlRigCompileStatusBlocked": 1,
+  "unrealControlRigCompileStatusCandidates": 1,
+  "unrealControlRigCompileStatusMethodsVisible": 1,
+  "unrealControlRigCompileStatusInvoked": 1,
+  "unrealControlRigCompileStatusSucceeded": 1,
+  "unrealControlRigCompileStatusDirectStatus": 0,
+  "unrealControlRigCompileStatusDiagnostics": 0,
+  "unrealControlRigCompileStatusSettings": 1,
+  "unrealControlRigCompileStatusDirtyAfter": 0,
+  "unrealControlRigCompileStatusPassChecks": 10,
+  "unrealControlRigCompileStatusWarningChecks": 2,
+  "unrealControlRigCompileStatusErrorChecks": 4,
+  "unrealControlRigCompileStatusAssetWrites": 0,
+  "unrealControlRigCompileStatusProductionWrites": 0
 }

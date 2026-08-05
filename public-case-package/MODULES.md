@@ -108,13 +108,13 @@ AI boundary: AI can explain why a character is blocked or draft owner notes. It 
 
 Key evidence: `../docs/modules/character-calibration-studio.md`
 
-## 10. Unreal Control Rig Bridge / Fixture / Face Skeleton / Deformation Link
+## 10. Unreal Control Rig Bridge / Fixture / Face Skeleton / Deformation / Compile Status
 
-Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding, target CR asset coverage, face deformation targets, runtime controls, and compile visibility before it is useful in engine.
+Business scenario: approved Maya control mapping still needs Unreal Control Rig API, SkeletalMesh/Skeleton binding, target CR asset coverage, face deformation targets, runtime controls, compile invocation, and diagnostic visibility before it is useful in engine.
 
-Core secret: separate source mapping readiness, engine binding readiness, controlled fixture authoring, runtime hierarchy coverage, Skeleton target coverage and compile-readiness API visibility. R43 proved that `CR_HeroFace` having five runtime controls is still not enough when the public Skeleton only confirms two deformation target matches. R44 adds a Maya-generated public face Skeleton imported into Unreal, resolves the Eye/Jaw target gap, and leaves only direct compile status as the next engine adapter boundary.
+Core secret: separate source mapping readiness, engine binding readiness, controlled fixture authoring, runtime hierarchy coverage, Skeleton target coverage, compile invocation and direct diagnostic status. R43 proved that `CR_HeroFace` having five runtime controls is still not enough when the public Skeleton only confirms two deformation target matches. R44 adds a Maya-generated public face Skeleton imported into Unreal and resolves the Eye/Jaw target gap. R45 invokes the public Control Rig compile methods and records the remaining diagnostic-readback boundary without pretending a method call is the same as compile approval.
 
-Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, AssetTools authoring harness, hierarchy controller control creation, Maya face Skeleton FBX generation, Unreal skeletal import receipt, read-only deformation-link collector, Skeleton reference-pose facts, shape/offset readability rows, post-face bridge recheck, evaluation rows, owner actions and public-fixture write boundary.
+Deterministic core: Character Calibration Drilldown source artifact, Unreal 5.3.2 Python probe, ControlRig/RigVM API facts, AssetTools authoring harness, hierarchy controller control creation, Maya face Skeleton FBX generation, Unreal skeletal import receipt, read-only deformation-link collector, Skeleton reference-pose facts, shape/offset readability rows, transient compile invocation rows, direct status / diagnostic probe rows, package dirty-state boundary, post-face bridge recheck, evaluation rows, owner actions and public-fixture write boundary.
 
 AI boundary: AI can summarize missing controls, missing deformation targets and owner responsibilities. It cannot approve Control Rig coverage or compile readiness without deterministic engine evidence, hierarchy facts and explicit write boundary.
 

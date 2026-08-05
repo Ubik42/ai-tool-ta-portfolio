@@ -1,6 +1,6 @@
 # Unreal Control Rig Bridge
 
-R37-R44 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，并继续推进到 public Control Rig fixture authoring、face Skeleton fixture、hierarchy coverage 和 deformation target link，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
+R37-R45 目标：把 Maya Character Calibration 的 Control Rig mapping facts 接到 Unreal runtime readiness，并继续推进到 public Control Rig fixture authoring、face Skeleton fixture、hierarchy coverage、deformation target link 和 compile invocation readiness，证明角色校准不是停在 DCC 源文件检查，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -10,7 +10,7 @@ R37-R44 目标：把 Maya Character Calibration 的 Control Rig mapping facts �
 - Unreal Python 和 Control Rig / RigVM API 是否可用。
 - expected SkeletalMesh / Skeleton 是否存在并能作为绑定目标。
 - expected Control Rig asset 是否存在，runtime controls 是否覆盖 Maya required controls。
-- authored controls 是否能链接到 Unreal Skeleton deformation targets，以及 compile status 是否能被稳定读取。
+- authored controls 是否能链接到 Unreal Skeleton deformation targets，compile 方法是否能调用，以及 direct status / diagnostics 是否能被稳定读取。
 
 ## 当前实现
 
@@ -20,16 +20,19 @@ R37-R44 目标：把 Maya Character Calibration 的 Control Rig mapping facts �
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/fixture_authoring.py`
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/deformation_link.py`
+- `dcc-hosts/unreal-control-rig-bridge/unreal_control_rig_bridge/compile_status.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/run_deformation_link.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/generate_face_skeleton_fbx.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/probe_control_rig_bridge.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/author_control_rig_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/import_face_skeleton_fixture.py`
 - `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/collect_control_rig_deformation_link.py`
+- `dcc-hosts/unreal-control-rig-bridge/scripts/unreal_python/collect_control_rig_compile_status.py`
 - `dcc-hosts/unreal-handoff-inspector/projects/AI_Tool_TA_Unreal_L3/AI_Tool_TA_Unreal_L3.uproject`
 
 R37 已完成：
@@ -63,6 +66,12 @@ R44 已完成：
 - `expected_unreal_targets()` 的 approved 行切到 `SK_HeroFace` / `SK_HeroFace_Skeleton`，复跑 bridge 后 approved 行保持 Ready，TMP 行继续 Blocked。
 - 复跑 Deformation Link 后 Skeleton target matches 从 2 提升到 5，approved 行从 Blocked 推进到 Review；剩余 Review 来自 direct compile status 仍无法通过 UE Python 稳定读取。
 
+R45 已完成：
+
+- 新增 Compile Status Bridge：读取 R44 post-face deformation-link artifact，通过 Unreal 5.3.2 Python 加载 public `CR_HeroFace`。
+- 调用可见的 `ControlRigBlueprint` compile 方法，记录 compile method visible / invocation attempted / invocation succeeded，补上 package dirty before/after 和 no-save 边界。
+- 结果证明 approved 行 compile 方法可见、可调用且不会留下 dirty package；但 UE Python 仍没有 direct status / diagnostic readback，所以 approved 行保持 Review，不包装成完全 Ready。
+
 ## 证据
 
 当前 L3 artifacts：
@@ -72,12 +81,13 @@ R44 已完成：
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-235140.json
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-compile-status-20260806-001504.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
 ```
 
 关键结果：
@@ -116,8 +126,17 @@ R44 已完成：
 - direct compile status rows：0
 - deformation link checks pass / warning / error：13 / 2 / 5
 - deformation link assetWrites / productionWrites：0 / 0
+- compile status report version：`unreal-control-rig-compile-status@0.1.0`
+- compile status evidence：L3 / `unreal_control_rig_compile_status_collected`
+- compile status gate：`Blocked`
+- compile status rows ready / review / blocked：0 / 1 / 1
+- compile candidate / method visible / invoked / succeeded：1 / 1 / 1 / 1
+- direct status / diagnostics / compile settings readable：0 / 0 / 1
+- package dirtyAfter rows：0
+- compile status checks pass / warning / error：10 / 2 / 4
+- compile status assetWrites / productionWrites：0 / 0
 
-Gate 仍为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping、`SK_HeroFace_Skeleton` target coverage、`CR_HeroFace` asset 和 5 个 runtime controls 已经通过，approved 行只剩 direct compile status API-limited Review；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
+Gate 仍为 `Blocked` 是业务正确结果：approved 角色的 Maya mapping、`SK_HeroFace_Skeleton` target coverage、`CR_HeroFace` asset、5 个 runtime controls 和 transient compile invocation 已经通过，approved 行只剩 direct diagnostic/status readback Review；TMP 角色继续被 Maya 源头缺陷、缺 SkeletalMesh/Skeleton、缺 Control Rig asset 和 runtime control coverage 阻断。
 
 ## 后续
 

@@ -1,6 +1,6 @@
 # Character Calibration & Intent Transfer Studio
 
-R26-R44 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据、Maya/AuroraView drilldown 数据，并接到 Unreal Control Rig runtime readiness、public fixture authoring、face Skeleton fixture 与 deformation target link。
+R26-R45 目标：把角色 DNA / 拓扑 / joint coverage / face control / Control Rig mapping 这条高价值角色业务线从计划推进到 Maya runtime L3 证据、Maya/AuroraView drilldown 数据，并接到 Unreal Control Rig runtime readiness、public fixture authoring、face Skeleton fixture、deformation target link 与 compile status bridge。
 
 ## 核心业务逻辑
 
@@ -68,6 +68,12 @@ R44 已完成：
 - Face Skeleton artifact 确认 required targets 4 / 4 present，R43 缺的 `Eye_L`、`Eye_R`、`Jaw` 为 3 / 3 resolved，assetWrites=2，productionWrites=0。
 - 更新 approved 角色的 Unreal expected Skeleton target 到 `SK_HeroFace_Skeleton` 后复跑 bridge / deformation-link：Skeleton target matches 从 2 提升到 5，approved 行从 Blocked 推进到 Review；剩余问题是 direct compile status API-limited。
 
+R45 已完成：
+
+- 新增 Unreal Control Rig Compile Status Bridge，读取 R44 后的 `CR_HeroFace` 和角色 drilldown contract。
+- 对 approved 行执行 Unreal Python compile method 探测，确认 method visible / invoked / succeeded = 1 / 1 / 1，dirtyAfter=0，assetWrites=0，productionWrites=0。
+- 保持 approved 行为 Review：compile 调用本身可用，但 direct status / diagnostics 仍不可读，不能把 API 调用成功误判为角色绑定已通过发布批准。
+
 ## 证据
 
 当前 L2 contract artifact：
@@ -95,12 +101,13 @@ R44 已完成：
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-bridge-l3-20260805-235140.json
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-compile-status-20260806-001504.json
 ```
 
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r44-unreal-control-rig-face-skeleton-fixture-presentation-pack-20260805-235700.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
 ```
 
 关键结果：
@@ -133,12 +140,19 @@ R44 已完成：
 - Unreal deformation link shape-or-offset readable / direct compile status：5 / 0
 - Unreal deformation link pass / warning / error：13 / 2 / 5
 - Unreal deformation link assetWrites / productionWrites：0 / 0
+- Unreal Control Rig Compile Status Bridge：L3 / `Blocked` / `unreal_control_rig_compile_status_collected`
+- Unreal compile status rows ready / review / blocked：0 / 1 / 1
+- Unreal compile candidate / method visible / invoked / succeeded：1 / 1 / 1 / 1
+- Unreal compile direct status / diagnostics / settings：0 / 0 / 1
+- Unreal compile dirty before / after：0 / 0
+- Unreal compile pass / warning / error：10 / 2 / 4
+- Unreal compile assetWrites / productionWrites：0 / 0
 
-Gate 为 `Blocked` 是正确状态：`Hero Head Approved` Ready；`Hero Head Temporary Sculpt` 保留 topology mismatch、missing Eye_R/Jaw、TMP joint、skin influence overflow、calibration delta overflow、face param missing/out-of-range、Control Rig mapping mismatch 等业务故障。
+Gate 为 `Blocked` 是正确状态：`Hero Head Approved` 已推进到 Review；`Hero Head Temporary Sculpt` 保留 topology mismatch、missing Eye_R/Jaw、TMP joint、skin influence overflow、calibration delta overflow、face param missing/out-of-range、Control Rig mapping mismatch 等业务故障。
 
 ## 后续
 
 下一阶段可以继续做：
 
-- Control Rig compile bridge：用 Editor Utility / C++ 补 direct compile status，或补 owner waiver drilldown。
+- Control Rig owner waiver drilldown：把 approved 行的 compile diagnostics API-limited 状态变成 reviewer 可签收的 waiver / risk memo。
 - Character LOD Bake Planner：把 topology / normal / tangent / vertex color payload 接到角色 LOD 生成链。

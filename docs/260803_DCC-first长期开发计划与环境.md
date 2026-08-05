@@ -1565,3 +1565,27 @@ Presenter Pack evidence: 42 / 42 present, 0 missing, 33 route steps
 ```text
 Control Rig direct compile status bridge 或 gameplay attach fixture / Groom Export Inspector -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
 ```
+
+## R45 循环开发断点：Unreal Control Rig Compile Status Bridge
+
+R45 已完成 `Unreal Control Rig Compile Status Bridge` L3：
+
+```text
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-compile-status-20260806-001504.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r45-unreal-control-rig-compile-status-presentation-pack-20260806-001919.json
+```
+
+R45 结果：`run_compile_status.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public `AI_Tool_TA_Unreal_L3.uproject`，读取 R44 post-face deformation-link artifact，加载 public `CR_HeroFace`，调用可见的 `ControlRigBlueprint` compile 方法，并记录 direct status / diagnostics / compile settings、package dirty-state 和 no-save boundary。结果为 L3 / `Blocked` / `unreal_control_rig_compile_status_collected`，2 character rows，approved 行 Review，TMP 行 Blocked，compile candidate / method visible / invoked / succeeded = 1 / 1 / 1 / 1，direct status / diagnostics / settings = 0 / 0 / 1，dirtyAfter=0，10 pass / 2 warning / 4 error，assetWrites=0，productionWrites=0。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r45 / dcc-first-package@1.42.0
+Presenter Pack evidence: 43 / 43 present, 0 missing, 34 route steps
+```
+
+下一轮入口：
+
+```text
+Control Rig Editor Utility / C++ diagnostic bridge，或 gameplay attach fixture / Groom Export Inspector -> runtime facts -> owner/readiness receipt -> Presenter Pack row -> docs -> targeted validation
+```

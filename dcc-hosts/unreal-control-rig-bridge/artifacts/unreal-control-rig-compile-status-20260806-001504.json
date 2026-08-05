@@ -1,0 +1,549 @@
+{
+  "reportVersion": "unreal-control-rig-compile-status@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Compile Status Bridge",
+  "generatedAt": "2026-08-06 00:15:11",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_control_rig_compile_status_collected",
+  "sourceArtifact": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-deformation-link-20260805-235154.json",
+    "reportVersion": "unreal-control-rig-deformation-link@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_deformation_link_collected",
+    "gate": "Blocked"
+  },
+  "sourceDeformationSummary": {
+    "characterRows": 2,
+    "controlsEvaluated": 10,
+    "runtimeControlsPresent": 5,
+    "mappedTargetNames": 8,
+    "skeletonTargetMatches": 5,
+    "skeletonTargetUnknown": 5,
+    "shapeOrOffsetReadableControls": 5,
+    "compileApiVisibleRows": 1,
+    "directCompileStatusRows": 0,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "sourceEvaluationSummary": {
+    "gate": "Blocked",
+    "characterRows": 2,
+    "readyRows": 0,
+    "reviewRows": 1,
+    "blockedRows": 1,
+    "pass": 13,
+    "warning": 2,
+    "error": 5,
+    "readyAssetIds": [],
+    "reviewAssetIds": [
+      "char-hero-head-001"
+    ],
+    "blockedAssetIds": [
+      "char-hero-head-tmp-002"
+    ]
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "ControlRigBlueprint": true,
+        "RigVMBlueprint": true,
+        "RigVMController": true,
+        "EditorAssetLibrary": true
+      },
+      "controlRigBlueprintMethods": [
+        "create_rig_vm_host",
+        "get_auto_vm_recompile",
+        "get_available_rig_vm_structs",
+        "get_rig_vm_host_class",
+        "recompile_vm",
+        "recompile_vm_if_required",
+        "request_auto_vm_recompilation",
+        "request_rig_vm_init",
+        "set_auto_vm_recompile",
+        "vm_compile_settings"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "transient ControlRigBlueprint compile probe; no asset save"
+  },
+  "facts": {
+    "schema": "unreal-control-rig-compile-status@0.1.0",
+    "sourceCharacters": 2,
+    "runtimeCollected": true,
+    "characters": [
+      {
+        "assetId": "char-hero-head-001",
+        "assetLabel": "Hero Head Approved",
+        "sourceStatus": "Ready",
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "controlRigExists": true,
+        "controlRigClass": "ControlRigBlueprint",
+        "compileMethods": [
+          "create_control_rig",
+          "create_rig_vm_host",
+          "get_auto_vm_recompile",
+          "get_available_rig_vm_structs",
+          "get_control_rig_class",
+          "get_currently_open_rig_blueprints",
+          "get_rig_vm_host_class",
+          "recompile_vm",
+          "recompile_vm_if_required",
+          "request_auto_vm_recompilation",
+          "request_rig_vm_init",
+          "set_auto_vm_recompile",
+          "vm_compile_settings"
+        ],
+        "statusMethods": [],
+        "compileMethodVisible": true,
+        "packageDirtyBefore": null,
+        "packageDirtyAfter": null,
+        "classRows": [
+          {
+            "method": "get_control_rig_class",
+            "args": [],
+            "ok": true,
+            "value": "<Object '/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace_C' (0x00000776CADCD900) Class 'RigVMBlueprintGeneratedClass'>",
+            "error": null
+          },
+          {
+            "method": "get_rig_vm_host_class",
+            "args": [],
+            "ok": true,
+            "value": "<Object '/Game/AI_Tool_TA/Characters/CR_HeroFace.CR_HeroFace_C' (0x00000776CADCD900) Class 'RigVMBlueprintGeneratedClass'>",
+            "error": null
+          }
+        ],
+        "settingsRowsBefore": [
+          {
+            "attribute": "vm_compile_settings",
+            "ok": true,
+            "value": "<Struct 'RigVMCompileSettings' (0x00000776F776E618) {surpress_info_messages: True, surpress_warnings: False, surpress_errors: False, enable_pin_watches: True, ast_settings: {}}>",
+            "error": null
+          },
+          {
+            "attribute": "compile_status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'compile_status' for attribute 'compile_status' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "last_compile_status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'last_compile_status' for attribute 'last_compile_status' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Property 'Status' for attribute 'status' on 'ControlRigBlueprint' is protected and cannot be read"
+          },
+          {
+            "attribute": "compile_log",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'compile_log' for attribute 'compile_log' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "last_compile_results",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'last_compile_results' for attribute 'last_compile_results' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "model_compile_result",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'model_compile_result' for attribute 'model_compile_result' on 'ControlRigBlueprint'"
+          }
+        ],
+        "statusRows": [
+          {
+            "attribute": "vm_compile_settings",
+            "ok": true,
+            "value": "<Struct 'RigVMCompileSettings' (0x00000776F776E618) {surpress_info_messages: True, surpress_warnings: False, surpress_errors: False, enable_pin_watches: True, ast_settings: {}}>",
+            "error": null
+          },
+          {
+            "attribute": "compile_status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'compile_status' for attribute 'compile_status' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "last_compile_status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'last_compile_status' for attribute 'last_compile_status' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "status",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Property 'Status' for attribute 'status' on 'ControlRigBlueprint' is protected and cannot be read"
+          },
+          {
+            "attribute": "compile_log",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'compile_log' for attribute 'compile_log' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "last_compile_results",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'last_compile_results' for attribute 'last_compile_results' on 'ControlRigBlueprint'"
+          },
+          {
+            "attribute": "model_compile_result",
+            "ok": false,
+            "value": null,
+            "error": "ControlRigBlueprint: Failed to find property 'model_compile_result' for attribute 'model_compile_result' on 'ControlRigBlueprint'"
+          }
+        ],
+        "diagnosticRowsBefore": [],
+        "diagnosticRowsAfter": [],
+        "compileInvocationRows": [
+          {
+            "method": "recompile_vm_if_required",
+            "args": [],
+            "ok": true,
+            "value": "None",
+            "error": null
+          },
+          {
+            "method": "recompile_vm",
+            "args": [],
+            "ok": true,
+            "value": "None",
+            "error": null
+          }
+        ],
+        "compileInvocationAttempted": true,
+        "compileInvocationSucceeded": true,
+        "directStatusReadable": false,
+        "diagnosticReadable": false,
+        "compileSettingsReadable": true,
+        "sourceControlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "sourceControlRigExists": true,
+        "sourceHierarchyReadable": true,
+        "sourceCompileApiVisible": true,
+        "sourceDirectCompileStatusReadable": false
+      },
+      {
+        "assetId": "char-hero-head-tmp-002",
+        "assetLabel": "Hero Head Temporary Sculpt",
+        "sourceStatus": "Blocked",
+        "controlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "controlRigExists": false,
+        "controlRigClass": null,
+        "compileMethods": [],
+        "statusMethods": [],
+        "compileMethodVisible": false,
+        "packageDirtyBefore": null,
+        "packageDirtyAfter": null,
+        "classRows": [],
+        "settingsRowsBefore": [],
+        "statusRows": [],
+        "diagnosticRowsBefore": [],
+        "diagnosticRowsAfter": [],
+        "compileInvocationRows": [],
+        "compileInvocationAttempted": false,
+        "compileInvocationSucceeded": false,
+        "directStatusReadable": false,
+        "diagnosticReadable": false,
+        "compileSettingsReadable": false,
+        "sourceControlRigPath": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "sourceControlRigExists": false,
+        "sourceHierarchyReadable": false,
+        "sourceCompileApiVisible": false,
+        "sourceDirectCompileStatusReadable": false
+      }
+    ],
+    "summary": {
+      "characterRows": 2,
+      "compileCandidateRows": 1,
+      "compileMethodVisibleRows": 1,
+      "compileInvocationAttemptedRows": 1,
+      "compileInvocationSucceededRows": 1,
+      "directStatusReadableRows": 0,
+      "diagnosticReadableRows": 0,
+      "compileSettingsReadableRows": 1,
+      "dirtyBeforeRows": 0,
+      "dirtyAfterRows": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-compile-status-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "characterRows": 2,
+      "readyRows": 0,
+      "reviewRows": 1,
+      "blockedRows": 1,
+      "pass": 10,
+      "warning": 2,
+      "error": 4,
+      "readyAssetIds": [],
+      "reviewAssetIds": [
+        "char-hero-head-001"
+      ],
+      "blockedAssetIds": [
+        "char-hero-head-tmp-002"
+      ]
+    },
+    "evaluations": [
+      {
+        "id": "char-hero-head-001:source-deformation-link-reviewable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "source-deformation-link-reviewable",
+        "label": "Source Deformation Link Row",
+        "status": "pass",
+        "reason": "Only approved post-face deformation-link rows should enter direct compile readiness.",
+        "evidence": "Ready",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:unreal-python-runtime",
+        "assetId": "char-hero-head-001",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "Compile readiness must be collected inside Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:control-rig-asset-readable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "control-rig-asset-readable",
+        "label": "Control Rig Asset",
+        "status": "pass",
+        "reason": "The expected public Control Rig asset must be loadable before compile readiness can be probed.",
+        "evidence": "/Game/AI_Tool_TA/Characters/CR_HeroFace",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:compile-method-visible",
+        "assetId": "char-hero-head-001",
+        "ruleId": "compile-method-visible",
+        "label": "Compile Method Surface",
+        "status": "pass",
+        "reason": "Unreal should expose ControlRigBlueprint compile or recompile methods on the public fixture.",
+        "evidence": "['create_control_rig', 'create_rig_vm_host', 'get_auto_vm_recompile', 'get_available_rig_vm_structs', 'get_control_rig_class', 'get_currently_open_rig_blueprints', 'get_rig_vm_host_class', 'recompile_vm', 'recompile_vm_if_required', 'request_auto_vm_recompilation', 'request_rig_vm_init', 'set_auto_vm_recompile', 'vm_compile_settings']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:compile-invocation-succeeded",
+        "assetId": "char-hero-head-001",
+        "ruleId": "compile-invocation-succeeded",
+        "label": "Compile Invocation",
+        "status": "pass",
+        "reason": "At least one transient compile invocation should complete without exception on the public Control Rig fixture.",
+        "evidence": "[{'method': 'recompile_vm_if_required', 'args': [], 'ok': True, 'value': 'None', 'error': None}, {'method': 'recompile_vm', 'args': [], 'ok': True, 'value': 'None', 'error': None}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:direct-status-or-diagnostics-readable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "direct-status-or-diagnostics-readable",
+        "label": "Direct Status / Diagnostics",
+        "status": "warning",
+        "reason": "Reviewer should see a direct compile status or diagnostic readback, not only a successful method call.",
+        "evidence": "directStatusReadable=False diagnosticReadable=False rows=[{'attribute': 'vm_compile_settings', 'ok': True, 'value': \"<Struct 'RigVMCompileSettings' (0x00000776F776E618) {surpress_info_messages: True, surpress_warnings: False, surpress_errors: False, enable_pin_watches: True, ast_settings: {}}>\", 'error': None}, {'attribute': 'compile_status', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Failed to find property 'compile_status' for attribute 'compile_status' on 'ControlRigBlueprint'\"}, {'attribute': 'last_compile_status', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Failed to find property 'last_compile_status' for attribute 'last_compile_status' on 'ControlRigBlueprint'\"}, {'attribute': 'status', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Property 'Status' for attribute 'status' on 'ControlRigBlueprint' is protected and cannot be read\"}, {'attribute': 'compile_log', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Failed to find property 'compile_log' for attribute 'compile_log' on 'ControlRigBlueprint'\"}, {'attribute': 'last_compile_results', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Failed to find property 'last_compile_results' for attribute 'last_compile_results' on 'ControlRigBlueprint'\"}, {'attribute': 'model_compile_result', 'ok': False, 'value': None, 'error': \"ControlRigBlueprint: Failed to find property 'model_compile_result' for attribute 'model_compile_result' on 'ControlRigBlueprint'\"}]",
+        "fixPreview": "Add an Editor Utility/C++ bridge if UE Python cannot expose compile diagnostics."
+      },
+      {
+        "id": "char-hero-head-001:package-dirty-boundary",
+        "assetId": "char-hero-head-001",
+        "ruleId": "package-dirty-boundary",
+        "label": "Package Dirty Boundary",
+        "status": "pass",
+        "reason": "A compile probe should not silently leave the public fixture newly dirty without surfacing the state.",
+        "evidence": "before=None after=None",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-001:no-save-boundary",
+        "assetId": "char-hero-head-001",
+        "ruleId": "no-save-boundary",
+        "label": "No Save Boundary",
+        "status": "pass",
+        "reason": "Compile readiness should be a transient probe in this public test project unless an explicit write receipt exists.",
+        "evidence": "assetWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:source-deformation-link-reviewable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-deformation-link-reviewable",
+        "label": "Source Deformation Link Row",
+        "status": "error",
+        "reason": "Only approved post-face deformation-link rows should enter direct compile readiness.",
+        "evidence": "Blocked",
+        "fixPreview": "Resolve source Character Calibration / deformation-link owner actions before compile readiness."
+      },
+      {
+        "id": "char-hero-head-tmp-002:unreal-python-runtime",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "unreal-python-runtime",
+        "label": "Unreal Python Runtime",
+        "status": "pass",
+        "reason": "Compile readiness must be collected inside Unreal Python.",
+        "evidence": "True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:control-rig-asset-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-readable",
+        "label": "Control Rig Asset",
+        "status": "error",
+        "reason": "The expected public Control Rig asset must be loadable before compile readiness can be probed.",
+        "evidence": "/Game/AI_Tool_TA/Characters/CR_HeroFace_TMP",
+        "fixPreview": "Create or relink the public Control Rig fixture before compile readiness."
+      },
+      {
+        "id": "char-hero-head-tmp-002:compile-method-visible",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-method-visible",
+        "label": "Compile Method Surface",
+        "status": "error",
+        "reason": "Unreal should expose ControlRigBlueprint compile or recompile methods on the public fixture.",
+        "evidence": "[]",
+        "fixPreview": "Enable ControlRig/RigVM editor APIs or use an Editor Utility/C++ adapter."
+      },
+      {
+        "id": "char-hero-head-tmp-002:compile-invocation-succeeded",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-invocation-succeeded",
+        "label": "Compile Invocation",
+        "status": "error",
+        "reason": "At least one transient compile invocation should complete without exception on the public Control Rig fixture.",
+        "evidence": "[]",
+        "fixPreview": "Fix compile errors or expose a stronger compile adapter before claiming engine readiness."
+      },
+      {
+        "id": "char-hero-head-tmp-002:direct-status-or-diagnostics-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "direct-status-or-diagnostics-readable",
+        "label": "Direct Status / Diagnostics",
+        "status": "warning",
+        "reason": "Reviewer should see a direct compile status or diagnostic readback, not only a successful method call.",
+        "evidence": "directStatusReadable=False diagnosticReadable=False rows=[]",
+        "fixPreview": "Add an Editor Utility/C++ bridge if UE Python cannot expose compile diagnostics."
+      },
+      {
+        "id": "char-hero-head-tmp-002:package-dirty-boundary",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "package-dirty-boundary",
+        "label": "Package Dirty Boundary",
+        "status": "pass",
+        "reason": "A compile probe should not silently leave the public fixture newly dirty without surfacing the state.",
+        "evidence": "before=None after=None",
+        "fixPreview": "None"
+      },
+      {
+        "id": "char-hero-head-tmp-002:no-save-boundary",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "no-save-boundary",
+        "label": "No Save Boundary",
+        "status": "pass",
+        "reason": "Compile readiness should be a transient probe in this public test project unless an explicit write receipt exists.",
+        "evidence": "assetWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "owner-action:char-hero-head-001:direct-status-or-diagnostics-readable",
+        "assetId": "char-hero-head-001",
+        "ruleId": "direct-status-or-diagnostics-readable",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "control-rig-owner",
+        "preview": "Add an Editor Utility/C++ bridge if UE Python cannot expose compile diagnostics.",
+        "writeBoundary": "transient_compile_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:source-deformation-link-reviewable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "source-deformation-link-reviewable",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "character-owner",
+        "preview": "Resolve source Character Calibration / deformation-link owner actions before compile readiness.",
+        "writeBoundary": "transient_compile_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:control-rig-asset-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "control-rig-asset-readable",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Create or relink the public Control Rig fixture before compile readiness.",
+        "writeBoundary": "transient_compile_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:compile-method-visible",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-method-visible",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Enable ControlRig/RigVM editor APIs or use an Editor Utility/C++ adapter.",
+        "writeBoundary": "transient_compile_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:compile-invocation-succeeded",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "compile-invocation-succeeded",
+        "status": "error",
+        "mutationScope": "owner_required",
+        "owner": "engine-ta",
+        "preview": "Fix compile errors or expose a stronger compile adapter before claiming engine readiness.",
+        "writeBoundary": "transient_compile_probe"
+      },
+      {
+        "id": "owner-action:char-hero-head-tmp-002:direct-status-or-diagnostics-readable",
+        "assetId": "char-hero-head-tmp-002",
+        "ruleId": "direct-status-or-diagnostics-readable",
+        "status": "warning",
+        "mutationScope": "manual_review",
+        "owner": "control-rig-owner",
+        "preview": "Add an Editor Utility/C++ bridge if UE Python cannot expose compile diagnostics.",
+        "writeBoundary": "transient_compile_probe"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-control-rig-compile-status",
+    "name": "Unreal Control Rig Compile Status Bridge",
+    "methodSource": "Post-face-skeleton Control Rig transient compile invocation and diagnostic probe",
+    "protocolCarrier": "R44 deformation-link rows + Unreal ControlRigBlueprint compile / diagnostic API surface",
+    "boundary": {
+      "mutation": "public_unreal_test_project_transient_compile_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "transient ControlRigBlueprint compile probe; no asset save"
+    }
+  },
+  "reviewerClaims": [
+    "R45 moves beyond Control Rig asset and hierarchy presence by invoking the Unreal ControlRigBlueprint compile API on the public fixture.",
+    "The report separates compile method visibility, compile invocation success, direct diagnostic/status readability and package dirty-state boundary.",
+    "The probe does not save assets and records zero production writes; any dirty package state is surfaced as review evidence."
+  ]
+}

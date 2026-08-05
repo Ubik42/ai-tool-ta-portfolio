@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "max", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -86,16 +86,19 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\fixture_authoring.py"),
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\deformation_link.py"),
+    (Join-Path $UnrealControlRig "unreal_control_rig_bridge\compile_status.py"),
     (Join-Path $UnrealControlRig "scripts\run_smoke.py"),
     (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealControlRig "scripts\run_fixture_authoring.py"),
     (Join-Path $UnrealControlRig "scripts\run_face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\run_deformation_link.py"),
+    (Join-Path $UnrealControlRig "scripts\run_compile_status.py"),
     (Join-Path $UnrealControlRig "scripts\generate_face_skeleton_fbx.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\probe_control_rig_bridge.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\author_control_rig_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\import_face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_deformation_link.py"),
+    (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_compile_status.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\contract.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\maya_collector.py"),
     (Join-Path $SpatialAuthoring "spatial_authoring_workbench\drilldown.py"),
@@ -154,11 +157,11 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r44-unreal-control-rig-face-skeleton-fixture-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r45-unreal-control-rig-compile-status-presentation-pack")
 summary = pack["summary"]
-assert summary["present_evidence_files"] == 42, summary
+assert summary["present_evidence_files"] == 43, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 33, summary
+assert summary["demo_route_steps"] == 34, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -245,6 +248,12 @@ if ($Tier -in @("unreal-control-rig-face-skeleton-fixture", "full")) {
 if ($Tier -in @("unreal-control-rig-deformation-link", "full")) {
     Invoke-Step "unreal control rig deformation link" {
         python (Join-Path $UnrealControlRig "scripts\run_deformation_link.py")
+    }
+}
+
+if ($Tier -in @("unreal-control-rig-compile-status", "full")) {
+    Invoke-Step "unreal control rig compile status bridge" {
+        python (Join-Path $UnrealControlRig "scripts\run_compile_status.py")
     }
 }
 
