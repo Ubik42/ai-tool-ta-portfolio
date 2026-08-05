@@ -1167,3 +1167,34 @@ ai-tool-ta-dcc-first-showcase-r30 / dcc-first-package@1.27.0
 ```text
 generation plan artifact -> texture/material runtime fact collector or public-scope executor -> re-check gate -> Presenter Pack row -> docs
 ```
+
+## R31 循环开发断点：Platform Variant Texture Runtime Collector
+
+R31 已完成 `Platform Variant Texture Runtime Collector` L3：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json
+```
+
+R31 结果：`run_texture_runtime_probe.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public test project，读取 R28 variant plan 和 R29 runtime artifact 后用 Unreal Python 采集 StaticMesh material slots、material dependency query、material expression texture references、Texture2D size / estimated memory / compression / sRGB / readability。结果为 3 variants，1 Ready，1 Review，1 intentionally Blocked，19 pass / 1 warning / 1 error。`Review` 来自 Mobile HeroPanel 的 synthetic material 没有真实 Texture2D payload；这已经不再是 collector 缺失，而是下一轮需要构造 public Texture2D payload fixture 或进入受控 executor 的明确输入。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r31 / dcc-first-package@1.28.0
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant-texture
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Public Texture2D Payload Fixture / Controlled Executor`：
+
+```text
+texture runtime artifact -> public Texture2D payload fixture or controlled Unreal operation executor -> runtime re-check -> Presenter Pack row -> docs
+```

@@ -7,9 +7,9 @@
 最终 reviewer 应看到：
 
 - Maya 2024 内通过 AuroraView 打开工具面板。
-- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、空间作者、平台变体规划、Unreal runtime 对照和 generation planner 等模块。
+- 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、空间作者、平台变体规划、Unreal runtime 对照、generation planner 和 texture runtime collector 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3；空间作者线已有 Spatial Authoring Maya L3；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact 和 runtime drift -> generation plan artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、3ds Max `pymxs` L3、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据和 Unreal Animation Bridge import L3；角色线已有 Character Calibration Maya L3；空间作者线已有 Spatial Authoring Maya L3；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact 和 Unreal material / texture runtime artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json
+dcc-hosts/maya-auroraview-host/artifacts/r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R30。
+稳定基线：R31。
 
 已完成：
 
@@ -42,6 +42,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-pr
 - Platform Variant Forge L3-linked
 - Platform Variant Unreal Runtime Probe L3
 - Platform Variant Generation Planner L3-derived
+- Platform Variant Texture Runtime Collector L3
 - Blender Rule Adapter L3
 - 3ds Max Rule Adapter L3
 - Maya command bridge
@@ -50,9 +51,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-pr
 仍缺：
 
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
-- MotionBuilder、Houdini、Unreal animation fact deepening、Character Calibration / Spatial Authoring UI drilldown、Platform Variant executor / texture collector 等后续工具线。
+- MotionBuilder、Houdini、Unreal animation fact deepening、Character Calibration / Spatial Authoring UI drilldown、Platform Variant public Texture2D payload fixture / controlled executor 等后续工具线。
 
-## 3. R30 当前断点与已完成工具线
+## 3. R31 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -67,6 +68,8 @@ dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-pr
 `Platform Variant Unreal Runtime Probe` 已完成 R29 runtime-vs-plan 闭环：通过 UnrealEditor-Cmd 进入公开 test `.uproject`，采集计划中 PC/Mobile target StaticMesh 的 path、LOD、material slot、Nanite、collision runtime facts，并与 R28 variant plan 对照。结果为 L3，3 variants，0 Ready / 2 Review / 1 Blocked，21 pass / 4 warning / 2 error；写入只发生在 `/Game/AI_Tool_TA` 公开 fixture。
 
 `Platform Variant Generation Planner` 已完成 R30 dry-run generation 闭环：读取 R29 runtime drift 与 R28 plan，生成 missing LOD、Nanite policy、material merge、texture downscale、collision simplification、source import、target variant creation 等 11 个 operation contract，结果为 1 Ready / 3 Review / 2 Blocked / 5 Satisfied。该 artifact 不写 Unreal 资产，只给出 deterministic params、Unreal Python preview、writeSet、rollback 和 owner approval 边界。
+
+`Platform Variant Texture Runtime Collector` 已完成 R31 material / texture runtime 闭环：通过 UnrealEditor-Cmd 进入公开 test `.uproject`，采集计划中 StaticMesh 的 material slots、material dependency query、material expression texture references、Texture2D 尺寸/估算内存/压缩/sRGB/readability。结果为 L3，3 variants，1 Ready / 1 Review / 1 Blocked，19 pass / 1 warning / 1 error；assetWrites=0。Mobile HeroPanel 的 Review 明确来自 synthetic material 没有真实 Texture2D payload，不是 collector 缺失。
 
 核心文件：
 
@@ -101,10 +104,13 @@ dcc-hosts/platform-variant-forge/fixtures/synthetic_platform_variant_plan.json
 dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py
 dcc-hosts/platform-variant-forge/platform_variant_forge/runtime_contract.py
 dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py
+dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py
 dcc-hosts/platform-variant-forge/scripts/run_smoke.py
 dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py
 dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py
+dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py
 dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py
+dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py
 ```
 
 已生成首个 L2 artifact：
@@ -173,10 +179,16 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-unreal-runtime-20260
 dcc-hosts/platform-variant-forge/artifacts/platform-variant-generation-plan-20260805-190052.json
 ```
 
-当前 R30 Presenter Pack：
+当前 Platform Variant Texture Runtime Collector：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json
+dcc-hosts/platform-variant-forge/artifacts/platform-variant-texture-runtime-20260805-191529.json
+```
+
+当前 R31 Presenter Pack：
+
+```text
+dcc-hosts/maya-auroraview-host/artifacts/r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json
 ```
 
 这条线的最终效果：
@@ -184,9 +196,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r30-platform-variant-generation-plan-pr
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；Spatial Authoring 已有 Maya L3；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3 和 dry-run generation plan。后续可继续补 MotionBuilder、Unreal socket 对照、texture runtime collector、受控 Unreal executor 或更细的 Unreal curve/compression facts。
+- Unreal 侧已接入 import L3；Spatial Authoring 已有 Maya L3；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan 和 material / texture runtime facts。后续可继续补 MotionBuilder、Unreal socket 对照、public Texture2D payload fixture、受控 Unreal executor 或更细的 Unreal curve/compression facts。
 
-继续开发时优先做 Platform Variant texture runtime collector / controlled executor，或深化 Character Calibration / Spatial Authoring UI drilldown。如果只验证当前 R30，运行：
+继续开发时优先做 Platform Variant public Texture2D payload fixture / controlled executor，或深化 Character Calibration / Spatial Authoring UI drilldown。如果只验证当前 R31，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -196,9 +208,10 @@ python dcc-hosts/spatial-authoring-workbench/scripts/run_l3_smoke.py
 python dcc-hosts/platform-variant-forge/scripts/run_smoke.py
 python dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py
 python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py
+python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py
 ```
 
-当前 R30 public package 为 `ai-tool-ta-dcc-first-showcase-r30` / `dcc-first-package@1.27.0`，Presenter Pack 27 / 27 evidence files present，0 missing required files，19 demo route steps；Spatial Authoring 已到 `L3` / `maya_spatial_authoring_collected`，Platform Variant Forge 已到 `L3-linked` / `platform_variant_plan_joined_to_unreal_facts`，Platform Variant Unreal Runtime Probe 已到 `L3` / `unreal_variant_runtime_assets_collected`，Platform Variant Generation Planner 已到 `L3-derived` / `runtime_drift_to_generation_plan`。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R31 public package 为 `ai-tool-ta-dcc-first-showcase-r31` / `dcc-first-package@1.28.0`，Presenter Pack 28 / 28 evidence files present，0 missing required files，20 demo route steps；Spatial Authoring 已到 `L3` / `maya_spatial_authoring_collected`，Platform Variant Forge 已到 `L3-linked` / `platform_variant_plan_joined_to_unreal_facts`，Platform Variant Unreal Runtime Probe 已到 `L3` / `unreal_variant_runtime_assets_collected`，Platform Variant Generation Planner 已到 `L3-derived` / `runtime_drift_to_generation_plan`，Platform Variant Texture Runtime Collector 已到 `L3` / `unreal_material_texture_facts_collected`。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

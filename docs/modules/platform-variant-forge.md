@@ -1,6 +1,6 @@
 # Platform Variant Forge
 
-R28-R30 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，并把 runtime drift 转成 dry-run generation operations。
+R28-R31 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路的 runtime evidence。
 
 ## 核心业务逻辑
 
@@ -14,6 +14,7 @@ R28-R30 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - 派生计划是否关联已有 Unreal preset fact comparison，而不是孤立生成。
 - Unreal 里实际生成/复制出来的 StaticMesh variant 是否符合计划，而不是只在 JSON 里“看起来通过”。
 - 检测到 drift 后，哪些操作可自动执行，哪些因为缺源资产、缺几何/贴图事实或 owner approval 必须停住。
+- 材质槽是否真的能追到 Unreal material dependency / Texture2D payload，而不是只在计划里写了 texture budget。
 
 ## 当前实现
 
@@ -23,10 +24,13 @@ R28-R30 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/runtime_contract.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py`
+- `dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_smoke.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py`
+- `dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py`
+- `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py`
 
 R28 首版完成：
 
@@ -51,6 +55,14 @@ R30 generation planner 完成：
 - 每个 operation 带 owner approval、deterministic params、Unreal Python preview、writeSet、rollback preview 和 productionWrite=false。
 - Gate 仍为 `Blocked`，原因是 synthetic vehicle source/target 缺失；HeroPanel LOD / texture bake 留在 Review，因为当前 public runtime fixture 的几何/贴图 facts 不足以执行 destructive bake。
 
+R31 texture runtime collector 完成：
+
+- 通过 `UnrealEditor-Cmd.exe` 进入同一个公开 test `.uproject`。
+- 对计划里的 source / PC target / Mobile target StaticMesh 采集 material slots、material paths、Asset Registry dependency query、material expression texture references、Texture2D 尺寸/估算内存/压缩/sRGB/readability。
+- 输出 3 variants：1 Ready，1 Review，1 intentionally Blocked。
+- 规则结果为 19 pass / 1 warning / 1 error；Mobile HeroPanel 的 warning 现在明确是“材质链已采集，但 synthetic material 没有真实 Texture2D payload”，不再是 collector 缺失。
+- assetWrites=0；本轮没有新增 Unreal 资产写入。
+
 ## 证据
 
 当前 artifact：
@@ -59,8 +71,9 @@ R30 generation planner 完成：
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-forge-contract-20260805-183315.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json
 ```
 
 ## 后续
 
-下一步可以继续补 texture runtime collector 或做受控 Unreal dry-run executor，把 R30 的 operation contract 转成 public fixture 内的可复跑执行结果。
+下一步可以创建 public Texture2D payload fixture，让 Mobile texture downscale 从“缺贴图源的 Review”进入可计算预算对比；或做受控 Unreal dry-run executor，把 R30 的 operation contract 转成 public fixture 内的可复跑执行结果。

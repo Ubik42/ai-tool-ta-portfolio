@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-public-case-package-r8-54",
-  "packageVersion": "public-case-package@3.24.0",
+  "packageId": "ai-tool-ta-public-case-package-r8-55",
+  "packageVersion": "public-case-package@3.25.0",
   "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportId": "portfolio-case-study-r8-54",
   "sourceReportVersion": "portfolio-case-study-report@3.31.0",
@@ -9,8 +9,8 @@
   "releaseGate": "Ready",
   "readyForPublicPackage": true,
   "currentDccFirstPackage": {
-    "packageId": "ai-tool-ta-dcc-first-showcase-r30",
-    "packageVersion": "dcc-first-package@1.27.0",
+    "packageId": "ai-tool-ta-dcc-first-showcase-r31",
+    "packageVersion": "dcc-first-package@1.28.0",
     "manifest": "dcc-first-package-manifest.json",
     "readme": "DCC_FIRST_PACKAGE.md",
     "artifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r10-7-dcc-first-case-page-20260803-171316.json",
@@ -29,7 +29,7 @@
     "gate": "CapturePending",
     "sourceCaseGate": "Review",
     "moduleCount": 5,
-    "artifactCount": 15,
+    "artifactCount": 16,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "businessRouteSteps": 7,
@@ -126,12 +126,12 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json",
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 27,
-    "presentationPackPresentEvidenceFiles": 27,
+    "presentationPackEvidenceFiles": 28,
+    "presentationPackPresentEvidenceFiles": 28,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 19,
+    "presentationPackDemoRouteSteps": 20,
     "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
     "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
     "unrealPresetFactComparisonGate": "Blocked",
@@ -291,16 +291,32 @@
     "platformVariantGenerationPlanBlocked": 2,
     "platformVariantGenerationPlanSatisfied": 5,
     "platformVariantGenerationPlanOwnerRequired": 6,
-    "platformVariantGenerationPlanExecutorReady": 1
+    "platformVariantGenerationPlanExecutorReady": 1,
+    "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
+    "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
+    "platformVariantTextureRuntimeEvidenceLevel": "L3",
+    "platformVariantTextureRuntimeL3Status": "unreal_material_texture_facts_collected",
+    "platformVariantTextureRuntimeGate": "Blocked",
+    "platformVariantTextureRuntimeEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "platformVariantTextureRuntimeAssetWrites": 0,
+    "platformVariantTextureRuntimeVariants": 3,
+    "platformVariantTextureRuntimeReady": 1,
+    "platformVariantTextureRuntimeReview": 1,
+    "platformVariantTextureRuntimeBlocked": 1,
+    "platformVariantTextureRuntimePassChecks": 19,
+    "platformVariantTextureRuntimeWarningChecks": 1,
+    "platformVariantTextureRuntimeErrorChecks": 1,
+    "platformVariantTextureRuntimeTextureDependencies": 0
   },
   "summary": {
     "moduleCount": 5,
-    "evidenceCount": 361,
-    "requiredEvidenceCount": 286,
+    "evidenceCount": 385,
+    "requiredEvidenceCount": 294,
     "packageFileCount": 12,
     "ownerSignoffCount": 3,
-    "validationCommandCount": 116,
-    "manifestArtifactCount": 70
+    "validationCommandCount": 118,
+    "manifestArtifactCount": 71,
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json"
   },
   "moduleOrder": [
     "asset-protocol",
@@ -361,7 +377,7 @@
     {
       "id": "dcc-first-presentation-pack",
       "kind": "artifact",
-      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json",
       "required": true
     },
     {
@@ -391,10 +407,17 @@
       "id": "dcc-first-platform-variant-generation-plan",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-texture-runtime",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
+      "required": true
     }
   ],
   "keyEvidence": [
-    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json",
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json",
+    "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
     "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r27-spatial-authoring-l3-presentation-pack-20260805-181612.json",
     "<repo>\\dcc-hosts\\spatial-authoring-workbench\\artifacts\\spatial-authoring-maya-l3-20260805-181524.json",
@@ -460,6 +483,8 @@
     "accept-impact-r8"
   ],
   "notes": [
+    "R31 adds Platform Variant Texture Runtime Collector: Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for planned PC/Mobile variants.",
+    "Current final presentation route is DCC-first through the R31 Presenter Pack.",
     "R30 adds Platform Variant Generation Planner: runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction and approval boundaries.",
     "R28 adds Platform Variant Forge evidence for PC/Mobile asset derivation plans.",
     "R27 adds Spatial Authoring Maya L3 evidence for socket, hotspot, pose frame and mirror transfer authoring.",
@@ -534,7 +559,9 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/contract.py dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_smoke.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py",
-    "python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py"
+    "python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py",
+    "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py",
+    "python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py"
   ],
   "platformVariantUnrealRuntimeReportVersion": "platform-variant-unreal-runtime@0.1.0",
   "platformVariantUnrealRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
@@ -562,6 +589,21 @@
   "platformVariantGenerationPlanSatisfied": 5,
   "platformVariantGenerationPlanOwnerRequired": 6,
   "platformVariantGenerationPlanExecutorReady": 1,
-  "artifactCount": 15,
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r30-platform-variant-generation-plan-presentation-pack-20260805-190107.json"
+  "artifactCount": 16,
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json",
+  "platformVariantTextureRuntimeReportVersion": "platform-variant-texture-runtime@0.1.0",
+  "platformVariantTextureRuntimeArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-runtime-20260805-191529.json",
+  "platformVariantTextureRuntimeEvidenceLevel": "L3",
+  "platformVariantTextureRuntimeL3Status": "unreal_material_texture_facts_collected",
+  "platformVariantTextureRuntimeGate": "Blocked",
+  "platformVariantTextureRuntimeEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "platformVariantTextureRuntimeAssetWrites": 0,
+  "platformVariantTextureRuntimeVariants": 3,
+  "platformVariantTextureRuntimeReady": 1,
+  "platformVariantTextureRuntimeReview": 1,
+  "platformVariantTextureRuntimeBlocked": 1,
+  "platformVariantTextureRuntimePassChecks": 19,
+  "platformVariantTextureRuntimeWarningChecks": 1,
+  "platformVariantTextureRuntimeErrorChecks": 1,
+  "platformVariantTextureRuntimeTextureDependencies": 0
 }
