@@ -1,0 +1,508 @@
+{
+  "reportVersion": "unreal-gameplay-attach-controlled-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Gameplay Attach Controlled Readiness",
+  "generatedAt": "2026-08-06 07:26:42",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "unreal_gameplay_attach_controlled_readiness_linked",
+  "sourceGameplayAttach": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-035401.json",
+    "reportVersion": "unreal-gameplay-attach-fixture@0.1.0",
+    "evidenceLevel": "L3-linked",
+    "l3Status": "unreal_gameplay_attach_fixture_linked",
+    "gate": "Blocked"
+  },
+  "sourceControlledWrite": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-controlled-write-20260806-070821.json",
+    "reportVersion": "unreal-socket-native-controlled-write@0.1.0",
+    "evidenceLevel": "L3-runtime-controlled-write",
+    "l3Status": "unreal_socket_native_controlled_write_rolled_back",
+    "gate": "Ready"
+  },
+  "facts": {
+    "schema": "unreal-gameplay-attach-controlled-readiness-input@0.1.0",
+    "sourceGameplayAttach": {
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-fixture-20260806-035401.json",
+      "reportVersion": "unreal-gameplay-attach-fixture@0.1.0",
+      "evidenceLevel": "L3-linked",
+      "l3Status": "unreal_gameplay_attach_fixture_linked",
+      "gate": "Blocked"
+    },
+    "sourceControlledWrite": {
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-controlled-write-20260806-070821.json",
+      "reportVersion": "unreal-socket-native-controlled-write@0.1.0",
+      "evidenceLevel": "L3-runtime-controlled-write",
+      "l3Status": "unreal_socket_native_controlled_write_rolled_back",
+      "gate": "Ready"
+    },
+    "controlledWrite": {
+      "gate": "Ready",
+      "returnCode": 0,
+      "requestCount": 2,
+      "applied": 2,
+      "postCheckPresent": 2,
+      "rollbackRemoved": 2,
+      "postRollbackPresent": 0,
+      "savedAfterApply": true,
+      "savedAfterRollback": true,
+      "assetWrites": 2,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "finalHashRestored": true,
+      "targetSkeleton": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton",
+      "socketResults": {
+        "SK_Hand_L": {
+          "socketName": "SK_Hand_L",
+          "boneName": "Hand_L",
+          "applied": true,
+          "message": "Socket created on Skeleton."
+        },
+        "SK_Hand_R": {
+          "socketName": "SK_Hand_R",
+          "boneName": "Hand_R",
+          "applied": true,
+          "message": "Socket created on Skeleton."
+        }
+      },
+      "socketNames": [
+        "SK_Hand_L",
+        "SK_Hand_R"
+      ]
+    },
+    "intents": [
+      {
+        "id": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "assetLabel": "Rifle Socket Authoring Approved",
+        "slotRole": "primaryWeapon",
+        "ownerState": "approved",
+        "sourceStatus": "Ready",
+        "sourceOwnerState": "approved",
+        "requiredSocketNames": [
+          "SK_Hand_R",
+          "SK_Hand_L"
+        ],
+        "runtimeSocketNames": [],
+        "originalMissingRuntimeSockets": [
+          "SK_Hand_L",
+          "SK_Hand_R"
+        ],
+        "controlledSocketNames": [
+          "SK_Hand_L",
+          "SK_Hand_R"
+        ],
+        "missingControlledSockets": [],
+        "controlledSocketDetails": {
+          "SK_Hand_L": {
+            "socketName": "SK_Hand_L",
+            "boneName": "Hand_L",
+            "applied": true,
+            "message": "Socket created on Skeleton."
+          },
+          "SK_Hand_R": {
+            "socketName": "SK_Hand_R",
+            "boneName": "Hand_R",
+            "applied": true,
+            "message": "Socket created on Skeleton."
+          }
+        },
+        "controlledParentBindingsPresent": true,
+        "skeletalTargetPresent": true,
+        "attachablePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+        "attachableAssetPresent": true,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+        ],
+        "animationContextPresent": true,
+        "requiredHotspotSemantics": [
+          "weapon.muzzle"
+        ],
+        "missingHotspotSemantics": [],
+        "hotspotSemanticsPresent": true,
+        "sourceReady": true,
+        "runtimeProbeReady": true,
+        "controlledWriteReady": true,
+        "persistentRuntimeSockets": false,
+        "publishRequired": true,
+        "readinessState": "ReadyByControlledExecutor"
+      },
+      {
+        "id": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "assetLabel": "Backpack Socket Temporary Blocked",
+        "slotRole": "backpack",
+        "ownerState": "temporary",
+        "sourceStatus": "Blocked",
+        "sourceOwnerState": "temporary",
+        "requiredSocketNames": [
+          "SK_Shoulder_R",
+          "SK_Hand_R"
+        ],
+        "runtimeSocketNames": [],
+        "originalMissingRuntimeSockets": [
+          "SK_Hand_R",
+          "SK_Shoulder_R"
+        ],
+        "controlledSocketNames": [
+          "SK_Hand_R"
+        ],
+        "missingControlledSockets": [
+          "SK_Shoulder_R"
+        ],
+        "controlledSocketDetails": {
+          "SK_Hand_R": {
+            "socketName": "SK_Hand_R",
+            "boneName": "Hand_R",
+            "applied": true,
+            "message": "Socket created on Skeleton."
+          }
+        },
+        "controlledParentBindingsPresent": true,
+        "skeletalTargetPresent": false,
+        "attachablePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "attachableAssetPresent": true,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+        ],
+        "animationContextPresent": true,
+        "requiredHotspotSemantics": [
+          "gear.attach"
+        ],
+        "missingHotspotSemantics": [
+          "gear.attach"
+        ],
+        "hotspotSemanticsPresent": false,
+        "sourceReady": false,
+        "runtimeProbeReady": true,
+        "controlledWriteReady": true,
+        "persistentRuntimeSockets": false,
+        "publishRequired": false,
+        "readinessState": "HeldBySourceOwner"
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-gameplay-attach-controlled-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "fullFixtureGate": "Blocked",
+      "controlledWriteReady": true,
+      "intentCount": 2,
+      "readyByControlledExecutor": 1,
+      "heldBySourceOwner": 1,
+      "blockedIntents": 0,
+      "publishRequiredIntents": 1,
+      "requiredSockets": 4,
+      "coveredByControlledExecutor": 3,
+      "missingControlledSockets": 1,
+      "primaryReadyIntentIds": [
+        "rifle-primary-equip"
+      ],
+      "heldIntentIds": [
+        "backpack-temp-equip"
+      ],
+      "blockedIntentIds": [],
+      "pass": 15,
+      "warning": 2,
+      "error": 4,
+      "assetWrites": 2,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "finalHashRestored": true
+    },
+    "rows": [
+      {
+        "id": "rifle-primary-equip:gameplay-runtime-probe",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "gameplay-runtime-probe",
+        "status": "pass",
+        "evidence": "runtimeProbeReady=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:source-owner-approved",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "source-owner-approved",
+        "status": "pass",
+        "evidence": "sourceStatus=Ready sourceOwner=approved manifestOwner=approved",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:controlled-write-ready",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "controlled-write-ready",
+        "status": "pass",
+        "evidence": "controlledWrite={'gate': 'Ready', 'returnCode': 0, 'requestCount': 2, 'applied': 2, 'postCheckPresent': 2, 'rollbackRemoved': 2, 'postRollbackPresent': 0, 'savedAfterApply': True, 'savedAfterRollback': True, 'assetWrites': 2, 'engineWrites': 0, 'productionWrites': 0, 'persistentMutation': False, 'finalHashRestored': True, 'targetSkeleton': '/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton', 'socketResults': {'SK_Hand_L': {'socketName': 'SK_Hand_L', 'boneName': 'Hand_L', 'applied': True, 'message': 'Socket created on Skeleton.'}, 'SK_Hand_R': {'socketName': 'SK_Hand_R', 'boneName': 'Hand_R', 'applied': True, 'message': 'Socket created on Skeleton.'}}, 'socketNames': ['SK_Hand_L', 'SK_Hand_R']}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:controlled-socket-coverage",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "controlled-socket-coverage",
+        "status": "pass",
+        "evidence": "required=['SK_Hand_R', 'SK_Hand_L'] controlled=['SK_Hand_L', 'SK_Hand_R'] missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:controlled-parent-binding",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "controlled-parent-binding",
+        "status": "pass",
+        "evidence": "details={'SK_Hand_L': {'socketName': 'SK_Hand_L', 'boneName': 'Hand_L', 'applied': True, 'message': 'Socket created on Skeleton.'}, 'SK_Hand_R': {'socketName': 'SK_Hand_R', 'boneName': 'Hand_R', 'applied': True, 'message': 'Socket created on Skeleton.'}}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:skeletal-target-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "skeletal-target-present",
+        "status": "pass",
+        "evidence": "skeletalTargetPresent=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:attachable-asset-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "attachable-asset-present",
+        "status": "pass",
+        "evidence": "attachable=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A present=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:hotspot-semantics-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "hotspot-semantics-present",
+        "status": "pass",
+        "evidence": "required=['weapon.muzzle'] missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:animation-context-present",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "animation-context-present",
+        "status": "pass",
+        "evidence": "animations=['/Game/AI_Tool_TA/Animations/AS_Hero_RunStart'] present=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:publish-persistence-required",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "publish-persistence-required",
+        "status": "warning",
+        "evidence": "persistentRuntimeSockets=False publishRequired=True",
+        "fixPreview": "Approve a persistence pass before claiming the public project contains these sockets."
+      },
+      {
+        "id": "backpack-temp-equip:gameplay-runtime-probe",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "gameplay-runtime-probe",
+        "status": "pass",
+        "evidence": "runtimeProbeReady=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:source-owner-approved",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "source-owner-approved",
+        "status": "error",
+        "evidence": "sourceStatus=Blocked sourceOwner=temporary manifestOwner=temporary",
+        "fixPreview": "Approve and clean the source spatial row before attach readiness."
+      },
+      {
+        "id": "backpack-temp-equip:controlled-write-ready",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "controlled-write-ready",
+        "status": "pass",
+        "evidence": "controlledWrite={'gate': 'Ready', 'returnCode': 0, 'requestCount': 2, 'applied': 2, 'postCheckPresent': 2, 'rollbackRemoved': 2, 'postRollbackPresent': 0, 'savedAfterApply': True, 'savedAfterRollback': True, 'assetWrites': 2, 'engineWrites': 0, 'productionWrites': 0, 'persistentMutation': False, 'finalHashRestored': True, 'targetSkeleton': '/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton', 'socketResults': {'SK_Hand_L': {'socketName': 'SK_Hand_L', 'boneName': 'Hand_L', 'applied': True, 'message': 'Socket created on Skeleton.'}, 'SK_Hand_R': {'socketName': 'SK_Hand_R', 'boneName': 'Hand_R', 'applied': True, 'message': 'Socket created on Skeleton.'}}, 'socketNames': ['SK_Hand_L', 'SK_Hand_R']}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:controlled-socket-coverage",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "controlled-socket-coverage",
+        "status": "error",
+        "evidence": "required=['SK_Shoulder_R', 'SK_Hand_R'] controlled=['SK_Hand_R'] missing=['SK_Shoulder_R']",
+        "fixPreview": "Generate every required gameplay socket through the controlled executor."
+      },
+      {
+        "id": "backpack-temp-equip:controlled-parent-binding",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "controlled-parent-binding",
+        "status": "error",
+        "evidence": "details={'SK_Hand_R': {'socketName': 'SK_Hand_R', 'boneName': 'Hand_R', 'applied': True, 'message': 'Socket created on Skeleton.'}}",
+        "fixPreview": "Bind controlled sockets to non-empty Skeleton bone names."
+      },
+      {
+        "id": "backpack-temp-equip:skeletal-target-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "skeletal-target-present",
+        "status": "error",
+        "evidence": "skeletalTargetPresent=False",
+        "fixPreview": "Relink or import the gameplay Skeleton/SkeletalMesh target."
+      },
+      {
+        "id": "backpack-temp-equip:attachable-asset-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "attachable-asset-present",
+        "status": "pass",
+        "evidence": "attachable=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M present=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:hotspot-semantics-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "hotspot-semantics-present",
+        "status": "warning",
+        "evidence": "required=['gear.attach'] missing=['gear.attach']",
+        "fixPreview": "Assign required gameplay/VFX hotspot semantics or add an owner waiver."
+      },
+      {
+        "id": "backpack-temp-equip:animation-context-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "animation-context-present",
+        "status": "pass",
+        "evidence": "animations=['/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A'] present=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:publish-persistence-required",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "publish-persistence-required",
+        "status": "pass",
+        "evidence": "persistentRuntimeSockets=False publishRequired=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-write:production-boundary",
+        "intentId": null,
+        "assetId": null,
+        "slotRole": null,
+        "ruleId": "production-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=2 engineWrites=0 productionWrites=0 finalHashRestored=True",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "gameplay-controlled-action:rifle-primary-equip:publish-persistence-required",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "ruleId": "publish-persistence-required",
+        "status": "warning",
+        "owner": "engine-ta",
+        "preview": "Approve a persistence pass before claiming the public project contains these sockets.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-controlled-action:backpack-temp-equip:source-owner-approved",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "source-owner-approved",
+        "status": "error",
+        "owner": "spatial-owner",
+        "preview": "Approve and clean the source spatial row before attach readiness.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-controlled-action:backpack-temp-equip:controlled-socket-coverage",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "controlled-socket-coverage",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Generate every required gameplay socket through the controlled executor.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-controlled-action:backpack-temp-equip:controlled-parent-binding",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "controlled-parent-binding",
+        "status": "error",
+        "owner": "technical-animation-owner",
+        "preview": "Bind controlled sockets to non-empty Skeleton bone names.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-controlled-action:backpack-temp-equip:skeletal-target-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "skeletal-target-present",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Relink or import the gameplay Skeleton/SkeletalMesh target.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-controlled-action:backpack-temp-equip:hotspot-semantics-present",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "ruleId": "hotspot-semantics-present",
+        "status": "warning",
+        "owner": "gameplay-vfx-owner",
+        "preview": "Assign required gameplay/VFX hotspot semantics or add an owner waiver.",
+        "writeBoundary": "review_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-gameplay-attach-controlled-readiness",
+    "name": "Unreal Gameplay Attach Controlled Readiness",
+    "methodSource": "R54 gameplay attach intent + R65 native socket commandlet controlled write",
+    "protocolCarrier": "socket authoring receipt, post-check socket coverage, rollback hash and gameplay attach intent rows",
+    "boundary": {
+      "mutation": "derived_from_temp_project_controlled_write_rolled_back",
+      "assetWrites": 2,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false
+    }
+  },
+  "reviewerClaims": [
+    "R66 links the gameplay attach fixture to the R65 native socket commandlet receipt instead of relying on missing persistent public sockets.",
+    "The approved rifle equip path is ready by controlled executor evidence: both required hand sockets were created, post-checked, rolled back and hash-restored in a temp Unreal project.",
+    "Temporary backpack attach remains held because the source row is temporary, shoulder socket coverage is missing and hotspot semantics do not match gameplay requirements.",
+    "The report separates controlled executor readiness from publish persistence: a later approved persistence pass is still required before claiming the public project itself contains the sockets."
+  ]
+}

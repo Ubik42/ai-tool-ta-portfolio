@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r65-unreal-socket-native-controlled-write-presentation-pack",
+        label: str = "r66-unreal-gameplay-attach-controlled-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4248,6 +4248,12 @@ class MayaPortfolioApi:
                 "Unreal Gameplay Attach Fixture artifact",
                 "artifact",
                 manifest.get("unrealGameplayAttachFixtureArtifact"),
+            ),
+            _probe_file(
+                "unreal-gameplay-attach-controlled-readiness",
+                "Unreal Gameplay Attach Controlled Readiness artifact",
+                "artifact",
+                manifest.get("unrealGameplayAttachControlledReadinessArtifact"),
             ),
             _probe_file(
                 "platform-variant-forge",
@@ -4519,6 +4525,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal gameplay attach fixture",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_fixture.py.",
                 "evidence_expected": "Maya socket/hotspot intent rows are joined to Unreal runtime asset/API facts so gameplay attach is blocked until required character sockets and hotspot semantics are present.",
+            },
+            {
+                "id": "29b-run-unreal-gameplay-attach-controlled-readiness",
+                "label": "Run Unreal gameplay attach controlled readiness",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_controlled_readiness.py.",
+                "evidence_expected": "The R54 gameplay attach fixture is joined to the R65 native controlled socket write receipt so the approved rifle equip path becomes review-ready by executor evidence while the temporary backpack row stays held.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5075,6 +5087,16 @@ class MayaPortfolioApi:
                 "unreal_gameplay_attach_fixture_error_checks": manifest_summary.get("unrealGameplayAttachFixtureErrorChecks"),
                 "unreal_gameplay_attach_fixture_asset_writes": manifest_summary.get("unrealGameplayAttachFixtureAssetWrites"),
                 "unreal_gameplay_attach_fixture_production_writes": manifest_summary.get("unrealGameplayAttachFixtureProductionWrites"),
+                "unreal_gameplay_attach_controlled_readiness_gate": manifest_summary.get("unrealGameplayAttachControlledReadinessGate"),
+                "unreal_gameplay_attach_controlled_readiness_full_fixture_gate": manifest_summary.get("unrealGameplayAttachControlledReadinessFullFixtureGate"),
+                "unreal_gameplay_attach_controlled_readiness_evidence_level": manifest_summary.get("unrealGameplayAttachControlledReadinessEvidenceLevel"),
+                "unreal_gameplay_attach_controlled_readiness_l3_status": manifest_summary.get("unrealGameplayAttachControlledReadinessL3Status"),
+                "unreal_gameplay_attach_controlled_readiness_ready_by_executor": manifest_summary.get("unrealGameplayAttachControlledReadinessReadyByExecutor"),
+                "unreal_gameplay_attach_controlled_readiness_held_by_source": manifest_summary.get("unrealGameplayAttachControlledReadinessHeldBySource"),
+                "unreal_gameplay_attach_controlled_readiness_missing_controlled_sockets": manifest_summary.get("unrealGameplayAttachControlledReadinessMissingControlledSockets"),
+                "unreal_gameplay_attach_controlled_readiness_publish_required": manifest_summary.get("unrealGameplayAttachControlledReadinessPublishRequired"),
+                "unreal_gameplay_attach_controlled_readiness_production_writes": manifest_summary.get("unrealGameplayAttachControlledReadinessProductionWrites"),
+                "unreal_gameplay_attach_controlled_readiness_final_hash_restored": manifest_summary.get("unrealGameplayAttachControlledReadinessFinalHashRestored"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5340,6 +5362,7 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Receipt Dry-run proves the commandlet can parse approved JSON receipt input, load the public Skeleton and report wouldCreate socket rows without saving assets.",
                 "Unreal Socket Native Controlled Write proves the commandlet can create the approved sockets, save the temp public fixture package, post-check runtime presence, roll back and restore the uasset hash.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
+                "Unreal Gameplay Attach Controlled Readiness links that attach fixture to the native controlled socket write receipt, making the approved rifle equip path review-ready while keeping publish persistence explicit.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5375,7 +5398,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r65-unreal-socket-native-controlled-write-presentation-pack",
+        label: str = "r66-unreal-gameplay-attach-controlled-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
