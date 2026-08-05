@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r63-unreal-socket-native-commandlet-presentation-pack",
+        label: str = "r64-unreal-socket-native-receipt-dryrun-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4224,6 +4224,12 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Commandlet Probe artifact",
                 "artifact",
                 manifest.get("unrealSocketNativeCommandletProbeArtifact"),
+            ),
+            _probe_file(
+                "unreal-socket-native-receipt-dryrun",
+                "Unreal Socket Native Receipt Dry-run artifact",
+                "artifact",
+                manifest.get("unrealSocketNativeReceiptDryrunArtifact"),
             ),
             _probe_file(
                 "unreal-socket-api-docs",
@@ -4489,6 +4495,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal socket native commandlet probe",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_commandlet_probe.py.",
                 "evidence_expected": "A temp Unreal project loads the packaged AI_Tool_TA_SocketBridge plugin and executes -run=AiToolTaSocketAuthoring with a readiness-only invocation.",
+            },
+            {
+                "id": "28e-run-unreal-socket-native-receipt-dryrun",
+                "label": "Run Unreal socket native receipt dry-run",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_receipt_dryrun.py.",
+                "evidence_expected": "The native commandlet parses an approved JSON socket receipt, loads the public Skeleton, reports wouldCreate rows, and keeps asset writes at zero.",
             },
             {
                 "id": "29-run-unreal-gameplay-attach-fixture",
@@ -5247,6 +5259,14 @@ class MayaPortfolioApi:
                 "unreal_socket_native_commandlet_readiness": manifest_summary.get("unrealSocketNativeCommandletProbeReadinessInvocation"),
                 "unreal_socket_native_commandlet_error_lines": manifest_summary.get("unrealSocketNativeCommandletProbeErrorLines"),
                 "unreal_socket_native_commandlet_temp_project_writes": manifest_summary.get("unrealSocketNativeCommandletProbeTempProjectWrites"),
+                "unreal_socket_native_receipt_dryrun_gate": manifest_summary.get("unrealSocketNativeReceiptDryrunGate"),
+                "unreal_socket_native_receipt_dryrun_evidence_level": manifest_summary.get("unrealSocketNativeReceiptDryrunEvidenceLevel"),
+                "unreal_socket_native_receipt_dryrun_l3_status": manifest_summary.get("unrealSocketNativeReceiptDryrunL3Status"),
+                "unreal_socket_native_receipt_dryrun_return_code": manifest_summary.get("unrealSocketNativeReceiptDryrunReturnCode"),
+                "unreal_socket_native_receipt_dryrun_target_loaded": manifest_summary.get("unrealSocketNativeReceiptDryrunTargetLoaded"),
+                "unreal_socket_native_receipt_dryrun_request_count": manifest_summary.get("unrealSocketNativeReceiptDryrunRequestCount"),
+                "unreal_socket_native_receipt_dryrun_would_create": manifest_summary.get("unrealSocketNativeReceiptDryrunWouldCreate"),
+                "unreal_socket_native_receipt_dryrun_error_lines": manifest_summary.get("unrealSocketNativeReceiptDryrunErrorLines"),
             },
             "demo_route": demo_route,
             "business_route": runbook_plan["presentation_route"],
@@ -5295,6 +5315,7 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Bridge Readiness proves the socket write path now needs a C++ commandlet or Editor Utility wrapper, and records source/plugin/binary readiness without mutating assets.",
                 "Unreal Socket Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin, records DLL hash evidence and restores the temporary UBT compiler configuration.",
                 "Unreal Socket Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaSocketAuthoring reaches the readiness commandlet contract.",
+                "Unreal Socket Native Receipt Dry-run proves the commandlet can parse approved JSON receipt input, load the public Skeleton and report wouldCreate socket rows without saving assets.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
@@ -5331,7 +5352,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r63-unreal-socket-native-commandlet-presentation-pack",
+        label: str = "r64-unreal-socket-native-receipt-dryrun-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

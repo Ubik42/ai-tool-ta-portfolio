@@ -52,6 +52,7 @@ bool UAiToolTaSocketBridgeLibrary::ApplySocketsToSkeleton(
 
         if (bDryRun)
         {
+            bAllAppliedOrPresent = false;
             Results.Add(MakeResult(Request, false, false, TEXT("Dry-run: socket would be created.")));
             continue;
         }

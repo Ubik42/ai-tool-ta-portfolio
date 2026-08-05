@@ -1,0 +1,88 @@
+{
+  "reportVersion": "unreal-socket-native-receipt-dryrun@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "generatedAt": "2026-08-06 06:48:52",
+  "evidenceLevel": "L3-runtime-dryrun",
+  "l3Status": "unreal_socket_native_receipt_dryrun_completed",
+  "sourceBuildArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-064806.json",
+  "pluginPackageDir": "D:\\cs\\_test\\ai_tool_ta_socket_builds\\atsb-20260806-064806",
+  "sourceExecutorArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-authoring-executor-20260805-222014.json",
+  "receiptPath": "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-receipt.json",
+  "commandletOutput": "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-dryrun-result.json",
+  "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "runtime": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\AI_Tool_TA_ReceiptDryRun.uproject",
+      "-run=AiToolTaSocketAuthoring",
+      "-Input=D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-receipt.json",
+      "-Output=D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-dryrun-result.json",
+      "-unattended",
+      "-nop4",
+      "-nosplash",
+      "-NoAssetRegistryCache",
+      "-NoLogTimes"
+    ],
+    "returnCode": 0,
+    "runtimeError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-commandlet-logs\\unreal-socket-native-receipt-dryrun-20260806-064842.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-commandlet-logs\\unreal-socket-native-receipt-dryrun-20260806-064842.stderr.log",
+    "commandletOutput": "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-dryrun-result.json",
+    "outputJson": {
+      "schema": "ai-tool-ta-socket-commandlet-result@0.1.0",
+      "input": "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-receipt-dryrun-20260806-064842\\Saved\\AI_Tool_TA\\socket-authoring-receipt.json",
+      "apply": false,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "targetSkeleton": "/Game/AI_Tool_TA/Characters/SK_Hero_Skeleton.SK_Hero_Skeleton",
+      "targetLoaded": true,
+      "requestCount": 2,
+      "status": "dry_run_completed",
+      "dryRun": true,
+      "allAppliedOrPresent": false,
+      "resultCount": 2,
+      "alreadyPresent": 0,
+      "wouldCreate": 2,
+      "results": [
+        {
+          "socketName": "SK_Hand_L",
+          "boneName": "Hand_L",
+          "applied": false,
+          "alreadyPresent": false,
+          "message": "Dry-run: socket would be created."
+        },
+        {
+          "socketName": "SK_Hand_R",
+          "boneName": "Hand_R",
+          "applied": false,
+          "alreadyPresent": false,
+          "message": "Dry-run: socket would be created."
+        }
+      ]
+    },
+    "dryRunLogSeen": true,
+    "errors": []
+  },
+  "summary": {
+    "gate": "Ready",
+    "returnCode": 0,
+    "targetLoaded": true,
+    "requestCount": 2,
+    "resultCount": 2,
+    "wouldCreate": 2,
+    "alreadyPresent": 0,
+    "dryRunCompleted": true,
+    "dryRunLogSeen": true,
+    "errorLines": 0,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "The dry-run receipt is generated from the approved R40 socket authoring executor operation.",
+    "The commandlet parses JSON receipt input, loads the target public Skeleton and calls the native socket bridge in dry-run mode.",
+    "The output JSON records targetLoaded, requestCount, resultCount, wouldCreate and write counters.",
+    "No socket is saved in R64; this is the post-parse dry-run gate before controlled write and rollback."
+  ]
+}

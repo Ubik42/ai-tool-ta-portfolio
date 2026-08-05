@@ -1,6 +1,6 @@
 # Unreal Socket Import Checker
 
-R38/R40/R54/R60/R62/R63 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness、API-limited authoring executor、native bridge readiness、native bridge build、native commandlet probe 和 gameplay attach readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
+R38/R40/R54/R60/R62/R63/R64 目标：把 `Spatial Authoring Workbench` 的 Maya socket / hotspot / pose transfer facts 接到 Unreal runtime readiness、API-limited authoring executor、native bridge readiness、native bridge build、native commandlet probe、native receipt dry-run 和 gameplay attach readiness，证明挂点交付不是停在 DCC locator，而是能继续进入引擎资产门禁。
 
 ## 核心业务逻辑
 
@@ -29,6 +29,7 @@ R38/R40/R54/R60/R62/R63 目标：把 `Spatial Authoring Workbench` 的 Maya sock
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_readiness.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_build.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_native_commandlet_probe.py`
+- `dcc-hosts/unreal-socket-import-checker/scripts/run_native_receipt_dryrun.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/run_gameplay_attach_fixture.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/probe_socket_import_checker.py`
 - `dcc-hosts/unreal-socket-import-checker/scripts/unreal_python/execute_socket_authoring.py`
@@ -47,11 +48,12 @@ R38/R40/R54/R60/R62/R63 目标：把 `Spatial Authoring Workbench` 的 Maya sock
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-import-checker-l3-20260805-212131.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-authoring-executor-20260805-222014.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-readiness-20260806-055738.json
-<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-build-20260806-061812.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-bridge-build-20260806-064806.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-commandlet-probe-20260806-063543.json
+<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-receipt-dryrun-20260806-064842.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-api-docs-20260805-222200.json
 <repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-fixture-20260806-034615.json
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r63-unreal-socket-native-commandlet-presentation-pack-20260806-063805.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r64-unreal-socket-native-receipt-dryrun-presentation-pack-20260806-065040.json
 ```
 
 当前结果：
@@ -94,24 +96,32 @@ R60 把 R40 的 API-limited 结论推进为 native bridge readiness contract：U
 
 ## R62 Native Bridge Build Harness
 
-R62 已经把 `AI_Tool_TA_SocketBridge` 从 source contract 推进到可编译的 native build proof。`run_native_bridge_build.py` 定位 Unreal Automation Tool 和兼容 MSVC，临时锁定 UBT compilerVersion 到 14.38.33130，执行 `BuildPlugin`，把输出写到 `D:\cs\_test\ai_tool_ta_socket_builds`，最后恢复用户原始 UBT 配置。结果为 L3-build / `Ready` / `unreal_socket_native_bridge_plugin_built`；returnCode=0，compiledDlls=1，errorLines=0，DLL bytes=98304，sha256=`df0c473ee4e7aa79bc9e5c681abe9c6fc1b636cb697a7f9970479184114eb14f`，assetWrites / engineWrites / productionWrites = 0 / 0 / 0。
+R62 已经把 `AI_Tool_TA_SocketBridge` 从 source contract 推进到可编译的 native build proof。R64 在 commandlet 增加 receipt parsing / dry-run output 后复跑 `run_native_bridge_build.py`，定位 Unreal Automation Tool 和兼容 MSVC，临时锁定 UBT compilerVersion 到 14.38.33130，执行 `BuildPlugin`，把输出写到 `D:\cs\_test\ai_tool_ta_socket_builds`，最后恢复用户原始 UBT 配置。当前结果为 L3-build / `Ready` / `unreal_socket_native_bridge_plugin_built`；returnCode=0，compiledDlls=1，errorLines=0，DLL bytes=98304，sha256=`fc28616bbba8b53e3b98c16ca0250658a66b287861bc657a7c07b08639f5c4a5`，assetWrites / engineWrites / productionWrites = 0 / 0 / 0。
 
-业务结论：socket 自动写入的下一步已经不是“能不能编译 C++”，而是加载 commandlet、打通 JSON receipt parsing、socketName/boneName/relative transform 写入、post-check 和 rollback receipt。
+业务结论：socket 自动写入的下一步已经不是“能不能编译 C++”，而是受控 public fixture write、post-check 和 rollback receipt。
 
 ## R63 Native Commandlet Probe
 
 R63 证明 R62 的 packaged plugin 不是离线 DLL：`run_native_commandlet_probe.py` 在 `D:\cs\_test` 生成临时 Unreal project，启用 `AI_Tool_TA_SocketBridge`，执行 `UnrealEditor-Cmd -run=AiToolTaSocketAuthoring`。结果为 L3-runtime / `Ready` / `unreal_socket_native_commandlet_loaded`；returnCode=0，commandletLoaded=true，readinessInvocation=true，errorLines=0，tempProjectWrites=70，assetWrites / engineWrites / productionWrites = 0 / 0 / 0。
 
-业务结论：下一步可以进入 JSON receipt executor；当前还没有执行 socket 写入，也没有保存任何 public fixture Skeleton。
+业务结论：commandlet runtime visibility 已完成；当前还没有执行 socket 写入，也没有保存任何 public fixture Skeleton。
+
+## R64 Native Receipt Dry-run
+
+R64 证明 native commandlet 已能消费真实业务 receipt。`run_native_receipt_dryrun.py` 读取 R40 approved socket authoring row，生成 `spatial-rifle-authoring-001` JSON receipt，在 `D:\cs\_test` 临时 Unreal project 里启用 R64 packaged `AI_Tool_TA_SocketBridge`，执行 `UnrealEditor-Cmd -run=AiToolTaSocketAuthoring -Input=<receipt> -Output=<result>`。
+
+结果为 L3-runtime-dryrun / `Ready` / `unreal_socket_native_receipt_dryrun_completed`；returnCode=0，targetLoaded=true，requestCount=2，resultCount=2，wouldCreate=2，alreadyPresent=0，errorLines=0，assetWrites / engineWrites / productionWrites = 0 / 0 / 0。输出结果明确列出 `SK_Hand_L` / `Hand_L` 和 `SK_Hand_R` / `Hand_R` 两条 socket would-create row。
+
+业务结论：JSON receipt parsing、Skeleton load、socket request evaluation、dry-run reviewer output 都已经贯通。下一轮直接做 controlled write + post-check + rollback，不再重复做 Python API identity 试探。
 
 ## 后续
 
-下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是加载 `AI_Tool_TA_SocketBridge` commandlet 并补完整 receipt executor，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
+下一步不要继续在 UE 5.3 Python `SkeletalMeshSocket` identity 字段上消耗时间。更高价值的路线是给 `AI_Tool_TA_SocketBridge` commandlet 增加 controlled write / post-check / rollback receipt，或把 Control Rig / animation curve / compression 这类 Python 可读写度更高的引擎事实继续做深。
 
 
-## R40 Presenter Pack
+## R64 Presenter Pack
 
-当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r63-unreal-socket-native-commandlet-presentation-pack-20260806-063805.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据，Unreal Socket Native Bridge Source Readiness 是 R61 native handoff source contract 证据，Unreal Socket Native Bridge Build Harness 是 R62 compiled native bridge 证据，Unreal Socket Native Commandlet Probe 是 R63 runtime visibility 证据。
+当前最终 Presenter Pack 已升级为 `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r64-unreal-socket-native-receipt-dryrun-presentation-pack-20260806-065040.json`；Unreal Socket Import Checker 是空间作者线的 R38 L3 runtime coverage，Unreal Socket Authoring Executor 是 R40 API-limited execution readiness 证据，Unreal Socket Native Bridge Source Readiness 是 R61 native handoff source contract 证据，Unreal Socket Native Bridge Build Harness 是 R62/R64 compiled native bridge 证据，Unreal Socket Native Commandlet Probe 是 R63 runtime visibility 证据，Unreal Socket Native Receipt Dry-run 是 R64 commandlet receipt executor 证据。
 
 ## R54 Gameplay Attach Fixture
 

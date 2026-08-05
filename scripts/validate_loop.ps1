@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-gameplay-attach", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -157,6 +157,7 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealSocket "scripts\run_native_bridge_readiness.py"),
     (Join-Path $UnrealSocket "scripts\run_native_bridge_build.py"),
     (Join-Path $UnrealSocket "scripts\run_native_commandlet_probe.py"),
+    (Join-Path $UnrealSocket "scripts\run_native_receipt_dryrun.py"),
     (Join-Path $UnrealSocket "scripts\run_gameplay_attach_fixture.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\probe_socket_import_checker.py"),
     (Join-Path $UnrealSocket "scripts\unreal_python\execute_socket_authoring.py"),
@@ -206,12 +207,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r63-unreal-socket-native-commandlet-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r64-unreal-socket-native-receipt-dryrun-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.60.0", summary
-assert summary["present_evidence_files"] == 61, summary
+assert summary["package_version"] == "dcc-first-package@1.61.0", summary
+assert summary["present_evidence_files"] == 62, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 51, summary
+assert summary["demo_route_steps"] == 52, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -407,6 +408,12 @@ if ($Tier -in @("unreal-socket-native-build", "full")) {
 if ($Tier -in @("unreal-socket-commandlet-probe", "full")) {
     Invoke-Step "unreal socket native commandlet probe" {
         python (Join-Path $UnrealSocket "scripts\run_native_commandlet_probe.py")
+    }
+}
+
+if ($Tier -in @("unreal-socket-receipt-dryrun", "full")) {
+    Invoke-Step "unreal socket native receipt dry-run" {
+        python (Join-Path $UnrealSocket "scripts\run_native_receipt_dryrun.py")
     }
 }
 
