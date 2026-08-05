@@ -1,6 +1,6 @@
 # DCC-first Case Page / Presenter Pack
 
-R49 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after face Skeleton fixture、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector Maya L3、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
+R50 当前目标：保留 R10.7 case page 作为核心案例报告，同时用 Maya 内一键导出的 Cross-DCC / Engine Reviewer Pack，把 case page、GUI media audit、handoff decision、engine preflight、preset comparison、Animation Continuity Maya L3、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts、Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3 after face Skeleton fixture、Unreal Control Rig Fixture Authoring、Unreal Control Rig Face Skeleton Fixture、Unreal Control Rig Deformation Link、Unreal Control Rig Compile Status Bridge、Groom Export Inspector Maya L3、Groom Unreal Import Readiness、Groom Alembic Payload Receipt、Groom Alembic Import/Post-check Readiness、Groom Plugin/API Public Fixture Readiness、Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker、Unreal Socket Authoring Executor、Platform Variant Forge、Platform Variant Unreal Runtime Probe、Platform Variant Generation Planner、Platform Variant Texture Runtime Collector、Platform Variant Public Texture2D Payload Fixture、Platform Variant Controlled Executor、Platform Variant Executor Expansion Receipts、Platform Variant StaticMesh Post-check、Blender bpy L3 runtime、3ds Max pymxs L3 runtime、Unreal Python L3++ engine fact evidence、Unreal preset fact / waiver comparison、Maya-hosted preset fact reviewer queue、Scene Transaction Guard 和 public package manifest 收束成可投递展示包。
 
 ## 核心业务逻辑
 
@@ -39,7 +39,7 @@ Maya API：
 
 React 入口：
 
-- `Task Orchestrator` 证据视图顶部的 `R49 Cross-DCC / Engine Reviewer Pack`
+- `Task Orchestrator` 证据视图顶部的 `R50 Cross-DCC / Engine Reviewer Pack`
 - `Export Case Page` 按钮
 - `Presenter Pack` 按钮
 - `Preset Facts` 按钮
@@ -82,7 +82,7 @@ React 入口：
   - engine ready/held：1 / 1
 - Maya 2024 `mayapy` presenter pack smoke 通过：
   - report version：`maya-dcc-presentation-pack@0.1.0`
-  - package：`ai-tool-ta-dcc-first-showcase-r49` / `dcc-first-package@1.46.0`
+  - package：`ai-tool-ta-dcc-first-showcase-r50` / `dcc-first-package@1.47.0`
   - gate：`CapturePending`
   - demo route steps：38
   - key evidence files：48
@@ -168,7 +168,7 @@ React 入口：
 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
 ```
 
 Unreal Control Rig Bridge original R37：
@@ -351,7 +351,7 @@ Handoff decision packet：
 
 ## 下一轮
 
-下一轮优先转向 Groom controlled executor / Groom plugin API public fixture 复验、gameplay attach fixture 或 Houdini 非 Maya adapter。Maya GUI 截图/录屏保留到最后集中采集。
+下一轮优先转向 Groom controlled executor、gameplay attach fixture 或 Houdini 非 Maya adapter。Maya GUI 截图/录屏保留到最后集中采集。
 
 
 ## R39 Platform Variant StaticMesh Post-check
@@ -399,3 +399,7 @@ R42 Presenter Pack 接入 `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\
 ## R49 Groom Alembic Import/Post-check Readiness
 
 当前 Presenter Pack 已接入 `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-import-postcheck-20260806-013949.json`，demo route 增至 38 步，evidence probe 增至 48 个。R49 通过 Unreal 5.3.2 `UnrealEditor-Cmd -run=pythonscript` 读取 R48 `.abc` cache，验证 sha256 continuity，dry-run `AssetImportTask`，检查 `AlembicImportFactory`、Groom API、目标 `SK_HeroFace`、期望 Groom / Binding 资产和 zero-write boundary。结果为 L3 / `Blocked`，2 operations，1 import candidate，cache hash matched rows = 1，AssetImportTask dry-run rows = 2，AlembicImportFactory visible rows = 2，Groom API ready rows = 0，target SkeletalMesh present rows = 1，import executed / held = 0 / 2，24 pass / 2 warning / 2 error，4 owner actions，assetWrites=0，engineWrites=0，productionWrites=0。核心业务发现：`.abc` cache 连续性和 Alembic factory 可见只能证明导入通路可预检；Groom publish ready 必须继续等待 Groom API、目标 GroomAsset / BindingAsset 和受控 executor rollback receipt。
+
+## R50 Groom Plugin/API Public Fixture Readiness
+
+当前 Presenter Pack 已接入 `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-plugin-api-fixture-20260806-020048.json`，demo route 增至 39 步，evidence probe 增至 49 个。R50 在 public Unreal `.uproject` 显式启用 `GeometryCache`、`AlembicImporter`、`HairStrands`、`AlembicHairImporter`，再通过 Unreal 5.3.2 commandlet 采集 plugin descriptor、project request 和 Python API class surface。结果为 L3 / `Ready`，4/4 plugin descriptors found，4/4 project plugin requests，Groom / Hair / Alembic / GeometryCache class rows = 47 / 56 / 14 / 16，Groom import API ready=true，AlembicImportFactory visible=true，10 pass / 0 warning / 0 error，assetWrites=0，engineWrites=0，productionWrites=0。核心业务发现：R49 的 Groom API 缺口可以通过 public fixture plugin 配置消除，下一步应进入 controlled executor 的真实导入、post-check 和 rollback receipt。

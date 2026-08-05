@@ -1,6 +1,6 @@
 # Groom Export Inspector
 
-R46/R47/R48/R49 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt 和 Unreal import/post-check readiness，覆盖 root UV、strand ID、guide curve、Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run 和零写入边界。
+R46/R47/R48/R49/R50 目标：把 Lightbox 提炼出的 XGen / groom 到 Unreal 高价值链路从计划推进到 Maya runtime L3、Unreal runtime readiness、真实 Maya Alembic cache receipt、Unreal import/post-check readiness 和 Groom plugin/API public fixture readiness，覆盖 root UV、strand ID、guide curve、Alembic payload、Maya `AbcExport`、Unreal Groom / Binding intent、目标 SkeletalMesh、Groom/Alembic API 可见性、cache sha256 continuity、AssetImportTask dry-run、HairStrands/AlembicHairImporter 项目配置和零写入边界。
 
 ## 核心业务逻辑
 
@@ -14,6 +14,7 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - Unreal runtime 是否暴露 GroomAsset / GroomBindingAsset、AssetImportTask、AlembicImportFactory，以及目标 SkeletalMesh 是否存在。
 - R48 `.abc` cache 是否能被 Unreal runtime 读到并和 receipt sha256 对齐。
 - Unreal import/post-check 是否能 dry-run 出任务、工厂、目标资产和 no-write gate。
+- public Unreal project 是否显式请求 HairStrands / AlembicHairImporter / AlembicImporter / GeometryCache，并在 runtime 中暴露 Groom import API。
 - 临时 description / TMP groom 是否被拦截在 owner review。
 
 ## 当前实现
@@ -26,15 +27,18 @@ Groom 不是普通 mesh 导出。头发资产出问题时，常见失败不是�
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/unreal_readiness.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/groom_export_inspector/alembic_import_postcheck.py`
+- `dcc-hosts/groom-export-inspector/groom_export_inspector/plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_l3_smoke.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_l3.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_unreal_readiness.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_alembic_import_postcheck.py`
+- `dcc-hosts/groom-export-inspector/scripts/run_groom_plugin_api_fixture.py`
 - `dcc-hosts/groom-export-inspector/scripts/run_maya_alembic_payload.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_import_readiness.py`
 - `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_alembic_import_postcheck.py`
+- `dcc-hosts/groom-export-inspector/scripts/unreal_python/probe_groom_plugin_api_fixture.py`
 
 R46 已完成：
 
@@ -51,6 +55,9 @@ R46 已完成：
 - R49 Alembic import/post-check：Unreal 5.3.2 commandlet 读取 R48 `.abc` cache，验证 sha256 continuity，dry-run `AssetImportTask`，检查 Alembic factory、Groom API、目标 `SK_HeroFace`、期望 Groom / Binding 资产和 no-write boundary。
 - Presenter Pack 接入：R49 Presenter Pack 探测 Groom Alembic Import/Post-check artifact，并把 demo route 扩到 38 步、evidence probes 扩到 48 个。
 - public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r49` / `dcc-first-package@1.46.0`。
+- R50 plugin/API fixture：public Unreal `.uproject` 显式启用 `GeometryCache`、`AlembicImporter`、`HairStrands`、`AlembicHairImporter`，Unreal 5.3.2 commandlet 进入项目后采集 Groom / Hair / Alembic / GeometryCache class surface。
+- Presenter Pack 接入：R50 Presenter Pack 探测 Groom Plugin/API Public Fixture artifact，并把 demo route 扩到 39 步、evidence probes 扩到 49 个。
+- public manifest 接入：公开包升级到 `ai-tool-ta-dcc-first-showcase-r50` / `dcc-first-package@1.47.0`。
 
 ## 证据
 
@@ -63,7 +70,7 @@ R46 已完成：
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
 ```
 
 关键结果：
@@ -149,9 +156,29 @@ Gate 为 `Blocked` 是正确状态：approved groom 已写出真实 public synth
 
 Gate 为 `Blocked` 是正确状态：R49 已证明 R48 `.abc` 可以被 Unreal runtime 读取并和 sha256 receipt 对齐，AssetImportTask/Alembic factory 可 dry-run，`SK_HeroFace` 存在；但 GroomAsset / GroomBindingAsset API 和期望 Groom / Binding 资产仍缺失，所以真实 import executor 继续 held。
 
+当前 Groom Plugin/API Fixture artifact：
+
+```text
+<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-plugin-api-fixture-20260806-020048.json
+```
+
+关键结果：
+
+- report version：`groom-plugin-api-fixture@0.1.0`
+- evidence level：L3
+- l3 status：`unreal_groom_plugin_api_fixture_ready`
+- Unreal runtime：5.3.2
+- required plugin descriptors / project requests：4 / 4
+- Groom / Hair / Alembic / GeometryCache class rows：47 / 56 / 14 / 16
+- Groom import API ready / AlembicImportFactory visible：true / true
+- checks pass / warning / error：10 / 0 / 0
+- assetWrites / engineWrites / productionWrites：0 / 0 / 0
+
+Gate 为 `Ready`：R50 证明 R49 的 Groom API 缺口来自 public project 未显式请求 HairStrands/Alembic hair stack，而不是本机 UE 缺失这些插件。下一步可以把受控 executor 的阻断点收窄到真实 GroomAsset / BindingAsset 创建、post-check 和 rollback receipt。
+
 ## 后续
 
 下一阶段可以继续做：
 
-- Groom controlled executor：如果能启用 Groom plugin/API 或补 C++/Editor Utility bridge，再把 R49 readiness 提升为真实 import + post-check + rollback receipt。
-- Groom plugin/API public fixture 复验：确认 UE 版本、插件配置和 Python/C++ API surface 之间的差异，不把 Alembic factory 可见误判成 Groom publish ready。
+- Groom controlled executor：基于 R50 Ready 的 Groom import API surface，尝试 public `.abc` 导入、GroomAsset / BindingAsset post-check 和 rollback receipt。
+- 如果 Python import path 仍缺少可控参数，再补 C++/Editor Utility bridge，避免把 Alembic factory 可见误判成 Groom publish ready。

@@ -17,12 +17,12 @@
 ```text
 public-case-package/DCC_FIRST_PACKAGE.md
 public-case-package/dcc-first-package-manifest.json
-dcc-hosts/maya-auroraview-host/artifacts/r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json
+dcc-hosts/maya-auroraview-host/artifacts/r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
 ```
 
 ## 2. 当前完成度
 
-稳定基线：R49。
+稳定基线：R50。
 
 已完成：
 
@@ -70,7 +70,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r49-groom-alembic-import-postcheck-pres
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
 - MotionBuilder、Houdini、Control Rig compile status Editor Utility / C++ bridge、socket C++ / Editor Utility Blueprint adapter、Groom Alembic import/post-check 等后续工具线。
 
-## 3. R49 当前断点与已完成工具线
+## 3. R50 当前断点与已完成工具线
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 
@@ -100,6 +100,8 @@ dcc-hosts/maya-auroraview-host/artifacts/r49-groom-alembic-import-postcheck-pres
 
 `Groom Alembic Import/Post-check Readiness` 已完成 R49 闭环：读取 R48 Groom Alembic Payload Receipt，通过 Unreal 5.3.2 `UnrealEditor-Cmd -run=pythonscript` 进入 public `.uproject`，读取真实 `.abc` cache，验证 bytes / sha256 continuity，dry-run `AssetImportTask`，检查 `AlembicImportFactory`、Groom API、目标 `SK_HeroFace`、期望 Groom / Binding 资产和 no-write boundary。结果为 L3 / `Blocked` / `unreal_groom_alembic_import_postcheck_blocked`，2 operations，1 import candidate，cache hash matched rows = 1，AssetImportTask dry-run rows = 2，AlembicImportFactory visible rows = 2，Groom API ready rows = 0，target SkeletalMesh present rows = 1，import executed / held = 0 / 2，24 pass / 2 warning / 2 error，4 owner actions，assetWrites=0，engineWrites=0，productionWrites=0。关键结论：`.abc` cache 连续性和 Alembic factory 可见仍不等于 Groom publish ready；Groom API、目标 GroomAsset / BindingAsset 和受控 executor rollback receipt 必须继续显式证明。
 
+
+`Groom Plugin/API Public Fixture Readiness` 已完成 R50 闭环：public Unreal `.uproject` 显式启用 `GeometryCache`、`AlembicImporter`、`HairStrands`、`AlembicHairImporter`，Unreal 5.3.2 `UnrealEditor-Cmd -run=pythonscript` 成功进入工程并采集 class surface。结果为 L3 / `Ready` / `unreal_groom_plugin_api_fixture_ready`，4 / 4 plugin descriptors found，4 / 4 project plugin requests，Groom / Hair / Alembic / GeometryCache class rows = 47 / 56 / 14 / 16，Groom import API ready=true，AlembicImportFactory visible=true，10 pass / 0 warning / 0 error，assetWrites=0，engineWrites=0，productionWrites=0。关键结论：R49 的 Groom API 缺口已被 fixture 配置消除，下一步应进入 controlled executor 的真实 GroomAsset / BindingAsset 创建、post-check 和 rollback receipt。
 `Spatial Authoring Workbench` 已完成 Maya L3 闭环：生成 public synthetic joints / locator attrs，采集 socket parent joint、offset、mirror pair、hotspot semantic/owner、pose frame、local space、preview locator 和 pose transfer approval。
 
 `Spatial Authoring Drilldown` 已完成 R36 闭环：读取 Spatial Authoring Maya L3 artifact，把 flat rule rows 投影成 Maya/AuroraView 可消费的 protocol、parent joint、socket、mirror、hotspot、pose frame、transform、preview locator、pose transfer drilldown panels，并输出 owner action、fix preview 和 mutation boundary。结果为 L3-derived / `Blocked` / `maya_spatial_authoring_rows_to_drilldown`，2 spatial drilldowns，18 panels，9 issue rows，9 owner actions，7 owner-required，2 manual-review，productionWrites=0。
@@ -305,10 +307,10 @@ dcc-hosts/platform-variant-forge/artifacts/platform-variant-controlled-executor-
 dcc-hosts/platform-variant-forge/artifacts/platform-variant-executor-expansion-20260805-201222.json
 ```
 
-当前 R49 Presenter Pack：
+当前 R50 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json
+dcc-hosts/maya-auroraview-host/artifacts/r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json
 ```
 
 这条线的最终效果：
@@ -316,9 +318,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r49-groom-alembic-import-postcheck-pres
 - 检查动画交付中的 rig identity、skeleton fingerprint、Take range、sample rate、required channel coverage。
 - 检查 sub-frame keys、channel identity collision、root motion policy、scale drift、active additive layers。
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
-- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R48 Maya Alembic Payload Receipt 和 R49 Unreal Alembic Import/Post-check Readiness；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Editor Utility/C++ diagnostic bridge、socket C++ adapter 或 Groom controlled executor / Groom plugin API fixture 复验。
+- Unreal 侧已接入 import L3；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R48 Maya Alembic Payload Receipt 和 R49 Unreal Alembic Import/Post-check Readiness、R50 Groom Plugin/API Fixture Ready；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker 和 R40 socket API-limited executor；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts。后续可继续补 MotionBuilder、Editor Utility/C++ diagnostic bridge、socket C++ adapter 或 Groom controlled executor。
 
-继续开发时优先做 Groom controlled executor / Groom plugin API fixture 复验、gameplay attach fixture、Control Rig Editor Utility / C++ diagnostic bridge，或 Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning。如果只验证当前 R49，运行：
+继续开发时优先做 Groom controlled executor、gameplay attach fixture、Control Rig Editor Utility / C++ diagnostic bridge，或 Animation Blueprint Library / C++ adapter 让曲线名不再停留在 Python metadata warning。如果只验证当前 R50，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -349,7 +351,7 @@ python dcc-hosts/platform-variant-forge/scripts/run_executor_expansion.py
 python dcc-hosts/platform-variant-forge/scripts/run_staticmesh_postcheck.py
 ```
 
-当前 R49 public package 为 `ai-tool-ta-dcc-first-showcase-r49` / `dcc-first-package@1.46.0`，Presenter Pack 48 / 48 evidence files present，0 missing required files，38 demo route steps；Groom Export Inspector 已确认 Maya runtime 可回读 root UV、strand ID、guide curve、Alembic payload 和 Unreal binding intent，Groom Unreal Import Readiness 已确认 UE 5.3 runtime 可进入、AssetImportTask / AlembicImportFactory 可见、`SK_HeroFace` 存在但 GroomAsset / GroomBindingAsset API 和期望 Groom / Binding 资产仍缺失，Groom Alembic Payload Receipt 已确认 approved groom 能写出 public synthetic `.abc` cache 且 TMP groom 被 held，Groom Alembic Import/Post-check 已确认 `.abc` sha256 continuity、AssetImportTask dry-run、Alembic factory visibility 和 no-write boundary。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
+当前 R50 public package 为 `ai-tool-ta-dcc-first-showcase-r50` / `dcc-first-package@1.47.0`，Presenter Pack 49 / 49 evidence files present，0 missing required files，39 demo route steps；Groom Export Inspector 已确认 Maya runtime 可回读 root UV、strand ID、guide curve、Alembic payload 和 Unreal binding intent，Groom Unreal Import Readiness 已确认 UE 5.3 runtime 可进入、AssetImportTask / AlembicImportFactory 可见、`SK_HeroFace` 存在但 GroomAsset / GroomBindingAsset API 和期望 Groom / Binding 资产仍缺失，Groom Alembic Payload Receipt 已确认 approved groom 能写出 public synthetic `.abc` cache 且 TMP groom 被 held，Groom Alembic Import/Post-check 已确认 `.abc` sha256 continuity、AssetImportTask dry-run、Alembic factory visibility 和 no-write boundary；R50 Groom Plugin/API Fixture 已确认 public Unreal 工程 4/4 请求 HairStrands/Alembic 插件、Groom import API ready=true 且零写入。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
 
 ## 4. 长期开发规则
 

@@ -15,6 +15,22 @@
     {
       "Name": "ControlRig",
       "Enabled": true
+    },
+    {
+      "Name": "GeometryCache",
+      "Enabled": true
+    },
+    {
+      "Name": "AlembicImporter",
+      "Enabled": true
+    },
+    {
+      "Name": "HairStrands",
+      "Enabled": true
+    },
+    {
+      "Name": "AlembicHairImporter",
+      "Enabled": true
     }
   ]
 }

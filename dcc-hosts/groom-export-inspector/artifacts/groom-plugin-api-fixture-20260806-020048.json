@@ -1,0 +1,791 @@
+{
+  "reportVersion": "groom-plugin-api-fixture@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Groom Export Inspector",
+  "generatedAt": "2026-08-06 02:00:58",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_groom_plugin_api_fixture_ready",
+  "publicProject": {
+    "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "exists": true,
+    "engineAssociation": "5.3",
+    "plugins": [
+      {
+        "Name": "PythonScriptPlugin",
+        "Enabled": true
+      },
+      {
+        "Name": "EditorScriptingUtilities",
+        "Enabled": true
+      },
+      {
+        "Name": "ControlRig",
+        "Enabled": true
+      },
+      {
+        "Name": "GeometryCache",
+        "Enabled": true
+      },
+      {
+        "Name": "AlembicImporter",
+        "Enabled": true
+      },
+      {
+        "Name": "HairStrands",
+        "Enabled": true
+      },
+      {
+        "Name": "AlembicHairImporter",
+        "Enabled": true
+      }
+    ],
+    "requestedPluginNames": [
+      "AlembicHairImporter",
+      "AlembicImporter",
+      "ControlRig",
+      "EditorScriptingUtilities",
+      "GeometryCache",
+      "HairStrands",
+      "PythonScriptPlugin"
+    ]
+  },
+  "enginePluginDescriptors": [
+    {
+      "plugin": "GeometryCache",
+      "descriptor": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Plugins\\Runtime\\GeometryCache\\GeometryCache.uplugin",
+      "exists": true,
+      "friendlyName": "Geometry Cache",
+      "enabledByDefault": true,
+      "modules": [
+        {
+          "name": "GeometryCacheEd",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "GeometryCacheSequencer",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "GeometryCacheStreamer",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "GeometryCache",
+          "type": "Runtime",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "GeometryCacheTracks",
+          "type": "Runtime",
+          "loadingPhase": "Default"
+        }
+      ],
+      "projectRequested": true,
+      "projectRow": {
+        "Name": "GeometryCache",
+        "Enabled": true
+      }
+    },
+    {
+      "plugin": "AlembicImporter",
+      "descriptor": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Plugins\\Importers\\AlembicImporter\\AlembicImporter.uplugin",
+      "exists": true,
+      "friendlyName": "Alembic Importer",
+      "enabledByDefault": true,
+      "modules": [
+        {
+          "name": "AlembicImporter",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "AlembicLibrary",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        }
+      ],
+      "projectRequested": true,
+      "projectRow": {
+        "Name": "AlembicImporter",
+        "Enabled": true
+      }
+    },
+    {
+      "plugin": "HairStrands",
+      "descriptor": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Plugins\\Runtime\\HairStrands\\HairStrands.uplugin",
+      "exists": true,
+      "friendlyName": "Groom",
+      "enabledByDefault": false,
+      "modules": [
+        {
+          "name": "HairStrandsCore",
+          "type": "Runtime",
+          "loadingPhase": "PostConfigInit"
+        },
+        {
+          "name": "HairStrandsRuntime",
+          "type": "Runtime",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "HairStrandsEditor",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        },
+        {
+          "name": "HairCardGeneratorFramework",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        }
+      ],
+      "projectRequested": true,
+      "projectRow": {
+        "Name": "HairStrands",
+        "Enabled": true
+      }
+    },
+    {
+      "plugin": "AlembicHairImporter",
+      "descriptor": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Plugins\\Importers\\AlembicHairImporter\\AlembicHairImporter.uplugin",
+      "exists": true,
+      "friendlyName": "Alembic Groom Importer",
+      "enabledByDefault": false,
+      "modules": [
+        {
+          "name": "AlembicHairTranslatorModule",
+          "type": "Editor",
+          "loadingPhase": "Default"
+        }
+      ],
+      "projectRequested": true,
+      "projectRow": {
+        "Name": "AlembicHairImporter",
+        "Enabled": true
+      }
+    }
+  ],
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only Groom plugin/API fixture probe; no import and no asset save",
+    "returnCode": 0,
+    "stdoutLog": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-logs\\groom-plugin-api-fixture-20260806-020048.stdout.log",
+    "stderrLog": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-logs\\groom-plugin-api-fixture-20260806-020048.stderr.log"
+  },
+  "apiAvailability": {
+    "classes": {
+      "AssetImportTask": true,
+      "AssetToolsHelpers": true,
+      "EditorAssetLibrary": true,
+      "Factory": true,
+      "AbcImportSettings": true,
+      "AlembicImportFactory": true,
+      "AlembicImportSettings": false,
+      "AlembicImportType": true,
+      "GeometryCache": true,
+      "GeometryCacheComponent": true,
+      "GroomAsset": true,
+      "GroomBindingAsset": true,
+      "GroomCache": true,
+      "GroomComponent": true,
+      "GroomCacheImportOptions": true,
+      "GroomImportFactory": false,
+      "GroomImportOptions": true,
+      "HairStrandsComponent": true
+    },
+    "instantiation": {
+      "AbcImportSettings": {
+        "available": true,
+        "constructable": true,
+        "error": null
+      },
+      "AlembicImportFactory": {
+        "available": true,
+        "constructable": true,
+        "error": null
+      },
+      "AlembicImportSettings": {
+        "available": false,
+        "constructable": false,
+        "error": "missing"
+      },
+      "GroomImportFactory": {
+        "available": false,
+        "constructable": false,
+        "error": "missing"
+      },
+      "GroomImportOptions": {
+        "available": true,
+        "constructable": true,
+        "error": null
+      },
+      "GroomCacheImportOptions": {
+        "available": true,
+        "constructable": true,
+        "error": null
+      }
+    },
+    "plugins": {
+      "GeometryCache": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      },
+      "AlembicImporter": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      },
+      "HairStrands": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      },
+      "AlembicHairImporter": {
+        "queried": false,
+        "enabled": false,
+        "rows": []
+      }
+    },
+    "classNames": {
+      "groom": [
+        "GroomActor",
+        "GroomAnimationInfo",
+        "GroomAsset",
+        "GroomAssetImportData",
+        "GroomBasisType",
+        "GroomBindingAsset",
+        "GroomBindingAssetList",
+        "GroomBindingFactory",
+        "GroomBindingMeshType",
+        "GroomBindingType",
+        "GroomBuildSettings",
+        "GroomCache",
+        "GroomCacheAttributes",
+        "GroomCacheImportData",
+        "GroomCacheImportOptions",
+        "GroomCacheImportSettings",
+        "GroomCacheImportType",
+        "GroomCacheInfo",
+        "GroomCacheType",
+        "GroomComponent",
+        "GroomConversionSettings",
+        "GroomCreateBindingOptions",
+        "GroomCreateFollicleMaskOptions",
+        "GroomCreateStrandsTexturesOptions",
+        "GroomCurveType",
+        "GroomFactory",
+        "GroomGeometryType",
+        "GroomGuideType",
+        "GroomHairGroupPreview",
+        "GroomHairGroupsPreview",
+        "GroomImportOptions",
+        "GroomInterpolationQuality",
+        "GroomInterpolationType",
+        "GroomInterpolationWeight",
+        "GroomLODType",
+        "GroomLibrary",
+        "GroomNiagaraSolvers",
+        "GroomOverrideType",
+        "GroomStrandsSize",
+        "MovieSceneGroomCacheParams",
+        "MovieSceneGroomCacheSection",
+        "MovieSceneGroomCacheTrack",
+        "OptimusGroomDataProvider",
+        "OptimusGroomExecDataProvider",
+        "OptimusGroomGuideDataProvider",
+        "OptimusGroomWriteDataProvider",
+        "ReimportGroomCacheFactory"
+      ],
+      "hair": [
+        "GroomCreateStrandsTexturesOptions",
+        "GroomHairGroupPreview",
+        "GroomHairGroupsPreview",
+        "GroomStrandsSize",
+        "HairAdvancedRenderingSettings",
+        "HairAtlasTextureType",
+        "HairBendConstraint",
+        "HairCardsClusterSettings",
+        "HairCardsClusterType",
+        "HairCardsGenerationType",
+        "HairCardsGeometrySettings",
+        "HairCardsSourceType",
+        "HairCardsTextureSettings",
+        "HairCollisionConstraint",
+        "HairDecimationSettings",
+        "HairDeformationSettings",
+        "HairExternalForces",
+        "HairGeometrySettings",
+        "HairGroupCardsInfo",
+        "HairGroupCardsTextures",
+        "HairGroupDesc",
+        "HairGroupInfo",
+        "HairGroupInfoWithVisibility",
+        "HairGroupLODInfo",
+        "HairGroupsCardsSourceDescription",
+        "HairGroupsInterpolation",
+        "HairGroupsLOD",
+        "HairGroupsMaterial",
+        "HairGroupsMeshesSourceDescription",
+        "HairGroupsPhysics",
+        "HairGroupsProceduralCards",
+        "HairGroupsRendering",
+        "HairInterpolationQuality",
+        "HairInterpolationSettings",
+        "HairInterpolationWeight",
+        "HairLODSettings",
+        "HairMaterialConstraints",
+        "HairShadowSettings",
+        "HairSimulationConstraints",
+        "HairSimulationForces",
+        "HairSimulationSettings",
+        "HairSimulationSetup",
+        "HairSimulationSolver",
+        "HairSolverSettings",
+        "HairStrandsActor",
+        "HairStrandsAsset",
+        "HairStrandsComponent",
+        "HairStrandsFactory",
+        "HairStrandsParameters",
+        "HairStretchConstraint",
+        "MaterialExpressionHairAttributes",
+        "MaterialExpressionHairColor",
+        "MaterialExpressionStrataHairBSDF",
+        "ReimportHairStrandsFactory",
+        "StrandsTexturesMeshType",
+        "StrandsTexturesTraceType"
+      ],
+      "alembic": [
+        "AbcAssetImportData",
+        "AbcCompressionSettings",
+        "AbcConversionPreset",
+        "AbcConversionSettings",
+        "AbcGeometryCacheMotionVectorsImport",
+        "AbcGeometryCacheSettings",
+        "AbcImportSettings",
+        "AbcMaterialSettings",
+        "AbcNormalGenerationSettings",
+        "AbcSamplingSettings",
+        "AbcStaticMeshSettings",
+        "AlembicImportFactory",
+        "AlembicImportType",
+        "AlembicSamplingType"
+      ],
+      "geometryCache": [
+        "AbcGeometryCacheMotionVectorsImport",
+        "AbcGeometryCacheSettings",
+        "GeometryCache",
+        "GeometryCacheActor",
+        "GeometryCacheCodecBase",
+        "GeometryCacheComponent",
+        "GeometryCacheStreamerSettings",
+        "GeometryCacheTrack",
+        "GeometryCacheTrackStreamable",
+        "GeometryCacheTrack_FlipbookAnimation",
+        "GeometryCacheTrack_TransformAnimation",
+        "GeometryCacheTrack_TransformGroupAnimation",
+        "MovieSceneGeometryCacheParams",
+        "MovieSceneGeometryCacheSection",
+        "MovieSceneGeometryCacheSectionTemplateParameters",
+        "MovieSceneGeometryCacheTrack"
+      ]
+    }
+  },
+  "facts": {
+    "schema": "groom-plugin-api-fixture-facts@0.1.0",
+    "plugins": [
+      {
+        "plugin": "GeometryCache",
+        "descriptorExists": true,
+        "projectRequested": true,
+        "enabledByDefault": true,
+        "moduleCount": 5,
+        "modules": [
+          {
+            "name": "GeometryCacheEd",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "GeometryCacheSequencer",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "GeometryCacheStreamer",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "GeometryCache",
+            "type": "Runtime",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "GeometryCacheTracks",
+            "type": "Runtime",
+            "loadingPhase": "Default"
+          }
+        ]
+      },
+      {
+        "plugin": "AlembicImporter",
+        "descriptorExists": true,
+        "projectRequested": true,
+        "enabledByDefault": true,
+        "moduleCount": 2,
+        "modules": [
+          {
+            "name": "AlembicImporter",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "AlembicLibrary",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          }
+        ]
+      },
+      {
+        "plugin": "HairStrands",
+        "descriptorExists": true,
+        "projectRequested": true,
+        "enabledByDefault": false,
+        "moduleCount": 4,
+        "modules": [
+          {
+            "name": "HairStrandsCore",
+            "type": "Runtime",
+            "loadingPhase": "PostConfigInit"
+          },
+          {
+            "name": "HairStrandsRuntime",
+            "type": "Runtime",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "HairStrandsEditor",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          },
+          {
+            "name": "HairCardGeneratorFramework",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          }
+        ]
+      },
+      {
+        "plugin": "AlembicHairImporter",
+        "descriptorExists": true,
+        "projectRequested": true,
+        "enabledByDefault": false,
+        "moduleCount": 1,
+        "modules": [
+          {
+            "name": "AlembicHairTranslatorModule",
+            "type": "Editor",
+            "loadingPhase": "Default"
+          }
+        ]
+      }
+    ],
+    "runtimeClassNames": {
+      "groom": [
+        "GroomActor",
+        "GroomAnimationInfo",
+        "GroomAsset",
+        "GroomAssetImportData",
+        "GroomBasisType",
+        "GroomBindingAsset",
+        "GroomBindingAssetList",
+        "GroomBindingFactory",
+        "GroomBindingMeshType",
+        "GroomBindingType",
+        "GroomBuildSettings",
+        "GroomCache",
+        "GroomCacheAttributes",
+        "GroomCacheImportData",
+        "GroomCacheImportOptions",
+        "GroomCacheImportSettings",
+        "GroomCacheImportType",
+        "GroomCacheInfo",
+        "GroomCacheType",
+        "GroomComponent",
+        "GroomConversionSettings",
+        "GroomCreateBindingOptions",
+        "GroomCreateFollicleMaskOptions",
+        "GroomCreateStrandsTexturesOptions",
+        "GroomCurveType",
+        "GroomFactory",
+        "GroomGeometryType",
+        "GroomGuideType",
+        "GroomHairGroupPreview",
+        "GroomHairGroupsPreview",
+        "GroomImportOptions",
+        "GroomInterpolationQuality",
+        "GroomInterpolationType",
+        "GroomInterpolationWeight",
+        "GroomLODType",
+        "GroomLibrary",
+        "GroomNiagaraSolvers",
+        "GroomOverrideType",
+        "GroomStrandsSize",
+        "MovieSceneGroomCacheParams",
+        "MovieSceneGroomCacheSection",
+        "MovieSceneGroomCacheTrack",
+        "OptimusGroomDataProvider",
+        "OptimusGroomExecDataProvider",
+        "OptimusGroomGuideDataProvider",
+        "OptimusGroomWriteDataProvider",
+        "ReimportGroomCacheFactory"
+      ],
+      "hair": [
+        "GroomCreateStrandsTexturesOptions",
+        "GroomHairGroupPreview",
+        "GroomHairGroupsPreview",
+        "GroomStrandsSize",
+        "HairAdvancedRenderingSettings",
+        "HairAtlasTextureType",
+        "HairBendConstraint",
+        "HairCardsClusterSettings",
+        "HairCardsClusterType",
+        "HairCardsGenerationType",
+        "HairCardsGeometrySettings",
+        "HairCardsSourceType",
+        "HairCardsTextureSettings",
+        "HairCollisionConstraint",
+        "HairDecimationSettings",
+        "HairDeformationSettings",
+        "HairExternalForces",
+        "HairGeometrySettings",
+        "HairGroupCardsInfo",
+        "HairGroupCardsTextures",
+        "HairGroupDesc",
+        "HairGroupInfo",
+        "HairGroupInfoWithVisibility",
+        "HairGroupLODInfo",
+        "HairGroupsCardsSourceDescription",
+        "HairGroupsInterpolation",
+        "HairGroupsLOD",
+        "HairGroupsMaterial",
+        "HairGroupsMeshesSourceDescription",
+        "HairGroupsPhysics",
+        "HairGroupsProceduralCards",
+        "HairGroupsRendering",
+        "HairInterpolationQuality",
+        "HairInterpolationSettings",
+        "HairInterpolationWeight",
+        "HairLODSettings",
+        "HairMaterialConstraints",
+        "HairShadowSettings",
+        "HairSimulationConstraints",
+        "HairSimulationForces",
+        "HairSimulationSettings",
+        "HairSimulationSetup",
+        "HairSimulationSolver",
+        "HairSolverSettings",
+        "HairStrandsActor",
+        "HairStrandsAsset",
+        "HairStrandsComponent",
+        "HairStrandsFactory",
+        "HairStrandsParameters",
+        "HairStretchConstraint",
+        "MaterialExpressionHairAttributes",
+        "MaterialExpressionHairColor",
+        "MaterialExpressionStrataHairBSDF",
+        "ReimportHairStrandsFactory",
+        "StrandsTexturesMeshType",
+        "StrandsTexturesTraceType"
+      ],
+      "alembic": [
+        "AbcAssetImportData",
+        "AbcCompressionSettings",
+        "AbcConversionPreset",
+        "AbcConversionSettings",
+        "AbcGeometryCacheMotionVectorsImport",
+        "AbcGeometryCacheSettings",
+        "AbcImportSettings",
+        "AbcMaterialSettings",
+        "AbcNormalGenerationSettings",
+        "AbcSamplingSettings",
+        "AbcStaticMeshSettings",
+        "AlembicImportFactory",
+        "AlembicImportType",
+        "AlembicSamplingType"
+      ],
+      "geometryCache": [
+        "AbcGeometryCacheMotionVectorsImport",
+        "AbcGeometryCacheSettings",
+        "GeometryCache",
+        "GeometryCacheActor",
+        "GeometryCacheCodecBase",
+        "GeometryCacheComponent",
+        "GeometryCacheStreamerSettings",
+        "GeometryCacheTrack",
+        "GeometryCacheTrackStreamable",
+        "GeometryCacheTrack_FlipbookAnimation",
+        "GeometryCacheTrack_TransformAnimation",
+        "GeometryCacheTrack_TransformGroupAnimation",
+        "MovieSceneGeometryCacheParams",
+        "MovieSceneGeometryCacheSection",
+        "MovieSceneGeometryCacheSectionTemplateParameters",
+        "MovieSceneGeometryCacheTrack"
+      ]
+    },
+    "summary": {
+      "projectConfigReadable": true,
+      "engineRootResolved": true,
+      "requiredPluginRows": 4,
+      "descriptorRowsFound": 4,
+      "projectRequestedRows": 4,
+      "runtimeCollected": true,
+      "groomClassNameRows": 47,
+      "hairClassNameRows": 56,
+      "alembicClassNameRows": 14,
+      "geometryCacheClassNameRows": 16,
+      "groomAssetVisible": true,
+      "groomBindingAssetVisible": true,
+      "groomImportFactoryVisible": false,
+      "groomImportOptionsVisible": true,
+      "groomImportApiReady": true,
+      "alembicImportFactoryVisible": true,
+      "abcImportSettingsVisible": true,
+      "geometryCacheVisible": true,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "evaluation": {
+    "schema": "groom-plugin-api-fixture-evaluation@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "checks": 10,
+      "pass": 10,
+      "warning": 0,
+      "error": 0
+    },
+    "evaluations": [
+      {
+        "id": "project-config-readable",
+        "ruleId": "project-config-readable",
+        "label": "Public Project Config",
+        "status": "pass",
+        "message": "Public Project Config is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "engine-root-resolved",
+        "ruleId": "engine-root-resolved",
+        "label": "Unreal Engine Root",
+        "status": "pass",
+        "message": "Unreal Engine Root is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "engine-plugin-descriptors",
+        "ruleId": "engine-plugin-descriptors",
+        "label": "Required Plugin Descriptors",
+        "status": "pass",
+        "message": "Required Plugin Descriptors is satisfied.",
+        "evidence": "4/4",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "public-project-plugin-requests",
+        "ruleId": "public-project-plugin-requests",
+        "label": "Public Project Plugin Requests",
+        "status": "pass",
+        "message": "Public Project Plugin Requests is satisfied.",
+        "evidence": "4/4",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "unreal-runtime-entered",
+        "ruleId": "unreal-runtime-entered",
+        "label": "Unreal Runtime Probe",
+        "status": "pass",
+        "message": "Unreal Runtime Probe is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "alembic-import-api-visible",
+        "ruleId": "alembic-import-api-visible",
+        "label": "Alembic Import API",
+        "status": "pass",
+        "message": "Alembic Import API is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "geometry-cache-api-visible",
+        "ruleId": "geometry-cache-api-visible",
+        "label": "Geometry Cache API",
+        "status": "pass",
+        "message": "Geometry Cache API is satisfied.",
+        "evidence": true,
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-core-classes-visible",
+        "ruleId": "groom-core-classes-visible",
+        "label": "Groom Core API",
+        "status": "pass",
+        "message": "Groom Core API is satisfied.",
+        "evidence": "groomClassNameRows=47",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "groom-import-api-ready",
+        "ruleId": "groom-import-api-ready",
+        "label": "Groom Import API",
+        "status": "pass",
+        "message": "Groom Import API is satisfied.",
+        "evidence": "asset=True binding=True factory=False options=True",
+        "fixPreview": "No action."
+      },
+      {
+        "id": "no-write-boundary",
+        "ruleId": "no-write-boundary",
+        "label": "Read-only Boundary",
+        "status": "pass",
+        "message": "Read-only Boundary is satisfied.",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "No action."
+      }
+    ],
+    "ownerActions": []
+  },
+  "adapter": {
+    "id": "groom-plugin-api-fixture",
+    "name": "Groom Plugin/API Public Fixture Readiness",
+    "methodSource": "Public Unreal project plugin config + UE commandlet Python API probe",
+    "protocolCarrier": "HairStrands, AlembicHairImporter, AlembicImporter, GeometryCache descriptors and Python classes",
+    "boundary": {
+      "mutation": "read_only_project_plugin_api_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only Groom plugin/API fixture probe; no import and no asset save"
+    }
+  },
+  "reviewerClaims": [
+    "R50 proves the public Unreal project explicitly requests the Groom/HairStrands and Alembic hair importer plugin stack.",
+    "The report separates plugin descriptor readiness from Unreal Python import API visibility, so missing Groom factory/options APIs stay actionable.",
+    "The probe is read-only: it enters Unreal, inspects classes and plugin-facing facts, and records zero asset, engine and production writes."
+  ]
+}

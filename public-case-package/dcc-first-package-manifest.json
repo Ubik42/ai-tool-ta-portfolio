@@ -1,7 +1,7 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r49",
-  "packageVersion": "dcc-first-package@1.46.0",
-  "generatedAt": "2026-08-06 01:44:49",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r50",
+  "packageVersion": "dcc-first-package@1.47.0",
+  "generatedAt": "2026-08-06 02:05:11",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
   "host": {
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 48,
-    "presentationPackPresentEvidenceFiles": 48,
+    "presentationPackEvidenceFiles": 49,
+    "presentationPackPresentEvidenceFiles": 49,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 38,
+    "presentationPackDemoRouteSteps": 39,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -651,7 +651,35 @@
     "groomAlembicImportPostcheckOwnerActions": 4,
     "groomAlembicImportPostcheckAssetWrites": 0,
     "groomAlembicImportPostcheckEngineWrites": 0,
-    "groomAlembicImportPostcheckProductionWrites": 0
+    "groomAlembicImportPostcheckProductionWrites": 0,
+    "groomPluginApiFixtureReportVersion": "groom-plugin-api-fixture@0.1.0",
+    "groomPluginApiFixtureArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
+    "groomPluginApiFixtureEvidenceLevel": "L3",
+    "groomPluginApiFixtureL3Status": "unreal_groom_plugin_api_fixture_ready",
+    "groomPluginApiFixtureGate": "Ready",
+    "groomPluginApiFixtureEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "groomPluginApiFixtureRuntimeCollected": true,
+    "groomPluginApiFixtureRequiredPluginRows": 4,
+    "groomPluginApiFixtureProjectRequestedRows": 4,
+    "groomPluginApiFixtureDescriptorRowsFound": 4,
+    "groomPluginApiFixtureGroomClassNameRows": 47,
+    "groomPluginApiFixtureHairClassNameRows": 56,
+    "groomPluginApiFixtureAlembicClassNameRows": 14,
+    "groomPluginApiFixtureGeometryCacheClassNameRows": 16,
+    "groomPluginApiFixtureGroomAssetVisible": true,
+    "groomPluginApiFixtureGroomBindingAssetVisible": true,
+    "groomPluginApiFixtureGroomImportFactoryVisible": false,
+    "groomPluginApiFixtureGroomImportOptionsVisible": true,
+    "groomPluginApiFixtureGroomImportApiReady": true,
+    "groomPluginApiFixtureAlembicImportFactoryVisible": true,
+    "groomPluginApiFixtureGeometryCacheVisible": true,
+    "groomPluginApiFixturePassChecks": 10,
+    "groomPluginApiFixtureWarningChecks": 0,
+    "groomPluginApiFixtureErrorChecks": 0,
+    "groomPluginApiFixtureOwnerActions": 0,
+    "groomPluginApiFixtureAssetWrites": 0,
+    "groomPluginApiFixtureEngineWrites": 0,
+    "groomPluginApiFixtureProductionWrites": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -930,6 +958,18 @@
       "required": true
     },
     {
+      "id": "public-case-r50-presenter-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-groom-plugin-api-fixture",
+      "label": "Groom Plugin/API Public Fixture Readiness",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
+      "required": true
+    },
+    {
       "id": "dcc-first-groom-alembic-import-postcheck",
       "label": "Groom Alembic Import/Post-check Readiness",
       "kind": "artifact",
@@ -1073,6 +1113,16 @@
     "python dcc-hosts/groom-export-inspector/scripts/run_alembic_payload.py",
     ".\\scripts\\validate_loop.ps1 -Tier groom-alembic-payload",
     {
+      "id": "validate-r50-dcc-presenter-pack",
+      "command": "python -c \"from ai_tool_ta_maya_host.api import MayaPortfolioApi; p=MayaPortfolioApi().dcc_presentation_build_pack(label='r50-groom-plugin-api-fixture-presentation-pack'); assert p['summary']['present_evidence_files']==49 and p['summary']['demo_route_steps']==39\"",
+      "expected": "Presenter Pack reports 49/49 evidence files, 0 missing required files and 39 demo route steps."
+    },
+    {
+      "id": "validate-r50-groom-plugin-api-fixture",
+      "command": "python dcc-hosts/groom-export-inspector/scripts/run_groom_plugin_api_fixture.py",
+      "expected": "groom-plugin-api-fixture@0.1.0, L3 Ready, 4/4 descriptors, 4/4 project plugin requests, Groom import API ready, 0 writes"
+    },
+    {
       "id": "validate-r49-groom-alembic-import-postcheck",
       "command": "python dcc-hosts/groom-export-inspector/scripts/run_alembic_import_postcheck.py",
       "result": "pass",
@@ -1163,7 +1213,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -1726,6 +1776,8 @@
   "unrealControlRigDeformationLinkErrorChecks": 5,
   "unrealControlRigDeformationLinkOwnerActions": 7,
   "keyEvidence": [
+    "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json",
+    "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json",
     "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-alembic-import-postcheck-20260806-013949.json",
     "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r48-groom-alembic-payload-presentation-pack-20260806-012304.json",
@@ -1747,6 +1799,18 @@
     {
       "id": "public-case-r49-presenter-pack",
       "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json",
+      "required": true
+    },
+    {
+      "id": "public-case-r50-presenter-pack",
+      "path": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r50-groom-plugin-api-fixture-presentation-pack-20260806-020447.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-groom-plugin-api-fixture",
+      "label": "Groom Plugin/API Public Fixture Readiness",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
       "required": true
     },
     {
@@ -1906,10 +1970,10 @@
   "groomExportInspectorAssetWrites": 0,
   "groomExportInspectorEngineWrites": 0,
   "groomExportInspectorProductionWrites": 0,
-  "presentationPackEvidenceFiles": 48,
-  "presentationPackPresentEvidenceFiles": 48,
+  "presentationPackEvidenceFiles": 49,
+  "presentationPackPresentEvidenceFiles": 49,
   "presentationPackMissingRequiredFiles": 0,
-  "presentationPackDemoRouteSteps": 38,
+  "presentationPackDemoRouteSteps": 39,
   "groomUnrealReadinessReportVersion": "groom-unreal-readiness@0.1.0",
   "groomUnrealReadinessArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-unreal-readiness-20260806-010008.json",
   "groomUnrealReadinessEvidenceLevel": "L3",
@@ -1993,5 +2057,36 @@
   "groomAlembicImportPostcheckOwnerActions": 4,
   "groomAlembicImportPostcheckAssetWrites": 0,
   "groomAlembicImportPostcheckEngineWrites": 0,
-  "groomAlembicImportPostcheckProductionWrites": 0
+  "groomAlembicImportPostcheckProductionWrites": 0,
+  "groomPluginApiFixtureReportVersion": "groom-plugin-api-fixture@0.1.0",
+  "groomPluginApiFixtureArtifact": "<repo>\\dcc-hosts\\groom-export-inspector\\artifacts\\groom-plugin-api-fixture-20260806-020048.json",
+  "groomPluginApiFixtureEvidenceLevel": "L3",
+  "groomPluginApiFixtureL3Status": "unreal_groom_plugin_api_fixture_ready",
+  "groomPluginApiFixtureGate": "Ready",
+  "groomPluginApiFixtureEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "groomPluginApiFixtureRuntimeCollected": true,
+  "groomPluginApiFixtureRequiredPluginRows": 4,
+  "groomPluginApiFixtureProjectRequestedRows": 4,
+  "groomPluginApiFixtureDescriptorRowsFound": 4,
+  "groomPluginApiFixtureGroomClassNameRows": 47,
+  "groomPluginApiFixtureHairClassNameRows": 56,
+  "groomPluginApiFixtureAlembicClassNameRows": 14,
+  "groomPluginApiFixtureGeometryCacheClassNameRows": 16,
+  "groomPluginApiFixtureGroomAssetVisible": true,
+  "groomPluginApiFixtureGroomBindingAssetVisible": true,
+  "groomPluginApiFixtureGroomImportFactoryVisible": false,
+  "groomPluginApiFixtureGroomImportOptionsVisible": true,
+  "groomPluginApiFixtureGroomImportApiReady": true,
+  "groomPluginApiFixtureAlembicImportFactoryVisible": true,
+  "groomPluginApiFixtureGeometryCacheVisible": true,
+  "groomPluginApiFixturePassChecks": 10,
+  "groomPluginApiFixtureWarningChecks": 0,
+  "groomPluginApiFixtureErrorChecks": 0,
+  "groomPluginApiFixtureOwnerActions": 0,
+  "groomPluginApiFixtureAssetWrites": 0,
+  "groomPluginApiFixtureEngineWrites": 0,
+  "groomPluginApiFixtureProductionWrites": 0,
+  "reviewerClaims": [
+    "R50 proves the public Unreal fixture requests HairStrands/Alembic hair plugins and exposes Groom import API classes under a zero-write commandlet probe."
+  ]
 }
