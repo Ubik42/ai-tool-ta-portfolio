@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r32-platform-variant-texture-payload` | `python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py` | Unreal 5.3.2 Python imports a generated public 2048 Texture2D, wires it to `M_HeroPanel`, and rechecks 3 variants as 2 Ready / 0 Review / 1 Blocked with 20 pass checks, 0 warnings and 1 error. |
+| `validate-r32-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r32-platform-variant-texture-payload-presentation-pack")` | DCC Presenter Pack probes 29 key evidence files including Platform Variant Public Texture2D Payload Fixture, reports 29 present / 0 missing required files, and exports 21 demo route steps. |
 | `validate-r31-platform-variant-texture-runtime` | `python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py` | Unreal 5.3.2 Python collects material slot, dependency query and Texture2D budget facts for 3 planned variants, reporting 1 Ready / 1 Review / 1 Blocked, 19 pass checks, 1 warning and 1 error. |
 | `validate-r31-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r31-platform-variant-texture-runtime-presentation-pack")` | DCC Presenter Pack probes 28 key evidence files including Platform Variant Texture Runtime Collector, reports 28 present / 0 missing required files, and exports 20 demo route steps. |
 | `validate-r30-platform-variant-generation-plan` | `python dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py` | R29 runtime drift is converted into `platform-variant-generation-plan@0.1.0`, reporting 11 dry-run operations: 1 Ready, 3 Review, 2 Blocked and 5 Satisfied, with owner approval and rollback boundaries. |

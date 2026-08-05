@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r31-platform-variant-texture-runtime-presentation-pack",
+        label: str = "r32-platform-variant-texture-payload-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4086,6 +4086,12 @@ class MayaPortfolioApi:
                 "Platform Variant Texture Runtime Collector artifact",
                 "artifact",
                 manifest.get("platformVariantTextureRuntimeArtifact"),
+            ),
+            _probe_file(
+                "platform-variant-texture-payload-runtime",
+                "Platform Variant Public Texture2D Payload artifact",
+                "artifact",
+                manifest.get("platformVariantTexturePayloadArtifact"),
             ),
         ]
 
@@ -4191,31 +4197,37 @@ class MayaPortfolioApi:
                 "evidence_expected": "Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for PC/Mobile variants.",
             },
             {
-                "id": "16-review-blender-adapter",
+                "id": "16-run-platform-variant-texture-payload",
+                "label": "Run platform variant texture payload",
+                "operator_action": "Run python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py.",
+                "evidence_expected": "A generated public 2048 Texture2D payload is imported, wired to the material, and rechecked against PC/Mobile texture budgets.",
+            },
+            {
+                "id": "17-review-blender-adapter",
                 "label": "Review Blender rule adapter",
                 "operator_action": "Open the Presenter Pack or public package and inspect the Blender Rule Adapter artifact.",
                 "evidence_expected": "Blender object custom properties, collections, material slots, UVs, and collision proxies normalize into Cross-DCC rule input.",
             },
             {
-                "id": "17-run-blender-l3-harness",
+                "id": "18-run-blender-l3-harness",
                 "label": "Run Blender L3 harness",
                 "operator_action": "Run python dcc-hosts/blender-rule-adapter/scripts/run_l3_smoke.py.",
                 "evidence_expected": "Blender background runtime exports bpy scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "18-run-3dsmax-adapter-harness",
+                "id": "19-run-3dsmax-adapter-harness",
                 "label": "Run 3ds Max adapter harness",
                 "operator_action": "Run python dcc-hosts/3dsmax-rule-adapter/scripts/run_l3_smoke.py --run-runtime --timeout-seconds 600.",
                 "evidence_expected": "3ds Max batch runtime exports pymxs scene facts into the Cross-DCC rule input shape.",
             },
             {
-                "id": "19-audit-gui-media",
+                "id": "20-audit-gui-media",
                 "label": "Audit GUI media",
                 "operator_action": "Click Audit Media or Export Presenter Pack after placing real Maya screenshots and recording.",
                 "evidence_expected": "Media audit reports Present / Review / Missing for 9 screenshots and 1 recording.",
             },
             {
-                "id": "20-handoff-presenter-pack",
+                "id": "21-handoff-presenter-pack",
                 "label": "Handoff presenter pack",
                 "operator_action": "Click Export Presenter Pack and open the generated JSON artifact.",
                 "evidence_expected": "Pack lists route, public package, artifact probes, media gate, and mutation boundaries.",
@@ -4392,6 +4404,19 @@ class MayaPortfolioApi:
                 "platform_variant_texture_runtime_warning_checks": manifest_summary.get("platformVariantTextureRuntimeWarningChecks"),
                 "platform_variant_texture_runtime_error_checks": manifest_summary.get("platformVariantTextureRuntimeErrorChecks"),
                 "platform_variant_texture_runtime_texture_dependencies": manifest_summary.get("platformVariantTextureRuntimeTextureDependencies"),
+                "platform_variant_texture_payload_gate": manifest_summary.get("platformVariantTexturePayloadGate"),
+                "platform_variant_texture_payload_evidence_level": manifest_summary.get("platformVariantTexturePayloadEvidenceLevel"),
+                "platform_variant_texture_payload_l3_status": manifest_summary.get("platformVariantTexturePayloadL3Status"),
+                "platform_variant_texture_payload_engine_version": manifest_summary.get("platformVariantTexturePayloadEngineVersion"),
+                "platform_variant_texture_payload_asset_writes": manifest_summary.get("platformVariantTexturePayloadAssetWrites"),
+                "platform_variant_texture_payload_variants": manifest_summary.get("platformVariantTexturePayloadVariants"),
+                "platform_variant_texture_payload_ready": manifest_summary.get("platformVariantTexturePayloadReady"),
+                "platform_variant_texture_payload_review": manifest_summary.get("platformVariantTexturePayloadReview"),
+                "platform_variant_texture_payload_blocked": manifest_summary.get("platformVariantTexturePayloadBlocked"),
+                "platform_variant_texture_payload_pass_checks": manifest_summary.get("platformVariantTexturePayloadPassChecks"),
+                "platform_variant_texture_payload_warning_checks": manifest_summary.get("platformVariantTexturePayloadWarningChecks"),
+                "platform_variant_texture_payload_error_checks": manifest_summary.get("platformVariantTexturePayloadErrorChecks"),
+                "platform_variant_texture_payload_texture_dependencies": manifest_summary.get("platformVariantTexturePayloadTextureDependencies"),
                 "blender_rule_adapter_gate": manifest_summary.get("blenderRuleAdapterGate"),
                 "blender_rule_adapter_evidence_level": manifest_summary.get("blenderRuleAdapterEvidenceLevel"),
                 "blender_rule_adapter_assets": manifest_summary.get("blenderRuleAdapterAssets"),
@@ -4455,6 +4480,7 @@ class MayaPortfolioApi:
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
                 "Platform Variant Texture Runtime Collector collects Unreal material slots, material dependency queries and Texture2D budget facts for planned variants.",
+                "Platform Variant Public Texture2D Payload Fixture imports a generated public texture, wires it to Unreal material, and proves PC/Mobile texture budgets against real Texture2D facts.",
                 "Blender Rule Adapter is now backed by real bpy L3 evidence on a public synthetic scene.",
                 "3ds Max Rule Adapter is now backed by real pymxs L3 evidence on a public synthetic scene.",
                 "Both non-Maya adapters expose pass, warning, and blocked rows through the same Cross-DCC Rule Matrix shape.",
@@ -4478,7 +4504,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r31-platform-variant-texture-runtime-presentation-pack",
+        label: str = "r32-platform-variant-texture-payload-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

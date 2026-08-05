@@ -1,6 +1,6 @@
 # Platform Variant Forge
 
-R28-R31 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路的 runtime evidence。
+R28-R32 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路和真实 public Texture2D payload 的 runtime evidence。
 
 ## 核心业务逻辑
 
@@ -29,6 +29,7 @@ R28-R31 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py`
+- `dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py`
 
@@ -63,6 +64,14 @@ R31 texture runtime collector 完成：
 - 规则结果为 19 pass / 1 warning / 1 error；Mobile HeroPanel 的 warning 现在明确是“材质链已采集，但 synthetic material 没有真实 Texture2D payload”，不再是 collector 缺失。
 - assetWrites=0；本轮没有新增 Unreal 资产写入。
 
+R32 public Texture2D payload fixture 完成：
+
+- 通过 `run_texture_payload_probe.py` 打开同一个公开 Unreal test project。
+- 运行时生成 public 2048 PNG，导入为 `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor`，并挂到 `M_HeroPanel`。
+- 重新采集 StaticMesh -> material -> Texture2D facts，Mobile HeroPanel 的 texture downscale 从 Review 进入可计算预算对照。
+- 输出 3 variants：2 Ready，0 Review，1 intentionally Blocked；规则结果为 20 pass / 0 warning / 1 error。
+- 最终提交的幂等 rerun 为 assetWrites=0；fixture 缺失时的写入范围也只限 `/Game/AI_Tool_TA` public fixture，不写生产工程资产。
+
 ## 证据
 
 当前 artifact：
@@ -72,8 +81,9 @@ R31 texture runtime collector 完成：
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json
 ```
 
 ## 后续
 
-下一步可以创建 public Texture2D payload fixture，让 Mobile texture downscale 从“缺贴图源的 Review”进入可计算预算对比；或做受控 Unreal dry-run executor，把 R30 的 operation contract 转成 public fixture 内的可复跑执行结果。
+下一步优先做受控 Unreal executor：读取 R30/R32 证据，选择 public fixture 内可执行动作，记录 preflight fingerprint、writeSet、post-check 和 rollback artifact。也可以补 Character Calibration / Spatial Authoring 的 Maya UI drilldown。

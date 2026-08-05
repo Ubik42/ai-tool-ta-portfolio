@@ -1198,3 +1198,34 @@ ai-tool-ta-dcc-first-showcase-r31 / dcc-first-package@1.28.0
 ```text
 texture runtime artifact -> public Texture2D payload fixture or controlled Unreal operation executor -> runtime re-check -> Presenter Pack row -> docs
 ```
+
+## R32 循环开发断点：Platform Variant Public Texture2D Payload Fixture
+
+R32 已完成 `Platform Variant Public Texture2D Payload Fixture` L3：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json
+```
+
+R32 结果：`run_texture_payload_probe.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public test project，运行时生成 2048 public PNG，导入为 `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor`，挂到 `M_HeroPanel`，然后重新采集 StaticMesh -> material -> Texture2D facts。结果为 3 variants，2 Ready，0 Review，1 intentionally Blocked，20 pass / 0 warning / 1 error。HeroPanel Mobile 已经从“缺真实贴图 payload 的 Review”进入 Ready；剩余 Blocked 只来自 synthetic vehicle 缺源资产/目标资产。最终提交的幂等 rerun 为 assetWrites=0，写入范围只限 `/Game/AI_Tool_TA` public fixture；Texture2D 为 2048 max dimension、约 16 MB、sRGB true。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r32 / dcc-first-package@1.29.0
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant-texture-payload
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Controlled Executor`：
+
+```text
+generation plan + texture payload artifact -> select safe public fixture operation -> preflight fingerprint -> execute in /Game/AI_Tool_TA public scope -> post-check -> rollback artifact -> Presenter Pack row -> docs
+```

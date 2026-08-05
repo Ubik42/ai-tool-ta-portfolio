@@ -1,0 +1,610 @@
+{
+  "reportVersion": "platform-variant-texture-payload-runtime@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 19:35:23",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_texture_payload_fixture_collected",
+  "sourcePlan": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-forge-contract-20260805-183315.json",
+    "reportVersion": "platform-variant-forge-contract@0.1.0",
+    "evidenceLevel": "L3-linked",
+    "l3Status": "platform_variant_plan_joined_to_unreal_facts"
+  },
+  "sourceRuntime": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-unreal-runtime-20260805-185026.json",
+    "reportVersion": "platform-variant-unreal-runtime@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_variant_runtime_assets_collected",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3"
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "assetWrites": 0,
+    "payloadMode": "public_texture_payload_fixture",
+    "texturePayloadWrites": 0,
+    "texturePayloadErrors": [],
+    "generatedTextureSource": "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png",
+    "writeScope": "/Game/AI_Tool_TA public test fixture only"
+  },
+  "textureFacts": {
+    "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M": {
+      "assetPath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "dependencyQueryCount": 1,
+      "dependencyErrors": [],
+      "textureDependencyCount": 1,
+      "maxTextureDimension": 2048,
+      "estimatedTextureMemoryMb": 16.0,
+      "textureSettingsReadable": true,
+      "compressionSettings": [
+        "<TextureCompressionSettings.TC_DEFAULT: 0>"
+      ],
+      "srgbStates": [
+        "True"
+      ],
+      "raw": {
+        "materialSlots": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "slotName": "WorldGridMaterial",
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "materials": [
+          {
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "packagePath": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+            "exists": true,
+            "className": "Material",
+            "dependenciesQueried": true,
+            "dependencyPaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "expressionTexturePaths": [],
+            "texturePaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "textureCount": 1,
+            "textures": [
+              {
+                "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+                "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+                "exists": true,
+                "className": "Texture2D",
+                "width": 2048,
+                "height": 2048,
+                "maxDimension": 2048,
+                "estimatedMemoryMb": 16.0,
+                "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+                "srgb": true,
+                "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+                "maxTextureSize": 0,
+                "sourceFiles": [
+                  "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+                ],
+                "settingsReadable": true
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "textures": [
+          {
+            "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "exists": true,
+            "className": "Texture2D",
+            "width": 2048,
+            "height": 2048,
+            "maxDimension": 2048,
+            "estimatedMemoryMb": 16.0,
+            "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+            "srgb": true,
+            "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+            "maxTextureSize": 0,
+            "sourceFiles": [
+              "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+            ],
+            "settingsReadable": true
+          }
+        ]
+      }
+    },
+    "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A": {
+      "assetPath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "dependencyQueryCount": 1,
+      "dependencyErrors": [],
+      "textureDependencyCount": 1,
+      "maxTextureDimension": 2048,
+      "estimatedTextureMemoryMb": 16.0,
+      "textureSettingsReadable": true,
+      "compressionSettings": [
+        "<TextureCompressionSettings.TC_DEFAULT: 0>"
+      ],
+      "srgbStates": [
+        "True"
+      ],
+      "raw": {
+        "materialSlots": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "slotName": "WorldGridMaterial",
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "materials": [
+          {
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "packagePath": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+            "exists": true,
+            "className": "Material",
+            "dependenciesQueried": true,
+            "dependencyPaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "expressionTexturePaths": [],
+            "texturePaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "textureCount": 1,
+            "textures": [
+              {
+                "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+                "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+                "exists": true,
+                "className": "Texture2D",
+                "width": 2048,
+                "height": 2048,
+                "maxDimension": 2048,
+                "estimatedMemoryMb": 16.0,
+                "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+                "srgb": true,
+                "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+                "maxTextureSize": 0,
+                "sourceFiles": [
+                  "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+                ],
+                "settingsReadable": true
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "textures": [
+          {
+            "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "exists": true,
+            "className": "Texture2D",
+            "width": 2048,
+            "height": 2048,
+            "maxDimension": 2048,
+            "estimatedMemoryMb": 16.0,
+            "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+            "srgb": true,
+            "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+            "maxTextureSize": 0,
+            "sourceFiles": [
+              "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+            ],
+            "settingsReadable": true
+          }
+        ]
+      }
+    },
+    "/Game/AI_Tool_TA/Props/SM_HeroPanel_A": {
+      "assetPath": "/Game/AI_Tool_TA/Props/SM_HeroPanel_A",
+      "exists": true,
+      "className": "StaticMesh",
+      "pathMatched": true,
+      "materialSlotCount": 1,
+      "materialPaths": [
+        "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+      ],
+      "dependencyQueryCount": 1,
+      "dependencyErrors": [],
+      "textureDependencyCount": 1,
+      "maxTextureDimension": 2048,
+      "estimatedTextureMemoryMb": 16.0,
+      "textureSettingsReadable": true,
+      "compressionSettings": [
+        "<TextureCompressionSettings.TC_DEFAULT: 0>"
+      ],
+      "srgbStates": [
+        "True"
+      ],
+      "raw": {
+        "materialSlots": {
+          "slotCount": 1,
+          "materialPaths": [
+            "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "slotName": "WorldGridMaterial",
+              "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+            }
+          ]
+        },
+        "materials": [
+          {
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "packagePath": "/Game/AI_Tool_TA/Materials/M_HeroPanel",
+            "exists": true,
+            "className": "Material",
+            "dependenciesQueried": true,
+            "dependencyPaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "expressionTexturePaths": [],
+            "texturePaths": [
+              "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+            ],
+            "textureCount": 1,
+            "textures": [
+              {
+                "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+                "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+                "exists": true,
+                "className": "Texture2D",
+                "width": 2048,
+                "height": 2048,
+                "maxDimension": 2048,
+                "estimatedMemoryMb": 16.0,
+                "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+                "srgb": true,
+                "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+                "maxTextureSize": 0,
+                "sourceFiles": [
+                  "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+                ],
+                "settingsReadable": true
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "textures": [
+          {
+            "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+            "materialPath": "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+            "exists": true,
+            "className": "Texture2D",
+            "width": 2048,
+            "height": 2048,
+            "maxDimension": 2048,
+            "estimatedMemoryMb": 16.0,
+            "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+            "srgb": true,
+            "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+            "maxTextureSize": 0,
+            "sourceFiles": [
+              "<runtime-temp>\\ai_tool_ta_platform_variant\\T_HeroPanel_BaseColor_2048.png"
+            ],
+            "settingsReadable": true
+          }
+        ]
+      }
+    },
+    "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP": {
+      "assetPath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP",
+      "exists": false,
+      "className": null,
+      "pathMatched": true,
+      "materialSlotCount": 0,
+      "materialPaths": [],
+      "dependencyQueryCount": 0,
+      "dependencyErrors": [],
+      "textureDependencyCount": 0,
+      "maxTextureDimension": 0,
+      "estimatedTextureMemoryMb": 0,
+      "textureSettingsReadable": false,
+      "compressionSettings": [],
+      "srgbStates": [],
+      "raw": {
+        "materialSlots": {
+          "slotCount": 0,
+          "materialPaths": [],
+          "rows": []
+        },
+        "materials": [],
+        "textures": []
+      }
+    }
+  },
+  "evaluation": {
+    "schema": "platform-variant-texture-runtime-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "variantCount": 3,
+      "readyVariants": 2,
+      "reviewVariants": 0,
+      "blockedVariants": 1,
+      "pass": 20,
+      "warning": 0,
+      "error": 1,
+      "readyVariantIds": [
+        "variant-hero-panel-001:mobile",
+        "variant-hero-panel-001:pc"
+      ],
+      "reviewVariantIds": [],
+      "blockedVariantIds": [
+        "variant-vehicle-shell-tmp-002:mobile"
+      ]
+    },
+    "rows": [
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-target-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M exists=True",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-material-chain",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-material-chain",
+        "status": "pass",
+        "evidence": "materialSlots=1 materialPaths=/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-texture-dependency-query",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-dependency-query",
+        "status": "pass",
+        "evidence": "queries=1 materials=1 errors=",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-texture-payload",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-payload",
+        "status": "pass",
+        "evidence": "textures=1 requestedDownscale=True",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-texture-max-size",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-max-size",
+        "status": "pass",
+        "evidence": "maxDimension=2048 expected<=2048",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-texture-memory-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-memory-budget",
+        "status": "pass",
+        "evidence": "estimatedMb=16.000 expected<=52.000 textures=1",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:mobile:runtime-texture-settings-readable",
+        "assetId": "variant-hero-panel-001",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-settings-readable",
+        "status": "pass",
+        "evidence": "readable=True compression=<TextureCompressionSettings.TC_DEFAULT: 0> srgb=True",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-target-asset",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-target-asset",
+        "status": "pass",
+        "evidence": "target=/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A exists=True",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-material-chain",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-material-chain",
+        "status": "pass",
+        "evidence": "materialSlots=1 materialPaths=/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-texture-dependency-query",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-texture-dependency-query",
+        "status": "pass",
+        "evidence": "queries=1 materials=1 errors=",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-texture-payload",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-texture-payload",
+        "status": "pass",
+        "evidence": "textures=1 requestedDownscale=False",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-texture-max-size",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-texture-max-size",
+        "status": "pass",
+        "evidence": "maxDimension=2048 expected<=4096",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-texture-memory-budget",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-texture-memory-budget",
+        "status": "pass",
+        "evidence": "estimatedMb=16.000 expected<=180.000 textures=1",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-hero-panel-001:pc:runtime-texture-settings-readable",
+        "assetId": "variant-hero-panel-001",
+        "platform": "pc",
+        "ruleId": "runtime-texture-settings-readable",
+        "status": "pass",
+        "evidence": "readable=True compression=<TextureCompressionSettings.TC_DEFAULT: 0> srgb=True",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/PC/SM_HeroPanel_A"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-target-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "error",
+        "evidence": "target=/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP exists=False",
+        "fixPreview": "Create or duplicate the platform variant before collecting texture facts.",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-material-chain",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-material-chain",
+        "status": "pass",
+        "evidence": "materialSlots=0 materialPaths=",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-texture-dependency-query",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-dependency-query",
+        "status": "pass",
+        "evidence": "queries=0 materials=0 errors=",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-texture-payload",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-payload",
+        "status": "pass",
+        "evidence": "textures=0 requestedDownscale=False",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-texture-max-size",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-max-size",
+        "status": "pass",
+        "evidence": "maxDimension=0 expected<=4096",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-texture-memory-budget",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-memory-budget",
+        "status": "pass",
+        "evidence": "estimatedMb=0.000 expected<=220.000 textures=0",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      },
+      {
+        "id": "variant-vehicle-shell-tmp-002:mobile:runtime-texture-settings-readable",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-texture-settings-readable",
+        "status": "pass",
+        "evidence": "readable=False compression= srgb=",
+        "fixPreview": "None",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      }
+    ],
+    "textureBakeActions": [
+      {
+        "id": "texture-action:variant-vehicle-shell-tmp-002:mobile:runtime-target-asset",
+        "assetId": "variant-vehicle-shell-tmp-002",
+        "platform": "mobile",
+        "ruleId": "runtime-target-asset",
+        "status": "error",
+        "mutationScope": "dry_run_texture_plan_only",
+        "preview": "Create or duplicate the platform variant before collecting texture facts.",
+        "targetEnginePath": "/Game/AI_Tool_TA/Vehicles/SM_VehicleShell_TMP"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-texture-payload-runtime",
+    "name": "Platform Variant Public Texture2D Payload Fixture",
+    "methodSource": "Unreal StaticMesh material slots to Texture2D budget evidence",
+    "protocolCarrier": "variant plan artifact + Unreal Python material dependency facts",
+    "boundary": {
+      "mutation": "runtime_fact_collection_only",
+      "engineWrites": 0,
+      "assetWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public test fixture only"
+    }
+  },
+  "reviewerClaims": [
+    "R31 collects material slot, material dependency and Texture2D budget facts from Unreal instead of treating texture bake as an unknown placeholder.",
+    "R32 can optionally generate and wire a public Texture2D payload fixture so Mobile downscale readiness is tested against real texture dimensions.",
+    "The report separates target asset absence, missing source texture payload and numeric texture budget drift.",
+    "Collection is read-only except for public synthetic fixture preparation under /Game/AI_Tool_TA."
+  ]
+}

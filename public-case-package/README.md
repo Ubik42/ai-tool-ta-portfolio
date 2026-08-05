@@ -1,4 +1,4 @@
-# AI Tool TA Public Case Package R31
+# AI Tool TA Public Case Package R32
 
 ## Current DCC-first Entry
 
@@ -32,9 +32,10 @@ The current final presentation route is now Maya-hosted:
 - Platform Variant Unreal Runtime Probe: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-unreal-runtime-20260805-185026.json`
 - Platform Variant Generation Planner: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json`
 - Platform Variant Texture Runtime Collector: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json`
-- R31 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json`
+- Platform Variant Public Texture2D Payload Fixture: `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json`
+- R32 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json`
 
-Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R31 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
+Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R32 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Blender adapter evidence, Blender bpy L3 runtime evidence, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, and Scene Transaction Guard.
 
 This package is the public reviewer entry point for the AI Tool TA portfolio.
 It presents DCC / engine tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
@@ -53,16 +54,16 @@ It presents DCC / engine tool modules as production-style case studies, with syn
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-public-case-package-r8-55` |
-| Version | `public-case-package@3.25.0` |
+| Package | `ai-tool-ta-public-case-package-r8-56` |
+| Version | `public-case-package@3.26.0` |
 | Source report | `portfolio-case-study-r8-54` |
 | Source report version | `portfolio-case-study-report@3.31.0` |
 | Evidence manifest | `portfolio-evidence-manifest-r8-54` |
 | Release gate | `Ready` |
 | Modules | 5 |
-| Indexed evidence | 385 |
-| Required evidence | 294 |
-| Validation commands | 118 |
+| Indexed evidence | 409 |
+| Required evidence | 302 |
+| Validation commands | 120 |
 | Owner signoffs | 3 |
 
 ## Portfolio Split

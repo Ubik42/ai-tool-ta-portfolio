@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import json
 import os
+import struct
 import sys
+import tempfile
+import zlib
 from pathlib import Path
 
 
@@ -22,6 +25,11 @@ def _main() -> None:
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     asset_writes = _ensure_source_fixture(unreal, inspector_root)
     asset_writes += _ensure_planned_fixture_variants(unreal, plan)
+    payload_result = {"assetWrites": 0, "errors": [], "generatedTextureSource": None}
+    payload_mode = os.environ.get("AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_PAYLOAD") == "1"
+    if payload_mode:
+        payload_result = _ensure_texture_payload_fixture(unreal)
+        asset_writes += payload_result.get("assetWrites", 0)
     facts = _collect_texture_facts(unreal, plan)
     runtime_snapshot = {
         "runtime": {
@@ -32,6 +40,10 @@ def _main() -> None:
             "projectPath": os.environ.get("AI_TOOL_TA_UNREAL_PROJECT"),
             "unrealCli": os.environ.get("AI_TOOL_TA_UNREAL_CLI"),
             "assetWrites": asset_writes,
+            "payloadMode": "public_texture_payload_fixture" if payload_mode else "dependency_collection_only",
+            "texturePayloadWrites": payload_result.get("assetWrites", 0),
+            "texturePayloadErrors": payload_result.get("errors", []),
+            "generatedTextureSource": payload_result.get("generatedTextureSource"),
             "writeScope": "/Game/AI_Tool_TA public test fixture only",
         },
         "facts": facts,
@@ -78,6 +90,64 @@ def _ensure_source_fixture(unreal, inspector_root: Path) -> int:
             editor_assets.save_loaded_asset(source_mesh)
             writes += 1
     return writes
+
+
+def _ensure_texture_payload_fixture(unreal) -> dict:
+    editor_assets = unreal.EditorAssetLibrary
+    texture_source = _generated_png_path()
+    texture_package_path = "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+    material_path = "/Game/AI_Tool_TA/Materials/M_HeroPanel"
+    writes = 0
+    errors = []
+    _write_png(texture_source, 2048, 2048)
+
+    if not editor_assets.does_asset_exist(texture_package_path):
+        try:
+            unreal.EditorAssetLibrary.make_directory("/Game/AI_Tool_TA/Textures")
+            task = unreal.AssetImportTask()
+            task.filename = str(texture_source)
+            task.destination_path = "/Game/AI_Tool_TA/Textures"
+            task.destination_name = "T_HeroPanel_BaseColor"
+            task.automated = True
+            task.replace_existing = True
+            task.save = True
+            unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
+            if editor_assets.does_asset_exist(texture_package_path):
+                writes += 1
+        except Exception as exc:  # pragma: no cover - only meaningful inside Unreal
+            errors.append("import_texture:%s" % exc)
+
+    texture = editor_assets.load_asset(texture_package_path)
+    material = editor_assets.load_asset(material_path)
+    try:
+        if texture:
+            texture.set_editor_property("srgb", True)
+            editor_assets.save_loaded_asset(texture)
+    except Exception as exc:  # pragma: no cover - only meaningful inside Unreal
+        errors.append("configure_texture:%s" % exc)
+
+    if material and texture and not _material_references_texture(unreal, material_path, texture_package_path):
+        try:
+            material_editing = getattr(unreal, "MaterialEditingLibrary", None)
+            expression_class = getattr(unreal, "MaterialExpressionTextureSample", None)
+            material_property = getattr(getattr(unreal, "MaterialProperty", None), "MP_BASE_COLOR", None)
+            if not material_editing or not expression_class or material_property is None:
+                errors.append("material_editing_api_unavailable")
+            else:
+                expression = material_editing.create_material_expression(material, expression_class, -320, 0)
+                expression.set_editor_property("texture", texture)
+                material_editing.connect_material_property(expression, "RGB", material_property)
+                material_editing.recompile_material(material)
+                editor_assets.save_loaded_asset(material)
+                writes += 1
+        except Exception as exc:  # pragma: no cover - only meaningful inside Unreal
+            errors.append("wire_texture_to_material:%s" % exc)
+    _scan_registry(unreal, ["/Game/AI_Tool_TA"])
+    return {
+        "assetWrites": writes,
+        "errors": errors,
+        "generatedTextureSource": r"<runtime-temp>\ai_tool_ta_platform_variant\T_HeroPanel_BaseColor_2048.png",
+    }
 
 
 def _ensure_planned_fixture_variants(unreal, plan: dict) -> int:
@@ -197,6 +267,11 @@ def _inspect_material_textures(unreal, material_path: str) -> dict:
     }
 
 
+def _material_references_texture(unreal, material_path: str, texture_path: str) -> bool:
+    row = _inspect_material_textures(unreal, material_path)
+    return _package_path(texture_path) in set(row.get("texturePaths", []))
+
+
 def _texture_dependency_paths(unreal, dependency_paths: list) -> list:
     result = []
     editor_assets = unreal.EditorAssetLibrary
@@ -306,9 +381,53 @@ def _source_files(texture) -> list:
     if not asset_import_data or not hasattr(asset_import_data, "extract_filenames"):
         return []
     try:
-        return [str(path) for path in asset_import_data.extract_filenames()]
+        return [_public_source_path(path) for path in asset_import_data.extract_filenames()]
     except Exception:
         return []
+
+
+def _generated_png_path() -> Path:
+    root = Path(tempfile.gettempdir()) / "ai_tool_ta_platform_variant"
+    root.mkdir(parents=True, exist_ok=True)
+    return root / "T_HeroPanel_BaseColor_2048.png"
+
+
+def _write_png(path: Path, width: int, height: int) -> None:
+    if path.exists():
+        return
+    def chunk(chunk_type: bytes, data: bytes) -> bytes:
+        return (
+            struct.pack(">I", len(data))
+            + chunk_type
+            + data
+            + struct.pack(">I", zlib.crc32(chunk_type + data) & 0xFFFFFFFF)
+        )
+
+    rows = []
+    for y in range(height):
+        row = bytearray([0])
+        for x in range(width):
+            row.extend(((x * 255) // max(1, width - 1), (y * 255) // max(1, height - 1), 180))
+        rows.append(bytes(row))
+    raw = b"".join(rows)
+    payload = (
+        b"\x89PNG\r\n\x1a\n"
+        + chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0))
+        + chunk(b"IDAT", zlib.compress(raw, 6))
+        + chunk(b"IEND", b"")
+    )
+    path.write_bytes(payload)
+
+
+def _public_source_path(path: str) -> str:
+    value = str(path)
+    temp_root = str(Path(tempfile.gettempdir()))
+    comparable_value = value.replace("/", "\\")
+    comparable_temp_root = temp_root.replace("/", "\\")
+    if comparable_value.lower().startswith(comparable_temp_root.lower()):
+        suffix = comparable_value[len(comparable_temp_root) :].lstrip("\\/")
+        return r"<runtime-temp>\%s" % suffix.replace("/", "\\")
+    return value
 
 
 def _scan_registry(unreal, paths: list) -> None:

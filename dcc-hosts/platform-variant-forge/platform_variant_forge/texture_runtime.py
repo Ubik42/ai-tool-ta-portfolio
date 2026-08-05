@@ -11,6 +11,7 @@ from .contract import public_path, resolve_public_path
 
 
 REPORT_VERSION = "platform-variant-texture-runtime@0.1.0"
+PAYLOAD_REPORT_VERSION = "platform-variant-texture-payload-runtime@0.1.0"
 
 
 def build_texture_runtime_report(
@@ -24,14 +25,14 @@ def build_texture_runtime_report(
     runtime_report = json.loads(runtime_path.read_text(encoding="utf-8")) if runtime_path.exists() else {}
     evaluation = evaluate_texture_runtime(plan_report, texture_snapshot)
     runtime = texture_snapshot.get("runtime", {})
+    payload_mode = runtime.get("payloadMode") == "public_texture_payload_fixture"
+    report_version = PAYLOAD_REPORT_VERSION if payload_mode else REPORT_VERSION
     return {
-        "reportVersion": REPORT_VERSION,
+        "reportVersion": report_version,
         "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
         "generatedAt": time.strftime("%Y-%m-%d %H:%M:%S"),
         "evidenceLevel": "L3" if runtime.get("executed") else "Blocked",
-        "l3Status": "unreal_material_texture_facts_collected"
-        if runtime.get("executed")
-        else "blocked_by_missing_unreal_runtime",
+        "l3Status": _l3_status(runtime, payload_mode),
         "sourcePlan": {
             "path": public_path(plan_path),
             "reportVersion": plan_report.get("reportVersion"),
@@ -49,8 +50,10 @@ def build_texture_runtime_report(
         "textureFacts": texture_snapshot.get("facts", {}),
         "evaluation": evaluation,
         "adapter": {
-            "id": "platform-variant-texture-runtime",
-            "name": "Platform Variant Texture Runtime Collector",
+            "id": "platform-variant-texture-payload-runtime" if payload_mode else "platform-variant-texture-runtime",
+            "name": "Platform Variant Public Texture2D Payload Fixture"
+            if payload_mode
+            else "Platform Variant Texture Runtime Collector",
             "methodSource": "Unreal StaticMesh material slots to Texture2D budget evidence",
             "protocolCarrier": "variant plan artifact + Unreal Python material dependency facts",
             "boundary": {
@@ -63,10 +66,17 @@ def build_texture_runtime_report(
         },
         "reviewerClaims": [
             "R31 collects material slot, material dependency and Texture2D budget facts from Unreal instead of treating texture bake as an unknown placeholder.",
+            "R32 can optionally generate and wire a public Texture2D payload fixture so Mobile downscale readiness is tested against real texture dimensions.",
             "The report separates target asset absence, missing source texture payload and numeric texture budget drift.",
             "Collection is read-only except for public synthetic fixture preparation under /Game/AI_Tool_TA.",
         ],
     }
+
+
+def _l3_status(runtime: Dict[str, Any], payload_mode: bool) -> str:
+    if not runtime.get("executed"):
+        return "blocked_by_missing_unreal_runtime"
+    return "unreal_texture_payload_fixture_collected" if payload_mode else "unreal_material_texture_facts_collected"
 
 
 def evaluate_texture_runtime(plan_report: Dict[str, Any], texture_snapshot: Dict[str, Any]) -> Dict[str, Any]:

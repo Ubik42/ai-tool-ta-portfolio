@@ -55,9 +55,10 @@ def main() -> int:
     artifact_dir.mkdir(parents=True, exist_ok=True)
     logs_dir.mkdir(parents=True, exist_ok=True)
     stamp = time.strftime("%Y%m%d-%H%M%S")
-    output_path = artifact_dir / ("platform-variant-texture-runtime-%s.json" % stamp)
-    stdout_path = logs_dir / ("platform-variant-texture-runtime-%s.stdout.log" % stamp)
-    stderr_path = logs_dir / ("platform-variant-texture-runtime-%s.stderr.log" % stamp)
+    output_prefix = os.environ.get("AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_OUTPUT_PREFIX", "platform-variant-texture-runtime")
+    output_path = artifact_dir / ("%s-%s.json" % (output_prefix, stamp))
+    stdout_path = logs_dir / ("%s-%s.stdout.log" % (output_prefix, stamp))
+    stderr_path = logs_dir / ("%s-%s.stderr.log" % (output_prefix, stamp))
     runtime_artifact = _latest_runtime_artifact()
 
     if not unreal_cli:
@@ -74,6 +75,8 @@ def main() -> int:
     env["AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_OUTPUT"] = str(output_path)
     env["AI_TOOL_TA_PLATFORM_VARIANT_PLAN"] = str(PLAN_ARTIFACT)
     env["AI_TOOL_TA_PLATFORM_VARIANT_RUNTIME"] = str(runtime_artifact)
+    if os.environ.get("AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_PAYLOAD"):
+        env["AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_PAYLOAD"] = os.environ["AI_TOOL_TA_PLATFORM_VARIANT_TEXTURE_PAYLOAD"]
     env["AI_TOOL_TA_UNREAL_PROJECT"] = str(UNREAL_PROJECT)
     env["AI_TOOL_TA_UNREAL_CLI"] = str(unreal_cli)
     env["AI_TOOL_TA_UNREAL_INSPECTOR_ROOT"] = str(PORTFOLIO_ROOT / "dcc-hosts" / "unreal-handoff-inspector")
