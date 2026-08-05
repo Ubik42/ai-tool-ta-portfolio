@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r49-groom-alembic-import-postcheck` | `python dcc-hosts/groom-export-inspector/scripts/run_alembic_import_postcheck.py` | Unreal 5.3.2 Python enters the public project, reads the R48 `.abc` cache, verifies cache sha256 continuity, dry-runs AssetImportTask / AlembicImportFactory setup, confirms target `SK_HeroFace`, holds import execution, reports Groom API and expected Groom / Binding asset gaps, and keeps assetWrites=0. |
+| `validate-r49-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r49-groom-alembic-import-postcheck-presentation-pack")` | DCC Presenter Pack probes 48 key evidence files including Groom Alembic Import/Post-check Readiness, reports 48 present / 0 missing required files, and exports 38 demo route steps. |
 | `validate-r48-groom-alembic-payload` | `python dcc-hosts/groom-export-inspector/scripts/run_alembic_payload.py` | Maya 2026 `mayapy` loads `AbcExport`, writes the approved public groom row to `.abc`, records cache bytes/hash, holds the TMP groom row, and keeps engineWrites=0 / productionWrites=0. |
 | `validate-r48-dcc-presenter-pack` | `Maya mayapy dcc_presentation_build_pack(label="r48-groom-alembic-payload-presentation-pack")` | DCC Presenter Pack probes 47 key evidence files including Groom Alembic Payload Receipt and exported cache, reports 47 present / 0 missing required files, and exports 37 demo route steps. |
 | `validate-r47-groom-unreal-readiness` | `python dcc-hosts/groom-export-inspector/scripts/run_unreal_readiness.py` | Unreal 5.3.2 Python enters the public project and exports read-only Groom import readiness: 2 groom rows, source Ready / Blocked = 1 / 1, AssetImportTask and AlembicImportFactory visible, `SK_HeroFace` present, GroomAsset / GroomBindingAsset API not visible, expected Groom / Binding assets absent, 12 pass / 4 warning / 6 error, assetWrites=0. |
@@ -289,5 +291,5 @@ Latest DCC Presenter Pack:
 | --- | --- |
 | Release gate | `Ready` |
 | Blocking receipts | `[]` |
-| Package files | 27 |
-| Validation commands | 48 |
+| Package files | 28 |
+| Validation commands | 50 |

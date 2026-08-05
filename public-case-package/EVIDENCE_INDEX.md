@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R49 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r49-groom-alembic-import-postcheck-presentation-pack-20260806-014423.json` | Maya-hosted package probes 48 key evidence files, exports 38 demo route steps, and adds Groom Alembic Import/Post-check Readiness evidence. |
+| Groom Alembic Import/Post-check Readiness | `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-import-postcheck-20260806-013949.json` | Unreal 5.3.2 reads the R48 `.abc` cache, verifies sha256 continuity, dry-runs AssetImportTask setup, confirms AlembicImportFactory visibility and target `SK_HeroFace`, holds import execution, records Groom API / expected Groom / Binding asset gaps, and keeps assetWrites=0. |
 | R48 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r48-groom-alembic-payload-presentation-pack-20260806-012304.json` | Maya-hosted package probes 47 key evidence files, exports 37 demo route steps, and adds Groom Alembic Payload Receipt plus exported cache evidence. |
 | Groom Alembic Payload Receipt | `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-alembic-payload-20260806-011837.json` | Maya 2026 `AbcExport` writes the approved public groom row to Alembic, records 1 cache file, 10,271 bytes, 1 sha256 hash, selected / held rows = 1 / 1, 14 pass / 0 warning / 2 error, and productionWrites=0. |
 | Groom Alembic exported cache | `<repo>\dcc-hosts\groom-export-inspector\artifacts\cache\groom-alembic-r48\groom_hero_hair_001.abc` | Public synthetic Alembic payload generated from Maya batch, linked by the R48 receipt hash and kept under repo artifact cache scope. |
