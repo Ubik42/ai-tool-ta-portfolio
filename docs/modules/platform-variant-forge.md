@@ -1,6 +1,6 @@
 # Platform Variant Forge
 
-R28-R32 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路和真实 public Texture2D payload 的 runtime evidence。
+R28-R33 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可交付的 variant plan 证据，用 Unreal runtime facts 验证计划是否真的落进引擎，把 runtime drift 转成 dry-run generation operations，并补上材质贴图链路、真实 public Texture2D payload 和受控执行 / 回滚 evidence。
 
 ## 核心业务逻辑
 
@@ -25,13 +25,16 @@ R28-R32 目标：把 PC -> Mobile 平台派生从“规则检查”推进到可�
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/runtime_contract.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/generation_plan.py`
 - `dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py`
+- `dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_smoke.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_unreal_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_generation_plan.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py`
 - `dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py`
+- `dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/probe_variant_runtime.py`
 - `dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py`
+- `dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py`
 
 R28 首版完成：
 
@@ -72,6 +75,14 @@ R32 public Texture2D payload fixture 完成：
 - 输出 3 variants：2 Ready，0 Review，1 intentionally Blocked；规则结果为 20 pass / 0 warning / 1 error。
 - 最终提交的幂等 rerun 为 assetWrites=0；fixture 缺失时的写入范围也只限 `/Game/AI_Tool_TA` public fixture，不写生产工程资产。
 
+R33 controlled executor 完成：
+
+- 读取 R30 generation plan 和 R32 texture payload artifact。
+- 选择 HeroPanel Mobile texture downscale 中可在 public fixture 内执行的 max texture size clamp。
+- 记录 preflight fingerprint，执行 maxTextureSize `0 -> 2048`，保存 public Texture2D，采集 post-state。
+- 立刻 rollback 到 `0`，确认最终 fingerprint 回到 `2502b08c541495a4`。
+- 输出 gate `Ready`，1 executed operation，1 post-check pass，1 rollback pass，7 pass / 0 warning / 0 error，persistentMutation=false。
+
 ## 证据
 
 当前 artifact：
@@ -82,8 +93,9 @@ R32 public Texture2D payload fixture 完成：
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json
 <repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json
 ```
 
 ## 后续
 
-下一步优先做受控 Unreal executor：读取 R30/R32 证据，选择 public fixture 内可执行动作，记录 preflight fingerprint、writeSet、post-check 和 rollback artifact。也可以补 Character Calibration / Spatial Authoring 的 Maya UI drilldown。
+下一步可以把 executor 扩到 LOD / Nanite / collision 的 approval receipts，或转向 Character Calibration / Spatial Authoring 的 Maya UI drilldown 与 Unreal 对照。

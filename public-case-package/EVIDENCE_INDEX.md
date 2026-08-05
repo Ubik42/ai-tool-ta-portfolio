@@ -9,6 +9,8 @@ Full machine-readable evidence is exported from the site report:
 
 | Evidence | Path | Proves |
 | --- | --- | --- |
+| R33 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json` | Maya-hosted package probes 30 key evidence files, exports 22 demo route steps, and adds Platform Variant Controlled Executor evidence. |
+| Platform Variant Controlled Executor | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json` | Unreal 5.3.2 Python applies a public Texture2D max-size clamp, verifies the post-state, rolls back to the preflight fingerprint, and reports 7 / 0 / 0 checks with no persistent mutation. |
 | R32 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json` | Maya-hosted package probes 29 key evidence files, exports 21 demo route steps, and adds Platform Variant Public Texture2D Payload Fixture evidence. |
 | Platform Variant Public Texture2D Payload Fixture | `<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json` | Unreal 5.3.2 Python generates a public 2048 Texture2D payload, imports it under `/Game/AI_Tool_TA`, wires it to `M_HeroPanel`, and proves PC/Mobile texture budgets against real Texture2D facts. |
 | R31 Presenter Pack | `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r31-platform-variant-texture-runtime-presentation-pack-20260805-191803.json` | Maya-hosted package probes 28 key evidence files, exports 20 demo route steps, and adds Platform Variant Texture Runtime Collector evidence. |

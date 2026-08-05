@@ -2,15 +2,16 @@
 
 更新时间：2026-08-05  
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r32` / `dcc-first-package@1.29.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r33` / `dcc-first-package@1.30.0`
 
 ## 1. 当前结论
 
 当前作品集已经不是纯前端展示。主入口是 Maya 2024 内的 AuroraView 面板，React/TypeScript 只是嵌入式工具界面；证据层由 Maya `mayapy`、Blender `bpy`、3ds Max `pymxs`、Unreal Python 和普通 Python fixture 共同生成。
 
-R32 的硬证据：
+R33 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json`
+- Platform Variant Controlled Executor：`<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json`
 - Platform Variant Public Texture2D Payload Fixture：`<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-payload-runtime-20260805-193515.json`
 - Platform Variant Texture Runtime Collector：`<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-texture-runtime-20260805-191529.json`
 - Platform Variant Generation Planner：`<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-generation-plan-20260805-190052.json`
@@ -22,7 +23,7 @@ R32 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260805-153232.json`
-- Presenter Pack 结果：29 / 29 evidence files present，0 missing required files，21 demo route steps。
+- Presenter Pack 结果：30 / 30 evidence files present，0 missing required files，22 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断或 runtime drift，不是 runtime 缺失。
 
 ## 2. Lightbox核心技术点覆盖
@@ -42,14 +43,14 @@ R32 的硬证据：
 | 动画确定性导出、Take、sub-frame、channel identity | `Animation Continuity Lab` 已通过 Maya `mayapy` 采集 keyed animCurve facts；`Unreal Animation Bridge` 已通过 Maya FBX + Unreal Python 导入真实 public AnimSequence/Skeleton facts | Maya L3 + Unreal import L3 | 可继续补 sequence length、sample rate、curve metadata、root motion、compression 细节 |
 | 角色 DNA、拓扑、joint coverage、面部/肌肉参数迁移 | `Character Calibration Studio` 已通过 Maya `mayapy` 采集 topology / joint / calibration / face params / Control Rig mapping facts | Maya L3 | 可继续接 Unreal Control Rig 对照和 UI drilldown |
 | 空间热点、Socket、Pose Transfer、mirror、locator preview | `Spatial Authoring Workbench` 已通过 Maya `mayapy` 采集 joint / locator / socket / hotspot / pose frame / mirror / pose transfer facts | Maya L3 | Maya/AuroraView drilldown、Unreal socket 对照 |
-| PC -> Mobile 平台派生、LOD/材质/贴图/碰撞生成链 | `Platform Variant Forge` 已生成 PC/Mobile variant plan，用 Unreal runtime probe 对照 StaticMesh facts，把 drift 转成 dry-run generation operations，采集材质/贴图 runtime facts，并导入 public Texture2D payload 验证预算 | 已覆盖计划层 + Unreal L3 + L3-derived generation plan + texture runtime L3 + Texture2D payload L3 | 受控 executor、更复杂资产 |
+| PC -> Mobile 平台派生、LOD/材质/贴图/碰撞生成链 | `Platform Variant Forge` 已生成 PC/Mobile variant plan，用 Unreal runtime probe 对照 StaticMesh facts，把 drift 转成 dry-run generation operations，采集材质/贴图 runtime facts，导入 public Texture2D payload 验证预算，并执行 public fixture max-size clamp / post-check / rollback | 已覆盖计划层 + Unreal L3 + L3-derived generation plan + texture runtime L3 + Texture2D payload L3 + controlled executor L3 | 更复杂资产、LOD/Nanite/collision executor 扩展 |
 | Groom/XGen 到 Unreal | 只有计划提炼 | 未开发 | 开发 `Groom Export Inspector` |
 
 ## 3. 计划中的插件线
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R32 Presenter Pack 29/29 evidence present；21 步 demo route；新增 command bridge |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R33 Presenter Pack 30/30 evidence present；22 步 demo route；新增 controlled executor probe |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
 | 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max 等 DCC 采集事实后检查 | Maya L3；Blender L3；3ds Max L3 |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
@@ -64,7 +65,7 @@ R32 的硬证据：
 | 13 | Unreal Animation Bridge | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts | Unreal import L3 完成；2/2 sequences present，4 synthetic assets imported |
 | 14 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成，1 Ready / 1 Blocked |
 | 15 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | Maya `mayapy` L3 完成，1 Ready / 1 Blocked |
-| 16 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload 完成：payload runtime 2 Ready / 0 Review / 1 Blocked |
+| 16 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload + R33 controlled executor 完成：executor Ready，7 pass / 0 warning / 0 error，rollback fingerprint matched |
 | 17 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
 | 18 | Groom Export Inspector | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、Alembic payload | 计划阶段 |
 
@@ -72,7 +73,7 @@ R32 的硬证据：
 
 | 插件/工具线 | 完成度判断 | 能展示什么 | 不能展示什么 |
 | --- | --- | --- | --- |
-| Maya Host / Presenter Pack | 95% | Maya 内打开工具、外部 command bridge、21 步 demo route、29 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
+| Maya Host / Presenter Pack | 95% | Maya 内打开工具、外部 command bridge、22 步 demo route、30 个证据文件探测 | 9 张截图和 1 段录屏未采集 |
 | Asset Protocol Workbench | 75% | Maya 节点 custom attr 协议写入、inspect、DCC evidence report | UV/vertex color 语义 carrier 未实装 |
 | Cross-DCC Rule Matrix | 80% | Maya scene facts、6 条规则、fix preview、Blender/Max runtime adapter | Houdini adapter 未做；规则覆盖仍可加深 |
 | Visual Review Studio | 55% | camera rig、pass manifest、capture preview path、review report | 真实 playblast/截图、图片 diff、HTML 视觉报告未进入 DCC-first media |
@@ -87,7 +88,7 @@ R32 的硬证据：
 | Unreal Animation Bridge | 55% | Maya 生成 FBX、Unreal Python 导入 Skeleton/SkeletalMesh/AnimSequence、2/2 sequences present、Maya L3 source comparison | frame/sample-rate/curve/compression facts 还可继续深化 |
 | Character Calibration Studio | 45% | Maya `mayapy` L3 采集 topology signature、joint coverage、calibration delta、face params、Control Rig mapping | 没有 Maya UI drilldown、Unreal Control Rig runtime 对照 |
 | Spatial Authoring Workbench | 45% | Maya `mayapy` L3 采集 socket parent joint、offset、mirror pair、hotspot semantic/owner、pose frame、local space、preview locator、pose transfer approval | 没有 Maya UI drilldown、Unreal socket/Skeleton 对照 |
-| Platform Variant Forge | 74% | PC/Mobile variant plan、Unreal preset fact join、Unreal 5.3 runtime-vs-plan 检查、dry-run generation operation contract、material/texture runtime facts、public 2048 Texture2D payload budget proof | 还没有受控 executor 和复杂真实风格资产 fixture |
+| Platform Variant Forge | 82% | PC/Mobile variant plan、Unreal preset fact join、Unreal 5.3 runtime-vs-plan 检查、dry-run generation operation contract、material/texture runtime facts、public 2048 Texture2D payload budget proof、public fixture 受控执行和 rollback | 还缺 LOD/Nanite/collision executor 扩展和复杂真实风格资产 fixture |
 | Character LOD Bake / Groom | 5-10% | 方法提炼和计划 | 还没有代码闭环 |
 
 ## 5. 需要手动操作的活
@@ -119,7 +120,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
    ```powershell
    python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --show-portfolio
-   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r32-platform-variant-texture-payload-presentation-pack
+   python <repo>\dcc-hosts\maya-auroraview-host\scripts\send_maya_command.py --export-presenter-pack r33-platform-variant-controlled-executor-presentation-pack
    ```
 
 仍需要人工或 GUI 自动化采集的内容：9 张 Maya GUI PNG 和 1 段 MP4，目标目录：
@@ -130,4 +131,4 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness 或 Unreal missing fixture 打转，它们已进入真实 runtime 证据。`Spatial Authoring Workbench` 已从计划进入 Maya L3，`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector 和 public Texture2D payload fixture；后续优先补 controlled executor，或深化 Character Calibration / Spatial Authoring 的 Maya UI drilldown 与 Unreal 对照。
+下一轮不要再围绕 Blender/Max readiness 或 Unreal missing fixture 打转，它们已进入真实 runtime 证据。`Spatial Authoring Workbench` 已从计划进入 Maya L3，`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture 和 controlled executor；后续优先扩展 executor 的 LOD / Nanite / collision approval receipts，或深化 Character Calibration / Spatial Authoring 的 Maya UI drilldown 与 Unreal 对照。

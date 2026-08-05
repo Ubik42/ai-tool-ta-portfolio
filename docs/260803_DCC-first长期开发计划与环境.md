@@ -1229,3 +1229,35 @@ ai-tool-ta-dcc-first-showcase-r32 / dcc-first-package@1.29.0
 ```text
 generation plan + texture payload artifact -> select safe public fixture operation -> preflight fingerprint -> execute in /Game/AI_Tool_TA public scope -> post-check -> rollback artifact -> Presenter Pack row -> docs
 ```
+
+## R33 循环开发断点：Platform Variant Controlled Executor
+
+R33 已完成 `Platform Variant Controlled Executor` L3：
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json
+```
+
+R33 结果：`run_controlled_executor.py` 调用本机 UnrealEditor-Cmd 5.3，打开 public test project，读取 R30 generation plan 和 R32 texture payload artifact，选择 HeroPanel Mobile texture downscale 的 public-safe max texture size clamp。执行器先记录 `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor` preflight fingerprint `2502b08c541495a4` 和 maxTextureSize=0，再执行 maxTextureSize=2048 并保存，post-check fingerprint 变为 `4374814fafe3a008`，最后 rollback 到 maxTextureSize=0 并确认 fingerprint 回到 `2502b08c541495a4`。报告为 L3 / `Ready` / `unreal_texture_budget_executor_rolled_back`，7 pass / 0 warning / 0 error，1 executed operation，1 post-check pass，1 rollback pass，assetWrites=2，persistentMutation=false。
+
+当前 public package：
+
+```text
+ai-tool-ta-dcc-first-showcase-r33 / dcc-first-package@1.30.0
+Presenter Pack evidence: 30 / 30 present, 0 missing, 22 route steps
+```
+
+验证命令：
+
+```powershell
+.\scripts\validate_loop.ps1 -Tier platform-variant-executor
+.\scripts\validate_loop.ps1 -Tier quick
+.\scripts\validate_loop.ps1 -Tier package
+```
+
+默认下一轮开发 `Platform Variant Executor Expansion`：
+
+```text
+controlled executor artifact -> add LOD / Nanite / collision candidate receipts -> approval and rollback boundaries -> public-safe non-production proof -> Presenter Pack row -> docs
+```

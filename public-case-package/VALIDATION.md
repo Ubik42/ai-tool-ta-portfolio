@@ -4,6 +4,8 @@
 
 | Command id | Command | Proves |
 | --- | --- | --- |
+| `validate-r33-platform-variant-controlled-executor` | `python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py` | Unreal 5.3.2 Python applies `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor` max texture size 0 -> 2048, verifies the post-state, rolls back to fingerprint `2502b08c541495a4`, and reports 7 pass checks, 0 warnings and 0 errors. |
+| `validate-r33-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r33-platform-variant-controlled-executor-presentation-pack")` | DCC Presenter Pack probes 30 key evidence files including Platform Variant Controlled Executor, reports 30 present / 0 missing required files, and exports 22 demo route steps. |
 | `validate-r32-platform-variant-texture-payload` | `python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py` | Unreal 5.3.2 Python imports a generated public 2048 Texture2D, wires it to `M_HeroPanel`, and rechecks 3 variants as 2 Ready / 0 Review / 1 Blocked with 20 pass checks, 0 warnings and 1 error. |
 | `validate-r32-dcc-presenter-pack` | `Maya mayapy dcc_presentation_export_pack(label="r32-platform-variant-texture-payload-presentation-pack")` | DCC Presenter Pack probes 29 key evidence files including Platform Variant Public Texture2D Payload Fixture, reports 29 present / 0 missing required files, and exports 21 demo route steps. |
 | `validate-r31-platform-variant-texture-runtime` | `python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py` | Unreal 5.3.2 Python collects material slot, dependency query and Texture2D budget facts for 3 planned variants, reporting 1 Ready / 1 Review / 1 Blocked, 19 pass checks, 1 warning and 1 error. |

@@ -1,0 +1,223 @@
+{
+  "reportVersion": "platform-variant-controlled-executor@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Platform Variant Forge",
+  "generatedAt": "2026-08-05 20:08:18",
+  "evidenceLevel": "L3",
+  "l3Status": "unreal_texture_budget_executor_rolled_back",
+  "sourceGenerationPlan": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-generation-plan-20260805-190052.json",
+    "reportVersion": "platform-variant-generation-plan@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "runtime_drift_to_generation_plan",
+    "gate": "Blocked"
+  },
+  "sourceTexturePayload": {
+    "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-payload-runtime-20260805-193515.json",
+    "reportVersion": "platform-variant-texture-payload-runtime@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_texture_payload_fixture_collected",
+    "gate": "Blocked",
+    "readyVariants": 2,
+    "blockedVariants": 1
+  },
+  "selectedOperation": {
+    "id": "variant-hero-panel-001:mobile:apply-texture-max-size-clamp",
+    "sourceGenerationOperationId": "variant-hero-panel-001:mobile:downscale-textures",
+    "sourceTexturePayloadRowId": "variant-hero-panel-001:mobile:runtime-texture-max-size",
+    "assetId": "variant-hero-panel-001",
+    "platform": "mobile",
+    "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+    "targetTexturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+    "targetMaxTextureSize": 2048,
+    "action": "apply-texture-max-size-clamp",
+    "reason": "R32 payload facts make the Mobile texture budget executable inside the public fixture.",
+    "previousMaxTextureSize": 0,
+    "sourceGenerationOperation": {
+      "id": "variant-hero-panel-001:mobile:downscale-textures",
+      "assetId": "variant-hero-panel-001",
+      "assetLabel": "Hero Panel Platform Variant",
+      "platform": "mobile",
+      "action": "downscale-textures",
+      "ruleId": "runtime-texture-budget",
+      "status": "Review",
+      "reason": "Runtime texture source facts are not collected yet; planner can only emit the bake contract.",
+      "runtimeEvidence": null,
+      "sourceRuntimeStatus": null,
+      "preview": "Downscale texture set and repack platform material payload.",
+      "ownerApproval": "art-lead",
+      "approvalRequired": true,
+      "mutationScope": "dry_run_plan_only",
+      "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+      "deterministicParams": {
+        "targetEnginePath": "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M",
+        "expectedTextureMaxPixels": 2048,
+        "expectedTextureMemoryMb": 52,
+        "materialPaths": [
+          "/Game/AI_Tool_TA/Materials/M_HeroPanel.M_HeroPanel"
+        ],
+        "missingRuntimeTextureFacts": true
+      },
+      "unrealPythonPreview": "Texture pipeline adapter exports resized maps before Unreal material reassignment.",
+      "transactionPolicy": {
+        "preflightFingerprint": "required",
+        "writeSet": [
+          "/Game/AI_Tool_TA/Props/Mobile/SM_HeroPanel_A_M"
+        ],
+        "rollback": "restore asset from preflight duplicate or source control checkout",
+        "productionWrite": false
+      }
+    }
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "engineWrites": 0,
+    "assetWrites": 2,
+    "productionWrites": 0,
+    "writeScope": "/Game/AI_Tool_TA public test fixture only"
+  },
+  "transaction": {
+    "mode": "execute_then_rollback",
+    "writeSet": [
+      "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor"
+    ],
+    "rollbackActions": [
+      {
+        "id": "rollback-texture-max-size",
+        "kind": "restore_texture_max_size",
+        "targetTexturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+        "restoreValue": 0
+      }
+    ],
+    "preflight": {
+      "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+      "exists": true,
+      "className": "Texture2D",
+      "width": 2048,
+      "height": 2048,
+      "maxDimension": 2048,
+      "maxTextureSize": 0,
+      "srgb": true,
+      "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "fingerprint": "2502b08c541495a4"
+    },
+    "postExecution": {
+      "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+      "exists": true,
+      "className": "Texture2D",
+      "width": 2048,
+      "height": 2048,
+      "maxDimension": 2048,
+      "maxTextureSize": 2048,
+      "srgb": true,
+      "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "fingerprint": "4374814fafe3a008"
+    },
+    "rollback": {
+      "texturePath": "/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor",
+      "exists": true,
+      "className": "Texture2D",
+      "width": 2048,
+      "height": 2048,
+      "maxDimension": 2048,
+      "maxTextureSize": 0,
+      "srgb": true,
+      "compressionSettings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "lodGroup": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "fingerprint": "2502b08c541495a4"
+    }
+  },
+  "evaluation": {
+    "schema": "platform-variant-controlled-executor-evaluation@0.1.0",
+    "summary": {
+      "gate": "Ready",
+      "rowCount": 7,
+      "pass": 7,
+      "warning": 0,
+      "error": 0,
+      "executedOperations": 1,
+      "postCheckPassed": 1,
+      "rollbackPassed": 1,
+      "writeSetCount": 1,
+      "assetWrites": 2,
+      "persistentMutation": false
+    },
+    "rows": [
+      {
+        "id": "controlled-executor:runtime-available",
+        "ruleId": "runtime-available",
+        "status": "pass",
+        "evidence": "Unreal runtime executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:public-scope",
+        "ruleId": "public-scope",
+        "status": "pass",
+        "evidence": "writeSet=['/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:preflight-fingerprint",
+        "ruleId": "preflight-fingerprint",
+        "status": "pass",
+        "evidence": "preflight=/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor exists=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:execute-write",
+        "ruleId": "execute-write",
+        "status": "pass",
+        "evidence": "maxTextureSize before=0 after=2048 expected=2048",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:post-check",
+        "ruleId": "post-check",
+        "status": "pass",
+        "evidence": "postFingerprint=4374814fafe3a008 preflightFingerprint=2502b08c541495a4",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:rollback",
+        "ruleId": "rollback",
+        "status": "pass",
+        "evidence": "rollbackFingerprint=2502b08c541495a4 preflightFingerprint=2502b08c541495a4 maxTextureSize=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "controlled-executor:production-boundary",
+        "ruleId": "production-boundary",
+        "status": "pass",
+        "evidence": "engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "platform-variant-controlled-executor",
+    "name": "Platform Variant Controlled Executor",
+    "methodSource": "Unreal public fixture execute/post-check/rollback receipt",
+    "protocolCarrier": "R30 generation operation + R32 Texture2D payload facts + Unreal Python transaction",
+    "boundary": {
+      "mutation": "public_fixture_execute_then_rollback",
+      "engineWrites": 0,
+      "assetWrites": 2,
+      "productionWrites": 0,
+      "writeScope": "/Game/AI_Tool_TA public test fixture only",
+      "persistentMutation": false
+    }
+  },
+  "reviewerClaims": [
+    "R33 executes a real Unreal Python property write only inside the public fixture scope.",
+    "The executor records preflight, writeSet, post-check and rollback fingerprints instead of treating execution as a success string.",
+    "The selected operation is tied back to R30 generation planning and R32 Texture2D payload facts.",
+    "The final committed state is rolled back; production writes remain zero."
+  ]
+}

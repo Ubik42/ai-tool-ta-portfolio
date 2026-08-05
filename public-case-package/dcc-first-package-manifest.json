@@ -1,6 +1,6 @@
 {
-  "packageId": "ai-tool-ta-dcc-first-showcase-r32",
-  "packageVersion": "dcc-first-package@1.29.0",
+  "packageId": "ai-tool-ta-dcc-first-showcase-r33",
+  "packageVersion": "dcc-first-package@1.30.0",
   "generatedAt": "2026-08-05T19:00:41+08:00",
   "sourceReportVersion": "maya-dcc-portfolio-case-page@1.1.0",
   "runbookReportVersion": "maya-dcc-showcase-runbook-package@1.4.0",
@@ -14,7 +14,7 @@
   "sourceCaseGate": "Review",
   "summary": {
     "moduleCount": 5,
-    "artifactCount": 17,
+    "artifactCount": 18,
     "casePageSections": 6,
     "casePageArtifactRows": 4,
     "ready": 3,
@@ -40,7 +40,7 @@
     "assetHandoffDecisionOwnerRequired": 1,
     "assetHandoffDecisionEngineReady": 1,
     "assetHandoffDecisionEngineHeld": 1,
-    "reviewerClaims": 6,
+    "reviewerClaims": 23,
     "engineHandoffPreflightGate": "Review",
     "engineHandoffPreflightAssets": 2,
     "engineHandoffPreflightReady": 1,
@@ -99,10 +99,10 @@
     "unrealHandoffInspectorReviewChecks": 2,
     "unrealHandoffInspectorBlockedChecks": 4,
     "presentationPackGate": "CapturePending",
-    "presentationPackEvidenceFiles": 29,
-    "presentationPackPresentEvidenceFiles": 29,
+    "presentationPackEvidenceFiles": 30,
+    "presentationPackPresentEvidenceFiles": 30,
     "presentationPackMissingRequiredFiles": 0,
-    "presentationPackDemoRouteSteps": 21,
+    "presentationPackDemoRouteSteps": 22,
     "unrealPresetFactComparisonGate": "Blocked",
     "unrealPresetFactComparisonPresets": 2,
     "unrealPresetFactComparisonAssets": 1,
@@ -152,7 +152,7 @@
     "animationContinuityPassChecks": 11,
     "animationContinuityWarningChecks": 3,
     "animationContinuityErrorChecks": 6,
-    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json",
+    "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
     "unrealAnimationBridgeReportVersion": "unreal-animation-bridge-import-l3@0.1.0",
     "unrealAnimationBridgeArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-import-l3-20260805-173309.json",
     "unrealAnimationBridgeContractArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-contract-20260805-173354.json",
@@ -278,7 +278,21 @@
     "platformVariantTexturePayloadErrorChecks": 1,
     "platformVariantTexturePayloadTextureDependencies": 3,
     "platformVariantTexturePayloadMaxDimension": 2048,
-    "platformVariantTexturePayloadEstimatedMemoryMb": 48.0
+    "platformVariantTexturePayloadEstimatedMemoryMb": 48.0,
+    "platformVariantControlledExecutorReportVersion": "platform-variant-controlled-executor@0.1.0",
+    "platformVariantControlledExecutorArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
+    "platformVariantControlledExecutorEvidenceLevel": "L3",
+    "platformVariantControlledExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+    "platformVariantControlledExecutorGate": "Ready",
+    "platformVariantControlledExecutorEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "platformVariantControlledExecutorExecuted": 1,
+    "platformVariantControlledExecutorPostCheck": 1,
+    "platformVariantControlledExecutorRollback": 1,
+    "platformVariantControlledExecutorAssetWrites": 2,
+    "platformVariantControlledExecutorPersistentMutation": false,
+    "platformVariantControlledExecutorPassChecks": 7,
+    "platformVariantControlledExecutorWarningChecks": 0,
+    "platformVariantControlledExecutorErrorChecks": 0
   },
   "moduleOrder": [
     "asset-protocol",
@@ -480,6 +494,12 @@
       "kind": "artifact",
       "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-texture-payload-runtime-20260805-193515.json",
       "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-controlled-executor",
+      "kind": "artifact",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
+      "required": true
     }
   ],
   "validation": [
@@ -527,11 +547,15 @@
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py",
     "python dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py",
     "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/texture_runtime.py dcc-hosts/platform-variant-forge/scripts/run_texture_runtime_probe.py dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py dcc-hosts/platform-variant-forge/scripts/unreal_python/collect_texture_runtime.py",
-    "python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py"
+    "python dcc-hosts/platform-variant-forge/scripts/run_texture_payload_probe.py",
+    "python -m py_compile dcc-hosts/platform-variant-forge/platform_variant_forge/controlled_executor.py dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py dcc-hosts/platform-variant-forge/scripts/unreal_python/execute_controlled_variant.py",
+    "python dcc-hosts/platform-variant-forge/scripts/run_controlled_executor.py"
   ],
   "notes": [
+    "Current final presentation route is DCC-first through the R33 Presenter Pack.",
+    "R33 adds Platform Variant Controlled Executor: Unreal Python applies a public Texture2D max-size clamp, validates post-state, and rolls back to the preflight fingerprint.",
     "R32 adds Platform Variant Public Texture2D Payload Fixture: a generated 2048 public texture is imported into Unreal, wired to M_HeroPanel, and proves PC/Mobile texture budgets against real Texture2D facts.",
-    "Current final presentation route is DCC-first through the R32 Presenter Pack.",
+    "Current final presentation route is DCC-first through the R33 Presenter Pack.",
     "R31 adds Platform Variant Texture Runtime Collector: Unreal Python collects StaticMesh material slots, material dependency queries and Texture2D budget facts for planned PC/Mobile variants.",
     "R30 adds Platform Variant Generation Planner: runtime drift is converted into dry-run LOD, Nanite, material bake, texture downscale, collision and asset creation operations with transaction and approval boundaries.",
     "R29 adds Platform Variant Unreal Runtime Probe: Unreal Python collects public StaticMesh runtime facts for planned PC/Mobile variants and compares runtime path, LOD, material, Nanite and collision state against the variant plan.",
@@ -589,7 +613,7 @@
   "unrealHandoffInspectorCollisionSimpleShapes": 1,
   "unrealHandoffInspectorGate": "Blocked",
   "presentationPackReportVersion": "maya-dcc-presentation-pack@0.1.0",
-  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json",
+  "presentationPackArtifact": "<repo>\\dcc-hosts\\maya-auroraview-host\\artifacts\\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json",
   "presentationPackGate": "CapturePending",
   "unrealPresetFactComparisonReportVersion": "unreal-preset-fact-comparison@0.1.0",
   "unrealPresetFactComparisonArtifact": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\artifacts\\unreal-preset-fact-comparison-20260803-185302.json",
@@ -666,7 +690,7 @@
   "unrealAnimationBridgeWarningChecks": 1,
   "unrealAnimationBridgeErrorChecks": 5,
   "unrealAnimationBridgeMissingSequences": 0,
-  "artifactCount": 17,
+  "artifactCount": 18,
   "unrealAnimationBridgeReadinessReportVersion": "unreal-animation-bridge-readiness@0.1.0",
   "unrealAnimationBridgeReadinessArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-bridge-readiness-20260805-173401.json",
   "unrealAnimationBridgeImportSuccess": true,
@@ -705,6 +729,13 @@
       "label": "Character Calibration Maya L3",
       "kind": "json",
       "path": "<repo>\\dcc-hosts\\character-calibration-studio\\artifacts\\character-calibration-maya-l3-20260805-175057.json",
+      "required": true
+    },
+    {
+      "id": "dcc-first-platform-variant-controlled-executor",
+      "label": "Platform Variant Controlled Executor",
+      "kind": "json",
+      "path": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
       "required": true
     }
   ],
@@ -813,5 +844,19 @@
   "platformVariantTexturePayloadErrorChecks": 1,
   "platformVariantTexturePayloadTextureDependencies": 3,
   "platformVariantTexturePayloadMaxDimension": 2048,
-  "platformVariantTexturePayloadEstimatedMemoryMb": 48.0
+  "platformVariantTexturePayloadEstimatedMemoryMb": 48.0,
+  "platformVariantControlledExecutorReportVersion": "platform-variant-controlled-executor@0.1.0",
+  "platformVariantControlledExecutorArtifact": "<repo>\\dcc-hosts\\platform-variant-forge\\artifacts\\platform-variant-controlled-executor-20260805-200810.json",
+  "platformVariantControlledExecutorEvidenceLevel": "L3",
+  "platformVariantControlledExecutorL3Status": "unreal_texture_budget_executor_rolled_back",
+  "platformVariantControlledExecutorGate": "Ready",
+  "platformVariantControlledExecutorEngineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+  "platformVariantControlledExecutorExecuted": 1,
+  "platformVariantControlledExecutorPostCheck": 1,
+  "platformVariantControlledExecutorRollback": 1,
+  "platformVariantControlledExecutorAssetWrites": 2,
+  "platformVariantControlledExecutorPersistentMutation": false,
+  "platformVariantControlledExecutorPassChecks": 7,
+  "platformVariantControlledExecutorWarningChecks": 0,
+  "platformVariantControlledExecutorErrorChecks": 0
 }

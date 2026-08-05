@@ -2,25 +2,25 @@
 
 This is the current reviewer entry point for the AI Tool TA portfolio.
 
-The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R32 Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Texture Payload Reviewer Pack.
+The portfolio is now demonstrated inside Maya through AuroraView. The browser build remains the embedded UI surface and evidence browser; the primary proof is the Maya-hosted R33 Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Controlled Executor Reviewer Pack.
 
 ## Current Package
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-dcc-first-showcase-r32` |
-| Version | `dcc-first-package@1.29.0` |
+| Package | `ai-tool-ta-dcc-first-showcase-r33` |
+| Version | `dcc-first-package@1.30.0` |
 | Source report | `maya-dcc-portfolio-case-page@1.1.0` |
 | Gate | `CapturePending` |
 | Modules | 5 |
-| DCC artifacts | 17 |
+| DCC artifacts | 18 |
 | Case page sections | 6 |
 | Case page artifacts | 6 |
 | Business route steps | 7 |
 | Presenter pack report | `maya-dcc-presentation-pack@0.1.0` |
-| Presenter pack evidence files | 29 / 29 present |
+| Presenter pack evidence files | 30 / 30 present |
 | Presenter pack missing required files | 0 |
-| Presenter demo route steps | 21 |
+| Presenter demo route steps | 22 |
 | GUI evidence shots | 9 |
 | GUI evidence recordings | 1 |
 | GUI media audit | `CapturePending` |
@@ -92,6 +92,10 @@ The portfolio is now demonstrated inside Maya through AuroraView. The browser bu
 | Platform variant texture payload variants ready/review/blocked | 2 / 0 / 1 |
 | Platform variant texture payload checks pass/warn/error | 20 / 0 / 1 |
 | Platform variant texture payload engine | `unreal_texture_payload_fixture_collected`, Unreal 5.3.2, final rerun assetWrites=0 |
+| Platform variant controlled executor | `Ready` L3 |
+| Platform variant controlled executor operation | Texture max-size clamp `0 -> 2048 -> 0` rollback |
+| Platform variant controlled executor checks pass/warn/error | 7 / 0 / 0 |
+| Platform variant controlled executor runtime | `unreal_texture_budget_executor_rolled_back`, Unreal 5.3.2, executed/post/rollback=1/1/1, assetWrites=2, persistentMutation=false |
 | Blocked modules | 0 |
 | Host | Maya 2024 / AuroraView |
 
@@ -127,19 +131,20 @@ Then follow the Presenter Pack route:
 14. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py`.
 15. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py`.
 16. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py`.
-17. Review the Blender Rule Adapter artifact.
-18. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
-19. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
-20. Audit GUI media after final Maya screenshots and recording are captured.
-21. Export and hand off the Presenter Pack.
+17. Run `python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py`.
+18. Review the Blender Rule Adapter artifact.
+19. Run `python <repo>\dcc-hosts\blender-rule-adapter\scripts\run_l3_smoke.py`.
+20. Run `python <repo>\dcc-hosts\3dsmax-rule-adapter\scripts\run_l3_smoke.py --run-runtime --timeout-seconds 600`.
+21. Audit GUI media after final Maya screenshots and recording are captured.
+22. Export and hand off the Presenter Pack.
 
 ## Presenter Pack Artifact
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json
 ```
 
-The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 21-step demo route, 7-step business route, public package manifest, 29 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
+The Presenter Pack is the current public-facing DCC-first delivery object. It binds the Maya entry, 22-step demo route, 7-step business route, public package manifest, 30 key evidence file probes, GUI media audit, reviewer claims, preset fact reviewer queue, Scene Transaction Guard, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Blender bpy L3 adapter, 3ds Max pymxs L3 adapter, and mutation boundaries. Current gate is `CapturePending` because code and JSON evidence are complete while 9 Maya screenshots and 1 route recording are still missing.
 
 ## Case Page Artifact
 
@@ -340,6 +345,14 @@ This is the R31 material / texture runtime evidence layer above the generation p
 
 This is the R32 public payload layer above the texture runtime collector. It generates a public 2048 PNG in runtime temp, imports it into Unreal as `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor`, wires it to `M_HeroPanel`, then re-collects StaticMesh -> material -> Texture2D facts for the same PC/Mobile variant plan. The artifact reports L3, 3 variants, 2 Ready, 0 Review, 1 intentionally Blocked, 20 pass checks, 0 warnings and 1 error. HeroPanel Mobile is now Ready against real Texture2D size and memory facts; the remaining Blocked row is the synthetic vehicle fixture with missing source/target assets. The committed final rerun is idempotent with assetWrites=0; if the fixture is missing, writes stay scoped to `/Game/AI_Tool_TA`.
 
+## Platform Variant Controlled Executor
+
+```text
+<repo>\dcc-hosts\platform-variant-forge\artifacts\platform-variant-controlled-executor-20260805-200810.json
+```
+
+This is the R33 controlled execution layer above the public Texture2D payload fixture. It reads the R30 generation plan and R32 texture payload facts, selects the Mobile HeroPanel texture downscale operation, captures a preflight fingerprint, sets `/Game/AI_Tool_TA/Textures/T_HeroPanel_BaseColor` max texture size from 0 to 2048, verifies the post-state fingerprint changed, then rolls the public fixture back to the original fingerprint `2502b08c541495a4`. The artifact reports L3, gate `Ready`, 7 pass checks, 0 warnings, 0 errors, 1 executed operation, 1 post-check pass, 1 rollback pass, 2 public fixture asset writes and `persistentMutation=false`. No production Unreal content is changed.
+
 ## Blender Rule Adapter
 
 ```text
@@ -375,10 +388,10 @@ This is the R22 bridge from Max contract adapter to real `pymxs` runtime. `3dsma
 ## DCC Presenter Pack
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r32-platform-variant-texture-payload-presentation-pack-20260805-194432.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r33-platform-variant-controlled-executor-presentation-pack-20260805-200857.json
 ```
 
-The Presenter Pack is the R32 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 29 / 29 evidence files present, 0 missing required files, 21 demo route steps, and `CapturePending` media status.
+The Presenter Pack is the R33 delivery layer above the case page. It does not create new production claims; it probes whether the public package, case page, GUI audit, handoff decision, engine preflight, preset comparison, Animation Continuity Lab, Unreal Animation Bridge import L3, Character Calibration Maya L3, Spatial Authoring Maya L3, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Blender adapter, Blender L3 runtime, 3ds Max adapter, Max L3 runtime, Unreal L3++ inspector, Unreal preset fact comparison, Maya-hosted preset fact review, and Scene Transaction Guard artifacts are present and ready to show from Maya. It reports 30 / 30 evidence files present, 0 missing required files, 22 demo route steps, and `CapturePending` media status.
 
 ## Validation
 
@@ -454,6 +467,11 @@ python <repo>\dcc-hosts\platform-variant-forge\scripts\run_generation_plan.py
 python -m py_compile <repo>\dcc-hosts\platform-variant-forge\platform_variant_forge\texture_runtime.py <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py <repo>\dcc-hosts\platform-variant-forge\scripts\unreal_python\collect_texture_runtime.py
 python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_runtime_probe.py
 python <repo>\dcc-hosts\platform-variant-forge\scripts\run_texture_payload_probe.py
+```
+
+```powershell
+python -m py_compile <repo>\dcc-hosts\platform-variant-forge\platform_variant_forge\controlled_executor.py <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py <repo>\dcc-hosts\platform-variant-forge\scripts\unreal_python\execute_controlled_variant.py
+python <repo>\dcc-hosts\platform-variant-forge\scripts\run_controlled_executor.py
 ```
 
 Maya 2024 `mayapy` smoke:
@@ -534,6 +552,12 @@ Maya 2024 `mayapy` smoke:
 - platform variant texture payload variants ready/review/blocked: 2 / 0 / 1
 - platform variant texture payload checks pass/warn/error: 20 / 0 / 1
 - platform variant texture payload engine: Unreal 5.3.2, assetWrites=0, Texture2D dependencies=3
+- platform variant controlled executor report: `platform-variant-controlled-executor@0.1.0`
+- platform variant controlled executor evidence / L3 status: L3 / `unreal_texture_budget_executor_rolled_back`
+- platform variant controlled executor gate: `Ready`
+- platform variant controlled executor executed/post-check/rollback: 1 / 1 / 1
+- platform variant controlled executor checks pass/warn/error: 7 / 0 / 0
+- platform variant controlled executor writes / persistent mutation: 2 asset writes / false
 - blender rule adapter report: `blender-rule-adapter-contract@0.1.0`
 - blender evidence level / L3 status: L3 / `bpy_scene_collected`
 - blender adapter gate: `Blocked`
@@ -561,10 +585,10 @@ Maya 2024 `mayapy` smoke:
 - unreal preset fact platform split / approved waivers: 1 / 1
 - unreal preset fact review report: `maya-unreal-preset-fact-review@0.1.0`
 - unreal preset fact review rows / queue / blocked / waivers: 10 / 3 / 1 / 1
-- presenter pack evidence files present/missing: 29 / 0
-- presenter pack demo route steps: 21
-- reviewer claims: 22
+- presenter pack evidence files present/missing: 30 / 0
+- presenter pack demo route steps: 22
+- reviewer claims: 23
 
 ## Legacy Package
 
-The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R32 Maya Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Texture Payload Reviewer Pack.
+The R8 public package remains in `README.md`, `EVIDENCE_INDEX.md`, `SIGNOFFS.md`, and `VALIDATION.md` as the historical browser evidence ledger. The current final presentation route starts from the R33 Maya Cross-DCC / Engine / Animation / Character / Spatial / Platform Variant Controlled Executor Reviewer Pack.
