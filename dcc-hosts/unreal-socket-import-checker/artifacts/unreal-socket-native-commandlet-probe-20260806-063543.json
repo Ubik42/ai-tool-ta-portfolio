@@ -1,0 +1,53 @@
+{
+  "reportVersion": "unreal-socket-native-commandlet-probe@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Socket Import Checker",
+  "generatedAt": "2026-08-06 06:35:53",
+  "evidenceLevel": "L3-runtime",
+  "l3Status": "unreal_socket_native_commandlet_loaded",
+  "sourceBuildArtifact": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-bridge-build-20260806-061812.json",
+  "pluginPackageDir": "D:\\cs\\_test\\ai_tool_ta_socket_builds\\atsb-20260806-061812",
+  "tempProject": "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-commandlet-20260806-063543\\AI_Tool_TA_CommandletProbe.uproject",
+  "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "runtime": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "D:\\cs\\_test\\ai_tool_ta_socket_commandlet_probe\\atsb-commandlet-20260806-063543\\AI_Tool_TA_CommandletProbe.uproject",
+      "-run=AiToolTaSocketAuthoring",
+      "-unattended",
+      "-nop4",
+      "-nosplash",
+      "-NoAssetRegistryCache",
+      "-NoLogTimes"
+    ],
+    "returnCode": 0,
+    "runtimeError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-commandlet-logs\\unreal-socket-native-commandlet-probe-20260806-063543.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-socket-native-commandlet-logs\\unreal-socket-native-commandlet-probe-20260806-063543.stderr.log",
+    "contractLogSeen": true,
+    "readinessLogSeen": true,
+    "commandletName": "AiToolTaSocketAuthoring",
+    "errors": []
+  },
+  "summary": {
+    "gate": "Ready",
+    "unrealCliFound": true,
+    "buildArtifactFound": true,
+    "pluginPackageFound": true,
+    "runtimeAttempted": true,
+    "returnCode": 0,
+    "commandletName": "AiToolTaSocketAuthoring",
+    "commandletLoaded": true,
+    "readinessInvocation": true,
+    "errorLines": 0,
+    "tempProjectWrites": 70,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "The commandlet probe uses the R62 packaged plugin output, not an inferred source-only contract.",
+    "The Unreal project is copied to a temp folder under D:\\cs\\_test and the socket bridge plugin is enabled only there.",
+    "The probe executes -run=AiToolTaSocketAuthoring and treats the commandlet contract log plus readiness log as the runtime visibility proof.",
+    "No repo Unreal asset, engine content or production project is mutated by this readiness invocation."
+  ]
+}

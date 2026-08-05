@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r62-unreal-socket-native-build-presentation-pack",
+        label: str = "r63-unreal-socket-native-commandlet-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4218,6 +4218,12 @@ class MayaPortfolioApi:
                 "Unreal Socket Native Bridge Build artifact",
                 "artifact",
                 manifest.get("unrealSocketNativeBridgeBuildArtifact"),
+            ),
+            _probe_file(
+                "unreal-socket-native-commandlet",
+                "Unreal Socket Native Commandlet Probe artifact",
+                "artifact",
+                manifest.get("unrealSocketNativeCommandletProbeArtifact"),
             ),
             _probe_file(
                 "unreal-socket-api-docs",
@@ -4477,6 +4483,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal socket native bridge build",
                 "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_bridge_build.py.",
                 "evidence_expected": "RunUAT BuildPlugin compiles the public AI_Tool_TA_SocketBridge Editor module with a compatible UE 5.3 MSVC toolchain, records DLL hash evidence and restores the temporary UBT config.",
+            },
+            {
+                "id": "28d-run-unreal-socket-native-commandlet-probe",
+                "label": "Run Unreal socket native commandlet probe",
+                "operator_action": "Run python dcc-hosts/unreal-socket-import-checker/scripts/run_native_commandlet_probe.py.",
+                "evidence_expected": "A temp Unreal project loads the packaged AI_Tool_TA_SocketBridge plugin and executes -run=AiToolTaSocketAuthoring with a readiness-only invocation.",
             },
             {
                 "id": "29-run-unreal-gameplay-attach-fixture",
@@ -5227,6 +5239,14 @@ class MayaPortfolioApi:
                 "unreal_socket_native_bridge_build_error_lines": manifest_summary.get("unrealSocketNativeBridgeBuildErrorLines"),
                 "unreal_socket_native_bridge_build_compiler_version": manifest_summary.get("unrealSocketNativeBridgeBuildCompilerVersion"),
                 "unreal_socket_native_bridge_build_config_restored": manifest_summary.get("unrealSocketNativeBridgeBuildConfigRestored"),
+                "unreal_socket_native_commandlet_gate": manifest_summary.get("unrealSocketNativeCommandletProbeGate"),
+                "unreal_socket_native_commandlet_evidence_level": manifest_summary.get("unrealSocketNativeCommandletProbeEvidenceLevel"),
+                "unreal_socket_native_commandlet_l3_status": manifest_summary.get("unrealSocketNativeCommandletProbeL3Status"),
+                "unreal_socket_native_commandlet_return_code": manifest_summary.get("unrealSocketNativeCommandletProbeReturnCode"),
+                "unreal_socket_native_commandlet_loaded": manifest_summary.get("unrealSocketNativeCommandletProbeCommandletLoaded"),
+                "unreal_socket_native_commandlet_readiness": manifest_summary.get("unrealSocketNativeCommandletProbeReadinessInvocation"),
+                "unreal_socket_native_commandlet_error_lines": manifest_summary.get("unrealSocketNativeCommandletProbeErrorLines"),
+                "unreal_socket_native_commandlet_temp_project_writes": manifest_summary.get("unrealSocketNativeCommandletProbeTempProjectWrites"),
             },
             "demo_route": demo_route,
             "business_route": runbook_plan["presentation_route"],
@@ -5274,6 +5294,7 @@ class MayaPortfolioApi:
                 "Unreal Socket Authoring Executor proves the approved public socket row can enter an engine-side execution gate, and records the UE 5.3 Python read-only socket-name limitation as a blocked readiness artifact.",
                 "Unreal Socket Native Bridge Readiness proves the socket write path now needs a C++ commandlet or Editor Utility wrapper, and records source/plugin/binary readiness without mutating assets.",
                 "Unreal Socket Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin, records DLL hash evidence and restores the temporary UBT compiler configuration.",
+                "Unreal Socket Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaSocketAuthoring reaches the readiness commandlet contract.",
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
@@ -5310,7 +5331,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r62-unreal-socket-native-build-presentation-pack",
+        label: str = "r63-unreal-socket-native-commandlet-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
