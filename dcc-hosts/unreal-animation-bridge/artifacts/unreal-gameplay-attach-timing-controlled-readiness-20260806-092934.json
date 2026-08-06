@@ -1,0 +1,476 @@
+{
+  "reportVersion": "unreal-gameplay-attach-timing-controlled-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Gameplay Attach Timing Controlled Readiness",
+  "generatedAt": "2026-08-06 09:29:34",
+  "evidenceLevel": "L3-derived",
+  "l3Status": "unreal_gameplay_attach_timing_controlled_readiness_linked",
+  "sourceGameplayReadiness": {
+    "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-controlled-readiness-20260806-072642.json",
+    "reportVersion": "unreal-gameplay-attach-controlled-readiness@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "unreal_gameplay_attach_controlled_readiness_linked",
+    "gate": "Review"
+  },
+  "sourceAttachTimingReadiness": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+    "reportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "unreal_animation_attach_timing_readiness_linked",
+    "gate": "Blocked"
+  },
+  "sourceNotifyControlledWrite": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-notify-native-controlled-write-20260806-090946.json",
+    "reportVersion": "unreal-animation-notify-native-controlled-write@0.1.0",
+    "evidenceLevel": "L3-runtime-controlled-write",
+    "l3Status": "unreal_animation_notify_native_controlled_write_rolled_back",
+    "gate": "Ready"
+  },
+  "facts": {
+    "schema": "unreal-gameplay-attach-timing-controlled-readiness-input@0.1.0",
+    "sourceGameplayReadiness": {
+      "path": "<repo>\\dcc-hosts\\unreal-socket-import-checker\\artifacts\\unreal-gameplay-attach-controlled-readiness-20260806-072642.json",
+      "reportVersion": "unreal-gameplay-attach-controlled-readiness@0.1.0",
+      "evidenceLevel": "L3-derived",
+      "l3Status": "unreal_gameplay_attach_controlled_readiness_linked",
+      "gate": "Review"
+    },
+    "sourceAttachTimingReadiness": {
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+      "reportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+      "evidenceLevel": "L3-derived",
+      "l3Status": "unreal_animation_attach_timing_readiness_linked",
+      "gate": "Blocked"
+    },
+    "sourceNotifyControlledWrite": {
+      "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-notify-native-controlled-write-20260806-090946.json",
+      "reportVersion": "unreal-animation-notify-native-controlled-write@0.1.0",
+      "evidenceLevel": "L3-runtime-controlled-write",
+      "l3Status": "unreal_animation_notify_native_controlled_write_rolled_back",
+      "gate": "Ready"
+    },
+    "notifyControlledWrite": {
+      "gate": "Ready",
+      "runtimeSucceeded": true,
+      "returnCode": 0,
+      "commandletLoaded": true,
+      "outputStatus": "apply_postcheck_rollback_completed",
+      "requestCount": 2,
+      "applied": 2,
+      "postCheckPresent": 2,
+      "rollbackRemoved": 2,
+      "postRollbackPresent": 0,
+      "assetWrites": 4,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "finalHashRestored": true,
+      "assets": [
+        {
+          "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+          "requestCount": 1,
+          "publicFixtureTarget": true,
+          "loaded": true,
+          "preExisting": 0,
+          "results": [
+            {
+              "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+              "notifyName": "equip.attach",
+              "triggerTime": 0.3499999940395355,
+              "trackIndex": 0,
+              "intentId": "rifle-primary-equip",
+              "assetId": "spatial-rifle-authoring-001",
+              "slotRole": "primaryWeapon",
+              "sourceReceiptId": "rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach",
+              "alreadyPresent": false,
+              "applied": true,
+              "message": "Notify created on AnimSequence."
+            }
+          ],
+          "postCheckPresent": 1,
+          "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_RunStart.uasset",
+          "savedAfterApply": true,
+          "rollbackRemoved": 1,
+          "postRollbackPresent": 0,
+          "savedAfterRollback": true,
+          "finalNotifies": [],
+          "finalNotifyCount": 0,
+          "status": "apply_postcheck_rollback_completed"
+        },
+        {
+          "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+          "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+          "requestCount": 1,
+          "publicFixtureTarget": true,
+          "loaded": true,
+          "preExisting": 0,
+          "results": [
+            {
+              "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+              "notifyName": "gear.attach",
+              "triggerTime": 0.47999998927116394,
+              "trackIndex": 0,
+              "intentId": "backpack-temp-equip",
+              "assetId": "spatial-backpack-tmp-002",
+              "slotRole": "backpack",
+              "sourceReceiptId": "backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach",
+              "alreadyPresent": false,
+              "applied": true,
+              "message": "Notify created on AnimSequence."
+            }
+          ],
+          "postCheckPresent": 1,
+          "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_Attack_A.uasset",
+          "savedAfterApply": true,
+          "rollbackRemoved": 1,
+          "postRollbackPresent": 0,
+          "savedAfterRollback": true,
+          "finalNotifies": [],
+          "finalNotifyCount": 0,
+          "status": "apply_postcheck_rollback_completed"
+        }
+      ]
+    },
+    "intents": [
+      {
+        "id": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "assetLabel": "Rifle Socket Authoring Approved",
+        "slotRole": "primaryWeapon",
+        "sourceReadinessState": "ReadyByControlledExecutor",
+        "sourceReadyByControlledExecutor": true,
+        "publishRequired": true,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+        ],
+        "linkedSequenceCount": 1,
+        "deepFactErrorRules": [],
+        "requiredAttachTimingEvents": [
+          "equip.attach"
+        ],
+        "previousMissingAttachTimingEvents": [
+          "equip.attach"
+        ],
+        "controlledNotifyRows": [
+          {
+            "intentId": "rifle-primary-equip",
+            "assetId": "spatial-rifle-authoring-001",
+            "slotRole": "primaryWeapon",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "notifyName": "equip.attach",
+            "triggerTime": 0.3499999940395355,
+            "trackIndex": 0,
+            "sourceReceiptId": "rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach",
+            "applied": true,
+            "alreadyPresent": false,
+            "message": "Notify created on AnimSequence.",
+            "assetPostCheckPresent": 1,
+            "assetRollbackRemoved": 1,
+            "assetPostRollbackPresent": 0,
+            "assetStatus": "apply_postcheck_rollback_completed",
+            "savedAfterApply": true,
+            "savedAfterRollback": true
+          }
+        ],
+        "controlledNotifyEventNames": [
+          "equip.attach"
+        ],
+        "missingControlledAttachTimingEvents": [],
+        "notifyControlledWriteReady": true,
+        "postCheckRollbackReady": true,
+        "readinessState": "TimingReadyByControlledWrite"
+      },
+      {
+        "id": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "assetLabel": "Backpack Socket Temporary Blocked",
+        "slotRole": "backpack",
+        "sourceReadinessState": "HeldBySourceOwner",
+        "sourceReadyByControlledExecutor": false,
+        "publishRequired": false,
+        "animationAssetPaths": [
+          "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+        ],
+        "linkedSequenceCount": 1,
+        "deepFactErrorRules": [
+          "source-bridge-ready"
+        ],
+        "requiredAttachTimingEvents": [
+          "gear.attach"
+        ],
+        "previousMissingAttachTimingEvents": [
+          "gear.attach"
+        ],
+        "controlledNotifyRows": [
+          {
+            "intentId": "backpack-temp-equip",
+            "assetId": "spatial-backpack-tmp-002",
+            "slotRole": "backpack",
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "notifyName": "gear.attach",
+            "triggerTime": 0.47999998927116394,
+            "trackIndex": 0,
+            "sourceReceiptId": "backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach",
+            "applied": true,
+            "alreadyPresent": false,
+            "message": "Notify created on AnimSequence.",
+            "assetPostCheckPresent": 1,
+            "assetRollbackRemoved": 1,
+            "assetPostRollbackPresent": 0,
+            "assetStatus": "apply_postcheck_rollback_completed",
+            "savedAfterApply": true,
+            "savedAfterRollback": true
+          }
+        ],
+        "controlledNotifyEventNames": [
+          "gear.attach"
+        ],
+        "missingControlledAttachTimingEvents": [],
+        "notifyControlledWriteReady": true,
+        "postCheckRollbackReady": true,
+        "readinessState": "HeldBySocketOrSource"
+      }
+    ]
+  },
+  "evaluation": {
+    "schema": "unreal-gameplay-attach-timing-controlled-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Review",
+      "fullFixtureGate": "Blocked",
+      "notifyControlledWriteReady": true,
+      "intentCount": 2,
+      "timingReadyByControlledWrite": 1,
+      "heldBySocketOrSource": 1,
+      "timingBlocked": 0,
+      "publishRequiredIntents": 1,
+      "requiredAttachTimingEvents": 2,
+      "coveredAttachTimingEvents": 2,
+      "missingAttachTimingEventsAfterControlledWrite": 0,
+      "primaryReadyIntentIds": [
+        "rifle-primary-equip"
+      ],
+      "heldIntentIds": [
+        "backpack-temp-equip"
+      ],
+      "blockedIntentIds": [],
+      "postCheckPresent": 2,
+      "rollbackRemoved": 2,
+      "postRollbackPresent": 0,
+      "pass": 12,
+      "warning": 1,
+      "error": 2,
+      "assetWrites": 4,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false,
+      "finalHashRestored": true
+    },
+    "rows": [
+      {
+        "id": "rifle-primary-equip:gameplay-controlled-readiness",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "pass",
+        "evidence": "sourceReadinessState=ReadyByControlledExecutor",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:animation-sequence-linked",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "animation-sequence-linked",
+        "status": "pass",
+        "evidence": "animationPaths=['/Game/AI_Tool_TA/Animations/AS_Hero_RunStart'] linked=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:deep-facts-source-clean",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "deep-facts-source-clean",
+        "status": "pass",
+        "evidence": "deepFactErrorRules=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:native-notify-controlled-write-ready",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "native-notify-controlled-write-ready",
+        "status": "pass",
+        "evidence": "notifyControlledWrite={'gate': 'Ready', 'runtimeSucceeded': True, 'returnCode': 0, 'commandletLoaded': True, 'outputStatus': 'apply_postcheck_rollback_completed', 'requestCount': 2, 'applied': 2, 'postCheckPresent': 2, 'rollbackRemoved': 2, 'postRollbackPresent': 0, 'assetWrites': 4, 'engineWrites': 0, 'productionWrites': 0, 'persistentMutation': False, 'finalHashRestored': True, 'assets': [{'assetPath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'objectPath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart', 'requestCount': 1, 'publicFixtureTarget': True, 'loaded': True, 'preExisting': 0, 'results': [{'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'notifyName': 'equip.attach', 'triggerTime': 0.3499999940395355, 'trackIndex': 0, 'intentId': 'rifle-primary-equip', 'assetId': 'spatial-rifle-authoring-001', 'slotRole': 'primaryWeapon', 'sourceReceiptId': 'rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach', 'alreadyPresent': False, 'applied': True, 'message': 'Notify created on AnimSequence.'}], 'postCheckPresent': 1, 'packageFilename': 'D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_RunStart.uasset', 'savedAfterApply': True, 'rollbackRemoved': 1, 'postRollbackPresent': 0, 'savedAfterRollback': True, 'finalNotifies': [], 'finalNotifyCount': 0, 'status': 'apply_postcheck_rollback_completed'}, {'assetPath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'objectPath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A', 'requestCount': 1, 'publicFixtureTarget': True, 'loaded': True, 'preExisting': 0, 'results': [{'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'notifyName': 'gear.attach', 'triggerTime': 0.47999998927116394, 'trackIndex': 0, 'intentId': 'backpack-temp-equip', 'assetId': 'spatial-backpack-tmp-002', 'slotRole': 'backpack', 'sourceReceiptId': 'backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach', 'alreadyPresent': False, 'applied': True, 'message': 'Notify created on AnimSequence.'}], 'postCheckPresent': 1, 'packageFilename': 'D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_Attack_A.uasset', 'savedAfterApply': True, 'rollbackRemoved': 1, 'postRollbackPresent': 0, 'savedAfterRollback': True, 'finalNotifies': [], 'finalNotifyCount': 0, 'status': 'apply_postcheck_rollback_completed'}]}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:required-attach-timing-events-controlled",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "required-attach-timing-events-controlled",
+        "status": "pass",
+        "evidence": "required=['equip.attach'] controlled=['equip.attach'] missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:postcheck-rollback-ready",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "postcheck-rollback-ready",
+        "status": "pass",
+        "evidence": "controlledNotifyRows=[{'intentId': 'rifle-primary-equip', 'assetId': 'spatial-rifle-authoring-001', 'slotRole': 'primaryWeapon', 'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'notifyName': 'equip.attach', 'triggerTime': 0.3499999940395355, 'trackIndex': 0, 'sourceReceiptId': 'rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach', 'applied': True, 'alreadyPresent': False, 'message': 'Notify created on AnimSequence.', 'assetPostCheckPresent': 1, 'assetRollbackRemoved': 1, 'assetPostRollbackPresent': 0, 'assetStatus': 'apply_postcheck_rollback_completed', 'savedAfterApply': True, 'savedAfterRollback': True}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "rifle-primary-equip:publish-persistence-required",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "publish-persistence-required",
+        "status": "warning",
+        "evidence": "publishRequired=True persistentMutation=False",
+        "fixPreview": "Approve a persistence pass before claiming the public project contains these notifies."
+      },
+      {
+        "id": "backpack-temp-equip:gameplay-controlled-readiness",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "error",
+        "evidence": "sourceReadinessState=HeldBySourceOwner",
+        "fixPreview": "Resolve socket gameplay readiness before timing approval."
+      },
+      {
+        "id": "backpack-temp-equip:animation-sequence-linked",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "animation-sequence-linked",
+        "status": "pass",
+        "evidence": "animationPaths=['/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A'] linked=1",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:deep-facts-source-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "deep-facts-source-clean",
+        "status": "error",
+        "evidence": "deepFactErrorRules=['source-bridge-ready']",
+        "fixPreview": "Fix the animation source/deep-fact errors before attach timing approval."
+      },
+      {
+        "id": "backpack-temp-equip:native-notify-controlled-write-ready",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "native-notify-controlled-write-ready",
+        "status": "pass",
+        "evidence": "notifyControlledWrite={'gate': 'Ready', 'runtimeSucceeded': True, 'returnCode': 0, 'commandletLoaded': True, 'outputStatus': 'apply_postcheck_rollback_completed', 'requestCount': 2, 'applied': 2, 'postCheckPresent': 2, 'rollbackRemoved': 2, 'postRollbackPresent': 0, 'assetWrites': 4, 'engineWrites': 0, 'productionWrites': 0, 'persistentMutation': False, 'finalHashRestored': True, 'assets': [{'assetPath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'objectPath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart', 'requestCount': 1, 'publicFixtureTarget': True, 'loaded': True, 'preExisting': 0, 'results': [{'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart', 'notifyName': 'equip.attach', 'triggerTime': 0.3499999940395355, 'trackIndex': 0, 'intentId': 'rifle-primary-equip', 'assetId': 'spatial-rifle-authoring-001', 'slotRole': 'primaryWeapon', 'sourceReceiptId': 'rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach', 'alreadyPresent': False, 'applied': True, 'message': 'Notify created on AnimSequence.'}], 'postCheckPresent': 1, 'packageFilename': 'D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_RunStart.uasset', 'savedAfterApply': True, 'rollbackRemoved': 1, 'postRollbackPresent': 0, 'savedAfterRollback': True, 'finalNotifies': [], 'finalNotifyCount': 0, 'status': 'apply_postcheck_rollback_completed'}, {'assetPath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'objectPath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A', 'requestCount': 1, 'publicFixtureTarget': True, 'loaded': True, 'preExisting': 0, 'results': [{'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'notifyName': 'gear.attach', 'triggerTime': 0.47999998927116394, 'trackIndex': 0, 'intentId': 'backpack-temp-equip', 'assetId': 'spatial-backpack-tmp-002', 'slotRole': 'backpack', 'sourceReceiptId': 'backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach', 'alreadyPresent': False, 'applied': True, 'message': 'Notify created on AnimSequence.'}], 'postCheckPresent': 1, 'packageFilename': 'D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_Attack_A.uasset', 'savedAfterApply': True, 'rollbackRemoved': 1, 'postRollbackPresent': 0, 'savedAfterRollback': True, 'finalNotifies': [], 'finalNotifyCount': 0, 'status': 'apply_postcheck_rollback_completed'}]}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:required-attach-timing-events-controlled",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "required-attach-timing-events-controlled",
+        "status": "pass",
+        "evidence": "required=['gear.attach'] controlled=['gear.attach'] missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:postcheck-rollback-ready",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "postcheck-rollback-ready",
+        "status": "pass",
+        "evidence": "controlledNotifyRows=[{'intentId': 'backpack-temp-equip', 'assetId': 'spatial-backpack-tmp-002', 'slotRole': 'backpack', 'animSequencePath': '/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', 'notifyName': 'gear.attach', 'triggerTime': 0.47999998927116394, 'trackIndex': 0, 'sourceReceiptId': 'backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach', 'applied': True, 'alreadyPresent': False, 'message': 'Notify created on AnimSequence.', 'assetPostCheckPresent': 1, 'assetRollbackRemoved': 1, 'assetPostRollbackPresent': 0, 'assetStatus': 'apply_postcheck_rollback_completed', 'savedAfterApply': True, 'savedAfterRollback': True}]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "backpack-temp-equip:publish-persistence-required",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "publish-persistence-required",
+        "status": "pass",
+        "evidence": "publishRequired=False persistentMutation=False",
+        "fixPreview": "None"
+      },
+      {
+        "id": "notify-controlled-write:production-boundary",
+        "intentId": null,
+        "assetId": null,
+        "slotRole": null,
+        "ruleId": "production-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=4 engineWrites=0 productionWrites=0 persistentMutation=False finalHashRestored=True",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "gameplay-timing-controlled-action:rifle-primary-equip:publish-persistence-required",
+        "intentId": "rifle-primary-equip",
+        "assetId": "spatial-rifle-authoring-001",
+        "slotRole": "primaryWeapon",
+        "ruleId": "publish-persistence-required",
+        "status": "warning",
+        "owner": "lead-ta",
+        "preview": "Approve a persistence pass before claiming the public project contains these notifies.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-timing-controlled-action:backpack-temp-equip:gameplay-controlled-readiness",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "gameplay-controlled-readiness",
+        "status": "error",
+        "owner": "engine-ta",
+        "preview": "Resolve socket gameplay readiness before timing approval.",
+        "writeBoundary": "review_only"
+      },
+      {
+        "id": "gameplay-timing-controlled-action:backpack-temp-equip:deep-facts-source-clean",
+        "intentId": "backpack-temp-equip",
+        "assetId": "spatial-backpack-tmp-002",
+        "slotRole": "backpack",
+        "ruleId": "deep-facts-source-clean",
+        "status": "error",
+        "owner": "animation-owner",
+        "preview": "Fix the animation source/deep-fact errors before attach timing approval.",
+        "writeBoundary": "review_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-gameplay-attach-timing-controlled-readiness",
+    "name": "Unreal Gameplay Attach Timing Controlled Readiness",
+    "methodSource": "R66 gameplay attach controlled readiness + R67 attach timing readiness + R72 native AnimNotify controlled write",
+    "protocolCarrier": "gameplay attach intents, controlled socket coverage, AnimSequence timing requirements and native notify write receipts",
+    "boundary": {
+      "mutation": "derived_from_temp_project_notify_write_rolled_back",
+      "assetWrites": 4,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "persistentMutation": false
+    }
+  },
+  "reviewerClaims": [
+    "R73 joins controlled socket readiness, animation attach timing readiness and native AnimNotify controlled-write evidence into one gameplay attach delivery gate.",
+    "Approved rifle equip is executor-backed for both required sockets and required AnimSequence notify timing; it remains Review until a persistence pass is explicitly approved.",
+    "Temporary backpack remains held by source owner even though the native notify write path can create its required timing event.",
+    "The artifact is derived from temp-project write/post-check/rollback evidence and records zero production writes.",
+    "Summary: timingReadyByControlledWrite=1, heldBySocketOrSource=1, productionWrites=0."
+  ]
+}

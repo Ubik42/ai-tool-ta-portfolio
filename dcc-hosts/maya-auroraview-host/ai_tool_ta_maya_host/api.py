@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r72-unreal-animation-notify-native-controlled-write-presentation-pack",
+        label: str = "r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4122,6 +4122,12 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Controlled Write artifact",
                 "artifact",
                 manifest.get("unrealAnimationNotifyNativeControlledWriteArtifact"),
+            ),
+            _probe_file(
+                "unreal-gameplay-attach-timing-controlled-readiness",
+                "Unreal Gameplay Attach Timing Controlled Readiness artifact",
+                "artifact",
+                manifest.get("unrealGameplayAttachTimingControlledReadinessArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4603,6 +4609,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal animation notify native controlled write",
                 "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_controlled_write.py.",
                 "evidence_expected": "The commandlet writes equip.attach and gear.attach into temp public AnimSequences, post-checks the notify rows, rolls them back, and restores uasset hashes.",
+            },
+            {
+                "id": "29i-run-unreal-gameplay-attach-timing-controlled-readiness",
+                "label": "Run Unreal gameplay attach timing controlled readiness",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_gameplay_attach_timing_controlled_readiness.py.",
+                "evidence_expected": "The derived report joins controlled socket write, animation timing readiness, and native notify controlled write into one gameplay attach timing gate.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5238,6 +5250,15 @@ class MayaPortfolioApi:
                 "unreal_animation_notify_native_controlled_write_final_hash_restored": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteFinalHashRestored"),
                 "unreal_animation_notify_native_controlled_write_asset_writes": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteAssetWrites"),
                 "unreal_animation_notify_native_controlled_write_production_writes": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteProductionWrites"),
+                "unreal_gameplay_attach_timing_controlled_readiness_gate": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessGate"),
+                "unreal_gameplay_attach_timing_controlled_readiness_evidence_level": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessEvidenceLevel"),
+                "unreal_gameplay_attach_timing_controlled_readiness_l3_status": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessL3Status"),
+                "unreal_gameplay_attach_timing_controlled_readiness_notify_write_ready": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessNotifyControlledWriteReady"),
+                "unreal_gameplay_attach_timing_controlled_readiness_timing_ready": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessTimingReadyByControlledWrite"),
+                "unreal_gameplay_attach_timing_controlled_readiness_held": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessHeldBySocketOrSource"),
+                "unreal_gameplay_attach_timing_controlled_readiness_missing_after_write": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessMissingAttachTimingEventsAfterControlledWrite"),
+                "unreal_gameplay_attach_timing_controlled_readiness_final_hash_restored": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessFinalHashRestored"),
+                "unreal_gameplay_attach_timing_controlled_readiness_production_writes": manifest_summary.get("unrealGameplayAttachTimingControlledReadinessProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5510,6 +5531,7 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaAnimNotifyDiagnostics reaches the readiness commandlet contract.",
                 "Unreal Animation Notify Native Diagnostics feeds R67 AnimSequence paths into the packaged commandlet, loads the public animation assets, and keeps attach approval blocked when required notify events are absent.",
                 "Unreal Animation Notify Native Controlled Write writes equip.attach and gear.attach into temp public AnimSequences, post-checks native notify visibility, rolls back and restores uasset hashes.",
+                "Unreal Gameplay Attach Timing Controlled Readiness joins controlled socket write, attach timing readiness and native notify controlled write into one gameplay attach delivery gate.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5545,7 +5567,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r72-unreal-animation-notify-native-controlled-write-presentation-pack",
+        label: str = "r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "unreal-animation-attach-timing", "unreal-animation-notify-native-bridge", "unreal-animation-notify-native-build", "unreal-animation-notify-native-commandlet", "unreal-animation-notify-native-diagnostics", "unreal-animation-notify-native-controlled-write", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "unreal-animation-attach-timing", "unreal-animation-notify-native-bridge", "unreal-animation-notify-native-build", "unreal-animation-notify-native-commandlet", "unreal-animation-notify-native-diagnostics", "unreal-animation-notify-native-controlled-write", "unreal-gameplay-attach-timing-controlled-readiness", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -84,6 +84,7 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\deep_facts.py"),
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\attach_timing.py"),
     (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\native_notify_bridge.py"),
+    (Join-Path $UnrealAnimationBridge "unreal_animation_bridge\gameplay_timing_controlled.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_import_l3_smoke.py"),
@@ -94,6 +95,7 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealAnimationBridge "scripts\run_anim_notify_native_commandlet_probe.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_anim_notify_native_diagnostics.py"),
     (Join-Path $UnrealAnimationBridge "scripts\run_anim_notify_native_controlled_write.py"),
+    (Join-Path $UnrealAnimationBridge "scripts\run_gameplay_attach_timing_controlled_readiness.py"),
     (Join-Path $UnrealAnimationBridge "scripts\generate_maya_fbx_fixture.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\probe_animation_runtime.py"),
     (Join-Path $UnrealAnimationBridge "scripts\unreal_python\import_animsequence_fixture.py"),
@@ -219,12 +221,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r72-unreal-animation-notify-native-controlled-write-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.69.0", summary
-assert summary["present_evidence_files"] == 70, summary
+assert summary["package_version"] == "dcc-first-package@1.70.0", summary
+assert summary["present_evidence_files"] == 71, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 60, summary
+assert summary["demo_route_steps"] == 61, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -299,6 +301,12 @@ if ($Tier -in @("unreal-animation-notify-native-diagnostics", "full")) {
 if ($Tier -in @("unreal-animation-notify-native-controlled-write", "full")) {
     Invoke-Step "unreal animation notify native controlled write" {
         python (Join-Path $UnrealAnimationBridge "scripts\run_anim_notify_native_controlled_write.py")
+    }
+}
+
+if ($Tier -in @("unreal-gameplay-attach-timing-controlled-readiness", "full")) {
+    Invoke-Step "unreal gameplay attach timing controlled readiness" {
+        python (Join-Path $UnrealAnimationBridge "scripts\run_gameplay_attach_timing_controlled_readiness.py")
     }
 }
 

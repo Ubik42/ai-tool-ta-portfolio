@@ -1,6 +1,6 @@
 # Unreal Animation Bridge
 
-R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify diagnostics 和 native controlled write 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接，并且能在引擎内受控写入、复查和回滚。
+R73 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify diagnostics、native controlled write 和 gameplay attach timing controlled readiness 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接，并且能在引擎内受控写入、复查、回滚，再合成玩法交付门禁。
 
 ## 核心业务逻辑
 
@@ -25,6 +25,7 @@ R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/deep_facts.py`
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/attach_timing.py`
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/native_notify_bridge.py`
+- `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/gameplay_timing_controlled.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py`
@@ -35,6 +36,7 @@ R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_commandlet_probe.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_controlled_write.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_gameplay_attach_timing_controlled_readiness.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
@@ -55,8 +57,9 @@ R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - Native notify commandlet probe：把 R69 packaged plugin 复制到临时 Unreal project，执行 `-run=AiToolTaAnimNotifyDiagnostics`，记录 commandletLoaded、readiness output receipt 和 no-write boundary。
 - Native notify diagnostics：读取 R67 animationAssetPaths，喂给 packaged commandlet，加载 2/2 public AnimSequence，输出 native notify rows，并把缺失的 `equip.attach` / `gear.attach` 保持为业务 Blocked。
 - Native notify controlled write：在临时 Unreal project 中把 `equip.attach` 和 `gear.attach` 写入 public AnimSequence，保存后 post-check，再 rollback 并恢复 `.uasset` hash。
-- Presenter Pack 接入：R72 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact、native diagnostics artifact 和 native controlled write artifact，并保持 60 步 demo route。
-- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r72` / `dcc-first-package@1.69.0`。
+- Gameplay attach timing controlled readiness：合并 R66 socket executor、R67 timing gate 和 R72 notify controlled write，输出玩法挂接是否已经 socket + notify 双 executor-backed。
+- Presenter Pack 接入：R73 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact、native diagnostics artifact、native controlled write artifact 和 gameplay attach timing controlled readiness artifact，并保持 61 步 demo route。
+- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r73` / `dcc-first-package@1.70.0`。
 
 ## 证据
 
@@ -120,10 +123,16 @@ R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 <repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-controlled-write-20260806-090946.json
 ```
 
+当前 gameplay attach timing controlled readiness artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-gameplay-attach-timing-controlled-readiness-20260806-092934.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r72-unreal-animation-notify-native-controlled-write-presentation-pack-20260806-091404.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack-20260806-093254.json
 ```
 
 关键结果：
@@ -210,9 +219,17 @@ R72 在 R71 commandlet 上加入受控写入模式。`run_anim_notify_native_con
 
 关键结论：动画 notify 线已经从问题诊断推进到真实引擎内 guarded authoring。工具不仅能指出 `equip.attach` / `gear.attach` 缺失，还能在临时 public fixture 中写入、保存、复查、回滚并恢复 `.uasset` hash。
 
+## R73 Gameplay Attach Timing Controlled Readiness
+
+R73 不重复启动 Unreal，而是读取 R66 gameplay attach controlled readiness、R67 attach timing readiness 和 R72 native notify controlled write，生成 `unreal-gameplay-attach-timing-controlled-readiness@0.1.0`。它回答的是最终业务问题：一个挂接意图是否同时有受控 socket coverage 和受控 AnimSequence notify timing coverage。
+
+当前结果：L3-derived / `Review` / `unreal_gameplay_attach_timing_controlled_readiness_linked`，notifyControlledWriteReady=true，timingReadyByControlledWrite=1，heldBySocketOrSource=1，timingBlocked=0，required/covered attach timing events=2 / 2，missingAttachTimingEventsAfterControlledWrite=0，productionWrites=0，persistentMutation=false，finalHashRestored=true。
+
+关键结论：approved rifle equip path 已经由 socket executor 和 notify executor 双证据支撑，进入可审核状态；backpack 仍然因为 source owner temporary / source deep facts 保持 held。这比单独展示 socket 或 notify 更接近真实 Lightbox 管线的发布门禁。
+
 ## 后续
 
 下一阶段有两条高价值路径：
 
-- 继续动画线：把 controlled write evidence 接回 gameplay attach readiness，让 approved equip intent 从 timing Blocked 进入可审核状态。
-- 业务扩展：补 Control Rig native diagnostic bridge、MotionBuilder adapter，或做更复杂的引擎内 runtime post-check。
+- 继续动画线：做 MotionBuilder adapter，把同一批 take / event / slot intent 接到 DCC 动画源。
+- 业务扩展：补 Control Rig native diagnostic bridge，读取编译诊断和 control metadata，或做更复杂的引擎内 runtime post-check。
