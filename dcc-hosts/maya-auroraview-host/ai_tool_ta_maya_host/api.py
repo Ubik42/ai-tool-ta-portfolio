@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r67-unreal-animation-attach-timing-readiness-presentation-pack",
+        label: str = "r68-unreal-animation-notify-native-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4092,6 +4092,12 @@ class MayaPortfolioApi:
                 "Unreal Animation Attach Timing Readiness artifact",
                 "artifact",
                 manifest.get("unrealAnimationAttachTimingReadinessArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-notify-native-bridge",
+                "Unreal Animation Notify Native Bridge Readiness artifact",
+                "artifact",
+                manifest.get("unrealAnimationNotifyNativeBridgeArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4543,6 +4549,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal animation attach timing readiness",
                 "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_attach_timing_readiness.py.",
                 "evidence_expected": "Socket gameplay readiness is joined to AnimSequence deep facts so equip attach approval is blocked until notify/timing events are readable and authored.",
+            },
+            {
+                "id": "29d-run-unreal-animation-notify-native-bridge",
+                "label": "Run Unreal animation notify native bridge readiness",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_readiness.py.",
+                "evidence_expected": "R67's missing attach timing events become a public C++ / Editor Utility bridge contract, with Unreal runtime/source readiness proven and binary/commandlet build held as an explicit next gate.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5120,6 +5132,21 @@ class MayaPortfolioApi:
                 "unreal_animation_attach_timing_readiness_animation_blueprint_library_available": manifest_summary.get("unrealAnimationAttachTimingReadinessAnimationBlueprintLibraryAvailable"),
                 "unreal_animation_attach_timing_readiness_animation_data_model_available": manifest_summary.get("unrealAnimationAttachTimingReadinessAnimationDataModelAvailable"),
                 "unreal_animation_attach_timing_readiness_production_writes": manifest_summary.get("unrealAnimationAttachTimingReadinessProductionWrites"),
+                "unreal_animation_notify_native_bridge_gate": manifest_summary.get("unrealAnimationNotifyNativeBridgeGate"),
+                "unreal_animation_notify_native_bridge_evidence_level": manifest_summary.get("unrealAnimationNotifyNativeBridgeEvidenceLevel"),
+                "unreal_animation_notify_native_bridge_l3_status": manifest_summary.get("unrealAnimationNotifyNativeBridgeL3Status"),
+                "unreal_animation_notify_native_bridge_source_requires_native": manifest_summary.get("unrealAnimationNotifyNativeBridgeSourceRequiresNativeBridge"),
+                "unreal_animation_notify_native_bridge_runtime_entered": manifest_summary.get("unrealAnimationNotifyNativeBridgeRuntimeEntered"),
+                "unreal_animation_notify_native_bridge_anim_sequence_classes": manifest_summary.get("unrealAnimationNotifyNativeBridgeAnimSequenceClassesVisible"),
+                "unreal_animation_notify_native_bridge_has_native_source": manifest_summary.get("unrealAnimationNotifyNativeBridgeHasNativeSource"),
+                "unreal_animation_notify_native_bridge_has_plugin": manifest_summary.get("unrealAnimationNotifyNativeBridgeHasPlugin"),
+                "unreal_animation_notify_native_bridge_has_compiled_binary": manifest_summary.get("unrealAnimationNotifyNativeBridgeHasCompiledBinary"),
+                "unreal_animation_notify_native_bridge_commandlet_visible": manifest_summary.get("unrealAnimationNotifyNativeBridgeCommandletVisible"),
+                "unreal_animation_notify_native_bridge_missing_required_files": manifest_summary.get("unrealAnimationNotifyNativeBridgeMissingRequiredFiles"),
+                "unreal_animation_notify_native_bridge_pass_checks": manifest_summary.get("unrealAnimationNotifyNativeBridgePassChecks"),
+                "unreal_animation_notify_native_bridge_warning_checks": manifest_summary.get("unrealAnimationNotifyNativeBridgeWarningChecks"),
+                "unreal_animation_notify_native_bridge_error_checks": manifest_summary.get("unrealAnimationNotifyNativeBridgeErrorChecks"),
+                "unreal_animation_notify_native_bridge_production_writes": manifest_summary.get("unrealAnimationNotifyNativeBridgeProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5387,6 +5414,7 @@ class MayaPortfolioApi:
                 "Unreal Gameplay Attach Fixture joins Maya socket/hotspot intents to Unreal runtime asset and animation facts, blocking equip readiness when character socket contracts are absent.",
                 "Unreal Gameplay Attach Controlled Readiness links that attach fixture to the native controlled socket write receipt, making the approved rifle equip path review-ready while keeping publish persistence explicit.",
                 "Unreal Animation Attach Timing Readiness links socket gameplay readiness to AnimSequence notify/timing evidence and blocks equip approval when notify events are unreadable or missing.",
+                "Unreal Animation Notify Native Bridge Readiness turns the R67 timing gap into a public C++ commandlet / Editor Utility source contract and proves the bridge is ready for build without mutating assets.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5422,7 +5450,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r67-unreal-animation-attach-timing-readiness-presentation-pack",
+        label: str = "r68-unreal-animation-notify-native-bridge-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

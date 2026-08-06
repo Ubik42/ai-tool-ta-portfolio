@@ -1,0 +1,376 @@
+{
+  "reportVersion": "unreal-animation-notify-native-bridge-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Native Notify Bridge",
+  "generatedAt": "2026-08-06 08:05:10",
+  "evidenceLevel": "L3-readiness",
+  "l3Status": "unreal_animation_notify_native_bridge_readiness_collected",
+  "sourceAttachTimingReadiness": {
+    "path": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+    "reportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+    "evidenceLevel": "L3-derived",
+    "l3Status": "unreal_animation_attach_timing_readiness_linked",
+    "summary": {
+      "gate": "Blocked",
+      "intentCount": 2,
+      "timingReady": 0,
+      "timingBlocked": 1,
+      "heldBySocketOrSource": 1,
+      "notifyReadableIntents": 0,
+      "requiredAttachTimingEvents": 2,
+      "missingAttachTimingEvents": 2,
+      "animationBlueprintLibraryAvailable": false,
+      "animationDataModelAvailable": true,
+      "pass": 5,
+      "warning": 1,
+      "error": 5,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "unrealRuntime": {
+    "executed": true,
+    "runtime": "Unreal Python",
+    "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+    "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+    "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+    "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "api": {
+      "classes": {
+        "AnimSequence": true,
+        "AnimSequenceBase": true,
+        "AnimationAsset": true,
+        "AnimNotify": true,
+        "AnimNotifyState": true,
+        "AnimationBlueprintLibrary": false,
+        "AnimationDataModel": true,
+        "EditorAssetLibrary": true,
+        "EditorUtilitySubsystem": true,
+        "EditorUtilityBlueprint": false,
+        "EditorUtilityWidgetBlueprint": true,
+        "AssetToolsHelpers": true,
+        "BlueprintFunctionLibrary": true,
+        "Commandlet": false,
+        "EditorLoadingAndSavingUtils": true
+      },
+      "commandletClasses": {
+        "Commandlet": false,
+        "AiToolTaAnimNotifyDiagnosticsCommandlet": false
+      },
+      "functionLibraryClasses": {
+        "AiToolTaAnimNotifyBridgeLibrary": false
+      },
+      "animSequenceMethods": [
+        "_wrapper_meta_data",
+        "data_model",
+        "data_model_interface",
+        "get_anim_pose_at_frame"
+      ],
+      "animSequenceBaseMethods": [
+        "_wrapper_meta_data",
+        "data_model",
+        "data_model_interface",
+        "get_anim_pose_at_frame"
+      ],
+      "animationBlueprintLibraryMethods": [],
+      "editorUtilitySubsystemMethods": [
+        "find_utility_widget_from_blueprint"
+      ],
+      "assetToolsMethods": [
+        "get_asset_tools"
+      ]
+    },
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "writeScope": "read-only public Unreal project readiness probe"
+  },
+  "facts": {
+    "schema": "unreal-animation-notify-native-bridge-readiness-facts@0.1.0",
+    "bridgeSchema": "unreal-animation-notify-native-bridge-contract@dcc-r68",
+    "source": {
+      "reportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+      "evidenceLevel": "L3-derived",
+      "l3Status": "unreal_animation_attach_timing_readiness_linked",
+      "gate": "Blocked",
+      "intentCount": 2,
+      "notifyReadableIntents": 0,
+      "requiredAttachTimingEvents": 2,
+      "missingAttachTimingEvents": 2,
+      "animationBlueprintLibraryAvailable": false,
+      "animationDataModelAvailable": true,
+      "requiresNativeNotifyBridge": true
+    },
+    "project": {
+      "projectPath": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+      "engineAssociation": "5.3",
+      "enabledPlugins": [
+        "PythonScriptPlugin",
+        "EditorScriptingUtilities",
+        "ControlRig",
+        "GeometryCache",
+        "AlembicImporter",
+        "HairStrands",
+        "AlembicHairImporter"
+      ],
+      "hasSourceDir": false,
+      "hasPluginsDir": true,
+      "hasAnimNotifyBridgePlugin": true,
+      "hasAnimNotifyBridgeSource": true,
+      "hasAnimNotifyBridgeBinary": false,
+      "animNotifyBridgeFiles": [
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\AI_Tool_TA_AnimNotifyBridge.uplugin",
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\Source\\AI_Tool_TA_AnimNotifyBridge\\AI_Tool_TA_AnimNotifyBridge.Build.cs",
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\Source\\AI_Tool_TA_AnimNotifyBridge\\Private\\AiToolTaAnimNotifyBridgeLibrary.cpp",
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\Source\\AI_Tool_TA_AnimNotifyBridge\\Private\\AiToolTaAnimNotifyDiagnosticsCommandlet.cpp",
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\Source\\AI_Tool_TA_AnimNotifyBridge\\Public\\AiToolTaAnimNotifyBridgeLibrary.h",
+        "Plugins\\AI_Tool_TA_AnimNotifyBridge\\Source\\AI_Tool_TA_AnimNotifyBridge\\Public\\AiToolTaAnimNotifyDiagnosticsCommandlet.h"
+      ],
+      "animNotifyBridgeBinaries": [],
+      "pythonScriptPluginEnabled": true,
+      "editorScriptingUtilitiesEnabled": true
+    },
+    "runtimeApi": {
+      "classes": {
+        "AnimSequence": true,
+        "AnimSequenceBase": true,
+        "AnimationAsset": true,
+        "AnimNotify": true,
+        "AnimNotifyState": true,
+        "AnimationBlueprintLibrary": false,
+        "AnimationDataModel": true,
+        "EditorAssetLibrary": true,
+        "EditorUtilitySubsystem": true,
+        "EditorUtilityBlueprint": false,
+        "EditorUtilityWidgetBlueprint": true,
+        "AssetToolsHelpers": true,
+        "BlueprintFunctionLibrary": true,
+        "Commandlet": false,
+        "EditorLoadingAndSavingUtils": true
+      },
+      "commandletClasses": {
+        "Commandlet": false,
+        "AiToolTaAnimNotifyDiagnosticsCommandlet": false
+      },
+      "functionLibraryClasses": {
+        "AiToolTaAnimNotifyBridgeLibrary": false
+      },
+      "animSequenceMethods": [
+        "_wrapper_meta_data",
+        "data_model",
+        "data_model_interface",
+        "get_anim_pose_at_frame"
+      ],
+      "animSequenceBaseMethods": [
+        "_wrapper_meta_data",
+        "data_model",
+        "data_model_interface",
+        "get_anim_pose_at_frame"
+      ],
+      "animationBlueprintLibraryMethods": [],
+      "editorUtilitySubsystemMethods": [
+        "find_utility_widget_from_blueprint"
+      ],
+      "assetToolsMethods": [
+        "get_asset_tools"
+      ]
+    },
+    "bridgeReadiness": {
+      "hasNativeSource": true,
+      "hasAnimNotifyBridgePlugin": true,
+      "hasCompiledBridgeBinary": false,
+      "missingRequiredFiles": [],
+      "commandletVisible": false,
+      "functionLibraryVisible": false,
+      "editorUtilitySurfaceVisible": true,
+      "animSequenceClassesVisible": true,
+      "animationBlueprintLibraryAvailable": false,
+      "animationDataModelAvailable": true
+    },
+    "requiredHandoff": {
+      "entrypoint": "UAiToolTaAnimNotifyDiagnosticsCommandlet or Editor Utility wrapper around UAiToolTaAnimNotifyBridgeLibrary",
+      "inputReceipt": "R67 attach timing readiness report with gameplay intent animationAssetPaths and missing attach timing events",
+      "diagnosticOperations": [
+        "Load each public /Game/AI_Tool_TA AnimSequence referenced by gameplay attach intents.",
+        "Read UAnimSequenceBase::Notifies through C++ and emit name/class/track/time/duration rows.",
+        "Join notify rows back to required timing events such as equip.attach and gear.attach.",
+        "Keep diagnostics read-only; only a later guarded authoring commandlet may write notifies."
+      ]
+    }
+  },
+  "evaluation": {
+    "schema": "unreal-animation-notify-native-bridge-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "checks": 10,
+      "pass": 8,
+      "warning": 0,
+      "error": 2,
+      "sourceTimingGate": "Blocked",
+      "sourceRequiresNativeBridge": true,
+      "intentCount": 2,
+      "notifyReadableIntents": 0,
+      "requiredAttachTimingEvents": 2,
+      "missingAttachTimingEvents": 2,
+      "animationBlueprintLibraryAvailable": false,
+      "animationDataModelAvailable": true,
+      "runtimeEntered": true,
+      "animSequenceClassesVisible": true,
+      "editorUtilitySurfaceVisible": true,
+      "hasNativeSource": true,
+      "hasAnimNotifyBridgePlugin": true,
+      "hasCompiledBridgeBinary": false,
+      "commandletVisible": false,
+      "functionLibraryVisible": false,
+      "missingRequiredNativeFiles": 0,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "native-anim-notify-bridge:source-attach-timing-blocked",
+        "ruleId": "source-attach-timing-blocked",
+        "status": "pass",
+        "evidence": "gate=Blocked notifyReadableIntents=0 missingAttachTimingEvents=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:source-native-bridge-required",
+        "ruleId": "source-native-bridge-required",
+        "status": "pass",
+        "evidence": "animationBlueprintLibrary=False animationDataModel=True notifyReadableIntents=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:unreal-runtime-entered",
+        "ruleId": "unreal-runtime-entered",
+        "status": "pass",
+        "evidence": "executed=True engine=5.3.2-29314046+++UE5+Release-5.3",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:animsequence-runtime-classes-visible",
+        "ruleId": "animsequence-runtime-classes-visible",
+        "status": "pass",
+        "evidence": "classes={'AnimSequence': True, 'AnimSequenceBase': True, 'AnimationAsset': True, 'AnimNotify': True, 'AnimNotifyState': True, 'AnimationBlueprintLibrary': False, 'AnimationDataModel': True, 'EditorAssetLibrary': True, 'EditorUtilitySubsystem': True, 'EditorUtilityBlueprint': False, 'EditorUtilityWidgetBlueprint': True, 'AssetToolsHelpers': True, 'BlueprintFunctionLibrary': True, 'Commandlet': False, 'EditorLoadingAndSavingUtils': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:notify-python-api-limited",
+        "ruleId": "notify-python-api-limited",
+        "status": "pass",
+        "evidence": "runtimeAnimationBlueprintLibrary=False sourceAnimationDataModel=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:native-module-source-present",
+        "ruleId": "native-module-source-present",
+        "status": "pass",
+        "evidence": "hasSource=True hasPlugin=True missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:native-commandlet-entrypoint-visible",
+        "ruleId": "native-commandlet-entrypoint-visible",
+        "status": "error",
+        "evidence": "commandletVisible=False commandletClasses={'Commandlet': False, 'AiToolTaAnimNotifyDiagnosticsCommandlet': False}",
+        "fixPreview": "Compile and load UAiToolTaAnimNotifyDiagnosticsCommandlet or an equivalent Editor Utility bridge."
+      },
+      {
+        "id": "native-anim-notify-bridge:compiled-bridge-binary-present",
+        "ruleId": "compiled-bridge-binary-present",
+        "status": "error",
+        "evidence": "hasBinary=False binaries=[]",
+        "fixPreview": "Build the Editor-only bridge module before running AnimSequence notify diagnostics through it."
+      },
+      {
+        "id": "native-anim-notify-bridge:contract-handoff-complete",
+        "ruleId": "contract-handoff-complete",
+        "status": "pass",
+        "evidence": "operations=4 contracts=['ai-tool-ta-anim-notify-diagnostics-commandlet', 'ai-tool-ta-anim-notify-editor-utility-wrapper']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "native-anim-notify-bridge:write-boundary-clean",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "native-anim-notify-bridge-action:native-commandlet-entrypoint-visible",
+        "ruleId": "native-commandlet-entrypoint-visible",
+        "status": "error",
+        "owner": "engine-programmer",
+        "preview": "Compile and load UAiToolTaAnimNotifyDiagnosticsCommandlet or an equivalent Editor Utility bridge.",
+        "writeBoundary": "readiness_only"
+      },
+      {
+        "id": "native-anim-notify-bridge-action:compiled-bridge-binary-present",
+        "ruleId": "compiled-bridge-binary-present",
+        "status": "error",
+        "owner": "engine-programmer",
+        "preview": "Build the Editor-only bridge module before running AnimSequence notify diagnostics through it.",
+        "writeBoundary": "readiness_only"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-animation-notify-native-bridge-readiness",
+    "name": "Unreal Animation Notify Native Bridge Readiness",
+    "methodSource": "R67 attach timing readiness + Unreal runtime AnimSequence/native module surface probe",
+    "protocolCarrier": "attach timing owner actions, public Unreal project native plugin source, Editor commandlet/function library contract",
+    "boundary": {
+      "mutation": "read_only_unreal_runtime_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only public Unreal project readiness probe"
+    }
+  },
+  "bridgeContracts": [
+    {
+      "id": "ai-tool-ta-anim-notify-diagnostics-commandlet",
+      "kind": "Unreal Editor C++ Commandlet",
+      "entrypoint": "UAiToolTaAnimNotifyDiagnosticsCommandlet",
+      "requiredFiles": [
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/AI_Tool_TA_AnimNotifyBridge.uplugin",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/AI_Tool_TA_AnimNotifyBridge.Build.cs",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Public/AiToolTaAnimNotifyDiagnosticsCommandlet.h",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Private/AiToolTaAnimNotifyDiagnosticsCommandlet.cpp",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Public/AiToolTaAnimNotifyBridgeLibrary.h",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Private/AiToolTaAnimNotifyBridgeLibrary.cpp"
+      ],
+      "receiptInput": "unreal-animation-attach-timing-readiness@0.1.0 intents and animationAssetPaths",
+      "successCriteria": [
+        "Each referenced public AnimSequence is loaded through native object paths.",
+        "Notify name, class, track index, trigger time, end time and duration are emitted from UAnimSequenceBase::Notifies.",
+        "Diagnostics remain read-only and report zero production writes."
+      ]
+    },
+    {
+      "id": "ai-tool-ta-anim-notify-editor-utility-wrapper",
+      "kind": "Editor Utility / Blueprint callable wrapper",
+      "entrypoint": "UAiToolTaAnimNotifyBridgeLibrary::CollectAnimNotifyDiagnostics",
+      "requiredFiles": [
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Public/AiToolTaAnimNotifyBridgeLibrary.h",
+        "Plugins/AI_Tool_TA_AnimNotifyBridge/Source/AI_Tool_TA_AnimNotifyBridge/Private/AiToolTaAnimNotifyBridgeLibrary.cpp"
+      ],
+      "receiptInput": "single AnimSequence asset or attach timing operation row",
+      "successCriteria": [
+        "Editor Utility calls the same native diagnostic implementation as the commandlet.",
+        "Required attach timing events can be reviewed against real notify rows.",
+        "Any future authoring path requires explicit public fixture scope and rollback guards."
+      ]
+    }
+  ],
+  "reviewerClaims": [
+    "R68 keeps R67 honest: socket executor and gameplay attach evidence do not imply animation timing approval.",
+    "The attach timing gap is now expressed as a native AnimSequence notify diagnostics bridge contract, not a frontend note.",
+    "The readiness probe is read-only and records zero production writes.",
+    "The public Unreal project now has the Anim Notify bridge source contract; it remains blocked until the Editor module is built and the commandlet is visible."
+  ]
+}

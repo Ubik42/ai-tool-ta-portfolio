@@ -1,6 +1,6 @@
 # Unreal Animation Bridge
 
-R67 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts 和 gameplay attach readiness 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接。
+R68 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness 和 native notify diagnostics 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接。
 
 ## 核心业务逻辑
 
@@ -24,15 +24,19 @@ R67 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/contract.py`
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/deep_facts.py`
 - `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/attach_timing.py`
+- `dcc-hosts/unreal-animation-bridge/unreal_animation_bridge/native_notify_bridge.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_l3_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_import_l3_smoke.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_deep_facts.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_attach_timing_readiness.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_readiness.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/collect_animsequence_deep_facts.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_anim_notify_native_bridge.py`
+- `dcc-hosts/unreal-handoff-inspector/projects/AI_Tool_TA_Unreal_L3/Plugins/AI_Tool_TA_AnimNotifyBridge`
 
 已完成：
 
@@ -42,8 +46,9 @@ R67 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - Runtime facts：采集 `AnimSequence` 存在性、绑定 Skeleton、play length、可用 API 方法、导入选项、重命名路径和写入边界。
 - AnimSequence deep facts：读取已导入 public AnimSequence，采集 play length、derived frame span、curve/root/compression metadata 和 notify property readability。
 - Attach timing readiness：读取 R66 gameplay attach controlled readiness，把 socket executor 证据继续连接到 AnimSequence notify/timing 规则。
-- Presenter Pack 接入：R67 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts 和 attach timing readiness artifact，并保持 55 步 demo route。
-- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r67` / `dcc-first-package@1.64.0`。
+- Native notify bridge readiness：读取 R67 attach timing readiness，通过 Unreal 5.3 headless probe 确认 AnimSequence/AnimNotify runtime 类和 public C++ source contract，把 notify timing 缺口推进到 native commandlet / Editor Utility build gate。
+- Presenter Pack 接入：R68 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness 和 native notify bridge readiness artifact，并保持 56 步 demo route。
+- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r68` / `dcc-first-package@1.65.0`。
 
 ## 证据
 
@@ -77,10 +82,16 @@ R67 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 <repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-attach-timing-readiness-20260806-074254.json
 ```
 
+当前 native notify bridge readiness artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-bridge-readiness-20260806-080502.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r67-unreal-animation-attach-timing-readiness-presentation-pack-20260806-074822.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r68-unreal-animation-notify-native-bridge-presentation-pack-20260806-080752.json
 ```
 
 关键结果：
@@ -122,9 +133,22 @@ R67 读取 R66 Gameplay Attach Controlled Readiness 和 R41 AnimSequence Deep Fa
 
 关键结论：R66 已经让 approved rifle equip path 因 socket executor 证据进入 Review，但 R67 证明这还不够。真正玩法挂接必须知道在哪个动画事件点 attach；当前 UE 5.3 Python 不能读取 `notifies` / `anim_notify_tracks` / `marker_data`，所以工具正确给出 Blocked gate 和 owner actions，而不是把“有 socket + 有动画资产”误判成可发布。
 
+## R68 Native Notify Bridge Readiness
+
+R68 把 R67 的缺口继续推进一层：不是继续说“Python 读不到 notify”，而是在 public Unreal project 里加入 `AI_Tool_TA_AnimNotifyBridge` Editor plugin source，定义两个入口：
+
+- `UAiToolTaAnimNotifyDiagnosticsCommandlet`
+- `UAiToolTaAnimNotifyBridgeLibrary::CollectAnimNotifyDiagnostics`
+
+native library 读取 `UAnimSequenceBase::Notifies`，输出 notifyName、notify class、notify state class、trackIndex、triggerTime、endTriggerTime 和 duration。readiness probe 通过 UnrealEditor-Cmd 进入 public `.uproject`，检查 runtime class surface、source file completeness、plugin source、binary 和 commandlet visibility。
+
+当前结果：L3-readiness / `Blocked` / `unreal_animation_notify_native_bridge_readiness_collected`，sourceRequiresNativeBridge=true，runtimeEntered=true，AnimSequence/AnimNotify runtime classes visible=true，hasNativeSource=true，hasAnimNotifyBridgePlugin=true，missingRequiredNativeFiles=0，hasCompiledBridgeBinary=false，commandletVisible=false，8 pass / 0 warning / 2 error，assetWrites=0，engineWrites=0，productionWrites=0。
+
+关键结论：R67 的 2 个 missing attach timing events 已经变成明确的 engine-native 诊断桥任务。下一步不是补前端卡片，而是 BuildPlugin、加载 commandlet、对 public AnimSequence 跑 diagnostics，再决定是否需要受控 authored notify 写入。
+
 ## 后续
 
 下一阶段有两条可选路径：
 
-- 继续动画线：补 Animation Notify C++ / Editor Utility bridge 或 Animation Blueprint Library adapter，让 notify timing 和 curve names 不再停留在 Python metadata warning。
-- 业务扩展：继续做 Animation Blueprint Library / C++ adapter 读取 curve names，或接 R42 Control Rig fixture 做 deformation target link / compile status。
+- 继续动画线：编译 `AI_Tool_TA_AnimNotifyBridge`，加载 commandlet，对 R67 referenced AnimSequence 跑 native diagnostics。
+- 业务扩展：继续做 Animation Blueprint Library / C++ adapter 读取 curve names，或补 Control Rig native diagnostic bridge。
