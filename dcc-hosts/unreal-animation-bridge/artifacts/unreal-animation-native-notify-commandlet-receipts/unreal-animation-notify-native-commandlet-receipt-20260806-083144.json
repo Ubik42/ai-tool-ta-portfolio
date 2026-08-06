@@ -1,0 +1,11 @@
+{
+	"schema": "ai-tool-ta-anim-notify-diagnostics@0.1.0",
+	"input": "",
+	"singleAnimPath": "",
+	"assetWrites": 0,
+	"engineWrites": 0,
+	"productionWrites": 0,
+	"requestedAnimSequencePaths": 0,
+	"status": "readiness_invocation_only",
+	"message": "No AnimSequence paths supplied; commandlet visibility is proven."
+}

@@ -1,0 +1,69 @@
+{
+  "reportVersion": "unreal-animation-notify-native-commandlet-probe@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Native Notify Bridge",
+  "generatedAt": "2026-08-06 08:31:54",
+  "evidenceLevel": "L3-runtime",
+  "l3Status": "unreal_animation_notify_native_commandlet_loaded",
+  "sourceBuildArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-notify-native-bridge-build-20260806-081735.json",
+  "pluginPackageDir": "D:\\cs\\_test\\ai_tool_ta_anim_notify_builds\\aanb-20260806-081735",
+  "tempProject": "D:\\cs\\_test\\ai_tool_ta_anim_notify_commandlet_probe\\aanb-commandlet-20260806-083144\\AI_Tool_TA_AnimNotifyCommandletProbe.uproject",
+  "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "runtime": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "D:\\cs\\_test\\ai_tool_ta_anim_notify_commandlet_probe\\aanb-commandlet-20260806-083144\\AI_Tool_TA_AnimNotifyCommandletProbe.uproject",
+      "-run=AiToolTaAnimNotifyDiagnostics",
+      "-Output=D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-commandlet-receipts\\unreal-animation-notify-native-commandlet-receipt-20260806-083144.json",
+      "-unattended",
+      "-nop4",
+      "-nosplash",
+      "-NoAssetRegistryCache",
+      "-NoLogTimes"
+    ],
+    "returnCode": 0,
+    "runtimeError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-commandlet-logs\\unreal-animation-notify-native-commandlet-probe-20260806-083144.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-commandlet-logs\\unreal-animation-notify-native-commandlet-probe-20260806-083144.stderr.log",
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-commandlet-receipts\\unreal-animation-notify-native-commandlet-receipt-20260806-083144.json",
+    "outputPayload": {
+      "schema": "ai-tool-ta-anim-notify-diagnostics@0.1.0",
+      "input": "",
+      "singleAnimPath": "",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "requestedAnimSequencePaths": 0,
+      "status": "readiness_invocation_only",
+      "message": "No AnimSequence paths supplied; commandlet visibility is proven."
+    },
+    "contractLogSeen": true,
+    "readinessStatusSeen": true,
+    "commandletName": "AiToolTaAnimNotifyDiagnostics",
+    "errors": []
+  },
+  "summary": {
+    "gate": "Ready",
+    "unrealCliFound": true,
+    "buildArtifactFound": true,
+    "pluginPackageFound": true,
+    "runtimeAttempted": true,
+    "returnCode": 0,
+    "commandletName": "AiToolTaAnimNotifyDiagnostics",
+    "commandletLoaded": true,
+    "readinessInvocation": true,
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-commandlet-receipts\\unreal-animation-notify-native-commandlet-receipt-20260806-083144.json",
+    "outputStatus": "readiness_invocation_only",
+    "requestedAnimSequencePaths": 0,
+    "errorLines": 0,
+    "tempProjectWrites": 70,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "The commandlet probe uses the R69 packaged AI_Tool_TA_AnimNotifyBridge plugin output, not a source-only contract.",
+    "The Unreal project is copied to a temp folder under D:\\cs\\_test and the Anim Notify bridge plugin is enabled only there.",
+    "The probe executes -run=AiToolTaAnimNotifyDiagnostics and treats the commandlet contract log plus readiness output JSON as runtime visibility proof.",
+    "No repo Unreal asset, engine content or production project is mutated by this readiness invocation."
+  ]
+}
