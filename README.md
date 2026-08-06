@@ -19,7 +19,7 @@
 当前稳定展示包：
 
 - `public-case-package/dcc-first-package-manifest.json`
-- `dcc-hosts/maya-auroraview-host/artifacts/r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json`
+- `dcc-hosts/maya-auroraview-host/artifacts/r75-unreal-control-rig-native-bridge-build-presentation-pack-20260806-101502.json`
 
 ## 目录
 

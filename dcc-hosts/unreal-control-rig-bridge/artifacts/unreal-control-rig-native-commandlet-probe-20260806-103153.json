@@ -1,0 +1,70 @@
+{
+  "reportVersion": "unreal-control-rig-native-commandlet-probe@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Native Bridge",
+  "generatedAt": "2026-08-06 10:32:05",
+  "evidenceLevel": "L3-runtime",
+  "l3Status": "unreal_control_rig_native_commandlet_loaded",
+  "sourceBuildArtifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-20260806-100928.json",
+  "pluginPackageDir": "D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\acrnb-20260806-100928",
+  "tempProject": "D:\\cs\\_test\\ai_tool_ta_control_rig_commandlet_probe\\acrnb-commandlet-20260806-103153\\AI_Tool_TA_ControlRigCommandletProbe.uproject",
+  "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "runtime": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "D:\\cs\\_test\\ai_tool_ta_control_rig_commandlet_probe\\acrnb-commandlet-20260806-103153\\AI_Tool_TA_ControlRigCommandletProbe.uproject",
+      "-run=AiToolTaControlRigDiagnostics",
+      "-Output=D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-commandlet-receipts\\unreal-control-rig-native-commandlet-receipt-20260806-103153.json",
+      "-unattended",
+      "-nop4",
+      "-nosplash",
+      "-NullRHI",
+      "-NoSound",
+      "-NoAssetRegistryCache",
+      "-NoLogTimes"
+    ],
+    "returnCode": 0,
+    "runtimeError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-commandlet-logs\\unreal-control-rig-native-commandlet-probe-20260806-103153.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-commandlet-logs\\unreal-control-rig-native-commandlet-probe-20260806-103153.stderr.log",
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-commandlet-receipts\\unreal-control-rig-native-commandlet-receipt-20260806-103153.json",
+    "outputPayload": {
+      "schema": "ai-tool-ta-control-rig-diagnostics-result@0.1.0",
+      "controlRigPath": "",
+      "readinessInvocation": true,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "status": "readiness_invocation_only"
+    },
+    "contractLogSeen": true,
+    "readinessStatusSeen": true,
+    "commandletName": "AiToolTaControlRigDiagnostics",
+    "errors": []
+  },
+  "summary": {
+    "gate": "Ready",
+    "unrealCliFound": true,
+    "buildArtifactFound": true,
+    "pluginPackageFound": true,
+    "runtimeAttempted": true,
+    "returnCode": 0,
+    "commandletName": "AiToolTaControlRigDiagnostics",
+    "commandletLoaded": true,
+    "readinessInvocation": true,
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-commandlet-receipts\\unreal-control-rig-native-commandlet-receipt-20260806-103153.json",
+    "outputStatus": "readiness_invocation_only",
+    "outputSchema": "ai-tool-ta-control-rig-diagnostics-result@0.1.0",
+    "targetControlRigPath": "",
+    "errorLines": 0,
+    "tempProjectWrites": 71,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "The commandlet probe uses the R75 packaged AI_Tool_TA_ControlRigBridge plugin output, not a source-only contract.",
+    "The Unreal project is copied to a temp folder under D:\\cs\\_test and the Control Rig bridge plugin is enabled only there.",
+    "The probe executes -run=AiToolTaControlRigDiagnostics and treats the commandlet contract log plus readiness output JSON as runtime visibility proof.",
+    "No repo Unreal asset, engine content or production project is mutated by this readiness invocation."
+  ]
+}

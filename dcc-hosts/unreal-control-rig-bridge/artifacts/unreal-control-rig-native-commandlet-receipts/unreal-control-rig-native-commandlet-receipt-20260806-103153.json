@@ -1,0 +1,9 @@
+{
+	"schema": "ai-tool-ta-control-rig-diagnostics-result@0.1.0",
+	"controlRigPath": "",
+	"readinessInvocation": true,
+	"assetWrites": 0,
+	"engineWrites": 0,
+	"productionWrites": 0,
+	"status": "readiness_invocation_only"
+}
