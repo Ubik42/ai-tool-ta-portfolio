@@ -1,0 +1,318 @@
+{
+  "reportVersion": "unreal-animation-notify-native-controlled-write@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Animation Native Notify Bridge",
+  "generatedAt": "2026-08-06 09:09:56",
+  "evidenceLevel": "L3-runtime-controlled-write",
+  "l3Status": "unreal_animation_notify_native_controlled_write_rolled_back",
+  "sourceAttachTimingReadiness": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+  "sourceBuildArtifact": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-notify-native-bridge-build-20260806-090905.json",
+  "pluginPackageDir": "D:\\cs\\_test\\ai_tool_ta_anim_notify_builds\\aanb-20260806-090905",
+  "tempProject": "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\AI_Tool_TA_AnimNotifyControlledWrite.uproject",
+  "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "inputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+  "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-output-20260806-090946.json",
+  "runtime": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\AI_Tool_TA_AnimNotifyControlledWrite.uproject",
+      "-run=AiToolTaAnimNotifyDiagnostics",
+      "-Input=D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+      "-Output=D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-output-20260806-090946.json",
+      "-Apply",
+      "-Rollback",
+      "-AllowPublicFixtureWrite",
+      "-unattended",
+      "-nop4",
+      "-nosplash",
+      "-NoAssetRegistryCache",
+      "-NoLogTimes"
+    ],
+    "returnCode": 0,
+    "runtimeError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-logs\\unreal-animation-notify-native-controlled-write-20260806-090946.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-logs\\unreal-animation-notify-native-controlled-write-20260806-090946.stderr.log",
+    "inputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-output-20260806-090946.json",
+    "outputJson": {
+      "schema": "ai-tool-ta-anim-notify-authoring-result@0.1.0",
+      "input": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+      "apply": true,
+      "rollback": true,
+      "allowPublicFixtureWrite": true,
+      "assetWrites": 4,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "inMemoryWrites": 2,
+      "requestCount": 2,
+      "dryRun": false,
+      "targetLoaded": true,
+      "assetCount": 2,
+      "loadedSequences": 2,
+      "alreadyPresent": 0,
+      "wouldCreate": 0,
+      "applied": 2,
+      "postCheckPresent": 2,
+      "rollbackRemoved": 2,
+      "postRollbackPresent": 0,
+      "savedAfterApply": true,
+      "savedAfterRollback": true,
+      "persistentMutation": false,
+      "assets": [
+        {
+          "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+          "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+          "requestCount": 1,
+          "publicFixtureTarget": true,
+          "loaded": true,
+          "preExisting": 0,
+          "results": [
+            {
+              "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+              "notifyName": "equip.attach",
+              "triggerTime": 0.3499999940395355,
+              "trackIndex": 0,
+              "intentId": "rifle-primary-equip",
+              "assetId": "spatial-rifle-authoring-001",
+              "slotRole": "primaryWeapon",
+              "sourceReceiptId": "rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach",
+              "alreadyPresent": false,
+              "applied": true,
+              "message": "Notify created on AnimSequence."
+            }
+          ],
+          "postCheckPresent": 1,
+          "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_RunStart.uasset",
+          "savedAfterApply": true,
+          "rollbackRemoved": 1,
+          "postRollbackPresent": 0,
+          "savedAfterRollback": true,
+          "finalNotifies": [],
+          "finalNotifyCount": 0,
+          "status": "apply_postcheck_rollback_completed"
+        },
+        {
+          "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+          "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+          "requestCount": 1,
+          "publicFixtureTarget": true,
+          "loaded": true,
+          "preExisting": 0,
+          "results": [
+            {
+              "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+              "notifyName": "gear.attach",
+              "triggerTime": 0.47999998927116394,
+              "trackIndex": 0,
+              "intentId": "backpack-temp-equip",
+              "assetId": "spatial-backpack-tmp-002",
+              "slotRole": "backpack",
+              "sourceReceiptId": "backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach",
+              "alreadyPresent": false,
+              "applied": true,
+              "message": "Notify created on AnimSequence."
+            }
+          ],
+          "postCheckPresent": 1,
+          "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_Attack_A.uasset",
+          "savedAfterApply": true,
+          "rollbackRemoved": 1,
+          "postRollbackPresent": 0,
+          "savedAfterRollback": true,
+          "finalNotifies": [],
+          "finalNotifyCount": 0,
+          "status": "apply_postcheck_rollback_completed"
+        }
+      ],
+      "status": "apply_postcheck_rollback_completed"
+    },
+    "commandletLoaded": true,
+    "controlledWriteLogSeen": true,
+    "errors": []
+  },
+  "targetHashes": [
+    {
+      "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+      "targetUasset": "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\Content\\AI_Tool_TA\\Animations\\AS_Hero_RunStart.uasset",
+      "backupUasset": "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\Content\\AI_Tool_TA\\Animations\\AS_Hero_RunStart.uasset.pre_r72_backup",
+      "exists": true,
+      "preHash": "e56d85112c079a15eefd19652d7440fe6dd1aba9",
+      "afterCommandletHash": "6a0e3146cffa57f8d8cf0dfd2fb9774a83908f0e",
+      "restoredHash": "e56d85112c079a15eefd19652d7440fe6dd1aba9",
+      "finalHashRestored": true
+    },
+    {
+      "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+      "targetUasset": "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\Content\\AI_Tool_TA\\Animations\\AS_Hero_Attack_A.uasset",
+      "backupUasset": "D:\\cs\\_test\\ai_tool_ta_anim_notify_controlled_write\\aanb-controlled-write-20260806-090946\\Content\\AI_Tool_TA\\Animations\\AS_Hero_Attack_A.uasset.pre_r72_backup",
+      "exists": true,
+      "preHash": "ec66a7bfad077e6097697cf2084d3dd9d1322dbc",
+      "afterCommandletHash": "f10facd477eb4c4ea346656579cece433e3e4c54",
+      "restoredHash": "ec66a7bfad077e6097697cf2084d3dd9d1322dbc",
+      "finalHashRestored": true
+    }
+  ],
+  "summary": {
+    "gate": "Ready",
+    "runtimeSucceeded": true,
+    "returnCode": 0,
+    "commandletName": "AiToolTaAnimNotifyDiagnostics",
+    "commandletLoaded": true,
+    "controlledWriteLogSeen": true,
+    "outputStatus": "apply_postcheck_rollback_completed",
+    "inputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-output-20260806-090946.json",
+    "requestCount": 2,
+    "assetCount": 2,
+    "loadedSequences": 2,
+    "missingSequences": 0,
+    "alreadyPresent": 0,
+    "wouldCreate": 0,
+    "applied": 2,
+    "postCheckPresent": 2,
+    "rollbackRemoved": 2,
+    "postRollbackPresent": 0,
+    "savedAfterApply": true,
+    "savedAfterRollback": true,
+    "assetWrites": 4,
+    "engineWrites": 0,
+    "productionWrites": 0,
+    "persistentMutation": false,
+    "targetHashRows": 2,
+    "finalHashRestored": true,
+    "restoredByHarness": true,
+    "errorLines": 0,
+    "tempProjectWrites": 72
+  },
+  "evaluation": {
+    "schema": "unreal-animation-notify-native-controlled-write-evaluation@0.1.0",
+    "summary": {
+      "pass": 6,
+      "warning": 0,
+      "error": 0,
+      "gate": "Ready"
+    },
+    "rows": [
+      {
+        "id": "anim-notify-controlled-write:authoring-requests-parsed",
+        "ruleId": "authoring-requests-parsed",
+        "status": "pass",
+        "evidence": "requestCount=2 sourceRequests=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-notify-controlled-write:public-fixture-targets-only",
+        "ruleId": "public-fixture-targets-only",
+        "status": "pass",
+        "evidence": "targets=['/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A', '/Game/AI_Tool_TA/Animations/AS_Hero_RunStart']",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-notify-controlled-write:native-apply-postcheck",
+        "ruleId": "native-apply-postcheck",
+        "status": "pass",
+        "evidence": "applied=2 postCheckPresent=2 requestCount=2",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-notify-controlled-write:native-rollback-clean",
+        "ruleId": "native-rollback-clean",
+        "status": "pass",
+        "evidence": "rollbackRemoved=2 postRollbackPresent=0",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-notify-controlled-write:hash-restored",
+        "ruleId": "hash-restored",
+        "status": "pass",
+        "evidence": "targetHashRows=2 restoredByHarness=True",
+        "fixPreview": "None"
+      },
+      {
+        "id": "anim-notify-controlled-write:write-boundary-clean",
+        "ruleId": "write-boundary-clean",
+        "status": "pass",
+        "evidence": "assetWrites=4 engineWrites=0 productionWrites=0 persistentMutation=False",
+        "fixPreview": "None"
+      }
+    ],
+    "outputAssets": [
+      {
+        "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+        "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+        "requestCount": 1,
+        "publicFixtureTarget": true,
+        "loaded": true,
+        "preExisting": 0,
+        "results": [
+          {
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+            "notifyName": "equip.attach",
+            "triggerTime": 0.3499999940395355,
+            "trackIndex": 0,
+            "intentId": "rifle-primary-equip",
+            "assetId": "spatial-rifle-authoring-001",
+            "slotRole": "primaryWeapon",
+            "sourceReceiptId": "rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach",
+            "alreadyPresent": false,
+            "applied": true,
+            "message": "Notify created on AnimSequence."
+          }
+        ],
+        "postCheckPresent": 1,
+        "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_RunStart.uasset",
+        "savedAfterApply": true,
+        "rollbackRemoved": 1,
+        "postRollbackPresent": 0,
+        "savedAfterRollback": true,
+        "finalNotifies": [],
+        "finalNotifyCount": 0,
+        "status": "apply_postcheck_rollback_completed"
+      },
+      {
+        "assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+        "objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+        "requestCount": 1,
+        "publicFixtureTarget": true,
+        "loaded": true,
+        "preExisting": 0,
+        "results": [
+          {
+            "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+            "notifyName": "gear.attach",
+            "triggerTime": 0.47999998927116394,
+            "trackIndex": 0,
+            "intentId": "backpack-temp-equip",
+            "assetId": "spatial-backpack-tmp-002",
+            "slotRole": "backpack",
+            "sourceReceiptId": "backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach",
+            "alreadyPresent": false,
+            "applied": true,
+            "message": "Notify created on AnimSequence."
+          }
+        ],
+        "postCheckPresent": 1,
+        "packageFilename": "D:/cs/_test/ai_tool_ta_anim_notify_controlled_write/aanb-controlled-write-20260806-090946/Content/AI_Tool_TA/Animations/AS_Hero_Attack_A.uasset",
+        "savedAfterApply": true,
+        "rollbackRemoved": 1,
+        "postRollbackPresent": 0,
+        "savedAfterRollback": true,
+        "finalNotifies": [],
+        "finalNotifyCount": 0,
+        "status": "apply_postcheck_rollback_completed"
+      }
+    ]
+  },
+  "artifacts": {
+    "inputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-input-20260806-090946.json",
+    "outputReceipt": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-receipts\\unreal-animation-notify-native-controlled-write-output-20260806-090946.json",
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-logs\\unreal-animation-notify-native-controlled-write-20260806-090946.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-controlled-write-logs\\unreal-animation-notify-native-controlled-write-20260806-090946.stderr.log"
+  },
+  "reviewerClaims": [
+    "The authoring harness converts R67 missing attach timing events into explicit native AnimNotify write requests.",
+    "The commandlet requires -Apply, -Rollback and -AllowPublicFixtureWrite before mutating public fixture AnimSequences.",
+    "The Unreal project is copied to D:\\cs\\_test; source project assets are not edited.",
+    "Native runtime writes named notify events, post-checks that equip.attach / gear.attach are readable through UAnimSequence::Notifies, removes the created rows and saves rollback.",
+    "The harness restores target AnimSequence uasset bytes to their preflight hashes after commandlet rollback."
+  ]
+}

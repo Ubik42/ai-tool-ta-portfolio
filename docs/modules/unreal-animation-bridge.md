@@ -1,6 +1,6 @@
 # Unreal Animation Bridge
 
-R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify bridge build、commandlet runtime proof 和 native notify diagnostics 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接。
+R72 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify diagnostics 和 native controlled write 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接，并且能在引擎内受控写入、复查和回滚。
 
 ## 核心业务逻辑
 
@@ -34,6 +34,7 @@ R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_build.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_commandlet_probe.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_controlled_write.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
@@ -53,8 +54,9 @@ R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - Native notify bridge build：通过 RunUAT BuildPlugin 编译 `AI_Tool_TA_AnimNotifyBridge`，记录 DLL hash、compilerVersion、errorLines 和 no-write boundary。
 - Native notify commandlet probe：把 R69 packaged plugin 复制到临时 Unreal project，执行 `-run=AiToolTaAnimNotifyDiagnostics`，记录 commandletLoaded、readiness output receipt 和 no-write boundary。
 - Native notify diagnostics：读取 R67 animationAssetPaths，喂给 packaged commandlet，加载 2/2 public AnimSequence，输出 native notify rows，并把缺失的 `equip.attach` / `gear.attach` 保持为业务 Blocked。
-- Presenter Pack 接入：R71 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact 和 native diagnostics artifact，并保持 59 步 demo route。
-- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r71` / `dcc-first-package@1.68.0`。
+- Native notify controlled write：在临时 Unreal project 中把 `equip.attach` 和 `gear.attach` 写入 public AnimSequence，保存后 post-check，再 rollback 并恢复 `.uasset` hash。
+- Presenter Pack 接入：R72 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact、native diagnostics artifact 和 native controlled write artifact，并保持 60 步 demo route。
+- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r72` / `dcc-first-package@1.69.0`。
 
 ## 证据
 
@@ -97,7 +99,7 @@ R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 当前 native notify bridge build artifact：
 
 ```text
-<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-bridge-build-20260806-081735.json
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-bridge-build-20260806-090905.json
 ```
 
 当前 native notify commandlet probe artifact：
@@ -112,10 +114,16 @@ R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 <repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-diagnostics-20260806-085035.json
 ```
 
+当前 native notify controlled write artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-controlled-write-20260806-090946.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r72-unreal-animation-notify-native-controlled-write-presentation-pack-20260806-091404.json
 ```
 
 关键结果：
@@ -192,11 +200,19 @@ R71 使用 R70 已验证可见的 commandlet，把 R67 attach timing readiness �
 
 当前结果：L3-runtime-diagnostics / `Blocked` / `unreal_animation_notify_native_diagnostics_collected_with_timing_gaps`，returnCode=0，commandletLoaded=true，diagnosticsCompleted=true，outputStatus=`diagnostics_completed`，requestedAnimSequencePaths=2，loadedSequences=2，notifyRows=0，required/missing attach timing events=2 / 2，timingReady=0，timingBlocked=2，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。
 
-关键结论：native 诊断链路已经从“能加载 commandlet”推进到“能读取具体 public AnimSequence”。当前 Blocked 不是工具链失败，而是业务资产真的没有 `equip.attach` / `gear.attach` notify。下一步应该做受控 public fixture notify authoring、post-check 和 rollback。
+关键结论：native 诊断链路已经从“能加载 commandlet”推进到“能读取具体 public AnimSequence”。当前 Blocked 不是工具链失败，而是业务资产真的没有 `equip.attach` / `gear.attach` notify；R72 已把这个缺口推进到受控 public fixture notify authoring、post-check 和 rollback。
+
+## R72 Native Notify Controlled Write
+
+R72 在 R71 commandlet 上加入受控写入模式。`run_anim_notify_native_controlled_write.py` 从 R67 attach timing readiness 生成两条请求：`AS_Hero_RunStart` 在 0.35s 写入 `equip.attach`，`AS_Hero_Attack_A` 在 0.48s 写入 `gear.attach`。脚本把 public Unreal project 复制到 `D:\cs\_test`，安装 R72 packaged plugin，只允许 `/Game/AI_Tool_TA/...` 路径，并要求 `-Apply -Rollback -AllowPublicFixtureWrite` 才会修改 public fixture。
+
+当前结果：L3-runtime-controlled-write / `Ready` / `unreal_animation_notify_native_controlled_write_rolled_back`，returnCode=0，commandletLoaded=true，outputStatus=`apply_postcheck_rollback_completed`，requestCount=2，loadedSequences=2，applied=2，postCheckPresent=2，rollbackRemoved=2，postRollbackPresent=0，assetWrites=4，engineWrites=0，productionWrites=0，persistentMutation=false，finalHashRestored=true。
+
+关键结论：动画 notify 线已经从问题诊断推进到真实引擎内 guarded authoring。工具不仅能指出 `equip.attach` / `gear.attach` 缺失，还能在临时 public fixture 中写入、保存、复查、回滚并恢复 `.uasset` hash。
 
 ## 后续
 
-下一阶段有两条可选路径：
+下一阶段有两条高价值路径：
 
-- 继续动画线：实现受控 public fixture notify authoring / post-check / rollback，把 `equip.attach` 和 `gear.attach` 从缺失事件变成可验证 authored notify。
-- 业务扩展：继续做 Animation Blueprint Library / C++ adapter 读取 curve names，或补 Control Rig native diagnostic bridge。
+- 继续动画线：把 controlled write evidence 接回 gameplay attach readiness，让 approved equip intent 从 timing Blocked 进入可审核状态。
+- 业务扩展：补 Control Rig native diagnostic bridge、MotionBuilder adapter，或做更复杂的引擎内 runtime post-check。

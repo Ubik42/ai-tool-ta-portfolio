@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r71-unreal-animation-notify-native-diagnostics-presentation-pack",
+        label: str = "r72-unreal-animation-notify-native-controlled-write-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4116,6 +4116,12 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Diagnostics artifact",
                 "artifact",
                 manifest.get("unrealAnimationNotifyNativeDiagnosticsArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-notify-native-controlled-write",
+                "Unreal Animation Notify Native Controlled Write artifact",
+                "artifact",
+                manifest.get("unrealAnimationNotifyNativeControlledWriteArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4591,6 +4597,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal animation notify native diagnostics",
                 "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py.",
                 "evidence_expected": "The packaged native commandlet reads R67 AnimSequence paths, loads public assets, emits notify diagnostics and keeps missing attach timing events as business blockers.",
+            },
+            {
+                "id": "29h-run-unreal-animation-notify-native-controlled-write",
+                "label": "Run Unreal animation notify native controlled write",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_controlled_write.py.",
+                "evidence_expected": "The commandlet writes equip.attach and gear.attach into temp public AnimSequences, post-checks the notify rows, rolls them back, and restores uasset hashes.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5214,6 +5226,18 @@ class MayaPortfolioApi:
                 "unreal_animation_notify_native_diagnostics_missing_attach_timing_events": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsMissingAttachTimingEvents"),
                 "unreal_animation_notify_native_diagnostics_error_lines": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsErrorLines"),
                 "unreal_animation_notify_native_diagnostics_production_writes": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsProductionWrites"),
+                "unreal_animation_notify_native_controlled_write_gate": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteGate"),
+                "unreal_animation_notify_native_controlled_write_evidence_level": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteEvidenceLevel"),
+                "unreal_animation_notify_native_controlled_write_l3_status": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteL3Status"),
+                "unreal_animation_notify_native_controlled_write_runtime_succeeded": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteRuntimeSucceeded"),
+                "unreal_animation_notify_native_controlled_write_request_count": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteRequestCount"),
+                "unreal_animation_notify_native_controlled_write_applied": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteApplied"),
+                "unreal_animation_notify_native_controlled_write_post_check_present": manifest_summary.get("unrealAnimationNotifyNativeControlledWritePostCheckPresent"),
+                "unreal_animation_notify_native_controlled_write_rollback_removed": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteRollbackRemoved"),
+                "unreal_animation_notify_native_controlled_write_post_rollback_present": manifest_summary.get("unrealAnimationNotifyNativeControlledWritePostRollbackPresent"),
+                "unreal_animation_notify_native_controlled_write_final_hash_restored": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteFinalHashRestored"),
+                "unreal_animation_notify_native_controlled_write_asset_writes": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteAssetWrites"),
+                "unreal_animation_notify_native_controlled_write_production_writes": manifest_summary.get("unrealAnimationNotifyNativeControlledWriteProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5485,6 +5509,7 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin and records DLL hash evidence with zero production writes.",
                 "Unreal Animation Notify Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaAnimNotifyDiagnostics reaches the readiness commandlet contract.",
                 "Unreal Animation Notify Native Diagnostics feeds R67 AnimSequence paths into the packaged commandlet, loads the public animation assets, and keeps attach approval blocked when required notify events are absent.",
+                "Unreal Animation Notify Native Controlled Write writes equip.attach and gear.attach into temp public AnimSequences, post-checks native notify visibility, rolls back and restores uasset hashes.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5520,7 +5545,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r71-unreal-animation-notify-native-diagnostics-presentation-pack",
+        label: str = "r72-unreal-animation-notify-native-controlled-write-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

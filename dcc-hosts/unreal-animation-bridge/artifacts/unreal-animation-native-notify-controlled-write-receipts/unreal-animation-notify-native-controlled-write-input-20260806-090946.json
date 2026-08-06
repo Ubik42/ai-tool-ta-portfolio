@@ -1,0 +1,67 @@
+{
+  "schema": "ai-tool-ta-anim-notify-native-controlled-write-input@0.1.0",
+  "sourceAttachTimingReadiness": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+  "sourceReportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+  "sourceGate": "Blocked",
+  "requests": [
+    {
+      "sourceReceiptId": "rifle-primary-equip:/Game/AI_Tool_TA/Animations/AS_Hero_RunStart:equip.attach",
+      "intentId": "rifle-primary-equip",
+      "assetId": "spatial-rifle-authoring-001",
+      "slotRole": "primaryWeapon",
+      "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+      "notifyName": "equip.attach",
+      "triggerTime": 0.35,
+      "trackIndex": 0,
+      "sourceReadinessState": "TimingBlocked",
+      "publishRequired": true
+    },
+    {
+      "sourceReceiptId": "backpack-temp-equip:/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A:gear.attach",
+      "intentId": "backpack-temp-equip",
+      "assetId": "spatial-backpack-tmp-002",
+      "slotRole": "backpack",
+      "animSequencePath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+      "notifyName": "gear.attach",
+      "triggerTime": 0.48,
+      "trackIndex": 0,
+      "sourceReadinessState": "HeldBySocketOrSource",
+      "publishRequired": false
+    }
+  ],
+  "intents": [
+    {
+      "id": "rifle-primary-equip",
+      "assetId": "spatial-rifle-authoring-001",
+      "slotRole": "primaryWeapon",
+      "sourceReadinessState": "TimingBlocked",
+      "animationAssetPaths": [
+        "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+      ],
+      "requiredAttachTimingEvents": [
+        "equip.attach"
+      ],
+      "requestCount": 1
+    },
+    {
+      "id": "backpack-temp-equip",
+      "assetId": "spatial-backpack-tmp-002",
+      "slotRole": "backpack",
+      "sourceReadinessState": "HeldBySocketOrSource",
+      "animationAssetPaths": [
+        "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+      ],
+      "requiredAttachTimingEvents": [
+        "gear.attach"
+      ],
+      "requestCount": 1
+    }
+  ],
+  "writeBoundary": {
+    "mutation": "public_fixture_apply_postcheck_rollback",
+    "requiresApplyFlag": true,
+    "requiresRollbackFlag": true,
+    "requiresPublicFixtureGuard": true,
+    "productionWrites": 0
+  }
+}
