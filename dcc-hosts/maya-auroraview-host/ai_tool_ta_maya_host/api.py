@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r68-unreal-animation-notify-native-bridge-presentation-pack",
+        label: str = "r69-unreal-animation-notify-native-build-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4098,6 +4098,12 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Bridge Readiness artifact",
                 "artifact",
                 manifest.get("unrealAnimationNotifyNativeBridgeArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-notify-native-build",
+                "Unreal Animation Notify Native Bridge Build artifact",
+                "artifact",
+                manifest.get("unrealAnimationNotifyNativeBridgeBuildArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4555,6 +4561,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal animation notify native bridge readiness",
                 "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_readiness.py.",
                 "evidence_expected": "R67's missing attach timing events become a public C++ / Editor Utility bridge contract, with Unreal runtime/source readiness proven and binary/commandlet build held as an explicit next gate.",
+            },
+            {
+                "id": "29e-run-unreal-animation-notify-native-build",
+                "label": "Run Unreal animation notify native bridge build",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_build.py.",
+                "evidence_expected": "RunUAT BuildPlugin compiles AI_Tool_TA_AnimNotifyBridge into a Win64 Editor DLL and records compiler, DLL hash, error-line and zero-write evidence.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5147,6 +5159,17 @@ class MayaPortfolioApi:
                 "unreal_animation_notify_native_bridge_warning_checks": manifest_summary.get("unrealAnimationNotifyNativeBridgeWarningChecks"),
                 "unreal_animation_notify_native_bridge_error_checks": manifest_summary.get("unrealAnimationNotifyNativeBridgeErrorChecks"),
                 "unreal_animation_notify_native_bridge_production_writes": manifest_summary.get("unrealAnimationNotifyNativeBridgeProductionWrites"),
+                "unreal_animation_notify_native_bridge_build_gate": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildGate"),
+                "unreal_animation_notify_native_bridge_build_evidence_level": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildEvidenceLevel"),
+                "unreal_animation_notify_native_bridge_build_l3_status": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildL3Status"),
+                "unreal_animation_notify_native_bridge_build_return_code": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildReturnCode"),
+                "unreal_animation_notify_native_bridge_build_compiled_dlls": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildCompiledDlls"),
+                "unreal_animation_notify_native_bridge_build_error_lines": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildErrorLines"),
+                "unreal_animation_notify_native_bridge_build_compiler_version": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildCompilerVersion"),
+                "unreal_animation_notify_native_bridge_build_config_restored": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildConfigRestored"),
+                "unreal_animation_notify_native_bridge_build_dll_bytes": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildDllBytes"),
+                "unreal_animation_notify_native_bridge_build_dll_sha256": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildDllSha256"),
+                "unreal_animation_notify_native_bridge_build_production_writes": manifest_summary.get("unrealAnimationNotifyNativeBridgeBuildProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5415,6 +5438,7 @@ class MayaPortfolioApi:
                 "Unreal Gameplay Attach Controlled Readiness links that attach fixture to the native controlled socket write receipt, making the approved rifle equip path review-ready while keeping publish persistence explicit.",
                 "Unreal Animation Attach Timing Readiness links socket gameplay readiness to AnimSequence notify/timing evidence and blocks equip approval when notify events are unreadable or missing.",
                 "Unreal Animation Notify Native Bridge Readiness turns the R67 timing gap into a public C++ commandlet / Editor Utility source contract and proves the bridge is ready for build without mutating assets.",
+                "Unreal Animation Notify Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin and records DLL hash evidence with zero production writes.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5450,7 +5474,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r68-unreal-animation-notify-native-bridge-presentation-pack",
+        label: str = "r69-unreal-animation-notify-native-build-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {
