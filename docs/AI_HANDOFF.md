@@ -1,5 +1,21 @@
 # AI 接手说明
 
+## 0. 当前计划方向（2026-08-06）
+
+当前不要继续优先扩 MotionBuilder / Houdini / 新 DCC adapter。稳定基线是 R75：`ai-tool-ta-dcc-first-showcase-r75` / `dcc-first-package@1.72.0`，Presenter Pack 73 evidence / 63 route，R75 已证明 Control Rig native bridge 能通过 Unreal RunUAT BuildPlugin 编译。
+
+R76 已有半成品证据：`dcc-hosts/unreal-control-rig-bridge/artifacts/unreal-control-rig-native-commandlet-probe-20260806-103153.json`，gate 为 `Ready`，`evidenceLevel=L3-runtime`，`returnCode=0`，`commandletLoaded=true`，`readinessInvocation=true`，`assetWrites=0`，`engineWrites=0`，`productionWrites=0`。下一步只做正式接入和轻量验证，不重新扩大范围。
+
+后续优先队列：
+
+1. R76：把 Control Rig native commandlet probe 接入 `ai_tool_ta_maya_host/api.py`、`scripts/validate_loop.ps1`、public manifest、Presenter Pack、DCC_FIRST_PACKAGE、EVIDENCE_INDEX、VALIDATION、README 和开发日志。
+2. R77：新增 `AI Review Packet`，从已有 Socket / Control Rig / Groom artifact 生成 `summaryDraft`、`rootCauseClusters`、`ownerHandoffDrafts`、`safeNextActions`、`blockedReasons`、`evidenceRefs`、`aiBoundary`。第一版使用 deterministic summarizer，预留 `modelProvider` 和 `promptTemplateId`。
+3. R78：在 Maya AuroraView Host 增加 `AI Triage` 展示入口，让 reviewer 在 DCC 内看到 AI 如何解释 blocked、分派 owner、引用 evidence、建议下一步，并保留 accept / edit / reject 状态。
+4. R79：统一 Presenter Pack / public package 讲法：业务问题 -> deterministic facts -> AI triage -> controlled action -> receipt proof。
+5. R80：清理未被 manifest / Presenter Pack 引用的旧 artifact，保持 Git 状态干净。
+
+用户会在后期集中做 Maya GUI 截图、录屏和人工体验测试。开发循环默认只跑轻量命令、schema、artifact、manifest 和必要的一次 runtime probe。
+
 ## 1. 最终展示效果
 
 目标不是网页作品集，而是 DCC / 引擎内展示的工具管线 TA 能力。
@@ -111,7 +127,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r75-unreal-control-rig-native-bridge-bu
 - Maya GUI 9 张 PNG 和 1 段 MP4，留到最后人工采集。
 - MotionBuilder、Control Rig compile status Editor Utility / C++ bridge、Animation Blueprint Library / C++ adapter、Houdini hython L3 upgrade。
 
-## 3. R70 当前断点与已完成工具线
+## 3. 当前断点与已完成工具线
+
+当前断点以第 0 节的 R75 / R76 / R77 / R78 队列为准；下面是已完成工具线的历史证据说明。
 
 `Animation Continuity Lab` 已完成首轮闭环：L2 contract smoke、Maya `mayapy` L3 keyed animCurve collector、Presenter Pack 接入、public manifest 接入和模块文档。
 

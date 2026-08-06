@@ -1,7 +1,31 @@
 # DCC-first 长期开发计划与环境
 
-> 更新于 2026-08-04  
+> 更新于 2026-08-06
 > 主线目标：把当前 Web 作品集证据台迁移成 DCC/引擎内真实工具展示。Web 页面保留为索引、证据包和报告浏览器，不再作为最终主展示形态。
+
+## 0. 260806 计划重定向：AI 可见 + 快速闭环
+
+当前稳定基线以 README、AI_HANDOFF 和 public package 的 R75 为准：`ai-tool-ta-dcc-first-showcase-r75` / `dcc-first-package@1.72.0`。R76 Control Rig native commandlet probe 已有真实 runtime artifact，但尚未正式接入 manifest / Presenter Pack / 文档；本文件后面的 R9-R47 记录保留为历史开发轨迹，不再作为下一轮默认入口。
+
+后续目标从“继续扩更多 DCC 线”调整为“先把 AI Tool TA 的核心展示讲清楚”：确定性代码负责采集 DCC/引擎事实、执行 gate、受控写入和 rollback；AI 负责读 evidence、聚类问题、生成 owner handoff、解释风险和建议下一步。AI 输出必须绑定 `evidenceRefs`，不能替代 deterministic gate。
+
+新的优先队列：
+
+| 顺序 | 轮次 | 目标 | 完成标准 |
+| --- | --- | --- | --- |
+| 1 | R76 | Control Rig native commandlet probe 正式收口 | 把已有 L3-runtime probe 接入 manifest、Presenter Pack、技术文档和验证脚本 |
+| 2 | R77 | `AI Review Packet` 通用证据包 | 用 deterministic summarizer 生成 `summaryDraft`、`rootCauseClusters`、`ownerHandoffDrafts`、`safeNextActions`、`evidenceRefs`、`aiBoundary` |
+| 3 | R78 | Maya / AuroraView `AI Triage` 展示入口 | 在 DCC 面板内能看 blocked 原因、owner 分派、AI 草稿引用的证据行、accept/edit/reject 状态 |
+| 4 | R79 | Presenter Pack / public package 故事线收口 | 对外文档按“业务问题 -> deterministic facts -> AI triage -> controlled action -> receipt proof”统一 |
+| 5 | R80 | artifact 卫生与发布包清理 | 未被 manifest / Presenter Pack 引用的旧 artifact 删除或移入本地 `_scratch`，Git 状态恢复干净 |
+| 6 | R81+ | 补齐剩余矩阵 | 再推进 MotionBuilder、Houdini hython L3、Control Rig diagnostics / controlled write、Animation C++ adapter |
+
+提速规则：
+
+- 每轮只产出一个可发现的正式 artifact；试跑产物必须在本轮内晋升进 manifest，或清理掉。
+- 默认验证只跑 `py_compile`、`json.tool`、对应 smoke、`git diff --check`；已有 R75 证明过的重型 BuildPlugin / Unreal runtime 不重复跑，除非改了 native source、schema 或 package 接入。
+- Maya GUI 截图、录屏和人工感受测试集中留到最后由用户处理；开发阶段只保证命令、schema、artifact、Presenter Pack contract 可审阅。
+- 不再把 MotionBuilder / 新 DCC adapter 作为下一轮默认任务；等 AI Review Packet 和 AI Triage 形成主线后再补。
 
 跨 DCC / 引擎持续开发框架见：
 
