@@ -1,6 +1,6 @@
 # Unreal Animation Bridge
 
-R70 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify bridge build 和 commandlet runtime proof 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接。
+R71 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime facts、gameplay attach readiness、native notify bridge build、commandlet runtime proof 和 native notify diagnostics 串成同一条业务链。动画交付不是“DCC 里检查完就结束”，也不是“Unreal 里有 AnimSequence 就结束”，而是要证明 Skeleton / frame / curve / notify timing 能支撑真实玩法挂接。
 
 ## 核心业务逻辑
 
@@ -33,6 +33,7 @@ R70 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_readiness.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_build.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_commandlet_probe.py`
+- `dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/generate_maya_fbx_fixture.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/probe_animation_runtime.py`
 - `dcc-hosts/unreal-animation-bridge/scripts/unreal_python/import_animsequence_fixture.py`
@@ -51,8 +52,9 @@ R70 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - Native notify bridge readiness：读取 R67 attach timing readiness，通过 Unreal 5.3 headless probe 确认 AnimSequence/AnimNotify runtime 类和 public C++ source contract，把 notify timing 缺口推进到 native commandlet / Editor Utility build gate。
 - Native notify bridge build：通过 RunUAT BuildPlugin 编译 `AI_Tool_TA_AnimNotifyBridge`，记录 DLL hash、compilerVersion、errorLines 和 no-write boundary。
 - Native notify commandlet probe：把 R69 packaged plugin 复制到临时 Unreal project，执行 `-run=AiToolTaAnimNotifyDiagnostics`，记录 commandletLoaded、readiness output receipt 和 no-write boundary。
-- Presenter Pack 接入：R70 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact 和 commandlet probe artifact，并保持 58 步 demo route。
-- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r70` / `dcc-first-package@1.67.0`。
+- Native notify diagnostics：读取 R67 animationAssetPaths，喂给 packaged commandlet，加载 2/2 public AnimSequence，输出 native notify rows，并把缺失的 `equip.attach` / `gear.attach` 保持为业务 Blocked。
+- Presenter Pack 接入：R71 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact 和 native diagnostics artifact，并保持 59 步 demo route。
+- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r71` / `dcc-first-package@1.68.0`。
 
 ## 证据
 
@@ -104,10 +106,16 @@ R70 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 <repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-commandlet-probe-20260806-083144.json
 ```
 
+当前 native notify diagnostics artifact：
+
+```text
+<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-diagnostics-20260806-085035.json
+```
+
 当前 Presenter Pack：
 
 ```text
-<repo>\dcc-hosts\maya-auroraview-host\artifacts\r70-unreal-animation-notify-native-commandlet-presentation-pack-20260806-083529.json
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json
 ```
 
 关键结果：
@@ -178,9 +186,17 @@ R70 使用 R69 packaged plugin，在 `D:\cs\_test\ai_tool_ta_anim_notify_command
 
 关键结论：native notify bridge 不只“能编译”，已经能被 Unreal runtime 加载为 commandlet。下一步可以把 R67 referenced AnimSequence paths 输入 commandlet，产出真实 notify rows，再回连到 `equip.attach` / `gear.attach` owner actions。
 
+## R71 Native Notify Diagnostics
+
+R71 使用 R70 已验证可见的 commandlet，把 R67 attach timing readiness 中的两条 `animationAssetPaths` 写成 input receipt，再在临时 Unreal project 中执行 `UnrealEditor-Cmd -run=AiToolTaAnimNotifyDiagnostics -Input=<receipt> -Output=<receipt>`。
+
+当前结果：L3-runtime-diagnostics / `Blocked` / `unreal_animation_notify_native_diagnostics_collected_with_timing_gaps`，returnCode=0，commandletLoaded=true，diagnosticsCompleted=true，outputStatus=`diagnostics_completed`，requestedAnimSequencePaths=2，loadedSequences=2，notifyRows=0，required/missing attach timing events=2 / 2，timingReady=0，timingBlocked=2，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。
+
+关键结论：native 诊断链路已经从“能加载 commandlet”推进到“能读取具体 public AnimSequence”。当前 Blocked 不是工具链失败，而是业务资产真的没有 `equip.attach` / `gear.attach` notify。下一步应该做受控 public fixture notify authoring、post-check 和 rollback。
+
 ## 后续
 
 下一阶段有两条可选路径：
 
-- 继续动画线：对 R67 referenced AnimSequence 运行 `UAiToolTaAnimNotifyDiagnosticsCommandlet` native diagnostics。
+- 继续动画线：实现受控 public fixture notify authoring / post-check / rollback，把 `equip.attach` 和 `gear.attach` 从缺失事件变成可验证 authored notify。
 - 业务扩展：继续做 Animation Blueprint Library / C++ adapter 读取 curve names，或补 Control Rig native diagnostic bridge。

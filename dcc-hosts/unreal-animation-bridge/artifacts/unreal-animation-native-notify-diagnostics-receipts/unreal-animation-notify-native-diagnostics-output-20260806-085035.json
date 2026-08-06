@@ -1,0 +1,32 @@
+{
+	"schema": "ai-tool-ta-anim-notify-diagnostics@0.1.0",
+	"input": "D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-native-notify-diagnostics-receipts\\unreal-animation-notify-native-diagnostics-input-20260806-085035.json",
+	"singleAnimPath": "",
+	"assetWrites": 0,
+	"engineWrites": 0,
+	"productionWrites": 0,
+	"requestedAnimSequencePaths": 2,
+	"assets": [
+		{
+			"assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+			"objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart",
+			"loaded": true,
+			"collected": true,
+			"message": "Collected 0 notify diagnostics from /Game/AI_Tool_TA/Animations/AS_Hero_RunStart.AS_Hero_RunStart.",
+			"notifyCount": 0,
+			"notifies": []
+		},
+		{
+			"assetPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A",
+			"objectPath": "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A",
+			"loaded": true,
+			"collected": true,
+			"message": "Collected 0 notify diagnostics from /Game/AI_Tool_TA/Animations/AS_Hero_Attack_A.AS_Hero_Attack_A.",
+			"notifyCount": 0,
+			"notifies": []
+		}
+	],
+	"loadedSequences": 2,
+	"notifyRows": 0,
+	"status": "diagnostics_completed"
+}

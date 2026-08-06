@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r70-unreal-animation-notify-native-commandlet-presentation-pack",
+        label: str = "r71-unreal-animation-notify-native-diagnostics-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4110,6 +4110,12 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Commandlet Probe artifact",
                 "artifact",
                 manifest.get("unrealAnimationNotifyNativeCommandletProbeArtifact"),
+            ),
+            _probe_file(
+                "unreal-animation-notify-native-diagnostics",
+                "Unreal Animation Notify Native Diagnostics artifact",
+                "artifact",
+                manifest.get("unrealAnimationNotifyNativeDiagnosticsArtifact"),
             ),
             _probe_file(
                 "character-calibration-maya-l3",
@@ -4579,6 +4585,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal animation notify native commandlet probe",
                 "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_commandlet_probe.py.",
                 "evidence_expected": "A temp Unreal project loads the packaged AI_Tool_TA_AnimNotifyBridge plugin and executes -run=AiToolTaAnimNotifyDiagnostics with a readiness-only output receipt.",
+            },
+            {
+                "id": "29g-run-unreal-animation-notify-native-diagnostics",
+                "label": "Run Unreal animation notify native diagnostics",
+                "operator_action": "Run python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py.",
+                "evidence_expected": "The packaged native commandlet reads R67 AnimSequence paths, loads public assets, emits notify diagnostics and keeps missing attach timing events as business blockers.",
             },
             {
                 "id": "30-run-platform-variant-forge",
@@ -5192,6 +5204,16 @@ class MayaPortfolioApi:
                 "unreal_animation_notify_native_commandlet_probe_error_lines": manifest_summary.get("unrealAnimationNotifyNativeCommandletProbeErrorLines"),
                 "unreal_animation_notify_native_commandlet_probe_temp_project_writes": manifest_summary.get("unrealAnimationNotifyNativeCommandletProbeTempProjectWrites"),
                 "unreal_animation_notify_native_commandlet_probe_production_writes": manifest_summary.get("unrealAnimationNotifyNativeCommandletProbeProductionWrites"),
+                "unreal_animation_notify_native_diagnostics_gate": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsGate"),
+                "unreal_animation_notify_native_diagnostics_evidence_level": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsEvidenceLevel"),
+                "unreal_animation_notify_native_diagnostics_l3_status": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsL3Status"),
+                "unreal_animation_notify_native_diagnostics_runtime_succeeded": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsRuntimeSucceeded"),
+                "unreal_animation_notify_native_diagnostics_loaded_sequences": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsLoadedSequences"),
+                "unreal_animation_notify_native_diagnostics_notify_rows": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsNotifyRows"),
+                "unreal_animation_notify_native_diagnostics_required_attach_timing_events": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsRequiredAttachTimingEvents"),
+                "unreal_animation_notify_native_diagnostics_missing_attach_timing_events": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsMissingAttachTimingEvents"),
+                "unreal_animation_notify_native_diagnostics_error_lines": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsErrorLines"),
+                "unreal_animation_notify_native_diagnostics_production_writes": manifest_summary.get("unrealAnimationNotifyNativeDiagnosticsProductionWrites"),
                 "platform_variant_forge_gate": manifest_summary.get("platformVariantForgeGate"),
                 "platform_variant_forge_evidence_level": manifest_summary.get("platformVariantForgeEvidenceLevel"),
                 "platform_variant_forge_l3_status": manifest_summary.get("platformVariantForgeL3Status"),
@@ -5462,6 +5484,7 @@ class MayaPortfolioApi:
                 "Unreal Animation Notify Native Bridge Readiness turns the R67 timing gap into a public C++ commandlet / Editor Utility source contract and proves the bridge is ready for build without mutating assets.",
                 "Unreal Animation Notify Native Bridge Build compiles the public Editor plugin through RunUAT BuildPlugin and records DLL hash evidence with zero production writes.",
                 "Unreal Animation Notify Native Commandlet Probe loads the packaged Editor plugin in a temp Unreal project and proves -run=AiToolTaAnimNotifyDiagnostics reaches the readiness commandlet contract.",
+                "Unreal Animation Notify Native Diagnostics feeds R67 AnimSequence paths into the packaged commandlet, loads the public animation assets, and keeps attach approval blocked when required notify events are absent.",
                 "Platform Variant Forge joins PC/Mobile variant plans to Unreal preset fact evidence and exposes budget, owner and mutation boundaries.",
                 "Platform Variant Unreal Runtime Probe compares planned variants against real Unreal StaticMesh path, LOD, material, collision and Nanite facts.",
                 "Platform Variant Generation Planner turns runtime drift into dry-run Unreal operation contracts with rollback and approval boundaries.",
@@ -5497,7 +5520,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r70-unreal-animation-notify-native-commandlet-presentation-pack",
+        label: str = "r71-unreal-animation-notify-native-diagnostics-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

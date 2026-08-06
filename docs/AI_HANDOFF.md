@@ -9,7 +9,7 @@
 - Maya 2024 内通过 AuroraView 打开工具面板。
 - 面板里有资产协议、规则矩阵、视觉评审、贴图交付、任务编排、资产放行、引擎预检、场景事务保护、动画连续性、角色校准、Groom Export Inspector / Unreal readiness / Alembic payload / controlled executor、空间作者、Unreal socket readiness / authoring readiness / native bridge readiness、平台变体规划、Unreal runtime 对照、generation planner、texture runtime collector、public Texture2D payload fixture、controlled executor、executor expansion receipts、StaticMesh post-check 等模块。
 - 每个模块能导出 JSON artifact，说明业务事实、规则判定、fix preview、owner 边界和写入边界。
-- 非 Maya 证据已经覆盖 Blender `bpy` L3、Blender Controlled Repair Executor L3、3ds Max `pymxs` L3、3ds Max Controlled Repair Executor L3、3ds Max Material Texture Manifest Link L3-derived、Houdini Rule Adapter L2+ contract / hython readiness、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts L3、Unreal Animation Attach Timing Readiness L3-derived、Unreal Animation Notify Native Bridge Readiness L3-readiness、Unreal Animation Notify Native Bridge Build L3-build 和 Unreal Animation Notify Native Commandlet Probe L3-runtime；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready、Groom Controlled Executor L3 Ready rollback proof、Groom Runtime Fact Collector L3 Ready 和 Groom Group / Root Projection Inspector L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3、Unreal Socket Authoring Executor API-limited L3、Unreal Socket Native Bridge Readiness L3-readiness、Unreal Socket Native Bridge Build L3-build、Unreal Socket Native Commandlet Probe L3-runtime、Unreal Socket Native Receipt Dry-run L3-runtime-dryrun、Unreal Socket Native Controlled Write L3-runtime-controlled-write、Unreal Gameplay Attach Fixture L3-linked 和 Unreal Gameplay Attach Controlled Readiness L3-derived 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
+- 非 Maya 证据已经覆盖 Blender `bpy` L3、Blender Controlled Repair Executor L3、3ds Max `pymxs` L3、3ds Max Controlled Repair Executor L3、3ds Max Material Texture Manifest Link L3-derived、Houdini Rule Adapter L2+ contract / hython readiness、Unreal Python L3++；动画线已有 Maya `mayapy` L3 keyed animCurve 证据、Unreal Animation Bridge import L3、Unreal AnimSequence Deep Facts L3、Unreal Animation Attach Timing Readiness L3-derived、Unreal Animation Notify Native Bridge Readiness L3-readiness、Unreal Animation Notify Native Bridge Build L3-build 和 Unreal Animation Notify Native Commandlet Probe L3-runtime 和 Unreal Animation Notify Native Diagnostics L3-runtime-diagnostics；角色线已有 Character Calibration Maya L3、Character Calibration Drilldown、Unreal Control Rig Bridge L3、Unreal Control Rig Fixture Authoring L3、Unreal Control Rig Face Skeleton Fixture L3、Unreal Control Rig Deformation Link L3 和 Unreal Control Rig Compile Status Bridge L3；groom 线已有 Groom Export Inspector Maya L3、Groom Unreal Import Readiness L3、curve-only Groom Alembic Payload Receipt L3、Groom Alembic Import/Post-check Readiness L3、Groom Plugin/API Fixture L3 Ready、Groom Controlled Executor L3 Ready rollback proof、Groom Runtime Fact Collector L3 Ready 和 Groom Group / Root Projection Inspector L3；空间作者线已有 Spatial Authoring Maya L3、Spatial Authoring Drilldown、Unreal Socket Import Checker L3、Unreal Socket Authoring Executor API-limited L3、Unreal Socket Native Bridge Readiness L3-readiness、Unreal Socket Native Bridge Build L3-build、Unreal Socket Native Commandlet Probe L3-runtime、Unreal Socket Native Receipt Dry-run L3-runtime-dryrun、Unreal Socket Native Controlled Write L3-runtime-controlled-write、Unreal Gameplay Attach Fixture L3-linked 和 Unreal Gameplay Attach Controlled Readiness L3-derived 证据；平台变体线已有连接 Unreal preset facts 的 `L3-linked` planning artifact、Unreal runtime-vs-plan L3 artifact、runtime drift -> generation plan artifact、Unreal material / texture runtime artifact、public Texture2D payload L3 artifact、受控 Unreal executor L3 artifact、LOD/Nanite/collision executor receipt artifact，以及 read-only StaticMesh post-check artifact。
 - Presenter Pack 把所有关键证据汇总成 reviewer 可读的发布包。
 
 当前稳定展示包：
@@ -30,7 +30,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r66-unreal-gameplay-attach-controlled-r
 dcc-hosts/maya-auroraview-host/artifacts/r67-unreal-animation-attach-timing-readiness-presentation-pack-20260806-074822.json
 dcc-hosts/maya-auroraview-host/artifacts/r68-unreal-animation-notify-native-bridge-presentation-pack-20260806-080752.json
 dcc-hosts/maya-auroraview-host/artifacts/r69-unreal-animation-notify-native-build-presentation-pack-20260806-081958.json
-dcc-hosts/maya-auroraview-host/artifacts/r70-unreal-animation-notify-native-commandlet-presentation-pack-20260806-083529.json
+dcc-hosts/maya-auroraview-host/artifacts/r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json
 ```
 
 ## 2. 当前完成度
@@ -89,6 +89,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r70-unreal-animation-notify-native-comm
 - Unreal Animation Notify Native Bridge Readiness L3-readiness source/build gate
 - Unreal Animation Notify Native Bridge Build L3-build compiled plugin proof
 - Unreal Animation Notify Native Commandlet Probe L3-runtime commandlet visibility proof
+- Unreal Animation Notify Native Diagnostics L3-runtime-diagnostics asset timing proof
 - Blender Rule Adapter L3
 - Blender Controlled Repair Executor L3
 - 3ds Max Rule Adapter L3
@@ -167,7 +168,9 @@ dcc-hosts/maya-auroraview-host/artifacts/r70-unreal-animation-notify-native-comm
 
 `Unreal Animation Notify Native Bridge Build` 已完成 R69 闭环：`run_anim_notify_native_bridge_build.py` 调用 RunUAT BuildPlugin 编译 public `AI_Tool_TA_AnimNotifyBridge` Editor plugin，并把 build 输出写到 `D:\cs\_test\ai_tool_ta_anim_notify_builds`。结果为 L3-build / `Ready` / `unreal_animation_notify_native_bridge_plugin_built`，returnCode=0，compiledDlls=1，errorLines=0，compilerVersion=14.38.33130，configRestored=true，DLL bytes=195584，sha256=`1f42afb1a87dae5baa2dae759adb521b96ffde233449a999aaaeea19d67be459`，productionWrites=0。关键结论：native notify bridge 已经不是“待编译源码”，下一步是加载 packaged plugin，运行 commandlet diagnostics。
 
-`Unreal Animation Notify Native Commandlet Probe` 已完成 R70 闭环：`run_anim_notify_native_commandlet_probe.py` 读取 R69 build artifact，把 packaged `AI_Tool_TA_AnimNotifyBridge` 复制到 `D:\cs\_test` 临时 Unreal project，执行 `UnrealEditor-Cmd -run=AiToolTaAnimNotifyDiagnostics -Output=<receipt>`。结果为 L3-runtime / `Ready` / `unreal_animation_notify_native_commandlet_loaded`，returnCode=0，commandletLoaded=true，readinessInvocation=true，outputStatus=`readiness_invocation_only`，requestedAnimSequencePaths=0，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。关键结论：native notify bridge 已经能被 Unreal runtime 加载；下一步是把 R67 referenced AnimSequence paths 输入 commandlet，产出真实 notify rows。
+`Unreal Animation Notify Native Commandlet Probe` 已完成 R70 闭环：`run_anim_notify_native_commandlet_probe.py` 读取 R69 build artifact，把 packaged `AI_Tool_TA_AnimNotifyBridge` 复制到 `D:\cs\_test` 临时 Unreal project，执行 `UnrealEditor-Cmd -run=AiToolTaAnimNotifyDiagnostics -Output=<receipt>`。结果为 L3-runtime / `Ready` / `unreal_animation_notify_native_commandlet_loaded`，returnCode=0，commandletLoaded=true，readinessInvocation=true，outputStatus=`readiness_invocation_only`，requestedAnimSequencePaths=0，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。关键结论：native notify bridge 已经能被 Unreal runtime 加载。
+
+`Unreal Animation Notify Native Diagnostics` 已完成 R71 闭环：`run_anim_notify_native_diagnostics.py` 读取 R67 attach timing readiness，生成 input receipt，把 packaged `AI_Tool_TA_AnimNotifyBridge` 复制到 `D:\cs\_test` 临时 Unreal project，执行 `UnrealEditor-Cmd -run=AiToolTaAnimNotifyDiagnostics -Input=<receipt> -Output=<receipt>`。结果为 L3-runtime-diagnostics / `Blocked` / `unreal_animation_notify_native_diagnostics_collected_with_timing_gaps`，returnCode=0，commandletLoaded=true，diagnosticsCompleted=true，outputStatus=`diagnostics_completed`，requestedAnimSequencePaths=2，loadedSequences=2，notifyRows=0，required/missing attach timing events=2 / 2，timingReady=0，timingBlocked=2，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。关键结论：native 诊断链路已能读取具体 public AnimSequence；当前 Blocked 是业务资产缺少 `equip.attach` / `gear.attach` notify，不是工具 runtime 失败。
 
 `Platform Variant Forge` 已完成 R28 首版闭环：读取 public-safe PC/Mobile variant fixture，连接已有 Unreal preset fact comparison L3++ artifact，检查 target path、owner approval、triangle/texture/material/draw budget、LOD coverage、Nanite、shader feature、collision policy，输出 `L3-linked` planning artifact。本轮没有新增 Unreal 写入，定位是平台派生计划和门禁证据。
 
@@ -438,16 +441,22 @@ dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-notify-native-bridg
 dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-notify-native-bridge-build-20260806-081735.json
 ```
 
+当前 Unreal Animation Notify Native Diagnostics：
+
+```text
+dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-notify-native-diagnostics-20260806-085035.json
+```
+
 当前 Unreal Animation Notify Native Commandlet Probe：
 
 ```text
 dcc-hosts/unreal-animation-bridge/artifacts/unreal-animation-notify-native-commandlet-probe-20260806-083144.json
 ```
 
-当前 R70 Presenter Pack：
+当前 R71 Presenter Pack：
 
 ```text
-dcc-hosts/maya-auroraview-host/artifacts/r70-unreal-animation-notify-native-commandlet-presentation-pack-20260806-083529.json
+dcc-hosts/maya-auroraview-host/artifacts/r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json
 ```
 
 这条线的最终效果：
@@ -457,7 +466,7 @@ dcc-hosts/maya-auroraview-host/artifacts/r70-unreal-animation-notify-native-comm
 - 通过 Maya `mayapy` 生成真实 keyed animCurve runtime evidence。
 - Unreal 侧已接入 import L3、AnimSequence Deep Facts、R67 attach timing readiness、R68 native notify bridge readiness、R69 native notify bridge build 和 R70 native notify commandlet probe；Blender 已有 R22 `bpy` L3 和 R57 controlled repair / post-check / rollback；3ds Max 已有 `pymxs` L3、R53 material texture manifest link 和 R58 controlled repair / post-check / rollback；Character Calibration 已有 Maya L3、R35 drilldown、R42 Unreal Control Rig Fixture Authoring、post-authoring bridge、R43 Control Rig Deformation Link、R44 Face Skeleton Fixture 和 R45 Compile Status Bridge；Groom Export Inspector 已有 Maya L3、R47 Unreal Import Readiness、R52 curve-only Maya Alembic Payload Receipt、R52 Unreal Import/Post-check Readiness、R50 Groom Plugin/API Fixture Ready、R52 Controlled Executor Ready rollback proof、R55 Runtime Fact Collector 和 R59 Group / Root Projection Inspector；Spatial Authoring 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker、R40 socket API-limited executor、R60 native bridge readiness、R61 native source package、R62 native build harness、R63 native commandlet probe、R64 native receipt dry-run、R65 native controlled write、R66 gameplay attach controlled readiness、R67 animation attach timing readiness、R68 animation notify native bridge readiness、R69 animation notify native build 和 R70 animation notify commandlet probe；Platform Variant Forge 已把 PC/Mobile 派生计划接到 Unreal preset facts、Unreal runtime-vs-plan L3、dry-run generation plan、material / texture runtime facts、public Texture2D payload、受控 Unreal execute / post-check / rollback，以及 LOD/Nanite/collision approval receipts；Houdini 已有 R56 HDA / detail attr / OUT role / PDG / bake receipt contract 和 hython readiness。
 
-继续开发时：优先把 R67 referenced AnimSequence paths 输入 `UAiToolTaAnimNotifyDiagnosticsCommandlet`，跑 native notify diagnostics；之后再考虑 authored notify controlled write、MotionBuilder adapter、Control Rig native diagnostic bridge 或公开持久 socket 演示。如果只验证当前 R70，运行：
+继续开发时：优先做受控 public fixture notify authoring / post-check / rollback，让 R71 中缺失的 `equip.attach` / `gear.attach` 变成可验证 native notify；之后再考虑 MotionBuilder adapter、Control Rig native diagnostic bridge 或公开持久 socket 演示。如果只验证当前 R71，运行：
 
 ```powershell
 python dcc-hosts/animation-continuity-lab/scripts/run_l3_smoke.py
@@ -467,6 +476,7 @@ python dcc-hosts/unreal-animation-bridge/scripts/run_attach_timing_readiness.py
 python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_readiness.py
 python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_bridge_build.py
 python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_commandlet_probe.py
+python dcc-hosts/unreal-animation-bridge/scripts/run_anim_notify_native_diagnostics.py
 python dcc-hosts/character-calibration-studio/scripts/run_l3_smoke.py
 python dcc-hosts/character-calibration-studio/scripts/run_drilldown.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_fixture_authoring.py
@@ -507,46 +517,4 @@ python dcc-hosts/houdini-rule-adapter/scripts/run_l3_smoke.py
 python dcc-hosts/blender-rule-adapter/scripts/run_controlled_repair.py
 ```
 
-当前 R70 public package 为 `ai-tool-ta-dcc-first-showcase-r70` / `dcc-first-package@1.67.0`，Presenter Pack 68 / 68 evidence files present，0 missing required files，58 demo route steps；R70 Unreal Animation Notify Native Commandlet Probe 已把 R69 compiled native proof 推进到 runtime commandlet visibility，returnCode=0，commandletLoaded=true，readinessInvocation=true，outputStatus=`readiness_invocation_only`，errorLines=0，productionWrites=0。R61 source readiness、R62 build proof、R63 commandlet visibility、R64 dry-run、R65 controlled write、R66 gameplay readiness、R67 attach timing readiness、R68 native notify readiness 和 R69 native notify build 继续作为 socket Python API-limited -> native commandlet executor -> gameplay attach review -> animation timing bridge -> native diagnostics bridge 的前置证据；下一轮最短入口是 native AnimSequence notify diagnostics。R59 Groom Group / Root Projection、R58 3ds Max Controlled Repair、R57 Blender Controlled Repair、R56 Houdini Rule Adapter、R55 Groom Runtime Fact Collector、R54 Gameplay Attach、R53 Max Texture Manifest Link 与 R52 Groom Controlled Executor 继续作为 DCC/引擎受控执行证据。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。
-
-## 4. 长期开发规则
-
-每轮只闭环一个高价值业务任务。
-
-默认验证：
-
-```powershell
-.\scripts\validate_loop.ps1 -Tier quick
-```
-
-只在对应模块变化时跑对应 runtime 档位；只有发布里程碑跑 `full`。
-
-详细策略：
-
-```text
-docs/技术报告/260805_长期循环开发框架与轻量验证策略.md
-```
-
-## 5. 公开仓边界
-
-公开仓应包含：
-
-- `dcc-hosts`
-- `showcases`
-- `public-case-package`
-- `fixtures`
-- `docs`
-- `scripts`
-- `README.md`
-- `PUBLIC_RELEASE.md`
-- `PRODUCT.md`
-- `DESIGN.md`
-
-公开仓应排除：
-
-- `lightbox提取`
-- `assets` 下的大截图/录屏
-- `node_modules`
-- `dist`
-- `.tmp`
-- DCC 二进制场景和本地缓存
+当前 R71 public package 为 `ai-tool-ta-dcc-first-showcase-r71` / `dcc-first-package@1.68.0`，Presenter Pack 69 / 69 evidence files present，0 missing required files，59 demo route steps；R71 Unreal Animation Notify Native Diagnostics 已把 R70 commandlet visibility 推进到真实 AnimSequence 诊断，returnCode=0，commandletLoaded=true，outputStatus=`diagnostics_completed`，loadedSequences=2/2，notifyRows=0，missingAttachTimingEvents=2，productionWrites=0。Blocked 是业务结论：public fixture 动画缺 `equip.attach` / `gear.attach` notify。下一轮最短入口是受控 public fixture notify authoring / post-check / rollback；Maya GUI media 仍留到最后集中采集。gate 仍为 `CapturePending`，只因为 Maya GUI media 还没采集。

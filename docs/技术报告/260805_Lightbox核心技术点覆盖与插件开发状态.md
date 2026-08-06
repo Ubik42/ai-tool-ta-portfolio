@@ -2,7 +2,7 @@
 
 更新时间：2026-08-06
 工程根目录：`<repo>`  
-当前发布包：`ai-tool-ta-dcc-first-showcase-r70` / `dcc-first-package@1.67.0`
+当前发布包：`ai-tool-ta-dcc-first-showcase-r71` / `dcc-first-package@1.68.0`
 
 ## 1. 当前结论
 
@@ -10,7 +10,7 @@
 
 R70 的硬证据：
 
-- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r70-unreal-animation-notify-native-commandlet-presentation-pack-20260806-083529.json`
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json`
 - Unreal Animation Notify Native Commandlet Probe：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-commandlet-probe-20260806-083144.json`
 - Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r69-unreal-animation-notify-native-build-presentation-pack-20260806-081958.json`
 - Unreal Animation Notify Native Bridge Build：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-bridge-build-20260806-081735.json`
@@ -71,7 +71,7 @@ R70 的硬证据：
 - Animation Continuity L3：`<repo>\dcc-hosts\animation-continuity-lab\artifacts\animation-continuity-maya-l3-20260805-162744.json`
 - Blender L3：`<repo>\dcc-hosts\blender-rule-adapter\artifacts\blender-rule-adapter-l3-20260805-153156.json`
 - 3ds Max L3：`<repo>\dcc-hosts\3dsmax-rule-adapter\artifacts\max-rule-adapter-l3-20260806-032411.json`
-- Presenter Pack 结果：68 / 68 evidence files present，0 missing required files，58 demo route steps。
+- Presenter Pack 结果：69 / 69 evidence files present，0 missing required files，59 demo route steps。
 - Gate 仍是 `CapturePending`，原因只剩 Maya GUI 截图/录屏未采集；Animation/Unreal Animation/Blender/Max/Houdini/Platform 的 `Blocked` 是 synthetic fixture 中故意保留的业务阻断、runtime drift 或本机缺少 `hython.exe` 的明确 readiness gate。
 
 ## 2. Lightbox核心技术点覆盖
@@ -99,7 +99,7 @@ R70 的硬证据：
 
 | # | 插件/工具线 | 大白话说明 | 当前进度 |
 | --- | --- | --- | --- |
-| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R70 Presenter Pack 68/68 evidence present；58 步 demo route；新增 Unreal Animation Notify Native Commandlet Probe |
+| 1 | Maya AuroraView Host / Presenter Pack | 在 Maya 里打开作品集工具，并把所有证据打包给 reviewer | 已可运行；R71 Presenter Pack 69/69 evidence present；59 步 demo route；新增 Unreal Animation Notify Native Diagnostics |
 | 2 | Asset Protocol Workbench | 给资产写业务身份证：平台、LOD、碰撞、预算、角色等字段 | Maya custom attr 写入/回读已完成 |
 | 3 | Cross-DCC Rule Matrix | 同一套发布规则，分别从 Maya/Blender/Max/Houdini 等 DCC 采集事实后检查 | Maya L3；Blender L3；Blender controlled repair L3；3ds Max L3；Max controlled repair L3；Max texture manifest link L3-derived；Houdini L2+ contract / hython readiness |
 | 4 | Visual Review Studio | 自动建固定相机和固定 review pass，让视觉评审可复现 | Maya camera rig/pass manifest 已完成；真实截图/录屏待采集 |
@@ -114,11 +114,11 @@ R70 的硬证据：
 | 11.1 | 3ds Max Controlled Repair Executor | 把 Max blocked 行转成可执行修复收据，修完 post-check，再 rollback | R58 L3 完成；preGate Blocked，postGate Ready，rollbackPassed=true，5/5 operations，postWarnings=0，postErrors=0，0 assetWrites |
 | 12 | Houdini Rule Adapter | 检查 procedural HDA 资产是否有稳定协议、输出角色、packed prototype、PDG wedge 和 frozen bake receipt | R56 L2+ contract 完成；hython L3 readiness 完成但本机缺 `hython.exe` |
 | 13 | Animation Continuity Lab | 检查 Maya/MotionBuilder/Unreal 动画传递中的角色身份、Take、时间、通道和曲线差异 | Maya `mayapy` L3 首版完成 |
-| 14 | Unreal Animation Bridge / Deep Facts / Attach Timing / Native Notify Bridge | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts，并继续判断 gameplay attach timing 是否可发布 | Unreal import L3 完成；R41 deep facts 完成；R67 attach timing readiness 完成；R68 native notify bridge source/readiness 完成；R69 native notify bridge build 完成；R70 commandlet probe 完成，commandletLoaded=true，readinessInvocation=true，native diagnostics 待跑 |
+| 14 | Unreal Animation Bridge / Deep Facts / Attach Timing / Native Notify Bridge | 把 Maya 动画连续性 facts 映射到 Unreal AnimSequence/Skeleton/root motion/curve/compression runtime facts，并继续判断 gameplay attach timing 是否可发布 | Unreal import L3 完成；R41 deep facts 完成；R67 attach timing readiness 完成；R68 native notify bridge source/readiness 完成；R69 native notify bridge build 完成；R70 commandlet probe 完成；R71 native diagnostics 完成，2/2 AnimSequence loaded，notifyRows=0，missingAttachTimingEvents=2 |
 | 15 | Character Calibration & Intent Transfer Studio | 检查 DNA/拓扑/joint/面部参数/Unreal Control Rig 映射，避免“算法能跑但艺术表现错” | Maya `mayapy` L3 完成；R35 drilldown 完成；R42 Unreal Control Rig Fixture Authoring Ready；R44 Face Skeleton Fixture 已补齐 approved 行 Skeleton targets；R45 compile 方法可调用但 diagnostic/status 仍 Review |
 | 16 | Spatial Authoring & Pose Transfer Workbench | 用热点图、pose frame、locator preview 管 socket、挂点、pose copy、mirror | Maya `mayapy` L3 完成；R36 drilldown 完成；R38 Unreal Socket Import Checker L3 完成；R40 Socket Authoring Executor 给出 API-limited gate；R60-R65 native bridge/source/build/commandlet/dry-run/controlled write 完成；R54 Gameplay Attach Fixture、R66 Controlled Readiness、R67 Attach Timing Readiness、R68 Anim Notify Native Bridge Readiness、R69 Anim Notify Native Bridge Build、R70 Anim Notify Commandlet Probe 完成 |
 | 17 | Platform Variant Forge | 从 PC 资产派生 Mobile 资产，联动命名、LOD、材质、贴图、碰撞、预算 | R28 plan + R29 Unreal runtime + R30 generation plan + R31 texture runtime + R32 public Texture2D payload + R33 controlled executor + R34 executor receipts + R39 StaticMesh post-check 完成 |
-| 18 | Unreal Socket Import Checker / Authoring Executor / Native Bridge / Gameplay Attach / Animation Timing | 把 Maya socket / hotspot / pose transfer facts 对照到 Unreal Skeleton / socket runtime facts，并继续判断玩法 equip attach 和动画触发点是否可交付 | R38 runtime checker 完成；R40 controlled executor 证明 UE 5.3 Python socket identity 字段不可写；R60-R65 已完成 native bridge readiness/source/build/commandlet/receipt dry-run/controlled write；R66 gameplay attach controlled readiness 完成；R67 animation attach timing readiness 暴露 notify timing gate；R68 native notify bridge source/readiness 已接入；R69 native notify bridge build 完成；R70 native notify commandlet probe 完成 |
+| 18 | Unreal Socket Import Checker / Authoring Executor / Native Bridge / Gameplay Attach / Animation Timing | 把 Maya socket / hotspot / pose transfer facts 对照到 Unreal Skeleton / socket runtime facts，并继续判断玩法 equip attach 和动画触发点是否可交付 | R38 runtime checker 完成；R40 controlled executor 证明 UE 5.3 Python socket identity 字段不可写；R60-R65 已完成 native bridge readiness/source/build/commandlet/receipt dry-run/controlled write；R66 gameplay attach controlled readiness 完成；R67 animation attach timing readiness 暴露 notify timing gate；R68 native notify bridge source/readiness 已接入；R69 native notify bridge build 完成；R70 native notify commandlet probe 完成；R71 native diagnostics 完成 |
 | 19 | Character LOD Bake Planner | 给角色部件规划 LOD、贴图烘焙、normal/tangent/vertex color payload | 计划阶段 |
 | 20 | Groom Export Inspector / Unreal Readiness / Alembic Payload / Import Post-check / Plugin API Fixture / Controlled Executor / Runtime Fact Collector / Group Root Projection | 检查 XGen/groom 到 Unreal 的 root UV、strand ID、guide curve、curve-only Alembic payload、Groom/Alembic API、目标 SkeletalMesh、cache receipt、import/post-check readiness、public plugin/API surface、真实 executor rollback、runtime fact readback、group/root projection 和材质槽路由 | R46 Maya L3 完成；R47 Unreal readiness L3 完成；R52 Maya `AbcExport` curve-only payload receipt 完成；R52 Unreal post-check readiness 完成，cache hash matched，AssetImportTask/HairStrandsFactory/Alembic factory 可 dry-run；R50 Groom Plugin/API Fixture Ready；R52 controlled executor 已真实 import approved `.abc` 为 `GroomAsset`，BindingAsset 创建并回滚 clean；R55 runtime fact collector Ready，3 runtime assets / 23 properties / 40 methods / 11 callable facts；R59 group/root projection L3 完成，approved groom 6/6 root projection matched，3/3 group rows pass |
 
@@ -187,7 +187,7 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 
 ## 6. 下一步建议
 
-下一轮不要再围绕 Blender/Max readiness、Groom StaticMesh importer、Groom group/root projection 或 socket Python authoring identity 打转，它们已进入真实 runtime 证据或明确 API-limited readiness。`3ds Max Rule Adapter` 已有 `pymxs` L3、R53 material slot -> texture manifest link 和 R58 controlled repair；`Houdini Rule Adapter` 已有 R56 HDA/PDG/bake receipt contract 和 hython readiness，只有在能定位 `hython.exe` 时才升级真实 L3；`Unreal Animation Bridge` 已有 import L3、R41 deep facts、R67 attach timing readiness、R68 native notify bridge source/readiness、R69 native notify bridge build 和 R70 native notify commandlet probe；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture、R52 controlled executor Ready rollback proof、R55 runtime fact collector 和 R59 group/root projection；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker、R40 Socket Authoring Executor API-limited gate、R60-R70 native bridge source/build/commandlet/dry-run/controlled write/gameplay controlled readiness/animation timing readiness/native notify bridge readiness/build/runtime；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先跑 AnimSequence native notify diagnostics；之后再做 MotionBuilder adapter 或 Control Rig C++ diagnostic bridge。
+下一轮不要再围绕 Blender/Max readiness、Groom StaticMesh importer、Groom group/root projection 或 socket Python authoring identity 打转，它们已进入真实 runtime 证据或明确 API-limited readiness。`3ds Max Rule Adapter` 已有 `pymxs` L3、R53 material slot -> texture manifest link 和 R58 controlled repair；`Houdini Rule Adapter` 已有 R56 HDA/PDG/bake receipt contract 和 hython readiness，只有在能定位 `hython.exe` 时才升级真实 L3；`Unreal Animation Bridge` 已有 import L3、R41 deep facts、R67 attach timing readiness、R68 native notify bridge source/readiness、R69 native notify bridge build 和 R70 native notify commandlet probe；`Character Calibration Studio` 已有 Maya L3、R35 drilldown、R42 Control Rig fixture authoring、post-authoring bridge、R43 deformation link、R44 face skeleton fixture 和 R45 compile status bridge；`Groom Export Inspector` 已有 R46 Maya L3、R47 Unreal readiness L3、R52 curve-only Maya Alembic payload receipt、R52 Unreal import/post-check readiness、R50 plugin/API fixture、R52 controlled executor Ready rollback proof、R55 runtime fact collector 和 R59 group/root projection；`Spatial Authoring Workbench` 已有 Maya L3、R36 drilldown、R38 Unreal Socket Import Checker、R40 Socket Authoring Executor API-limited gate、R60-R70 native bridge source/build/commandlet/dry-run/controlled write/gameplay controlled readiness/animation timing readiness/native notify bridge readiness/build/runtime；`Platform Variant Forge` 已完成 L3-linked plan、Unreal runtime-vs-plan L3、dry-run generation plan、texture runtime collector、public Texture2D payload fixture、controlled executor、executor receipts 和 StaticMesh post-check。后续优先做受控 public fixture notify authoring / post-check / rollback；之后再做 MotionBuilder adapter 或 Control Rig C++ diagnostic bridge。
 
 
 ## R39 补充
@@ -336,3 +336,10 @@ Maya GUI：输入命令只是一种临时启动方式。现在有三种入口：
 - Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r70-unreal-animation-notify-native-commandlet-presentation-pack-20260806-083529.json`，68/68 evidence files present，0 missing required files，58 demo route steps。
 - Unreal Animation Notify Native Commandlet Probe：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-commandlet-probe-20260806-083144.json`
 - 结果：L3-runtime / `Ready` / `unreal_animation_notify_native_commandlet_loaded`，R69 packaged `AI_Tool_TA_AnimNotifyBridge` 在临时 Unreal 5.3 project 中加载成功，`-run=AiToolTaAnimNotifyDiagnostics` returnCode=0，commandletLoaded=true，readinessInvocation=true，outputStatus=`readiness_invocation_only`，requestedAnimSequencePaths=0，errorLines=0，tempProjectWrites=70，assetWrites=0，engineWrites=0，productionWrites=0。核心业务发现：native bridge 已通过 runtime visibility gate，下一步应输入真实 public AnimSequence paths 采集 notify rows。
+
+
+## R71 补充 - Unreal Animation Notify Native Diagnostics
+
+- Presenter Pack：`<repo>\dcc-hosts\maya-auroraview-host\artifacts\r71-unreal-animation-notify-native-diagnostics-presentation-pack-20260806-085351.json`，69/69 evidence files present，0 missing required files，59 demo route steps。
+- Unreal Animation Notify Native Diagnostics：`<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-notify-native-diagnostics-20260806-085035.json`
+- 结论：packaged commandlet 已在 Unreal 5.3 temp project 中读取 R67 的 2 条 AnimSequence 路径，2/2 loaded，outputStatus=`diagnostics_completed`，notifyRows=0，missingAttachTimingEvents=2，productionWrites=0。Blocked 是业务资产缺少 attach timing notify，不是 runtime 失败。

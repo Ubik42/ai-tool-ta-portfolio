@@ -1,0 +1,54 @@
+{
+  "schema": "ai-tool-ta-anim-notify-native-diagnostics-input@0.1.0",
+  "sourceAttachTimingReadiness": "<repo>\\dcc-hosts\\unreal-animation-bridge\\artifacts\\unreal-animation-attach-timing-readiness-20260806-074254.json",
+  "sourceReportVersion": "unreal-animation-attach-timing-readiness@0.1.0",
+  "sourceGate": "Blocked",
+  "animationAssetPaths": [
+    "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart",
+    "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+  ],
+  "requiredAttachTimingEvents": [
+    "equip.attach",
+    "gear.attach"
+  ],
+  "intents": [
+    {
+      "id": "rifle-primary-equip",
+      "assetId": "spatial-rifle-authoring-001",
+      "slotRole": "primaryWeapon",
+      "sourceReadinessState": "ReadyByControlledExecutor",
+      "publishRequired": true,
+      "animationAssetPaths": [
+        "/Game/AI_Tool_TA/Animations/AS_Hero_RunStart"
+      ],
+      "requiredAttachTimingEvents": [
+        "equip.attach"
+      ],
+      "previousMissingAttachTimingEvents": [
+        "equip.attach"
+      ]
+    },
+    {
+      "id": "backpack-temp-equip",
+      "assetId": "spatial-backpack-tmp-002",
+      "slotRole": "backpack",
+      "sourceReadinessState": "HeldBySourceOwner",
+      "publishRequired": false,
+      "animationAssetPaths": [
+        "/Game/AI_Tool_TA/Animations/AS_Hero_Attack_A"
+      ],
+      "requiredAttachTimingEvents": [
+        "gear.attach"
+      ],
+      "previousMissingAttachTimingEvents": [
+        "gear.attach"
+      ]
+    }
+  ],
+  "writeBoundary": {
+    "mutation": "native_read_only_diagnostics",
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  }
+}
