@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "unreal-animation-attach-timing", "unreal-animation-notify-native-bridge", "unreal-animation-notify-native-build", "unreal-animation-notify-native-commandlet", "unreal-animation-notify-native-diagnostics", "unreal-animation-notify-native-controlled-write", "unreal-gameplay-attach-timing-controlled-readiness", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
+    [ValidateSet("quick", "package", "ui", "animation", "unreal-animation", "unreal-animation-deep-facts", "unreal-animation-attach-timing", "unreal-animation-notify-native-bridge", "unreal-animation-notify-native-build", "unreal-animation-notify-native-commandlet", "unreal-animation-notify-native-diagnostics", "unreal-animation-notify-native-controlled-write", "unreal-gameplay-attach-timing-controlled-readiness", "character-calibration", "character-drilldown", "unreal-control-rig", "unreal-control-rig-fixture-authoring", "unreal-control-rig-face-skeleton-fixture", "unreal-control-rig-deformation-link", "unreal-control-rig-compile-status", "unreal-control-rig-native-bridge-readiness", "groom-export-inspector", "groom-unreal-readiness", "groom-alembic-payload", "groom-alembic-import-postcheck", "groom-plugin-api-fixture", "groom-controlled-executor", "groom-runtime-facts", "groom-group-root-projection", "spatial-authoring", "spatial-drilldown", "unreal-socket", "unreal-socket-authoring-executor", "unreal-socket-native-bridge", "unreal-socket-native-build", "unreal-socket-commandlet-probe", "unreal-socket-receipt-dryrun", "unreal-socket-controlled-write", "unreal-gameplay-attach", "unreal-gameplay-attach-controlled-readiness", "platform-variant", "platform-variant-unreal", "platform-variant-generation", "platform-variant-texture", "platform-variant-texture-payload", "platform-variant-executor", "platform-variant-executor-expansion", "platform-variant-staticmesh-postcheck", "blender", "blender-controlled-repair", "max", "max-controlled-repair", "max-texture-manifest-link", "houdini", "full")]
     [string]$Tier = "quick",
     [int]$TimeoutSeconds = 600
 )
@@ -113,18 +113,21 @@ $QuickPythonFiles = @(
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\deformation_link.py"),
     (Join-Path $UnrealControlRig "unreal_control_rig_bridge\compile_status.py"),
+    (Join-Path $UnrealControlRig "unreal_control_rig_bridge\control_rig_native_bridge.py"),
     (Join-Path $UnrealControlRig "scripts\run_smoke.py"),
     (Join-Path $UnrealControlRig "scripts\run_l3_smoke.py"),
     (Join-Path $UnrealControlRig "scripts\run_fixture_authoring.py"),
     (Join-Path $UnrealControlRig "scripts\run_face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\run_deformation_link.py"),
     (Join-Path $UnrealControlRig "scripts\run_compile_status.py"),
+    (Join-Path $UnrealControlRig "scripts\run_control_rig_native_bridge_readiness.py"),
     (Join-Path $UnrealControlRig "scripts\generate_face_skeleton_fbx.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\probe_control_rig_bridge.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\author_control_rig_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\import_face_skeleton_fixture.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_deformation_link.py"),
     (Join-Path $UnrealControlRig "scripts\unreal_python\collect_control_rig_compile_status.py"),
+    (Join-Path $UnrealControlRig "scripts\unreal_python\probe_control_rig_native_bridge.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\contract.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\maya_collector.py"),
     (Join-Path $GroomExportInspector "groom_export_inspector\unreal_readiness.py"),
@@ -221,12 +224,12 @@ if ($Tier -in @("package", "full")) {
 import sys
 sys.path.insert(0, r"$MayaHost")
 from ai_tool_ta_maya_host.api import MayaPortfolioApi
-pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack")
+pack = MayaPortfolioApi().dcc_presentation_build_pack(label="r74-unreal-control-rig-native-bridge-readiness-presentation-pack")
 summary = pack["summary"]
-assert summary["package_version"] == "dcc-first-package@1.70.0", summary
-assert summary["present_evidence_files"] == 71, summary
+assert summary["package_version"] == "dcc-first-package@1.71.0", summary
+assert summary["present_evidence_files"] == 72, summary
 assert summary["missing_required_files"] == 0, summary
-assert summary["demo_route_steps"] == 61, summary
+assert summary["demo_route_steps"] == 62, summary
 print(summary["package_id"], summary["package_version"], summary["present_evidence_files"], summary["missing_required_files"], summary["demo_route_steps"])
 "@ | & $Mayapy -
         if ($LASTEXITCODE -ne 0) {
@@ -361,6 +364,12 @@ if ($Tier -in @("unreal-control-rig-deformation-link", "full")) {
 if ($Tier -in @("unreal-control-rig-compile-status", "full")) {
     Invoke-Step "unreal control rig compile status bridge" {
         python (Join-Path $UnrealControlRig "scripts\run_compile_status.py")
+    }
+}
+
+if ($Tier -in @("unreal-control-rig-native-bridge-readiness", "full")) {
+    Invoke-Step "unreal control rig native bridge readiness" {
+        python (Join-Path $UnrealControlRig "scripts\run_control_rig_native_bridge_readiness.py")
     }
 }
 

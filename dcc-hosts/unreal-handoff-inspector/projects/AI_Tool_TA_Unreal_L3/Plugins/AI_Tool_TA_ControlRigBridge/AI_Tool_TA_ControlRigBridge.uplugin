@@ -1,0 +1,18 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0",
+  "FriendlyName": "AI Tool TA Control Rig Bridge",
+  "Description": "Public editor-only bridge contract for Control Rig compile diagnostics and status surface.",
+  "Category": "AI Tool TA",
+  "CreatedBy": "AI Tool TA Portfolio",
+  "EnabledByDefault": false,
+  "CanContainContent": false,
+  "Modules": [
+    {
+      "Name": "AI_Tool_TA_ControlRigBridge",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# AI Tool TA Public Case Package R67
+# AI Tool TA Public Case Package R74
 
 ## Current DCC-first Entry
 
@@ -34,6 +34,7 @@ The current final presentation route is now Maya-hosted:
 - Unreal Control Rig Face Skeleton Fixture: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-face-skeleton-fixture-20260805-235115.json`
 - Unreal Control Rig Deformation Link after face Skeleton fixture: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-deformation-link-20260805-235154.json`
 - Unreal Control Rig Compile Status Bridge: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-compile-status-20260806-001504.json`
+- Unreal Control Rig Native Bridge Readiness: `<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-native-bridge-readiness-20260806-094558.json`
 - Groom Export Inspector Maya L3: `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-export-inspector-maya-l3-20260806-003711.json`
 - Groom Unreal Import Readiness: `<repo>\dcc-hosts\groom-export-inspector\artifacts\groom-unreal-readiness-20260806-010008.json`
 - Spatial Authoring Maya L3: `<repo>\dcc-hosts\spatial-authoring-workbench\artifacts\spatial-authoring-maya-l3-20260805-181524.json`
@@ -56,9 +57,9 @@ The current final presentation route is now Maya-hosted:
 - Unreal Socket Native Controlled Write: `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-socket-native-controlled-write-20260806-070821.json`
 - Unreal Gameplay Attach Controlled Readiness: `<repo>\dcc-hosts\unreal-socket-import-checker\artifacts\unreal-gameplay-attach-controlled-readiness-20260806-072642.json`
 - Unreal Animation Attach Timing Readiness: `<repo>\dcc-hosts\unreal-animation-bridge\artifacts\unreal-animation-attach-timing-readiness-20260806-074254.json`
-- R67 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r67-unreal-animation-attach-timing-readiness-presentation-pack-20260806-074822.json`
+- R74 Cross-DCC / Engine Reviewer Pack: `<repo>\dcc-hosts\maya-auroraview-host\artifacts\r74-unreal-control-rig-native-bridge-readiness-presentation-pack-20260806-095213.json`
 
-Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R67 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Unreal Animation Attach Timing Readiness, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Source Readiness, Unreal Socket Native Bridge Build Harness, Unreal Socket Native Commandlet Probe, Unreal Socket Native Receipt Dry-run, Unreal Socket Native Controlled Write, Unreal Gameplay Attach Controlled Readiness, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter evidence, Blender bpy L3 runtime evidence, Blender Controlled Repair, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, 3ds Max Controlled Repair, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, Scene Transaction Guard and Houdini readiness.
+Use the legacy R8 package below as the historical browser evidence ledger. Use `DCC_FIRST_PACKAGE.md` for the current R74 DCC-first package: Cross-DCC / Engine Reviewer Pack, case page, 7-step business route, GUI shotlist, R10.7 media audit, composite Asset Handoff Gate, handoff decision packet, engine handoff preflight, PC/Mobile preset comparison, Animation Continuity Maya L3, Unreal Animation Bridge import L3, Unreal AnimSequence Deep Facts, Unreal Animation Attach Timing Readiness, Unreal Animation Notify Native Bridge / Build / Commandlet / Diagnostics / Controlled Write, Unreal Gameplay Attach Timing Controlled Readiness, Character Calibration Maya L3, Character Calibration Drilldown, Unreal Control Rig Bridge L3 after face Skeleton fixture, Unreal Control Rig Fixture Authoring, Unreal Control Rig Face Skeleton Fixture, Unreal Control Rig Deformation Link, Unreal Control Rig Compile Status Bridge, Unreal Control Rig Native Bridge Readiness, Groom Export Inspector Maya L3, Groom Unreal Import Readiness, Spatial Authoring Maya L3, Spatial Authoring Drilldown, Unreal Socket Import Checker L3, Unreal Socket Authoring Executor API-limited gate, Unreal Socket Native Bridge Source Readiness, Unreal Socket Native Bridge Build Harness, Unreal Socket Native Commandlet Probe, Unreal Socket Native Receipt Dry-run, Unreal Socket Native Controlled Write, Unreal Gameplay Attach Controlled Readiness, Platform Variant Forge, Platform Variant Unreal Runtime Probe, Platform Variant Generation Planner, Platform Variant Texture Runtime Collector, Platform Variant Public Texture2D Payload Fixture, Platform Variant Controlled Executor, Platform Variant Executor Expansion Receipts, Platform Variant StaticMesh Post-check, Blender adapter evidence, Blender bpy L3 runtime evidence, Blender Controlled Repair, 3ds Max adapter evidence, 3ds Max pymxs L3 runtime evidence, 3ds Max Controlled Repair, Unreal Python L3++ engine fact evidence, Unreal preset fact / waiver comparison, Maya-hosted preset fact review queue, Scene Transaction Guard and Houdini readiness.
 
 This package is the public reviewer entry point for the AI Tool TA portfolio.
 It presents DCC / engine tool modules as production-style case studies, with synthetic fixtures and anonymized Lightbox-inspired business logic.
@@ -77,13 +78,17 @@ It presents DCC / engine tool modules as production-style case studies, with syn
 
 | Field | Value |
 | --- | --- |
-| Package | `ai-tool-ta-public-case-package-r8-70` |
-| Version | `public-case-package@3.40.0` |
+| Package | `ai-tool-ta-public-case-package-r8-94` |
+| Version | `public-case-package@3.64.0` |
 | Source report | `portfolio-case-study-r8-54` |
 | Source report version | `portfolio-case-study-report@3.31.0` |
 | Evidence manifest | `portfolio-evidence-manifest-r8-54` |
 | Release gate | `Ready` |
 | Modules | 5 |
+| Current DCC-first package | `ai-tool-ta-dcc-first-showcase-r74` / `dcc-first-package@1.71.0` |
+| Presenter Pack | `r74-unreal-control-rig-native-bridge-readiness-presentation-pack-20260806-095213.json` |
+| Presenter Pack evidence | 72 / 72 present |
+| Presenter demo route | 62 steps |
 | Indexed evidence | 429 |
 | Required evidence | 322 |
 | Validation commands | 150 |

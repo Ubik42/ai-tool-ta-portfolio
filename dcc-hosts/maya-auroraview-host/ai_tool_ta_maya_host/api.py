@@ -3988,7 +3988,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_build_pack(
         self,
-        label: str = "r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack",
+        label: str = "r74-unreal-control-rig-native-bridge-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         public_package_dir = PORTFOLIO_ROOT / "public-case-package"
         manifest_path = public_package_dir / "dcc-first-package-manifest.json"
@@ -4170,6 +4170,12 @@ class MayaPortfolioApi:
                 "Unreal Control Rig Compile Status Bridge artifact",
                 "artifact",
                 manifest.get("unrealControlRigCompileStatusArtifact"),
+            ),
+            _probe_file(
+                "unreal-control-rig-native-bridge-readiness",
+                "Unreal Control Rig Native Bridge Readiness artifact",
+                "artifact",
+                manifest.get("unrealControlRigNativeBridgeReadinessArtifact"),
             ),
             _probe_file(
                 "groom-export-inspector",
@@ -4459,6 +4465,12 @@ class MayaPortfolioApi:
                 "label": "Run Unreal Control Rig compile status bridge",
                 "operator_action": "Run python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py.",
                 "evidence_expected": "Unreal Python invokes ControlRigBlueprint compile methods on the public CR_HeroFace fixture, then records diagnostic/status readability, dirty-state boundary and zero-save evidence.",
+            },
+            {
+                "id": "17b-run-unreal-control-rig-native-bridge-readiness",
+                "label": "Run Unreal Control Rig native bridge readiness",
+                "operator_action": "Run python dcc-hosts/unreal-control-rig-bridge/scripts/run_control_rig_native_bridge_readiness.py.",
+                "evidence_expected": "Unreal Python proves Control Rig / RigVM classes are visible, native C++ bridge source files are complete, and the remaining build/commandlet gate is explicit without mutating assets.",
             },
             {
                 "id": "18-run-groom-export-inspector",
@@ -4942,6 +4954,22 @@ class MayaPortfolioApi:
                 "unreal_control_rig_compile_status_error_checks": manifest_summary.get("unrealControlRigCompileStatusErrorChecks"),
                 "unreal_control_rig_compile_status_asset_writes": manifest_summary.get("unrealControlRigCompileStatusAssetWrites"),
                 "unreal_control_rig_compile_status_production_writes": manifest_summary.get("unrealControlRigCompileStatusProductionWrites"),
+                "unreal_control_rig_native_bridge_readiness_gate": manifest_summary.get("unrealControlRigNativeBridgeReadinessGate"),
+                "unreal_control_rig_native_bridge_readiness_evidence_level": manifest_summary.get("unrealControlRigNativeBridgeReadinessEvidenceLevel"),
+                "unreal_control_rig_native_bridge_readiness_l3_status": manifest_summary.get("unrealControlRigNativeBridgeReadinessL3Status"),
+                "unreal_control_rig_native_bridge_readiness_source_requires_native_bridge": manifest_summary.get("unrealControlRigNativeBridgeReadinessSourceRequiresNativeBridge"),
+                "unreal_control_rig_native_bridge_readiness_runtime_entered": manifest_summary.get("unrealControlRigNativeBridgeReadinessRuntimeEntered"),
+                "unreal_control_rig_native_bridge_readiness_control_rig_classes_visible": manifest_summary.get("unrealControlRigNativeBridgeReadinessControlRigClassesVisible"),
+                "unreal_control_rig_native_bridge_readiness_has_native_source": manifest_summary.get("unrealControlRigNativeBridgeReadinessHasNativeSource"),
+                "unreal_control_rig_native_bridge_readiness_missing_required_native_files": manifest_summary.get("unrealControlRigNativeBridgeReadinessMissingRequiredNativeFiles"),
+                "unreal_control_rig_native_bridge_readiness_has_compiled_bridge_binary": manifest_summary.get("unrealControlRigNativeBridgeReadinessHasCompiledBridgeBinary"),
+                "unreal_control_rig_native_bridge_readiness_commandlet_visible": manifest_summary.get("unrealControlRigNativeBridgeReadinessCommandletVisible"),
+                "unreal_control_rig_native_bridge_readiness_pass_checks": manifest_summary.get("unrealControlRigNativeBridgeReadinessPassChecks"),
+                "unreal_control_rig_native_bridge_readiness_warning_checks": manifest_summary.get("unrealControlRigNativeBridgeReadinessWarningChecks"),
+                "unreal_control_rig_native_bridge_readiness_error_checks": manifest_summary.get("unrealControlRigNativeBridgeReadinessErrorChecks"),
+                "unreal_control_rig_native_bridge_readiness_asset_writes": manifest_summary.get("unrealControlRigNativeBridgeReadinessAssetWrites"),
+                "unreal_control_rig_native_bridge_readiness_engine_writes": manifest_summary.get("unrealControlRigNativeBridgeReadinessEngineWrites"),
+                "unreal_control_rig_native_bridge_readiness_production_writes": manifest_summary.get("unrealControlRigNativeBridgeReadinessProductionWrites"),
                 "groom_export_inspector_gate": manifest_summary.get("groomExportInspectorGate"),
                 "groom_export_inspector_evidence_level": manifest_summary.get("groomExportInspectorEvidenceLevel"),
                 "groom_export_inspector_l3_status": manifest_summary.get("groomExportInspectorL3Status"),
@@ -5506,6 +5534,7 @@ class MayaPortfolioApi:
                 "Unreal Control Rig Face Skeleton Fixture generates a public SK_HeroFace Skeleton from Maya FBX, imports it into Unreal, and resolves R43's missing Eye/Jaw deformation targets.",
                 "Unreal Control Rig Deformation Link audits CR_HeroFace against Maya deformation targets, Skeleton bone coverage, hierarchy shape/offset readability and compile-status API visibility.",
                 "Unreal Control Rig Compile Status Bridge invokes public CR_HeroFace compile methods and records direct diagnostic readability, dirty-state boundary and zero-save evidence.",
+                "Unreal Control Rig Native Bridge Readiness turns the compile diagnostic/status blind spot into public C++ commandlet source plus Unreal runtime readiness evidence.",
                 "Groom Export Inspector reads public Maya curve strands and validates root UV, strand ID, guide curve, Alembic payload and Unreal binding readiness.",
                 "Groom Unreal Import Readiness joins R46 Maya groom facts to Unreal Groom/Alembic API visibility, target SkeletalMesh presence and zero-write import boundary.",
                 "Groom Alembic Payload Receipt turns the approved R46 groom row into a real public Maya AbcExport cache receipt while holding blocked TMP groom rows.",
@@ -5567,7 +5596,7 @@ class MayaPortfolioApi:
 
     def dcc_presentation_export_pack(
         self,
-        label: str = "r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack",
+        label: str = "r74-unreal-control-rig-native-bridge-readiness-presentation-pack",
     ) -> Dict[str, Any]:
         pack = self.dcc_presentation_build_pack(label=label)
         report = {

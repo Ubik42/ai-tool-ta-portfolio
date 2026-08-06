@@ -1,0 +1,245 @@
+{
+  "reportVersion": "unreal-control-rig-native-bridge-readiness@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Native Bridge Readiness",
+  "generatedAt": "2026-08-06 09:46:06",
+  "evidenceLevel": "L3-readiness",
+  "l3Status": "unreal_control_rig_native_bridge_readiness_collected",
+  "sourceCompileStatus": {
+    "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+    "reportVersion": "unreal-control-rig-compile-status@0.1.0",
+    "evidenceLevel": "L3",
+    "l3Status": "unreal_control_rig_compile_status_collected",
+    "gate": "Blocked",
+    "compileInvocationSucceededRows": 1,
+    "directStatusReadableRows": 0,
+    "diagnosticReadableRows": 0
+  },
+  "facts": {
+    "schema": "unreal-control-rig-native-bridge-readiness-input@0.1.0",
+    "sourceCompileStatus": {
+      "path": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-compile-status-20260806-001504.json",
+      "reportVersion": "unreal-control-rig-compile-status@0.1.0",
+      "evidenceLevel": "L3",
+      "l3Status": "unreal_control_rig_compile_status_collected",
+      "gate": "Blocked",
+      "compileInvocationSucceededRows": 1,
+      "directStatusReadableRows": 0,
+      "diagnosticReadableRows": 0
+    },
+    "sourceRequiresNativeBridge": true,
+    "runtime": {
+      "executed": true,
+      "runtime": "Unreal Python",
+      "engineVersion": "5.3.2-29314046+++UE5+Release-5.3",
+      "pythonVersion": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+      "projectPath": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\AI_Tool_TA_Unreal_L3.uproject",
+      "unrealCli": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "api": {
+        "classes": {
+          "ControlRigBlueprint": true,
+          "RigVMBlueprint": true,
+          "RigVMController": true,
+          "RigVMCompileSettings": true,
+          "ControlRig": true,
+          "EditorAssetLibrary": true
+        },
+        "controlRigBlueprintMethods": [
+          "create_rig_vm_host",
+          "get_auto_vm_recompile",
+          "get_available_rig_vm_structs",
+          "get_rig_vm_host_class",
+          "recompile_vm",
+          "recompile_vm_if_required",
+          "request_auto_vm_recompilation",
+          "request_rig_vm_init",
+          "set_auto_vm_recompile",
+          "vm_compile_settings"
+        ]
+      },
+      "hasCompiledBridgeBinary": false,
+      "commandletVisible": false,
+      "pluginDir": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0,
+      "writeScope": "read-only Control Rig native bridge source/runtime readiness probe"
+    },
+    "runtimeEntered": true,
+    "classVisibility": {
+      "ControlRigBlueprint": true,
+      "RigVMBlueprint": true,
+      "RigVMController": true,
+      "RigVMCompileSettings": true,
+      "ControlRig": true,
+      "EditorAssetLibrary": true
+    },
+    "controlRigClassesVisible": true,
+    "pluginDir": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge",
+    "requiredNativeFiles": [
+      {
+        "relativePath": "AI_Tool_TA_ControlRigBridge.uplugin",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\AI_Tool_TA_ControlRigBridge.uplugin",
+        "exists": true,
+        "bytes": 486
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/AI_Tool_TA_ControlRigBridge.Build.cs",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\AI_Tool_TA_ControlRigBridge.Build.cs",
+        "exists": true,
+        "bytes": 654
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Public/AI_Tool_TA_ControlRigBridge.h",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Public\\AI_Tool_TA_ControlRigBridge.h",
+        "exists": true,
+        "bytes": 217
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Private/AI_Tool_TA_ControlRigBridge.cpp",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Private\\AI_Tool_TA_ControlRigBridge.cpp",
+        "exists": true,
+        "bytes": 339
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Public/AiToolTaControlRigBridgeLibrary.h",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Public\\AiToolTaControlRigBridgeLibrary.h",
+        "exists": true,
+        "bytes": 1896
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Private/AiToolTaControlRigBridgeLibrary.cpp",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Private\\AiToolTaControlRigBridgeLibrary.cpp",
+        "exists": true,
+        "bytes": 3304
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Public/AiToolTaControlRigDiagnosticsCommandlet.h",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Public\\AiToolTaControlRigDiagnosticsCommandlet.h",
+        "exists": true,
+        "bytes": 362
+      },
+      {
+        "relativePath": "Source/AI_Tool_TA_ControlRigBridge/Private/AiToolTaControlRigDiagnosticsCommandlet.cpp",
+        "path": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\Source\\AI_Tool_TA_ControlRigBridge\\Private\\AiToolTaControlRigDiagnosticsCommandlet.cpp",
+        "exists": true,
+        "bytes": 4054
+      }
+    ],
+    "missingRequiredNativeFiles": [],
+    "hasNativeSource": true,
+    "hasControlRigBridgePlugin": true,
+    "hasCompiledBridgeBinary": false,
+    "commandletVisible": false,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "evaluation": {
+    "schema": "unreal-control-rig-native-bridge-readiness-evaluation@0.1.0",
+    "summary": {
+      "gate": "Blocked",
+      "sourceRequiresNativeBridge": true,
+      "runtimeEntered": true,
+      "controlRigClassesVisible": true,
+      "hasNativeSource": true,
+      "hasControlRigBridgePlugin": true,
+      "missingRequiredNativeFiles": 0,
+      "hasCompiledBridgeBinary": false,
+      "commandletVisible": false,
+      "pass": 5,
+      "warning": 0,
+      "error": 2,
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    },
+    "rows": [
+      {
+        "id": "control-rig-native-bridge:source-requires-native-bridge",
+        "ruleId": "source-requires-native-bridge",
+        "status": "pass",
+        "evidence": "source={'path': '<repo>\\\\dcc-hosts\\\\unreal-control-rig-bridge\\\\artifacts\\\\unreal-control-rig-compile-status-20260806-001504.json', 'reportVersion': 'unreal-control-rig-compile-status@0.1.0', 'evidenceLevel': 'L3', 'l3Status': 'unreal_control_rig_compile_status_collected', 'gate': 'Blocked', 'compileInvocationSucceededRows': 1, 'directStatusReadableRows': 0, 'diagnosticReadableRows': 0}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "control-rig-native-bridge:unreal-runtime-entered",
+        "ruleId": "unreal-runtime-entered",
+        "status": "pass",
+        "evidence": "runtime={'executed': True, 'runtime': 'Unreal Python', 'engineVersion': '5.3.2-29314046+++UE5+Release-5.3', 'pythonVersion': '3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]', 'projectPath': '<repo>\\\\dcc-hosts\\\\unreal-handoff-inspector\\\\projects\\\\AI_Tool_TA_Unreal_L3\\\\AI_Tool_TA_Unreal_L3.uproject', 'unrealCli': 'C:\\\\Program Files\\\\Epic Games\\\\UE_5.3\\\\Engine\\\\Binaries\\\\Win64\\\\UnrealEditor-Cmd.exe', 'api': {'classes': {'ControlRigBlueprint': True, 'RigVMBlueprint': True, 'RigVMController': True, 'RigVMCompileSettings': True, 'ControlRig': True, 'EditorAssetLibrary': True}, 'controlRigBlueprintMethods': ['create_rig_vm_host', 'get_auto_vm_recompile', 'get_available_rig_vm_structs', 'get_rig_vm_host_class', 'recompile_vm', 'recompile_vm_if_required', 'request_auto_vm_recompilation', 'request_rig_vm_init', 'set_auto_vm_recompile', 'vm_compile_settings']}, 'hasCompiledBridgeBinary': False, 'commandletVisible': False, 'pluginDir': '<repo>\\\\dcc-hosts\\\\unreal-handoff-inspector\\\\projects\\\\AI_Tool_TA_Unreal_L3\\\\Plugins\\\\AI_Tool_TA_ControlRigBridge', 'assetWrites': 0, 'engineWrites': 0, 'productionWrites': 0, 'writeScope': 'read-only Control Rig native bridge source/runtime readiness probe'}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "control-rig-native-bridge:control-rig-runtime-classes-visible",
+        "ruleId": "control-rig-runtime-classes-visible",
+        "status": "pass",
+        "evidence": "classVisibility={'ControlRigBlueprint': True, 'RigVMBlueprint': True, 'RigVMController': True, 'RigVMCompileSettings': True, 'ControlRig': True, 'EditorAssetLibrary': True}",
+        "fixPreview": "None"
+      },
+      {
+        "id": "control-rig-native-bridge:native-source-present",
+        "ruleId": "native-source-present",
+        "status": "pass",
+        "evidence": "missing=[]",
+        "fixPreview": "None"
+      },
+      {
+        "id": "control-rig-native-bridge:compiled-bridge-binary-visible",
+        "ruleId": "compiled-bridge-binary-visible",
+        "status": "error",
+        "evidence": "pluginDir=<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge",
+        "fixPreview": "Run BuildPlugin for AI_Tool_TA_ControlRigBridge."
+      },
+      {
+        "id": "control-rig-native-bridge:commandlet-visible",
+        "ruleId": "commandlet-visible",
+        "status": "error",
+        "evidence": "commandletVisible=False",
+        "fixPreview": "Load the compiled bridge and run AiToolTaControlRigDiagnostics."
+      },
+      {
+        "id": "control-rig-native-bridge:read-only-boundary",
+        "ruleId": "read-only-boundary",
+        "status": "pass",
+        "evidence": "assetWrites=0 engineWrites=0 productionWrites=0",
+        "fixPreview": "None"
+      }
+    ],
+    "ownerActions": [
+      {
+        "id": "control-rig-native-bridge-action:compiled-bridge-binary-visible",
+        "ruleId": "compiled-bridge-binary-visible",
+        "status": "error",
+        "owner": "tool-ta",
+        "preview": "Run BuildPlugin for AI_Tool_TA_ControlRigBridge.",
+        "writeBoundary": "source_and_runtime_readiness"
+      },
+      {
+        "id": "control-rig-native-bridge-action:commandlet-visible",
+        "ruleId": "commandlet-visible",
+        "status": "error",
+        "owner": "tool-ta",
+        "preview": "Load the compiled bridge and run AiToolTaControlRigDiagnostics.",
+        "writeBoundary": "source_and_runtime_readiness"
+      }
+    ]
+  },
+  "adapter": {
+    "id": "unreal-control-rig-native-bridge-readiness",
+    "name": "Unreal Control Rig Native Bridge Readiness",
+    "methodSource": "R45 compile status + public Control Rig native diagnostic bridge source/readiness probe",
+    "protocolCarrier": "ControlRigBlueprint compile/status API surface, C++ commandlet source, binary/commandlet visibility gate",
+    "boundary": {
+      "mutation": "read_only_source_and_runtime_probe",
+      "assetWrites": 0,
+      "engineWrites": 0,
+      "productionWrites": 0
+    }
+  },
+  "reviewerClaims": [
+    "R74 converts the R45 Control Rig compile-status blind spot into a native C++ bridge source/readiness gate.",
+    "The public Unreal project now contains an editor-only Control Rig bridge plugin with a diagnostic library and commandlet source contract.",
+    "Unreal runtime sees ControlRig/RigVM classes; the current Blocked gate is the explicit binary/commandlet build gate, not a missing business rationale.",
+    "The readiness artifact is read-only and records zero asset, engine and production writes.",
+    "Summary: sourceRequiresNativeBridge=True, hasNativeSource=True, hasCompiledBridgeBinary=False, commandletVisible=False."
+  ]
+}

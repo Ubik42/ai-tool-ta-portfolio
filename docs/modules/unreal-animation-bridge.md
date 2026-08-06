@@ -58,8 +58,8 @@ R73 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 - Native notify diagnostics：读取 R67 animationAssetPaths，喂给 packaged commandlet，加载 2/2 public AnimSequence，输出 native notify rows，并把缺失的 `equip.attach` / `gear.attach` 保持为业务 Blocked。
 - Native notify controlled write：在临时 Unreal project 中把 `equip.attach` 和 `gear.attach` 写入 public AnimSequence，保存后 post-check，再 rollback 并恢复 `.uasset` hash。
 - Gameplay attach timing controlled readiness：合并 R66 socket executor、R67 timing gate 和 R72 notify controlled write，输出玩法挂接是否已经 socket + notify 双 executor-backed。
-- Presenter Pack 接入：R73 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact、native diagnostics artifact、native controlled write artifact 和 gameplay attach timing controlled readiness artifact，并保持 61 步 demo route。
-- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r73` / `dcc-first-package@1.70.0`。
+- Presenter Pack 接入：R74 Presenter Pack 会探测 Unreal Animation Bridge contract、import L3、deep facts、attach timing readiness、native notify bridge readiness、native build artifact、commandlet probe artifact、native diagnostics artifact、native controlled write artifact、gameplay attach timing controlled readiness artifact 和 Control Rig native bridge readiness artifact，并保持 62 步 demo route。
+- public manifest 接入：当前公开包已升级到 `ai-tool-ta-dcc-first-showcase-r74` / `dcc-first-package@1.71.0`。
 
 ## 证据
 
@@ -133,6 +133,12 @@ R73 目标：把 Maya Animation Continuity L3、Unreal AnimSequence runtime fact
 
 ```text
 <repo>\dcc-hosts\maya-auroraview-host\artifacts\r73-unreal-gameplay-attach-timing-controlled-readiness-presentation-pack-20260806-093254.json
+```
+
+当前总 Presenter Pack：
+
+```text
+<repo>\dcc-hosts\maya-auroraview-host\artifacts\r74-unreal-control-rig-native-bridge-readiness-presentation-pack-20260806-095213.json
 ```
 
 关键结果：
@@ -232,4 +238,4 @@ R73 不重复启动 Unreal，而是读取 R66 gameplay attach controlled readine
 下一阶段有两条高价值路径：
 
 - 继续动画线：做 MotionBuilder adapter，把同一批 take / event / slot intent 接到 DCC 动画源。
-- 业务扩展：补 Control Rig native diagnostic bridge，读取编译诊断和 control metadata，或做更复杂的引擎内 runtime post-check。
+- 业务扩展：编译 Control Rig native bridge 并跑 commandlet probe，读取编译诊断和 control metadata，或做更复杂的引擎内 runtime post-check。
