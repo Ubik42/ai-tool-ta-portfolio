@@ -14,17 +14,31 @@ python dcc-hosts/unreal-control-rig-bridge/scripts/run_face_skeleton_fixture.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_deformation_link.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_compile_status.py
 python dcc-hosts/unreal-control-rig-bridge/scripts/run_control_rig_native_bridge_readiness.py
+python dcc-hosts/unreal-control-rig-bridge/scripts/run_control_rig_native_bridge_build.py
 ```
 
 `run_l3_smoke.py` launches `UnrealEditor-Cmd.exe` against the public `AI_Tool_TA_Unreal_L3.uproject` and exports `unreal-control-rig-bridge@0.1.0`.
 
-Current R74 artifact:
+Current R75 artifacts:
 
 ```text
 <repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-native-bridge-readiness-20260806-094558.json
+<repo>\dcc-hosts\unreal-control-rig-bridge\artifacts\unreal-control-rig-native-bridge-build-20260806-100928.json
 ```
 
-R74 result:
+R75 build result:
+
+- evidence level: L3-build
+- l3 status: `unreal_control_rig_native_bridge_plugin_built`
+- gate: `Ready`
+- RunUAT: UE 5.3 `BuildPlugin`
+- compiled DLLs: 1
+- compiler version: 14.38.33130
+- returnCode / errorLines: 0 / 0
+- configRestored: true
+- assetWrites / engineWrites / productionWrites: 0 / 0 / 0
+
+R74 readiness result:
 
 - evidence level: L3-readiness
 - l3 status: `unreal_control_rig_native_bridge_readiness_collected`
@@ -38,4 +52,4 @@ R74 result:
 - checks pass / warning / error: 5 / 0 / 2
 - assetWrites / engineWrites / productionWrites: 0 / 0 / 0
 
-The current `Blocked` gate is intentional business evidence. R45 proved `CR_HeroFace` compile methods can be invoked through Unreal Python, but direct compile diagnostics/status are not readable. R74 turns that gap into public C++ Editor plugin source plus a runtime readiness artifact; the next concrete step is BuildPlugin, then a commandlet visibility probe.
+R45 proved `CR_HeroFace` compile methods can be invoked through Unreal Python, but direct compile diagnostics/status are not readable. R74 turned that gap into public C++ Editor plugin source plus a runtime readiness artifact; R75 proves the source compiles into a packaged Editor DLL. The next concrete step is a commandlet visibility probe against the packaged plugin.

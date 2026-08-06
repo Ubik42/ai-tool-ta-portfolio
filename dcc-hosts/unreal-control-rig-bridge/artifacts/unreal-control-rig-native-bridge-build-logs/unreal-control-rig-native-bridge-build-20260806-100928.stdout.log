@@ -1,0 +1,39 @@
+Running AutomationTool...
+Using bundled DotNet SDK version: 6.0.302
+Starting AutomationTool...
+Parsing command line: BuildPlugin -Plugin=D:\cs\AIToolTA_Portfolio\dcc-hosts\unreal-handoff-inspector\projects\AI_Tool_TA_Unreal_L3\Plugins\AI_Tool_TA_ControlRigBridge\AI_Tool_TA_ControlRigBridge.uplugin -Package=D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928 -TargetPlatforms=Win64 -Rocket -NoP4
+Initializing script modules...
+Total script module initialization time: 0.20 s.
+Executing commands...
+Copying 9 file(s) using max 64 thread(s)
+Reading plugin from D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\AI_Tool_TA_ControlRigBridge.uplugin...
+Building plugin for host platforms: Win64
+Running: C:\Program Files\Epic Games\UE_5.3\Engine\Binaries\ThirdParty\DotNet\6.0.302\windows\dotnet.exe "C:\Program Files\Epic Games\UE_5.3\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealEditor Win64 Development -Project="D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\HostProject.uproject" -plugin="D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\AI_Tool_TA_ControlRigBridge.uplugin" -noubtmakefiles -manifest="D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml" -nohotreload -log="C:\Users\ubikshen\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.3\UBT-UnrealEditor-Win64-Development.txt"
+Log file: C:\Users\ubikshen\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.3\UBT-UnrealEditor-Win64-Development.txt
+Parsing headers for UnrealEditor
+  Running Internal UnrealHeaderTool D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\HostProject.uproject D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEditor.uhtmanifest -WarningsAsErrors -installed
+Total of 6 written
+Reflection code generated for UnrealEditor in 1.0236531 seconds
+Writing manifest to D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml
+Building UnrealEditor...
+Using Visual Studio 2022 14.38.33145 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Determining max actions to execute in parallel (20 physical cores, 20 logical cores)
+  Executing up to 20 processes, one per physical core
+------ Building 6 action(s) started ------
+[1/6] Resource Default.rc2
+[2/6] Compile [x64] SharedPCH.UnrealEd.Cpp20.cpp
+[3/6] Compile [x64] Module.AI_Tool_TA_ControlRigBridge.cpp
+[4/6] Link [x64] UnrealEditor-AI_Tool_TA_ControlRigBridge.lib
+  ���ڴ����� D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\Intermediate\Build\Win64\x64\UnrealEditor\Development\AI_Tool_TA_ControlRigBridge\UnrealEditor-AI_Tool_TA_ControlRigBridge.lib �Ͷ��� D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\Intermediate\Build\Win64\x64\UnrealEditor\Development\AI_Tool_TA_ControlRigBridge\UnrealEditor-AI_Tool_TA_ControlRigBridge.exp
+[5/6] Link [x64] UnrealEditor-AI_Tool_TA_ControlRigBridge.dll
+  ���ڴ����� D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\Intermediate\Build\Win64\x64\UnrealEditor\Development\AI_Tool_TA_ControlRigBridge\UnrealEditor-AI_Tool_TA_ControlRigBridge.sup.lib �Ͷ��� D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\Intermediate\Build\Win64\x64\UnrealEditor\Development\AI_Tool_TA_ControlRigBridge\UnrealEditor-AI_Tool_TA_ControlRigBridge.sup.exp
+[6/6] WriteMetadata UnrealEditor.target
+Total time in Parallel executor: 25.33 seconds
+Total execution time: 30.18 seconds
+Took 30.29s to run dotnet.exe, ExitCode=0
+Building plugin for target platforms: Win64
+Reading filter rules from D:\cs\_test\ai_tool_ta_control_rig_builds\acrnb-20260806-100928\HostProject\Plugins\AI_Tool_TA_ControlRigBridge\Config\FilterPlugin.ini
+Loading FilterPluginWin64.ini
+BUILD SUCCESSFUL
+AutomationTool executed for 0h 0m 32s
+AutomationTool exiting with ExitCode=0 (Success)

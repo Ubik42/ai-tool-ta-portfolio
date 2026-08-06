@@ -1,0 +1,78 @@
+{
+  "reportVersion": "unreal-control-rig-native-bridge-build@0.1.0",
+  "generatedBy": "AI Tool TA Portfolio / Unreal Control Rig Native Bridge Build",
+  "generatedAt": "2026-08-06 10:10:01",
+  "evidenceLevel": "L3-build",
+  "l3Status": "unreal_control_rig_native_bridge_plugin_built",
+  "sourcePlugin": "<repo>\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\AI_Tool_TA_ControlRigBridge.uplugin",
+  "artifact": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-20260806-100928.json",
+  "runUAT": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUAT.bat",
+  "toolchain": {
+    "msvcVersions": [
+      "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130",
+      "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207"
+    ],
+    "preferredCompilerVersion": "14.38.33130",
+    "preferredCompilerReason": "UE 5.3 installed builds compile reliably with VS 2022 17.4+ MSVC 14.34-14.38; newer 14.44 can trip engine header preprocessor errors.",
+    "clOnPath": null,
+    "dotnetOnPath": "C:\\Program Files\\dotnet\\dotnet.exe",
+    "msbuildOnPath": null
+  },
+  "build": {
+    "command": [
+      "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUAT.bat",
+      "BuildPlugin",
+      "-Plugin=D:\\cs\\AIToolTA_Portfolio\\dcc-hosts\\unreal-handoff-inspector\\projects\\AI_Tool_TA_Unreal_L3\\Plugins\\AI_Tool_TA_ControlRigBridge\\AI_Tool_TA_ControlRigBridge.uplugin",
+      "-Package=D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\acrnb-20260806-100928",
+      "-TargetPlatforms=Win64",
+      "-Rocket",
+      "-NoP4"
+    ],
+    "returnCode": 0,
+    "buildError": null,
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-logs\\unreal-control-rig-native-bridge-build-20260806-100928.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-logs\\unreal-control-rig-native-bridge-build-20260806-100928.stderr.log",
+    "packageDir": "D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\acrnb-20260806-100928",
+    "buildConfiguration": {
+      "enabled": true,
+      "reason": "UE 5.3 installed builds compile reliably with VS 2022 17.4+ MSVC 14.34-14.38; newer 14.44 can trip engine header preprocessor errors.",
+      "mode": "temporary_global_ubt_config",
+      "path": "C:\\Users\\ubikshen\\AppData\\Roaming\\Unreal Engine\\UnrealBuildTool\\BuildConfiguration.xml",
+      "backupPath": "D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\_ubt_config_backup\\BuildConfiguration-20260806-100928.xml",
+      "compilerVersion": "14.38.33130",
+      "restoreAction": "restore_backup",
+      "restored": true
+    },
+    "dlls": [
+      {
+        "path": "D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\acrnb-20260806-100928\\Binaries\\Win64\\UnrealEditor-AI_Tool_TA_ControlRigBridge.dll",
+        "bytes": 151552,
+        "sha256": "9930fe41e8c2893f860eb03059539b5cbbf58e318158be3636200b949a5a476b"
+      }
+    ],
+    "errors": []
+  },
+  "summary": {
+    "gate": "Ready",
+    "runUATFound": true,
+    "msvcFound": true,
+    "buildAttempted": true,
+    "returnCode": 0,
+    "compiledDlls": 1,
+    "errorLines": 0,
+    "packageDir": "D:\\cs\\_test\\ai_tool_ta_control_rig_builds\\acrnb-20260806-100928",
+    "stdoutLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-logs\\unreal-control-rig-native-bridge-build-20260806-100928.stdout.log",
+    "stderrLog": "<repo>\\dcc-hosts\\unreal-control-rig-bridge\\artifacts\\unreal-control-rig-native-bridge-build-logs\\unreal-control-rig-native-bridge-build-20260806-100928.stderr.log",
+    "compilerVersion": "14.38.33130",
+    "configRestored": true,
+    "assetWrites": 0,
+    "engineWrites": 0,
+    "productionWrites": 0
+  },
+  "reviewerClaims": [
+    "The Control Rig bridge build harness uses Unreal RunUAT BuildPlugin against the public Editor plugin source.",
+    "Build output is local and ignored; the committed evidence is the JSON receipt plus logs and DLL hashes.",
+    "The harness temporarily injects and restores UBT BuildConfiguration.xml so UE 5.3 uses a compatible MSVC family.",
+    "No Unreal asset, engine file or production content is mutated by the build harness."
+  ]
+}
